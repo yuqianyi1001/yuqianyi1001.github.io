@@ -68,18 +68,14 @@ layout: default
     const contentElements = document.querySelectorAll('.zh-trandition');
     const toggleCheckbox = document.getElementById('toggle-switch');
   
-    // Initially, hide all content elements except the first one
     contentElements.forEach((element, index) => {
         element.style.display = 'block';
     });
   
-    // Add a change event listener to the toggle checkbox
     toggleCheckbox.addEventListener('change', function() {
-      // Check the current state of the checkbox
+
       const isChecked = toggleCheckbox.checked;
-      console.log('toggleCheckbox =',isChecked)
   
-      // Toggle visibility of all content elements based on the checkbox state
       contentElements.forEach((element) => {
         element.style.display = isChecked ? 'block' : 'none';
       });
