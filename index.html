@@ -4,39 +4,50 @@ layout: default
 
 
 <div class="row">
-  <div class="column" style="background-color:rgb(229, 228, 228);">
-    <h2>简体版</h2>
+  
+    <h2>文章列表</h2>
     
     <p>
       <div class="posts">
         <ol>
         {% for post in site.posts %}
-        {% if post.url contains "zh-tw" %}
-
-          {% else %}
-          <li><a href="{{ site.baseurl }}{{ post.url }}" class="read-more">{{ post.title }}</a><br></li>
-          {% endif %}
-        {% endfor %}
-        </ol>
-      </div>
-    </p>
-  </div>
-  <div class="column" style="background-color:rgb(221, 221, 221);">
-    <h2>繁體版</h2>
-    <p>
-      <div class="posts">
-        <ol>
-        {% for post in site.posts %}
           {% if post.url contains "zh-tw" %}
+            <!-- do nothing -->
+          {% else %}
+            {% assign post_name = post.url | replace: '/','' %}
+          
 
+            <li>
+              
+              <ul>
+                
+                <li><img src="/zh-simple.png" width="18px" /> <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">{{ post.title }}</a>
+                <a href="{{ post.wechat }}"><img src="/wechat.ico" width="16px" /></a></li>  
+                
+                {% for zh_tw_post in site.posts %}
+                  {% if zh_tw_post.url contains "zh-tw" %}
+                    
+                    {% assign zh_tw_post_name = zh_tw_post.url | replace: '/','' | replace: '_zh-tw','' %}
+                  
+                  
+                    {% if zh_tw_post_name == post_name %}
+                      
+                      <li><img src="/zh-trandition.png" width="18px" /> <a href="{{ site.baseurl }}{{ zh_tw_post.url}}" class="read-more">{{ zh_tw_post.title }}</a>
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+                
+                
+                </li>
+              </ul>
+            </li>
 
-          <li><a href="{{ site.baseurl }}{{ post.url }}" class="read-more">{{ post.title }}</a><br></li>
           {% endif %}
         {% endfor %}
         </ol>
       </div>
     </p>
+
   </div>
-</div>
 
 
