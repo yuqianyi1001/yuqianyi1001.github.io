@@ -23,9 +23,12 @@ layout: default
             <li>
               <ul>
                 <li>
-                  <img src="/zh-simple.png" width="18px" /> <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">{{ post.title }}</a>
-                <a href="{{ post.wechat }}" target="_blank"><img src="/wechat.ico" width="16px" /></a><br>
-                <span style="font-size:medium;">{{post.description}}</span>
+                  <img src="/zh-simple.png" width="18px" /> <a href="{{ site.baseurl }}{{ post.url }}" class="read-more" 
+                    id="post_title">{{ post.title }}</a>
+                  <a href="{{ post.wechat }}" target="_blank" id="wechat_link"><img src="/wechat.ico" width="16px" /></a>
+                  <img src="/copy.png" width="16px" id="copy-button" />
+                  <br>
+                  <span style="font-size:medium;" id="post-desc">{{post.description}}</span>
                 </li>  
                 
                 {% for zh_tw_post in site.posts %}
@@ -70,5 +73,46 @@ layout: default
         element.style.display = isChecked ? 'block' : 'none';
       });
     });
+
+    // Get all the copy buttons in the page
+    const copyButtons = document.querySelectorAll('#copy-button');
+
+    // Add a click event listener to each copy button
+    copyButtons.forEach((button) => {
+      button.addEventListener('click', function() {
+        // Find the parent <li> element of the clicked button
+        const listItem = button.closest('li');
+
+        // Get the post title text and href
+        const postTitle = listItem.querySelector('#post_title').innerText;
+        const postHref = listItem.querySelector('#wechat_link').getAttribute('href');
+        const postDesc = listItem.querySelector('#post-desc').innerText;
+
+        // Create a temporary textarea to hold the text to be copied
+        const tempTextarea = document.createElement('textarea');
+        tempTextarea.value = `【原创】${postTitle} \n\n ${postHref} \n\n ${postDesc}`;
+        
+        // Append the textarea to the document
+        document.body.appendChild(tempTextarea);
+        
+        // Select the text in the textarea
+        tempTextarea.select();
+
+        // Copy the selected text to the clipboard
+        document.execCommand('copy');
+
+        // Remove the temporary textarea from the document
+        document.body.removeChild(tempTextarea);
+
+        // Provide user feedback (e.g., change button text)
+        button.src = '/success.png';
+
+        // Reset the button after a brief delay (optional)
+        setTimeout(function() {
+          button.src = '/copy.png';
+        }, 1000);
+      });
+    });
+
   </script>
 
