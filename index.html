@@ -2,6 +2,7 @@
 layout: default
 ---
 
+<img src="/images/signature.png" >
 
 <div class="row">
   
@@ -21,8 +22,11 @@ layout: default
               
               <ul>
                 
-                <li><img src="/zh-simple.png" width="18px" /> <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">{{ post.title }}</a>
-                <a href="{{ post.wechat }}"><img src="/wechat.ico" width="16px" /></a></li>  
+                <li>
+                  <img src="/zh-simple.png" width="18px" /> <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">{{ post.title }}</a>
+                <a href="{{ post.wechat }}" target="_blank"><img src="/wechat.ico" width="16px" /></a><br>
+                <span style="font-size:medium;">{{post.description}}</span>
+                </li>  
                 
                 {% for zh_tw_post in site.posts %}
                   {% if zh_tw_post.url contains "zh-tw" %}
@@ -32,7 +36,8 @@ layout: default
                   
                     {% if zh_tw_post_name == post_name %}
                       
-                      <li><img src="/zh-trandition.png" width="18px" /> <a href="{{ site.baseurl }}{{ zh_tw_post.url}}" class="read-more">{{ zh_tw_post.title }}</a>
+                      <li><img src="/zh-trandition.png" width="18px" /> <a href="{{ site.baseurl }}{{ zh_tw_post.url}}" class="read-more">{{ zh_tw_post.title }}</a><br>
+                        <span style="font-size:medium;">{{zh_tw_post.description}}</span
                     {% endif %}
                   {% endif %}
                 {% endfor %}

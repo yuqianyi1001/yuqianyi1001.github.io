@@ -13,3 +13,4 @@ permalink: /about/
 
 Email： [xianyin.shi@gmail.com](mailto:xianyin.shi@gmail.com)
 
+<img src="/images/signature.png" >
