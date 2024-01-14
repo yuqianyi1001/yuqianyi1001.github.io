@@ -1,6 +1,10 @@
 ---
 layout: post
 title: 理解空、有是打开大乘佛学的金钥匙
+wechat: https://mp.weixin.qq.com/s/ssQNk0gTppehzDgpzaQb6g
+
+description: 佛性，自性，空性，这些到底是什么意思？本文提供了一种理解的思路，供仁者参考。
+
 ---
 
 **生活中的实有和假有**

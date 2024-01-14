@@ -1,6 +1,11 @@
 ---
 layout: post
 title: 什么是人间佛教 | 为什么推崇人间佛教
+
+wechat: https://mp.weixin.qq.com/s/2UdxLpMr2_t1Db6ZadvXVg
+
+description: 人间佛教是以人为本，以人间为道场，不脱离现实人生和实际生活，积极造福于全体人类的觉悟教育。以出生在人间，修行在人间，觉悟在人间，教化在人间的佛陀和他的教法作为该概念的理论依据。
+
 ---
 
 ![](../images/humanistic-buddhism-s.jpeg)

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 公理、常识、常理都是正确的吗？
+wechat: https://mp.weixin.qq.com/s/R0zEaey4JsCtsOzekB2MGA
 ---
 
 ![](../images/2022-10-15-10-43-36.png)

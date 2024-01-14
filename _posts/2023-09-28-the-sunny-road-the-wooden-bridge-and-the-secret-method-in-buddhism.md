@@ -1,6 +1,10 @@
 ---
 layout: post
 title: 佛学上的阳光大道和独木桥 | 顺便聊聊密法
+wechat: https://mp.weixin.qq.com/s/bwQUj-Oscmojml8iSD90pA
+
+description: 你是喜欢鼓励和教育为主的正面教育？还是喜欢那种威慑、恐吓和打击式的逆向教育？
+
 ---
 
 ## 恐吓从善

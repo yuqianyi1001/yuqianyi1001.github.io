@@ -11,6 +11,8 @@ layout: default
     <p>
       <div class="posts">
         <ol>
+        <!-- {% assign sorted = site.posts | sort %} -->
+
         {% for post in site.posts %}
           {% if post.url contains "zh-tw" %}
             <!-- do nothing -->
@@ -37,13 +39,13 @@ layout: default
                     {% if zh_tw_post_name == post_name %}
                       
                       <li><img src="/zh-trandition.png" width="18px" /> <a href="{{ site.baseurl }}{{ zh_tw_post.url}}" class="read-more">{{ zh_tw_post.title }}</a><br>
-                        <span style="font-size:medium;">{{zh_tw_post.description}}</span
+                        <span style="font-size:medium;">{{zh_tw_post.description}}</span></li>
                     {% endif %}
                   {% endif %}
                 {% endfor %}
                 
                 
-                </li>
+                
               </ul>
             </li>
 

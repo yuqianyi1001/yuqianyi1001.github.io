@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 美国佛教中的少数派 —— 中国汉传佛教
+wechat: https://mp.weixin.qq.com/s/_7IkDgBqMaTnOS3S1PeFAA
 ---
 
 **美国佛教简史**
