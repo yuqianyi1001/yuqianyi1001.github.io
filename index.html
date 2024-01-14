@@ -10,10 +10,6 @@ layout: default
     <input type="checkbox" id="toggle-switch" checked="checked">
     <label for="toggle-switch">显示繁体</label>
 
-
-    
-    
-    
     <p>
       <div class="posts">
         <ol>
@@ -24,12 +20,8 @@ layout: default
             <!-- do nothing -->
           {% else %}
             {% assign post_name = post.url | replace: '/','' %}
-          
-
             <li>
-              
               <ul>
-                
                 <li>
                   <img src="/zh-simple.png" width="18px" /> <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">{{ post.title }}</a>
                 <a href="{{ post.wechat }}" target="_blank"><img src="/wechat.ico" width="16px" /></a><br>
@@ -49,8 +41,6 @@ layout: default
                     {% endif %}
                   {% endif %}
                 {% endfor %}
-                
-                
                 
               </ul>
             </li>
