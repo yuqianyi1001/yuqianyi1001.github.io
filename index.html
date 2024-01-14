@@ -7,6 +7,12 @@ layout: default
 <div class="row">
   
     <h2>文章列表</h2>
+    <input type="checkbox" id="toggle-switch" checked="checked">
+    <label for="toggle-switch">显示繁体</label>
+
+
+    
+    
     
     <p>
       <div class="posts">
@@ -38,7 +44,7 @@ layout: default
                   
                     {% if zh_tw_post_name == post_name %}
                       
-                      <li><img src="/zh-trandition.png" width="18px" /> <a href="{{ site.baseurl }}{{ zh_tw_post.url}}" class="read-more">{{ zh_tw_post.title }}</a><br>
+                      <li class="zh-trandition"><img src="/zh-trandition.png" width="18px" /> <a href="{{ site.baseurl }}{{ zh_tw_post.url}}" class="read-more">{{ zh_tw_post.title }}</a><br>
                         <span style="font-size:medium;">{{zh_tw_post.description}}</span></li>
                     {% endif %}
                   {% endif %}
@@ -57,4 +63,26 @@ layout: default
 
   </div>
 
+
+  <script>
+    const contentElements = document.querySelectorAll('.zh-trandition');
+    const toggleCheckbox = document.getElementById('toggle-switch');
+  
+    // Initially, hide all content elements except the first one
+    contentElements.forEach((element, index) => {
+        element.style.display = 'block';
+    });
+  
+    // Add a change event listener to the toggle checkbox
+    toggleCheckbox.addEventListener('change', function() {
+      // Check the current state of the checkbox
+      const isChecked = toggleCheckbox.checked;
+      console.log('toggleCheckbox =',isChecked)
+  
+      // Toggle visibility of all content elements based on the checkbox state
+      contentElements.forEach((element) => {
+        element.style.display = isChecked ? 'block' : 'none';
+      });
+    });
+  </script>
 
