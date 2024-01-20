@@ -614,6 +614,28 @@ footer {
   }
 }
 
+.scrolling-banner {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  background-color: #f0f0f0; /* 您可以根据需要更改背景色 */
+  color: hwb(215 0% 11%); /* 文字颜色 */
+  padding: 0px;
+  height: 40px;
+}
+
+.buddha-name-scroll {
+  display: inline-block;
+  position: absolute;
+  animation: scrollBanner 10s linear infinite; 
+}
+
+/* 滚动动画 */
+@keyframes scrollBanner {
+  0% { left: 100%; }
+  100% { left: -100%; }
+}
+
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start

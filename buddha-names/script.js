@@ -5,6 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
     loadBuddhaNames();
     
     document.getElementById('search-box').addEventListener('input', searchNames);
+
+    const buddhaNameDiv = document.getElementById('buddha-name-scroll');
+
+    setInterval(() => {
+        showingBuddhaNames = document.getElementsByClassName('buddha-name');
+        const randomIndex = Math.floor(Math.random() * showingBuddhaNames.length);
+        buddhaNameDiv.textContent = showingBuddhaNames[randomIndex].textContent;
+    }, 10000); // 每10秒更新一次佛名，与CSS动画时间相匹配
 });
 
 function loadCategories() {
@@ -31,7 +39,8 @@ function displayCategories(categories) {
         
         const label = document.createElement('label');
         label.htmlFor = category.name;
-        label.textContent = `${category.name} (${category.count})`;
+        label.innerHTML = `${category.name} <span style="font-size:small;">(${category.count})</span>`;
+        //label.textContent = `${category.name} (${category.count})`;
 
         container.appendChild(checkbox);
         container.appendChild(label);
