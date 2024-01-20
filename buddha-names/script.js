@@ -25,6 +25,8 @@ function displayCategories(categories) {
         
         checkbox.addEventListener('change', function() {
             console.log(`Checkbox for ${category.name} changed to ${this.checked}`);
+
+            searchNames(null);
         })
         
         const label = document.createElement('label');
@@ -37,33 +39,51 @@ function displayCategories(categories) {
 }
 
 function searchNames(event) {
-    const searchTerm = event.target.value.toLowerCase();
+    const container = document.getElementById('names-container');
+    container.innerHTML = ''; // Clear existing content
+
+    const searchTerm = document.getElementById('search-box').value.toLowerCase();
     // Implement search functionality
 
-    
+    fetch('categories.json').then(response => response.json()).then(data => {
 
-    fetch('book-buddha-names.json')
-        .then(response => response.json())
-        .then(jj => filterAndDisplayNames(jj, searchTerm))
-        .catch(error => console.error("Error when searching:", error));
+        data.forEach(category => {
+            // get the checkbox named with category name and its checked status
+            const checkbox = document.getElementById(category.name);
+            const isChecked = checkbox.checked;
+
+            if (!isChecked) {
+                return;
+            }
+
+            fetch(category.file)
+                .then(response => response.json())
+                .then(jj => filterAndDisplayNames(jj, searchTerm))
+                .catch(error => console.error('Error loading Buddha names:', error));
+        });
+    });
+
+    // fetch('book-buddha-names.json')
+    //     .then(response => response.json())
+    //     .then(jj => filterAndDisplayNames(jj, searchTerm))
+    //     .catch(error => console.error("Error when searching:", error));
 }
 
 function filterAndDisplayNames(jj, searchTerm) {
     const container = document.getElementById('names-container');
-    container.innerHTML = ''; // Clear existing content
 
-    if (searchTerm === '') {
-        loadBuddhaNames();
-        return;
-    }
+    // if (searchTerm === '') {
+    //     loadBuddhaNames();
+    //     return;
+    // }
 
     console.log('searchTerm: ' + searchTerm);
 
     const filteredNames = jj.names.filter(name => name.includes(searchTerm));
 
     if (filteredNames.length === 0) {
-        container.textContent = 'No names found.';
-        console.log('No names found.');
+        // container.textContent = 'No names found.';
+        // console.log('No names found.');
         return;
     }
 
@@ -92,7 +112,7 @@ function loadBuddhaNames() {
 
 function displayBuddhaNames(jj) {
     const container = document.getElementById('names-container');
-    container.innerHTML = ''; // Clear existing content
+    //container.innerHTML = ''; // Clear existing content
 
     jj.names.forEach(name => {
         const div = document.createElement('div');
