@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 佛经中阿弥陀佛
+title: 佛经中阿弥陀佛本生故事
 wechat: 
 description: 
 ---
