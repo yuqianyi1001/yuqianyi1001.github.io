@@ -39,7 +39,8 @@ layout: default
                   
                     {% if zh_tw_post_name == post_name %}
                       
-                      <li class="zh-trandition"><img src="/zh-trandition.png" width="18px" /> <a href="{{ site.baseurl }}{{ zh_tw_post.url}}" class="read-more">{{ zh_tw_post.title }}</a><br>
+                      <li class="zh-trandition"><img src="/zh-trandition.png" width="18px" /> 
+                        <a id="link-tradition" href="{{ site.baseurl }}{{ zh_tw_post.url}}" class="read-more">{{ zh_tw_post.title }}</a><br>
                         <span style="font-size:medium;">{{zh_tw_post.description}}</span></li>
                     {% endif %}
                   {% endif %}
@@ -81,16 +82,19 @@ layout: default
     copyButtons.forEach((button) => {
       button.addEventListener('click', function() {
         // Find the parent <li> element of the clicked button
-        const listItem = button.closest('li');
+        const listItem = button.closest('ul');
 
         // Get the post title text and href
         const postTitle = listItem.querySelector('#post_title').innerText;
         const postHref = listItem.querySelector('#wechat_link').getAttribute('href');
         const postDesc = listItem.querySelector('#post-desc').innerText;
+        const postTrHref = listItem.querySelector('#link-tradition').getAttribute('href');
+        const postTrTitle = listItem.querySelector('#link-tradition').innerText;
+
 
         // Create a temporary textarea to hold the text to be copied
         const tempTextarea = document.createElement('textarea');
-        tempTextarea.value = `【原创】${postTitle} \n\n ${postHref} \n\n ${postDesc}`;
+        tempTextarea.value = `【原创】${postTitle}\n\n${postHref}\n\n ${postDesc}\n\n【繁體】${postTrTitle}\n\nhttps://yuqianyi1001.github.io${postTrHref}`;
         
         // Append the textarea to the document
         document.body.appendChild(tempTextarea);
