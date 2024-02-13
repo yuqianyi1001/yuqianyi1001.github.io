@@ -1,3 +1,7 @@
+---
+layout: post
+title: 佛陀在菩提树下觉悟了什么？
+---
 
 ## 中部｜MN 36｜大薩遮經 Mahāsaccaka Sutta - 靜慮林
 
