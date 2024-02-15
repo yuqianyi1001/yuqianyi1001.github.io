@@ -3,6 +3,12 @@ layout: post
 title: 查经：菩提树下的修行和觉悟
 ---
 
+## 大乘入楞伽经卷，实叉难陀译
+
+世尊，如世尊說：‘我於某夜成最正覺，乃至某夜當入涅槃，於其中間不說一字，亦不已說， 亦不當說。不說是佛說。
+
+（2024/2/14 补充）
+
 ## 中部｜MN 36｜大萨遮经 Mahāsaccaka Sutta - 静虑林
 
 [中部｜MN 36｜大萨遮经 Mahāsaccaka Sutta - 静虑林 (shineling.org)](https://www.shineling.org/mn36/)
