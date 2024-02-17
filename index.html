@@ -88,13 +88,31 @@ layout: default
         const postTitle = listItem.querySelector('#post_title').innerText;
         const postHref = listItem.querySelector('#wechat_link').getAttribute('href');
         const postDesc = listItem.querySelector('#post-desc').innerText;
-        const postTrHref = listItem.querySelector('#link-tradition').getAttribute('href');
-        const postTrTitle = listItem.querySelector('#link-tradition').innerText;
+        // const postTrHref = listItem.querySelector('#link-tradition').getAttribute('href');
+        // const postTrTitle = listItem.querySelector('#link-tradition').innerText;
 
+        // Attempt to find the element first
+        const postTrElement = listItem.querySelector('#link-tradition');
+
+        // Initialize variables to hold your values
+        let postTrHref = '';
+        let postTrTitle = '';
+
+        // Check if the element exists
+        if (postTrElement !== null) {
+            // If the element exists, get the attributes
+            postTrHref = postTrElement.getAttribute('href');
+            postTrTitle = postTrElement.innerText;
+        }
 
         // Create a temporary textarea to hold the text to be copied
         const tempTextarea = document.createElement('textarea');
-        tempTextarea.value = `【原创】${postTitle}\n\n${postHref}\n\n ${postDesc}\n\n【繁體】${postTrTitle}\n\nhttps://yuqianyi1001.github.io${postTrHref}`;
+
+        if (postTrHref) {
+          tempTextarea.value = `【原创】${postTitle}\n\n${postHref}\n\n ${postDesc}\n\n【繁體】${postTrTitle}\n\nhttps://yuqianyi1001.github.io${postTrHref}`;
+        } else {
+          tempTextarea.value = `【原创】${postTitle}\n\n${postHref}\n\n ${postDesc}\n\n`;
+        }
         
         // Append the textarea to the document
         document.body.appendChild(tempTextarea);
