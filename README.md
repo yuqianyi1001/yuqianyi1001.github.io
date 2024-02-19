@@ -10,9 +10,13 @@ https://yuqianyi1001.github.io
 
 简体和繁体翻译：opencc vscode 插件
 
-
-
 **Prompts**
 
 请把以下文字翻译成英文，并把他们全部用小写输出，用-代替空格。
+
+**TODOs**
+
+添加Google Search
+
+提供英文翻译，然后挂在Raddit
 
