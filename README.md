@@ -6,9 +6,9 @@ https://yuqianyi1001.github.io
 
 
 **Tools**
-封面制作：https://www.canva.cn/
-
-简体和繁体翻译：opencc vscode 插件
+* 公众号文章封面制作：https://www.canva.cn/
+* 简体和繁体翻译：opencc （vscode 插件）
+* https://www.image-map.net/ 生成image map坐标
 
 **Prompts**
 
