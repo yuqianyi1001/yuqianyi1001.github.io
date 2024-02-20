@@ -25,21 +25,50 @@
             font-size: 120%;
         }
 
+        .image-container {
+            position: relative; /* This makes it the reference for its absolutely positioned children */
+            width: 1893px; /* Set the width to match your image's width */
+            height: 1251px; /* Set the height to match your image's height */
+        }
+        
+        .image-container img,
+        .image-container canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%; /* This will make them stretch to the container size */
+            height: 100%; /* This will make them stretch to the container size */
+        }
+
+        canvas {
+            z-index: 10; /* This ensures the canvas is above the image */
+            pointer-events: none; /* This allows click events to pass through the canvas */
+        }
+
+
     </style>
 </head>
 <body>
 
-    
-<img src="5-categories-100-items.jpeg" usemap="#image-map" alt="五位白法">
+<div class="image-container">    
+    <img src="5-categories-100-items.jpeg" usemap="#image-map" alt="五位白法">
 
-<map name="image-map" id="map1">
-    <!-- image size 1893 × 1251 (100%) -->
-    <area title="重置，清空注释和连接等。" href="#" coords="0,0,100,200" shape="rect" id="box_reset">
-    
-</map>
+    <map name="image-map" id="map1">
+        <!-- image size 1893 × 1251 (100%) -->
+        <area title="重置，清空注释和连接等。" href="#" coords="0,0,100,200" shape="rect" id="box_reset">
+        
+    </map>
 
-<div id="info"></div>
-<div id="gatha"></div>
+    <canvas id="myCanvas" width="1893" height="1251"></canvas>
+    <!-- this is for debug use. -->
+    <!-- <canvas id="myCanvas" width="1893" height="1251" style="border:1px solid #000000;"></canvas> -->
+
+    <div id="info"></div>
+    <div id="gatha"></div>
+
+</div>
+
+
 
 
 <div>
@@ -197,9 +226,9 @@
         /*  3  */ "何等鼻識？謂依鼻、緣香、了別為性。",
         /*  4  */ "何等舌識？謂依舌，緣味，了別為性。",
         /*  5  */ "何等身識？謂依身，緣觸，了別為性。",
-        /*  6  */ "[了别名识。]何等意識？謂依意、緣法、了別為性。",
-        /*  7  */ "[思量名意。]末那識譯為意。意有思量之義，此識常緣第八識之見分思量，我為法，故名末那。我法二執之根本也。",
-        /*  8  */ "[集起名心。]初能变识，大小乘教名阿赖耶，此识具有能藏、所藏、执藏义故。谓与杂染互为缘故，有情执为自内我故。此即显示初能变识所有自相，摄持因果为自相故。此识自相，分位虽多，藏初过重，是故偏说。",
+        /*  6  */ "了别名识。何等意識？謂依意、緣法、了別為性。",
+        /*  7  */ "思量名意。末那識譯為意。意有思量之義，此識常緣第八識之見分思量，我為法，故名末那。我法二執之根本也。",
+        /*  8  */ "集起名心。初能变识，大小乘教名阿赖耶，此识具有能藏、所藏、执藏义故。谓与杂染互为缘故，有情执为自内我故。此即显示初能变识所有自相，摄持因果为自相故。此识自相，分位虽多，藏初过重，是故偏说。",
         /*  9  */ "作意谓能警心为性，于所缘境引心为业。谓此警觉 应起心种，引令趣境，故名作意。",
         /*  10  */ "触谓三和，分别变异，令心、心所触境为性，受、想、思等所依为业。谓根、境、识更相随顺，故名三和；触依彼生，令彼和合，故说为彼。",
         /*  11  */ "受谓领纳顺违俱非境相为性；起爱为业，能起合离非二欲故。",
@@ -251,16 +280,16 @@
         /*  57  */ "悔谓恶作，恶所作业，追悔为性；障止为业。",
         /*  58  */ "寻谓寻求，令心匆遽，于意言境粗转为性。",
         /*  59  */ "伺谓伺察，令心匆遽，于意言境，细转为性。",
-        /*  60  */ "眼根，〔即视觉机制。〕",
-        /*  61  */ "耳根，〔即听觉机制。〕",
-        /*  62  */ "鼻根，〔即嗅觉机制。〕",
-        /*  63  */ "舌根，〔即味觉机制。〕",
-        /*  64  */ "身根，〔即触觉机制。〕",
-        /*  65  */ "色境，〔即颜色等一切视觉对象。〕",
-        /*  66  */ "声境，〔即声音等一切听觉对象。〕",
-        /*  67  */ "香境，〔即气味等一切嗅觉对象。〕",
-        /*  68  */ "味境，〔即味道等一切味觉对象。〕",
-        /*  69  */ "触境，〔即身体直接接触到的一切触觉对象。〕",
+        /*  60  */ "眼根，〔即视觉机制〕",
+        /*  61  */ "耳根，〔即听觉机制〕",
+        /*  62  */ "鼻根，〔即嗅觉机制〕",
+        /*  63  */ "舌根，〔即味觉机制〕",
+        /*  64  */ "身根，〔即触觉机制〕",
+        /*  65  */ "色境，〔即颜色等一切视觉对象〕",
+        /*  66  */ "声境，〔即声音等一切听觉对象〕",
+        /*  67  */ "香境，〔即气味等一切嗅觉对象〕",
+        /*  68  */ "味境，〔即味道等一切味觉对象〕",
+        /*  69  */ "触境，〔即身体直接接触到的一切触觉对象〕",
         /*  70  */ "包括极略色、极迥色、受所引色、遍计所起色、自在所生色五种。",
         /*  71  */ "一是得，就是获得，或是形成、成就。",
         /*  72  */ "二是命根，就是众生的寿命。",
@@ -312,23 +341,23 @@
 
     let gatha = [
         "前五识颂：<br/>"+
-        "性境现量通三性，眼耳身三二地居，遍行别境善十一，中二大八贪嗔痴。<br/>"+
-        "五识同依净色根，九缘七八好相邻，合三离二观尘世，愚者难分识与根。<br/>"+
+        "性境现量通三性，眼耳身三二地居，遍行别境善十一，中二大八贪嗔痴。"+
+        "五识同依净色根，九缘七八好相邻，合三离二观尘世，愚者难分识与根。"+
         "变相观空唯后得，果中犹自不诠真，圆明初发成无漏，三类分身息苦轮。",
 
         "第六识颂：<br/>"+
-        "三性三量通三境，三界轮时易可知，相应心所五十一，善恶临时分配之。<br/>"+
-        "性界受三恒转易，根随信等总相连，动身发语独为最，引满能招业力牵。<br/>"+
+        "三性三量通三境，三界轮时易可知，相应心所五十一，善恶临时分配之。"+
+        "性界受三恒转易，根随信等总相连，动身发语独为最，引满能招业力牵。"+
         "发起初心欢喜地，俱生犹自现缠眠，远行地后纯无漏，观察圆明照大千。",
 
         "第七识颂：<br/>"+
-        "带质有覆通情本，随缘执我量为非，八大遍行别境慧，贪痴我见慢相随。<br/>"+
-        "恒审思量我相随，有情日夜镇昏迷，四惑八大相应起，六转呼为染净依。<br/>"+
+        "带质有覆通情本，随缘执我量为非，八大遍行别境慧，贪痴我见慢相随。"+
+        "恒审思量我相随，有情日夜镇昏迷，四惑八大相应起，六转呼为染净依。"+
         "极喜初心平等性，无功用行我恒摧，如来现起他受用，十地菩萨所被机。",
 
         "第八识颂：<br/>"+
-        "性唯无覆五遍行，界地随他业力生，二乘不了因迷执，由此能兴论主诤。<br/>"+
-        "浩浩三藏不可穷，渊深七浪境为风，受薰持种根身器，去后来先作主公。<br/>"+
+        "性唯无覆五遍行，界地随他业力生，二乘不了因迷执，由此能兴论主诤。"+
+        "浩浩三藏不可穷，渊深七浪境为风，受薰持种根身器，去后来先作主公。"+
         "不动地前才舍藏，金刚道后异熟空，大圆无垢同时发，普照十方尘刹中。",
     ]
 
@@ -351,7 +380,7 @@
           var y2 = Number(this.coords.split(",")[3])
           
           // 显示百法注解。
-          infoDiv.textContent = one_hundred[index];
+          infoDiv.innerHTML = one_hundred[index].replace(/。/g, "。<br/>");
 
           // Note: index = box number - 1
           if ([94,95,96,97,98,99].includes(index)) {
@@ -371,17 +400,17 @@
           gathaDiv.style.display = 'none';
           if (index <=7 ){
             if (index == 7) {
-                gathaDiv.innerHTML = gatha[3];
+                gathaDiv.innerHTML = gatha[3].replace(/。/g, "。<br/>");
             } else if (index == 6) {
-                gathaDiv.innerHTML = gatha[2];
+                gathaDiv.innerHTML = gatha[2].replace(/。/g, "。<br/>");;
             } else if (index == 5) {
-                gathaDiv.innerHTML = gatha[1];
+                gathaDiv.innerHTML = gatha[1].replace(/。/g, "。<br/>");;
             } else {
-                gathaDiv.innerHTML = gatha[0];
+                gathaDiv.innerHTML = gatha[0].replace(/。/g, "。<br/>");;
             }
 
             gathaDiv.style.left = (x1 + 7) + 'px'; //event.pageX + 'px';
-            gathaDiv.style.top = (y1 - 150) + 'px' //event.pageY + 'px';
+            gathaDiv.style.top = (y1 - 200) + 'px' //event.pageY + 'px';
             gathaDiv.style.display = 'block';
 
          }
