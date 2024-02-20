@@ -332,11 +332,11 @@
     ]
 
     let five_rupa = [
-        /* 701 */    "极略色。分析五根、五境等有质的实色至极微(最小单位)，就是极略色。",
-        /* 702 */    "极迥色。分析虚空的明暗等无质的色至极微，称为极迥色。",
-        /* 703 */    "受所引色，就是无表色，有三种。(a)律仪无表。由受戒后善的愿力 熏成思心所的种子，这善的思种子就称为律仪无表。(b)不律仪无表，指由不善的愿力熏成的思种 子。(c)非律仪非不律仪无表，如行为属非善非恶的，就称为非律 仪非不律仪业。但就思种子而言，总是或善或恶。",
-        /* 704 */    "自在所生色，又称定果色，即由定力所产生的色、声、香、味、融等境色。",
-        /* 705 */    "遍计所起色，指由遍计所执而形成的影像，如由幻觉等",
+        /* 701 */    "遍计所起色：指由遍计所执而形成的影像，如由幻觉等",
+        /* 702 */    "定果色（又称自在所生色）：即由定力所产生的色、声、香、味、融等境色。",
+        /* 703 */    "受所引色：就是无表色，有三种。(a)律仪无表。由受戒后善的愿力 熏成思心所的种子，这善的思种子就称为律仪无表。(b)不律仪无表，指由不善的愿力熏成的思种 子。(c)非律仪非不律仪无表，如行为属非善非恶的，就称为非律 仪非不律仪业。但就思种子而言，总是或善或恶。",
+        /* 704 */    "极迥色：分析虚空的明暗等无质的色至极微，称为极迥色。",
+        /* 705 */    "极略色：分析五根、五境等有质的实色至极微(最小单位)，就是极略色。",
     ]
 
     let gatha = [
@@ -363,6 +363,34 @@
 
     let infoDiv = document.getElementById('info');
     let gathaDiv = document.getElementById('gatha');
+
+    function createAreaForOthers(coords, index, comments) {
+       var area = document.createElement('area');
+       area.alt = "Box " + (index + 1);
+       area.title = "Box " + (index + 1);
+       area.href = "#"; // or "javascript:void(0);" if you don't want it to link anywhere
+       area.coords = coords.join(",");
+       area.shape = 'rect';
+       area.addEventListener('click', function(event) {
+          event.preventDefault(); // 阻止链接跳转
+          
+          var x1 = Number(this.coords.split(",")[0])
+          var y1 = Number(this.coords.split(",")[1])
+          var x2 = Number(this.coords.split(",")[2])
+          var y2 = Number(this.coords.split(",")[3])
+          
+          // 显示百法注解 - 5个不正见。
+          infoDiv.innerHTML = comments[index].replace(/。/g, "。<br/>");
+
+          // Note: index = box number - 1
+          infoDiv.style.left = (x1 + 80) + 'px'; //event.pageX + 'px';
+          infoDiv.style.top = y1 + 'px' //event.pageY + 'px';
+          infoDiv.style.display = 'block';
+
+          gathaDiv.style.display = 'none';
+       });
+       return area;        
+    }
 
     function createArea(coords, index) {
        var area = document.createElement('area');
@@ -414,8 +442,6 @@
             gathaDiv.style.display = 'block';
 
          }
-          
-
        });
        return area;
     }
@@ -425,6 +451,14 @@
 
         box_coords.forEach(function(coords, index) {
             map.appendChild(createArea(coords, index));
+        });
+
+        five_wrong_views_coords.forEach(function(coords, index) {
+            map.appendChild(createAreaForOthers(coords, index, five_wrong_views));
+        });
+
+        five_rupa_coords.forEach(function(coords, index) {
+            map.appendChild(createAreaForOthers(coords, index, five_rupa));
         });
 
         document.getElementById('box_reset').addEventListener('click', function(event) {
