@@ -8,7 +8,7 @@
         #info {
             display: none;
             position: absolute;
-            background-color: #e29c56;
+            background-color: #56e2d2;
             border: 1px solid #000;
             padding: 10px;
             z-index: 1000;
@@ -18,7 +18,7 @@
         #gatha {
             display: none;
             position: absolute;
-            background-color: #67e3d7;
+            background-color: #a9e0da;
             border: 1px solid #000;
             padding: 10px;
             z-index: 1000;
@@ -363,6 +363,8 @@
 
     let infoDiv = document.getElementById('info');
     let gathaDiv = document.getElementById('gatha');
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext("2d");
 
     function createAreaForOthers(coords, index, comments) {
        var area = document.createElement('area');
@@ -426,9 +428,28 @@
 
           // 显示《八十规矩颂》。
           gathaDiv.style.display = 'none';
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
           if (index <=7 ){
             if (index == 7) {
+                // 第八识
                 gathaDiv.innerHTML = gatha[3].replace(/。/g, "。<br/>");
+
+                // Define a new Path:
+                ctx.beginPath();
+                ctx.moveTo(370, 460);
+
+                // Define an end Point
+                ctx.lineTo(536, 408);
+                ctx.lineTo(780, 408);
+                ctx.lineTo(780, 495);
+                ctx.lineTo(536, 495);
+                ctx.lineTo(370, 460);
+
+                ctx.strokeStyle = "red";
+                ctx.lineWidth = 3;
+                // Stroke it (Do the Drawing)
+                ctx.stroke();
+
             } else if (index == 6) {
                 gathaDiv.innerHTML = gatha[2].replace(/。/g, "。<br/>");;
             } else if (index == 5) {
