@@ -219,7 +219,6 @@
         [944,1078,1015,1119]
     ]
 
-
     let one_hundred = [
         "1. 何等眼識？謂依眼，緣色，了別為性。",
         "2. 何等耳識？謂依耳，緣聲，了別為性。",
@@ -394,30 +393,101 @@
        return area;        
     }
 
+    function drawLine(x1,y1,x2,y2) {
+        ctx.beginPath();
+
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+
+        ctx.strokeStyle = "red";
+        ctx.lineWidth = 3;
+        ctx.stroke();
+    }
+
+    function range(start, end) {
+        let result = [];
+        for (let i = start; i <= end; i++) {
+            result.push(i);
+        }
+        return result;
+    }
+
     function createRelations(indexVijnana) {
         // indexVijnana start 0
+        //ctx.beginPath();
 
-        if (indexVijnana == 7){
-            ctx.beginPath();
-            ctx.moveTo(370, 460);
+        if (indexVijnana == 7){ 
+            // 第八识
+            let x1 = box_coords[indexVijnana][2];
+            let y1 = box_coords[indexVijnana][1] + 10;
 
-            ctx.lineTo(536, 408);
-            ctx.lineTo(780, 408);
-            ctx.lineTo(780, 495);
-            ctx.lineTo(536, 495);
-            ctx.lineTo(370, 460);
+            // 遍行
+            for (let i = 8; i <= 12; i++) {
+                let x2 = (box_coords[i][0] + box_coords[i][2])/2;
+                let y2 = box_coords[i][1] + 10;
 
-            ctx.strokeStyle = "red";
-            ctx.lineWidth = 3;
-            // Stroke it (Do the Drawing)
-            ctx.stroke();
+                drawLine(x1, y1, x2, y2);
+            }
+
+            // ctx.moveTo(370, 460);
+            // ctx.lineTo(536, 408);
+            // ctx.lineTo(780, 408);
+            // ctx.lineTo(780, 495);
+            // ctx.lineTo(536, 495);
+            // ctx.lineTo(536, 408);
+            // ctx.lineTo(370, 460);
+
         } else if (indexVijnana == 6) {
+            // 第七识
+            let x1 = box_coords[indexVijnana][2];
+            let y1 = box_coords[indexVijnana][1] + 10;
 
+            let cittas = range(8, 12)   // 遍行
+                .concat(range(18, 28))  // 善十一
+                .concat(range(47, 54))  // 八大
+                .concat([17, 29, 31, 32, 34]) // 别境慧, 4个根本
+                ; 
+            // cittas.push(range(18, 28));  
+            // cittas.push(range(47, 54));  // 八大
+            // cittas.push([17, 29, 31, 32, 34]); // 别境慧, 4个根本
+            
+            console.log(cittas);
+
+            cittas.forEach(function(i, iii){
+                
+                let x2 = (box_coords[i][0] + box_coords[i][2])/2;
+                let y2 = box_coords[i][1] + 10;
+
+                drawLine(x1, y1, x2, y2);
+            });
+
+            // ctx.moveTo(323, 460);
+            // ctx.lineTo(536, 408);
+            // ctx.lineTo(780, 408);
+            // ctx.lineTo(780, 495);
+            // ctx.lineTo(536, 495);
+            // ctx.lineTo(536, 408);
+
+            // ctx.lineTo(323, 460);
+
+            // ctx.lineTo(759, 543);
+            // ctx.lineTo(803, 543);
+            // ctx.lineTo(803, 606);
+            // ctx.lineTo(759, 606);
+            // ctx.lineTo(759, 543);
+
+            // ctx.lineTo(323, 460);
+            
         } else if (indexVijnana == 5) {
             
         } else {
 
         }
+
+        // ctx.strokeStyle = "red";
+        // ctx.lineWidth = 3;
+        // ctx.stroke();
+
     }
 
     function createArea(coords, index) {
