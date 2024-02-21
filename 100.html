@@ -97,11 +97,11 @@
         /* 7   */ [288, 450, 324, 552 ],
         /* 8   */ [335, 450, 372, 578 ],
 
-        /* 9   */ [540, 414, 575, 491 ],
-        /* 10  */ [588, 414, 626, 468 ],
-        /* 11  */ [636, 414, 675, 468 ],
-        /* 12  */ [686, 414, 726, 468 ],
-        /* 13  */ [737, 414, 776, 468 ],
+        /* 9   */ [540, 411, 575, 491 ],
+        /* 10  */ [588, 411, 626, 468 ],
+        /* 11  */ [636, 411, 675, 468 ],
+        /* 12  */ [686, 411, 726, 468 ],
+        /* 13  */ [737, 411, 776, 468 ],
 
         /* 14  */ [561, 545, 600, 602 ],
         /* 15  */ [611, 545, 651, 629 ],
@@ -393,7 +393,7 @@
        return area;        
     }
 
-    function drawLine(x1,y1,x2,y2) {
+    function drawLine(x1,y1,x2,y2) { // not in use yet.
         ctx.beginPath();
 
         ctx.moveTo(x1, y1);
@@ -401,6 +401,20 @@
 
         ctx.strokeStyle = "red";
         ctx.lineWidth = 3;
+        ctx.stroke();
+    }
+
+    function drawRect(coordinate) {
+        ctx.beginPath();
+
+        let x1 = coordinate[0]; 
+        let y1 = coordinate[1];
+        let w = coordinate[2] -  coordinate[0];
+        let h = coordinate[3] -  coordinate[1];
+        ctx.rect(x1,y1,w,h);
+
+        ctx.strokeStyle = "orange";
+        ctx.lineWidth = 4;
         ctx.stroke();
     }
 
@@ -413,80 +427,43 @@
     }
 
     function createRelations(indexVijnana) {
-        // indexVijnana start 0
-        //ctx.beginPath();
+        // see the map: https://github.com/yuqianyi1001/citta2/blob/main/citta2/ViewController.swift
 
         if (indexVijnana == 7){ 
             // 第八识
-            let x1 = box_coords[indexVijnana][2];
-            let y1 = box_coords[indexVijnana][1] + 10;
-
-            // 遍行
-            for (let i = 8; i <= 12; i++) {
-                let x2 = (box_coords[i][0] + box_coords[i][2])/2;
-                let y2 = box_coords[i][1] + 10;
-
-                drawLine(x1, y1, x2, y2);
+            for (let i = 8; i <= 12; i++) { // 遍行
+                drawRect(box_coords[i]);
             }
-
-            // ctx.moveTo(370, 460);
-            // ctx.lineTo(536, 408);
-            // ctx.lineTo(780, 408);
-            // ctx.lineTo(780, 495);
-            // ctx.lineTo(536, 495);
-            // ctx.lineTo(536, 408);
-            // ctx.lineTo(370, 460);
-
         } else if (indexVijnana == 6) {
             // 第七识
-            let x1 = box_coords[indexVijnana][2];
-            let y1 = box_coords[indexVijnana][1] + 10;
 
             let cittas = range(8, 12)   // 遍行
                 .concat(range(18, 28))  // 善十一
                 .concat(range(47, 54))  // 八大
                 .concat([17, 29, 31, 32, 34]) // 别境慧, 4个根本
                 ; 
-            // cittas.push(range(18, 28));  
-            // cittas.push(range(47, 54));  // 八大
-            // cittas.push([17, 29, 31, 32, 34]); // 别境慧, 4个根本
-            
-            console.log(cittas);
 
             cittas.forEach(function(i, iii){
-                
-                let x2 = (box_coords[i][0] + box_coords[i][2])/2;
-                let y2 = box_coords[i][1] + 10;
-
-                drawLine(x1, y1, x2, y2);
+                drawRect(box_coords[i]);
             });
-
-            // ctx.moveTo(323, 460);
-            // ctx.lineTo(536, 408);
-            // ctx.lineTo(780, 408);
-            // ctx.lineTo(780, 495);
-            // ctx.lineTo(536, 495);
-            // ctx.lineTo(536, 408);
-
-            // ctx.lineTo(323, 460);
-
-            // ctx.lineTo(759, 543);
-            // ctx.lineTo(803, 543);
-            // ctx.lineTo(803, 606);
-            // ctx.lineTo(759, 606);
-            // ctx.lineTo(759, 543);
-
-            // ctx.lineTo(323, 460);
             
         } else if (indexVijnana == 5) {
-            
+            // 第六识
+
+            let cittas = range(8, 58); 
+
+            cittas.forEach(function(i, iii){
+                drawRect(box_coords[i]);
+            });
         } else {
-
+            // 前五识
+            let cittas = range(8, 31)
+                .concat(range(45, 54))
+                ; 
+            cittas.forEach(function(i, iii){
+                drawRect(box_coords[i]);
+            });
         }
-
-        // ctx.strokeStyle = "red";
-        // ctx.lineWidth = 3;
-        // ctx.stroke();
 
     }
 
@@ -571,11 +548,13 @@
         document.getElementById('box_reset').addEventListener('click', function(event) {
             infoDiv.style.display = 'none';
             gathaDiv.style.display = 'none';
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
         });
 
         document.getElementById('btn_reset').addEventListener('click', function(event) {
             infoDiv.style.display = 'none';
             gathaDiv.style.display = 'none';
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
         });
     });
 
@@ -588,7 +567,7 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('event', 'page_view', {
-        page_title: '{{ page.title | replace: "'", "\\'" }}',
+        page_title: '{{ page.title }}',
         page_location: '{{ site.baseurl }}{{ page.url }}',
         send_to: '{{ site.google_analytics }}'
     });
