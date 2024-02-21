@@ -394,6 +394,26 @@
        return area;        
     }
 
+    function createRelations(indexVijnana) {
+        // indexVijnana start 0
+
+        if (indexVijnana == 7){
+            ctx.beginPath();
+            ctx.moveTo(370, 460);
+
+            ctx.lineTo(536, 408);
+            ctx.lineTo(780, 408);
+            ctx.lineTo(780, 495);
+            ctx.lineTo(536, 495);
+            ctx.lineTo(370, 460);
+
+            ctx.strokeStyle = "red";
+            ctx.lineWidth = 3;
+            // Stroke it (Do the Drawing)
+            ctx.stroke();
+        }
+    }
+
     function createArea(coords, index) {
        var area = document.createElement('area');
        area.alt = "Box " + (index + 1);
@@ -415,13 +435,13 @@
           // Note: index = box number - 1
           if ([94,95,96,97,98,99].includes(index)) {
             infoDiv.style.left = (x1 - 300) + 'px'; //event.pageX + 'px';
-            infoDiv.style.top = (y2 + 10) + 'px' //event.pageY + 'px';
+            infoDiv.style.top = (y2 + 4) + 'px' //event.pageY + 'px';
           } else if ([92,93].includes(index)) {
-            infoDiv.style.left = (x1 + 7) + 'px'; //event.pageX + 'px';
+            infoDiv.style.left = (x1 + 3) + 'px'; //event.pageX + 'px';
             infoDiv.style.top = (y1 - 100) + 'px' //event.pageY + 'px';
           } else {
-            infoDiv.style.left = (x1 + 7) + 'px'; //event.pageX + 'px';
-            infoDiv.style.top = (y2 + 10) + 'px' //event.pageY + 'px';
+            infoDiv.style.left = (x1 + 3) + 'px'; //event.pageX + 'px';
+            infoDiv.style.top = (y2 + 4) + 'px' //event.pageY + 'px';
           }
 
           infoDiv.style.display = 'block';
@@ -433,22 +453,7 @@
             if (index == 7) {
                 // 第八识
                 gathaDiv.innerHTML = gatha[3].replace(/。/g, "。<br/>");
-
-                // Define a new Path:
-                ctx.beginPath();
-                ctx.moveTo(370, 460);
-
-                // Define an end Point
-                ctx.lineTo(536, 408);
-                ctx.lineTo(780, 408);
-                ctx.lineTo(780, 495);
-                ctx.lineTo(536, 495);
-                ctx.lineTo(370, 460);
-
-                ctx.strokeStyle = "red";
-                ctx.lineWidth = 3;
-                // Stroke it (Do the Drawing)
-                ctx.stroke();
+                
 
             } else if (index == 6) {
                 gathaDiv.innerHTML = gatha[2].replace(/。/g, "。<br/>");;
@@ -458,11 +463,18 @@
                 gathaDiv.innerHTML = gatha[0].replace(/。/g, "。<br/>");;
             }
 
-            gathaDiv.style.left = (x1 + 7) + 'px'; //event.pageX + 'px';
-            gathaDiv.style.top = (y1 - 200) + 'px' //event.pageY + 'px';
-            gathaDiv.style.display = 'block';
+            createRelations(index);
 
+            // override the infoDiv.
+            infoDiv.style.left = "3px";
+            infoDiv.style.width = "300px";
+
+            gathaDiv.style.left = "3px"; //(x1 + 7) + 'px'; //event.pageX + 'px';
+            gathaDiv.style.top = "200px"; //(y1 - 200) + 'px' //event.pageY + 'px';
+            gathaDiv.style.display = 'block';
          }
+
+
        });
        return area;
     }
