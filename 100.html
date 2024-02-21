@@ -365,6 +365,12 @@
     let canvas = document.getElementById("myCanvas");
     let ctx = canvas.getContext("2d");
 
+    function reset(){
+        infoDiv.style.display = 'none';
+        gathaDiv.style.display = 'none';
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
     function createAreaForOthers(coords, index, comments) {
        var area = document.createElement('area');
        area.alt = "Box " + (index + 1);
@@ -374,6 +380,7 @@
        area.shape = 'rect';
        area.addEventListener('click', function(event) {
           event.preventDefault(); // 阻止链接跳转
+          reset();
           
           var x1 = Number(this.coords.split(",")[0])
           var y1 = Number(this.coords.split(",")[1])
@@ -388,7 +395,6 @@
           infoDiv.style.top = y1 + 'px' //event.pageY + 'px';
           infoDiv.style.display = 'block';
 
-          gathaDiv.style.display = 'none';
        });
        return area;        
     }
@@ -476,6 +482,7 @@
        area.shape = 'rect';
        area.addEventListener('click', function(event) {
           event.preventDefault(); // 阻止链接跳转
+          reset();
           
           var x1 = Number(this.coords.split(",")[0])
           var y1 = Number(this.coords.split(",")[1])
@@ -500,8 +507,6 @@
           infoDiv.style.display = 'block';
 
           // 显示《八十规矩颂》。
-          gathaDiv.style.display = 'none';
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
           if (index <=7 ){
             if (index == 7) {
                 // 第八识
@@ -545,17 +550,8 @@
             map.appendChild(createAreaForOthers(coords, index, five_rupa));
         });
 
-        document.getElementById('box_reset').addEventListener('click', function(event) {
-            infoDiv.style.display = 'none';
-            gathaDiv.style.display = 'none';
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-        });
-
-        document.getElementById('btn_reset').addEventListener('click', function(event) {
-            infoDiv.style.display = 'none';
-            gathaDiv.style.display = 'none';
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-        });
+        document.getElementById('box_reset').addEventListener('click', reset);
+        document.getElementById('btn_reset').addEventListener('click', reset);
     });
 
 </script>
