@@ -2,6 +2,8 @@
 layout: post
 title: 转凡成圣 - 行者路上最重要的指南针和里程碑
 wechat: https://mp.weixin.qq.com/s/4oX20Tah53mvkuBxvolsWQ
+tags:
+  - 佛教重点解读
 ---
 
 **上接前文**

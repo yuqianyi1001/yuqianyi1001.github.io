@@ -2,7 +2,9 @@
 layout: post
 title: 【视频笔记】莲花生大师确有其人吗？
 wechat: 
-description:
+description: 
+tags:
+  - 笔记
 ---
 
 备注：
