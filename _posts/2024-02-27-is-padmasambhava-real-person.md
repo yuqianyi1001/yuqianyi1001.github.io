@@ -4,7 +4,7 @@ title: 【视频笔记】莲花生大师确有其人吗？
 wechat: 
 description: 
 tags:
-  - 笔记
+  - 笔记和读后感
 ---
 
 备注：

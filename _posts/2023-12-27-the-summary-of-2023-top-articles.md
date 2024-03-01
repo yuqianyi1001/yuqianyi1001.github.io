@@ -2,6 +2,8 @@
 layout: post
 title: 问题、话题收集（长期有效）| 写作小结之2023年
 wechat: https://mp.weixin.qq.com/s/cwXH3Zy14lq2kU3cku-M3w
+tags:
+  - 未分类
 ---
 
 请问大家对什么问题或话题感兴趣？不妨给我留言吧，只要在我的能力范围之内，兴趣范围之内，我都会尽量分享一些自己的思考。
