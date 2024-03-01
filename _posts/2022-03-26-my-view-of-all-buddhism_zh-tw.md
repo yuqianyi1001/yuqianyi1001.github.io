@@ -43,7 +43,7 @@ http://www.masterhsingyun.org/article/article.jsp?index=64&item=257&bookid=2c907
 
 圖片來源：
 https://medium.com/@lambhotpot/%E5%8D%97%E4%BC%A0%E7%9B%B8%E5%BA%94%E9%83%A8-%E8%AF%B8%E5%A4%A9%E7%9B%B8%E5%BA%94-%E6%9A%B4%E6%B5%81%E4%B9%8B%E6%B8%A1%E9%81%8E%E7%B6%93-c32f69fda60d
-南傳相應部 諸天相應 暴流之渡過經. #寫在前面的話：| by Lambhotpot | Medium
+南傳相應部 諸天相應 暴流之渡過經. | by Lambhotpot | Medium
 
 
 最後是藏傳佛教，佛經傳入藏地時，已經非常晚了，是八世紀的事情了。但趨勢和漢傳佛教類似：
