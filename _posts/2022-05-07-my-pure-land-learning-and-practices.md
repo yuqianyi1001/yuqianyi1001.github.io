@@ -5,7 +5,6 @@ wechat: https://mp.weixin.qq.com/s/8BpLyRFxAcTLYx_3V39W4Q
 description: 十年学习净土的坎坷经历和心得，与圣严法师归纳的四种净土。
 tags:
   - 我和我的学佛经历
-  - 净土和临终关怀
 ---
 
 ![a curve road](../images/2022-05-07-16-34-29.png)
