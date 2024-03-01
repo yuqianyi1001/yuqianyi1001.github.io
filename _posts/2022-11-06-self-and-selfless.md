@@ -5,6 +5,7 @@ wechat: https://mp.weixin.qq.com/s/YrW-mo1gcQi_PRCEu3kb6g
 description: 什么是我？什么是我执？又怎样达成无我？—— 本文提供了一个思路，供仁者参考。
 tags:
   - 佛法解读
+  - 佛教核心理论
 ---
 
 ![](../images/2022-11-06-19-14-22.png)
