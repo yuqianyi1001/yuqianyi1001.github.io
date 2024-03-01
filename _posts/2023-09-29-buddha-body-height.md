@@ -4,7 +4,6 @@ title: 你相信佛经里的人比山还高吗？｜一种可能的科学解释
 wechat: https://mp.weixin.qq.com/s/kY3ky45_brj63NXQjBjMLw
 description: 本文尝试根据太空的时空扭曲现象来解释，为何一些佛经里面描述的“外星人”会非常高大，甚至比山还要高许多倍。这些巨型的“外星人”会是真的吗？
 tags:
-  - 净土和临终关怀
   - 趣味佛法
 ---
 
