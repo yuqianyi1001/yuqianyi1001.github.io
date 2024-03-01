@@ -2,8 +2,9 @@
 layout: post
 title: 学习如来藏要当心印度教的梵我一如，因为它们太相似了！
 wechat: https://mp.weixin.qq.com/s/WsVGvegGMHH8OwmQaH8Bbg
-
 description: 很多学佛的朋友都特别喜欢如来藏思想，而不知有关如来藏的很多说法和印度教的神我一如，或梵我一如的思想非常相似，稍不留意，就可能变成了印度教的信徒了。这是值得警惕的。
+tags:
+  - 佛法解读
 ---
 
 ![](../images/2023-10-01-10-14-42.png)

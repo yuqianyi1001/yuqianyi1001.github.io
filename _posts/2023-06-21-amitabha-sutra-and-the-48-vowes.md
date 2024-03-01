@@ -2,8 +2,9 @@
 layout: post
 title: 《佛说阿弥陀经》和四十八大愿
 wechat: https://mp.weixin.qq.com/s/dfVGRsREkSj9AmqlszroSg
-
 description: 《阿弥陀经》中所描绘的西方极乐世界是如此地美好庄严，令人向往。可是，你知道它的成因是什么吗？为什么会有这么美好的世界呢？答案就是《无量寿经》中的四十八大愿。
+tags:
+  - 净土和临终关怀
 ---
 
 ## 缘起

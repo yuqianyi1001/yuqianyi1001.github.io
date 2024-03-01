@@ -1,11 +1,11 @@
 ---
 layout: post
 title: 你是上士、中士还是下士？欢迎自评《瑜伽师地论》中的三士标准
-
 wechat: https://mp.weixin.qq.com/s/qch3K9BFmXZLU1YhK_yfIQ
-
 description: “上士闻道，勤而行之；中士闻道，若存若亡；下士闻道，大笑之。不笑不足以为道” —— 这可能是大家最熟悉的三士分类了，不过该分类虽然精练却不够完备。佛学上也有很多关于三士的说法，但可能都不如《瑜伽师地论》卷61全面了。
-
+tags:
+  - 笔记和读后感
+  - 唯识
 ---
 
 ![](../images/stairs-g40fc5000a_1920.jpg)

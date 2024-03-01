@@ -2,6 +2,9 @@
 layout: post
 title: 佛教时间的相对性 | 你知道弥勒菩萨于5.7亿年下生人间是怎么算出来的吗？ | 《华严经》之“寿量品”读书笔记
 wechat: https://mp.weixin.qq.com/s/PeryHGNeoVzajbRpt-TKig
+tags:
+  - 趣味佛法
+  - 笔记和读后感
 ---
 
 ![](../images/2023-10-20-22-55-13.png)
