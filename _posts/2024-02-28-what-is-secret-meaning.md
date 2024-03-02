@@ -2,7 +2,7 @@
 layout: post
 title: 什么是密意？ ｜ 密意虽有，但不用滥用哦
 wechat: https://mp.weixin.qq.com/s/rWCLcgdkOQb2HA3XiiadPQ
-description: 佛经中的密意是什么意思呢？后来有时如何被滥用的呢？请阅读这篇文章，略作了解。
+description: 佛经中的密意是什么意思呢？后来又是如何被滥用的呢？请阅读这篇文章，略作了解。
 tags:
   - 佛法解读
 ---
