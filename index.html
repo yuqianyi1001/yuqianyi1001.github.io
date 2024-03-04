@@ -21,7 +21,7 @@ layout: default
   
     {% for tag in unique_tags %}
       {% assign tag_posts = site.posts | where: "tags", tag %}
-      <input type="button" value="{{ tag }} ({{ tag_posts.size }})" style="margin-right: 5px;"></button>
+      <input type="checkbox" value="{{ tag }} ({{ tag_posts.size }})" style="margin-right: 5px;"></button>
     {% endfor %}
 </div>
 
@@ -165,7 +165,7 @@ layout: default
     var container = document.querySelector('#d_tags');
 
     // Get all button elements inside the container
-    var buttons = Array.from(container.querySelectorAll('input[type="button"]'));
+    var buttons = Array.from(container.querySelectorAll('input[type="checkbox"]'));
 
     // Parse the count from the button's value and sort the buttons based on count
     buttons.sort(function(a, b) {
