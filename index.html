@@ -42,7 +42,7 @@ layout: default
             <!-- do nothing -->
           {% else %}
             {% assign post_name = post.url | replace: '/','' %}
-            <li>
+            <li class="post">
               <ul>
                 <li>
                   <img src="/zh-simple.png" width="18px" /> <a href="{{ site.baseurl }}{{ post.url }}" class="read-more" 
@@ -181,6 +181,36 @@ layout: default
         // Move label
         container.appendChild(label);
       });
+
+    // Get all checkboxes
+    const checkboxes = document.querySelectorAll('div#d_tags input[type="checkbox"]');
+
+checkboxes.forEach(checkbox => {
+  checkbox.addEventListener('change', function() {
+    const tag = this.value; // The tag is the value of the checkbox
+    const posts = document.querySelectorAll('li ul li'); // Assuming posts are these list items
+
+    posts.forEach(post => {
+      const postTag = post.querySelector('code') ? post.querySelector('code').textContent : '';
+      if (this.checked) {
+        // Show only posts with matching tag
+        if (postTag === tag) {
+          post.style.display = '';
+        } else {
+          post.style.display = 'none';
+        }
+      } else {
+        // If no checkbox is checked, show all posts
+        const anyChecked = Array.from(checkboxes).some(cb => cb.checked);
+        if (!anyChecked) {
+          post.style.display = '';
+        }
+      }
+    });
+  });
+});
+
+
     });
 
 
