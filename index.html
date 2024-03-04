@@ -188,10 +188,13 @@ layout: default
 checkboxes.forEach(checkbox => {
   checkbox.addEventListener('change', function() {
     const tag = this.value; // The tag is the value of the checkbox
-    const posts = document.querySelectorAll('li ul li'); // Assuming posts are these list items
+    const posts = document.querySelectorAll('li.post ul li'); // Assuming posts are these list items
 
     posts.forEach(post => {
       const postTag = post.querySelector('code') ? post.querySelector('code').textContent : '';
+      
+      console.log(post);
+
       if (this.checked) {
         // Show only posts with matching tag
         if (postTag === tag) {
