@@ -196,17 +196,33 @@ layout: default
             }
           });
 
+          // if(isTagFound) {
+          //   post.style.display = 'block'; // Show post with matching tag
+          // } else {
+          //   post.style.display = 'none'; // Hide other posts
+          // }
           if(isTagFound) {
-            post.style.display = 'block'; // Show post with matching tag
+            post.classList.add('shown');
+            post.classList.remove('hidden');
           } else {
-            post.style.display = 'none'; // Hide other posts
+            post.classList.add('hidden');
+            post.classList.remove('shown');
           }
+
         });
       } else {
         // If you want to show all posts when no checkbox is checked, uncomment below lines
+        // posts.forEach(function(post) {
+        //   post.style.display = 'block';
+        // });
+
         posts.forEach(function(post) {
-          post.style.display = 'block';
+          post.classList.remove('hidden');
+          // Only add 'shown' if the default display is not 'block'
+          post.classList.add('shown'); 
         });
+
+        
       }
     });
   });
