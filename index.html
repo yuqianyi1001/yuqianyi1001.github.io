@@ -6,24 +6,19 @@ layout: default
 <img src="/images/signature.png" width="60%" >
 
 <div id="d_tags">
-  {% comment %}Create an empty array to collect all tags{% endcomment %}
   {% assign all_tags = "" | split: "|" %}
   
-  {% comment %}Collect all tags from posts{% endcomment %}
-  {% for post in site.posts %}
+  {%- for post in site.posts -%}
     {%- assign all_tags = all_tags | concat: post.tags -%}
-  {% endfor %}
+  {%- endfor -%}
   
-  {% comment %}Remove duplicate tags and sort them{% endcomment %}
-  {% assign unique_tags = all_tags | uniq | sort %}
-  
-  {% comment %}Display tags and their counts{% endcomment %}
-  
-    {% for tag in unique_tags %}
-      {% assign tag_posts = site.posts | where: "tags", tag %}
+  {%- assign unique_tags = all_tags | uniq | sort -%}
+    
+    {%- for tag in unique_tags -%}
+      {%- assign tag_posts = site.posts | where: "tags", tag -%}
       <input type="checkbox" style="margin-right: 5px;" id="{{ tag }}" name="{{ tag }}" value="{{ tag }}" />
       <label for="{{ tag }}" style="font-size: smaller;">{{ tag }} ({{ tag_posts.size }})</label>
-    {% endfor %}
+    {%- endfor -%}
 </div>
 
 <div class="row">
