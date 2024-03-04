@@ -21,7 +21,7 @@ layout: default
   
     {% for tag in unique_tags %}
       {% assign tag_posts = site.posts | where: "tags", tag %}
-      <input type="button" value="{{ tag }} ({{ tag_posts.size }})"></button>
+      <input type="button" value="{{ tag }} ({{ tag_posts.size }})" style="margin-right: 5px;"></button>
     {% endfor %}
 </div>
 
@@ -156,6 +156,29 @@ layout: default
           button.src = '/copy.png';
         }, 1000);
       });
+    });
+
+    //////////////////////////////////////////////////////////////////
+    // handle tags..... 
+    // Select the container that holds the tags
+    var container = document.querySelector('#d_tags');
+
+    // Get all button elements inside the container
+    var buttons = Array.from(container.querySelectorAll('input[type="button"]'));
+
+    // Parse the count from the button's value and sort the buttons based on count
+    buttons.sort(function(a, b) {
+      var aCount = parseInt(a.value.match(/\((\d+)\)$/)[1], 10);
+      var bCount = parseInt(b.value.match(/\((\d+)\)$/)[1], 10);
+      return bCount - aCount; // Sort by count, descending
+    });
+
+    // Clear the container
+    container.innerHTML = '';
+
+    // Re-append the sorted buttons to the container
+    buttons.forEach(function(button) {
+      container.appendChild(button);
     });
 
   </script>
