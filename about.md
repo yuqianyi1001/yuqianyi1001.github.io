@@ -9,6 +9,8 @@ permalink: /about/
 
 欢迎关注我的微信公众号，名字【愚千一】ID： Yuqianyi1001
 
+<img src="/images/signature.png" width="60%">
+
 ## 联系我
 
 Email： [xianyin.shi@gmail.com](mailto:xianyin.shi@gmail.com)
@@ -157,5 +159,5 @@ Email： [xianyin.shi@gmail.com](mailto:xianyin.shi@gmail.com)
 https://book.douban.com/people/tata20011125/
 
 
-<img src="/images/signature.png" >
+
 
