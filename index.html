@@ -21,8 +21,8 @@ layout: default
   
     {% for tag in unique_tags %}
       {% assign tag_posts = site.posts | where: "tags", tag %}
-      <input type="checkbox" style="margin-right: 5px;" value="{{ tag }}" />
-      
+      <input type="checkbox" style="margin-right: 5px;" id="{{ tag }}" name="{{ tag }}" value="{{ tag }}" />
+      <label for="{{ tag }}">{{ tag }} ({{ tag_posts.size }})</label>
     {% endfor %}
 </div>
 
@@ -163,29 +163,23 @@ layout: default
     //////////////////////////////////////////////////////////////////
     // handle tags..... 
     document.addEventListener("DOMContentLoaded", function() {
-  // Select the container that holds the checkboxes
-  var container = document.getElementById('d_tags');
+  const container = document.getElementById('d_tags');
 
-  // Get all checkbox elements as an array
-  var checkboxes = Array.from(container.childNodes).filter(function(node) {
-    return node.nodeType === 1; // ELEMENT_NODE, to ignore text nodes and others
+  // Create an array of objects, each containing a label and its associated count
+  const items = Array.from(container.querySelectorAll('label')).map(label => {
+    const count = parseInt(label.textContent.match(/\((\d+)\)/)[1], 10);
+    return { label, count };
   });
 
-  // Sort the checkboxes based on the number in their labels
-  checkboxes.sort(function(a, b) {
-    // Extract numbers from the checkbox labels
-    var aNum = parseInt(a.textContent.match(/\((\d+)\)/)[1], 10);
-    var bNum = parseInt(b.textContent.match(/\((\d+)\)/)[1], 10);
+  // Sort the array by count, descending
+  items.sort((a, b) => b.count - a.count);
 
-    return aNum - bNum; // Sort by number, ascending
-  });
-
-  // Clear the container
-  container.innerHTML = '';
-
-  // Re-append the sorted checkboxes to the container
-  checkboxes.forEach(function(checkbox) {
-    container.appendChild(checkbox);
+  // Re-append labels and their corresponding checkboxes in sorted order
+  items.forEach(({ label }) => {
+    // Move checkbox related to label
+    container.appendChild(label.previousElementSibling);
+    // Move label
+    container.appendChild(label);
   });
 });
 
