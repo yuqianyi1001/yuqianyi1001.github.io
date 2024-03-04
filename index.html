@@ -5,7 +5,7 @@ layout: default
 <p style="font-size: smaller;">如果您有微信，欢迎在微信上关注，订阅和转发。谢谢。</p>
 <img src="/images/signature.png" width="60%" >
 
-<div>
+<div id="d_tags">
   {% comment %}Create an empty array to collect all tags{% endcomment %}
   {% assign all_tags = "" | split: "|" %}
   
@@ -21,10 +21,8 @@ layout: default
   
     {% for tag in unique_tags %}
       {% assign tag_posts = site.posts | where: "tags", tag %}
-      <input type="button">{{ tag }} ({{ tag_posts.size }})</button>
+      <input type="button" value="{{ tag }} ({{ tag_posts.size }})"></button>
     {% endfor %}
-  
-  
 </div>
 
 <div class="row">
