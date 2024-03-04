@@ -21,7 +21,7 @@ layout: default
   
     {% for tag in unique_tags %}
       {% assign tag_posts = site.posts | where: "tags", tag %}
-      <input type="checkbox" value="{{ tag }} ({{ tag_posts.size }})" style="margin-right: 5px;"></button>
+      <input type="checkbox" style="margin-right: 5px;">{{ tag }} ({{ tag_posts.size }})</input>
     {% endfor %}
 </div>
 
@@ -161,26 +161,36 @@ layout: default
 
     //////////////////////////////////////////////////////////////////
     // handle tags..... 
-    // Select the container that holds the tags
-    var container = document.querySelector('#d_tags');
+    document.addEventListener("DOMContentLoaded", function() {
+  // Select the container that holds the tags
+  var container = document.querySelector('#d_tags');
 
-    // Get all button elements inside the container
-    var buttons = Array.from(container.querySelectorAll('input[type="checkbox"]'));
+  // Get all checkbox elements inside the container
+  var checkboxes = Array.from(container.querySelectorAll('input[type="checkbox"]'));
 
-    // Parse the count from the button's value and sort the buttons based on count
-    buttons.sort(function(a, b) {
-      var aCount = parseInt(a.value.match(/\((\d+)\)$/)[1], 10);
-      var bCount = parseInt(b.value.match(/\((\d+)\)$/)[1], 10);
-      return bCount - aCount; // Sort by count, descending
-    });
+  // We need to sort the parent elements of checkboxes (e.g., labels or divs) if they exist
+  var elementsToSort = checkboxes.map(function(checkbox) {
+    // Assuming the text with count is directly in the value or associated label
+    // Adjust this if your structure is different
+    return checkbox.parentNode; 
+  });
 
-    // Clear the container
-    container.innerHTML = '';
+  // Parse the count from the checkbox's label/value and sort based on count
+  elementsToSort.sort(function(a, b) {
+    var aCount = parseInt(a.textContent || a.innerText.match(/\((\d+)\)$/)[1], 10);
+    var bCount = parseInt(b.textContent || b.innerText.match(/\((\d+)\)$/)[1], 10);
+    return bCount - aCount; // Sort by count, descending
+  });
 
-    // Re-append the sorted buttons to the container
-    buttons.forEach(function(button) {
-      container.appendChild(button);
-    });
+  // Clear the container
+  container.innerHTML = '';
+
+  // Re-append the sorted elements to the container
+  elementsToSort.forEach(function(element) {
+    container.appendChild(element);
+  });
+});
+
 
   </script>
 
