@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 电影《周处除三害》，英文名：The Pig, The Snake and The Pigeon
+title: 电影《周处除三害》和它的英文名：The Pig, The Snake and The Pigeon
 wechat: 
 description: 
 tags:
