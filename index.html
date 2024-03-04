@@ -161,35 +161,6 @@ layout: default
 
     //////////////////////////////////////////////////////////////////
     // handle tags..... 
-    document.addEventListener("DOMContentLoaded", function() {
-  // Select the container that holds the tags
-  var container = document.querySelector('#d_tags');
-
-  // Get all checkbox elements inside the container
-  var checkboxes = Array.from(container.querySelectorAll('input[type="checkbox"]'));
-
-  // We need to sort the parent elements of checkboxes (e.g., labels or divs) if they exist
-  var elementsToSort = checkboxes.map(function(checkbox) {
-    // Assuming the text with count is directly in the value or associated label
-    // Adjust this if your structure is different
-    return checkbox.parentNode; 
-  });
-
-  // Parse the count from the checkbox's label/value and sort based on count
-  elementsToSort.sort(function(a, b) {
-    var aCount = parseInt(a.textContent || a.innerText.match(/\((\d+)\)$/)[1], 10);
-    var bCount = parseInt(b.textContent || b.innerText.match(/\((\d+)\)$/)[1], 10);
-    return bCount - aCount; // Sort by count, descending
-  });
-
-  // Clear the container
-  container.innerHTML = '';
-
-  // Re-append the sorted elements to the container
-  elementsToSort.forEach(function(element) {
-    container.appendChild(element);
-  });
-});
 
 
   </script>
