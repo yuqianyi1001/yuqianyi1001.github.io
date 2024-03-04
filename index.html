@@ -49,16 +49,13 @@ layout: default
                   <a href="{{ post.wechat }}" target="_blank" id="wechat_link"><img src="/wechat.ico" width="16px" /></a>
                   <img src="/copy.png" width="16px" id="copy-button" />
                   <br>
-                  <span style="font-size:medium;" id="post-desc">{{post.description}}</span>
-                  <code>{{post.tags}}</code>
+                  <span style="font-size:medium;" id="post-desc">{{post.description}}</span>                  
                 </li>  
                 
                 {% for zh_tw_post in site.posts %}
                   {% if zh_tw_post.url contains "zh-tw" %}
                     
                     {% assign zh_tw_post_name = zh_tw_post.url | replace: '/','' | replace: '_zh-tw','' %}
-                  
-                  
                     {% if zh_tw_post_name == post_name %}
                       
                       <li class="zh-trandition"><img src="/zh-trandition.png" width="18px" /> 
@@ -68,6 +65,10 @@ layout: default
                   {% endif %}
                 {% endfor %}
                 
+                {% for tag in post.tags %} 
+                    <code style="font-size: smaller;">{{tag}}</code>
+                {% endfor %}
+
               </ul>
             </li>
 
