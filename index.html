@@ -18,12 +18,12 @@ layout: default
   {% assign unique_tags = all_tags | uniq | sort %}
   
   {% comment %}Display tags and their counts{% endcomment %}
-  <ul>
+  
     {% for tag in unique_tags %}
       {% assign tag_posts = site.posts | where: "tags", tag %}
-      <li>{{ tag }} ({{ tag_posts.size }})</li>
+      <input type="button">{{ tag }} ({{ tag_posts.size }})</button>
     {% endfor %}
-  </ul>
+  
   
 </div>
 
