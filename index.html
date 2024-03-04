@@ -178,6 +178,41 @@ layout: default
       });
 
 
+      const checkboxes = document.querySelectorAll('#d_tags input[type="checkbox"]');
+
+  checkboxes.forEach(function(checkbox) {
+    checkbox.addEventListener('change', function() {
+      const tag = this.value;
+      const posts = document.querySelectorAll('.post');
+
+      if(this.checked) {
+        posts.forEach(function(post) {
+          const postTags = post.querySelectorAll('code');
+          let isTagFound = false;
+
+          postTags.forEach(function(postTag) {
+            if(postTag.textContent === tag) {
+              isTagFound = true;
+            }
+          });
+
+          if(isTagFound) {
+            post.style.display = 'block'; // Show post with matching tag
+          } else {
+            post.style.display = 'none'; // Hide other posts
+          }
+        });
+      } else {
+        // If you want to show all posts when no checkbox is checked, uncomment below lines
+        posts.forEach(function(post) {
+          post.style.display = 'block';
+        });
+      }
+    });
+  });
+
+
+
 
     });
 
