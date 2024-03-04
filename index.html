@@ -21,7 +21,8 @@ layout: default
   
     {% for tag in unique_tags %}
       {% assign tag_posts = site.posts | where: "tags", tag %}
-      <input type="checkbox" style="margin-right: 5px;">{{ tag }} ({{ tag_posts.size }})</input>
+      <input type="checkbox" style="margin-right: 5px;" value="{{ tag }}" />
+      
     {% endfor %}
 </div>
 
@@ -161,6 +162,32 @@ layout: default
 
     //////////////////////////////////////////////////////////////////
     // handle tags..... 
+    document.addEventListener("DOMContentLoaded", function() {
+  // Select the container that holds the checkboxes
+  var container = document.getElementById('d_tags');
+
+  // Get all checkbox elements as an array
+  var checkboxes = Array.from(container.childNodes).filter(function(node) {
+    return node.nodeType === 1; // ELEMENT_NODE, to ignore text nodes and others
+  });
+
+  // Sort the checkboxes based on the number in their labels
+  checkboxes.sort(function(a, b) {
+    // Extract numbers from the checkbox labels
+    var aNum = parseInt(a.textContent.match(/\((\d+)\)/)[1], 10);
+    var bNum = parseInt(b.textContent.match(/\((\d+)\)/)[1], 10);
+
+    return aNum - bNum; // Sort by number, ascending
+  });
+
+  // Clear the container
+  container.innerHTML = '';
+
+  // Re-append the sorted checkboxes to the container
+  checkboxes.forEach(function(checkbox) {
+    container.appendChild(checkbox);
+  });
+});
 
 
   </script>
