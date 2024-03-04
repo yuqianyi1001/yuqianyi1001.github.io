@@ -5,6 +5,42 @@ layout: default
 <p style="font-size: smaller;">如果您有微信，欢迎在微信上关注，订阅和转发。谢谢。</p>
 <img src="/images/signature.png" width="60%" >
 
+<div>
+  {% comment %}
+  Create a dictionary-like structure for tag counts
+  {% endcomment %}
+  {% assign tag_counts = '' | split: '' %}
+  
+  {% comment %}
+  Iterate over all posts to populate the tag_counts map
+  {% endcomment %}
+  {% for post in site.posts %}
+    {% for tag in post.tags %}
+      {% if tag_counts[tag] %}
+        {% assign tag_counts[tag] = tag_counts[tag] | plus: 1 %}
+      {% else %}
+        {% assign tag_counts = tag_counts | merge: tag => 1 %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+  
+  {% comment %}
+  Sort tags alphabetically
+  {% endcomment %}
+  {% assign sorted_tags = tag_counts | sort %}
+  
+  {% comment %}
+  Display each tag with its post count
+  {% endcomment %}
+  <ul>
+    {% for tag in sorted_tags %}
+      <li>{{ tag[0] }} ({{ tag[1] }})</li>
+    {% endfor %}
+  </ul>
+  
+
+</div>
+
 <div class="row">
   
     <h2>文章列表</h2>
