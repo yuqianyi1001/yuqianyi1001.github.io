@@ -55,7 +55,7 @@ layout: default
                   <code style="font-size: smaller;">{{tag}}</code>
                   {% endfor %}                  
                 </li>  
-                
+                {% comment %} TODO these code caused a lots of empty lines... {% endcomment %}
                 {% for zh_tw_post in site.posts %}
                   {% if zh_tw_post.url contains "zh-tw" %}
                     {% assign zh_tw_post_name = zh_tw_post.url | replace: '/','' | replace: '_zh-tw','' %}
