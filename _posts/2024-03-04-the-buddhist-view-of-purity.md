@@ -54,6 +54,11 @@ tags:
 
 ## 总结下被滥用的“套路”
 
+正如上面提及的示现，密意等。我也有写过文章，专门澄清和说明。
+
+[不该把“示现”当做丑闻的借口](https://mp.weixin.qq.com/s/1Ulcm4HXzGQYodrvTQwzkA)
+
+
 
 
 
