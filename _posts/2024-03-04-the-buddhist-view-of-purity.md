@@ -56,9 +56,15 @@ tags:
 
 正如上面提及的示现，密意等。我也有写过文章，专门澄清和说明。
 
-[不该把“示现”当做丑闻的借口](https://mp.weixin.qq.com/s/1Ulcm4HXzGQYodrvTQwzkA)
+[《不该把“示现”当做丑闻的借口》](https://mp.weixin.qq.com/s/1Ulcm4HXzGQYodrvTQwzkA) ，这篇文章是说，原来示现用在佛菩萨身上，后来用在“大师”身上，再后来被他人用来掩盖丑闻，认为“大师”们只是在示现而已。
+
+[《什么是密意？ ｜ 密意虽有，但不用滥用哦》](https://mp.weixin.qq.com/s/rWCLcgdkOQb2HA3XiiadPQ)，这篇文章是说，
+
+以及当前这篇文章《什么是清净观？｜如何被滥用？｜总结下被滥用的“套路”》
 
 
+
+密意
 
 
 
