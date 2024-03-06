@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 什么是清净？什么是清净观？又是如何被滥用的？
+title: 什么是清净和清净观？又是为何被滥用的？
 wechat: 
 description: 
 tags:
