@@ -366,10 +366,13 @@
     function showOrHide(){
 
         if (document.getElementById('cb_show1').checked) {
-            $('.hidable').toggleClass();
+            $('.hidable').removeClass();
         } else {
             $('.hidable').toggleClass('hidden-cell');
 
+            $('.hidable').array.forEach(element => {
+                element.value = "";
+            });
         }
     }
 
