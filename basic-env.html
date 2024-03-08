@@ -355,9 +355,15 @@
     
     function showOrHide(){
 
-        if (document.getElementById('cb_show1').is)
-        $('td:nth-child(5)').hide();
-        $('td:nth-child(6)').hide();
+        if (document.getElementById('cb_show1').checked) {
+            $('td:nth-child(7)').show();
+            $('td:nth-child(6)').show();
+
+        } else {
+            $('td:nth-child(7)').hide();
+            $('td:nth-child(6)').hide();
+
+        }
     }
 
     document.addEventListener('DOMContentLoaded', function () {
