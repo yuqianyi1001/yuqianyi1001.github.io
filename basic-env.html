@@ -349,16 +349,16 @@
     </table>
 </body>
 
-<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <script>
     
     function showOrHide(){
 
         if (document.getElementById('cb_show1').checked) {
-            $('.hidable').show();
+            $('.hidable').css('width') = '100px';
         } else {
-            $('.hidable').hide();
+            $('.hidable').css('width') = '0px';
 
         }
     }
