@@ -29,6 +29,16 @@
             border: 1px solid #a2a9b1;
             padding: 0.2em 0.4em;
         }
+
+        .hidden-cell {
+            visibility: hidden;
+            padding: 0;
+            border: 0;
+            height: 0;
+            width: 0;
+            overflow: hidden;
+        }
+
     </style>
 </head>
 
@@ -356,9 +366,9 @@
     function showOrHide(){
 
         if (document.getElementById('cb_show1').checked) {
-            $('.hidable').css('width') = '100px';
+            $('.hidable').toggleClass();
         } else {
-            $('.hidable').css('width') = '0px';
+            $('.hidable').toggleClass('hidden-cell');
 
         }
     }
