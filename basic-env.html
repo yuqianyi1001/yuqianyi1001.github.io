@@ -35,7 +35,7 @@
 <body>
 
     <form>
-        <input type="checkbox" name="col1" checked="checked" /> 隐藏/显示（三十三天、四天王天的详细列表） <br />
+        <input type="checkbox" id="cb_show1" name="col1" checked="checked" /> 隐藏/显示（三十三天、四天王天的详细列表） <br />
     </form>
 
 
@@ -353,7 +353,17 @@
 
 <script>
     
-    
+    function showOrHide(){
+
+        if (document.getElementById('cb_show1').is)
+        $('td:nth-child(5)').hide();
+        $('td:nth-child(6)').hide();
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('cb_show1').addEventListener('change', showOrHide);
+    });
+
 
 </script>
 
