@@ -39,10 +39,60 @@
             overflow: hidden;
         }
 
+
+        .floating-menu {
+            font-family: sans-serif;
+            background: yellowgreen;
+            padding: 5px;
+            width: 10px; /* Reduced width */
+            z-index: 100;
+            position: fixed;
+            transition: width 0.5s; /* Smooth transition for expanding and collapsing */
+        }
+
+        .floating-menu:hover {
+            width: 130px; /* Expanded width on hover */
+        }
+
+        .floating-menu a,
+        .floating-menu h3 {
+            font-size: 0.9em;
+            display: none; /* Initially hide text */
+            margin: 0 0.5em;
+            color: white;
+        }
+
+        .floating-menu:hover a,
+        .floating-menu:hover h3 {
+            display: block; /* Show text on hover */
+        }
+
+        .menu-icon {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+        }
+
+        /* Ensure the icon is always visible */
+        .floating-menu:hover .menu-icon,
+        .floating-menu .menu-icon {
+            display: block;
+        }
+
     </style>
 </head>
 
 <body>
+
+    <nav class="floating-menu">
+        <span class="menu-icon">☰</span> <!-- Menu icon -->
+        <h3>Floating Menu</h3>
+        <a href="/css/">CSS</a>
+        <a href="/html/">HTML</a>
+        <a href="/coldfusion/">ColdFusion</a>
+        <a href="/database/">Database</a>
+    </nav>
 
     <form>
         <input type="checkbox" id="cb_show1" name="col1" checked="checked" /> 隐藏/显示（三十三天、四天王天的详细列表） <br />
