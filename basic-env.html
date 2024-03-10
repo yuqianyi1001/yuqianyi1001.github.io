@@ -378,6 +378,11 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('cb_show1').addEventListener('change', showOrHide);
+
+        $('.hidable td').each(function(index, elem){
+            $(elem).data('hidden_text', $(elem).text());
+        });
+        $('td.hidable').text("");
     });
 
 
