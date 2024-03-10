@@ -367,11 +367,22 @@
 
         if (document.getElementById('cb_show1').checked) {
             //$('.hidable').removeClass();
+
+            $('.hidable td').each(function(index, elem){
+                $(elem).html($(elem).data('hidden_text'));
+            });
+
+
+            $('td.hidable').each(function(index, elem){
+                $(elem).html($(elem).data('hidden_text'));
+            });
+
+
         } else {
             //$('.hidable').toggleClass('hidden-cell');
 
-            $('.hidable td').text("");
-            $('td.hidable').text("");
+            $('.hidable td').html("");
+            $('td.hidable').html("");
 
         }
     }
@@ -380,9 +391,12 @@
         document.getElementById('cb_show1').addEventListener('change', showOrHide);
 
         $('.hidable td').each(function(index, elem){
-            $(elem).data('hidden_text', $(elem).text());
+            $(elem).data('hidden_text', $(elem).html());
         });
-        $('td.hidable').text("");
+
+        $('td.hidable').each(function(index, elem){
+            $(elem).data('hidden_text', $(elem).html());
+        });
     });
 
 
