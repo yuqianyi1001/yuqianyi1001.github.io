@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="zh">
+---
+layout: individual
+---
 
-<head>
-    <meta charset="UTF-8">
-    <title>五位百法，可交互 - 愚千一</title>
     <style>
         .wikitable {
             background-color: #f8f9fa;
@@ -39,62 +37,8 @@
             overflow: hidden;
         }
 
-        .floating-menu {
-            font-family: sans-serif;
-            
-            padding: 5px;
-            width: 20px; /* Initial reduced width */
-            height: 20px; /* Make it square or adjust as per the icon size */
-            z-index: 100;
-            position: fixed;
-            top: 0; /* Dock to top */
-            left: 50%; /* Center horizontally */
-            transform: translateX(-50%); /* Adjust horizontal position to truly center */
-            transition: width 0.1s, height 0.1s; 
-        }
-
-        .floating-menu:hover {
-            width: 130px; /* Expanded width on hover */
-            height: 130px;
-            background: yellow;
-        }
-
-        .floating-menu a,
-        .floating-menu h3 {
-            font-size: 0.9em;
-            display: none; /* Initially hide text */
-            margin: 0 0.5em;
-        }
-
-        .floating-menu:hover a,
-        .floating-menu:hover h3 {
-            display: block; /* Show text on hover */
-        }
-
-        .menu-icon {
-            display: block;
-            margin: 0 auto;
-            text-align: center;
-            color: white;
-        }
-
-        /* Ensure the icon is always visible */
-        .floating-menu:hover .menu-icon,
-        .floating-menu .menu-icon {
-            display: block;
-        }
 
     </style>
-</head>
-
-<body>
-
-    <nav class="floating-menu">
-        <span class="menu-icon"><img src="images/home.svg" width="25px" /></span> 
-        <h3>主页和快速跳转</h3>
-        <a href="/">主页（文章列表）</a>
-        <a href="/100">百法</a>
-    </nav>
 
     <form>
         <input type="checkbox" id="cb_show1" name="col1" checked="checked" /> 隐藏/显示（三十三天、四天王天的详细列表） <br />
@@ -409,7 +353,6 @@
             </tr>
         </tbody>
     </table>
-</body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -454,4 +397,3 @@
 
 </script>
 
-</html>
