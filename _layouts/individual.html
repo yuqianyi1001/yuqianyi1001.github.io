@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8">
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+
+    {% include home-menu-style.html %}
+</head>
+<body>
+    {% include home-menu-content.html %}
+
+    {{content}}
+</body>
+</html>
+

@@ -1,0 +1,46 @@
+<style>
+    .floating-menu {
+        font-family: sans-serif;
+        
+        padding: 5px;
+        width: 20px; /* Initial reduced width */
+        height: 20px; /* Make it square or adjust as per the icon size */
+        z-index: 100;
+        position: fixed;
+        top: 0; /* Dock to top */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Adjust horizontal position to truly center */
+        transition: width 0.1s, height 0.1s; 
+    }
+
+    .floating-menu:hover {
+        width: 130px; /* Expanded width on hover */
+        height: 130px;
+        background: yellow;
+    }
+
+    .floating-menu a,
+    .floating-menu h3 {
+        font-size: 0.9em;
+        display: none; /* Initially hide text */
+        margin: 0 0.5em;
+    }
+
+    .floating-menu:hover a,
+    .floating-menu:hover h3 {
+        display: block; /* Show text on hover */
+    }
+
+    .menu-icon {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        color: white;
+    }
+
+    /* Ensure the icon is always visible */
+    .floating-menu:hover .menu-icon,
+    .floating-menu .menu-icon {
+        display: block;
+    }
+</style>
