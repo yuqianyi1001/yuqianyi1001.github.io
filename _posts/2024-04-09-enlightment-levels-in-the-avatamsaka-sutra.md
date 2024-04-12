@@ -36,6 +36,8 @@ https://mp.weixin.qq.com/s/exPab92Lk-YvBw9lcWdyiA
 
 先总结一下十地菩萨的证悟和修行。
 
+｜ 地 ｜ 证悟 ｜ 主要修行 ｜
+｜--｜--｜--｜
 
 
 
