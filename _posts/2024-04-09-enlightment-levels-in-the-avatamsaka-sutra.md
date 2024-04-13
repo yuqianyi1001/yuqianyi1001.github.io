@@ -50,7 +50,7 @@ https://mp.weixin.qq.com/s/exPab92Lk-YvBw9lcWdyiA
 | 六地 | 现前地 | <span style="color:green">空、无相、无愿三解脱门；</span><br><span style="color:green">十二因缘；</span><br><span style="color:green">般若波罗蜜（空性）；</span><br>十波罗蜜中，般若波罗蜜偏多  |
 | 七地 | 远行地 | 十波罗蜜中，方便波罗蜜偏多 |
 | 八地 | 不动地 | 十波罗蜜中，愿波罗蜜增上 |
-| 九地 | 善慧地 | 十波罗蜜中，力波罗蜜最胜 |
+| 九地 | 善慧地 | <span style="color:green">四无碍智</span><br>十波罗蜜中，力波罗蜜最胜 |
 | 十地 | 法云地 | 十波罗蜜中，智波罗蜜最为增上 | 
 
 下面再分别介绍华严经的十地菩萨。第十地菩萨后的总结，有使用比喻的方式叙述十大菩萨的区别。后续可以跳过去先看下。
