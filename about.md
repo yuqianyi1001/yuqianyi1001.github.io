@@ -60,7 +60,7 @@ Email： [xianyin.shi@gmail.com](mailto:xianyin.shi@gmail.com)
 * 《中观》（部分）
 * 《空之研究》印顺法师
 
-**唯识**
+**法相（唯识、俱舍）**
 
 * 《瑜伽师地论》（100卷）
 * 《唯识三十论》
@@ -71,6 +71,8 @@ Email： [xianyin.shi@gmail.com](mailto:xianyin.shi@gmail.com)
 * 《成唯识论直解》林国良
 * 《唯识方隅》罗时宪
 * 《俱舍论》（30卷）说一切有部的经典，唯识先驱
+* 《俱舍要义》2024/4/30
+* 《俱舍论颂疏讲记-界品 智敏上师》2024/5/15
 
 **禅宗**
 
@@ -78,7 +80,8 @@ Email： [xianyin.shi@gmail.com](mailto:xianyin.shi@gmail.com)
 * 《永嘉证道歌》
 * 《传心法要》黄檗希运
 * 《信心铭》僧璨大师
-
+* 《中国禅宗史》2024/4/17
+  
 **净土**
 
 * 《阿弥陀经》
