@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 佛學中的理科和文科
-wechat: https://mp.weixin.qq.com/s/YZ-UaEJE9ICBnpapzVq3OQ
+wechat: 
 description: 佛學也可以分為理科和文科。文科像“芥子納須彌”，一千個人可以有一千個理解，沒有統一答案，沒有標準，容易引起爭吵。而理科則有標準，有答案。那什麼是佛學中的理科呢？那就是法相（俱舍學和唯識學）。
 tags:
   - 俱舍
