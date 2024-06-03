@@ -44,7 +44,7 @@ if __name__ == '__main__':
         replace_image_paths(file_path)
         print(f"Updated image paths in {file_path}")
 
-        source_dir = "_post"
+        source_dir = "_posts"
         destination_dir = "images"
         move_images(source_dir, destination_dir)
         print(f"Moved images from {source_dir} to {destination_dir}")
