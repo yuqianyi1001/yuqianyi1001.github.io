@@ -1,0 +1,20 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        
+        {
+            "label": "makeZhTw",
+            "type": "shell",
+            "command": "opencc -i '${file}' -o '${fileDirname}/${fileBasenameNoExtension}_zh-tw${fileExtname}'"
+        },
+        {
+            "label": "moveImages",
+            "type": "shell",
+            "command": "cd '${workspaceFolder}'; python3 _utils.py ${relativeFile}"
+        }
+    ]
+}
+
+
