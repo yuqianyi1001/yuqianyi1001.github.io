@@ -39,7 +39,7 @@ tags:
 
 下图就是七十五法和十二处的对比。
 
-![七十五法和十二处的对比](../images/img-abhidharmakosa-bhasya-75-for-12-dvadasayatanani.png)
+![七十五法和十二处的对比](../images/img-abhidharmakosa-bhasya-75-for-12-ayatana.png)
 
 从图中可以清晰地看到两者的对比关系，以下略作说明。
 
