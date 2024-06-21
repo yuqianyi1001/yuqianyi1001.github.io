@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 美国地道的美食和佛教纯正的思想
-wechat: 
-description: 
+wechat: https://mp.weixin.qq.com/s/rYFJP2zIIdH6xy_Cm4EGVA
+description: 美食要当地人来做才会正宗、地道；其实学习佛法也是如此，那正宗的佛教思想都有哪些？又该如何才能学习到这些纯正的思想呢？
 tags:
 ---
 
