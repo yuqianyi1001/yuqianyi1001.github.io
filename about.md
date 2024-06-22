@@ -82,6 +82,10 @@ Email： [xianyin.shi@gmail.com](mailto:xianyin.shi@gmail.com)
   * 主要内容：三界，中有，十二因缘，四食，死有，
 * 《俱舍论颂疏讲记-业品 智敏上师》在读
   * 业
+  * 表、无表
+  * 戒（五戒、八戒、十戒、具足戒）
+  * 归依
+  
 
 **禅宗**
 
