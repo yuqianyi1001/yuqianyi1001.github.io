@@ -88,7 +88,8 @@ Email： [xianyin.shi@gmail.com](mailto:xianyin.shi@gmail.com)
   * 业的分类（）
 * 《俱舍论颂疏讲记-业品2 智敏上师》在读  
   * 业的分类（黑黑、白白、黑白，非黑非白）
-  * 十业道
+  * 十业道（十善业道，十不善业道）
+  * 
 
 **禅宗**
 
