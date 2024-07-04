@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 佛法中的“另类”解读
+title: 佛经中的“另类”解读
 wechat: 
-description: 
+description: 六方不是六方，观音不是观音，父母不是父母，佛不是佛 —— 如果都不是？那会是什么呢？本文介绍了佛经中的几个“另类”解读。
 tags:
 ---
 
