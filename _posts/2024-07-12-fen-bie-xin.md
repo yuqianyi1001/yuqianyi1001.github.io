@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 你被批评过“分别心”吗？什么是真的“分别心”呢？
-wechat: 
-description: 
+title: 你被批评过“有分别心”吗？什么是真的“分别心”呢？
+wechat: https://mp.weixin.qq.com/s/yFw6aO4J3RrWpMp5hIJRvQ
+description: 世俗谛中的分别就是区分、辨别的意思，在世俗谛中是必要的，圣人和凡夫都在分别。在胜义谛中，一切事物都是无分别的。两者不可混为一谈。
 tags:
 ---
 
