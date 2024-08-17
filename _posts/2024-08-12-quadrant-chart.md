@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 冷知识：原来佛教的“四料简”就是现代的“四象限图”哦
+title: 冷知识：原来佛教的“四料简”就是现代的“四象限图”
 wechat: 
 description: 
 tags:
