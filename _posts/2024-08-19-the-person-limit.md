@@ -1,12 +1,12 @@
 ---
 layout: post
-title: 夏虫和井蛙和四层世界
-wechat: 
+title: 夏虫、井蛙和四层世界
+wechat: https://mp.weixin.qq.com/s/HpZRwttjS7obLhKpl2itMQ
 description: 以 “夏虫不可语冰” 引入，探讨世界的四个层次，从人界到神系世界再到更高神系及无色界，结合禅定与能力阐述人对不同世界的认知，同时提醒人们在未亲身体验前不要盲目争论，应努力提升自我。
 tags:
 ---
 
-## 夏虫不可语冰
+## 夏虫和井蛙
 
 “夏虫不可语冰”出自《庄子·秋水》。
 
