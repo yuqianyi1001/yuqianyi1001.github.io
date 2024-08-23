@@ -125,9 +125,9 @@ layout: default
         const tempTextarea = document.createElement('textarea');
 
         if (postTrHref) {
-          tempTextarea.value = `【原创】${postTitle}\n\n${postHref}\n\n ${postDesc}\n\n【繁體】${postTrTitle}\n\nhttps://yuqianyi1001.github.io${postTrHref}\n\n${postTrDesc}`;
+          tempTextarea.value = `【原创】${postTitle}\n${postHref}\n ${postDesc}\n\n【原創】${postTrTitle}\nhttps://yuqianyi1001.github.io${postTrHref}\n${postTrDesc}`;
         } else {
-          tempTextarea.value = `【原创】${postTitle}\n\n${postHref}\n\n ${postDesc}\n\n`;
+          tempTextarea.value = `【原创】${postTitle}\n${postHref}\n ${postDesc}`;
         }
         
         // Append the textarea to the document
