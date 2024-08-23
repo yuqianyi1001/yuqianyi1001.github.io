@@ -56,7 +56,7 @@ layout: default
                     {%- if zh_tw_post_name == post_name -%}                      
                       <li class="zh-trandition"><img src="/zh-trandition.png" width="18px" /> 
                         <a id="link-tradition" href="{{ site.baseurl }}{{ zh_tw_post.url}}" class="read-more">{{ zh_tw_post.title }}</a><br>
-                        <span style="font-size:medium;">{{zh_tw_post.description}}</span></li>
+                        <span id="zh-tr-desc" style="font-size:medium;">{{zh_tw_post.description}}</span></li>
                     {%- endif -%}
                   {%- endif -%}
                 {%- endfor -%}
@@ -106,23 +106,26 @@ layout: default
 
         // Attempt to find the element first
         const postTrElement = listItem.querySelector('#link-tradition');
+        const postTrDescEle = listItem.querySelector('#zh-tr-desc');
 
         // Initialize variables to hold your values
         let postTrHref = '';
         let postTrTitle = '';
+        let postTrDesc = ''
 
         // Check if the element exists
         if (postTrElement !== null) {
             // If the element exists, get the attributes
             postTrHref = postTrElement.getAttribute('href');
             postTrTitle = postTrElement.innerText;
+            postTrDesc = postTrDescEle.innerText;
         }
 
         // Create a temporary textarea to hold the text to be copied
         const tempTextarea = document.createElement('textarea');
 
         if (postTrHref) {
-          tempTextarea.value = `【原创】${postTitle}\n\n${postHref}\n\n ${postDesc}\n\n【繁體】${postTrTitle}\n\nhttps://yuqianyi1001.github.io${postTrHref}`;
+          tempTextarea.value = `【原创】${postTitle}\n\n${postHref}\n\n ${postDesc}\n\n【繁體】${postTrTitle}\n\nhttps://yuqianyi1001.github.io${postTrHref}\n\n${postTrDesc}`;
         } else {
           tempTextarea.value = `【原创】${postTitle}\n\n${postHref}\n\n ${postDesc}\n\n`;
         }
