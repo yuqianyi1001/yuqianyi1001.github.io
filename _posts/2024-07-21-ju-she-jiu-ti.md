@@ -2,7 +2,7 @@
 layout: post
 title: 王路老師的《俱舍九題：高階阿毘達磨》出版了，歡迎下單訂購
 wechat: 
-description: 
+excerpt: 
 tags:
 ---
 

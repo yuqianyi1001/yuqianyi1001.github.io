@@ -2,7 +2,7 @@
 layout: post
 title: 佛学问答（1）：有关净土宗
 wechat: 
-description: 
+excerpt: 
 tags:
  - 问答
 ---

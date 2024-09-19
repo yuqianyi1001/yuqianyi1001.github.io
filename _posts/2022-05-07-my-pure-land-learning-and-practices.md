@@ -2,7 +2,7 @@
 layout: post
 title: 十年净土坎坷路
 wechat: https://mp.weixin.qq.com/s/8BpLyRFxAcTLYx_3V39W4Q
-description: 十年学习净土的坎坷经历和心得，与圣严法师归纳的四种净土。
+excerpt: 十年学习净土的坎坷经历和心得，与圣严法师归纳的四种净土。
 tags:
   - 我和我的学佛经历
 ---

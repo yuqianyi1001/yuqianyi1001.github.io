@@ -2,7 +2,7 @@
 layout: post
 title: 五位七十五法（基礎部分）
 wechat: https://mp.weixin.qq.com/s/chSlBrFIIE2vLnN1Q-FoGg
-description: 一文介紹下俱舍五位七十五法的基礎，包括五大分類（五位）和每個分類下具體包含的“法”和它們的基本含義。
+excerpt: 一文介紹下俱舍五位七十五法的基礎，包括五大分類（五位）和每個分類下具體包含的“法”和它們的基本含義。
 tags:
   - 俱舍
   - 唯識

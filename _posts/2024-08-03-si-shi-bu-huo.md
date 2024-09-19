@@ -2,7 +2,7 @@
 layout: post
 title: 四十不惑和三观
 wechat: https://mp.weixin.qq.com/s/GPAmKwxxbUtvn-tQM-Xedw
-description: 有明确的三观（世界观、人生观、价值观）就容易达成不惑了。而佛教可以帮助我们确立三观，而且是有益于全人类，全体生命的三观。
+excerpt: 有明确的三观（世界观、人生观、价值观）就容易达成不惑了。而佛教可以帮助我们确立三观，而且是有益于全人类，全体生命的三观。
 tags:
 ---
 

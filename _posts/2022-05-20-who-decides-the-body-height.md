@@ -2,7 +2,7 @@
 layout: post
 title: 生活佛法之 —— 矮个子，到底是谁的错？
 wechat: https://mp.weixin.qq.com/s/ei8QeEE8LZp20QtQCWhjAQ
-description: 矮个子，到底是谁的错？从DNA遗传上来说，100%是父母的错，可是在佛学上来说，却100%是孩子本身所决定的，这具体是怎么回事呢？
+excerpt: 矮个子，到底是谁的错？从DNA遗传上来说，100%是父母的错，可是在佛学上来说，却100%是孩子本身所决定的，这具体是怎么回事呢？
 tags:
   - 生活佛法
 ---

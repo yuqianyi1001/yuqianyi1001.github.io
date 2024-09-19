@@ -2,7 +2,7 @@
 layout: post
 title: 我所经历的两个“外道”
 wechat: https://mp.weixin.qq.com/s/obOYF8pBVNXFH0wOVn4UmA
-description: 愿大家都能遇到离苦得乐的正法。就算和佛教无缘，但如果有信仰的需求，也应该首先考虑正统的宗教的。阿弥陀佛 and 阿门。
+excerpt: 愿大家都能遇到离苦得乐的正法。就算和佛教无缘，但如果有信仰的需求，也应该首先考虑正统的宗教的。阿弥陀佛 and 阿门。
 tags:
   - 我和我的学佛经历
 ---

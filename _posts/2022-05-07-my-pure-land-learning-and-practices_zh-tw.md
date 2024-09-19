@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 十年淨土坎坷路
-description: 十年學習淨土的坎坷經曆和心得，與聖嚴法師歸納的四種淨土。
+excerpt: 十年學習淨土的坎坷經曆和心得，與聖嚴法師歸納的四種淨土。
 ---
 
 ![a curve road](../images/2022-05-07-16-34-29.png)
