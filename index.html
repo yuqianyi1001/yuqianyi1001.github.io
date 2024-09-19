@@ -44,7 +44,7 @@ layout: default
                   <a href="{{ post.wechat }}" target="_blank" id="wechat_link"><img src="/wechat.ico" width="16px" /></a>
                   <img src="/copy.png" width="16px" id="copy-button" />
                   <br>
-                  <span style="font-size:medium;" id="post-desc">{{post.excerpt}}</span>
+                  <span style="font-size:medium;" id="post-desc">{{post.description}}</span>
                   {%- for tag in post.tags -%} 
                   <code style="font-size: smaller;">{{tag}}</code>
                   {%- endfor -%}                  
@@ -56,7 +56,7 @@ layout: default
                     {%- if zh_tw_post_name == post_name -%}                      
                       <li class="zh-trandition"><img src="/zh-trandition.png" width="18px" /> 
                         <a id="link-tradition" href="{{ site.baseurl }}{{ zh_tw_post.url}}" class="read-more">{{ zh_tw_post.title }}</a><br>
-                        <span id="zh-tr-desc" style="font-size:medium;">{{zh_tw_post.excerpt}}</span></li>
+                        <span id="zh-tr-desc" style="font-size:medium;">{{zh_tw_post.description}}</span></li>
                     {%- endif -%}
                   {%- endif -%}
                 {%- endfor -%}
