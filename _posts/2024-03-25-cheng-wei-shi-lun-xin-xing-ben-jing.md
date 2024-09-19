@@ -2,7 +2,7 @@
 layout: post
 title: 《成唯识论》中对于“心性本净”的看法
 wechat: 
-excerpt: 
+description: 
 tags:
   - 佛法解读
 ---

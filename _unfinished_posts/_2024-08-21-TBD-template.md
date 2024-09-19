@@ -2,7 +2,7 @@
 layout: post
 title: “佛度有缘人” —— 这句话只说了一半
 wechat: 
-excerpt: 
+description: 
 tags:
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: 以结构化的五个层次解读《心经》
 wechat: https://mp.weixin.qq.com/s/mzAc0Rn26G7Wd0CuqteebQ
-excerpt: 深入经藏，智慧如海 —— 以学习佛法来说，阅读佛教经典永远都是最好的方式，本文介绍了一种结构化的，分层次的阅读方式，供参考。
+description: 深入经藏，智慧如海 —— 以学习佛法来说，阅读佛教经典永远都是最好的方式，本文介绍了一种结构化的，分层次的阅读方式，供参考。
 tags:
   - 佛法解读
 ---

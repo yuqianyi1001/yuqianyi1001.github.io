@@ -2,7 +2,7 @@
 layout: post
 title: 電影《周處除三害》和它的英文名：The Pig, The Snake and The Pigeon
 wechat: https://mp.weixin.qq.com/s/qMIGHlFLT9_FszTPooLzew
-excerpt: 從電影《周處除三害》和它的英文名（The Pig, The Snake and The Pigeon）說起，解說下其中的貪、嗔、癡，以及其中的邪教。
+description: 從電影《周處除三害》和它的英文名（The Pig, The Snake and The Pigeon）說起，解說下其中的貪、嗔、癡，以及其中的邪教。
 tags:
   - 電影和佛法
 ---

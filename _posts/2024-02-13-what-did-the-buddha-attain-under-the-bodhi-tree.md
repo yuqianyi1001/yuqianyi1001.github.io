@@ -2,7 +2,7 @@
 layout: post
 title: 佛陀在菩提树下觉悟了什么？| 在菩提树下修行了什么而成佛？
 wechat: https://mp.weixin.qq.com/s/uY6HBqUR3lHDro7MeUFuZA
-excerpt: 尝试从佛经中，找到最直接的说明，说明佛陀在菩提树下觉悟是什么，或者是修什么法而觉悟的。
+description: 尝试从佛经中，找到最直接的说明，说明佛陀在菩提树下觉悟是什么，或者是修什么法而觉悟的。
 tags:
   - 笔记和读后感
 ---

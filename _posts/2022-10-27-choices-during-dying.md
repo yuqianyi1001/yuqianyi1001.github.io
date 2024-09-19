@@ -2,7 +2,7 @@
 layout: post
 title: 临终时的主动与被动，附：业的成熟顺序
 wechat: https://mp.weixin.qq.com/s/AyOzlnkALOcwIaiv9m_CVw
-excerpt: 在临终的时候，生命是如何跟随业力而流转呢？本文从业的成熟顺序来说明，希望可以帮助我们更顺利地求生净土。
+description: 在临终的时候，生命是如何跟随业力而流转呢？本文从业的成熟顺序来说明，希望可以帮助我们更顺利地求生净土。
 tags:
   - 净土和临终关怀
 ---

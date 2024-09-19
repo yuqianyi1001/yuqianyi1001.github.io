@@ -2,7 +2,7 @@
 layout: post
 title: 你知道吗？你的手机号里面也蕴含了佛法
 wechat: https://mp.weixin.qq.com/s/NkozzuZg_PdXdrnkpPWZjg
-excerpt: 数字中的佛法，佛法中的数字。学会了以后，就可以解读任何带数字的东西了，比如手机号，生日，身份证，门牌号等。
+description: 数字中的佛法，佛法中的数字。学会了以后，就可以解读任何带数字的东西了，比如手机号，生日，身份证，门牌号等。
 tags:
 ---
 

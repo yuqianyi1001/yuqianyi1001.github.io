@@ -2,7 +2,7 @@
 layout: post
 title: 略解五蕴 ｜ 七十五法和五蕴的对照
 wechat: https://mp.weixin.qq.com/s/RwfkOQW7H46UJ_DGseQK9A
-excerpt: 通过对照七十五法和五蕴，可以帮助我们更深入、更全面、更精确地了解五蕴。
+description: 通过对照七十五法和五蕴，可以帮助我们更深入、更全面、更精确地了解五蕴。
 tags:
   - 俱舍
   - 唯识

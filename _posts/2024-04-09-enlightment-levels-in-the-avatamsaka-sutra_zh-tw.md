@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 總結下《華嚴經》中的十地菩薩 | 菩薩階位有不同的標準
-excerpt: 菩薩階位有許多不同的標準，那麼在《華嚴經》中，十地菩薩有分別有怎樣的標準呢？十地菩薩需要分別修行什麼法門呢？
+description: 菩薩階位有許多不同的標準，那麼在《華嚴經》中，十地菩薩有分別有怎樣的標準呢？十地菩薩需要分別修行什麼法門呢？
 wechat: https://mp.weixin.qq.com/s/jEiLpTfZpPy-rFSdhMMfbQ
 ---
 

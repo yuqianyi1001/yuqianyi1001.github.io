@@ -2,7 +2,7 @@
 layout: post
 title: 悉達多太子的履歷（悉達多 aka 釋迦牟尼）
 wechat: https://mp.weixin.qq.com/s/RTYR1B8gD7a04x0c8ocW8g
-excerpt: 
+description: 
 ---
 
 ## 基本信息

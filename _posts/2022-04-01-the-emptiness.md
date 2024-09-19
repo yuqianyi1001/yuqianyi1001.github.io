@@ -2,7 +2,7 @@
 layout: post
 title: 理解空、有是打开大乘佛学的金钥匙（我对空性的理解）
 wechat: https://mp.weixin.qq.com/s/ssQNk0gTppehzDgpzaQb6g
-excerpt: 佛性，自性，空性，这些到底是什么意思？本文提供了一种理解的思路，供仁者参考。
+description: 佛性，自性，空性，这些到底是什么意思？本文提供了一种理解的思路，供仁者参考。
 tags:
   - 佛教核心理论
 ---

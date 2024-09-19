@@ -2,7 +2,7 @@
 layout: post
 title: 念佛法会参加心得 | 一场两小时的禅修考试 | 念佛与禅修 —— 念佛禅
 wechat: https://mp.weixin.qq.com/s/EzFWXatoveCmWabrHtrYTg
-excerpt: 从认为法会只是形式主义，规矩有多，不明就里，到参加法会，甚至深度参与法会，这中间的转变有何心得和体会？
+description: 从认为法会只是形式主义，规矩有多，不明就里，到参加法会，甚至深度参与法会，这中间的转变有何心得和体会？
 tags:
   - 净土和临终关怀
 ---
