@@ -7,7 +7,7 @@
         {
             "label": "makeZhTw",
             "type": "shell",
-            "command": "opencc -i '${file}' -o '${fileDirname}/${fileBasenameNoExtension}_zh-tw${fileExtname}'"
+            "command": "opencc -c s2tw.json -i '${file}' -o '${fileDirname}/${fileBasenameNoExtension}_zh-tw${fileExtname}'"
         },
         {
             "label": "moveImages",
