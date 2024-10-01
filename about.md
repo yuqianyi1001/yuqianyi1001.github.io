@@ -119,7 +119,7 @@ Email： [xianyin.shi@gmail.com](mailto:xianyin.shi@gmail.com)
 
 **未分类**
 
-* 《A History of Modern Tibet（1913-1951》（中譯本《喇嘛王國的覆滅》）（2024/9/30）
+* 《A History of Modern Tibet（1913-1951）》（中譯本《喇嘛王國的覆滅》）（2024/9/30）
 * 《入楞伽經》（黃寶生 梵漢佛經對勘從書，2024/3/6）
 * 《佛說決定義經》（1卷，Cbeta，2024/2/18）
 * 《大般涅槃經》（T0007，3卷，Cbeta，2024/2/11）。
