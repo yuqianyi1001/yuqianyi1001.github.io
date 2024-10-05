@@ -82,6 +82,7 @@ Email： [xianyin.shi@gmail.com](mailto:xianyin.shi@gmail.com)
 * 《传心法要》黄檗希运
 * 《信心铭》僧璨大师
 * 《中国禅宗史》2024/4/17
+* 《楞严禅心》，果醒法师，2024-10-4（读完，历时3天）
   
 **净土**
 
