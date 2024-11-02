@@ -75,7 +75,7 @@ https://mp.weixin.qq.com/s/n1RfPHv65iJtp1WmARvSNQ
 
 >【原创】尝试对比中观、唯识和如来藏
 https://yuqianyi1001.github.io/comparison-between-madhyamaka-Yogacara-Tathagatagarbha_zh-tw/
-中观和唯识是印度佛教的两大支柱，而当今学界所认为的三大体系之如来藏，并冇有在印度开宗立派，却在传入中国后成为主流。本文尝试比较下三者，希望从中找到缘由。
+中观和唯识是印度佛教的两大支柱，而当今学界所认为的三大体系之如来藏，并沒有在印度开宗立派，却在传入中国后成为主流。本文尝试比较下三者，希望从中找到缘由。
 
 ## 因缘法是一切体系的共同基础和核心
 
