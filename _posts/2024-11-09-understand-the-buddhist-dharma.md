@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 普通人也可以通达佛法 | 如何判定是否通达佛法
-wechat: 
+wechat: https://mp.weixin.qq.com/s/lpF8vKC9cuvTf15K6E8DkQ
 description: 信解行证是非常符合现代人的学修体系，而其中的“解”就是通达佛法，能够自己通读经典，能够用自己的语言解释经典。解在前，行、证在后，所以，普通人也可以通达佛法的。
 excerpt: 
 tags:
