@@ -93,6 +93,7 @@ Email： [jeffwoo2019@gmail.com](mailto:jeffwoo2019@gmail.com)
 * 《中国净土宗教理史》望月信亨，释印海译
 
 **如来藏**
+
 * 《如来藏之研究》
 * 《如来藏经》
 
@@ -135,8 +136,7 @@ Email： [jeffwoo2019@gmail.com](mailto:jeffwoo2019@gmail.com)
 * 《八大人觉经》
 * 《华严经》80卷版（前60卷），以及四十卷《华严经》，共100卷。（实际上是99卷）
 * 《南传菩萨道》
-
-
+* 《阿姜曼正传》
 * 《印度佛教思想史要略》庄春江
 * 《成佛之道》释印顺（偈颂部分）
 * 《正见: 佛陀的证悟》宗萨蒋扬钦哲仁波切 / 姚仁喜
@@ -145,8 +145,7 @@ Email： [jeffwoo2019@gmail.com](mailto:jeffwoo2019@gmail.com)
 * 《达摩传》电影
 * 《一轮明月》弘一大师传
 * 《米勒日巴传》音频和电影
-*  惠能传 - 电影
-* 《阿姜曼正传》
+* 《惠能传》 - 电影
 
 **其他宗教，学说，哲学**
 * 《论语》（部分）
@@ -164,7 +163,8 @@ Email： [jeffwoo2019@gmail.com](mailto:jeffwoo2019@gmail.com)
 * 《裸猿》：德斯蒙德・莫里斯 / 刘文荣
 
 **豆瓣记录**
-https://book.douban.com/people/tata20011125/
+
+[豆瓣上的阅读记录](https://book.douban.com/people/tata20011125/)
 
 
 
