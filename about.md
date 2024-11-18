@@ -1,19 +1,17 @@
 ---
 layout: page
-title: About
+title: 
 permalink: /about/
 ---
 
-# 愚千一
-### 佛教居士，人间佛教，汉传佛教。
+## 【愚千一】佛教居士，人间佛教，汉传佛教
 
-欢迎关注我的微信公众号，名字【愚千一】ID： Yuqianyi1001
-
-<img src="/images/signature.png" width="60%">
+<div style="font-size:smaller">欢迎关注我的微信公众号，请搜【愚千一】或直接输入ID： Yuqianyi1001</div>
+<img src="/images/signature.png" width="70%">
 
 ## 联系我
 
-Email： [xianyin.shi@gmail.com](mailto:xianyin.shi@gmail.com)
+Email： [jeffwoo2019@gmail.com](mailto:jeffwoo2019@gmail.com)
 
 
 ## 闻思目录
