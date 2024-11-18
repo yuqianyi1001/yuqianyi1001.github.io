@@ -6,7 +6,8 @@ permalink: /about/
 
 ## 【愚千一】佛教居士，人间佛教，汉传佛教
 
-<div style="font-size:smaller">欢迎关注我的微信公众号，请搜【愚千一】或直接输入ID： Yuqianyi1001</div>
+
+  <div style="font-size:smaller">欢迎关注我的微信公众号，请搜<b><u>愚千一</u></b>或直接输入ID： Yuqianyi1001。<br>订阅后也可以看到我的<b><u>微信号</u></b>，方便交流。</div>
 <img src="/images/signature.png" width="70%">
 
 ## 联系我
