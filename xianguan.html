@@ -48,10 +48,10 @@ title: 现观（八事七十义）
       <tr>
         <td class="alignCenter"></td>
         <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="alignCenter">
+        <td style="font-weight: bold;"></td>
+        <td><div style="padding: 5px;"></div></td>
+        <td><div style="padding: 5px;"></div></td>
+        <td><div style="padding: 5px;"></div>
         </td>
       </tr>
     </tbody>
@@ -115,9 +115,9 @@ title: 现观（八事七十义）
             //   .find("input")
             //   .val(node.data.foo);
 
-            $tdList.eq(3).text(node.data.faxiang);
-            $tdList.eq(4).text(node.data.shixiang);
-            $tdList.eq(5).text(node.data.jiedi);
+            $tdList.eq(3).find("div").text(node.data.faxiang);
+            $tdList.eq(4).find("div").text(node.data.shixiang);
+            $tdList.eq(5).find("div").text(node.data.jiedi);
 
             // Static markup (more efficiently defined as html row template):
             // $tdList.eq(3).html("<input type='input' value='"  "" + "'>");
