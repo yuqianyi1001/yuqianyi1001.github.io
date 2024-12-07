@@ -1,0 +1,136 @@
+---
+layout: individual
+title: 现观（八事七十义）
+---
+
+<script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- This demo uses an 3rd-party, jQuery UI based context menu -->
+<link
+  href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css"
+  rel="stylesheet"
+/>
+<script src="//code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/ui-contextmenu/jquery.ui-contextmenu.min.js"></script>
+
+<link href="https://wwwendt.de/tech/fancytree/src/skin-win8/ui.fancytree.css" rel="stylesheet" />
+
+<script src="http://127.0.0.1:4000/jquery.fancytree-all.min.js"></script>
+
+<h1 style="font-size: larger;">现观（八事七十义）</h1>
+
+<div id="tree">
+    <ul id="treeData" style="display: none;">
+        <li id="id01" class="expanded">遍智[一切相智][一切种智]
+            <ul>
+                <li id="id1.1">发心</li>
+                <li id="id1.2">教授</li>
+                <li id="id1.3">抉择分 [大乘加行道]</li>
+                <li id="id1.4">修行所依 [修行所依自性住种性]</li>
+                <li id="id1.5">修行所缘</li>
+                <li id="id1.6">修行所为</li>
+                <li id="id1.7">披甲修行[披甲正行]</li>
+                <li id="id1.8">趋入修行[趣入正行]</li>
+                <li id="id1.9">资粮修行[资粮正行]</li>
+                <li id="id1.10">定离修行[决定出生正行]</li>
+            </ul>
+        </li>
+        <li id="id02" class="expanded">道智[道相智][道种智]
+            <ul>
+                <li id="id1.1">道智支分</li>
+                <li id="id1.2">弟子声闻道[声闻道智之道相智]</li>
+                <li id="id1.3">独觉道[独觉道智之道相智]</li>
+                <li id="id1.4">大乘见道</li>
+                <li id="id1.5">修道功用[大乘修道作用]</li>
+                <li id="id1.6">胜解修道</li>
+                <li id="id1.7">胜解修道功德[胜解修道胜利]</li>
+                <li id="id1.8">回向修道</li>
+                <li id="id1.9">随喜修道</li>
+                <li id="id1.10">修行修道[引发修道]</li>
+                <li id="id1.9">随喜修道</li>
+            </ul>
+        </li>
+        <li id="id03" class="expanded">基智[一切智]
+            <ul>
+                <li id="id1.1">智不住生死基智[由智不住三有之道智]</li>
+                <li id="id1.2">悲不住涅槃基智[由悲不住涅樂之道智]</li>
+                <li id="id1.3">远基智[于果般若遥远之一切智]</li>
+                <li id="id1.4">近基智[于果般若邻近之一切智]</li>
+                <li id="id1.5">所治基智[所治品之一切智]</li>
+                <li id="id1.6">能治基智[能治品一切智]</li>
+                <li id="id1.7">胜解修道功德[胜解修道胜利]</li>
+                <li id="id1.8">基智加行[一切智加行]</li>
+                <li id="id1.9">菩萨加行平等性[一切智加行平等性]</li>
+                <li id="id1.10">基智见道[通达声闻住种见道]</li>
+            </ul>
+        </li>
+        <li id="id04" class="expanded">正等加行
+            <ul>
+                <li id="id1.1">加行相[圆加行所修之行相]</li>
+                <li id="id1.2">加行[能修诸加行]</li>
+                <li id="id1.3">加行功德</li>
+                <li id="id1.4">加行过失</li>
+                <li id="id1.5">加行性相[加行定相]</li>
+                <li id="id1.6">大乘顺解脱分</li>
+                <li id="id1.7">大乘顺抉择分</li>
+                <li id="id1.8">有学不还[有学不退转相]</li>
+                <li id="id1.9">生死涅槃平等加行[三有涅樂平等加行]</li>
+                <li id="id1.10">清净刹土加行</li>
+                <li id="id1.11">方便善巧加行</li>
+            </ul>
+        </li>
+        <li id="id05" class="expanded">顶加行
+            <ul>
+                <li id="id1.1">暖顶加行[具足十二相状之顶加行]</li>
+                <li id="id1.2">顶顶加行[福德增长之顶加行]</li>
+                <li id="id1.3">忍顶加行[坚固顶加行]</li>
+                <li id="id1.4">世第一法顶加行[心遍住顶加行]</li>
+                <li id="id1.5">见道顶加行</li>
+                <li id="id1.6">修道顶加行</li>
+                <li id="id1.7">无间顶加行[无间道之顶加行]</li>
+                <li id="id1.8">应遣邪行</li>
+            </ul>
+        </li>
+        
+        <li id="id06" class="expanded">次第加行[渐次加行]
+            <ul>
+                <li id="id1.1">布施次第加行</li>
+                <li id="id1.2">持戒次第加行</li>
+                <li id="id1.3">忍辱次第加行</li>
+                <li id="id1.4">精进次第加行</li>
+                <li id="id1.5">静虑次第加行</li>
+                <li id="id1.6">般若次第加行</li>
+                <li id="id1.7">随念佛次第加行</li>
+                <li id="id1.8">随念法次第加行</li>
+                <li id="id1.9">随念僧次第加行</li>
+                <li id="id1.10">随念戒次第加行</li>
+                <li id="id1.11">随念天次第加行</li>
+                <li id="id1.11">随念舍次第加行</li>
+                <li id="id1.11">无实性智次第加行[法无性自性渐次加行]</li>
+            </ul>
+        </li>
+        <li id="id07" class="expanded">刹那加行
+            <ul>
+                <li id="id1.1">非异熟刹那加行</li>
+                <li id="id1.2">异熟刹那加行</li>
+                <li id="id1.3">无相刹那加行</li>
+                <li id="id1.4">无二刹那加行</li>
+            </ul>
+        </li>
+        <li id="id08" class="expanded">法身
+            <ul>
+                <li id="id1.1">自性身</li>
+                <li id="id1.2">报身</li>
+                <li id="id1.3">化身</li>
+                <li id="id1.4">法身</li>
+            </ul>
+        </li>
+    </ul>
+  </div>
+
+  <script type="text/javascript">
+    $(function(){
+      // using default options
+      $("#tree").fancytree();
+    });
+  </script>
