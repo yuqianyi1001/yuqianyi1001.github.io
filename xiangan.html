@@ -110,8 +110,8 @@ title: 现观（八事七十义）
             //   .find("input")
             //   .val(node.data.foo);
 
-            $tdList.eq(3).text(node.data.faxian);
-            $tdList.eq(4).text(node.data.shixian);
+            $tdList.eq(3).text(node.data.faxiang);
+            $tdList.eq(4).text(node.data.shixiang);
             $tdList.eq(5).text(node.data.jiedi);
 
             // Static markup (more efficiently defined as html row template):
@@ -122,108 +122,8 @@ title: 现观（八事七十义）
             data.tree.info(event.type, data);
           },
         })
-        .on("nodeCommand", function(event, data) {
-          // Custom event handler that is triggered by keydown-handler and
-          // context menu:
-          var refNode,
-            moveMode,
-            tree = $.ui.fancytree.getTree(this),
-            node = tree.getActiveNode();
 
-          switch (data.cmd) {
-            case "addChild":
-            case "addSibling":
-            case "indent":
-            case "moveDown":
-            case "moveUp":
-            case "outdent":
-            case "remove":
-            case "rename":
-              tree.applyCommand(data.cmd, node);
-              break;
-            case "cut":
-              CLIPBOARD = { mode: data.cmd, data: node };
-              break;
-            case "copy":
-              CLIPBOARD = {
-                mode: data.cmd,
-                data: node.toDict(true, function(dict, node) {
-                  delete dict.key;
-                }),
-              };
-              break;
-            case "clear":
-              CLIPBOARD = null;
-              break;
-            case "paste":
-              if (CLIPBOARD.mode === "cut") {
-                // refNode = node.getPrevSibling();
-                CLIPBOARD.data.moveTo(node, "child");
-                CLIPBOARD.data.setActive();
-              } else if (CLIPBOARD.mode === "copy") {
-                node.addChildren(
-                  CLIPBOARD.data
-                ).setActive();
-              }
-              break;
-            default:
-              alert("Unhandled command: " + data.cmd);
-              return;
-          }
-        })
-        .on("keydown", function(e) {
-          var cmd = null;
-
-          // console.log(e.type, $.ui.fancytree.eventToString(e));
-          switch ($.ui.fancytree.eventToString(e)) {
-            case "ctrl+shift+n":
-            case "meta+shift+n": // mac: cmd+shift+n
-              cmd = "addChild";
-              break;
-            case "ctrl+c":
-            case "meta+c": // mac
-              cmd = "copy";
-              break;
-            case "ctrl+v":
-            case "meta+v": // mac
-              cmd = "paste";
-              break;
-            case "ctrl+x":
-            case "meta+x": // mac
-              cmd = "cut";
-              break;
-            case "ctrl+n":
-            case "meta+n": // mac
-              cmd = "addSibling";
-              break;
-            case "del":
-            case "meta+backspace": // mac
-              cmd = "remove";
-              break;
-            // case "f2":  // already triggered by ext-edit pluging
-            //   cmd = "rename";
-            //   break;
-            case "ctrl+up":
-            case "ctrl+shift+up": // mac
-              cmd = "moveUp";
-              break;
-            case "ctrl+down":
-            case "ctrl+shift+down": // mac
-              cmd = "moveDown";
-              break;
-            case "ctrl+right":
-            case "ctrl+shift+right": // mac
-              cmd = "indent";
-              break;
-            case "ctrl+left":
-            case "ctrl+shift+left": // mac
-              cmd = "outdent";
-          }
-          if (cmd) {
-            $(this).trigger("nodeCommand", { cmd: cmd });
-            return false;
-          }
-        });
+        
 
       /*
        * Tooltips
@@ -237,65 +137,65 @@ title: 现观（八事七十义）
       /*
        * Context menu (https://github.com/mar10/jquery-ui-contextmenu)
        */
-      $("#tree").contextmenu({
-        delegate: "span.fancytree-node",
-        menu: [
-          {
-            title: "Edit <kbd>[F2]</kbd>",
-            cmd: "rename",
-            uiIcon: "ui-icon-pencil",
-          },
-          {
-            title: "Delete <kbd>[Del]</kbd>",
-            cmd: "remove",
-            uiIcon: "ui-icon-trash",
-          },
-          { title: "----" },
-          {
-            title: "New sibling <kbd>[Ctrl+N]</kbd>",
-            cmd: "addSibling",
-            uiIcon: "ui-icon-plus",
-          },
-          {
-            title: "New child <kbd>[Ctrl+Shift+N]</kbd>",
-            cmd: "addChild",
-            uiIcon: "ui-icon-arrowreturn-1-e",
-          },
-          { title: "----" },
-          {
-            title: "Cut <kbd>Ctrl+X</kbd>",
-            cmd: "cut",
-            uiIcon: "ui-icon-scissors",
-          },
-          {
-            title: "Copy <kbd>Ctrl-C</kbd>",
-            cmd: "copy",
-            uiIcon: "ui-icon-copy",
-          },
-          {
-            title: "Paste as child<kbd>Ctrl+V</kbd>",
-            cmd: "paste",
-            uiIcon: "ui-icon-clipboard",
-            disabled: true,
-          },
-        ],
-        beforeOpen: function(event, ui) {
-          var node = $.ui.fancytree.getNode(ui.target);
-          $("#tree").contextmenu(
-            "enableEntry",
-            "paste",
-            !!CLIPBOARD
-          );
-          node.setActive();
-        },
-        select: function(event, ui) {
-          var that = this;
-          // delay the event, so the menu can close and the click event does
-          // not interfere with the edit control
-          setTimeout(function() {
-            $(that).trigger("nodeCommand", { cmd: ui.cmd });
-          }, 100);
-        },
-      });
+    //   $("#tree").contextmenu({
+    //     delegate: "span.fancytree-node",
+    //     menu: [
+    //       {
+    //         title: "Edit <kbd>[F2]</kbd>",
+    //         cmd: "rename",
+    //         uiIcon: "ui-icon-pencil",
+    //       },
+    //       {
+    //         title: "Delete <kbd>[Del]</kbd>",
+    //         cmd: "remove",
+    //         uiIcon: "ui-icon-trash",
+    //       },
+    //       { title: "----" },
+    //       {
+    //         title: "New sibling <kbd>[Ctrl+N]</kbd>",
+    //         cmd: "addSibling",
+    //         uiIcon: "ui-icon-plus",
+    //       },
+    //       {
+    //         title: "New child <kbd>[Ctrl+Shift+N]</kbd>",
+    //         cmd: "addChild",
+    //         uiIcon: "ui-icon-arrowreturn-1-e",
+    //       },
+    //       { title: "----" },
+    //       {
+    //         title: "Cut <kbd>Ctrl+X</kbd>",
+    //         cmd: "cut",
+    //         uiIcon: "ui-icon-scissors",
+    //       },
+    //       {
+    //         title: "Copy <kbd>Ctrl-C</kbd>",
+    //         cmd: "copy",
+    //         uiIcon: "ui-icon-copy",
+    //       },
+    //       {
+    //         title: "Paste as child<kbd>Ctrl+V</kbd>",
+    //         cmd: "paste",
+    //         uiIcon: "ui-icon-clipboard",
+    //         disabled: true,
+    //       },
+    //     ],
+    //     beforeOpen: function(event, ui) {
+    //       var node = $.ui.fancytree.getNode(ui.target);
+    //       $("#tree").contextmenu(
+    //         "enableEntry",
+    //         "paste",
+    //         !!CLIPBOARD
+    //       );
+    //       node.setActive();
+    //     },
+    //     select: function(event, ui) {
+    //       var that = this;
+    //       // delay the event, so the menu can close and the click event does
+    //       // not interfere with the edit control
+    //       setTimeout(function() {
+    //         $(that).trigger("nodeCommand", { cmd: ui.cmd });
+    //       }, 100);
+    //     },
+    //     });
     });
   </script>
