@@ -1,10 +1,11 @@
 ---
 layout: post
 title: 学佛的“第一性原理”
-wechat: 
-description: 
-excerpt: 
+wechat: https://mp.weixin.qq.com/s/rFPye884hWd1spMgiCdWZg
+description: 学佛有没有Elon Musk所说的“第一性原理”呢？有，答案就在《杂阿含经》第9卷第249经。
+excerpt: 学佛有没有Elon Musk所说的“第一性原理”呢？有，答案就在《杂阿含经》第9卷第249经。
 tags:
+ - 阿含
 ---
 
 # 学佛的“第一性原理”
