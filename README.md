@@ -25,4 +25,13 @@ https://yuqianyi1001.github.io
 提供英文翻译，然后挂在Raddit
 
 
+Before publish：
+
+润色下这篇文章，让它更加顺畅，更加自然，更加通畅，连接词更加连贯。
+尽量保持原文，减少不必要的改动。
+
+不要有AI味，不要啰嗦。
+输出时保持markdown格式。
+
+
 <a href="https://www.flaticon.com/free-icons/dot" title="dot icons">Dot icons created by Freepik - Flaticon</a>
