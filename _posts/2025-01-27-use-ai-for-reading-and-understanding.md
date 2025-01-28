@@ -1,9 +1,9 @@
 ---
 layout: post
 title: 善用AI学习经典（不限于佛教经典）
-wechat:
-description:
-excerpt:
+wechat: https://mp.weixin.qq.com/s/3xiQAogFwARB_N8CgvsQtA
+description: 借助日益强大的AI，可以辅助我们阅读经典。保持开放，多方交叉，谨慎取舍。最终可以帮助我们，更加高效地阅读经典。
+excerpt:借助日益强大的AI，可以辅助我们阅读经典。保持开放，多方交叉，谨慎取舍。最终可以帮助我们，更加高效地阅读经典。
 tags:
 ---
 
