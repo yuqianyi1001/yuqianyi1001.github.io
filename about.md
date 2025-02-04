@@ -6,14 +6,12 @@ permalink: /about/
 
 ## 【愚千一】佛教居士，人间佛教，汉传佛教
 
-
   <div style="font-size:smaller">欢迎关注我的微信公众号，请搜<b><u>愚千一</u></b>或直接输入ID： Yuqianyi1001。<br>订阅后也可以看到我的<b><u>微信号</u></b>，方便交流。</div>
 <img src="/images/signature.png" width="70%">
 
 ## 联系我
 
 Email： [jeffwoo2019@gmail.com](mailto:jeffwoo2019@gmail.com)
-
 
 ## 闻思目录
 
@@ -68,7 +66,7 @@ Email： [jeffwoo2019@gmail.com](mailto:jeffwoo2019@gmail.com)
 * 《瑜伽师地论》（100卷）
 * 《唯识三十论》
 * 《八识规矩颂》
-* 《成唯识论》（10卷）（2遍）
+* 《成唯识论》（10卷）
 * 《成唯识论直解》林国良
 * 《解深密经》
 * 《唯识要义》 杨白衣
@@ -95,7 +93,7 @@ Email： [jeffwoo2019@gmail.com](mailto:jeffwoo2019@gmail.com)
 * 《无量寿经》
 * 《弥陀要解》藕益大师
 * 《中国净土宗教理史》望月信亨，释印海译
-* 《印光大师答600问》
+* 《印光大师答600问》（基本看过）
 
 **如来藏**
 
@@ -107,6 +105,7 @@ Email： [jeffwoo2019@gmail.com](mailto:jeffwoo2019@gmail.com)
 * 《法华经》
 * 《法华经概说》河村孝照
 * 《天台宗纲要》静权大师 述
+* 《教观纲宗》
 
 **藏传**
 
@@ -127,6 +126,7 @@ Email： [jeffwoo2019@gmail.com](mailto:jeffwoo2019@gmail.com)
 
 **未分类**
 
+* 《佛教各宗大义》 吴信如
 * 《A History of Modern Tibet（1913-1951）》（中譯本《喇嘛王國的覆滅》）（2024/9/30）
 * 《入楞伽經》（黃寶生 梵漢佛經對勘從書，2024/3/6）
 * 《佛說決定義經》（1卷，Cbeta，2024/2/18）
