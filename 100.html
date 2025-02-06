@@ -29,8 +29,10 @@ title: 五位百法，可交互
             position: relative; /* This makes it the reference for its absolutely positioned children */
             width: 1893px; /* Set the width to match your image's width */
             height: 1251px; /* Set the height to match your image's height */
+            transform: scale(0.8); /* Scale the content to 80% */
+            transform-origin: top left; /* Ensure scaling starts from the top left */
         }
-        
+
         .image-container img,
         .image-container canvas {
             position: absolute;
@@ -46,10 +48,23 @@ title: 五位百法，可交互
         }
 
 
+        .zoom-control {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px 10px;
+            border: 1px solid #00000025;
+            cursor: pointer;
+            z-index: 1001;
+            font-family:fantasy;
+        }
     </style>
 
 
-<div class="image-container">    
+<div class="zoom-control" id="zoomControl">80%</div>
+
+<div class="image-container">
     <img src="../5-categories-100-items.png" usemap="#image-map" alt="五位白法">
 
     <map name="image-map" id="map1">
@@ -537,6 +552,18 @@ title: 五位百法，可交互
     }
 
     document.addEventListener('DOMContentLoaded', function () {
+        const zoomControl = document.getElementById('zoomControl');
+        const imageContainer = document.querySelector('.image-container');
+        let zoomLevels = [0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0];
+        let currentZoomIndex = 2; // Start at 80%
+
+        zoomControl.addEventListener('click', function() {
+            currentZoomIndex = (currentZoomIndex + 1) % zoomLevels.length;
+            const newZoom = zoomLevels[currentZoomIndex];
+            imageContainer.style.transform = `scale(${newZoom})`;
+            zoomControl.textContent = `${newZoom * 100}%`;
+        });
+
         let map = document.getElementById('map1');
 
         box_coords.forEach(function(coords, index) {
@@ -586,7 +613,3 @@ title: 五位百法，可交互
         data-lang="zh-CN"
         crossorigin="anonymous"
         async></script>
-
-
-
-
