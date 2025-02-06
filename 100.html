@@ -26,11 +26,11 @@ title: 五位百法，可交互
         }
 
         .image-container {
-            position: relative; /* This makes it the reference for its absolutely positioned children */
-            width: 1893px; /* Set the width to match your image's width */
-            height: 1251px; /* Set the height to match your image's height */
-            transform: scale(0.8); /* Scale the content to 80% */
-            transform-origin: top left; /* Ensure scaling starts from the top left */
+            position: relative;
+            width: 1893px; 
+            height: 1251px;
+            transform: scale(0.75);
+            transform-origin: top left;
         }
 
         .image-container img,
@@ -62,7 +62,7 @@ title: 五位百法，可交互
     </style>
 
 
-<div class="zoom-control" id="zoomControl">80%</div>
+<div class="zoom-control" id="zoomControl">75%</div>
 
 <div class="image-container">
     <img src="../5-categories-100-items.png" usemap="#image-map" alt="五位白法">
@@ -85,7 +85,7 @@ title: 五位百法，可交互
 
 
 
-<div>
+<div class="notes" style="margin-top: -250px;">
     <button id="btn_reset">重置图片(或点击图片左上角空白区100x200)</button>&nbsp;&nbsp;<a href="https://yuqianyi1001.github.io/">返回网站主页：https://yuqianyi1001.github.io/</a> 
     <p>
         <b>说明：</b>
@@ -554,14 +554,22 @@ title: 五位百法，可交互
     document.addEventListener('DOMContentLoaded', function () {
         const zoomControl = document.getElementById('zoomControl');
         const imageContainer = document.querySelector('.image-container');
+
+        const notes = document.querySelector('.notes');
+
         let zoomLevels = [0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0];
-        let currentZoomIndex = 2; // Start at 80%
+        let currentZoomIndex = 1; // Start at 75%
 
         zoomControl.addEventListener('click', function() {
             currentZoomIndex = (currentZoomIndex + 1) % zoomLevels.length;
             const newZoom = zoomLevels[currentZoomIndex];
+
             imageContainer.style.transform = `scale(${newZoom})`;
+            const marginTop = -(1 - newZoom) * 1000; // Calculate margin-top based on zoom level
+            notes.style.marginTop = `${marginTop}px`;
             zoomControl.textContent = `${newZoom * 100}%`;
+
+            
         });
 
         let map = document.getElementById('map1');
