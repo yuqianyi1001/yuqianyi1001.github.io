@@ -1,0 +1,212 @@
+---
+layout: individual
+title: 海报生成器
+---
+
+<style>
+.poster-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.controls {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.preview-area {
+    width: 375px;
+    height: 667px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.signature {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;  /* 改为垂直排列 */
+    align-items: flex-end;   /* 右对齐 */
+    gap: 5px;
+    font-size: 12px;
+    color: #666;
+    text-align: right;
+}
+
+.qrcode {
+    width: 50px;
+    height: 50px;
+    margin-left: 0;         /* 移除左边距 */
+}
+
+.background-options {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.bg-option {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.bg-option.active {
+    border-color: #000;
+}
+
+#posterText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    text-align: center;
+    word-wrap: break-word;
+}
+</style>
+
+<div class="poster-container">
+    <div class="controls">
+        <textarea id="textInput" rows="4" placeholder="输入要展示的文字..." style="width: 100%;"></textarea>
+        
+        <div>
+            <label>选择背景：</label>
+            <div class="background-options">
+                <div class="bg-option" style="background: linear-gradient(45deg, #FFE2E2, #FFC7C7)" data-bg="warm1"></div>
+                <div class="bg-option" style="background: linear-gradient(45deg, #F3F0D7, #CEE5D0)" data-bg="warm2"></div>
+                <div class="bg-option" style="background: #FFF" data-bg="simple"></div>
+                <div class="bg-option" style="background: linear-gradient(45deg, #E8DFF5, #FCF6F5)" data-bg="warm3"></div>
+                <div class="bg-option" style="background: linear-gradient(45deg, #FFF6E9, #FFE3E1)" data-bg="warm4"></div>
+                <div class="bg-option" style="background: linear-gradient(45deg, #E3F4F4, #D7E9F7)" data-bg="simple2"></div>
+                <div class="bg-option" style="background: linear-gradient(45deg, #F8E8EE, #FDCEDF)" data-bg="warm5"></div>
+                <div class="bg-option" style="background: #F9F9F9" data-bg="simple3"></div>
+                <div class="bg-option" style="background: linear-gradient(45deg, #F1F0E8, #EEE0C9)" data-bg="warm6"></div>
+                <div class="bg-option" style="background: linear-gradient(45deg, #F5E6E8, #D2E3C8)" data-bg="simple4"></div>
+            </div>
+        </div>
+
+        <div>
+            <label>字体：</label>
+            <select id="fontSelect">
+                <option value="'Ma Shan Zheng', cursive">马善政楷书</option>
+                <option value="'Noto Serif SC', serif">思源宋体</option>
+                <option value="'ZCOOL XiaoWei', cursive">站酷小薇</option>
+                <option value="'ZCOOL KuaiLe', cursive">站酷快乐</option>
+            </select>
+        </div>
+
+        <div>
+            <label>字体大小：</label>
+            <input type="range" id="fontSize" min="12" max="48" value="24">
+            <span id="fontSizeValue">24px</span>
+        </div>
+
+        <div>
+            <label>字体颜色：</label>
+            <input type="color" id="fontColor" value="#000000">
+        </div>
+
+        <div>
+            <label>
+                <input type="checkbox" id="showSignature" checked>
+                显示签名和二维码
+            </label>
+        </div>
+    </div>
+
+    <div class="preview-area" id="preview">
+        <div id="posterText"></div>
+        <div id="signature" class="signature">
+            <span>欢迎关注愚千一公众号</span>
+            <img src="/images/gongzhonghao.jpg" id="qrcode" class="qrcode" alt="公众号二维码">
+        </div>
+    </div>
+
+    <button onclick="downloadPoster()" style="margin-top: 20px;">下载海报</button>
+</div>
+
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const textInput = document.getElementById('textInput');
+    const posterText = document.getElementById('posterText');
+    const preview = document.getElementById('preview');
+    const fontSelect = document.getElementById('fontSelect');
+    const fontSize = document.getElementById('fontSize');
+    const fontSizeValue = document.getElementById('fontSizeValue');
+    const fontColor = document.getElementById('fontColor');
+    const bgOptions = document.querySelectorAll('.bg-option');
+
+    // 初始化背景
+    bgOptions[0].classList.add('active');
+    preview.style.background = bgOptions[0].style.background;
+
+    // 文本输入监听
+    textInput.addEventListener('input', updatePoster);
+    
+    // 字体选择监听
+    fontSelect.addEventListener('change', updatePoster);
+    
+    // 字体大小监听
+    fontSize.addEventListener('input', function() {
+        fontSizeValue.textContent = this.value + 'px';
+        updatePoster();
+    });
+    
+    // 字体颜色监听
+    fontColor.addEventListener('input', updatePoster);
+    
+    // 背景选择监听
+    bgOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            bgOptions.forEach(opt => opt.classList.remove('active'));
+            this.classList.add('active');
+            preview.style.background = this.style.background;
+        });
+    });
+
+    function updatePoster() {
+        posterText.textContent = textInput.value;
+        posterText.style.fontFamily = fontSelect.value;
+        posterText.style.fontSize = fontSize.value + 'px';
+        posterText.style.color = fontColor.value;
+    }
+
+    const showSignature = document.getElementById('showSignature');
+    const signature = document.getElementById('signature');
+    const qrcode = document.getElementById('qrcode');
+
+    // 初始化签名和二维码显示状态
+    updateSignatureVisibility();
+
+    // 签名显示控制监听
+    showSignature.addEventListener('change', updateSignatureVisibility);
+
+    function updateSignatureVisibility() {
+        const isVisible = showSignature.checked ? 'flex' : 'none';  // 改为 'flex'
+        signature.style.display = isVisible;
+        // 移除对 qrcode 的单独控制
+    }
+});
+
+function downloadPoster() {
+    html2canvas(document.getElementById('preview')).then(canvas => {
+        const link = document.createElement('a');
+        link.download = '海报.png';
+        link.href = canvas.toDataURL();
+        link.click();
+    });
+}
+</script>
+
