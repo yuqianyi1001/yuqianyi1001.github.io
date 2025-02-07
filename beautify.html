@@ -53,13 +53,39 @@ title: 海报生成器
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+.text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#posterText, #titleText {
+    width: 100%;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+/* 移除原有的绝对定位样式 */
+#posterText {
+    order: 1;  /* 正文在前 */
+}
+
+#titleText {
+    order: 2;  /* 标题在后 */
+}
+
 .signature {
     position: absolute;
     bottom: 20px;
     right: 20px;
     display: flex;
-    flex-direction: column;  /* 改为垂直排列 */
-    align-items: flex-end;   /* 右对齐 */
+    flex-direction: column;
+    align-items: flex-end;
     gap: 5px;
     font-size: 12px;
     color: #666;
@@ -90,22 +116,16 @@ title: 海报生成器
     border-color: #000;
 }
 
-#posterText {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    text-align: center;
-    word-wrap: break-word;
-}
 </style>
 
 <div class="poster-container">
     <div class="preview-section">
         <div class="section-title">预览</div>
         <div class="preview-area" id="preview">
-            <div id="posterText"></div>
+            <div class="text-container">
+                <div id="posterText"></div>
+                <div id="titleText"></div>
+            </div>
             <div id="signature" class="signature">
                 <span>欢迎关注愚千一公众号</span>
                 <img src="/images/gongzhonghao.jpg" id="qrcode" class="qrcode" alt="公众号二维码">
@@ -117,6 +137,7 @@ title: 海报生成器
         <div class="section-title">设置</div>
         <div class="controls">
             <textarea id="textInput" rows="4" placeholder="输入要展示的文字..." style="width: 100%;"></textarea>
+            <textarea id="titleInput" rows="2" placeholder="输入标题文字..." style="width: 100%;"></textarea>
             <div class="convert-buttons" style="display: flex; gap: 10px;">
                 <button onclick="convertToSimplified()" style="flex: 1; padding: 5px; background: #f0f0f0; border: 1px solid #ddd; border-radius: 3px; cursor: pointer;">转为简体</button>
                 <button onclick="convertToTraditional()" style="flex: 1; padding: 5px; background: #f0f0f0; border: 1px solid #ddd; border-radius: 3px; cursor: pointer;">转为繁体</button>
@@ -165,6 +186,12 @@ title: 海报生成器
             </div>
 
             <div>
+                <label>标题字体大小：</label>
+                <input type="range" id="titleFontSize" min="12" max="96" value="32">
+                <span id="titleFontSizeValue">32px</span>
+            </div>
+
+            <div>
                 <label>字体颜色：</label>
                 <input type="color" id="fontColor" value="#000000">
             </div>
@@ -189,16 +216,34 @@ title: 海报生成器
 // 将 updatePoster 函数移到全局作用域
 function updatePoster() {
     const textInput = document.getElementById('textInput');
+    const titleInput = document.getElementById('titleInput');
     const posterText = document.getElementById('posterText');
+    const titleText = document.getElementById('titleText');
+    
     posterText.textContent = textInput.value;
-    posterText.style.fontFamily = document.getElementById('fontSelect').value;
+    titleText.textContent = titleInput.value;
+    
+    const fontFamily = document.getElementById('fontSelect').value;
+    posterText.style.fontFamily = fontFamily;
+    titleText.style.fontFamily = fontFamily;
+    
     posterText.style.fontSize = document.getElementById('fontSize').value + 'px';
-    posterText.style.color = document.getElementById('fontColor').value;
+    titleText.style.fontSize = document.getElementById('titleFontSize').value + 'px';
+    
+    const color = document.getElementById('fontColor').value;
+    posterText.style.color = color;
+    titleText.style.color = color;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     const textInput = document.getElementById('textInput');
     const posterText = document.getElementById('posterText');
+
+    const titleInput = document.getElementById('titleInput');
+    const titleText = document.getElementById('titleText');
+    const titleFontSize = document.getElementById('titleFontSize');
+    const titleFontSizeValue = document.getElementById('titleFontSizeValue');
+
     const preview = document.getElementById('preview');
     const fontSelect = document.getElementById('fontSelect');
     const fontSize = document.getElementById('fontSize');
@@ -206,67 +251,30 @@ document.addEventListener('DOMContentLoaded', function() {
     const fontColor = document.getElementById('fontColor');
     const bgOptions = document.querySelectorAll('.bg-option');
 
-    // 从本地存储加载上次的文本内容
-    const savedText = localStorage.getItem('posterText');
-    if (savedText) {
-        textInput.value = savedText;
-        posterText.textContent = savedText;
-    }
-
-    // 文本输入监听
-    textInput.addEventListener('input', function() {
-        updatePoster();
-        // 保存到本地存储
-        localStorage.setItem('posterText', textInput.value);
-    });
-    
-    // 字体选择监听
-    fontSelect.addEventListener('change', updatePoster);
-    
-    // 字体大小监听
-    fontSize.addEventListener('input', function() {
-        fontSizeValue.textContent = this.value + 'px';
-        updatePoster();
-        localStorage.setItem('posterFontSize', this.value);
-    });
-    
-    // 字体颜色监听
-    fontColor.addEventListener('input', function() {
-        updatePoster();
-        localStorage.setItem('posterFontColor', this.value);
-    });
-    
-    // 背景选择监听
-    bgOptions.forEach(option => {
-        option.addEventListener('click', function() {
-            bgOptions.forEach(opt => opt.classList.remove('active'));
-            this.classList.add('active');
-            preview.style.background = this.style.background;
-            localStorage.setItem('posterBackground', this.style.background);
-        });
-    });
-
     const showSignature = document.getElementById('showSignature');
     const signature = document.getElementById('signature');
     const qrcode = document.getElementById('qrcode');
 
-    // 初始化签名和二维码显示状态
-    updateSignatureVisibility();
-
-    // 签名显示控制监听
-    showSignature.addEventListener('change', updateSignatureVisibility);
-
-    function updateSignatureVisibility() {
-        const isVisible = showSignature.checked ? 'flex' : 'none';  // 改为 'flex'
-        signature.style.display = isVisible;
-        // 移除对 qrcode 的单独控制
-    }
     // 从本地存储加载所有设置
+    const savedText = localStorage.getItem('posterText');
+    const savedTitle = localStorage.getItem('posterTitle');
     const savedFontSize = localStorage.getItem('posterFontSize');
     const savedFontColor = localStorage.getItem('posterFontColor');
     const savedBackground = localStorage.getItem('posterBackground');
     const savedFont = localStorage.getItem('posterFont');
     const savedSignature = localStorage.getItem('showSignature');
+
+    // 从本地存储加载上次的文本内容
+    if (savedText) {
+        textInput.value = savedText;
+        posterText.textContent = savedText;
+    }
+
+    // 从本地存储加载标题内容
+    if (savedTitle) {
+        titleInput.value = savedTitle;
+        titleText.textContent = savedTitle;
+    }
 
     // 恢复文本
     if (savedText) {
@@ -309,6 +317,65 @@ document.addEventListener('DOMContentLoaded', function() {
         updateSignatureVisibility();
     }
 
+    const savedTitleFontSize = localStorage.getItem('posterTitleFontSize');
+    if (savedTitleFontSize) {
+        titleFontSize.value = savedTitleFontSize;
+        titleFontSizeValue.textContent = savedTitleFontSize + 'px';
+        titleText.style.fontSize = savedTitleFontSize + 'px';
+    }
+
+    // 标题输入监听
+    titleInput.addEventListener('input', function() {
+        updatePoster();
+        localStorage.setItem('posterTitle', titleInput.value);
+    });
+
+    // 标题字体大小监听
+    titleFontSize.addEventListener('input', function() {
+        titleFontSizeValue.textContent = this.value + 'px';
+        updatePoster();
+        localStorage.setItem('posterTitleFontSize', this.value);
+    });
+
+    // 文本输入监听
+    textInput.addEventListener('input', function() {
+        updatePoster();
+        // 保存到本地存储
+        localStorage.setItem('posterText', textInput.value);
+    });
+    
+    // 字体选择监听
+    fontSelect.addEventListener('change', updatePoster);
+    
+    // 字体大小监听
+    fontSize.addEventListener('input', function() {
+        fontSizeValue.textContent = this.value + 'px';
+        updatePoster();
+        localStorage.setItem('posterFontSize', this.value);
+    });
+    
+    // 字体颜色监听
+    fontColor.addEventListener('input', function() {
+        updatePoster();
+        localStorage.setItem('posterFontColor', this.value);
+    });
+    
+    // 背景选择监听
+    bgOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            bgOptions.forEach(opt => opt.classList.remove('active'));
+            this.classList.add('active');
+            preview.style.background = this.style.background;
+            localStorage.setItem('posterBackground', this.style.background);
+        });
+    });
+
+    function updateSignatureVisibility() {
+        const isVisible = showSignature.checked ? 'flex' : 'none';  // 改为 'flex'
+        signature.style.display = isVisible;
+        // 移除对 qrcode 的单独控制
+    }
+
     // 字体选择监听
     fontSelect.addEventListener('change', function() {
         updatePoster();
@@ -320,6 +387,11 @@ document.addEventListener('DOMContentLoaded', function() {
         updateSignatureVisibility();
         localStorage.setItem('showSignature', this.checked);
     });
+
+    // 初始化签名和二维码显示状态
+    updateSignatureVisibility();
+
+    updatePoster();
 });
 
 function downloadPoster() {
@@ -344,16 +416,22 @@ const converterToSimplified = OpenCC.Converter({ from: 'tw', to: 'cn' });
 
 function convertToSimplified() {
     const text = textInput.value;
+    const title = titleInput.value;
     textInput.value = converterToSimplified(text);
+    titleInput.value = converterToSimplified(title);
     updatePoster();
     localStorage.setItem('posterText', textInput.value);
+    localStorage.setItem('posterTitle', titleInput.value);
 }
 
 function convertToTraditional() {
     const text = textInput.value;
+    const title = titleInput.value;
     textInput.value = converterToTraditional(text);
+    titleInput.value = converterToTraditional(title);
     updatePoster();
     localStorage.setItem('posterText', textInput.value);
+    localStorage.setItem('posterTitle', titleInput.value);
 }
 </script>
 
