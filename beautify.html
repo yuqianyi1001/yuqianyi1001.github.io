@@ -162,19 +162,20 @@ title: 海报生成器
             <div>
                 <label>字体：</label>
                 <select id="fontSelect">
-                    <optgroup label="简体中文">
-                        <option value="'Ma Shan Zheng', cursive">马善政楷书</option>
-                        <option value="'Noto Serif SC', serif">思源宋体（简体）</option>
-                        <option value="'ZCOOL XiaoWei', cursive">站酷小薇</option>
-                        <option value="'ZCOOL KuaiLe', cursive">站酷快乐</option>
+                    <optgroup label="楷书字体">
+                        <option value="'Ma Shan Zheng', KaiTi, cursive">马善政楷书（简体）</option>
+                        <option value="'DFKai-SB', KaiTi, serif">标楷体</option>
+                        <option value="KaiTi, STKaiti, serif">楷体</option>
                     </optgroup>
-                    <optgroup label="繁体中文">
+                    <optgroup label="宋体系列">
+                        <option value="'Noto Serif SC', SimSun, serif">思源宋体（简体）</option>
                         <option value="'Noto Serif TC', serif">思源宋体（繁体）</option>
-                        <option value="'Noto Sans TC', sans-serif">思源黑体（繁体）</option>
+                        <option value="'PMingLiU', MingLiU, serif">新细明体</option>
                     </optgroup>
-                    <optgroup label="简繁通用">
-                        <option value="'PMingLiU', serif">新细明体</option>
-                        <option value="'DFKai-SB', serif">标楷体</option>
+                    <optgroup label="创意字体">
+                        <option value="'ZCOOL XiaoWei', cursive">站酷小薇（简体）</option>
+                        <option value="'ZCOOL KuaiLe', cursive">站酷快乐（简体）</option>
+                        <option value="'Noto Sans TC', sans-serif">思源黑体</option>
                     </optgroup>
                 </select>
             </div>
@@ -208,7 +209,7 @@ title: 海报生成器
     </div>
 </div>
 
-<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&family=Noto+Serif+TC:wght@400;700&family=ZCOOL+XiaoWei&family=ZCOOL+KuaiLe&family=Noto+Sans+TC&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&family=Noto+Serif+TC:wght@400;700&family=ZCOOL+XiaoWei&family=ZCOOL+KuaiLe&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/full.min.js"></script>
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
@@ -233,6 +234,13 @@ function updatePoster() {
     const color = document.getElementById('fontColor').value;
     posterText.style.color = color;
     titleText.style.color = color;
+}
+
+function updateSignatureVisibility() {
+    const signature = document.getElementById('signature');
+    const showSignature = document.getElementById('showSignature');
+    const isVisible = showSignature.checked ? 'flex' : 'none';
+    signature.style.display = isVisible;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
