@@ -221,7 +221,8 @@ function updatePoster() {
     const posterText = document.getElementById('posterText');
     const titleText = document.getElementById('titleText');
     
-    posterText.textContent = textInput.value;
+    // 处理正文换行
+    posterText.innerHTML = textInput.value.replace(/\n/g, '<br>');
     titleText.textContent = titleInput.value;
     
     const fontFamily = document.getElementById('fontSelect').value;
@@ -277,7 +278,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (settings.text) {
             textInput.value = settings.text;
-            posterText.textContent = settings.text;
+            posterText.innerHTML = settings.text.replace(/\n/g, '<br>');
         }
 
         if (settings.title) {
