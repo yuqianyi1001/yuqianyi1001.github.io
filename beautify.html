@@ -227,10 +227,14 @@ document.addEventListener('DOMContentLoaded', function() {
     fontSize.addEventListener('input', function() {
         fontSizeValue.textContent = this.value + 'px';
         updatePoster();
+        localStorage.setItem('posterFontSize', this.value);
     });
     
     // 字体颜色监听
-    fontColor.addEventListener('input', updatePoster);
+    fontColor.addEventListener('input', function() {
+        updatePoster();
+        localStorage.setItem('posterFontColor', this.value);
+    });
     
     // 背景选择监听
     bgOptions.forEach(option => {
@@ -238,6 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
             bgOptions.forEach(opt => opt.classList.remove('active'));
             this.classList.add('active');
             preview.style.background = this.style.background;
+            localStorage.setItem('posterBackground', this.style.background);
         });
     });
 
@@ -256,6 +261,65 @@ document.addEventListener('DOMContentLoaded', function() {
         signature.style.display = isVisible;
         // 移除对 qrcode 的单独控制
     }
+    // 从本地存储加载所有设置
+    const savedFontSize = localStorage.getItem('posterFontSize');
+    const savedFontColor = localStorage.getItem('posterFontColor');
+    const savedBackground = localStorage.getItem('posterBackground');
+    const savedFont = localStorage.getItem('posterFont');
+    const savedSignature = localStorage.getItem('showSignature');
+
+    // 恢复文本
+    if (savedText) {
+        textInput.value = savedText;
+        posterText.textContent = savedText;
+    }
+
+    // 恢复字体大小
+    if (savedFontSize) {
+        fontSize.value = savedFontSize;
+        fontSizeValue.textContent = savedFontSize + 'px';
+        posterText.style.fontSize = savedFontSize + 'px';
+    }
+
+    // 恢复字体颜色
+    if (savedFontColor) {
+        fontColor.value = savedFontColor;
+        posterText.style.color = savedFontColor;
+    }
+
+    // 恢复背景
+    if (savedBackground) {
+        bgOptions.forEach(opt => {
+            if (opt.style.background === savedBackground) {
+                opt.classList.add('active');
+                preview.style.background = savedBackground;
+            }
+        });
+    }
+
+    // 恢复字体选择
+    if (savedFont) {
+        fontSelect.value = savedFont;
+        posterText.style.fontFamily = savedFont;
+    }
+
+    // 恢复签名显示状态
+    if (savedSignature !== null) {
+        showSignature.checked = savedSignature === 'true';
+        updateSignatureVisibility();
+    }
+
+    // 字体选择监听
+    fontSelect.addEventListener('change', function() {
+        updatePoster();
+        localStorage.setItem('posterFont', this.value);
+    });
+
+    // 签名显示控制监听
+    showSignature.addEventListener('change', function() {
+        updateSignatureVisibility();
+        localStorage.setItem('showSignature', this.checked);
+    });
 });
 
 function downloadPoster() {
