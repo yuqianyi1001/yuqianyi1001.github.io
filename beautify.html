@@ -5,16 +5,43 @@ title: 海报生成器
 
 <style>
 .poster-container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
+    display: flex;
+    gap: 40px;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.preview-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;  /* 改为纵向排列以容纳标题 */
+    align-items: center;
+    position: sticky;
+    top: 20px;
+}
+
+.controls-section {
+    flex: 1;
+    max-width: 400px;
 }
 
 .controls {
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .preview-area {
@@ -75,69 +102,100 @@ title: 海报生成器
 </style>
 
 <div class="poster-container">
-    <div class="controls">
-        <textarea id="textInput" rows="4" placeholder="输入要展示的文字..." style="width: 100%;"></textarea>
-        
-        <div>
-            <label>选择背景：</label>
-            <div class="background-options">
-                <div class="bg-option" style="background: linear-gradient(45deg, #FFE2E2, #FFC7C7)" data-bg="warm1"></div>
-                <div class="bg-option" style="background: linear-gradient(45deg, #F3F0D7, #CEE5D0)" data-bg="warm2"></div>
-                <div class="bg-option" style="background: #FFF" data-bg="simple"></div>
-                <div class="bg-option" style="background: linear-gradient(45deg, #E8DFF5, #FCF6F5)" data-bg="warm3"></div>
-                <div class="bg-option" style="background: linear-gradient(45deg, #FFF6E9, #FFE3E1)" data-bg="warm4"></div>
-                <div class="bg-option" style="background: linear-gradient(45deg, #E3F4F4, #D7E9F7)" data-bg="simple2"></div>
-                <div class="bg-option" style="background: linear-gradient(45deg, #F8E8EE, #FDCEDF)" data-bg="warm5"></div>
-                <div class="bg-option" style="background: #F9F9F9" data-bg="simple3"></div>
-                <div class="bg-option" style="background: linear-gradient(45deg, #F1F0E8, #EEE0C9)" data-bg="warm6"></div>
-                <div class="bg-option" style="background: linear-gradient(45deg, #F5E6E8, #D2E3C8)" data-bg="simple4"></div>
+    <div class="preview-section">
+        <div class="section-title">预览</div>
+        <div class="preview-area" id="preview">
+            <div id="posterText"></div>
+            <div id="signature" class="signature">
+                <span>欢迎关注愚千一公众号</span>
+                <img src="/images/gongzhonghao.jpg" id="qrcode" class="qrcode" alt="公众号二维码">
+            </div>
+        </div>
+    </div>
+
+    <div class="controls-section">
+        <div class="section-title">设置</div>
+        <div class="controls">
+            <textarea id="textInput" rows="4" placeholder="输入要展示的文字..." style="width: 100%;"></textarea>
+            <div class="convert-buttons" style="display: flex; gap: 10px;">
+                <button onclick="convertToSimplified()" style="flex: 1; padding: 5px; background: #f0f0f0; border: 1px solid #ddd; border-radius: 3px; cursor: pointer;">转为简体</button>
+                <button onclick="convertToTraditional()" style="flex: 1; padding: 5px; background: #f0f0f0; border: 1px solid #ddd; border-radius: 3px; cursor: pointer;">转为繁体</button>
+            </div>
+            
+            <div>
+                <label>选择背景：</label>
+                <div class="background-options">
+                    <div class="bg-option" style="background: linear-gradient(45deg, #FFE2E2, #FFC7C7)" data-bg="warm1"></div>
+                    <div class="bg-option" style="background: linear-gradient(45deg, #F3F0D7, #CEE5D0)" data-bg="warm2"></div>
+                    <div class="bg-option" style="background: #FFF" data-bg="simple"></div>
+                    <div class="bg-option" style="background: linear-gradient(45deg, #E8DFF5, #FCF6F5)" data-bg="warm3"></div>
+                    <div class="bg-option" style="background: linear-gradient(45deg, #FFF6E9, #FFE3E1)" data-bg="warm4"></div>
+                    <div class="bg-option" style="background: linear-gradient(45deg, #E3F4F4, #D7E9F7)" data-bg="simple2"></div>
+                    <div class="bg-option" style="background: linear-gradient(45deg, #F8E8EE, #FDCEDF)" data-bg="warm5"></div>
+                    <div class="bg-option" style="background: #F9F9F9" data-bg="simple3"></div>
+                    <div class="bg-option" style="background: linear-gradient(45deg, #F1F0E8, #EEE0C9)" data-bg="warm6"></div>
+                    <div class="bg-option" style="background: linear-gradient(45deg, #F5E6E8, #D2E3C8)" data-bg="simple4"></div>
+                </div>
+            </div>
+
+            <div>
+                <label>字体：</label>
+                <select id="fontSelect">
+                    <optgroup label="简体中文">
+                        <option value="'Ma Shan Zheng', cursive">马善政楷书</option>
+                        <option value="'Noto Serif SC', serif">思源宋体（简体）</option>
+                        <option value="'ZCOOL XiaoWei', cursive">站酷小薇</option>
+                        <option value="'ZCOOL KuaiLe', cursive">站酷快乐</option>
+                    </optgroup>
+                    <optgroup label="繁体中文">
+                        <option value="'Noto Serif TC', serif">思源宋体（繁体）</option>
+                        <option value="'Noto Sans TC', sans-serif">思源黑体（繁体）</option>
+                    </optgroup>
+                    <optgroup label="简繁通用">
+                        <option value="'PMingLiU', serif">新细明体</option>
+                        <option value="'DFKai-SB', serif">标楷体</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div>
+                <label>字体大小：</label>
+                <input type="range" id="fontSize" min="12" max="96" value="24">
+                <span id="fontSizeValue">24px</span>
+            </div>
+
+            <div>
+                <label>字体颜色：</label>
+                <input type="color" id="fontColor" value="#000000">
+            </div>
+
+            <div>
+                <label>
+                    <input type="checkbox" id="showSignature" checked>
+                    显示签名和二维码
+                </label>
             </div>
         </div>
 
-        <div>
-            <label>字体：</label>
-            <select id="fontSelect">
-                <option value="'Ma Shan Zheng', cursive">马善政楷书</option>
-                <option value="'Noto Serif SC', serif">思源宋体</option>
-                <option value="'ZCOOL XiaoWei', cursive">站酷小薇</option>
-                <option value="'ZCOOL KuaiLe', cursive">站酷快乐</option>
-            </select>
-        </div>
-
-        <div>
-            <label>字体大小：</label>
-            <input type="range" id="fontSize" min="12" max="48" value="24">
-            <span id="fontSizeValue">24px</span>
-        </div>
-
-        <div>
-            <label>字体颜色：</label>
-            <input type="color" id="fontColor" value="#000000">
-        </div>
-
-        <div>
-            <label>
-                <input type="checkbox" id="showSignature" checked>
-                显示签名和二维码
-            </label>
-        </div>
+        <button onclick="downloadPoster()" style="width: 100%; padding: 10px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">下载海报</button>
     </div>
-
-    <div class="preview-area" id="preview">
-        <div id="posterText"></div>
-        <div id="signature" class="signature">
-            <span>欢迎关注愚千一公众号</span>
-            <img src="/images/gongzhonghao.jpg" id="qrcode" class="qrcode" alt="公众号二维码">
-        </div>
-    </div>
-
-    <button onclick="downloadPoster()" style="margin-top: 20px;">下载海报</button>
 </div>
 
-<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&family=Noto+Serif+TC:wght@400;700&family=ZCOOL+XiaoWei&family=ZCOOL+KuaiLe&family=Noto+Sans+TC&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/full.min.js"></script>
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
 <script>
+// 将 updatePoster 函数移到全局作用域
+function updatePoster() {
+    const textInput = document.getElementById('textInput');
+    const posterText = document.getElementById('posterText');
+    posterText.textContent = textInput.value;
+    posterText.style.fontFamily = document.getElementById('fontSelect').value;
+    posterText.style.fontSize = document.getElementById('fontSize').value + 'px';
+    posterText.style.color = document.getElementById('fontColor').value;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const textInput = document.getElementById('textInput');
     const posterText = document.getElementById('posterText');
@@ -148,12 +206,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const fontColor = document.getElementById('fontColor');
     const bgOptions = document.querySelectorAll('.bg-option');
 
-    // 初始化背景
-    bgOptions[0].classList.add('active');
-    preview.style.background = bgOptions[0].style.background;
+    // 从本地存储加载上次的文本内容
+    const savedText = localStorage.getItem('posterText');
+    if (savedText) {
+        textInput.value = savedText;
+        posterText.textContent = savedText;
+    }
 
     // 文本输入监听
-    textInput.addEventListener('input', updatePoster);
+    textInput.addEventListener('input', function() {
+        updatePoster();
+        // 保存到本地存储
+        localStorage.setItem('posterText', textInput.value);
+    });
     
     // 字体选择监听
     fontSelect.addEventListener('change', updatePoster);
@@ -175,13 +240,6 @@ document.addEventListener('DOMContentLoaded', function() {
             preview.style.background = this.style.background;
         });
     });
-
-    function updatePoster() {
-        posterText.textContent = textInput.value;
-        posterText.style.fontFamily = fontSelect.value;
-        posterText.style.fontSize = fontSize.value + 'px';
-        posterText.style.color = fontColor.value;
-    }
 
     const showSignature = document.getElementById('showSignature');
     const signature = document.getElementById('signature');
@@ -207,6 +265,31 @@ function downloadPoster() {
         link.href = canvas.toDataURL();
         link.click();
     });
+}
+
+// 添加简繁转换功能
+// Remove these lines
+// let converter;
+// OpenCC.load().then((_converter) => {
+//     converter = _converter;
+// });
+
+// Initialize converters
+const converterToTraditional = OpenCC.Converter({ from: 'cn', to: 'tw' });
+const converterToSimplified = OpenCC.Converter({ from: 'tw', to: 'cn' });
+
+function convertToSimplified() {
+    const text = textInput.value;
+    textInput.value = converterToSimplified(text);
+    updatePoster();
+    localStorage.setItem('posterText', textInput.value);
+}
+
+function convertToTraditional() {
+    const text = textInput.value;
+    textInput.value = converterToTraditional(text);
+    updatePoster();
+    localStorage.setItem('posterText', textInput.value);
 }
 </script>
 
