@@ -31,8 +31,11 @@ layout: default
 
 <div class="row">
   
-    <h2>文章列表(倒序排列，最新的文章在最上面)</h2>
-    <input type="checkbox" id="toggle-switch" checked="checked">
+{% assign zh_tw_count = site.posts | where_exp: "post", "post.url contains 'zh-tw'" | size %}
+{% assign total_posts = site.posts.size | minus: zh_tw_count %}
+
+<h2>文章列表 (共{{ total_posts }}篇，倒序排列，最新的文章在最前面)</h2>
+<input type="checkbox" id="toggle-switch" checked="checked">
     <label for="toggle-switch">显示繁体</label>
 
     <p>
