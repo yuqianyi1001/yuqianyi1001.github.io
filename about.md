@@ -20,7 +20,7 @@ Email： [jeffwoo2019@gmail.com](mailto:jeffwoo2019@gmail.com)
 
 圣严法师著作和《法鼓全集》（部分）
 
-| No. | 书名 | 收录全集 | 备注 | 
+| No. | 书名 | 收录全集 | 备注 | |
 | --- | --- | --- | --- | --- |
 | 01 | 《戒律学纲要》|
 | 02 | 《印度佛教史》| 
@@ -174,7 +174,4 @@ Email： [jeffwoo2019@gmail.com](mailto:jeffwoo2019@gmail.com)
 **豆瓣记录**
 
 [豆瓣上的阅读记录](https://book.douban.com/people/tata20011125/)
-
-
-
 
