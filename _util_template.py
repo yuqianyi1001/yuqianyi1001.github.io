@@ -8,5 +8,27 @@ current_date = datetime.datetime.now().strftime("%Y-%m-%d")
 source_path = "_unfinished_posts/_2024-08-21-TBD-template.md"
 destination_path = f"_posts/{current_date}-TBD.md"
 
+template = """---
+layout: post
+title: 
+wechat: 
+description: 
+excerpt: 
+tags:
+---
+
+
+阿弥陀佛。
+
+愚千一
+
+"""
+
+
 # Copy the file to the destination
-shutil.copyfile(source_path, destination_path)
+# shutil.copyfile(source_path, destination_path)
+
+with open(destination_path, 'w') as f:
+    f.write(template)
+
+
