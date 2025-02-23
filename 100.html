@@ -606,6 +606,16 @@ title: 五位百法，可交互
     gtag('config', 'G-MSNV5ELZQX');
 </script>
 
+<!-- 用这个工具制作表格 https://www.tablesgenerator.com/html_tables# -->
+<div id="content"></div>
+<script>
+  fetch('/baifa-table.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('content').innerHTML = data;
+    });
+</script>
+
 <!-- add discussion -->
 <script src="https://giscus.app/client.js"
         data-repo="yuqianyi1001/yuqianyi1001.github.io"
