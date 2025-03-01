@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 对比DeepSeek、Grok、Gemini、Qwen、ChatGPT：如何系统地学习佛法？尤其是全体佛法，而不只是部分或局部
-wechat: 
+wechat: https://mp.weixin.qq.com/s/Pl94qc1f5tQrLLyaykmB5w
 description: Gemini的回答我觉得最全面，从强调发心开始。其次是DeepSeek的回答，包括了佛教历史，这是非常重要内容。Qwen的回答其次，直接回答了佛教的理论和实践。Grok的回答比较简单。而ChatGPT则没有直接回答问题。
 excerpt: Gemini的回答我觉得最全面，从强调发心开始。其次是DeepSeek的回答，包括了佛教历史，这是非常重要内容。Qwen的回答其次，直接回答了佛教的理论和实践。Grok的回答比较简单。而ChatGPT则没有直接回答问题。
 tags:
