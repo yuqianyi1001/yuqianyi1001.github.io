@@ -9,7 +9,7 @@ tags:
 
 Gemini的回答我觉得最全面，从强调发心开始。其次是DeepSeek的回答，包括了佛教历史，这是非常重要内容。Qwen的回答其次，直接回答了佛教的理论和实践。Grok的回答比较简单。而ChatGPT则没有直接回答问题。
 
-从完整到简单顺序是：Gemini，DeepSeek，Qwen，Grok，ChatGPT。
+所以，从回答的完整性来说，顺序是：Gemini，DeepSeek，Qwen，Grok，ChatGPT。
 
 # DeepSeek、Grok、Gemini、Qwen结果对比
 
