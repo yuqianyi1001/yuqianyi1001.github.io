@@ -21,7 +21,7 @@ tags:
 
 # 《延庆文坛》
 
-《延庆文坛》是延庆寺主编的一本佛教刊物。根据我在寺院官网上看到的记录来看，一年出四期，正好对应四季。正是这本2025年春季刊（编号2025-01）收录了我的文章  —— [《南传也有菩萨道 \|〈南传菩萨道〉阅读笔记 \| 南北传菩萨道的简略对比》](https://mp.weixin.qq.com/s/fwgHuMw9PTOZsy7OEDzDyA) 收录在乙巳年春季刊 SPRING EDITION 2025-01。
+《延庆文坛》是延庆寺主编的一本佛教刊物。根据我在寺院官网上看到的记录来看，一年出四期，正好对应四季。正是这本2025年春季刊（编号2025-01）收录了我的文章  —— [《南传也有菩萨道 \|〈南传菩萨道〉阅读笔记 \| 南北传菩萨道的简略对比》](https://mp.weixin.qq.com/s/fwgHuMw9PTOZsy7OEDzDyA) 收录在乙巳年春季刊 SPRING EDITION 2025-01。[电子版链接。](https://www.yanqing.net/_files/ugd/67a7ab_0b7e404b9c824b1f8519167e69361912.pdf)
 
 ![](../images/esk-my-post.jpg)
 
