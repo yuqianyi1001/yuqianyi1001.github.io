@@ -26,7 +26,7 @@ Before publish：
 尽量保持原文，减少不必要的改动。
 
 不要有AI味，不要啰嗦。
-输出时保持markdown格式。
+以markdown格式输出。
 
 **TODOs**
 
