@@ -3,17 +3,30 @@ layout: default
 ---
 
 <article class="post">
-  <div style="display: block; text-align: center;">
+  <!-- <div style="display: block; text-align: center;">
     <div style="font-size:smaller; background-color:honeydew; font-style: italic;">欢迎关注我的微信公众号，请搜<b><u>愚千一</u></b>或直接输入ID： Yuqianyi1001。<br>
       组织《共读阿含》中，<a href="/join-group-requirements/" target="_blank"><b>入群须知(必读)</b></a> ，加入群聊请加我微信：yuqianyi1002<br>
       海外的朋友请<a href="mailto:jeffwoo2019@gmail.com" target="_blank">Email</a>我，有Line和Telegram群组。</div>
-  </div>
+  </div> -->
 
-  <h1>{{ page.title }}</h1>
+  <h1 id="post-title" style="display: none;">{{ page.title }}</h1>
 
   <div class="entry">
     {{ content }}
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 检查文章内容中是否存在 H1 标签
+      var entryDiv = document.querySelector('.entry');
+      var hasH1 = entryDiv.querySelector('h1');
+      
+      // 如果内容中不存在 H1 标签，则显示标题的 H1
+      if (!hasH1) {
+        document.getElementById('post-title').style.display = 'block';
+      }
+    });
+  </script>
 
   <div class="date">
     写于 {{ page.date | date: "%B %e, %Y" }}
