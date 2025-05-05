@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 对信仰的态度还不如谈婚论嫁？
-wechat: 
-description: 
-excerpt: 
+title: 你对信仰的认真程度有超过“谈婚论嫁”吗？
+wechat: https://mp.weixin.qq.com/s/4cmIJlyiniJOqfV4rmf1yQ
+description: 对待信仰，也应该多读读它的历史。正如谈婚论嫁一样，你可以不在乎他们的过去，但你必须要清楚和了解他们的过去，这样才可能有一个幸福美满的家庭。
+excerpt: 对待信仰，也应该多读读它的历史。正如谈婚论嫁一样，你可以不在乎他们的过去，但你必须要清楚和了解他们的过去，这样才可能有一个幸福美满的家庭。
 tags:
 ---
 
