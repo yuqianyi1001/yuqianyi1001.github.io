@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 不相信有轮回？不相信善恶业报？看阿罗汉怎么回答｜《长阿含经》卷七故事
+title: 不相信有来世？看阿罗汉怎么回答｜《长阿含经》卷七故事
 wechat: 
 description: 
 excerpt: 
