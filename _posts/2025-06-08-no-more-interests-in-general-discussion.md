@@ -1,10 +1,10 @@
 ---
 layout: post
 title: 为什么我对一般的佛学讨论越来越无兴趣了｜《杂阿含经》第546经
-wechat: 
-description: 
-excerpt: 
-tags:
+wechat: https://mp.weixin.qq.com/s/uEWw72ONV9ivohgAbo3LUg 
+description: 缺乏基础和共识让一般的佛学讨论会变成争吵，而有意义的讨论大概只有两类，一类是问答，另一类是有规则下的辩论
+excerpt: 缺乏基础和共识让一般的佛学讨论会变成争吵，而有意义的讨论大概只有两类，一类是问答，另一类是有规则下的辩论
+tags: 
 ---
 
 # 为什么我对一般的佛学讨论越来越无兴趣了｜《杂阿含经》第546经
