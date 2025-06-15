@@ -118,7 +118,7 @@ description: 中觀和唯識是印度佛教的兩大支柱，而當今學界所�
 ![](../images/2022-07-28-10-13-57.png)
 
 唯識宗的四重二諦：
-引自李元祥的《中國佛教史30 淨土唸佛 四重二諦 末法時代》https://www.youtube.com/watch?v=Dg1cYFLs2p8 
+引自李元祥的《中國佛教史30 淨土念佛 四重二諦 末法時代》https://www.youtube.com/watch?v=Dg1cYFLs2p8 
 
 ![](../images/20220728b.png)
 
