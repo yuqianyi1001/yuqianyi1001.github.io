@@ -1,9 +1,9 @@
 ---
 layout: post
 title: 藏传格鲁辩经，一次中文演示｜附完整的文字稿
-wechat: 
-description: 
-excerpt: 
+wechat: https://mp.weixin.qq.com/s/MbHDZRMjxeM1OA5XDt1T9A
+description: 通过逻辑交锋澄清概念、巩固经论记忆、培养敏捷思辨与慈悲心——“以辩养慧，以慧导行”。
+excerpt: 通过逻辑交锋澄清概念、巩固经论记忆、培养敏捷思辨与慈悲心——“以辩养慧，以慧导行”。
 tags:
 ---
 
@@ -15,7 +15,7 @@ tags:
 
 有条件看油管的朋友，可以直接看视频：https://www.youtube.com/watch?v=gDPreuPLlhU （备注，我仅仅关注这里的佛学辩论。）
 
-没条件看油管的朋友，可以听这个音频。
+没条件看油管的朋友，可以听这个音频。https://mp.weixin.qq.com/s/MbHDZRMjxeM1OA5XDt1T9A
 
 ## 辩论内容
 
