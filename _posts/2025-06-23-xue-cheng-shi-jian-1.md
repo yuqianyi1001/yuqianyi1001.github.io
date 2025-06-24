@@ -1,9 +1,9 @@
 ---
 layout: post
 title: 三年后，对学诚事件的反思｜旧文新感
-wechat: 
-description: 
-excerpt: 
+wechat: https://mp.weixin.qq.com/s/AkuZPmdyuuFVW5Qn8Xl9hQ
+description: 宗教也有可怕的一面。这就是现实吧，所以，我还是很鼓励大家提高自己的知见，提高自己的判断力，能够远离邪教，邪师，也远离各类诈骗。
+excerpt: 宗教也有可怕的一面。这就是现实吧，所以，我还是很鼓励大家提高自己的知见，提高自己的判断力，能够远离邪教，邪师，也远离各类诈骗。
 tags:
 ---
 
