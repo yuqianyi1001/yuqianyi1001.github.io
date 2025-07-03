@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 正法、像法、末法的另一种真相｜聊聊佛法如何一步步走样
-title_en: The Other Truth of the Three Dharma Ages: How the Teachings Were Distorted
+title_en: The Other Truth of the Three Dharma Ages, How the Teachings Were Distorted
 title_url: the-other-truth-of-the-three-dharma-ages-how-the-teachings-were-distorted
 wechat: 
 description: 传统观点认为正法、像法、末法的区别在于修行人的根器和证果人数，但我认为更核心、被忽略的问题是正法本身被不断稀释和扭曲，从纯牛奶，到兑水奶，再到污水里的几滴奶。
