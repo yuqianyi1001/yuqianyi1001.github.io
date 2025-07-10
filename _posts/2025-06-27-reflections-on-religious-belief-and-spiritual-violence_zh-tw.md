@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 關於宗教信仰與精神暴力的一些思考
+title: 關於宗教信仰與精神暴力的一些思考（圓善師兄）
 wechat: https://mp.weixin.qq.com/s/A1Nd_kFZy6qdWXaLUj3HKQ
 description: 
 excerpt: 
