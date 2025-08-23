@@ -2,9 +2,9 @@
 layout: post
 title: 优胜美地自驾游：最意外的经历，参加了印第安人Miwok的年度庆典
 wechat: 
-description: 
-excerpt: 
-tags:
+description: 优胜美地自驾游中，最意外的经历是参加了印第安人Miwok的年度庆典，亲历原住民的歌舞仪式，感受历史与现实的碰撞。
+excerpt: 优胜美地自驾游中，最意外的经历是参加了印第安人Miwok的年度庆典，亲历原住民的歌舞仪式，感受历史与现实的碰撞。
+tags: [旅行见闻]
 ---
 
 刚刚完成了今年暑假的 road trip（自驾游），目的地是加州的优胜美地国家公园。优胜美地果然非常棒，适合度假、露营、骑车、爬山……今年是我们第一次去，所以只去了几个主要景点，以及几条很短、很轻松的 trail，没有走太多路。下面就根据记忆，写一写其中有趣或者特别的经历。
@@ -20,36 +20,36 @@ tags:
 
 在优胜美地博物馆（Yosemite Museum）后面，有一块很小的地方，叫做 Indian Village of Ahwahanee。如下图，周长大约 1100 英尺（335 米）。
 
-![](../images/Pasted%20image%2020250819142727.png)
+![](../images/yosemite-village-map.png "Indian Village of Ahwahanee地图")
 
 在这里，优胜美地象征性地建了几座土著印第安人的房子。
 
-![](../images/Pasted%20image%2020250819143247.png)
+![](../images/yosemite-triangle-house.png "优胜美地土著三角形房屋外观")
 
 这些房子是用木头堆起来的三角形结构。
 
-![](../images/Pasted%20image%2020250819143109.png)
+![](../images/yosemite-triangle-house-inside.png "三角形房屋内部结构")
 
 旁边还有几间小木屋，像这样：
 
-![](../images/Pasted%20image%2020250819143531.png)
+![](../images/yosemite-cabin-1.png "优胜美地小木屋1")
 
-![](../images/Pasted%20image%2020250819143547.png)
+![](../images/yosemite-cabin-2.png "优胜美地小木屋2")
 
 这些小木屋看起来并不像土著人的房子。有意思的是，每个小木屋的门上都上了锁。如果只是供大家参观，通常都会打开房门，让人看到内部。比如，下面这个最特殊的房子 —— round house。
 
-![](../images/Pasted%20image%2020250819143859.png)
+![](../images/yosemite-round-house.png "优胜美地圆屋（Round House）外观")
 
 门口有一个告示牌，禁止进入。
 
-![](../images/Pasted%20image%2020250819144945.png)
+![](../images/yosemite-round-house-sign.png "圆屋门口的告示牌")
 
 
 告示牌内容是：THIS IS THE CEREMONIAL ROUNDROUSE OR HANGIE THE CENTER OF VILLAGE RELIGIOUS ACTIVITY, BECAUSE THIS HOUSE IS BEING USED THE HOLD WAY. WE ASK THAT YOU STAY BEHIND THE BARRIER AND OFF THE ROOF. THANK YOU. (翻译：这是举行仪式的圆屋或茅屋，是村庄宗教活动的中心。由于这座房屋一直按传统方式使用，我们请求您留在障碍物后面，不要登上屋顶。感谢您的配合。)
 
 不过可以从外面看到里面的样子，如下图。
 
-![](../images/Pasted%20image%2020250819144004.png)
+![](../images/yosemite-round-house-inside.png "圆屋内部结构")
 
 ## 邀请和等待
 
@@ -70,7 +70,7 @@ tags:
 
 人齐后，大家都精心装扮，一共三组人在门口列队。前面是几位男性，后面是来自两个不同部落的女性小组。
 
-![](../images/Pasted%20image%2020250819152417.png)
+![](../images/yosemite-ceremony-lineup.png "Miwok年度庆典列队场景")
 
 
 他们先把 Round House 的告示牌拿开，让亲朋好友们先进去，我们也趁机跟了进去。Round House 中间有一堆篝火，烧得正旺。等大家都坐好后，首领开始用英文讲话，大意是：这是他们第 50 次在这里举行年度庆典，举办这个庆典很不容易，感谢大家的付出，有人准备食物，有人维修 Round House，最后感谢大家的到来。
@@ -90,7 +90,7 @@ tags:
 
 对他们唱歌跳舞感兴趣的朋友，可以自行搜索“Miwok”，能找到不少资料和视频，例如 YouTube 上的：https://www.youtube.com/watch?v=Zwqu3k62HtY 
 
-![](../images/Pasted%20image%2020250819154410.png)
+![](../images/yosemite-miwok-youtube-screenshot.png "YouTube视频截图：Miwok部落歌舞")
 
 ## 感想
 
