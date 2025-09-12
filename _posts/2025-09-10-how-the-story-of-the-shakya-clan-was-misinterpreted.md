@@ -3,7 +3,7 @@ layout: post
 title: 佛教释迦族的事情是如何被谬传的｜ 多读佛经原文的重要性 ｜《增壹阿含经》卷第二十六 
 title_en: How the Story of the Shakya Clan was Misinterpreted ｜ The Importance of Reading Original Buddhist Sutras
 title_url: how-the-story-of-the-shakya-clan-was-misinterpreted-the-importance-of-reading-original-buddhist-sutras
-wechat: 
+wechat: https://mp.weixin.qq.com/s/rl5_Q-A6qR8l6tbPX2cM0w
 description: 佛教中释迦族被灭的故事广为流传，但此为谬传。本文通过考证《增壹阿含经》原始记录，指出释迦族仅是大量被杀，而非灭族，至今仍有后裔。此案例凸显了直接阅读佛经原文，避免以讹传讹的重要性。
 excerpt: 佛教中释迦族被灭的故事广为流传，但此为谬传。本文通过考证《增壹阿含经》原始记录，指出释迦族仅是大量被杀，而非灭族，至今仍有后裔。此案例凸显了直接阅读佛经原文，避免以讹传讹的重要性。
 tags:
