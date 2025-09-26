@@ -13,6 +13,7 @@
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+    <script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/full.min.js"></script>
   </head>
 
   <body>
@@ -27,7 +28,7 @@
           </div>
 
           <nav>
-            <a href="{{ site.baseurl }}/">全部文章<span style="font-size: small;">(含繁體)</span></a>
+            <a href="{{ site.baseurl }}/">全部文章</a>
             <!-- <a href="{{ site.baseurl }}/buddha-names">佛名大全<span style="font-size: small;">(总23772)</span></a> -->
             <a href="{{ site.baseurl }}/100">百法</a>
             <a href="{{ site.baseurl }}/xianguan">现观</a>
@@ -35,6 +36,10 @@
             <a href="{{ site.baseurl }}/about">我的闻思</a>
           </nav>
         </header>
+        <div id="lang-toggle" style="margin: 8px 0;">
+          <input type="checkbox" id="toggle-switch" />
+          <label for="toggle-switch" id="toggle-switch-label">切换繁体</label>
+        </div>
       </div>
     </div>
 
@@ -51,5 +56,78 @@
     </div>
 
     {% include analytics.html %}
+
+    <script>
+      (function() {
+        // Compat for legacy _zh-tw URLs: redirect to simplified path and keep TW mode
+        (function handleLegacyZhTwUrl(){
+          try {
+            const m = window.location.pathname.match(/^(.*)_zh-tw\/?$/i);
+            if (m) {
+              localStorage.setItem('lang', 'zh-TW');
+              const target = m[1] + '/';
+              const dest = target + window.location.search + window.location.hash;
+              window.location.replace(dest);
+            }
+          } catch (e) { /* ignore */ }
+        })();
+        const checkbox = document.getElementById('toggle-switch');
+        const label = document.getElementById('toggle-switch-label');
+        // init converters
+        const toTW = (window.OpenCC && OpenCC.Converter) ? OpenCC.Converter({ from: 'cn', to: 'tw' }) : (s => s);
+        const toCN = (window.OpenCC && OpenCC.Converter) ? OpenCC.Converter({ from: 'tw', to: 'cn' }) : (s => s);
+        // expose for other pages (e.g., index filter)
+        window.twConv = toTW;
+        window.cnConv = toCN;
+
+        function getLang() {
+          return localStorage.getItem('lang') || 'zh-CN';
+        }
+
+        function setLang(lang) {
+          localStorage.setItem('lang', lang);
+          document.body.setAttribute('data-lang', lang);
+          // set toggle label (in Simplified; will be converted when page converts)
+          label.textContent = (lang === 'zh-TW') ? '切换简体' : '切换繁体';
+          // apply conversion
+          applyConversion(lang);
+          // notify pages that language changed
+          const evt = new CustomEvent('langchange', { detail: { lang } });
+          window.dispatchEvent(evt);
+        }
+
+        function applyConversion(lang) {
+          const conv = (lang === 'zh-TW') ? toTW : toCN;
+          // convert document title
+          if (document && document.title) {
+            document.title = conv(document.title);
+          }
+          // walk text nodes
+          const skipTags = new Set(['SCRIPT','STYLE','CODE','PRE','TEXTAREA','NOSCRIPT']);
+          const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+            acceptNode(node) {
+              if (!node || !node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+              const p = node.parentNode;
+              if (!p || skipTags.has(p.nodeName)) return NodeFilter.FILTER_REJECT;
+              if (p.closest && p.closest('[data-no-translate]')) return NodeFilter.FILTER_REJECT;
+              return NodeFilter.FILTER_ACCEPT;
+            }
+          });
+          const nodes = [];
+          while (walker.nextNode()) nodes.push(walker.currentNode);
+          nodes.forEach(n => { n.nodeValue = conv(n.nodeValue); });
+        }
+
+        // init
+        const initLang = getLang();
+        checkbox.checked = (initLang === 'zh-TW');
+        setLang(initLang);
+
+        checkbox.addEventListener('change', function() {
+          const lang = checkbox.checked ? 'zh-TW' : 'zh-CN';
+          setLang(lang);
+        });
+      })();
+    </script>
   </body>
 </html>
