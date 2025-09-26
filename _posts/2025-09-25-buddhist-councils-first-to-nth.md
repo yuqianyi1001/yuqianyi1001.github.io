@@ -1,7 +1,9 @@
 ---
 layout: post
 title: 经典结集：第一次至第 N 次结集
-description: 佛教历代经典结集的背景、过程、成果与传说（含表格版，适合直接发布到博客）
+wechat: https://mp.weixin.qq.com/s/pb0zs9BLcHZxt3MaZUPY_w
+description: 佛教历代经典结集的背景、过程、成果与传说
+excerpt: 佛教历代经典结集的背景、过程、成果与传说
 tags: [佛教史, 结集, 三藏, 上座部, 有部]
 ---
 
