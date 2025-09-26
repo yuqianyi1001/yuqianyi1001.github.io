@@ -43,9 +43,7 @@ layout: default
     {%- for post in site.posts -%}
       {%- unless post.url contains "zh-tw" -%}
       <li class="post">
-        <ul>
-          <li>
-            <img src="/zh-simple.png" width="18px" />
+        
             <a href="{{ site.baseurl }}{{ post.url }}" class="read-more" id="post_title">{{ post.title }}</a>
             <a href="{{ post.wechat }}" target="_blank" id="wechat_link"><img src="/wechat.ico" width="16px" /></a>
             <img src="/copy.png" width="16px" id="copy-button" />
@@ -54,8 +52,7 @@ layout: default
             {%- for tag in post.tags -%}
               <code style="font-size: smaller;">{{ tag }}</code>
             {%- endfor -%}
-          </li>
-        </ul>
+          
       </li>
       {%- endunless -%}
     {%- endfor -%}
