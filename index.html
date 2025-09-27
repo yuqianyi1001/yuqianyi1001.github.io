@@ -121,7 +121,7 @@ layout: default
     <div id="post-monthly-summary-extra" class="year-groups-extra">
       {{ other_years_markup | strip }}
     </div>
-    <button type="button" id="toggle-year-summary" style="margin-top: 8px; font-size: smaller; padding: 4px 8px; border: 1px solid #ccc; border-radius: 4px; background: #fff; cursor: pointer;" aria-expanded="false">更多</button>
+    <a href="#" id="toggle-year-summary" style="display: inline-block; margin-top: 6px; font-size: x-small; color: #2b90d9; text-decoration: underline; cursor: pointer;" aria-expanded="false">更多</a>
   {%- endif -%}
 </div>
 
@@ -271,7 +271,8 @@ layout: default
         const extraContainer = summary ? summary.querySelector('.year-groups-extra') : null;
         let expanded = false;
 
-        moreButton.addEventListener('click', () => {
+        moreButton.addEventListener('click', (event) => {
+          event.preventDefault();
           expanded = !expanded;
           if (summary && extraContainer) {
             summary.classList.toggle('expanded', expanded);
