@@ -7,9 +7,8 @@ permalink: /about/
 ---
 
 <div style="display: block; text-align: center;">
-  <div style="font-size:smaller">欢迎关注我的微信公众号，请搜<b><u>愚千一</u></b>或直接输入ID： Yuqianyi1001。<br>
-    组织《共读阿含》中，<a href="/join-group-requirements/" target="_blank"><b>入群须知(必读)</b></a> ，加入群聊请加我微信：yuqianyi1002<br>
-    海外的朋友请<a href="mailto:jeffwoo2019@gmail.com" target="_blank">Email</a>我，有Line和Telegram群组。</div>
+  <div style="font-size:smaller">欢迎关注我的微信公众号，请搜<b><u>愚千一</u></b>或直接输入ID： Yuqianyi1001。<br></div>
+  <image src="../images/signature.png" />
 </div>
 
 ## 联系我
@@ -107,8 +106,9 @@ Email： [jeffwoo2019@gmail.com](mailto:jeffwoo2019@gmail.com)
 *   《净土十疑论》（1卷）隋天台智者大师说（第2遍完）
 *   《教观纲宗》（1卷）
 *   《菩提道次第广论》（部分）
-*   《亲友书》
-*   《极乐愿文》
+*   《亲友书》(藏传)
+*   《极乐愿文》（藏传）
+*   《島王統史》（南傳大藏經部類）
 
 **现代佛学书籍 (Modern Buddhist Studies/Books)**
 
