@@ -23,9 +23,16 @@ layout: default
   {%- assign unique_tags = all_tags | uniq | sort -%}
     
     {%- for tag in unique_tags -%}
-      {%- assign tag_posts = site.posts | where: "tags", tag -%}
+      {%- assign tag_count = 0 -%}
+      {%- for tagged_post in site.posts -%}
+        {%- unless tagged_post.url contains "zh-tw" -%}
+          {%- if tagged_post.tags and tagged_post.tags contains tag -%}
+            {%- assign tag_count = tag_count | plus: 1 -%}
+          {%- endif -%}
+        {%- endunless -%}
+      {%- endfor -%}
       <input type="checkbox" style="margin-right: 5px;" id="{{ tag }}" name="{{ tag }}" value="{{ tag }}" />
-      <label for="{{ tag }}" style="font-size: smaller;">{{ tag }} ({{ tag_posts.size }})</label>
+      <label for="{{ tag }}" style="font-size: smaller;">{{ tag }} ({{ tag_count }})</label>
     {%- endfor -%}
 </div>
 
@@ -128,6 +135,8 @@ layout: default
 
     // Tags: sort and filter per language
     document.addEventListener('DOMContentLoaded', function() {
+      const TAG_CONTAINER_ID = 'd_tags_cn';
+
       function sortTagContainer(containerId) {
         const container = document.getElementById(containerId);
         if (!container) return;
@@ -143,11 +152,13 @@ layout: default
         });
       }
 
-      sortTagContainer('d_tags');
+      sortTagContainer(TAG_CONTAINER_ID);
+
+      const checkboxSelector = `#${TAG_CONTAINER_ID} input[type="checkbox"]`;
 
       window.updatePostsVisibility = function updatePostsVisibility() {
         const lang = getLang();
-        const checkboxes = document.querySelectorAll('#d_tags input[type="checkbox"]');
+        const checkboxes = document.querySelectorAll(checkboxSelector);
         const checkedTags = Array.from(checkboxes).filter(cb => cb.checked).map(cb => cb.value);
         const scope = document.querySelector('.posts-zh-cn');
         const posts = scope ? scope.querySelectorAll('.post') : [];
@@ -169,8 +180,10 @@ layout: default
       };
 
       // attach listeners
-      document.querySelectorAll('#d_tags input[type="checkbox"]').forEach(checkbox => {
+      document.querySelectorAll(checkboxSelector).forEach(checkbox => {
         checkbox.addEventListener('change', window.updatePostsVisibility);
       });
+
+      window.updatePostsVisibility();
     });
   </script>
