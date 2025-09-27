@@ -17,7 +17,8 @@ layout: default
       margin-bottom: 8px;
     }
 
-    #d_tags_cn .tag-toggle {
+    #d_tags_cn .tag-toggle,
+    #post-monthly-summary .month-toggle {
       font-size: smaller;
       padding: 4px 10px;
       border: 1px solid #d0d0d0;
@@ -27,14 +28,16 @@ layout: default
       transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
-    #d_tags_cn .tag-toggle[aria-pressed="true"] {
+    #d_tags_cn .tag-toggle[aria-pressed="true"],
+    #post-monthly-summary .month-toggle[aria-pressed="true"] {
       background: #2b90d9;
       color: #fff;
       border-color: #2b90d9;
       box-shadow: 0 0 0 2px rgba(43, 144, 217, 0.2);
     }
 
-    #d_tags_cn .tag-toggle:focus-visible {
+    #d_tags_cn .tag-toggle:focus-visible,
+    #post-monthly-summary .month-toggle:focus-visible {
       outline: 2px solid #2b90d9;
       outline-offset: 2px;
     }
@@ -91,7 +94,7 @@ layout: default
       {%- if cn_count > 0 -%}
         {%- assign year_total = year_total | plus: cn_count -%}
         {%- capture month_markup -%}
-          {{ month_markup }}<span style="display: inline-flex; align-items: center; padding: 2px 6px; border-radius: 4px; background-color: #f5f5f5; font-size: smaller;">{{ month_group.name | plus: 0 }}月 ({{ cn_count }})</span>
+          {{ month_markup }}<button type="button" class="month-toggle" data-year="{{ year_group.name }}" data-month="{{ month_group.name }}" data-count="{{ cn_count }}" aria-pressed="false">{{ month_group.name | plus: 0 }}月 ({{ cn_count }})</button>
         {%- endcapture -%}
       {%- endif -%}
     {%- endfor -%}
@@ -135,7 +138,7 @@ layout: default
   <ol>
     {%- for post in site.posts -%}
       {%- unless post.url contains "zh-tw" -%}
-      <li class="post">
+      <li class="post" data-year="{{ post.date | date: '%Y' }}" data-month="{{ post.date | date: '%m' }}">
         
             <a href="{{ site.baseurl }}{{ post.url }}" class="read-more" id="post_title">{{ post.title }}</a>
             <a href="{{ post.wechat }}" target="_blank" id="wechat_link"><img src="/wechat.ico" width="16px" /></a>
@@ -195,6 +198,8 @@ layout: default
     // Tags: sort and filter per language
     document.addEventListener('DOMContentLoaded', function() {
       const TAG_CONTAINER_ID = 'd_tags_cn';
+      const TAG_SELECTOR = `#${TAG_CONTAINER_ID} .tag-toggle`;
+      const MONTH_SELECTOR = '#post-monthly-summary .month-toggle';
 
       function sortTagContainer(containerId) {
         const container = document.getElementById(containerId);
@@ -217,35 +222,40 @@ layout: default
 
       sortTagContainer(TAG_CONTAINER_ID);
 
-      const buttonSelector = `#${TAG_CONTAINER_ID} .tag-toggle`;
-
       window.updatePostsVisibility = function updatePostsVisibility() {
         const lang = getLang();
-        const buttons = document.querySelectorAll(buttonSelector);
-        const activeTags = Array.from(buttons)
+        const activeTags = Array.from(document.querySelectorAll(TAG_SELECTOR))
           .filter(btn => btn.getAttribute('aria-pressed') === 'true')
           .map(btn => btn.dataset.tag);
+        const activeMonths = Array.from(document.querySelectorAll(MONTH_SELECTOR))
+          .filter(btn => btn.getAttribute('aria-pressed') === 'true')
+          .map(btn => ({ year: btn.dataset.year, month: btn.dataset.month }));
         const scope = document.querySelector('.posts-zh-cn');
         const posts = scope ? scope.querySelectorAll('.post') : [];
 
-        if (activeTags.length > 0) {
-          posts.forEach(post => {
-            const postTagTexts = Array.from(post.querySelectorAll('code')).map(code => code.textContent.trim());
-            const postTagTextsCN = (lang === 'zh-TW' && window.cnConv)
-              ? postTagTexts.map(t => window.cnConv(t))
-              : postTagTexts;
-            const isPostVisible = activeTags.some(tag => postTagTextsCN.includes(tag));
-            post.classList.toggle('hidden', !isPostVisible);
-          });
-        } else {
-          posts.forEach(post => {
-            post.classList.remove('hidden');
-          });
-        }
+        posts.forEach(post => {
+          const postTagTexts = Array.from(post.querySelectorAll('code')).map(code => code.textContent.trim());
+          const postTagTextsCN = (lang === 'zh-TW' && window.cnConv)
+            ? postTagTexts.map(t => window.cnConv(t))
+            : postTagTexts;
+          const matchesTags = activeTags.length === 0 || activeTags.some(tag => postTagTextsCN.includes(tag));
+          const postYear = post.dataset.year;
+          const postMonth = post.dataset.month;
+          const matchesMonths = activeMonths.length === 0 || activeMonths.some(({ year, month }) => (postYear === year && postMonth === month));
+          post.classList.toggle('hidden', !(matchesTags && matchesMonths));
+        });
       };
 
       // attach listeners
-      document.querySelectorAll(buttonSelector).forEach(button => {
+      document.querySelectorAll(TAG_SELECTOR).forEach(button => {
+        button.addEventListener('click', () => {
+          const currentState = button.getAttribute('aria-pressed') === 'true';
+          button.setAttribute('aria-pressed', currentState ? 'false' : 'true');
+          window.updatePostsVisibility();
+        });
+      });
+
+      document.querySelectorAll(MONTH_SELECTOR).forEach(button => {
         button.addEventListener('click', () => {
           const currentState = button.getAttribute('aria-pressed') === 'true';
           button.setAttribute('aria-pressed', currentState ? 'false' : 'true');
