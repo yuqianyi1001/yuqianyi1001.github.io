@@ -6,13 +6,7 @@ title_url: on-dharmakaya-especially-the-views-of-different-systems
 wechat: https://mp.weixin.qq.com/s/dUmWS9VxnpGXR-bmg3zKAA
 description: 法身是佛教高级词汇，其义复杂多变。本文以根本佛教、般若、唯识、如来藏四大体系为框架，分别阐述其对法身（五分法身、空性、真如、佛性）的独特解释，以助读者建立清晰的体系化认知。
 excerpt: 法身是佛教高级词汇，其义复杂多变。本文以根本佛教、般若、唯识、如来藏四大体系为框架，分别阐述其对法身（五分法身、空性、真如、佛性）的独特解释，以助读者建立清晰的体系化认知。
-tags:
- - 佛法解读
- - 法身
- - 五分法身
- - 空性
- - 真如
- - 佛性
+tags: [教义解析]
 ---
 
 ![](../images/2025-07-18-20-11-15.png)

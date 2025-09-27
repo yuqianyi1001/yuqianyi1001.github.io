@@ -3,7 +3,7 @@ layout: post
 title: 我用画图AI生成了善财童子所参的53位善知识
 wechat: https://mp.weixin.qq.com/s/N6af8BOaI3rqdlxgPgtIww
 description: 借助画图AI，我生成了《华严经》中善财童子所参的五十三位善知识画像。希望可以帮助加深我们对这些善知识的印象。
-tags:
+tags: [经典导读, 资源推荐]
 ---
 
 备注：

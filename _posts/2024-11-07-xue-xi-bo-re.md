@@ -4,7 +4,7 @@ title: 可以这样学习般若
 wechat: https://mp.weixin.qq.com/s/Of_wr05pahnAoymuiIMGzQ
 description: 介绍了一种学习般若的方法，从《心经》，《金刚经》开始，到《大品般若经》，《大智度论》，乃至600卷的《大般若经》
 excerpt: 介绍了一种学习般若的方法，从《心经》，《金刚经》开始，到《大品般若经》，《大智度论》，乃至600卷的《大般若经》
-tags:
+tags: [学习方法]
 ---
 
 ![](../images/2024-11-09-15-57-06.png)

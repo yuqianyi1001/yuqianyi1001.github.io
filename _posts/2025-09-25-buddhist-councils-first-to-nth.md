@@ -4,7 +4,7 @@ title: 经典结集：第一次至第 N 次结集
 wechat: https://mp.weixin.qq.com/s/pb0zs9BLcHZxt3MaZUPY_w
 description: 佛教历代经典结集的背景、过程、成果与传说
 excerpt: 佛教历代经典结集的背景、过程、成果与传说
-tags: [佛教史, 结集, 三藏, 上座部, 有部]
+tags: [佛教史, 宗派比较]
 ---
 
 # 经典结集：第一次至第 N 次结集

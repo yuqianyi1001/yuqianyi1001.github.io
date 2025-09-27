@@ -4,7 +4,7 @@ title: 百法和七十五法：对照五蕴、十二处、十八界
 wechat: https://mp.weixin.qq.com/s/UykW1uSnKOKkle-JgsWUAg
 description: 
 excerpt: 
-tags:
+tags: [论典笔记]
 ---
 
 我之前写过一篇文章：[图解和对照：五蕴、十二处、十八界和七十五法(总结篇)](https://mp.weixin.qq.com/s/iN-QK3k-iPo-ZijRjWEKCg)，在文章里面，介绍了五蕴、十二处、十八界的基本概念。并和[俱舍七十五](https://mp.weixin.qq.com/s/chSlBrFIIE2vLnN1Q-FoGg)进行了对照。如果这两篇文章都看懂了的话，那么，百法和五蕴、十二处、十八界的对照也就很简单了。因为对照的思路是相同的。仅有的区别，也只是俱舍七十五法和百法本身的[**区别**](https://mp.weixin.qq.com/s/_eZpGcsubJMw0pL-YaAuZw)而已了。

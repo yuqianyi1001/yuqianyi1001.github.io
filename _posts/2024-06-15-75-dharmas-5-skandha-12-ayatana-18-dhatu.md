@@ -3,9 +3,7 @@ layout: post
 title: 图解和对照：五蕴、十二处、十八界和七十五法(总结篇)
 wechat: https://mp.weixin.qq.com/s/iN-QK3k-iPo-ZijRjWEKCg
 description: 通过图表和对照五蕴，十二处，十八界和七十五法，以及它们的对照关系。希望可以帮助我们更深入、更全面、更精确地了解这些佛学基本概念。
-tags:
-  - 俱舍
-  - 唯识
+tags: [论典笔记]
 ---
 
 # 七十五法和基础

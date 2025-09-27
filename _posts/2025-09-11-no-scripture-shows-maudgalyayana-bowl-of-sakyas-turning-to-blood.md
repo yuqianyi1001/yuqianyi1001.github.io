@@ -4,7 +4,7 @@ title: 崩溃！佛经“可能”完全没有大目犍连用钵救释迦族然�
 wechat: https://mp.weixin.qq.com/s/LdwDf9cFyq8XoKcfiNKIPQ
 description: 
 excerpt: 
-tags:
+tags: [经典导读, 佛教史]
 ---
 
 

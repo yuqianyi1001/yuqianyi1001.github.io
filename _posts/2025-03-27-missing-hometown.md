@@ -4,7 +4,7 @@ title: 忆家（江西老家）
 wechat: https://mp.weixin.qq.com/s/H3RYKt5Vbk7BbbIWT1A9BA
 description: 
 excerpt: 
-tags:
+tags: [生活随笔]
 ---
 
 我的老家是江西，这是一篇2020年端午写的打油诗。补记在这里吧。

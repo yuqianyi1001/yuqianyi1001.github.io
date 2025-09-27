@@ -4,7 +4,7 @@ title: 舍利弗结集的佛法大纲｜《长阿含经》卷8，众集经
 wechat: https://mp.weixin.qq.com/s/TRGNZzRJO6SuQfKi9mQPSA
 description: 佛经的结集，早在佛世时就开始了。对佛学有兴趣的朋友，以此为参考。
 excerpt: 佛经的结集，早在佛世时就开始了。对佛学有兴趣的朋友，以此为参考。
-tags:
+tags: [经典导读]
 ---
 
 # 舍利弗结集的佛法大纲｜《长阿含经》卷8，众集经

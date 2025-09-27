@@ -4,7 +4,7 @@ title: 声闻四果及其与断烦恼、禅定的关系
 wechat: https://mp.weixin.qq.com/s/WLRcYcZGdM2A1_QAHlR2qw
 description: 简单介绍声闻四果，以及两种类型的阿罗汉，俱解脱和慧解脱，以及他们的修证过程。
 excerpt: 简单介绍声闻四果，以及两种类型的阿罗汉，俱解脱和慧解脱，以及他们的修证过程。
-tags:
+tags: [教义解析, 经典导读]
 ---
 
 ### 声闻四果及其与断烦恼、禅定的关系

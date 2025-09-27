@@ -6,10 +6,7 @@ title_url: the-sequence-of-buddhist-study-in-the-agamas
 wechat: https://mp.weixin.qq.com/s/llQM-etuTHXcu8lvldjAjw
 description: 学佛应有次第，阿含经中佛陀亲示了先学“施、戒、生天”的人天善法，以此为基础，待学习者心意准备好后，再宣说四圣谛的出世间解脱法。这个次第在阿含经中反复出现，是学佛的重要指南。
 excerpt: 学佛应有次第，阿含经中佛陀亲示了先学“施、戒、生天”的人天善法，以此为基础，待学习者心意准备好后，再宣说四圣谛的出世间解脱法。这个次第在阿含经中反复出现，是学佛的重要指南。
-tags:
-  - 阿含经
-  - 学佛次第
-  - 人间佛教
+tags: [经典导读, 学习方法, 社会观察]
 ---
 
 ![](../images/2025-07-26-12-13-30.png)

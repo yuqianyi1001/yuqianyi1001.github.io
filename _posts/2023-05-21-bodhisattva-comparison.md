@@ -3,10 +3,7 @@ layout: post
 title: 南传也有菩萨道 |《南传菩萨道》阅读笔记 | 南北传菩萨道的简略对比
 wechat: https://mp.weixin.qq.com/s/fwgHuMw9PTOZsy7OEDzDyA
 description: 本文章探究了南传佛教中的菩萨道，分享了《南传菩萨道》一书的阅读感悟。同时，还对南北传菩萨道进行了简要的对比分析，可以了解下菩萨道在南北传中的不同特色。
-tags:
-  - 宗教、宗派比较
-  - 笔记和读后感
-  - 南传
+tags: [经典导读, 宗派比较]
 ---
 
 ![](../images/2023-05-26-11-11-12.png)

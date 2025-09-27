@@ -3,7 +3,7 @@ layout: post
 title: 我和王路老师见面了 ｜ 欢迎订购王路老师的《俱舍九题》
 wechat: 
 description: 
-tags:
+tags: [资源推荐, 生活随笔]
 ---
 
 ## 和王路老师的见面

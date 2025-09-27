@@ -3,7 +3,7 @@ layout: post
 title: 冷知识：原来佛教的“四料简”就是现代的“四象限图”
 wechat: https://mp.weixin.qq.com/s/9Iw9m85wa00bPVL6ywfiqA
 description: 佛教理论是非常严格和精准，从定义到内容再到使用范围，在必要的时候，都需要使用四料简（四象限图）这样科学的方式才能把事情说清楚。因此，佛教理论是值得现代人学习和参考。
-tags:
+tags: [教义解析]
 ---
 
 ## 什么是四象限图？

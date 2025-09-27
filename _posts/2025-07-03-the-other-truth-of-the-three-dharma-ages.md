@@ -6,11 +6,7 @@ title_url: the-other-truth-of-the-three-dharma-ages-how-the-teachings-were-disto
 wechat: https://mp.weixin.qq.com/s/P3OifASDT5Kq6NaYvZWRwg
 description: 传统观点认为正法、像法、末法的区别在于修行人的根器和证果人数，但我认为更核心、被忽略的问题是正法本身被不断稀释和扭曲，从纯牛奶，到兑水奶，再到污水里的几滴奶。
 excerpt: 传统观点认为正法、像法、末法的区别在于修行人的根器和证果人数，但我认为更核心、被忽略的问题是正法本身被不断稀释和扭曲，从纯牛奶，到兑水奶，再到污水里的几滴奶。
-tags:
-  - 佛法解读
-  - 正法
-  - 像法
-  - 末法
+tags: [教义解析, 佛教史]
 ---
 
 ![](../images/2025-07-03-10-21-44.png)

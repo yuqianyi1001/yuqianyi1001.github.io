@@ -4,7 +4,7 @@ title: 佛陀生平：八相成道（六相、十二相）
 wechat: https://mp.weixin.qq.com/s/So6kbfWhahbv_lwUaRWV5A
 description: 十二相：降兜率 → 入胎 → 住胎 → 出生 → 童年显瑞 → 娶妻宫居 → 出家 → 苦行 → 降魔 → 成道 → 转法轮 → 入涅槃
 excerpt: 十二相：降兜率 → 入胎 → 住胎 → 出生 → 童年显瑞 → 娶妻宫居 → 出家 → 苦行 → 降魔 → 成道 → 转法轮 → 入涅槃
-tags:
+tags: [经典导读, 佛教史]
 ---
 
 # 佛陀生平：八相成道（六相、十二相）

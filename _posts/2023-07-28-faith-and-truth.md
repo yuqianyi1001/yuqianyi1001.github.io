@@ -3,8 +3,7 @@ layout: post
 title: 信仰和真理
 wechat: https://mp.weixin.qq.com/s/cSa34rHzyImf6AR7097bMw
 description: 你是在信仰还是在追求真理? 个人信仰是没什么可以讨论的空间的，但是真理可以，真理不仅可以讨论和交流，还可以越辩越明。
-tags:
-  - 未分类
+tags: [教义解析]
 ---
 
 ## 信仰和仰信

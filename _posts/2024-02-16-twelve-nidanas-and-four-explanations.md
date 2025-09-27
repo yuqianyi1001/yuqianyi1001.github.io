@@ -3,8 +3,7 @@ layout: post
 title: 佛陀在菩提树下的觉悟之十二因缘 ｜ 十二因缘的四种解说
 wechat: https://mp.weixin.qq.com/s/PowTxSYGNDToqjlbtUU7_g
 description: 介绍了“十二因缘”的基本概念后，进一步介绍了四种解说。深入理解十二因缘，不仅可以帮助我们理解生命不常不断的流转，也可以帮助理解一切事物的产生和灭亡，还介绍了烦恼是如何生起，以及如何对治。
-tags:
-  - 佛教核心理论
+tags: [教义解析]
 ---
 在[上篇文章](https://mp.weixin.qq.com/s/uY6HBqUR3lHDro7MeUFuZA)里面，我从佛经中查找了许多关于佛陀在菩提树下觉悟的直接说法。从数量上来说，十二因缘是最多的。为加深影响，并指出佛经来源，请参考下表。
 

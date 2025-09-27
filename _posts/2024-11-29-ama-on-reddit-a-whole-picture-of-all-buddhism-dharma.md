@@ -5,8 +5,7 @@ wechat: https://mp.weixin.qq.com/s/8zZe5JR0IBUaZp2WLneiKw
 description: 这些内容是我发在国外知名论坛（Reddit）佛教版块里面的一个活动，活动的类型叫做AMA，全称是Ask Me Anything，中文就是“随便问”的意思。
 
 excerpt: 这些内容是我发在国外知名论坛（Reddit）佛教版块里面的一个活动，活动的类型叫做AMA，全称是Ask Me Anything，中文就是“随便问”的意思。
-
-tags:
+tags: [修行经验, 学习方法]
 ---
 
 这些内容是我发在国外知名论坛（Reddit）佛教版块里面的一个活动，活动的类型叫做AMA，全称是Ask Me Anything，中文就是“随便问”的意思。

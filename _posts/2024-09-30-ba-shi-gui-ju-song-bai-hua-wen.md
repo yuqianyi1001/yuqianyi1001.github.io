@@ -4,7 +4,7 @@ title: 《八识规矩颂》的白话文（转）
 wechat: 
 description: 
 excerpt: 
-tags:
+tags: [论典笔记]
 ---
 
 因为网址的访问不太稳定，所以copy如下，供大家学习参考。版权归原网址所有。

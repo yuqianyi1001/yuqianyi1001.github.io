@@ -3,8 +3,7 @@ layout: post
 title: 佛学问答（1）：有关净土宗
 wechat: 
 description: 
-tags:
- - 问答
+tags: [教义解析]
 ---
 
 **问：有没有方法在人还活着的时候就往生净土？**

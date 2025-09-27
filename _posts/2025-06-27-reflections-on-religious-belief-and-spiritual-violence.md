@@ -4,7 +4,7 @@ title: 关于宗教信仰与精神暴力的一些思考（圆善师兄）
 wechat: https://mp.weixin.qq.com/s/A1Nd_kFZy6qdWXaLUj3HKQ
 description: 
 excerpt: 
-tags:
+tags: [社会观察]
 ---
 
 今天这里分享下圆善师兄的文章，她发表自己的朋友圈，我看到后，在征得她同意的情况下，发表在这里了。欢迎朋友们主动投稿，请参考： 征集原创文章

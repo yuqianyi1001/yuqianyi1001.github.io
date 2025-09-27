@@ -4,7 +4,7 @@ title: 佛教的困境：从释永信丑闻透视佛教监督机制的缘起、�
 wechat: https://mp.weixin.qq.com/s/lKZ1JBq9e4a8ah4WbJTFfQ
 description: 
 excerpt: 
-tags:
+tags: [社会观察]
 ---
 
 # 佛教的困境：从释永信丑闻看佛教监督机制的缘起、失效与重建

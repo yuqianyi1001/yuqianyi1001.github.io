@@ -3,8 +3,7 @@ layout: post
 title: 推荐阅读：释迦族被灭的近因
 wechat: https://mp.weixin.qq.com/s/ZYfNBMAiIBeNG9KUwHvVXg
 description: 佛教里面，释迦族被琉璃王所灭的故事广为流传，然而对于这次事件的近因却鲜有人知，Huiyi Lin同学从“历史故事”的角度整理了这件事情的始末，从活在当下和把握因缘的视角来说，十分具有参考意义。
-tags:
-  - 不要误解佛法
+tags: [教义解析]
 ---
 
 ## 推荐理由

@@ -3,8 +3,7 @@ layout: post
 title: 佛教空的六个层次 | 《空之探究》之读书笔记
 wechat: https://mp.weixin.qq.com/s/AaPNZH30_A3LFucUFRCIIw
 description: 大乘佛教中的“空”是非常重要的概念，而对它的理解却不容易把握，本文从六个层次进行了阐述，希望对您有所启发。
-tags:
-  - 佛法解读
+tags: [教义解析]
 ---
 
 ## 空的第一层含义 —— 和“有”相对

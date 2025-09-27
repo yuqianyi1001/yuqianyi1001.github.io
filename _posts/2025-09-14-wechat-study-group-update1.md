@@ -4,7 +4,7 @@ title: （第一期）佛学速成群成立了，已经有29人加入
 wechat: https://mp.weixin.qq.com/s/rXPklkpo08a8dMyCrL2aHQ
 description: 感谢大家的信任和支持，希望我们一起来把这件事情做好，共同提升佛学基础，学习专业的佛法。
 excerpt: 
-tags:
+tags: [社群公告]
 ---
 
 [拟成立佛学速成群（要收费哦，也能免费）｜ 佛学范围：佛教史、佛教名词（概念）和理论](https://mp.weixin.qq.com/s/L_-cl6m7j9v7yw_YevrPDQ)

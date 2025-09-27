@@ -3,7 +3,7 @@ layout: post
 title: 佛经中的“另类”解读
 wechat: https://mp.weixin.qq.com/s/a5EJC9oxwxU2AVfpwm1lsw
 description: 六方不是六方，观音不是观音，父母不是父母，佛不是佛 —— 如果都不是？那会是什么呢？本文介绍了佛经中的几个“另类”解读：用佛法的究竟法解读方便法，用内涵解读外相，用佛法解读外道和世俗事物。
-tags:
+tags: [教义解析]
 ---
 
 上一篇文章[《你知道吗？你的手机号里面也蕴含了佛法》](https://mp.weixin.qq.com/s/NkozzuZg_PdXdrnkpPWZjg)，里面提到了用带数字的佛法概念去解读数字，一旦了解了这个“套路”（规则）以后。就能够去“解读”任何带数字的内容了，比如手机号，生日，身份证，门牌号等。

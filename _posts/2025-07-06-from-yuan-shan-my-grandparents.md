@@ -4,7 +4,7 @@ title: 圆善师兄：我的外公外婆
 wechat: 
 description: 
 excerpt: 
-tags:
+tags: [生活随笔]
 ---
 
 欢迎朋友们投稿，请参考：征集原创文章 https://mp.weixin.qq.com/s/spSRNf_0_Jw61z3Bo-fAlQ

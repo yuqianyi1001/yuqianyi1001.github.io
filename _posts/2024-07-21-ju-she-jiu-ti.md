@@ -3,7 +3,7 @@ layout: post
 title: 王路老師的《俱舍九題：高階阿毘達磨》出版了，歡迎下單訂購
 wechat: 
 description: 
-tags:
+tags: [论典笔记, 资源推荐]
 ---
 
 購買地址：https://www.books.com.tw/products/0010993632

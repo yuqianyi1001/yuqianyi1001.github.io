@@ -4,7 +4,7 @@ title: 不相信有来世？看阿罗汉怎么回答｜《长阿含经》卷七�
 wechat: https://mp.weixin.qq.com/s/xebNCcuVHUzduqMXNWVtYg
 description: 童女迦叶阿罗汉用了11个比喻，用来反驳弊宿婆罗门不相信有来世，文章中节选了6个比喻。
 excerpt: 童女迦叶阿罗汉用了11个比喻，用来反驳弊宿婆罗门不相信有来世，文章中节选了6个比喻。
-tags:
+tags: [经典导读]
 ---
 
 # 不相信有轮回，不相信善恶业报？童女迦叶阿罗汉怎么回答｜长阿含经卷第七

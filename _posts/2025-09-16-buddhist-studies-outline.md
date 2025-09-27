@@ -4,7 +4,7 @@ title: 佛学概论大纲（不断更新中，直到定稿）
 wechat: 
 description: 
 excerpt: 
-tags:
+tags: [学习方法, 资源推荐]
 ---
 
 *以下内容均为暂定，会根据实际情况随时增减。*

@@ -4,7 +4,7 @@ title: 经典共读群形式的说明｜也改成收费群了｜情况汇报
 wechat: https://mp.weixin.qq.com/s/ho2ebdRsPKRq6CO6m9nKpA
 description: 经典共读群是一种非常松散的交流形式：自行读经、打卡，并就所读的内容提问和分享。希望大家都能深入经藏，智慧如海。
 excerpt: 
-tags:
+tags: [社群公告]
 ---
 
 # 经典共读群形式的说明｜也改成收费群了｜情况汇报

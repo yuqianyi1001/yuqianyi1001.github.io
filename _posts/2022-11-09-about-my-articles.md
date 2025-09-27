@@ -3,8 +3,7 @@ layout: post
 title: 关于我写文章这件事
 wechat: https://mp.weixin.qq.com/s/AjaVOxJC0KCoayOSHSn0Uw
 description: 关于我写文章这件事情，想要简单介绍下写作的背景和动机，以及心得。也简单回应了一些质疑，例如：佛学是学佛吗？
-tags:
-  - 我和我的学佛经历
+tags: [修行经验]
 ---
 
 ![](../images/2022-11-14-12-46-45.png)
