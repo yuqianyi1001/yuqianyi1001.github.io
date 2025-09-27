@@ -36,6 +36,63 @@ layout: default
     {%- endfor -%}
 </div>
 
+<div id="post-monthly-summary" style="margin-top: 10px;">
+  <style>
+    #post-monthly-summary .year-groups-extra { display: none; margin-top: 6px; }
+    #post-monthly-summary.expanded .year-groups-extra { display: block; }
+  </style>
+  {%- assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" -%}
+  {%- assign posts_by_year = posts_by_year | sort: 'name' | reverse -%}
+  {%- assign first_year_done = 'false' -%}
+  {%- assign first_year_markup = '' -%}
+  {%- assign other_years_markup = '' -%}
+  {%- assign has_extra_years = 'false' -%}
+  {%- for year_group in posts_by_year -%}
+    {%- assign posts_by_month = year_group.items | group_by_exp: "post", "post.date | date: '%m'" -%}
+    {%- assign posts_by_month = posts_by_month | sort: 'name' | reverse -%}
+    {%- assign month_markup = '' -%}
+    {%- assign year_total = 0 -%}
+    {%- for month_group in posts_by_month -%}
+      {%- assign cn_count = 0 -%}
+      {%- for post in month_group.items -%}
+        {%- unless post.url contains 'zh-tw' -%}
+          {%- assign cn_count = cn_count | plus: 1 -%}
+        {%- endunless -%}
+      {%- endfor -%}
+      {%- if cn_count > 0 -%}
+        {%- assign year_total = year_total | plus: cn_count -%}
+        {%- capture month_markup -%}
+          {{ month_markup }}<span style="display: inline-flex; align-items: center; padding: 2px 6px; border-radius: 4px; background-color: #f5f5f5; font-size: smaller;">{{ month_group.name | plus: 0 }}月 ({{ cn_count }})</span>
+        {%- endcapture -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- if year_total > 0 -%}
+      {%- capture year_markup -%}
+        <div class="year-group" data-year="{{ year_group.name }}" style="font-size: smaller; margin-top: 6px;">
+          <span style="font-weight: bold;">{{ year_group.name }}年</span>
+          <div class="month-summary" style="margin: 4px 0 0 1em; display: flex; flex-wrap: wrap; gap: 6px;">
+            {{ month_markup | strip }}
+          </div>
+        </div>
+      {%- endcapture -%}
+      {%- if first_year_done == 'false' -%}
+        {%- assign first_year_markup = year_markup -%}
+        {%- assign first_year_done = 'true' -%}
+      {%- else -%}
+        {%- capture other_years_markup -%}{{ other_years_markup }}{{ year_markup }}{%- endcapture -%}
+        {%- assign has_extra_years = 'true' -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {{ first_year_markup | strip }}
+  {%- if has_extra_years == 'true' -%}
+    <div id="post-monthly-summary-extra" class="year-groups-extra">
+      {{ other_years_markup | strip }}
+    </div>
+    <button type="button" id="toggle-year-summary" style="margin-top: 8px; font-size: smaller; padding: 4px 8px; border: 1px solid #ccc; border-radius: 4px; background: #fff; cursor: pointer;" aria-expanded="false">更多</button>
+  {%- endif -%}
+</div>
+
 <!-- 繁體标签不再单独展示；保持单一标签集，文字由前端转换 -->
 
 <div class="row">
@@ -55,39 +112,14 @@ layout: default
             <a href="{{ post.wechat }}" target="_blank" id="wechat_link"><img src="/wechat.ico" width="16px" /></a>
             <img src="/copy.png" width="16px" id="copy-button" />
             <br>
+            
             <span style="font-size:medium;" id="post-desc">{{ post.description }}</span>
             {%- for tag in post.tags -%}
               <code style="font-size: smaller;">{{ tag }}</code>
             {%- endfor -%}
-          
+            <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}" style="font-size: smaller; color: #666;"> {{ post.date | date: "%Y-%m-%d" }}</time>
       </li>
       {%- endunless -%}
-    {%- endfor -%}
-  </ol>
-</div>
-
-<div class="posts posts-zh-tw" style="display:none;">
-  <ol>
-    {%- for post in site.posts -%}
-      {%- if post.url contains "zh-tw" -%}
-      <li class="post">
-        <ul>
-          <li>
-            <img src="/zh-trandition.png" width="18px" />
-            <a href="{{ site.baseurl }}{{ post.url }}" class="read-more" id="post_title">{{ post.title }}</a>
-            {%- if post.wechat -%}
-            <a href="{{ post.wechat }}" target="_blank" id="wechat_link"><img src="/wechat.ico" width="16px" /></a>
-            {%- endif -%}
-            <img src="/copy.png" width="16px" id="copy-button" />
-            <br>
-            <span style="font-size:medium;" id="post-desc">{{ post.description }}</span>
-            {%- for tag in post.tags -%}
-              <code style="font-size: smaller;">{{ tag }}</code>
-            {%- endfor -%}
-          </li>
-        </ul>
-      </li>
-      {%- endif -%}
     {%- endfor -%}
   </ol>
 </div>
@@ -185,5 +217,21 @@ layout: default
       });
 
       window.updatePostsVisibility();
+
+      const moreButton = document.getElementById('toggle-year-summary');
+      if (moreButton) {
+        const summary = document.getElementById('post-monthly-summary');
+        const extraContainer = summary ? summary.querySelector('.year-groups-extra') : null;
+        let expanded = false;
+
+        moreButton.addEventListener('click', () => {
+          expanded = !expanded;
+          if (summary && extraContainer) {
+            summary.classList.toggle('expanded', expanded);
+          }
+          moreButton.textContent = expanded ? '收起' : '更多';
+          moreButton.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        });
+      }
     });
   </script>
