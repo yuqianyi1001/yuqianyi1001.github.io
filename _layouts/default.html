@@ -12,6 +12,30 @@
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
+    <style>
+      .lang-toggle-button {
+        font-size: smaller;
+        padding: 4px 12px;
+        border: 1px solid #d0d0d0;
+        border-radius: 16px;
+        background: #f8f8f8;
+        cursor: pointer;
+        transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .lang-toggle-button[aria-pressed="true"] {
+        background: #2b90d9;
+        color: #fff;
+        border-color: #2b90d9;
+        box-shadow: 0 0 0 2px rgba(43, 144, 217, 0.2);
+      }
+
+      .lang-toggle-button:focus-visible {
+        outline: 2px solid #2b90d9;
+        outline-offset: 2px;
+      }
+    </style>
+
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
     <script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/full.min.js"></script>
   </head>
@@ -37,8 +61,7 @@
           </nav>
         </header>
         <div id="lang-toggle" style="margin: 8px 0;">
-          <input type="checkbox" id="toggle-switch" />
-          <label for="toggle-switch" id="toggle-switch-label">切换繁体</label>
+          <button type="button" id="lang-toggle-button" class="lang-toggle-button" aria-pressed="false">切换繁体</button>
         </div>
       </div>
     </div>
@@ -71,8 +94,7 @@
             }
           } catch (e) { /* ignore */ }
         })();
-        const checkbox = document.getElementById('toggle-switch');
-        const label = document.getElementById('toggle-switch-label');
+        const toggleButton = document.getElementById('lang-toggle-button');
         // init converters
         const toTW = (window.OpenCC && OpenCC.Converter) ? OpenCC.Converter({ from: 'cn', to: 'tw' }) : (s => s);
         const toCN = (window.OpenCC && OpenCC.Converter) ? OpenCC.Converter({ from: 'tw', to: 'cn' }) : (s => s);
@@ -87,8 +109,12 @@
         function setLang(lang) {
           localStorage.setItem('lang', lang);
           document.body.setAttribute('data-lang', lang);
-          // set toggle label (in Simplified; will be converted when page converts)
-          label.textContent = (lang === 'zh-TW') ? '切换简体' : '切换繁体';
+          if (toggleButton) {
+            const isTraditional = (lang === 'zh-TW');
+            toggleButton.setAttribute('aria-pressed', isTraditional ? 'true' : 'false');
+            // keep text in Simplified; conversion runs after this call
+            toggleButton.textContent = isTraditional ? '切换简体' : '切换繁体';
+          }
           // apply conversion
           applyConversion(lang);
           // notify pages that language changed
@@ -120,13 +146,15 @@
 
         // init
         const initLang = getLang();
-        checkbox.checked = (initLang === 'zh-TW');
         setLang(initLang);
 
-        checkbox.addEventListener('change', function() {
-          const lang = checkbox.checked ? 'zh-TW' : 'zh-CN';
-          setLang(lang);
-        });
+        if (toggleButton) {
+          toggleButton.addEventListener('click', function() {
+            const isPressed = toggleButton.getAttribute('aria-pressed') === 'true';
+            const lang = isPressed ? 'zh-CN' : 'zh-TW';
+            setLang(lang);
+          });
+        }
       })();
     </script>
   </body>

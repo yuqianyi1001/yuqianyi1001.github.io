@@ -9,6 +9,36 @@ layout: default
 </div> -->
 
 <div id="d_tags_cn">
+  <style>
+    #d_tags_cn {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    #d_tags_cn .tag-toggle {
+      font-size: smaller;
+      padding: 4px 10px;
+      border: 1px solid #d0d0d0;
+      border-radius: 16px;
+      background: #f8f8f8;
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    #d_tags_cn .tag-toggle[aria-pressed="true"] {
+      background: #2b90d9;
+      color: #fff;
+      border-color: #2b90d9;
+      box-shadow: 0 0 0 2px rgba(43, 144, 217, 0.2);
+    }
+
+    #d_tags_cn .tag-toggle:focus-visible {
+      outline: 2px solid #2b90d9;
+      outline-offset: 2px;
+    }
+  </style>
   {% assign all_tags = "" | split: "|" %}
   
   {%- for post in site.posts -%}
@@ -31,8 +61,7 @@ layout: default
           {%- endif -%}
         {%- endunless -%}
       {%- endfor -%}
-      <input type="checkbox" style="margin-right: 5px;" id="{{ tag }}" name="{{ tag }}" value="{{ tag }}" />
-      <label for="{{ tag }}" style="font-size: smaller;">{{ tag }} ({{ tag_count }})</label>
+      <button type="button" class="tag-toggle" data-tag="{{ tag }}" data-count="{{ tag_count }}" aria-pressed="false">{{ tag }} ({{ tag_count }})</button>
     {%- endfor -%}
 </div>
 
@@ -128,8 +157,6 @@ layout: default
 
 
   <script>
-    const toggleCheckbox = document.getElementById('toggle-switch');
-
     function getLang() {
       return localStorage.getItem('lang') || 'zh-CN';
     }
@@ -172,36 +199,42 @@ layout: default
       function sortTagContainer(containerId) {
         const container = document.getElementById(containerId);
         if (!container) return;
-        const items = Array.from(container.querySelectorAll('label')).map(label => {
-          const m = label.textContent.match(/\((\d+)\)/);
-          const count = m ? parseInt(m[1], 10) : 0;
-          return { label, count };
+        const items = Array.from(container.querySelectorAll('.tag-toggle')).map(button => {
+          const count = parseInt(button.dataset.count, 10) || 0;
+          const tag = button.dataset.tag || '';
+          return { button, count, tag };
         });
-        items.sort((a, b) => b.count - a.count);
-        items.forEach(({ label }) => {
-          container.appendChild(label.previousElementSibling);
-          container.appendChild(label);
+        items.sort((a, b) => {
+          if (b.count !== a.count) {
+            return b.count - a.count;
+          }
+          return a.tag.localeCompare(b.tag);
+        });
+        items.forEach(({ button }) => {
+          container.appendChild(button);
         });
       }
 
       sortTagContainer(TAG_CONTAINER_ID);
 
-      const checkboxSelector = `#${TAG_CONTAINER_ID} input[type="checkbox"]`;
+      const buttonSelector = `#${TAG_CONTAINER_ID} .tag-toggle`;
 
       window.updatePostsVisibility = function updatePostsVisibility() {
         const lang = getLang();
-        const checkboxes = document.querySelectorAll(checkboxSelector);
-        const checkedTags = Array.from(checkboxes).filter(cb => cb.checked).map(cb => cb.value);
+        const buttons = document.querySelectorAll(buttonSelector);
+        const activeTags = Array.from(buttons)
+          .filter(btn => btn.getAttribute('aria-pressed') === 'true')
+          .map(btn => btn.dataset.tag);
         const scope = document.querySelector('.posts-zh-cn');
         const posts = scope ? scope.querySelectorAll('.post') : [];
 
-        if (checkedTags.length > 0) {
+        if (activeTags.length > 0) {
           posts.forEach(post => {
             const postTagTexts = Array.from(post.querySelectorAll('code')).map(code => code.textContent.trim());
             const postTagTextsCN = (lang === 'zh-TW' && window.cnConv)
               ? postTagTexts.map(t => window.cnConv(t))
               : postTagTexts;
-            const isPostVisible = checkedTags.some(tag => postTagTextsCN.includes(tag));
+            const isPostVisible = activeTags.some(tag => postTagTextsCN.includes(tag));
             post.classList.toggle('hidden', !isPostVisible);
           });
         } else {
@@ -212,8 +245,12 @@ layout: default
       };
 
       // attach listeners
-      document.querySelectorAll(checkboxSelector).forEach(checkbox => {
-        checkbox.addEventListener('change', window.updatePostsVisibility);
+      document.querySelectorAll(buttonSelector).forEach(button => {
+        button.addEventListener('click', () => {
+          const currentState = button.getAttribute('aria-pressed') === 'true';
+          button.setAttribute('aria-pressed', currentState ? 'false' : 'true');
+          window.updatePostsVisibility();
+        });
       });
 
       window.updatePostsVisibility();
