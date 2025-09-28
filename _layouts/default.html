@@ -1,13 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
   <head>
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
 
     {% include meta.html %}
-
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
@@ -107,18 +103,22 @@
         }
 
         function setLang(lang) {
-          localStorage.setItem('lang', lang);
-          document.body.setAttribute('data-lang', lang);
+          const normalizedLang = (lang === 'zh-TW') ? 'zh-TW' : 'zh-CN';
+          localStorage.setItem('lang', normalizedLang);
+          document.body.setAttribute('data-lang', normalizedLang);
+          if (document && document.documentElement) {
+            document.documentElement.setAttribute('lang', normalizedLang);
+          }
           if (toggleButton) {
-            const isTraditional = (lang === 'zh-TW');
+            const isTraditional = (normalizedLang === 'zh-TW');
             toggleButton.setAttribute('aria-pressed', isTraditional ? 'true' : 'false');
             // keep text in Simplified; conversion runs after this call
             toggleButton.textContent = isTraditional ? '切换简体' : '切换繁体';
           }
           // apply conversion
-          applyConversion(lang);
+          applyConversion(normalizedLang);
           // notify pages that language changed
-          const evt = new CustomEvent('langchange', { detail: { lang } });
+          const evt = new CustomEvent('langchange', { detail: { lang: normalizedLang } });
           window.dispatchEvent(evt);
         }
 
