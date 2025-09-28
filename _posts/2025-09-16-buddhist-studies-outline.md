@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 佛学概论大纲（不断更新中，直到定稿）
-wechat: 
+title: 佛学概论大纲（第一期）：佛教简史和佛教基础（根本佛教）
+wechat: https://mp.weixin.qq.com/s/hnqLaif4V-IB6_W7TcySuQ
 description: 
 excerpt: 
 tags: [学习方法, 资源推荐]

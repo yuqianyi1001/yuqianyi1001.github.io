@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 一起来学《阿毗达磨俱舍论》
-wechat: 
+wechat: https://mp.weixin.qq.com/s/E_Q2l8LwPn4SbtaMaS6icA
 description: 曾为《成唯识论》迷，如今激情追随《俱舍》。从“唯识”观点到对有部经典的好奇，《俱舍》浅尝即忘，但幸得王路老师微信公众号，唤起再度追寻《俱舍》的决心。“独行者快，众行者远”，共同学习或许是我们的最佳途径。
 tags: [论典笔记, 社群公告]
 ---

@@ -133,7 +133,10 @@ layout: default
       <li class="post" data-year="{{ post.date | date: '%Y' }}" data-month="{{ post.date | date: '%m' }}">
         
             <a href="{{ site.baseurl }}{{ post.url }}" class="read-more" id="post_title">{{ post.title }}</a>
-            <a href="{{ post.wechat }}" target="_blank" id="wechat_link"><img src="/wechat.ico" width="16px" /></a>
+            {%- assign wechat_link = post.wechat | default: '' | strip -%}
+            {%- if wechat_link != '' -%}
+            <a href="{{ wechat_link }}" target="_blank" id="wechat_link"><img src="/wechat.ico" width="16px" /></a>
+            {%- endif -%}
             <img src="/copy.png" width="16px" id="copy-button" />
             <br>
             
@@ -170,11 +173,16 @@ layout: default
     const copyButtons = document.querySelectorAll('.posts img#copy-button');
     copyButtons.forEach((button) => {
       button.addEventListener('click', function() {
-        const listItem = button.closest('ul');
-        const postTitle = listItem.querySelector('#post_title').innerText;
+        const listItem = button.closest('li.post');
+        if (!listItem) {
+          return;
+        }
+        const titleEl = listItem.querySelector('#post_title');
+        const postTitle = titleEl ? titleEl.innerText : '';
         const wechatLink = listItem.querySelector('#wechat_link');
         const postHref = wechatLink ? wechatLink.getAttribute('href') : '';
-        const postDesc = listItem.querySelector('#post-desc').innerText;
+        const descEl = listItem.querySelector('#post-desc');
+        const postDesc = descEl ? descEl.innerText : '';
 
         const tempTextarea = document.createElement('textarea');
         tempTextarea.value = `【原创】${postTitle}\n${postHref}\n ${postDesc}`;

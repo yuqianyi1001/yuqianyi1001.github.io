@@ -2,6 +2,7 @@
 layout: post
 title: 略比较汉传佛教与藏传佛教
 tags: [宗派比较]
+wechat: https://mp.weixin.qq.com/s/pgwZNAklE7ZZuD-lFGjTYA
 ---
 
 ## 缘起

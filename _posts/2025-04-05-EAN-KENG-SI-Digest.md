@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 纪念一下：我的文章被新加坡延庆寺的《延庆文坛》收录了
-wechat: 
+wechat: https://mp.weixin.qq.com/s/BWcEtvom65SVDHpyXQUpAQ
 description: 新加坡延庆寺《延庆文坛》2025年春季刊收录了我的文章：《南传也有菩萨道 |〈南传菩萨道〉阅读笔记 | 南北传菩萨道的简略对比》
 excerpt: 新加坡延庆寺《延庆文坛》2025年春季刊收录了我的文章：《南传也有菩萨道 |〈南传菩萨道〉阅读笔记 | 南北传菩萨道的简略对比》
 tags: [生活随笔]

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 圆善师兄：我的外公外婆
-wechat: 
+wechat: https://mp.weixin.qq.com/s/luXn8_gG1b4G5KJhlm2OXw
 description: 
 excerpt: 
 tags: [生活随笔]
