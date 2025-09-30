@@ -10,7 +10,9 @@ python3 scripts/wechat_draft_sync.py create --markdown _posts/2025-09-29-buddhis
 from __future__ import annotations
 
 import argparse
+import atexit
 import dataclasses
+import html
 import json
 import mimetypes
 import os
@@ -22,6 +24,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import uuid
+from html.parser import HTMLParser
 from typing import Dict, Iterable, List, Optional, Tuple
 
 try:  # Optional dependency for front matter parsing
@@ -40,6 +43,187 @@ DOTENV_FILENAME = ".env"
 MARKDOWN_IMAGE_PATTERN = re.compile(r"!\[([^\]]*)\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)")
 MARKDOWN_REF_IMAGE_PATTERN = re.compile(r"^\[([^\]]+)\]:\s*(\S+)(.*)$", re.MULTILINE)
 DEFAULT_THUMB_MEDIA_ID = "LJGNckXOaezci8bZiAJY7N5Ubz6wjqAIk079wmXjBhmS0HTLjQcurh4xfcNBS_QF"
+IMAGE_CACHE_FILENAME = "wechat_image_cache.json"
+
+_CSS_RULE_RE = re.compile(r"([^{}]+)\{([^{}]+)\}")
+_WECHAT_TAG_STYLES: Optional[Dict[str, str]] = None
+_WECHAT_CLASS_STYLES: Optional[Dict[str, str]] = None
+_ANCESTOR_STYLE_RULES = [
+    {"tag": "code", "ancestors": {"pre"}, "style": "white-space: pre; overflow: auto; border-radius: 3px; padding: 1px 1px; display: block;"},
+    {"tag": "ul", "ancestors": {"ul", "ol"}, "style": "margin: 0; padding-left: 10px;"},
+    {"tag": "ol", "ancestors": {"ul", "ol"}, "style": "margin: 0; padding-left: 10px;"},
+    {"tag": "p", "ancestors": {"li"}, "style": "margin: 10px 0;"},
+    {"tag": "tr", "ancestors": {"table"}, "style": "border-top: 1px solid #CCC; background-color: #FFF;"},
+    {"tag": "td", "ancestors": {"table"}, "style": "border: 1px solid #CCC; padding: 5px 10px;"},
+    {"tag": "th", "ancestors": {"table"}, "style": "font-weight: bold; color: #EEE; border: 1px solid #009688; background-color: #009688; padding: 5px 10px;"},
+]
+_VOID_TAGS = {"br", "hr", "img", "input", "meta", "link"}
+_DISALLOWED_TAGS = {"script", "iframe", "style", "video", "audio", "object", "embed", "canvas", "svg", "link"}
+_COMMON_ALLOWED_ATTRS = {"style"}
+_TAG_ALLOWED_ATTRS = {
+    "a": {"href", "title", "target"},
+    "img": {"src", "alt", "title", "data-src"},
+    "td": {"colspan", "rowspan", "align", "valign"},
+    "th": {"colspan", "rowspan", "scope", "align", "valign"},
+    "table": {"summary"},
+    "ol": {"start", "type"},
+    "li": {"value"},
+    "blockquote": {"cite"},
+    "q": {"cite"},
+}
+
+
+def _normalize_style_block(block: str) -> str:
+    parts = []
+    for piece in block.split(";"):
+        piece = piece.strip()
+        if piece:
+            parts.append(piece)
+    return "; ".join(parts)
+
+
+def _merge_style_text(existing: Optional[str], addition: str) -> str:
+    base_parts = []
+    if existing:
+        base_parts.append(existing.strip().rstrip(";"))
+    if addition:
+        base_parts.append(addition.strip().rstrip(";"))
+    filtered = [part for part in base_parts if part]
+    if not filtered:
+        return ""
+    return "; ".join(dict.fromkeys(filtered))
+
+
+def _load_wechat_style_rules() -> Tuple[Dict[str, str], Dict[str, str]]:
+    global _WECHAT_TAG_STYLES, _WECHAT_CLASS_STYLES
+    if _WECHAT_TAG_STYLES is not None and _WECHAT_CLASS_STYLES is not None:
+        return _WECHAT_TAG_STYLES, _WECHAT_CLASS_STYLES
+
+    css_path = pathlib.Path(__file__).resolve().parent / "markdown_.css"
+    tag_styles: Dict[str, str] = {}
+    class_styles: Dict[str, str] = {}
+    if css_path.exists():
+        css_content = css_path.read_text(encoding="utf-8")
+        for selector_match in _CSS_RULE_RE.finditer(css_content):
+            selector_text = selector_match.group(1)
+            declarations = _normalize_style_block(selector_match.group(2))
+            if not declarations:
+                continue
+            for raw_selector in selector_text.split(","):
+                selector = raw_selector.strip()
+                if not selector:
+                    continue
+                if ":" in selector or "::" in selector:
+                    continue
+                if selector.startswith("."):
+                    cls = selector[1:]
+                    class_styles[cls] = _merge_style_text(class_styles.get(cls), declarations)
+                    continue
+                if " " in selector:
+                    continue
+                tag = selector.lower()
+                tag_styles[tag] = _merge_style_text(tag_styles.get(tag), declarations)
+
+    # Ensure preview wrapper still has a baseline style even if CSS is missing.
+    base_wrapper_style = "font-size: 16px; line-height: 1.8em; letter-spacing: 0.1em;"
+    tag_styles.setdefault("body", base_wrapper_style)
+    tag_styles.setdefault("main", base_wrapper_style)
+
+    _WECHAT_TAG_STYLES = tag_styles
+    _WECHAT_CLASS_STYLES = class_styles
+    return tag_styles, class_styles
+
+
+_IMAGE_CACHE: Optional[Dict[str, Dict[str, object]]] = None
+_IMAGE_CACHE_DIRTY = False
+
+
+def _image_cache_path() -> pathlib.Path:
+    return pathlib.Path(__file__).resolve().parent / IMAGE_CACHE_FILENAME
+
+
+def _load_image_cache() -> Dict[str, Dict[str, object]]:
+    global _IMAGE_CACHE
+    if _IMAGE_CACHE is not None:
+        return _IMAGE_CACHE
+
+    cache_path = _image_cache_path()
+    if cache_path.exists():
+        try:
+            data = json.loads(cache_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            data = {}
+    else:
+        data = {}
+
+    if not isinstance(data, dict):
+        data = {}
+
+    typed_cache: Dict[str, Dict[str, object]] = {}
+    for key, value in data.items():
+        if not isinstance(key, str) or not isinstance(value, dict):
+            continue
+        url = value.get("url")
+        mtime = value.get("mtime")
+        size = value.get("size")
+        if isinstance(url, str) and isinstance(mtime, (int, float)) and isinstance(size, (int, float)):
+            typed_cache[key] = {"url": url, "mtime": float(mtime), "size": float(size)}
+
+    _IMAGE_CACHE = typed_cache
+    return _IMAGE_CACHE
+
+
+def _save_image_cache() -> None:
+    global _IMAGE_CACHE_DIRTY
+    if not _IMAGE_CACHE_DIRTY or _IMAGE_CACHE is None:
+        return
+
+    cache_path = _image_cache_path()
+    cache_path.write_text(
+        json.dumps(_IMAGE_CACHE, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    _IMAGE_CACHE_DIRTY = False
+
+
+def _resolve_cached_image(image_path: pathlib.Path) -> Optional[str]:
+    cache = _load_image_cache()
+    cached = cache.get(str(image_path))
+    if not cached:
+        return None
+
+    try:
+        stats = image_path.stat()
+    except FileNotFoundError:
+        return None
+
+    cached_mtime = cached.get("mtime")
+    cached_size = cached.get("size")
+    cached_url = cached.get("url")
+    if (
+        isinstance(cached_mtime, (int, float))
+        and isinstance(cached_size, (int, float))
+        and isinstance(cached_url, str)
+        and abs(cached_mtime - stats.st_mtime) < 1e-6
+        and int(cached_size) == int(stats.st_size)
+    ):
+        return cached_url
+    return None
+
+
+def _record_image_upload(image_path: pathlib.Path, url: str) -> None:
+    global _IMAGE_CACHE_DIRTY
+    cache = _load_image_cache()
+    stats = image_path.stat()
+    cache[str(image_path)] = {
+        "url": url,
+        "mtime": stats.st_mtime,
+        "size": stats.st_size,
+    }
+    _IMAGE_CACHE_DIRTY = True
+
+
+atexit.register(_save_image_cache)
 
 
 class WeChatAPIError(RuntimeError):
@@ -281,7 +465,10 @@ def store_draft(draft: Dict[str, object], storage_dir: pathlib.Path) -> pathlib.
             json.dumps(article_meta, indent=2, ensure_ascii=False),
             encoding="utf-8",
         )
-        (article_dir / "content.html").write_text(article.get("content", ""), encoding="utf-8")
+        html_fragment = article.get("content", "")
+        sanitized_fragment = wechatify_html(html_fragment)
+        full_document = build_preview_document(sanitized_fragment)
+        (article_dir / "content.html").write_text(full_document, encoding="utf-8")
 
     return draft_dir
 
@@ -300,7 +487,8 @@ def load_article_bundles(draft_dir: pathlib.Path) -> List[ArticleBundle]:
         if not meta_path.exists() or not content_path.exists():
             continue
         metadata = json.loads(meta_path.read_text(encoding="utf-8"))
-        content = content_path.read_text(encoding="utf-8")
+        raw_content = content_path.read_text(encoding="utf-8")
+        content = extract_body_from_document(raw_content)
         bundles.append(
             ArticleBundle(
                 index=index,
@@ -326,15 +514,205 @@ def ensure_markdown_available() -> None:
 
 def sanitize_html(html: str) -> str:
     html = re.sub(r"\s+id=\"[^\"]*\"", "", html)
-    html = re.sub(r"href=\"#[^\"]*\"", 'href="javascript:void(0)"', html)
+    html = re.sub(r"href=\"#[^\"]*\"", "", html)
     return html
 
 
+class _WeChatHTMLTransformer(HTMLParser):
+    def __init__(self, *, allow_local_media: bool = False) -> None:
+        super().__init__(convert_charrefs=False)
+        tag_styles, class_styles = _load_wechat_style_rules()
+        self._tag_styles = tag_styles
+        self._class_styles = class_styles
+        self._stack: List[str] = []
+        self._pieces: List[str] = []
+        self._skip_depth = 0
+        self._allow_local_media = allow_local_media
+
+    def handle_starttag(self, tag: str, attrs: List[Tuple[str, Optional[str]]]) -> None:
+        tag = tag.lower()
+        if self._skip_depth:
+            if tag in _DISALLOWED_TAGS:
+                self._skip_depth += 1
+            return
+        if tag in _DISALLOWED_TAGS:
+            self._skip_depth = 1
+            return
+
+        prepared_attrs = self._prepare_attributes(tag, attrs)
+        if tag in _VOID_TAGS:
+            self._pieces.append(self._render_tag(tag, prepared_attrs, self_closing=True))
+            return
+
+        self._pieces.append(self._render_tag(tag, prepared_attrs))
+        self._stack.append(tag)
+
+    def handle_endtag(self, tag: str) -> None:
+        tag = tag.lower()
+        if self._skip_depth:
+            if tag in _DISALLOWED_TAGS:
+                self._skip_depth -= 1
+            return
+        if tag in _VOID_TAGS:
+            return
+
+        self._pieces.append(f"</{tag}>")
+        if not self._stack:
+            return
+        try:
+            idx = len(self._stack) - 1 - self._stack[::-1].index(tag)
+        except ValueError:
+            return
+        self._stack = self._stack[:idx]
+
+    def handle_startendtag(self, tag: str, attrs: List[Tuple[str, Optional[str]]]) -> None:
+        tag = tag.lower()
+        if self._skip_depth:
+            if tag in _DISALLOWED_TAGS:
+                self._skip_depth += 1
+            return
+        if tag in _DISALLOWED_TAGS:
+            return
+        prepared_attrs = self._prepare_attributes(tag, attrs)
+        self._pieces.append(self._render_tag(tag, prepared_attrs, self_closing=True))
+
+    def handle_data(self, data: str) -> None:
+        if not self._skip_depth:
+            self._pieces.append(data)
+
+    def handle_entityref(self, name: str) -> None:
+        if not self._skip_depth:
+            self._pieces.append(f"&{name};")
+
+    def handle_charref(self, name: str) -> None:
+        if not self._skip_depth:
+            self._pieces.append(f"&#{name};")
+
+    def handle_comment(self, data: str) -> None:  # noqa: D401 - comments are dropped silently
+        return
+
+    def get_html(self) -> str:
+        return "".join(self._pieces)
+
+    def _prepare_attributes(self, tag: str, attrs: List[Tuple[str, Optional[str]]]) -> List[Tuple[str, str]]:
+        attr_values: Dict[str, str] = {}
+        classes: List[str] = []
+        existing_style = ""
+        for key, value in attrs:
+            key_lower = key.lower()
+            value = value or ""
+            if key_lower == "class":
+                classes.extend(part for part in value.split() if part)
+                continue
+            if key_lower == "style":
+                existing_style = value
+                continue
+            attr_values[key_lower] = value
+
+        data_src = attr_values.get("data-src")
+        if "src" not in attr_values and data_src:
+            attr_values["src"] = data_src
+
+        style_value = self._compose_style(tag, classes, existing_style)
+
+        allowed_attrs = set(_COMMON_ALLOWED_ATTRS)
+        allowed_attrs.update(_TAG_ALLOWED_ATTRS.get(tag, set()))
+
+        sanitized: List[Tuple[str, str]] = []
+        if style_value:
+            sanitized.append(("style", style_value))
+
+        for key, value in attr_values.items():
+            if key not in allowed_attrs:
+                continue
+            if key == "href" and not self._is_safe_href(value):
+                continue
+            if key == "src" and not self._is_safe_src(value):
+                continue
+            sanitized.append((key, value))
+
+        return sanitized
+
+    def _compose_style(self, tag: str, classes: List[str], existing: str) -> str:
+        style_segments: List[str] = []
+        if existing:
+            style_segments.append(existing.strip().rstrip(";"))
+
+        tag_style = self._tag_styles.get(tag)
+        if tag_style:
+            style_segments.append(tag_style)
+
+        for cls in classes:
+            class_style = self._class_styles.get(cls)
+            if class_style:
+                style_segments.append(class_style)
+
+        for rule in _ANCESTOR_STYLE_RULES:
+            if rule["tag"] != tag:
+                continue
+            if not rule["ancestors"].intersection(self._stack):
+                continue
+            style_segments.append(rule["style"])
+
+        combined = [segment for segment in style_segments if segment]
+        if not combined:
+            return ""
+        return "; ".join(dict.fromkeys(segment.rstrip(";") for segment in combined))
+
+    @staticmethod
+    def _render_tag(tag: str, attrs: List[Tuple[str, str]], self_closing: bool = False) -> str:
+        if attrs:
+            attr_text = " ".join(
+                f"{name}=\"{html.escape(value, quote=True)}\"" for name, value in attrs
+            )
+            attr_text = f" {attr_text}"
+        else:
+            attr_text = ""
+        if self_closing or tag in _VOID_TAGS:
+            return f"<{tag}{attr_text} />"
+        return f"<{tag}{attr_text}>"
+
+    @staticmethod
+    def _is_safe_href(value: str) -> bool:
+        normalized = value.strip()
+        if not normalized:
+            return False
+        if normalized.startswith("#"):
+            return True
+        lowered = normalized.lower()
+        allowed = ("http://", "https://", "mailto:", "tel:", "weixin://")
+        return lowered.startswith(allowed)
+
+    def _is_safe_src(self, value: str) -> bool:
+        normalized = value.strip()
+        if not normalized:
+            return False
+        lowered = normalized.lower()
+        if lowered.startswith("http://") or lowered.startswith("https://"):
+            return True
+        if lowered.startswith("//"):
+            return True
+        if lowered.startswith("data:"):
+            return self._allow_local_media
+        if self._allow_local_media and "://" not in normalized:
+            return True
+        return False
+
+
+def wechatify_html(html_fragment: str, *, allow_local_media: bool = False) -> str:
+    transformer = _WeChatHTMLTransformer(allow_local_media=allow_local_media)
+    transformer.feed(html_fragment)
+    transformer.close()
+    return transformer.get_html()
+
+
 def build_preview_document(body_html: str) -> str:
-    css_path = pathlib.Path(__file__).resolve().parent / "markdown_.css"
-    css_content = ""
-    if css_path.exists():
-        css_content = css_path.read_text(encoding="utf-8")
+    tag_styles, _ = _load_wechat_style_rules()
+    body_style = tag_styles.get("body", "")
+    main_style = tag_styles.get("main", "")
+
+    body_attr = f" style=\"{html.escape(body_style, quote=True)}\"" if body_style else ""
+    main_attr = f" style=\"{html.escape(main_style, quote=True)}\"" if main_style else ""
 
     return (
         "<!DOCTYPE html>\n"
@@ -343,12 +721,9 @@ def build_preview_document(body_html: str) -> str:
         "  <meta charset=\"utf-8\">\n"
         "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n"
         "  <title>WeChat Draft Preview</title>\n"
-        "  <style>\n"
-        f"{css_content}\n"
-        "  </style>\n"
         "</head>\n"
-        "<body>\n"
-        "  <main class=\"wechat-preview\">\n"
+        f"<body{body_attr}>\n"
+        f"  <main{main_attr}>\n"
         f"{body_html}\n"
         "  </main>\n"
         "</body>\n"
@@ -356,12 +731,29 @@ def build_preview_document(body_html: str) -> str:
     )
 
 
+def extract_body_from_document(html_content: str) -> str:
+    if "<html" not in html_content.lower():
+        return html_content
+
+    body_match = re.search(r"<body[^>]*>(.*?)</body>", html_content, flags=re.IGNORECASE | re.DOTALL)
+    if not body_match:
+        return html_content
+
+    body_html = body_match.group(1)
+
+    main_match = re.search(r"<main[^>]*>(.*?)</main>", body_html, flags=re.IGNORECASE | re.DOTALL)
+    if main_match:
+        body_html = main_match.group(1)
+
+    return body_html.strip()
+
 def load_markdown_article(
     markdown_path: pathlib.Path,
     client: Optional[WeChatClient],
     *,
     upload_images: bool = True,
     converter: str = "markdown",
+    allow_local_media: bool = False,
 ) -> Tuple[Dict[str, object], str]:
     ensure_yaml_available()
     if converter != "markdown":
@@ -388,19 +780,27 @@ def load_markdown_article(
         if client is None:
             raise RuntimeError("WeChat client is required when upload_images is enabled")
 
-        image_cache: Dict[str, str] = {}
+        session_cache: Dict[str, str] = {}
 
         def resolve_image_url(image_ref: str) -> str:
             if image_ref.startswith("http://") or image_ref.startswith("https://"):
                 return image_ref
 
             resolved_path = (markdown_path.parent / image_ref).resolve()
-            cached = image_cache.get(str(resolved_path))
-            if cached is None:
-                url = client.upload_article_image(resolved_path)
-                image_cache[str(resolved_path)] = url
-            else:
-                url = cached
+            key = str(resolved_path)
+
+            cached = session_cache.get(key)
+            if cached is not None:
+                return cached
+
+            cached = _resolve_cached_image(resolved_path)
+            if cached is not None:
+                session_cache[key] = cached
+                return cached
+
+            url = client.upload_article_image(resolved_path)
+            session_cache[key] = url
+            _record_image_upload(resolved_path, url)
             return url
 
         def replace_image(match: re.Match[str]) -> str:
@@ -420,6 +820,7 @@ def load_markdown_article(
     html_content = markdown.markdown(body_for_conversion, extensions=["extra", "sane_lists", "toc"], tab_length=2)
 
     html_content = sanitize_html(html_content)
+    html_content = wechatify_html(html_content, allow_local_media=allow_local_media)
     return metadata, html_content
 
 
@@ -512,7 +913,10 @@ def cmd_push(client: WeChatClient, args: argparse.Namespace) -> None:
 
         for position, markdown_path in enumerate(args.markdown):
             article_index = args.articles[position] if args.articles else position
-            metadata, html_content = load_markdown_article(markdown_path, client)
+            metadata, html_content = load_markdown_article(
+                markdown_path,
+                client,
+            )
             article_payload = build_article_payload(metadata, html_content)
             client.update_draft(args.media_id, article_index, article_payload)
             print(
@@ -544,7 +948,10 @@ def cmd_push(client: WeChatClient, args: argparse.Namespace) -> None:
 def cmd_create(client: WeChatClient, args: argparse.Namespace) -> None:
     articles: List[Dict[str, object]] = []
     for markdown_path in args.markdown:
-        metadata, html_content = load_markdown_article(markdown_path, client)
+        metadata, html_content = load_markdown_article(
+            markdown_path,
+            client,
+        )
         articles.append(build_article_payload(metadata, html_content))
 
     media_id = client.add_draft(articles)
@@ -569,6 +976,7 @@ def cmd_preview(client: WeChatClient, args: argparse.Namespace) -> None:
         None,
         upload_images=False,
         converter="markdown",
+        allow_local_media=True,
     )
 
     rendered = build_preview_document(html_content)
