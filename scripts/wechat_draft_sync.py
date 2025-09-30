@@ -417,7 +417,7 @@ def load_markdown_article(
 
         body_for_conversion = MARKDOWN_REF_IMAGE_PATTERN.sub(replace_reference, body_for_conversion)
 
-    html_content = markdown.markdown(body_for_conversion, extensions=["extra", "sane_lists", "toc"])
+    html_content = markdown.markdown(body_for_conversion, extensions=["extra", "sane_lists", "toc"], tab_length=2)
 
     html_content = sanitize_html(html_content)
     return metadata, html_content
