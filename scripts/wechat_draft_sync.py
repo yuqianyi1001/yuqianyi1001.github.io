@@ -330,8 +330,43 @@ def sanitize_html(html: str) -> str:
     return html
 
 
-def load_markdown_article(markdown_path: pathlib.Path, client: WeChatClient) -> Tuple[Dict[str, object], str]:
+def build_preview_document(body_html: str) -> str:
+    css_path = pathlib.Path(__file__).resolve().parent / "markdown_.css"
+    css_content = ""
+    if css_path.exists():
+        css_content = css_path.read_text(encoding="utf-8")
+
+    return (
+        "<!DOCTYPE html>\n"
+        "<html lang=\"zh-CN\">\n"
+        "<head>\n"
+        "  <meta charset=\"utf-8\">\n"
+        "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n"
+        "  <title>WeChat Draft Preview</title>\n"
+        "  <style>\n"
+        f"{css_content}\n"
+        "  </style>\n"
+        "</head>\n"
+        "<body>\n"
+        "  <main class=\"wechat-preview\">\n"
+        f"{body_html}\n"
+        "  </main>\n"
+        "</body>\n"
+        "</html>\n"
+    )
+
+
+def load_markdown_article(
+    markdown_path: pathlib.Path,
+    client: Optional[WeChatClient],
+    *,
+    upload_images: bool = True,
+    converter: str = "markdown",
+) -> Tuple[Dict[str, object], str]:
     ensure_yaml_available()
+    if converter != "markdown":
+        raise ValueError(f"Unsupported converter: {converter}")
+
     ensure_markdown_available()
 
     text = markdown_path.read_text(encoding="utf-8")
@@ -348,36 +383,42 @@ def load_markdown_article(markdown_path: pathlib.Path, client: WeChatClient) -> 
             raise RuntimeError(f"Front matter in {markdown_path} must define a mapping")
         body = remainder.lstrip("\n")
 
-    image_cache: Dict[str, str] = {}
+    body_for_conversion = body
+    if upload_images:
+        if client is None:
+            raise RuntimeError("WeChat client is required when upload_images is enabled")
 
-    def resolve_image_url(image_ref: str) -> str:
-        if image_ref.startswith("http://") or image_ref.startswith("https://"):
-            return image_ref
+        image_cache: Dict[str, str] = {}
 
-        resolved_path = (markdown_path.parent / image_ref).resolve()
-        cached = image_cache.get(str(resolved_path))
-        if cached is None:
-            url = client.upload_article_image(resolved_path)
-            image_cache[str(resolved_path)] = url
-        else:
-            url = cached
-        return url
+        def resolve_image_url(image_ref: str) -> str:
+            if image_ref.startswith("http://") or image_ref.startswith("https://"):
+                return image_ref
 
-    def replace_image(match: re.Match[str]) -> str:
-        alt_text, image_ref = match.groups()
-        url = resolve_image_url(image_ref)
-        return f"![{alt_text}]({url})"
+            resolved_path = (markdown_path.parent / image_ref).resolve()
+            cached = image_cache.get(str(resolved_path))
+            if cached is None:
+                url = client.upload_article_image(resolved_path)
+                image_cache[str(resolved_path)] = url
+            else:
+                url = cached
+            return url
 
-    body_with_remote_images = MARKDOWN_IMAGE_PATTERN.sub(replace_image, body)
+        def replace_image(match: re.Match[str]) -> str:
+            alt_text, image_ref = match.groups()
+            url = resolve_image_url(image_ref)
+            return f"![{alt_text}]({url})"
 
-    def replace_reference(match: re.Match[str]) -> str:
-        label, image_ref, suffix = match.groups()
-        url = resolve_image_url(image_ref)
-        return f"[{label}]: {url}{suffix}"
+        body_for_conversion = MARKDOWN_IMAGE_PATTERN.sub(replace_image, body_for_conversion)
 
-    body_with_remote_images = MARKDOWN_REF_IMAGE_PATTERN.sub(replace_reference, body_with_remote_images)
+        def replace_reference(match: re.Match[str]) -> str:
+            label, image_ref, suffix = match.groups()
+            url = resolve_image_url(image_ref)
+            return f"[{label}]: {url}{suffix}"
 
-    html_content = markdown.markdown(body_with_remote_images, extensions=["extra", "sane_lists", "toc"])
+        body_for_conversion = MARKDOWN_REF_IMAGE_PATTERN.sub(replace_reference, body_for_conversion)
+
+    html_content = markdown.markdown(body_for_conversion, extensions=["extra", "sane_lists", "toc"])
+
     html_content = sanitize_html(html_content)
     return metadata, html_content
 
@@ -518,6 +559,26 @@ def cmd_create(client: WeChatClient, args: argparse.Namespace) -> None:
     print(f"Draft saved under {draft_dir}")
 
 
+def cmd_preview(client: WeChatClient, args: argparse.Namespace) -> None:
+    markdown_path = args.markdown
+    if not markdown_path.exists():
+        raise RuntimeError(f"Markdown file not found: {markdown_path}")
+
+    _, html_content = load_markdown_article(
+        markdown_path,
+        None,
+        upload_images=False,
+        converter="markdown",
+    )
+
+    rendered = build_preview_document(html_content)
+
+    output_path = args.output or markdown_path.with_suffix(".preview.html")
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(rendered, encoding="utf-8")
+    print(f"Preview HTML written to {output_path}")
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -588,6 +649,23 @@ def build_parser() -> argparse.ArgumentParser:
         help="Do not fetch and store the created draft locally after upload",
     )
     create_parser.set_defaults(func=cmd_create)
+
+    preview_parser = subparsers.add_parser(
+        "preview",
+        help="Render Markdown to HTML locally without uploading images",
+    )
+    preview_parser.add_argument(
+        "--markdown",
+        type=pathlib.Path,
+        required=True,
+        help="Markdown file to render locally",
+    )
+    preview_parser.add_argument(
+        "--output",
+        type=pathlib.Path,
+        help="Optional output HTML path (defaults to <markdown>.preview.html)",
+    )
+    preview_parser.set_defaults(func=cmd_preview)
 
     return parser
 
