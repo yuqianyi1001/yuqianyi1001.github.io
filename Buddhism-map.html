@@ -1,0 +1,177 @@
+---
+layout: individual
+title: 佛法地图
+---
+
+<svg id="chart" width="1200" height="1200"></svg>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+const data = {
+  "nodes": [
+    {"id": "三十七道品", "group": "核心"},
+
+    {"id": "四念住", "group": "类别"},
+    {"id": "身念住", "group": "四念住", "desc": "观身不净"},
+    {"id": "受念住", "group": "四念住", "desc": "观受是苦"},
+    {"id": "心念住", "group": "四念住", "desc": "观心无常"},
+    {"id": "法念住", "group": "四念住", "desc": "观法无我"},
+
+    {"id": "四正勤", "group": "类别"},
+    {"id": "未生恶令不生", "group": "四正勤"},
+    {"id": "已生恶令断", "group": "四正勤"},
+    {"id": "未生善令生", "group": "四正勤"},
+    {"id": "已生善令增长", "group": "四正勤"},
+
+    {"id": "四神足", "group": "类别"},
+    {"id": "欲神足", "group": "四神足"},
+    {"id": "精进神足", "group": "四神足"},
+    {"id": "心神足", "group": "四神足"},
+    {"id": "观神足", "group": "四神足"},
+
+    {"id": "五根", "group": "类别"},
+    {"id": "信根", "group": "五根"},
+    {"id": "精进根", "group": "五根"},
+    {"id": "念根", "group": "五根"},
+    {"id": "定根", "group": "五根"},
+    {"id": "慧根", "group": "五根"},
+
+    {"id": "五力", "group": "类别"},
+    {"id": "信力", "group": "五力"},
+    {"id": "精进力", "group": "五力"},
+    {"id": "念力", "group": "五力"},
+    {"id": "定力", "group": "五力"},
+    {"id": "慧力", "group": "五力"},
+
+    {"id": "七觉支", "group": "类别"},
+    {"id": "念觉支", "group": "七觉支"},
+    {"id": "择法觉支", "group": "七觉支"},
+    {"id": "精进觉支", "group": "七觉支"},
+    {"id": "喜觉支", "group": "七觉支"},
+    {"id": "轻安觉支", "group": "七觉支"},
+    {"id": "定觉支", "group": "七觉支"},
+    {"id": "舍觉支", "group": "七觉支"},
+
+    {"id": "八正道", "group": "类别"},
+    {"id": "正见", "group": "八正道"},
+    {"id": "正思惟", "group": "八正道"},
+    {"id": "正语", "group": "八正道"},
+    {"id": "正业", "group": "八正道"},
+    {"id": "正命", "group": "八正道"},
+    {"id": "正精进", "group": "八正道"},
+    {"id": "正念", "group": "八正道"},
+    {"id": "正定", "group": "八正道"}
+  ],
+  "links": [
+    {"source": "三十七道品", "target": "四念住"},
+    {"source": "三十七道品", "target": "四正勤"},
+    {"source": "三十七道品", "target": "四神足"},
+    {"source": "三十七道品", "target": "五根"},
+    {"source": "三十七道品", "target": "五力"},
+    {"source": "三十七道品", "target": "七觉支"},
+    {"source": "三十七道品", "target": "八正道"},
+
+    {"source": "四念住", "target": "身念住"},
+    {"source": "四念住", "target": "受念住"},
+    {"source": "四念住", "target": "心念住"},
+    {"source": "四念住", "target": "法念住"},
+
+    {"source": "四正勤", "target": "未生恶令不生"},
+    {"source": "四正勤", "target": "已生恶令断"},
+    {"source": "四正勤", "target": "未生善令生"},
+    {"source": "四正勤", "target": "已生善令增长"},
+
+    {"source": "四神足", "target": "欲神足"},
+    {"source": "四神足", "target": "精进神足"},
+    {"source": "四神足", "target": "心神足"},
+    {"source": "四神足", "target": "观神足"},
+
+    {"source": "五根", "target": "信根"},
+    {"source": "五根", "target": "精进根"},
+    {"source": "五根", "target": "念根"},
+    {"source": "五根", "target": "定根"},
+    {"source": "五根", "target": "慧根"},
+
+    {"source": "五力", "target": "信力"},
+    {"source": "五力", "target": "精进力"},
+    {"source": "五力", "target": "念力"},
+    {"source": "五力", "target": "定力"},
+    {"source": "五力", "target": "慧力"},
+
+    {"source": "七觉支", "target": "念觉支"},
+    {"source": "七觉支", "target": "择法觉支"},
+    {"source": "七觉支", "target": "精进觉支"},
+    {"source": "七觉支", "target": "喜觉支"},
+    {"source": "七觉支", "target": "轻安觉支"},
+    {"source": "七觉支", "target": "定觉支"},
+    {"source": "七觉支", "target": "舍觉支"},
+
+    {"source": "八正道", "target": "正见"},
+    {"source": "八正道", "target": "正思惟"},
+    {"source": "八正道", "target": "正语"},
+    {"source": "八正道", "target": "正业"},
+    {"source": "八正道", "target": "正命"},
+    {"source": "八正道", "target": "正精进"},
+    {"source": "八正道", "target": "正念"},
+    {"source": "八正道", "target": "正定"},
+
+    {"source": "精进根", "target": "精进力"},
+    {"source": "四正勤", "target": "精进力"}
+  ]
+};
+
+const svg = d3.select("#chart"),
+      width = +svg.attr("width"),
+      height = +svg.attr("height");
+
+const simulation = d3.forceSimulation(data.nodes)
+  .force("link", d3.forceLink(data.links).id(d => d.id).distance(120))
+  .force("charge", d3.forceManyBody().strength(-300))
+  .force("center", d3.forceCenter(width / 2, height / 2));
+
+const link = svg.append("g")
+  .selectAll("line")
+  .data(data.links)
+  .join("line")
+  .attr("stroke", "#aaa");
+
+const node = svg.append("g")
+  .selectAll("circle")
+  .data(data.nodes)
+  .join("circle")
+  .attr("r", 20)
+  .attr("fill", d => d.group === "核心" ? "orange" : "lightblue")
+  .call(d3.drag()
+    .on("start", dragstarted)
+    .on("drag", dragged)
+    .on("end", dragended));
+
+const label = svg.append("g")
+  .selectAll("text")
+  .data(data.nodes)
+  .join("text")
+  .text(d => d.id)
+  .attr("font-size", 12)
+  .attr("dy", -25);
+
+simulation.on("tick", () => {
+  link.attr("x1", d => d.source.x)
+      .attr("y1", d => d.source.y)
+      .attr("x2", d => d.target.x)
+      .attr("y2", d => d.target.y);
+
+  node.attr("cx", d => d.x).attr("cy", d => d.y);
+  label.attr("x", d => d.x).attr("y", d => d.y);
+});
+
+function dragstarted(event, d) {
+  if (!event.active) simulation.alphaTarget(0.3).restart();
+  d.fx = d.x; d.fy = d.y;
+}
+function dragged(event, d) {
+  d.fx = event.x; d.fy = event.y;
+}
+function dragended(event, d) {
+  if (!event.active) simulation.alphaTarget(0);
+  d.fx = null; d.fy = null;
+}
+</script>
