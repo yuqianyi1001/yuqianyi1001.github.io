@@ -29,8 +29,13 @@ title: 三界九地
             padding: 0.2em 0.4em;
         }
 
-        .hidable-hidden {
-            display: none !important;
+        .hidden-cell {
+            visibility: hidden;
+            padding: 0;
+            border: 0;
+            height: 0;
+            width: 0;
+            overflow: hidden;
         }
 
 
@@ -355,17 +360,41 @@ title: 三界九地
 <script>
     
     function showOrHide(){
+
         if (document.getElementById('cb_show1').checked) {
-            $('.hidable').removeClass('hidable-hidden');
+            //$('.hidable').removeClass();
+
+            $('.hidable td').each(function(index, elem){
+                $(elem).html($(elem).data('hidden_text'));
+            });
+
+
+            $('td.hidable').each(function(index, elem){
+                $(elem).html($(elem).data('hidden_text'));
+            });
+
+
         } else {
-            $('.hidable').addClass('hidable-hidden');
+            //$('.hidable').toggleClass('hidden-cell');
+
+            $('.hidable td').html("");
+            $('td.hidable').html("");
+
         }
     }
 
     document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('cb_show1').addEventListener('change', showOrHide);
-        showOrHide();
+
+        $('.hidable td').each(function(index, elem){
+            $(elem).data('hidden_text', $(elem).html());
+        });
+
+        $('td.hidable').each(function(index, elem){
+            $(elem).data('hidden_text', $(elem).html());
+        });
     });
 
 
 </script>
+
