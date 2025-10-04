@@ -26,3 +26,8 @@
 * https://md.doocs.org/ 公众号排版。图片需要先push到Github，且把图片路径修改为绝对路径后，才能复制到公众号里面而不丢失。
 * https://www.tablesgenerator.com/html_tables  表格编辑器。制作的表格有：
   * baifa-table.html 
+
+# 网站工具（未列在网站上）
+
+* 制作图文Post（或经典语录）： https://yuqianyi.com/text-image/  http://127.0.0.1:4000/text-image/ 
+
