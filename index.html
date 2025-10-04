@@ -2,8 +2,19 @@
 layout: default
 ---
 
-<div id="d_tags_cn">
+<div class="tag-filter-section">
   <style>
+    .tag-filter-section {
+      margin-bottom: 12px;
+    }
+
+    .tag-filter-heading {
+      font-size: small;
+      font-weight: bold;
+      color: #444;
+      margin: 0 0 4px 0;
+    }
+
     #d_tags_cn {
       display: flex;
       flex-wrap: wrap;
@@ -11,55 +22,79 @@ layout: default
       margin-bottom: 8px;
     }
 
-    #d_tags_cn .tag-toggle,
-    #post-monthly-summary .month-toggle {
+    #d_tags_cn .tag-toggle {
       font-size: smaller;
       padding: 4px 10px;
-      border: 1px solid #d0d0d0;
+      border: 1px solid #a4c8ff;
       border-radius: 16px;
-      background: #f8f8f8;
+      background: #f3f7ff;
+      color: #1d4ed8;
       cursor: pointer;
       transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
-    #d_tags_cn .tag-toggle[aria-pressed="true"],
-    #post-monthly-summary .month-toggle[aria-pressed="true"] {
+    #d_tags_cn .tag-toggle[aria-pressed="true"] {
       background: #2b90d9;
       color: #fff;
       border-color: #2b90d9;
       box-shadow: 0 0 0 2px rgba(43, 144, 217, 0.2);
     }
 
-    #d_tags_cn .tag-toggle:focus-visible,
-    #post-monthly-summary .month-toggle:focus-visible {
+    #d_tags_cn .tag-toggle:focus-visible {
       outline: 2px solid #2b90d9;
       outline-offset: 2px;
     }
-  </style>
-  {% assign all_tags = "" | split: "|" %}
-  
-  {%- for post in site.posts -%}
-    {%- if post.url contains "zh-tw" -%}
-      <!-- do nothing -->
-    {%- else -%}
 
-      {%- assign all_tags = all_tags | concat: post.tags -%}
-    {%- endif -%}
-  {%- endfor -%}
-  
-  {%- assign unique_tags = all_tags | uniq | sort -%}
+    #post-monthly-summary .month-toggle {
+      font-size: smaller;
+      padding: 4px 10px;
+      border: 1px solid #f4b48c;
+      border-radius: 16px;
+      background: #fff6ed;
+      color: #b45309;
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    #post-monthly-summary .month-toggle[aria-pressed="true"] {
+      background: #e67e22;
+      color: #fff;
+      border-color: #e67e22;
+      box-shadow: 0 0 0 2px rgba(230, 126, 34, 0.2);
+    }
+
+    #post-monthly-summary .month-toggle:focus-visible {
+      outline: 2px solid #e67e22;
+      outline-offset: 2px;
+    }
+  </style>
+  <div class="tag-filter-heading">标签</div>
+  <div id="d_tags_cn">
+    {% assign all_tags = "" | split: "|" %}
     
-    {%- for tag in unique_tags -%}
-      {%- assign tag_count = 0 -%}
-      {%- for tagged_post in site.posts -%}
-        {%- unless tagged_post.url contains "zh-tw" -%}
-          {%- if tagged_post.tags and tagged_post.tags contains tag -%}
-            {%- assign tag_count = tag_count | plus: 1 -%}
-          {%- endif -%}
-        {%- endunless -%}
-      {%- endfor -%}
-      <button type="button" class="tag-toggle" data-tag="{{ tag }}" data-count="{{ tag_count }}" aria-pressed="false">{{ tag }} ({{ tag_count }})</button>
+    {%- for post in site.posts -%}
+      {%- if post.url contains "zh-tw" -%}
+        <!-- do nothing -->
+      {%- else -%}
+
+        {%- assign all_tags = all_tags | concat: post.tags -%}
+      {%- endif -%}
     {%- endfor -%}
+    
+    {%- assign unique_tags = all_tags | uniq | sort -%}
+      
+      {%- for tag in unique_tags -%}
+        {%- assign tag_count = 0 -%}
+        {%- for tagged_post in site.posts -%}
+          {%- unless tagged_post.url contains "zh-tw" -%}
+            {%- if tagged_post.tags and tagged_post.tags contains tag -%}
+              {%- assign tag_count = tag_count | plus: 1 -%}
+            {%- endif -%}
+          {%- endunless -%}
+        {%- endfor -%}
+        <button type="button" class="tag-toggle" data-tag="{{ tag }}" data-count="{{ tag_count }}" aria-pressed="false">{{ tag }} ({{ tag_count }})</button>
+      {%- endfor -%}
+  </div>
 </div>
 
 <div id="post-monthly-summary" style="margin-top: 10px;">
@@ -124,7 +159,7 @@ layout: default
 {% assign zh_tw_count = site.posts | where_exp: "post", "post.url contains 'zh-tw'" | size %}
 {% assign total_posts = site.posts.size | minus: zh_tw_count %}
 
-<h2 style="font-size: large;">文章列表 (共{{ total_posts }}篇，倒序排列，最新的文章在最前面)</h2>
+<h2 style="font-size: large;">文章列表 (共{{ total_posts }}篇，最新的文章在最上面)</h2>
 
 <div class="posts posts-zh-cn" style="display:block;">
   <ol>

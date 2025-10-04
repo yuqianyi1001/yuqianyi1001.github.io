@@ -15,22 +15,23 @@
       .lang-toggle-button {
         font-size: smaller;
         padding: 4px 12px;
-        border: 1px solid #d0d0d0;
+        border: 1px solid #b7a4ff;
         border-radius: 16px;
-        background: #f8f8f8;
+        background: #f5f0ff;
+        color: #4f3cc9;
         cursor: pointer;
         transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
       }
 
       .lang-toggle-button[aria-pressed="true"] {
-        background: #2b90d9;
+        background: #6a4bff;
         color: #fff;
-        border-color: #2b90d9;
-        box-shadow: 0 0 0 2px rgba(43, 144, 217, 0.2);
+        border-color: #6a4bff;
+        box-shadow: 0 0 0 2px rgba(106, 75, 255, 0.2);
       }
 
       .lang-toggle-button:focus-visible {
-        outline: 2px solid #2b90d9;
+        outline: 2px solid #6a4bff;
         outline-offset: 2px;
       }
     </style>
@@ -51,15 +52,15 @@
           </div>
 
           <nav>
-            <a href="{{ site.baseurl }}/">文章</a>
+            <a href="{{ site.baseurl }}/">文章列表</a>
             <!-- <a href="{{ site.baseurl }}/buddha-names">佛名大全<span style="font-size: small;">(总23772)</span></a> -->
-            <a href="{{ site.baseurl }}/100">百法</a>
-            <a href="{{ site.baseurl }}/xianguan">现观</a>
+            <a href="{{ site.baseurl }}/100">百法大图</a>
+            <a href="{{ site.baseurl }}/xianguan">现观大纲</a>
             <a href="{{ site.baseurl }}/about">我的闻思</a>
             <a href="{{ site.baseurl }}/ahan">阿含对比</a>
           </nav>
         </header>
-        <div id="lang-toggle" style="margin: 8px 0;">
+        <div id="lang-toggle" style="margin: 8px 0 4px;">
           <button type="button" id="lang-toggle-button" class="lang-toggle-button" aria-pressed="false">切换繁体</button>
         </div>
       </div>
