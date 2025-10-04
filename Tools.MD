@@ -6,8 +6,6 @@
 
 ## 正文
 
-Before publish：
-
 润色下这篇文章，让它更加顺畅，更加自然，更加通畅，连接词更加连贯。
 
 尽量保持原文，减少不必要的改动。
@@ -22,7 +20,10 @@ Before publish：
 
 * 《百法》表格中，增加《显扬圣教论》
 * 添加Google Search
-
+* 佛名大全 
+* 整理图片 
+  * 删除不用的图片
+  * rename，alt
 
 <!-- 
 <a href="https://www.flaticon.com/free-icons/dot" title="dot icons">Dot icons created by Freepik - Flaticon</a>
