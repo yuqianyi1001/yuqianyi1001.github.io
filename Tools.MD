@@ -1,8 +1,10 @@
-**Prompts**
+# Prompts
 
-请把以下文字翻译成英文，并把他们全部用小写输出，用-代替空格。
+## 标题
 
+请把标题部分翻译成英文，并尽量缩短文字，保留关键部分即可。最后，把他们全部用小写输出，用-代替空格。
 
+## 正文
 
 Before publish：
 
@@ -16,18 +18,13 @@ Before publish：
 以markdown格式输出。
 
 
+# TODOs
+
+* 《百法》表格中，增加《显扬圣教论》
+* 添加Google Search
 
 
-**TODOs**
-
-添加Google Search
-
-提供英文翻译，然后挂在Raddit
-
-
-
-
-
+<!-- 
 <a href="https://www.flaticon.com/free-icons/dot" title="dot icons">Dot icons created by Freepik - Flaticon</a>
-
+ -->
 
