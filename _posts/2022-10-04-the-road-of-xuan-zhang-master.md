@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 我的玄奘之路
-wechat: https://mp.weixin.qq.com/s/Rl9Jw9P9qFwCbmiRD91Vzg
+wechat_link: https://mp.weixin.qq.com/s/Rl9Jw9P9qFwCbmiRD91Vzg
 description: 玄奘之路有两条，一条是有形的戈壁荒野，另一条是无形的知见和智慧；一条可以磨练我们的意志，强化我们的毅力，另一条可以升华我们的人格，照亮人我。
 tags: [论典笔记]
 ---

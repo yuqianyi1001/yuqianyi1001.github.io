@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 你真的没有烦恼吗？还是不认识烦恼而已？ ——学习笔记之《百法明门论》
-wechat: https://mp.weixin.qq.com/s/dVEFSdO1OUK8Xr4wubUpyw
+wechat_link: https://mp.weixin.qq.com/s/dVEFSdO1OUK8Xr4wubUpyw
 tags: [经典导读, 论典笔记]
 ---
 

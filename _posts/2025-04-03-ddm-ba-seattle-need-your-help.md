@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 【重发】为法鼓山西雅图分会道场建设募捐（募捐不该经由个人账号代为转捐）
-wechat: https://mp.weixin.qq.com/s/Fh_lDFf0qj_uA0yS90a5Yg
+wechat_link: https://mp.weixin.qq.com/s/Fh_lDFf0qj_uA0yS90a5Yg
 description: 法鼓山西雅图分会这个道场，是我学佛最得益之处，法鼓山的创办人圣严法师是我自学佛以来，也是对我最为重要之恩师。
 excerpt: 法鼓山西雅图分会这个道场，是我学佛最得益之处，法鼓山的创办人圣严法师是我自学佛以来，也是对我最为重要之恩师。
 tags: [社群公告]

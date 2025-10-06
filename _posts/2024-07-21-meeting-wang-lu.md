@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 我和王路老师见面了 ｜ 欢迎订购王路老师的《俱舍九题》
-wechat: https://mp.weixin.qq.com/s/l-h2G5jJW06ovTexQVIwug
+wechat_link: https://mp.weixin.qq.com/s/l-h2G5jJW06ovTexQVIwug
 description: 
 tags: [资源推荐, 生活随笔]
 ---

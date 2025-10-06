@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 中道解经，中道说法 —— 讲层次、讲逻辑、讲人话
-wechat: https://mp.weixin.qq.com/s/dmvmNlEmkHUMFJlFf6BXwg
+wechat_link: https://mp.weixin.qq.com/s/dmvmNlEmkHUMFJlFf6BXwg
 description: 建议大家多看符合中道的解经和说法 —— 讲层次，讲逻辑，讲人话。希望大家都能从佛法中获得符合自身需求的感悟，体会不同层次的法乐。
 excerpt: 建议大家多看符合中道的解经和说法 —— 讲层次，讲逻辑，讲人话。希望大家都能从佛法中获得符合自身需求的感悟，体会不同层次的法乐。
 tags: [教义解析]

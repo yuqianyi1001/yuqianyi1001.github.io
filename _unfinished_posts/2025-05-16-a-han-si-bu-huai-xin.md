@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 居士应该修习的四不坏信（四增上心）｜《阿含经》中的修行法门
-wechat: 
+wechat_link: 
 description: 
 excerpt: 
 tags:

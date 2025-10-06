@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 《八识规矩颂》的白话文（转）
-wechat: 
+wechat_link: 
 description: 
 excerpt: 
 tags: [论典笔记]

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 总结下《华严经》中的十地菩萨 | 菩萨阶位有不同的标准
-wechat: https://mp.weixin.qq.com/s/jEiLpTfZpPy-rFSdhMMfbQ
+wechat_link: https://mp.weixin.qq.com/s/jEiLpTfZpPy-rFSdhMMfbQ
 description: 菩萨阶位有许多不同的标准，那么在《华严经》中，十地菩萨有分别有怎样的标准呢？十地菩萨需要分别修行什么法门呢？
 tags: [经典导读]
 ---

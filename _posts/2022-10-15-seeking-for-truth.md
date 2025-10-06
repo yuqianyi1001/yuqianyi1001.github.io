@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 公理、常识、常理都是正确的吗？
-wechat: https://mp.weixin.qq.com/s/R0zEaey4JsCtsOzekB2MGA
+wechat_link: https://mp.weixin.qq.com/s/R0zEaey4JsCtsOzekB2MGA
 tags: [学习方法]
 ---
 

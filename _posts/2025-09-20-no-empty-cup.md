@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 不需要以空杯心态来加入学习群
-wechat: https://mp.weixin.qq.com/s/vnHht1dTtZ3PFsgm1Bf_oQ
+wechat_link: https://mp.weixin.qq.com/s/vnHht1dTtZ3PFsgm1Bf_oQ
 description: 学习佛法不必追求“空杯心态”，现实中也没有绝对的空杯。关键在于理解、消化、思考与碰撞，逐渐形成自己的判断力与正见，让知识沉淀为智慧。
 excerpt: 学习佛法不必追求“空杯心态”，现实中也没有绝对的空杯。关键在于理解、消化、思考与碰撞，逐渐形成自己的判断力与正见，让知识沉淀为智慧。
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 你有选择困难症吗？| 需要、想要、能要、该要 | 四要和它们的“朋友们”  | 圣严法师的四要
-wechat: https://mp.weixin.qq.com/s/wdiw4s5DaiUf6UkklhBTEg
+wechat_link: https://mp.weixin.qq.com/s/wdiw4s5DaiUf6UkklhBTEg
 description: 你有选择困难症吗？从需要、想要举一反三，再到为人处世，接人待物等，只要是有选择时，都可以看是否有实际需要和合情合理来区分，然后再选择。这样的选择一定会让生活变得更简单，更明朗，也会更加快乐。
 tags: [修行经验]
 ---

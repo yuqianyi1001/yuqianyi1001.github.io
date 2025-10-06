@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 知识付费，佛学也可以 ｜ 推荐下李元祥老师的《印度佛教史》
-wechat: https://mp.weixin.qq.com/s/t-jmTYPELNy3w73fvkULng
+wechat_link: https://mp.weixin.qq.com/s/t-jmTYPELNy3w73fvkULng
 description: 推荐李元祥老师《印度佛教史》视频课（B站50集，前30集免费），内容理性、逻辑清晰、知识点密集，能从佛教史角度厘清问题，值得一看。
 excerpt: 推荐李元祥老师《印度佛教史》视频课（B站50集，前30集免费），内容理性、逻辑清晰、知识点密集，能从佛教史角度厘清问题，值得一看。
 tags: [资源推荐, 佛教史]

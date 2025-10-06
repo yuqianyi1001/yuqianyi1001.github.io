@@ -3,7 +3,7 @@ layout: post
 title: 冷知识，其实佛是长生不老，也不死
 title_en: A Little-Known Fact The Buddha is Immortal and Never Dies
 title_url: a-little-known-fact-the-buddha-is-immortal-and-never-dies
-wechat: https://mp.weixin.qq.com/s/DT1TLALhkz544jQ4tUr90A
+wechat_link: https://mp.weixin.qq.com/s/DT1TLALhkz544jQ4tUr90A
 description: 很多人以为释迦牟尼佛80岁就死了，其实这只是佛的一种身体——“化身”的示现。佛有三种身：不生不灭的“法身”、永恒享乐的“报身”和随缘示现的“化身”。本文用通俗的语言，结合经典，带你搞懂佛陀真正的“生命”形态，破除“佛也会死”的误解。
 excerpt: 很多人以为释迦牟尼佛80岁就死了，其实这只是佛的一种身体——“化身”的示现。佛有三种身：不生不灭的“法身”、永恒享乐的“报身”和随缘示现的“化身”。本文用通俗的语言，结合经典，带你搞懂佛陀真正的“生命”形态，破除“佛也会死”的误解。
 tags: [教义解析]

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 百法介绍：1-100法的直解，根据林国良教授的《百法直解》整理
-wechat: https://mp.weixin.qq.com/s/lQ2U2Z0aP8HKWUnOCIXtrQ
+wechat_link: https://mp.weixin.qq.com/s/lQ2U2Z0aP8HKWUnOCIXtrQ
 description: 百法介绍第二篇。根据林国良教授的《成唯识论直解》中的《百法直解》，整理而来。
 excerpt: 百法介绍第二篇。根据林国良教授的《成唯识论直解》中的《百法直解》，整理而来。
 tags: [论典笔记]

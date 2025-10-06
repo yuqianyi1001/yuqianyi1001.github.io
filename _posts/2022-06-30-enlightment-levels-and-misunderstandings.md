@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 聊聊开悟的常见误解以及开悟的层次
-wechat: https://mp.weixin.qq.com/s/k5sIbi25UhmkpccDAv127g
+wechat_link: https://mp.weixin.qq.com/s/k5sIbi25UhmkpccDAv127g
 description: 因为禅宗的流行，禅修的日常化、普及化、大众化。对于开悟的说法众说纷纭，有的模糊，有的笼统，门槛也越降越低，但只要是正信的佛法，必定是有一条底线的。本文尝试梳理有关开悟的误解，以及按照结构和层次的方式做些梳理。
 tags: [教义解析]
 ---

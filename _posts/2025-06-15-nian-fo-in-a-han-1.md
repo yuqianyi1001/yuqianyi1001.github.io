@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 《阿含》中的念佛 —— 佛随念
-wechat: https://mp.weixin.qq.com/s/CdV-Slpngr5BsNB-XZmNZg
+wechat_link: https://mp.weixin.qq.com/s/CdV-Slpngr5BsNB-XZmNZg
 description: 《阿含经》中的“念佛”法门，即“佛随念”，是一种以忆念佛陀功德为核心的内心禅修。它立足于当下，通过净化内心来培育定力与正信，是完整解脱道（八正道）中的重要一环。
 excerpt: 《阿含经》中的“念佛”法门，即“佛随念”，是一种以忆念佛陀功德为核心的内心禅修。它立足于当下，通过净化内心来培育定力与正信，是完整解脱道（八正道）中的重要一环。
 tags: [经典导读, 修行方法]

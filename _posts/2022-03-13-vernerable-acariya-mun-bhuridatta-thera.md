@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 一位汉传佛教爱好者的《阿姜曼正传》读后感
-wechat: https://mp.weixin.qq.com/s/8r67qwRY3ehpNT-q9mel_Q
+wechat_link: https://mp.weixin.qq.com/s/8r67qwRY3ehpNT-q9mel_Q
 tags: [经典导读, 宗派比较]
 ---
 

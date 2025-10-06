@@ -3,7 +3,7 @@ layout: post
 title: 征集原创文章
 title_en: Call for Original Articles
 title_url: call-for-original-articles
-wechat: https://mp.weixin.qq.com/s/spSRNf_0_Jw61z3Bo-fAlQ
+wechat_link: https://mp.weixin.qq.com/s/spSRNf_0_Jw61z3Bo-fAlQ
 description: 欢迎投稿原创文章，分享您对佛教的理性思考、独到见解，或真实的学佛经历与感悟。
 excerpt:  欢迎投稿原创文章，分享您对佛教的理性思考、独到见解，或真实的学佛经历与感悟。
 tags: [社群公告]

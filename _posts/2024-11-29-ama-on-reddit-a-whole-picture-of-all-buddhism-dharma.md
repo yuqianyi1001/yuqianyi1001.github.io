@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AMA - A whole picture of all Buddhism Dharma (on Reddit)｜附我的学佛经历
-wechat: https://mp.weixin.qq.com/s/8zZe5JR0IBUaZp2WLneiKw
+wechat_link: https://mp.weixin.qq.com/s/8zZe5JR0IBUaZp2WLneiKw
 description: 这些内容是我发在国外知名论坛（Reddit）佛教版块里面的一个活动，活动的类型叫做AMA，全称是Ask Me Anything，中文就是“随便问”的意思。
 
 excerpt: 这些内容是我发在国外知名论坛（Reddit）佛教版块里面的一个活动，活动的类型叫做AMA，全称是Ask Me Anything，中文就是“随便问”的意思。

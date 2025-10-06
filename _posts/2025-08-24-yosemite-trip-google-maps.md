@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 优胜美地自驾游：有惊无险，不要绝对相信Google Maps导航（附经验教训）
-wechat: https://mp.weixin.qq.com/s/orKvCoD6caVtXFEQv8qFtQ
+wechat_link: https://mp.weixin.qq.com/s/orKvCoD6caVtXFEQv8qFtQ
 description: 优胜美地自驾游途中因Google Maps导航走错小路的真实经历与教训，附详细图片和实用建议，帮助自驾游客避免类似风险。
 excerpt: 优胜美地自驾游途中因Google Maps导航走错小路的真实经历与教训，附详细图片和实用建议，帮助自驾游客避免类似风险。
 tags: [生活随笔, 旅行见闻]

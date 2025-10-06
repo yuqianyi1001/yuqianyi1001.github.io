@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 佛经中阿弥陀佛本生故事
-wechat: https://mp.weixin.qq.com/s/UnkkH8CZBjP8CR73gFd0bg
+wechat_link: https://mp.weixin.qq.com/s/UnkkH8CZBjP8CR73gFd0bg
 description: 佛经中的阿弥陀佛本生故事，即阿弥陀佛成佛前的故事。以佛教故事来说，直接从佛经中摘录的故事，可能是最好的、最权威和最可信的故事了。
 tags: [修行方法]
 ---

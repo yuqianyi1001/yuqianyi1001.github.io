@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 大乘百法 vs 俱舍75法
-wechat: https://mp.weixin.qq.com/s/_eZpGcsubJMw0pL-YaAuZw
+wechat_link: https://mp.weixin.qq.com/s/_eZpGcsubJMw0pL-YaAuZw
 description: 大乘百法和俱舍75法对比
 tags: [论典笔记]
 ---

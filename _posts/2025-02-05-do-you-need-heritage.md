@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 学佛需要传承吗？不一定！澄清和反驳
-wechat: https://mp.weixin.qq.com/s/UDlp_GFdJuQv3Cn3KHknKw
+wechat_link: https://mp.weixin.qq.com/s/UDlp_GFdJuQv3Cn3KHknKw
 description: 广义的传承，人人都有。狭义的传承，也不一定需要。对于大多数人来说，没有也没关系。一味标榜和吹嘘传承的人，反而值得警惕。
 excerpt: 广义的传承，人人都有。狭义的传承，也不一定需要。对于大多数人来说，没有也没关系。一味标榜和吹嘘传承的人，反而值得警惕。
 tags: [教义解析, 学习方法]

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 略解十二处 ｜ 七十五法和十二处的对照
-wechat: https://mp.weixin.qq.com/s/_ySfmsV4ONY__EsiEXeSQA
+wechat_link: https://mp.weixin.qq.com/s/_ySfmsV4ONY__EsiEXeSQA
 description: 通过对照七十五法和十二处，可以帮助我们更深入、更全面、更精确地了解十二处。
 tags: [论典笔记]
 ---

@@ -3,7 +3,7 @@ layout: post
 title: 六道轮回：五趣或六道，两种解读
 title_en: The Six Paths of Rebirth Two Interpretations of the Five or Six Realms
 title_url: six-paths-of-rebirth-five-or-six-realms
-wechat: https://mp.weixin.qq.com/s/9Z5qe-2Ts3WapePuwDUp-w
+wechat_link: https://mp.weixin.qq.com/s/9Z5qe-2Ts3WapePuwDUp-w
 description: 佛教的轮回观念中，为何有时说「五趣」，有时又讲「六道」？本文将从佛经根据、历史演变来厘清二者关系，并提供实有的轮回和人间心态两种解读方式。
 excerpt: 佛教的轮回观念中，为何有时说「五趣」，有时又讲「六道」？本文将从佛经根据、历史演变来厘清二者关系，并提供实有的轮回和人间心态两种解读方式。
 tags:

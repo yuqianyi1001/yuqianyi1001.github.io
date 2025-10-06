@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 忆家（江西老家）
-wechat: https://mp.weixin.qq.com/s/H3RYKt5Vbk7BbbIWT1A9BA
+wechat_link: https://mp.weixin.qq.com/s/H3RYKt5Vbk7BbbIWT1A9BA
 description: 
 excerpt: 
 tags: [生活随笔]

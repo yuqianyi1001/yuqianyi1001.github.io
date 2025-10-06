@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 哎呀，一位霸道佛学群主诞生了 | 共读阿含 - 入群须知（v0.4）
-wechat: https://mp.weixin.qq.com/s/TxGRAM5ffuTNyuIo9TFAgQ
+wechat_link: https://mp.weixin.qq.com/s/TxGRAM5ffuTNyuIo9TFAgQ
 description: 我就不信还有人想要入群！
 excerpt: 我就不信还有人想要入群！
 tags: [社群公告]

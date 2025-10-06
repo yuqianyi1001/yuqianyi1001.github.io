@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 佛教行者该如何看待学术？
-wechat: https://mp.weixin.qq.com/s/v2VjSXChMPJ2fU0E1iTODg
+wechat_link: https://mp.weixin.qq.com/s/v2VjSXChMPJ2fU0E1iTODg
 tags: [学习方法]
 ---
 

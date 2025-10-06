@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 以百法为框架，系统性学习唯识 —— 百法、唯识学习大纲
-wechat: https://mp.weixin.qq.com/s/48F94n_G5giD_eqjAY8seA
+wechat_link: https://mp.weixin.qq.com/s/48F94n_G5giD_eqjAY8seA
 description: 开始写《百法》系列后，很多人问我如何学习百法，如何学习唯识，如何推荐一本书？没有简单的回答，先写一下这个大纲供参考吧。
 excerpt: 开始写《百法》系列后，很多人问我如何学习百法，如何学习唯识，如何推荐一本书？没有简单的回答，先写一下这个大纲供参考吧。
 tags: [论典笔记]

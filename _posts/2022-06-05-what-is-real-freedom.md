@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 咖啡自由？财富自由？—— 什么才是真正的自由？
-wechat: https://mp.weixin.qq.com/s/DSk0VHc7OIzitzZwoDpQUw
+wechat_link: https://mp.weixin.qq.com/s/DSk0VHc7OIzitzZwoDpQUw
 description: 近年来，在朋各种自媒体上，越来越多的人喜欢用某某自由的方式来表达拥有很多的某样东西，或者拥有随时想要的它就可以随时获得的机会。但，这是真的自由吗？什么才是真正的自由呢？
 tags: [生活随笔]
 ---

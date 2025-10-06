@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 批评也要有方便善巧 —— 附：警惕以学佛为名的PUA
-wechat: https://mp.weixin.qq.com/s/xZ1bX1XNCBqExFS9ZPfBXg
+wechat_link: https://mp.weixin.qq.com/s/xZ1bX1XNCBqExFS9ZPfBXg
 description: 很多佛教文章都是教我们如何安忍别人的批评，却很少教导我们该如何“如理如法”地批评。其实想要批评到位绝不是一件容易的事情，更要谨慎和警惕以学佛为名的“所谓”批评了。
 tags: [社会观察]
 ---

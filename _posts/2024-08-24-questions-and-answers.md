@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 佛学问答（1）：有关净土宗
-wechat: https://mp.weixin.qq.com/s/dv9TqgS6jK5jMyKXCj43pw
+wechat_link: https://mp.weixin.qq.com/s/dv9TqgS6jK5jMyKXCj43pw
 description: 
 tags: [教义解析]
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 如何用空性来降维打击一切烦恼 —— 附《矮个子，到底是谁的错？》后记
-wechat: https://mp.weixin.qq.com/s/3bwK9w8WVqy2JSJodF1YIg
+wechat_link: https://mp.weixin.qq.com/s/3bwK9w8WVqy2JSJodF1YIg
 description: 遇到任何事情的时候，第一反应即用佛法来观照，这的确是我们学佛之人所要练习和用功的。尤其应该重视对空性的理解，可以降维打击一切烦恼，拔除根本，最彻底，最究竟，也最圆满。
 tags: [修行经验]
 ---

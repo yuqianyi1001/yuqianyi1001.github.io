@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 悉达多太子的履历（悉达多 aka 释迦牟尼）
-wechat: https://mp.weixin.qq.com/s/RTYR1B8gD7a04x0c8ocW8g
+wechat_link: https://mp.weixin.qq.com/s/RTYR1B8gD7a04x0c8ocW8g
 description: 
 tags: [教义解析]
 ---

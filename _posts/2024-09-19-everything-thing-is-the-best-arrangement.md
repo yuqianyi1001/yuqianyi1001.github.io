@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 一切都是最好的安排 —— 对，但有一个前提和一个误区
-wechat: https://mp.weixin.qq.com/s/SEmetnTANbomLjUWhKP8fQ
+wechat_link: https://mp.weixin.qq.com/s/SEmetnTANbomLjUWhKP8fQ
 description: 一切都是最好的安排，它意味着接纳一切，积极看待问题。但要注意，它仅仅适用于被安排的人。世间很多事是因缘和合的结果，并非某个人安排。不要误解为有万能的神或老天爷在安排一切。
 
 excerpt: 一切都是最好的安排，它意味着接纳一切，积极看待问题。但要注意，它仅仅适用于被安排的人。世间很多事是因缘和合的结果，并非某个人安排。不要误解为有万能的神或老天爷在安排一切。

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: “七重栏楯、七重罗网、七重行树”就是“极乐世界”吗？大错特错！ ｜ 《长阿含经》第18-22卷，世记经 
-wechat: https://mp.weixin.qq.com/s/zxcubqmdeANVdvWouAh1LA
+wechat_link: https://mp.weixin.qq.com/s/zxcubqmdeANVdvWouAh1LA
 description: 对比《阿弥陀经》与《长阿含经》，“七重栏楯、七重罗网、七重行树”是古印度文学中描绘庄严景象的通用“套路”，并非极乐世界所独有。前者出自佛陀愿力，旨在演说妙法，助众生走向解脱与成佛。后者源于业力福报，引人贪著。
 excerpt: 对比《阿弥陀经》与《长阿含经》，“七重栏楯、七重罗网、七重行树”是古印度文学中描绘庄严景象的通用“套路”，并非极乐世界所独有。前者出自佛陀愿力，旨在演说妙法，助众生走向解脱与成佛。后者源于业力福报，引人贪著。
 tags: [经典导读]

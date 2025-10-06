@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 两个帮助阅读经文的小建议
-wechat: https://mp.weixin.qq.com/s/MgBWrLZmsz8mj2N-8ZjyaA
+wechat_link: https://mp.weixin.qq.com/s/MgBWrLZmsz8mj2N-8ZjyaA
 description: 利用现代文字的排版格式，以及表格等形式，重新排版经文，可以帮助我们更加快速、方便地阅读经文。清晰的排版也可以加深对经文的印象，从而更好地记忆和理解经文。
 excerpt: 利用现代文字的排版格式，以及表格等形式，重新排版经文，可以帮助我们更加快速、方便地阅读经文。清晰的排版也可以加深对经文的印象，从而更好地记忆和理解经文。
 tags: [学习方法]

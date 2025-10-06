@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 藏传格鲁辩经，一次中文演示｜附完整的文字稿
-wechat: https://mp.weixin.qq.com/s/MbHDZRMjxeM1OA5XDt1T9A
+wechat_link: https://mp.weixin.qq.com/s/MbHDZRMjxeM1OA5XDt1T9A
 description: 通过逻辑交锋澄清概念、巩固经论记忆、培养敏捷思辨与慈悲心——“以辩养慧，以慧导行”。
 excerpt: 通过逻辑交锋澄清概念、巩固经论记忆、培养敏捷思辨与慈悲心——“以辩养慧，以慧导行”。
 tags: [宗派比较]

@@ -3,7 +3,7 @@ layout: post
 title: 唯识入门 —— 唯识书和经典推荐
 title_en: Recommended Books and Classics on Yogacara
 title_url: recommended-books-and-classics-on-yogacara
-wechat: https://mp.weixin.qq.com/s/Bogt4OsC4yhPKUgfbFbiuQ
+wechat_link: https://mp.weixin.qq.com/s/Bogt4OsC4yhPKUgfbFbiuQ
 description: 唯识学是佛教的心理学，帮助我们理解内心世界。本文以通俗易懂的方式，系统推荐了从入门到深入的唯识经典和现代讲记，为你规划一条清晰的学习路径。
 excerpt: 唯识学是佛教的心理学，帮助我们理解内心世界。本文以通俗易懂的方式，系统推荐了从入门到深入的唯识经典和现代讲记，为你规划一条清晰的学习路径。
 tags: [论典笔记]

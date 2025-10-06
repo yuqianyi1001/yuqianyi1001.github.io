@@ -168,7 +168,7 @@ layout: default
       <li class="post" data-year="{{ post.date | date: '%Y' }}" data-month="{{ post.date | date: '%m' }}">
         
             <a href="{{ site.baseurl }}{{ post.url }}" class="read-more" id="post_title">{{ post.title }}</a>
-            {%- assign wechat_link = post.wechat | default: '' | strip -%}
+            {%- assign wechat_link = post.wechat_link | default: '' | strip -%}
             {%- if wechat_link != '' -%}
             <a href="{{ wechat_link }}" target="_blank" id="wechat_link"><img src="/wechat.ico" width="16px" /></a>
             {%- endif -%}

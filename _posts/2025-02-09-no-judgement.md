@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 只有如来才能“知人”、“知根性”、“量人”
-wechat: https://mp.weixin.qq.com/s/RbW_jaQ1AxFjLtX_Ok1eSg
+wechat_link: https://mp.weixin.qq.com/s/RbW_jaQ1AxFjLtX_Ok1eSg
 description: 《杂阿含经》990经：“莫量人人，量人人者，自生损减。唯有如来能知人耳”，991经：“唯有如来能知世间众生诸根优劣耳”，1063经：“唯有如来能知人耳”。
 excerpt: 《杂阿含经》990经：“莫量人人，量人人者，自生损减。唯有如来能知人耳”，991经：“唯有如来能知世间众生诸根优劣耳”，1063经：“唯有如来能知人耳”。
 tags: [经典导读]

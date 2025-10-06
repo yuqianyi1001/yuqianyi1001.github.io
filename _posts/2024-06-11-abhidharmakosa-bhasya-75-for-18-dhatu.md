@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 略解十八界 ｜ 七十五法和十八界的对照
-wechat: https://mp.weixin.qq.com/s/y2mhh2u02FVVdZ3xoqyG4w
+wechat_link: https://mp.weixin.qq.com/s/y2mhh2u02FVVdZ3xoqyG4w
 description: 通过对照七十五法和十八界，可以帮助我们更深入、更全面、更精确地了解十八界。
 tags: [论典笔记]
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 佛学中的车和车模
-wechat: https://mp.weixin.qq.com/s/m-Jhzsi_1SryK8Z_WhcU5A
+wechat_link: https://mp.weixin.qq.com/s/m-Jhzsi_1SryK8Z_WhcU5A
 description: 你去看过车展吗？你是关注了车还是车模呢？佛学中也有车和车模的，一起来探讨下什么是佛学中的车，什么是佛学中的车模吧。
 tags: [生活随笔]
 ---

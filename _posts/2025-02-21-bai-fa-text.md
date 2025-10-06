@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 百法介绍：百法原文，百法表格，百法大图，以及可交互版
-wechat: https://mp.weixin.qq.com/s/wM4moUWPYyyeRZqIsTRIGQ
+wechat_link: https://mp.weixin.qq.com/s/wM4moUWPYyyeRZqIsTRIGQ
 description: 开始系统性地介绍《百法》，第一篇：百法原文，百法表格，百法大图，以及可交互版。
 excerpt: 开始系统性地介绍《百法》，第一篇：百法原文，百法表格，百法大图，以及可交互版。
 tags: [论典笔记]

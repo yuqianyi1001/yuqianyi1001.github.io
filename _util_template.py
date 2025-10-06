@@ -11,7 +11,7 @@ destination_path = f"_posts/{current_date}-TBD.md"
 template = """---
 layout: post
 title: 
-wechat: 
+wechat_link: 
 description: 
 excerpt: 
 tags:

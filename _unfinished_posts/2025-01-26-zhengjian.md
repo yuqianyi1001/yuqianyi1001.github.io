@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 正见
-wechat: 
+wechat_link: 
 description: 
 excerpt: 
 tags:

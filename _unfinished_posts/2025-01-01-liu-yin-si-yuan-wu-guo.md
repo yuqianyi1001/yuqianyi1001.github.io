@@ -1,7 +1,7 @@
 ---
 layout: post
 title: （草稿）—— 六因四缘五果
-wechat: 
+wechat_link: 
 description: 
 excerpt: 
 tags:

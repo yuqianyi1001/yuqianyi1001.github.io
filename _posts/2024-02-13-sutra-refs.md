@@ -2,7 +2,7 @@
 layout: post
 title: 查经：菩提树下的修行和觉悟
 tags: [经典导读]
-wechat: 
+wechat_link: 
 ---
 
 ## 大乘入楞伽经卷，实叉难陀译

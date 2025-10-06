@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 有果必有因，理解这点就不会再有怨恨了｜从电影看佛法之《西游降魔篇》
-wechat: https://mp.weixin.qq.com/s/pF7c-SBooRB7Bl-j7zVQsw
+wechat_link: https://mp.weixin.qq.com/s/pF7c-SBooRB7Bl-j7zVQsw
 description: 你是否想了解《西游降魔篇》里的妖怪为什么变成妖怪？你是否想知道“有果必有因”的佛法道理如何应用于生活？你是否想看到儿歌和佛经的奇妙转换？如果你有这些兴趣，那就不要错过这篇文章
 tags: [经典导读, 生活随笔]
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 共读经典《杂阿含经》，乃至《四阿含》
-wechat: https://mp.weixin.qq.com/s/cmwXgAqqh8t4EcsZkWUSPw
+wechat_link: https://mp.weixin.qq.com/s/cmwXgAqqh8t4EcsZkWUSPw
 description: “这应该是每一位修学佛法者所应该阅读探究的圣典。”
 excerpt: “这应该是每一位修学佛法者所应该阅读探究的圣典。”
 tags: [经典导读, 社群公告]

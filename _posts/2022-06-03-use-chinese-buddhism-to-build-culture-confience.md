@@ -2,7 +2,7 @@
 layout: post
 title: （草稿）浅论以汉传佛教作为文化自信和价值输出的可行性
 tags: [社会观察]
-wechat: 
+wechat_link: 
 ---
 
 ### 背景

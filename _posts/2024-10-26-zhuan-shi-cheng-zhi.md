@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 什么是转识成智？以及它的常见误解
-wechat: https://mp.weixin.qq.com/s/aZc1M8wXB2A05ZFTmbHT-A
+wechat_link: https://mp.weixin.qq.com/s/aZc1M8wXB2A05ZFTmbHT-A
 description: 转识成智的内涵是指八识对应的心所发生了改变，没有了染污的心所；只有善心所，此时遍行，别境也都是善心所了。而别境中的慧心所功能尤为殊胜，因此，以慧心所来代称八识 —— 就是转识成智的内涵了
 excerpt: 转识成智的内涵是指八识对应的心所发生了改变，没有了染污的心所；只有善心所，此时遍行，别境也都是善心所了。而别境中的慧心所功能尤为殊胜，因此，以慧心所来代称八识 —— 就是转识成智的内涵了
 tags: [论典笔记]

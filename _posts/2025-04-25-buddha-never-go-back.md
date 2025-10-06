@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 为什么阿弥陀佛会涅槃？｜ 佛的三身，四身 ｜ 倒驾慈航只是方便说 ｜ 佛果是不会退转的
-wechat: https://mp.weixin.qq.com/s/uKDkZtT8iRMjVySj3bRluA
+wechat_link: https://mp.weixin.qq.com/s/uKDkZtT8iRMjVySj3bRluA
 description: 《成唯识论》卷10：「自受用，谓诸如来三无数劫，修集无量福慧资粮，所起无边真实功德，及极圆、净、常、遍色身，相续湛然，尽未来际，恒自受用广大法乐。」
 excerpt: 《成唯识论》卷10：「自受用，谓诸如来三无数劫，修集无量福慧资粮，所起无边真实功德，及极圆、净、常、遍色身，相续湛然，尽未来际，恒自受用广大法乐。」
 tags: [教义解析]

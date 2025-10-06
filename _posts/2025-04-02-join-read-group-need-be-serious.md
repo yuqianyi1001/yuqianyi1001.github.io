@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 对不起，群里不再加人了，除非……
-wechat: https://mp.weixin.qq.com/s/tk2e_-1YxXPMd7gRMjzVMQ
+wechat_link: https://mp.weixin.qq.com/s/tk2e_-1YxXPMd7gRMjzVMQ
 description: 你是真的想要读经吗？是的话，请继续阅读。
 excerpt: 你是真的想要读经吗？是的话，请继续阅读。
 tags: [社群公告]

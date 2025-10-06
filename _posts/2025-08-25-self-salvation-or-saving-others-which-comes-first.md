@@ -3,7 +3,7 @@ layout: post
 title: 自度度人是先自度还是先度人？
 title_en: Self-Salvation or Saving Others Which Comes First?
 title_url: self-salvation-or-saving-others-which-comes-first
-wechat: https://mp.weixin.qq.com/s/MFBxDr6X152Rhyel-V7HDg
+wechat_link: https://mp.weixin.qq.com/s/MFBxDr6X152Rhyel-V7HDg
 description: 探讨“自度度人”的两种不同层次：一是基于“解脱”的定义，必须先自度；二是基于“帮助”的定义，可在自度的同时度人。文章通过佛经论证和譬喻，阐明二者并行不悖，是不同阶段的修行实践。
 excerpt: 探讨“自度度人”的两种不同层次：一是基于“解脱”的定义，必须先自度；二是基于“帮助”的定义，可在自度的同时度人。文章通过佛经论证和譬喻，阐明二者并行不悖，是不同阶段的修行实践。
 tags: [教义解析, 修行方法]

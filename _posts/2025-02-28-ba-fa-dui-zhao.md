@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 百法和七十五法：对照五蕴、十二处、十八界
-wechat: https://mp.weixin.qq.com/s/UykW1uSnKOKkle-JgsWUAg
+wechat_link: https://mp.weixin.qq.com/s/UykW1uSnKOKkle-JgsWUAg
 description: 
 excerpt: 
 tags: [论典笔记]

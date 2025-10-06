@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 学佛需要祛魅吗？
-wechat: https://mp.weixin.qq.com/s/y-3Avt9VTPxdNXPGXHj7Hw
+wechat_link: https://mp.weixin.qq.com/s/y-3Avt9VTPxdNXPGXHj7Hw
 description: 祛魅：简单来说，祛魅就是去除神秘、超自然的色彩，以更理性、客观的态度去看待事物。那么学佛需要祛魅吗？不一定，如果认为佛教有魅力，可以鼓励我们持续修行，那就不需要。反之，如果被神秘、神异的事情所吸引而忘记了学佛的本质，那就十分需要祛魅了。
 tags: [教义解析, 学习方法]
 ---

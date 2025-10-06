@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 写给莲友和莲友家属的临终手册 —— 临终准备、助念和关怀
-wechat: https://mp.weixin.qq.com/s/IIO47BRwjltJalHFO5ywbw
+wechat_link: https://mp.weixin.qq.com/s/IIO47BRwjltJalHFO5ywbw
 description: 如果您的家人有净土学人（莲友），请不要错过这篇文章。这篇文章详细介绍了临终准备、助念和关怀的重要性，为莲友和莲友家属提供了有价值的参考，以及如何借助佛教信仰来缓解悲痛。
 tags: [修行方法]
 ---

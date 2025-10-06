@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 多次封号、限流之后，且行且珍惜
-wechat: https://mp.weixin.qq.com/s/lfI18QMsWvY_UnY4yF_N3w
+wechat_link: https://mp.weixin.qq.com/s/lfI18QMsWvY_UnY4yF_N3w
 description: 请珍惜这个号还存在的时光吧。我并不知道哪天会被封，但如果那一天真的来了，请记得它曾经存在过。
 excerpt: 请珍惜这个号还存在的时光吧。我并不知道哪天会被封，但如果那一天真的来了，请记得它曾经存在过。
 tags: [社会观察, 社群公告]

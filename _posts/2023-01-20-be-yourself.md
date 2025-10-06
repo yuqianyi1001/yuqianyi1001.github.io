@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 佛教之人生观 | 找回真正的自己 | 《找回自己》读书笔记
-wechat: https://mp.weixin.qq.com/s/jt0lwLUXWeno5P-T8Rb06w
+wechat_link: https://mp.weixin.qq.com/s/jt0lwLUXWeno5P-T8Rb06w
 description: 圣严法师的《找回自己》是一本揭示佛教之“人生观”的生活佛法类书籍，圣严法师从常见的空虚和迷茫切入，提出人生应该要有方向感，并建立了认识自我，肯定自我，提升自我和消融自我的四个步骤，最终希望以此都能找回真正的自己。
 tags: [经典导读]
 ---

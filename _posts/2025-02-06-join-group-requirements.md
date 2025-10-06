@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 共读阿含的三种方式、入群须知(v0.6)、常见问题和回答（FAQ）
-wechat: 
+wechat_link: 
 description: 参加共读《阿含》，请先阅读入群须知。
 excerpt: 
 tags: [社群公告]

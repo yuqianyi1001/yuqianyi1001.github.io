@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 什么是执着？| 一文说清楚佛教的执着是什么 | 我执和法执
-wechat: https://mp.weixin.qq.com/s/i7iPKIWTZ_BN_QkJlQjJTA
+wechat_link: https://mp.weixin.qq.com/s/i7iPKIWTZ_BN_QkJlQjJTA
 description: 是否曾对执着感到困惑？是否好奇为何学佛者也有执着？来吧，让我们一起揭开执着的面纱，看看它到底是什么怪兽！阅读本文，保证让你对“执着”有个全新、有趣的理解！
 tags: [教义解析]
 ---

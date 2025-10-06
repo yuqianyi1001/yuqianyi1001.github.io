@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 《阿弥陀经》是唯一的自说经典吗？
-wechat: https://mp.weixin.qq.com/s/6FhUVCMr8qUDsR6b87sJSw
+wechat_link: https://mp.weixin.qq.com/s/6FhUVCMr8qUDsR6b87sJSw
 description: 在大乘佛经内，除了《阿弥陀经》之外，也还有《心经》这样的自说经典。如果算上《阿含经》，那自说的数量就比较多了。所以，《阿弥陀经》虽然特殊，但肯定不是唯一的自说经典了。
 tags: [教义解析, 修行方法]
 ---

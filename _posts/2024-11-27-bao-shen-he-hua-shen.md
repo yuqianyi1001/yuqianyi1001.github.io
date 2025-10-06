@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 简单聊聊报身佛和化身佛的区别
-wechat: https://mp.weixin.qq.com/s/twApGrB7FcxOLwBGn5MPyA
+wechat_link: https://mp.weixin.qq.com/s/twApGrB7FcxOLwBGn5MPyA
 description: 报身 —— 才是真正的佛身，佛本身的功德庄严，美好光明。化身 —— 随缘所变的，一般都所度化的众生一样，比如，在娑婆世界，都是我们人类这样，和报身相比，都要矮、小不少。
 excerpt: 报身 —— 才是真正的佛身，佛本身的功德庄严，美好光明。化身 —— 随缘所变的，一般都所度化的众生一样，比如，在娑婆世界，都是我们人类这样，和报身相比，都要矮、小不少。
 tags: [教义解析]

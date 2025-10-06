@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 释迦牟尼佛九次退群
-wechat: https://mp.weixin.qq.com/s/Ry7LlJxrG0stiz2Z1fiIVA
+wechat_link: https://mp.weixin.qq.com/s/Ry7LlJxrG0stiz2Z1fiIVA
 description: 不要对号入座哦。
 excerpt: 不要对号入座哦。
 tags: [社群公告]

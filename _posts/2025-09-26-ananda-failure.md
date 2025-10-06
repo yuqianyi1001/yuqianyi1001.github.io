@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 真理是如何被“迭代”成谬误的？阿难的无力回天 ｜《付法藏因緣傳》卷二
-wechat: https://mp.weixin.qq.com/s/lWO5k_l_SgJzXf-6qP1u1g
+wechat_link: https://mp.weixin.qq.com/s/lWO5k_l_SgJzXf-6qP1u1g
 description: 阿难发现弟子传诵错偈，试图纠正却遭拒，感叹正法易失并选择提早入涅槃。
 excerpt: 阿难发现弟子传诵错偈，试图纠正却遭拒，感叹正法易失并选择提早入涅槃。
 tags: [经典导读, 教义解析]

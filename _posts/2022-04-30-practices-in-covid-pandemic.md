@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 疫情中被迫“闭关”的日子和结缘法鼓山
-wechat: https://mp.weixin.qq.com/s/8U_nHTIbLMWtqObid-pOGg
+wechat_link: https://mp.weixin.qq.com/s/8U_nHTIbLMWtqObid-pOGg
 tags: [修行经验]
 ---
 

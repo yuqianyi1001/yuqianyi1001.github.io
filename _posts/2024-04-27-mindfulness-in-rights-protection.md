@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 正念维权 - 司机加钱被拒后，恶意拉走了我的行李
-wechat: https://mp.weixin.qq.com/s/6Ib3YA9KxKZTd3_bo50PYg
+wechat_link: https://mp.weixin.qq.com/s/6Ib3YA9KxKZTd3_bo50PYg
 description: 这篇文章是去年在杭州发生的一件事情 —— 打车前往机场，司机要求加钱，被拒绝后司机故意拉走了行李。记录我是如何正念维权的，让司机得到了处罚的同时，也得到了必要的赔偿。学习正念，可以帮助我们更好地维权。
 tags: [修行经验]
 ---

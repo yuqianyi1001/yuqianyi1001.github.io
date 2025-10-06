@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 恐龙时代有佛吗？
-wechat: https://mp.weixin.qq.com/s/qv9HYrxzlf1b2YMon07UVQ
+wechat_link: https://mp.weixin.qq.com/s/qv9HYrxzlf1b2YMon07UVQ
 description: 这是一个有趣的问题。想要讲清楚，不妨从三个层次去展开。
 tags: [生活随笔]
 ---

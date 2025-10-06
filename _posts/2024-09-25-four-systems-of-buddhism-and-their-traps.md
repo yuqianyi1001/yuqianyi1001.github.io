@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 佛学四个体系和它们的“陷阱”
-wechat: https://mp.weixin.qq.com/s/u9V8_StyBi4hvooEwnQ4aw
+wechat_link: https://mp.weixin.qq.com/s/u9V8_StyBi4hvooEwnQ4aw
 description: 基础佛法没有陷阱；般若系统有一个大陷阱是“恶取空”；新唯识系统没有陷阱；如来藏系统有很多陷阱。学习佛法应先学习世俗谛，再学习胜义谛，最后学习二者不二，以避免误解和陷阱。
 excerpt: 基础佛法没有陷阱；般若系统有一个大陷阱是“恶取空”；新唯识系统没有陷阱；如来藏系统有很多陷阱。学习佛法应先学习世俗谛，再学习胜义谛，最后学习二者不二，以避免误解和陷阱。
 tags: [学习方法, 宗派比较]

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 佛学基础：三界、九地（九有）、六道、三有
-wechat: https://mp.weixin.qq.com/s/7IAI5TzicGvcp6uo1XwrrQ
+wechat_link: https://mp.weixin.qq.com/s/7IAI5TzicGvcp6uo1XwrrQ
 description: 佛学基础：三界、九地（九有）、六道、三有
 excerpt: 佛学基础：三界、九地（九有）、六道、三有
 tags:

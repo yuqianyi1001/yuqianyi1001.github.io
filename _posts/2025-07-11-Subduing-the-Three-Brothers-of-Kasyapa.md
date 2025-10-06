@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 佛经故事：降伏迦叶三兄弟｜《增一阿含经》第14、15卷
-wechat: https://mp.weixin.qq.com/s/06upBtJDuQd_iBMqLVfSXg
+wechat_link: https://mp.weixin.qq.com/s/06upBtJDuQd_iBMqLVfSXg
 description: 这是选自《增一阿含经》第14、15卷中，佛陀成道后初转法轮度化五比丘后，再度化迦叶三兄弟的故事。
 excerpt: 这是选自《增一阿含经》第14、15卷中，佛陀成道后初转法轮度化五比丘后，再度化迦叶三兄弟的故事。
 tags: [经典导读]

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 崩溃！佛经“可能”完全没有大目犍连用钵救释迦族然后化为血水的情节
-wechat: https://mp.weixin.qq.com/s/LdwDf9cFyq8XoKcfiNKIPQ
+wechat_link: https://mp.weixin.qq.com/s/LdwDf9cFyq8XoKcfiNKIPQ
 description: 
 excerpt: 
 tags: [经典导读, 佛教史]

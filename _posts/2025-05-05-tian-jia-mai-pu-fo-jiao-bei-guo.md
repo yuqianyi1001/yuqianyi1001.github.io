@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 灵隐寺天价小卖部，和佛教有什么关系？别再让佛教背锅了！
-wechat: https://mp.weixin.qq.com/s/eBsrxk9wxQrhUEabl8kJoA
+wechat_link: https://mp.weixin.qq.com/s/eBsrxk9wxQrhUEabl8kJoA
 description: 灵隐寺等宗教场所管理权与商业经营权是相分离的。寺院僧众的职责在于宗教法务和文物古迹维护，并不直接参与景区商业运作。景区内售票处、商店、小吃摊等由景区管理方或承租商家运营。
 excerpt: 灵隐寺等宗教场所管理权与商业经营权是相分离的。寺院僧众的职责在于宗教法务和文物古迹维护，并不直接参与景区商业运作。景区内售票处、商店、小吃摊等由景区管理方或承租商家运营。
 tags: [社会观察]

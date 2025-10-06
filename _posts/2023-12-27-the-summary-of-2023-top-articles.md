@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 问题、话题收集（长期有效）| 写作小结之2023年
-wechat: https://mp.weixin.qq.com/s/cwXH3Zy14lq2kU3cku-M3w
+wechat_link: https://mp.weixin.qq.com/s/cwXH3Zy14lq2kU3cku-M3w
 tags: [生活随笔, 社群公告]
 ---
 

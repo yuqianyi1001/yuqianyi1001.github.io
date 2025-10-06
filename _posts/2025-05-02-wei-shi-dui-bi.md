@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 新旧唯识的对比｜唯识古学和唯识今学｜学习笔记
-wechat: https://mp.weixin.qq.com/s/4COZFwWETxOybjLDMGEI-A
+wechat_link: https://mp.weixin.qq.com/s/4COZFwWETxOybjLDMGEI-A
 description: 玄奘大师历尽千辛万苦，从印度取回了《瑜伽师地论》，并成立了唯识宗，是非常具有划时代的意义的。不应该只是因为和传统说法有一些冲突，就被束之高阁了。
 excerpt: 玄奘大师历尽千辛万苦，从印度取回了《瑜伽师地论》，并成立了唯识宗，是非常具有划时代的意义的。不应该只是因为和传统说法有一些冲突，就被束之高阁了。
 tags: [论典笔记, 宗派比较]

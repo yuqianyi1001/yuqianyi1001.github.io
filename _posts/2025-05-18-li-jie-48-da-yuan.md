@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 佛友的一句话，让阿弥陀佛的48大愿，都更加通俗易懂了
-wechat: https://mp.weixin.qq.com/s/ti19auquSNWIgPF6OsLKww
+wechat_link: https://mp.weixin.qq.com/s/ti19auquSNWIgPF6OsLKww
 description: 在所有我们觉得“不太合理”的愿文背后，都要加上这一句话：“不可以少善根福德因缘”
 excerpt: 在所有我们觉得“不太合理”的愿文背后，都要加上这一句话：“不可以少善根福德因缘”
 tags: [经典导读]

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 弟子问佛，某某死了去了何处？佛陀为什么先有回答，后拒绝呢？ —— 《杂阿含经》卷30
-wechat: https://mp.weixin.qq.com/s/PTcoH8eXnKZoQD1yANXIRg
+wechat_link: https://mp.weixin.qq.com/s/PTcoH8eXnKZoQD1yANXIRg
 description: 《杂阿含经》卷30，840，844，850-854经 - 读经心得
 excerpt: 《杂阿含经》卷30，840，844，850-854经 - 读经心得
 tags: [经典导读]

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 圣严法师的佛学中心思想是——缘起性空，而非真常如来藏
-wechat: https://mp.weixin.qq.com/s/GyySsomspX4mV7F7FEMyzA
+wechat_link: https://mp.weixin.qq.com/s/GyySsomspX4mV7F7FEMyzA
 description: 法鼓山的朋友们，都应该了解下创办人圣严法师的佛学中心思想 —— “缘起性空”，而非“真常如来藏”，这样才能更完整、更好地“提升人的品质，建设人间净土”。
 excerpt: 法鼓山的朋友们，都应该了解下创办人圣严法师的佛学中心思想 —— “缘起性空”，而非“真常如来藏”，这样才能更完整、更好地“提升人的品质，建设人间净土”。
 tags: [教义解析]
