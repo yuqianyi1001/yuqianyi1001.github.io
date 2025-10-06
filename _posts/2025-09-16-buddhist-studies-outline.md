@@ -59,13 +59,13 @@ tags: [学习方法, 资源推荐]
 
 #### 四圣谛：苦、集、灭、道
 
-[佛教常见误解之 —— 厌世主义 | 浅释四圣谛中的苦谛](https://mp.weixin.qq.com/s/I_LXa1xkvJQpWWNIkBaMDQ)
+[佛教常见误解之 —— 厌世主义 ｜ 浅释四圣谛中的苦谛](https://mp.weixin.qq.com/s/I_LXa1xkvJQpWWNIkBaMDQ)
 
 #### 十二因缘（缘起法）
 
 [【原创】佛陀在菩提树下的觉悟之十二因缘 ｜ 十二因缘的四种解说](https://mp.weixin.qq.com/s/PowTxSYGNDToqjlbtUU7_g)
 
-[【原创】佛陀在菩提树下觉悟了什么？| 在菩提树下修行了什么而成佛？](https://mp.weixin.qq.com/s/uY6HBqUR3lHDro7MeUFuZA)
+[【原创】佛陀在菩提树下觉悟了什么？｜ 在菩提树下修行了什么而成佛？](https://mp.weixin.qq.com/s/uY6HBqUR3lHDro7MeUFuZA)
 
 * 八正道：正见至正定
 * 三十七道品：修行总纲
