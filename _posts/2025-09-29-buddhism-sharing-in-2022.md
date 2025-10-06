@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 佛学与生活 —— 我的佛学历程分享（2022年的佛学分享材料｜如何快速掌握佛学）
-wechat_link: 
+wechat_link: https://mp.weixin.qq.com/s/pqpBAOnThwvSvnI3x_3sfA
 description: 万字长文！我对佛学的认识，以及如何系统学习佛法的总结！
 excerpt: 万字长文！我对佛学的认识，以及如何系统学习佛法的总结！
 tags:
