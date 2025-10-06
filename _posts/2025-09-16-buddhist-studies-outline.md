@@ -1,11 +1,13 @@
 ---
 layout: post
-title: 佛学概论大纲（第一期）：佛教简史和佛教基础（根本佛教）
+title: (不断更新中) 佛学概论大纲（第一期）：佛教简史和佛教基础（根本佛教）
 wechat_link: https://mp.weixin.qq.com/s/hnqLaif4V-IB6_W7TcySuQ
 description: 
 excerpt: 
 tags: [学习方法, 资源推荐]
 ---
+
+*因为公众号只能更新一次，这个大纲的链接和最新版本，暂时不会在公众号内更新了*
 
 *以下内容均为暂定，会根据实际情况随时增减。*
 
@@ -23,33 +25,57 @@ tags: [学习方法, 资源推荐]
 
 * [六道轮回：五趣/六道，两种解读](https://mp.weixin.qq.com/s/9Z5qe-2Ts3WapePuwDUp-w)
 * [三界、九地、九有、三有、六道](https://mp.weixin.qq.com/s/7IAI5TzicGvcp6uo1XwrrQ)
-* 四生（九有）：卵生、胎生、湿生、化生。
+* [四生（九有）：卵生、胎生、湿生、化生](https://mp.weixin.qq.com/s/0zVYH8ez_H6abyiKXr8AWw)
+* [四食：段食、触食、意思食、识食](https://mp.weixin.qq.com/s/hiDkp6fW4NdOfvaWqjCo1Q)
+* [五蕴：色、受、想、行、识](https://mp.weixin.qq.com/s/RwfkOQW7H46UJ_DGseQK9A)
+* [十二处：六根六境](https://mp.weixin.qq.com/s/_ySfmsV4ONY__EsiEXeSQA)
+* [十八界：六根六境六识](https://mp.weixin.qq.com/s/y2mhh2u02FVVdZ3xoqyG4w)
+* 三科关系：蕴、处、界的对应 (参考下面的总结篇)
+* [图解和对照：五蕴、十二处、十八界和七十五法(总结篇)](https://mp.weixin.qq.com/s/iN-QK3k-iPo-ZijRjWEKCg)
 
-* 五蕴：色、受、想、行、识
-* 十二处：六根六境
-* 十八界：六根六境六识
-* 三科关系：蕴、处、界的对应
+### 三、烦恼与解脱 —— 俱舍七十五法、大乘百法
 
-[图解和对照：五蕴、十二处、十八界和七十五法(总结篇)](https://mp.weixin.qq.com/s/iN-QK3k-iPo-ZijRjWEKCg)
+#### 七十五法
 
+* [五位七十五法（基础部分）](https://mp.weixin.qq.com/s/chSlBrFIIE2vLnN1Q-FoGg)
 
-* 四食：段食、触食、意思食、识食
+#### 百法
 
-### 三、烦恼与解脱 —— 俱舍七十五法
+* [以百法为框架，系统性学习唯识 —— 百法、唯识学习大纲](https://mp.weixin.qq.com/s/48F94n_G5giD_eqjAY8seA)
+
+* [百法介绍：百法原文，百法表格，百法大图，以及可交互版](https://mp.weixin.qq.com/s/wM4moUWPYyyeRZqIsTRIGQ)
+
+* [百法介绍：1-100法的直解，根据林国良教授的《百法直解》整理](https://mp.weixin.qq.com/s/lQ2U2Z0aP8HKWUnOCIXtrQ)
+
+* [你真的没有烦恼吗？还是不认识烦恼而已？ ——学习笔记之《百法明门论【认识烦恼】》](https://mp.weixin.qq.com/s/dVEFSdO1OUK8Xr4wubUpyw)
+
+#### 七十五法 vs 百法
+
+* [百法和七十五法：对照五蕴、十二处、十八界](https://mp.weixin.qq.com/s/UykW1uSnKOKkle-JgsWUAg)
+
+* [大乘百法 VS 俱舍75法](https://mp.weixin.qq.com/s/_eZpGcsubJMw0pL-YaAuZw)
 
 ### 四、核心理论
 
-* 四圣谛：苦、集、灭、道
-* 十二因缘（缘起法）
+#### 四圣谛：苦、集、灭、道
+
+[佛教常见误解之 —— 厌世主义 | 浅释四圣谛中的苦谛](https://mp.weixin.qq.com/s/I_LXa1xkvJQpWWNIkBaMDQ)
+
+#### 十二因缘（缘起法）
+
+[【原创】佛陀在菩提树下的觉悟之十二因缘 ｜ 十二因缘的四种解说](https://mp.weixin.qq.com/s/PowTxSYGNDToqjlbtUU7_g)
+
+[【原创】佛陀在菩提树下觉悟了什么？| 在菩提树下修行了什么而成佛？](https://mp.weixin.qq.com/s/uY6HBqUR3lHDro7MeUFuZA)
+
 * 八正道：正见至正定
 * 三十七道品：修行总纲
 * 无漏三学：戒、定、慧
 
 ### 五、解脱与圣果
 
+* 四向四果：须陀洹、斯陀含、阿那含、阿罗汉
 * 见道：初步证悟
 * 二种解脱：慧解脱、俱解脱
-* 四向四果：须陀洹、斯陀含、阿那含、阿罗汉
 * 三乘：声闻、缘觉、菩萨
 * 五分法身：
 
