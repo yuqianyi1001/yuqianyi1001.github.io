@@ -45,7 +45,7 @@ tags: [学习方法]
 
 把佛教历史和佛教思想的发展脉络综合起来，就是佛教分期了。
 
-![《阿含要略》印度佛教-表解](../images/2025-11-09-11-23-39.png)
+![《阿含要略》印度佛教-表解](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2025-11-09-11-23-39.png)
 
 上图是杨郁文（杨白衣）在《阿含要略》的图表，整理得非常全面了。
 
@@ -56,7 +56,7 @@ tags: [学习方法]
 
 这里综合一下，把佛教分期可以精简如下：
 
-![全体佛法（核心）- 佛法四大体系​](../images/2025-11-09-12-04-08.png)
+![全体佛法（核心）- 佛法四大体系​](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2025-11-09-12-04-08.png)
 
 **传统判教和弊端**
 
