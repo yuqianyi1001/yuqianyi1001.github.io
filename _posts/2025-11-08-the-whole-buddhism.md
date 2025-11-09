@@ -1,9 +1,9 @@
 ---
 layout: post
 title: 全体佛法
-wechat_link: 
-description: 
-excerpt: 
+wechat_link: https://mp.weixin.qq.com/s/lWy-BbFO4WvVinZEwCVV0Q
+description: 无论我们身处哪一支佛教传统地区，先从全体佛法建立全面视野，再依次深入各自最纯正的体系，才能既避免宗派成见，又能在正确次第中扎实用功，这正是现代学佛者应有的共同基础。
+excerpt: 无论我们身处哪一支佛教传统地区，先从全体佛法建立全面视野，再依次深入各自最纯正的体系，才能既避免宗派成见，又能在正确次第中扎实用功，这正是现代学佛者应有的共同基础。
 tags: [学习方法]
 ---
 
