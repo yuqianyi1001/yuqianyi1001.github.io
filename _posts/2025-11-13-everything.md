@@ -2,9 +2,9 @@
 layout: post
 title: 一切法
 wechat_link: 
-description: 
-excerpt: 
-tags:
+description: 一切法 = 十二处 = 十八界 = 俱舍七十五法 = 唯识百法 = 有为法 + 无为法，一切有为法 = 五蕴
+excerpt: 一切法 = 十二处 = 十八界 = 俱舍七十五法 = 唯识百法 = 有为法 + 无为法，一切有为法 = 五蕴
+tags: 
 ---
 
 # 一切法
@@ -56,12 +56,18 @@ tags:
 
 [《五位七十五法（基础部分）》](https://mp.weixin.qq.com/s/chSlBrFIIE2vLnN1Q-FoGg)
 
-## 百法
+## 唯识百法
 
-一切法 = 百法
+一切法 = 唯识百法
 
 [《百法介绍：百法原文，百法表格，百法大图，以及可交互版》](https://mp.weixin.qq.com/s/wM4moUWPYyyeRZqIsTRIGQ)  
 [《百法介绍：1-100法的直解，根据林国良教授的《百法直解》整理》](https://mp.weixin.qq.com/s/lQ2U2Z0aP8HKWUnOCIXtrQ)
+
+## 综合
+
+一切法 = 十二处 = 十八界 = 俱舍七十五法 = 唯识百法 = 有为法 + 无为法  
+
+一切有为法 = 五蕴
 
 ## 佛经中的一切法
 
