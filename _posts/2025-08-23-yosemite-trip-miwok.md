@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 优胜美地自驾游：最意外的经历，参加了印第安人Miwok的年度庆典
-wechat_link: https://mp.weixin.qq.com/s/9PsOFh_L9x9Efz9P0GFGBg
+wechat: 
 description: 优胜美地自驾游中，最意外的经历是参加了印第安人Miwok的年度庆典，亲历原住民的歌舞仪式，感受历史与现实的碰撞。
 excerpt: 优胜美地自驾游中，最意外的经历是参加了印第安人Miwok的年度庆典，亲历原住民的歌舞仪式，感受历史与现实的碰撞。
 tags: [旅行见闻]
