@@ -198,6 +198,15 @@ title: 海报生成器
             </div>
 
             <div>
+                <label>文字对齐：</label>
+                <select id="textAlign">
+                    <option value="left">左对齐</option>
+                    <option value="center" selected>居中</option>
+                    <option value="right">右对齐</option>
+                </select>
+            </div>
+
+            <div>
                 <label>
                     <input type="checkbox" id="showSignature" checked>
                     显示签名和二维码
@@ -220,6 +229,7 @@ function updatePoster() {
     const titleInput = document.getElementById('titleInput');
     const posterText = document.getElementById('posterText');
     const titleText = document.getElementById('titleText');
+    const textAlignSelect = document.getElementById('textAlign');
     
     // 处理正文换行
     posterText.innerHTML = textInput.value.replace(/\n/g, '<br>');
@@ -235,6 +245,10 @@ function updatePoster() {
     const color = document.getElementById('fontColor').value;
     posterText.style.color = color;
     titleText.style.color = color;
+
+    const textAlign = textAlignSelect.value;
+    posterText.style.textAlign = textAlign;
+    titleText.style.textAlign = textAlign;
 }
 
 function updateSignatureVisibility() {
@@ -258,6 +272,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const fontSize = document.getElementById('fontSize');
     const fontSizeValue = document.getElementById('fontSizeValue');
     const fontColor = document.getElementById('fontColor');
+    const textAlignSelect = document.getElementById('textAlign');
     const bgOptions = document.querySelectorAll('.bg-option');
 
     const showSignature = document.getElementById('showSignature');
@@ -273,7 +288,8 @@ document.addEventListener('DOMContentLoaded', function() {
             fontColor: localStorage.getItem('posterFontColor'),
             background: localStorage.getItem('posterBackground'),
             font: localStorage.getItem('posterFont'),
-            signature: localStorage.getItem('showSignature')
+            signature: localStorage.getItem('showSignature'),
+            textAlign: localStorage.getItem('posterTextAlign')
         };
 
         if (settings.text) {
@@ -319,6 +335,12 @@ document.addEventListener('DOMContentLoaded', function() {
             titleText.style.fontFamily = settings.font;
         }
 
+        if (settings.textAlign) {
+            textAlignSelect.value = settings.textAlign;
+            posterText.style.textAlign = settings.textAlign;
+            titleText.style.textAlign = settings.textAlign;
+        }
+
         if (settings.signature !== null) {
             showSignature.checked = settings.signature === 'true';
             updateSignatureVisibility();
@@ -361,6 +383,11 @@ document.addEventListener('DOMContentLoaded', function() {
     fontSelect.addEventListener('change', () => {
         updatePoster();
         saveSetting('posterFont', fontSelect.value);
+    });
+
+    textAlignSelect.addEventListener('change', () => {
+        updatePoster();
+        saveSetting('posterTextAlign', textAlignSelect.value);
     });
 
     showSignature.addEventListener('change', () => {
@@ -424,4 +451,3 @@ function convertToTraditional() {
     localStorage.setItem('posterTitle', titleInput.value);
 }
 </script>
-
