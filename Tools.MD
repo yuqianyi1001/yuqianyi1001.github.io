@@ -21,9 +21,14 @@
   * 增加繁体翻译
 * 添加Google Search
 * 佛名大全 
+  * 从比较靠谱的佛经中提取佛名
+  * 去重
 * 整理图片 
   * 删除不用的图片
   * rename，alt
+
+* 佛名屏保 https://www.figma.com/make/RhrPeWkxcT5dZ2psBBlgSX/Buddha-Name-Wallpaper-Generator?node-id=0-1&p=f
+* 
 
 <!-- 
 <a href="https://www.flaticon.com/free-icons/dot" title="dot icons">Dot icons created by Freepik - Flaticon</a>
