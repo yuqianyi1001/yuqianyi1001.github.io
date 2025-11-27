@@ -203,9 +203,9 @@ tags:
 
 ## 图表
 
-![佛教小世界图解](../images/small-world.png)
+![佛教小世界图解](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/small-world.png)
 
-![佛教小世界图解](../images/small-world-2.png)
+![佛教小世界图解](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/small-world-2.png)
 
 # 佛学的基本概念
 
@@ -225,7 +225,7 @@ tags:
 
 ## 俱舍七十五法
 
-![七十五法](../images/img-75.png)
+![七十五法](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/img-75.png)
 
 请参考：[《五位七十五法（基础部分）》](https://mp.weixin.qq.com/s/chSlBrFIIE2vLnN1Q-FoGg)：一文介绍下俱舍五位七十五法的基础，包括五大分类（五位）和每个分类下具体包含的“法”和它们的基本含义。
 
@@ -247,7 +247,7 @@ tags:
 
 下图就是七十五法和五蕴的对照。
 
-![七十五法和五蕴的对照](../images/img-75-dharmas-vs-5-skandra.png)
+![七十五法和五蕴的对照](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/img-75-dharmas-vs-5-skandra.png)
 
 ### 十二处
 
@@ -267,7 +267,7 @@ tags:
 
 下图就是七十五法和十二处的对照。
 
-![七十五法和十二处的对照](../images/img-abhidharmakosa-bhasya-75-for-12-ayatana.png)
+![七十五法和十二处的对照](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/img-abhidharmakosa-bhasya-75-for-12-ayatana.png)
 
 ### 十八界
 
@@ -290,7 +290,7 @@ tags:
 
 下图就是七十五法和十八界的对照。
 
-![七十五法和十八界的对照](../images/img-75-v-18.png)
+![七十五法和十八界的对照](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/img-75-v-18.png)
 
 ## 一切法、有为法、无为法、有漏、无漏
 
@@ -475,7 +475,7 @@ tags:
 
 ### 六因、四缘、五果图表
 
-![](../images/2025-11-17-16-11-53.png)
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2025-11-17-16-11-53.png)
 
 
 ## 烦恼
@@ -661,7 +661,7 @@ tags:
 * 过去二因（无明、行）产生 现在五果（识、名色、六处、触、受）
 * 现在三因（爱、取、有）产生 未来二果（生、老死）
 
-![](../images/2025-11-17-20-06-05.png)
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2025-11-17-20-06-05.png)
 
 ### 流转与还灭
 
