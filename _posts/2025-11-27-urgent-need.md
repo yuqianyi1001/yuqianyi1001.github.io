@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 当你遇到紧急情况时，你会怎么做？
-wechat_link: 
-description: 
-excerpt: 
+title: 当遇到紧急情况时，你会怎么做？
+wechat_link: https://mp.weixin.qq.com/s/dk4My46sTv2Wit08VNVzbA
+description: 有信仰的人，可以用很简单的方法，就可以帮助我们冷静下来、安定下来，更加理性地面对一切紧急情况。
+excerpt: 有信仰的人，可以用很简单的方法，就可以帮助我们冷静下来、安定下来，更加理性地面对一切紧急情况。
 tags:
 ---
 
