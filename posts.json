@@ -1,0 +1,17 @@
+---
+layout: null
+permalink: /posts.json
+---
+{% assign empty_array = "" | split: "" %}
+[
+{% assign sorted_posts = site.posts | sort: "date" | reverse -%}
+{%- for post in sorted_posts %}
+  {
+    "title": {{ post.title | jsonify }},
+    "url": {{ post.url | absolute_url | jsonify }},
+    "wechat_link": {{ post.wechat_link | jsonify }},
+    "date": {{ post.date | date: "%Y-%m-%d" | jsonify }},
+    "tags": {{ post.tags | default: empty_array | jsonify }}
+  }{%- unless forloop.last %},{% endunless %}
+{%- endfor %}
+]
