@@ -37,6 +37,31 @@
         outline: 2px solid #6a4bff;
         outline-offset: 2px;
       }
+
+      .wechat-link-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+        margin-left: 6px;
+        border-radius: 4px;
+        background: linear-gradient(135deg, #22ba19, #19a218);
+        color: #fff;
+        text-decoration: none;
+        vertical-align: middle;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+      }
+
+      .wechat-link-icon:hover {
+        background: linear-gradient(135deg, #1fa617, #158615);
+      }
+
+      .wechat-link-icon svg {
+        width: 12px;
+        height: 12px;
+        fill: currentColor;
+      }
     </style>
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
@@ -167,6 +192,62 @@
             setLang(lang);
           });
         }
+      })();
+    </script>
+
+    <script>
+      (function() {
+        // wechat_link -> site url mapping (generated at build time)
+        var rawMap = {
+{% assign wechat_posts = site.posts | where_exp: "p", "p.wechat_link" -%}
+{% for post in wechat_posts %}
+          {{ post.wechat_link | jsonify }}: { url: {{ post.url | absolute_url | jsonify }}, title: {{ post.title | jsonify }} }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+        };
+
+        function normalizeWeChat(url) {
+          if (!url) return '';
+          try {
+            var u = new URL(url, window.location.href);
+            // normalize protocol/host, drop trailing slash
+            return (u.origin.toLowerCase() + u.pathname.replace(/\/$/, '') + (u.search || '')).replace(/\/$/, '');
+          } catch (e) {
+            return url.replace(/#.*$/, '').replace(/\/$/, '');
+          }
+        }
+
+        var wechatMap = {};
+        Object.keys(rawMap).forEach(function(key) {
+          wechatMap[normalizeWeChat(key)] = rawMap[key];
+        });
+
+        function upgradeWeChatLinks() {
+          var anchors = document.querySelectorAll('.entry a[href*="mp.weixin.qq.com"]');
+          anchors.forEach(function(anchor) {
+            if (anchor.dataset.wechatUpgraded === '1') return;
+            var originalHref = anchor.getAttribute('href') || '';
+            var normalizedHref = normalizeWeChat(originalHref);
+            var mapped = wechatMap[normalizedHref];
+            if (!mapped || !mapped.url) return;
+
+            anchor.dataset.wechatUpgraded = '1';
+            anchor.setAttribute('href', mapped.url);
+
+            var iconLink = document.createElement('a');
+            iconLink.className = 'wechat-link-icon';
+            iconLink.href = originalHref;
+            iconLink.target = '_blank';
+            iconLink.rel = 'noopener noreferrer nofollow';
+            iconLink.title = '微信原文';
+            iconLink.setAttribute('aria-label', '微信原文');
+            iconLink.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9.5 4C6.46 4 4 6.24 4 9c0 1.48.73 2.8 1.9 3.75L5 15l2.2-1.1c.7.23 1.45.35 2.3.35 3.04 0 5.5-2.24 5.5-5S12.54 4 9.5 4zm5 3c-.55 0-1 .4-1 .9s.45.9 1 .9 1-.4 1-.9S15.05 7 14.5 7zm-5 0c-.55 0-1 .4-1 .9s.45.9 1 .9 1-.4 1-.9S10.05 7 9.5 7z"></path><path d="M14 9c3.04 0 5.5 2.24 5.5 5 0 1.48-.73 2.8-1.9 3.75L18 20l-2.2-1.1c-.7.23-1.45.35-2.3.35-2.18 0-4.09-.98-5.04-2.47.48.08.97.12 1.48.12 3.04 0 5.5-2.24 5.5-5 0-.68-.15-1.32-.44-1.9z"></path></svg>';
+
+            anchor.insertAdjacentText('afterend', ' ');
+            anchor.insertAdjacentElement('afterend', iconLink);
+          });
+        }
+
+        document.addEventListener('DOMContentLoaded', upgradeWeChatLinks);
       })();
     </script>
   </body>
