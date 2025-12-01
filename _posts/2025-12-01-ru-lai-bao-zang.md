@@ -1,9 +1,9 @@
 ---
 layout: post
 title: 《如来宝藏：圣严法师的如来藏思想研究》读后感
-wechat_link: 
-description: 
-excerpt: 
+wechat_link: https://mp.weixin.qq.com/s/qi7azdjcc5n_yNaUNH8BbA
+description: 读完以后，如果你问我，之前写的文章《圣严法师的佛学中心思想是 —— 缘起性空，而非真常如来藏》有什么修改的地方吗？一个字都不用改。
+excerpt: 读完以后，如果你问我，之前写的文章《圣严法师的佛学中心思想是 —— 缘起性空，而非真常如来藏》有什么修改的地方吗？一个字都不用改。
 tags:
  - 读后感
 ---
@@ -22,20 +22,21 @@ tags:
 
 > 再者，把聖嚴法師的思想與修行做密切結合，是另一大突破。書中第三部的重點之一，指出法師本著一貫的禪修指導精神，在如來藏的解析上產生突酸性的解答：大我如來藏相當於禪修體驗到的統一心，是歷來詬病如來藏等同梵我合一的癥結，非法師所提倡者。法師所主張者，乃無我如來藏，相當於禪修體驗到的無心。無心即無我，上接緣起、空性，下通清淨佛性，與佛教諸宗同一鼻孔出氣，絕綠外道之所見。以無我如來藏對治大我如來藏，不正可做為上述癥結的解結妙方？
 
-![如来宝藏-截图1](../images/ru-lai-bao-zang-1.jpg)
+![如来宝藏-截图1](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/ru-lai-bao-zang-1.jpg)
 
 **《如来宝藏》，第一章，近代善知识指涉对象，P53**
 
 > 印順長老會講過一句話：「如來藏，是說來淺易，意在深徹。」長老非常清楚他所批判的如來藏，事實上不是「如來藏」本身，而是在於後人將如來藏的淺化與誤用。
 
-![如来宝藏-截图2](../images/ru-lai-bao-zang-2.jpg)
+![如来宝藏-截图2](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/ru-lai-bao-zang-2.jpg)
 
 **《如来宝藏》，第三章，總結：大師們的悲心願行，P231**
 
 > 聖嚴法師提及長老是以「性空」為佛陀之本馍，e亦即是在三系中排在第一順位的「性空唯名系」，即以「申觀」、「性空」為中心，此才是真正回歸原始佛法的絲超論核心思想，才能眞正挽救當時代佛教發展的困境。
 
-![如来宝藏-截图3a](../images/ru-lai-bao-zang-3a.jpg)
-![如来宝藏-截图3b](../images/ru-lai-bao-zang-3b.jpg)
+![如来宝藏-截图3a](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/ru-lai-bao-zang-3a.jpg)
+
+![如来宝藏-截图3b](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/ru-lai-bao-zang-3b.jpg)
 
 但是，如果要考虑到照顾大家对如来藏的情感的话，那么，也不妨改个标题 —--《圣严法师推崇的是无我如来藏、空性如来藏》。这样的标题就不再犀利了，或许引起不了大家的思考。就好像，虽然圣严法师自己也写了《承先启后的中华禅法鼓宗》，《华严心诠──原人论考释》《自家宝藏──如来藏经语体译释》这些书，但是仔细读过的人，又有几个呢？
 
