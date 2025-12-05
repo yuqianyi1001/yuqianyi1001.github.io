@@ -36,7 +36,7 @@ tags:
 * 指出对方具体错误并说明其错误所在
 * 否定对方论点并用论据加以说明
 
-![辩论的层次](../images/image-debate.png)
+![辩论的层次](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/image-debate.png)
 
 ## 游戏规则
 
@@ -61,9 +61,9 @@ YouTube上的《02-早期佛教Early Buddhism》：https://www.youtube.com/playl
 视频：从迦叶到罗睺罗-佛陀的十大弟子【15/15早期佛教】
 位置：21分钟10秒
 
-![](../images/2025-12-04-21-53-03.png)
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2025-12-04-21-53-03.png)
 
-![](../images/2025-12-04-21-46-38.png)
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2025-12-04-21-46-38.png)
 
 原文：“或者就说他就是藏传佛教最早的宗师”，这里的他是佛陀的儿子罗睺罗。
 
@@ -77,7 +77,6 @@ YouTube上的《02-早期佛教Early Buddhism》：https://www.youtube.com/playl
 并不是后世的“密宗仪轨、曼荼罗、三密加持”等金刚乘内容。当然，也不是唐密。
 
 
-阿弥陀佛
-
+阿弥陀佛  
 千一合十
 
