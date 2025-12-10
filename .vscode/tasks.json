@@ -18,6 +18,12 @@
             "label": "newPost",
             "type": "shell",
             "command": "python3 _util_template.py"
+        },
+        {
+            "label": "renamePostFromTitle",
+            "type": "shell",
+            "command": "cd '${workspaceFolder}'; source .venv/bin/activate; python3 scripts/rename_post_from_title.py '${file}'",
+            "problemMatcher": []
         }
     ]
 }
