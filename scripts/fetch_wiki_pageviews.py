@@ -66,7 +66,7 @@ def should_skip(entry: Dict[str, Any]) -> bool:
 def fetch_views(title: str) -> tuple[int, str]:
     url = API_TEMPLATE.format(article=urllib.parse.quote(title), start=START, end=END)
     print(f"Fetching URL: {url}")
-    req = urllib.request.Request(url, headers={"User-Agent": "dict-wiki-fetch/0.1"})
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"})
     try:
         with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
             body = resp.read().decode("utf-8", errors="replace")
