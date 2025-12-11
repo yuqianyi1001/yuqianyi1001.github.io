@@ -30,7 +30,10 @@
 * 佛名屏保 https://www.figma.com/make/RhrPeWkxcT5dZ2psBBlgSX/Buddha-Name-Wallpaper-Generator?node-id=0-1&p=f
 
 * 现代佛学词典
-  * 参考：https://buddhaspace.org/dict/dfb/data/
+  * 参考已有词典：
+    * 丁福保佛學大辭典 https://buddhaspace.org/dict/dfb/data/ 
+    * 佛學常見詞彙 陳義孝居士編著 https://buddhaspace.org/dict/cxy/data/
+    * 佛光大辞典： https://etext.fgs.org.tw/sutra_02.aspx （不是plain text格式）
   * 参考：grokpedia
   
 
