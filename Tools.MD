@@ -28,7 +28,13 @@
   * rename，alt
 
 * 佛名屏保 https://www.figma.com/make/RhrPeWkxcT5dZ2psBBlgSX/Buddha-Name-Wallpaper-Generator?node-id=0-1&p=f
-* 
+
+* 现代佛学词典
+  * 参考：https://buddhaspace.org/dict/dfb/data/
+  * 参考：grokpedia
+  
+
+
 
 <!-- 
 <a href="https://www.flaticon.com/free-icons/dot" title="dot icons">Dot icons created by Freepik - Flaticon</a>
