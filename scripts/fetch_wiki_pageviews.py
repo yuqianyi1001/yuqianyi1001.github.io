@@ -47,11 +47,19 @@ def save_terms(data: List[Dict[str, Any]]) -> None:
 
 
 def should_skip(entry: Dict[str, Any]) -> bool:
-    # Skip if already processed (done/not_found) or already fetched once.
-    if entry.get("status") in {"done", "not_found"}:
+    # Skip if already processed (done) or already fetched once (Not Found).
+    # {    "title": "一三昧",
+#     "href": "%25E4%25B8%2580%25E4%25B8%2589%25E6%2598%25A7.html",
+    
+#     "last_error": "NotFound"},
+#   {
+#     "title": "一中",
+#     "href": "%25E4%25B8%2580%25E4%25B8%25AD.html",
+#     "views_2025_jan_nov": 588}, 
+
+    if entry.get("last_error") in {"NotFound"} or (entry.get("views_2025_jan_nov") is not None and int(entry.get("views_2025_jan_nov")) >= 0):
         return True
-    if entry.get("last_fetched"):
-        return True
+
     return False
 
 
@@ -113,6 +121,8 @@ def main() -> None:
         if status_code == 200:
             try:
                 payload = json.loads(body)
+                print(payload)
+
                 total_views = sum_views(payload)
                 entry["views_2025_jan_nov"] = total_views
                 entry["status"] = "done"
@@ -128,6 +138,9 @@ def main() -> None:
         else:
             entry["status"] = "error"
             entry["last_error"] = f"HTTP {status_code}: {body[:200]}"
+            print(f"Error fetching title:{title}, status_code: {status_code}, body: {body[:200]}")
+            break  # stop on error for investigation
+
         entry["last_fetched"] = now
         processed_total += 1
         updated += 1
