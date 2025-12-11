@@ -23,7 +23,8 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 INPUT = Path("data/dict_terms.json")
-DEFAULT_LIMIT = 100
+DEFAULT_BATCH_SIZE = 100
+DEFAULT_MAX_TOTAL = None  # None means process all
 START = "20250101"
 END = "20251130"
 API_TEMPLATE = (
@@ -56,6 +57,7 @@ def should_skip(entry: Dict[str, Any]) -> bool:
 
 def fetch_views(title: str) -> tuple[int, str]:
     url = API_TEMPLATE.format(article=urllib.parse.quote(title), start=START, end=END)
+    print(f"Fetching URL: {url}")
     req = urllib.request.Request(url, headers={"User-Agent": "dict-wiki-fetch/0.1"})
     try:
         with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
@@ -77,18 +79,27 @@ def sum_views(payload: Dict[str, Any]) -> int:
 
 
 def main() -> None:
-    limit = DEFAULT_LIMIT
+    # CLI: batch_size [max_total]
+    batch_size = DEFAULT_BATCH_SIZE
+    max_total = DEFAULT_MAX_TOTAL
     if len(sys.argv) > 1:
         try:
-            limit = int(sys.argv[1])
+            batch_size = max(1, int(sys.argv[1]))
+        except ValueError:
+            pass
+    if len(sys.argv) > 2:
+        try:
+            max_total = max(1, int(sys.argv[2]))
         except ValueError:
             pass
 
     terms = load_terms()
-    processed = 0
+    processed_total = 0
     updated = 0
-    for idx, entry in enumerate(terms):
-        if processed >= limit:
+    batch_count = 0
+    dirty_since_save = False
+    for entry in terms:
+        if max_total is not None and processed_total >= max_total:
             break
         if should_skip(entry):
             continue
@@ -96,7 +107,7 @@ def main() -> None:
         if not title:
             continue
 
-        print(f"Processing No.{processed+1} Title:{title} ")
+        print(f"Processing No.{processed_total+1} Title:{title} ")
         status_code, body = fetch_views(title)
         now = datetime.utcnow().isoformat() + "Z"
         if status_code == 200:
@@ -106,6 +117,8 @@ def main() -> None:
                 entry["views_2025_jan_nov"] = total_views
                 entry["status"] = "done"
                 entry.pop("last_error", None)
+
+                print(f"Title:{title} views_2025_jan_nov：{total_views}")
             except json.JSONDecodeError:
                 entry["status"] = "error"
                 entry["last_error"] = "Invalid JSON"
@@ -116,13 +129,25 @@ def main() -> None:
             entry["status"] = "error"
             entry["last_error"] = f"HTTP {status_code}: {body[:200]}"
         entry["last_fetched"] = now
-        processed += 1
+        processed_total += 1
         updated += 1
+        dirty_since_save = True
         time.sleep(SLEEP_BETWEEN)
+        batch_count += 1
+        if batch_count >= batch_size:
+            import random
+            pause = random.uniform(2, 5)
+            if dirty_since_save:
+                save_terms(terms)
+                dirty_since_save = False
+            print(f"Batch completed ({processed_total}); sleeping {pause:.2f}s")
+            time.sleep(pause)
+            batch_count = 0
 
-    if updated:
+    if dirty_since_save:
         save_terms(terms)
-    print(f"Processed {processed} entries (updated {updated}) out of limit {limit}")
+
+    print(f"Processed {processed_total} entries (updated {updated})")
 
 
 if __name__ == "__main__":
