@@ -64,6 +64,15 @@ permalink: /:title/
 # The release of Jekyll Now that you're using
 version: v1.2.0
 
+# Collections
+collections:
+  tools:
+    output: true
+    permalink: /tools/:name/
+  dict:
+    output: true
+    permalink: /dict/:name/
+
 # Jekyll 3 now only supports Kramdown for Markdown
 kramdown:
   # Use GitHub flavored markdown, including triple backtick fenced code blocks
@@ -103,3 +112,13 @@ defaults:
       redirect_from:
         - "/:title_zh-tw/"
         - "/:title_zh-tw"
+  - scope:
+      path: ""
+      type: "tools"
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: "dict"
+    values:
+      layout: page
