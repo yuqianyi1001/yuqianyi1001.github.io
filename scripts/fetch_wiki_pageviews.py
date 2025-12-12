@@ -132,7 +132,7 @@ def main() -> None:
             except json.JSONDecodeError:
                 entry["status"] = "error"
                 entry["last_error"] = "Invalid JSON"
-        elif status_code == 404:
+        elif status_code == 0 or body.index("Not Found") != -1:
             entry["status"] = "not_found"
             entry["last_error"] = "Not Found"
         else:
