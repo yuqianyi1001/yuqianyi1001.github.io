@@ -70,7 +70,7 @@ collections:
     output: true
     permalink: /tools/:name/
   dict:
-    output: false
+    output: true
     permalink: /dict/:name/
 
 # Jekyll 3 now only supports Kramdown for Markdown
@@ -95,6 +95,11 @@ plugins:
   - jekyll-redirect-from
   - jekyll-seo-tag
 
+# Limit feed generation to posts only to speed up builds
+feed:
+  collections:
+    - posts
+
 # Exclude these files from your production _site
 exclude:
   - Gemfile
@@ -102,7 +107,6 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
-  - _dict
 
 # Add default redirects from legacy Traditional Chinese URLs to Simplified ones
 defaults:
@@ -123,3 +127,5 @@ defaults:
       type: "dict"
     values:
       layout: page
+
+

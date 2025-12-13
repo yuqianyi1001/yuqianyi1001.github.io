@@ -1,0 +1,259 @@
+---
+layout: page
+title: 佛学词典
+permalink: /dict/
+---
+
+<div id="dict-app">
+  <div class="search-bar">
+    <input id="search-input" type="text" placeholder="搜索词条..." />
+    <button id="clear-btn">清空</button>
+  </div>
+  <div id="common-terms"></div>
+  <div id="results" class="hidden"></div>
+</div>
+
+<style>
+  #dict-app { max-width: 900px; margin: 0 auto; }
+  .search-bar { margin: 1rem 0; display: flex; gap: 0.5rem; }
+  #search-input { flex: 1; padding: 0.5rem; font-size: 1rem; }
+  .hidden { display: none; }
+  #common-terms { margin: 0.5rem 0 0; }
+  .common-group { margin-bottom: 1rem; padding-bottom: 0.4rem; border-bottom: 1px solid #f0f0f0; }
+  .common-title { margin: 0 0 0.35rem 0; font-weight: 600; color: #111; }
+  .common-items { display: flex; flex-wrap: wrap; gap: 0.35rem 0.7rem; }
+  .common-items a { display: inline-block; padding: 0.32rem 0.6rem; border-radius: 6px; background: #f7f9fc; border: 1px solid #e6e9ef; color: #333; text-decoration: none; }
+  .common-items a:hover { background: #e9f1ff; color: #024ea2; }
+  #results a { display: block; padding: 0.4rem 0; border-bottom: 1px solid #eee; text-decoration: none; color: #0366d6; }
+  #results a:hover { text-decoration: underline; }
+</style>
+
+<script>
+(function() {
+  const BASE = "{{ site.baseurl }}";
+  const DATA_URL = `${BASE}/assets/dict/meta.json`; // term names only
+  const COMMON_TERMS_URL = `${BASE}/assets/dict/common-terms.json`;
+  const ENTRY_BASE = `${BASE}/dict/`;
+  const CACHE_KEY = "dict-meta-v1";
+  const MAX_RESULTS = 50;
+  const DEBOUNCE_MS = 120;
+  let data = [];
+  let commonTerms = [];
+  let loadingPromise = null;
+  let commonLoadingPromise = null;
+  let debounceTimer = null;
+
+  const resultsEl = document.getElementById('results');
+  const commonEl = document.getElementById('common-terms');
+  const inputEl = document.getElementById('search-input');
+  const clearBtn = document.getElementById('clear-btn');
+
+  function createEntryLink(name) {
+    const a = document.createElement('a');
+    a.href = `${ENTRY_BASE}${encodeURIComponent(name)}/`;
+    a.textContent = name;
+    return a;
+  }
+
+  function matchScore(name, query) {
+    const idx = name.indexOf(query);
+    if (idx === -1) return Number.POSITIVE_INFINITY;
+    // 位置优先，其次更短的词条优先
+    return idx * 1000 + (name.length - query.length);
+  }
+
+  function rankMatches(query, list) {
+    return list
+      .map(name => ({ name, score: matchScore(name, query) }))
+      .sort((a, b) => {
+        if (a.score !== b.score) return a.score - b.score;
+        if (a.name.length !== b.name.length) return a.name.length - b.name.length;
+        return a.name.localeCompare(b.name, 'zh-Hans');
+      })
+      .map(item => item.name);
+  }
+
+  function showLoading() {
+    resultsEl.textContent = '正在加载词典数据...';
+  }
+
+  function readCache() {
+    try {
+      const raw = localStorage.getItem(CACHE_KEY);
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed) && parsed.length) return parsed;
+    } catch (err) {
+      console.warn('无法读取缓存的词条列表', err);
+    }
+    return null;
+  }
+
+  function writeCache(list) {
+    try {
+      localStorage.setItem(CACHE_KEY, JSON.stringify(list));
+    } catch (err) {
+      // 容量不足等情况，忽略即可
+    }
+  }
+
+  function renderResults(list) {
+    resultsEl.innerHTML = '';
+    if (!list.length) {
+      resultsEl.textContent = '无匹配结果';
+      return;
+    }
+    const frag = document.createDocumentFragment();
+    list.forEach(name => {
+      frag.appendChild(createEntryLink(name));
+    });
+    resultsEl.appendChild(frag);
+  }
+
+  function renderCommonTerms(list) {
+    commonEl.innerHTML = '';
+    if (!Array.isArray(list) || !list.length) {
+      commonEl.textContent = '暂无常用词条';
+      return;
+    }
+    const frag = document.createDocumentFragment();
+    list.forEach(group => {
+      const section = document.createElement('div');
+      section.className = 'common-group';
+      const title = document.createElement('div');
+      title.className = 'common-title';
+      title.textContent = group.category || '常用词条';
+      section.appendChild(title);
+      const items = document.createElement('div');
+      items.className = 'common-items';
+      (group.items || []).forEach(name => {
+        items.appendChild(createEntryLink(name));
+      });
+      section.appendChild(items);
+      frag.appendChild(section);
+    });
+    commonEl.appendChild(frag);
+  }
+
+  function ensureData() {
+    if (data.length) return Promise.resolve(data);
+    if (loadingPromise) return loadingPromise;
+
+    const cached = readCache();
+    if (cached) {
+      data = cached;
+    }
+
+    loadingPromise = fetch(DATA_URL)
+      .then(r => r.json())
+      .then(json => {
+        data = json;
+        writeCache(json);
+        loadingPromise = null;
+        return data;
+      })
+      .catch(err => {
+        if (!data.length && !resultsEl.classList.contains('hidden')) {
+          resultsEl.textContent = '加载词典数据失败';
+        }
+        console.error(err);
+        loadingPromise = null;
+        throw err;
+      });
+
+    return loadingPromise;
+  }
+
+  function ensureCommonTerms() {
+    if (commonTerms.length) return Promise.resolve(commonTerms);
+    if (commonLoadingPromise) return commonLoadingPromise;
+
+    commonEl.textContent = '正在加载常用词条...';
+    commonLoadingPromise = fetch(COMMON_TERMS_URL)
+      .then(r => r.json())
+      .then(json => {
+        commonTerms = json;
+        renderCommonTerms(commonTerms);
+        commonLoadingPromise = null;
+        return commonTerms;
+      })
+      .catch(err => {
+        commonEl.textContent = '常用词条加载失败';
+        console.error(err);
+        commonLoadingPromise = null;
+        throw err;
+      });
+
+    return commonLoadingPromise;
+  }
+
+  function showCommonView() {
+    commonEl.classList.remove('hidden');
+    resultsEl.classList.add('hidden');
+  }
+
+  function showSearchView() {
+    resultsEl.classList.remove('hidden');
+    commonEl.classList.add('hidden');
+  }
+
+  function resetToIndex() {
+    showCommonView();
+    resultsEl.textContent = '输入关键词即可搜索词条';
+    if (!commonTerms.length) ensureCommonTerms();
+  }
+
+  function performSearch() {
+    const q = inputEl.value.trim();
+    if (!q) {
+      resetToIndex();
+      return;
+    }
+    showSearchView();
+    if (!data.length) {
+      showLoading();
+      ensureData().then(() => performSearch());
+      return;
+    }
+    const list = data.filter(name => name.includes(q));
+    const ranked = rankMatches(q, list);
+    renderResults(ranked.slice(0, MAX_RESULTS));
+  }
+
+  function handleSearchDebounced() {
+    window.clearTimeout(debounceTimer);
+    debounceTimer = window.setTimeout(performSearch, DEBOUNCE_MS);
+  }
+
+  function bootstrap() {
+    resultsEl.textContent = '输入关键词即可搜索词条';
+    ensureCommonTerms();
+    showCommonView();
+    const lazyLoad = () => ensureData();
+    inputEl.addEventListener('focus', lazyLoad, { once: true });
+    clearBtn.addEventListener('focus', lazyLoad, { once: true });
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(lazyLoad, { timeout: 1200 });
+    } else {
+      setTimeout(lazyLoad, 800);
+    }
+  }
+
+  inputEl.addEventListener('input', () => {
+    const q = inputEl.value.trim();
+    if (q) {
+      showSearchView();
+    } else {
+      showCommonView();
+    }
+    handleSearchDebounced();
+  });
+  clearBtn.addEventListener('click', () => {
+    inputEl.value = '';
+    resetToIndex();
+    inputEl.focus();
+  });
+
+  bootstrap();
+})();
+</script>
