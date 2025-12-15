@@ -42,16 +42,39 @@ permalink: /dict/
   let loadingPromise = null;
   let commonLoadingPromise = null;
   let debounceTimer = null;
+  let lastQuery = '';
+  let currentLang = getLang();
 
   const resultsEl = document.getElementById('results');
   const commonEl = document.getElementById('common-terms');
   const inputEl = document.getElementById('search-input');
   const clearBtn = document.getElementById('clear-btn');
 
+  function getToTW() {
+    return (window.twConv && typeof window.twConv === 'function') ? window.twConv : (s => s);
+  }
+
+  function getToCN() {
+    return (window.cnConv && typeof window.cnConv === 'function') ? window.cnConv : (s => s);
+  }
+
+  function getLang() {
+    const lang = localStorage.getItem('lang');
+    return lang === 'zh-TW' ? 'zh-TW' : 'zh-CN';
+  }
+
+  function displayText(name) {
+    return currentLang === 'zh-TW' ? getToTW()(name) : getToCN()(name);
+  }
+
+  function toTraditional(text) {
+    return getToTW()(text || '');
+  }
+
   function createEntryLink(name) {
     const a = document.createElement('a');
     a.href = `${ENTRY_BASE}${encodeURIComponent(name)}/`;
-    a.textContent = name;
+    a.textContent = displayText(name);
     return a;
   }
 
@@ -122,7 +145,7 @@ permalink: /dict/
       section.className = 'common-group';
       const title = document.createElement('div');
       title.className = 'common-title';
-      title.textContent = group.category || '常用词条';
+      title.textContent = displayText(group.category || '常用词条');
       section.appendChild(title);
       const items = document.createElement('div');
       items.className = 'common-items';
@@ -198,13 +221,16 @@ permalink: /dict/
   }
 
   function resetToIndex() {
+    lastQuery = '';
     showCommonView();
     resultsEl.textContent = '输入关键词即可搜索词条';
     if (!commonTerms.length) ensureCommonTerms();
+    else renderCommonTerms(commonTerms);
   }
 
   function performSearch() {
     const q = inputEl.value.trim();
+    lastQuery = q;
     if (!q) {
       resetToIndex();
       return;
@@ -215,8 +241,9 @@ permalink: /dict/
       ensureData().then(() => performSearch());
       return;
     }
-    const list = data.filter(name => name.includes(q));
-    const ranked = rankMatches(q, list);
+    const searchKey = toTraditional(q);
+    const list = data.filter(name => name.includes(searchKey));
+    const ranked = rankMatches(searchKey, list);
     renderResults(ranked.slice(0, MAX_RESULTS));
   }
 
@@ -229,6 +256,7 @@ permalink: /dict/
     resultsEl.textContent = '输入关键词即可搜索词条';
     ensureCommonTerms();
     showCommonView();
+    currentLang = getLang();
     const lazyLoad = () => ensureData();
     inputEl.addEventListener('focus', lazyLoad, { once: true });
     clearBtn.addEventListener('focus', lazyLoad, { once: true });
@@ -252,6 +280,16 @@ permalink: /dict/
     inputEl.value = '';
     resetToIndex();
     inputEl.focus();
+  });
+
+  window.addEventListener('langchange', () => {
+    currentLang = getLang();
+    if (lastQuery) {
+      performSearch();
+    } else {
+      renderCommonTerms(commonTerms);
+      showCommonView();
+    }
   });
 
   bootstrap();
