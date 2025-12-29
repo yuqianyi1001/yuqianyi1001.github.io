@@ -1,0 +1,14 @@
+# Development overrides to speed up local builds.
+# Usage: jekyll serve --config _config.yml,_config.development.yml
+
+collections:
+  dict:
+    output: false
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
+  - _dict
