@@ -613,10 +613,137 @@ title: 五位百法，可交互
 </p>
 <div id="content"></div>
 <script>
-  fetch('/baifa-table.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('content').innerHTML = data;
+  const baseUrl = '{{ site.baseurl }}';
+  const yamlUrl = baseUrl ? `${baseUrl}/data/baifa.yaml` : '/data/baifa.yaml';
+  const sources = [
+    '《大乘阿毘达磨集论》',
+    '《成唯识论》',
+    '《显扬圣教论》',
+    '《百法直解》林国良',
+  ];
+
+  function escapeHtml(text) {
+    return String(text)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/\"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function parseYaml(text) {
+    const lines = text.split(/\r?\n/);
+    const items = [];
+    let current = null;
+    let inDesc = false;
+    let descLines = [];
+
+    function finalize() {
+      if (!current) {
+        return;
+      }
+      if (inDesc) {
+        current.desc = descLines.join('\n').replace(/\s+$/, '');
+      }
+      items.push(current);
+      current = null;
+      inDesc = false;
+      descLines = [];
+    }
+
+    for (const line of lines) {
+      const idMatch = line.match(/^\s*-\s*id:\s*(\d+)\s*$/);
+      if (idMatch) {
+        finalize();
+        current = { id: Number(idMatch[1]), name: '', desc: '' };
+        continue;
+      }
+      if (!current) {
+        continue;
+      }
+      const nameMatch = line.match(/^\s*name:\s*(.*)\s*$/);
+      if (nameMatch) {
+        current.name = nameMatch[1].trim();
+        continue;
+      }
+      const descMatch = line.match(/^\s*desc:\s*\|/);
+      if (descMatch) {
+        inDesc = true;
+        descLines = [];
+        continue;
+      }
+      if (inDesc) {
+        if (/^\s{6}/.test(line)) {
+          descLines.push(line.slice(6));
+        } else {
+          current.desc = descLines.join('\n').replace(/\s+$/, '');
+          inDesc = false;
+          descLines = [];
+        }
+      }
+    }
+    finalize();
+    return items;
+  }
+
+  function parseDescSections(desc) {
+    const sections = {};
+    const lines = String(desc || '').split('\n');
+    let current = null;
+    for (const rawLine of lines) {
+      const line = rawLine.trim();
+      if (line.startsWith('### ')) {
+        current = line.slice(4).trim();
+        sections[current] = '';
+        continue;
+      }
+      if (!current) {
+        continue;
+      }
+      sections[current] = sections[current]
+        ? `${sections[current]}\n${rawLine}`
+        : rawLine;
+    }
+    return sections;
+  }
+
+  function renderItemTable(item) {
+    const sections = parseDescSections(item.desc);
+    const rows = [];
+    rows.push('<table class="tg tg-item">');
+    rows.push('  <tbody>');
+    rows.push(`    <tr><th class="tg-1wig">#</th><td class="tg-0lax">${item.id}</td></tr>`);
+    rows.push(`    <tr><th class="tg-1wig">名称</th><td class="tg-0lax">${escapeHtml(item.name)}</td></tr>`);
+    sources.forEach((source) => {
+      const content = sections[source] || '';
+      const html = content
+        ? escapeHtml(content).replace(/\n/g, '<br>')
+        : '';
+      rows.push(`    <tr><th class="tg-1wig">${source}</th><td class="tg-0lax">${html}</td></tr>`);
+    });
+    rows.push('  </tbody>');
+    rows.push('</table>');
+    return rows.join('\n');
+  }
+
+  fetch(yamlUrl)
+    .then((response) => response.text())
+    .then((text) => {
+      const items = parseYaml(text);
+      const html = [
+        '<style type="text/css">',
+        '.tg  {border-collapse:collapse;border-spacing:0;}',
+        '.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;',
+        '  overflow:hidden;padding:10px 5px;word-break:normal;}',
+        '.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;',
+        '  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}',
+        '.tg .tg-1wig{font-weight:bold;text-align:left;vertical-align:top;width:150px;}',
+        '.tg .tg-0lax{text-align:left;vertical-align:top}',
+        '.tg-item{margin:12px 0;width:100%;table-layout:fixed;}',
+        '</style>',
+        items.map(renderItemTable).join('\n'),
+      ].join('\n');
+      document.getElementById('content').innerHTML = html;
     });
 </script>
 
