@@ -635,80 +635,111 @@ title: 五位百法，可交互
     const lines = text.split(/\r?\n/);
     const items = [];
     let current = null;
-    let inDesc = false;
-    let descLines = [];
+    let currentSource = null;
+    let inContent = false;
+    let contentIndent = 0;
+    let contentLines = [];
 
-    function finalize() {
+    function finalizeContent() {
+      if (!inContent || !currentSource) {
+        return;
+      }
+      currentSource.content = contentLines.join('\n').replace(/\s+$/, '');
+      inContent = false;
+      contentLines = [];
+    }
+
+    function finalizeSource() {
+      if (!current || !currentSource) {
+        return;
+      }
+      finalizeContent();
+      current.sources.push(currentSource);
+      currentSource = null;
+    }
+
+    function finalizeItem() {
       if (!current) {
         return;
       }
-      if (inDesc) {
-        current.desc = descLines.join('\n').replace(/\s+$/, '');
-      }
+      finalizeSource();
       items.push(current);
       current = null;
-      inDesc = false;
-      descLines = [];
     }
 
-    for (const line of lines) {
+    let index = 0;
+    while (index < lines.length) {
+      const line = lines[index];
+
+      if (inContent) {
+        const indent = line.match(/^ */)[0].length;
+        const baseIndent = contentIndent + 2;
+        if (indent >= baseIndent) {
+          contentLines.push(line.slice(baseIndent));
+          index += 1;
+          continue;
+        }
+        finalizeContent();
+        continue;
+      }
+
       const idMatch = line.match(/^\s*-\s*id:\s*(\d+)\s*$/);
       if (idMatch) {
-        finalize();
-        current = { id: Number(idMatch[1]), name: '', desc: '' };
+        finalizeItem();
+        current = { id: Number(idMatch[1]), name: '', sources: [] };
+        index += 1;
         continue;
       }
       if (!current) {
+        index += 1;
         continue;
       }
       const nameMatch = line.match(/^\s*name:\s*(.*)\s*$/);
       if (nameMatch) {
         current.name = nameMatch[1].trim();
+        index += 1;
         continue;
       }
-      const descMatch = line.match(/^\s*desc:\s*\|/);
-      if (descMatch) {
-        inDesc = true;
-        descLines = [];
+      const sourcesEmptyMatch = line.match(/^\s*sources:\s*\[\s*\]\s*$/);
+      if (sourcesEmptyMatch) {
+        current.sources = [];
+        index += 1;
         continue;
       }
-      if (inDesc) {
-        if (/^\s{6}/.test(line)) {
-          descLines.push(line.slice(6));
-        } else {
-          current.desc = descLines.join('\n').replace(/\s+$/, '');
-          inDesc = false;
-          descLines = [];
-        }
+      const sourceMatch = line.match(/^\s*-\s*title:\s*(.*)\s*$/);
+      if (sourceMatch) {
+        finalizeSource();
+        currentSource = { title: sourceMatch[1].trim(), content: '' };
+        index += 1;
+        continue;
       }
+      const contentMatch = line.match(/^\s*content:\s*\|/);
+      if (contentMatch) {
+        inContent = true;
+        contentIndent = line.match(/^ */)[0].length;
+        contentLines = [];
+        index += 1;
+        continue;
+      }
+      index += 1;
     }
-    finalize();
+    finalizeItem();
     return items;
   }
 
-  function parseDescSections(desc) {
-    const sections = {};
-    const lines = String(desc || '').split('\n');
-    let current = null;
-    for (const rawLine of lines) {
-      const line = rawLine.trim();
-      if (line.startsWith('### ')) {
-        current = line.slice(4).trim();
-        sections[current] = '';
-        continue;
+  function toSourceMap(sourceList) {
+    const map = {};
+    (sourceList || []).forEach((source) => {
+      if (!source || !source.title) {
+        return;
       }
-      if (!current) {
-        continue;
-      }
-      sections[current] = sections[current]
-        ? `${sections[current]}\n${rawLine}`
-        : rawLine;
-    }
-    return sections;
+      map[source.title] = source.content || '';
+    });
+    return map;
   }
 
   function renderItemTable(item) {
-    const sections = parseDescSections(item.desc);
+    const sections = toSourceMap(item.sources);
     const rows = [];
     rows.push('<table class="tg tg-item">');
     rows.push('  <tbody>');
