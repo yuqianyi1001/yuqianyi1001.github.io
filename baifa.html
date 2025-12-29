@@ -103,6 +103,80 @@ title: 百法
     padding: 4px 8px;
     white-space: nowrap;
   }
+
+  .baifa-modal {
+    background: transparent;
+    display: none;
+    inset: 0;
+    pointer-events: none;
+    position: fixed;
+    z-index: 1000;
+  }
+
+  .baifa-modal.active {
+    display: block;
+  }
+
+  .baifa-modal-content {
+    background: #d2d1d1;
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    font-weight: 400;
+    max-height: 80vh;
+    max-width: 720px;
+    overflow: auto;
+    padding: 16px 18px 20px;
+    position: absolute;
+    pointer-events: auto;
+    width: min(720px, 92vw);
+  }
+
+  .baifa-modal-title {
+    cursor: move;
+    padding: 5px;
+    background: #949393;
+    border-radius: 4px;
+    user-select: none;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 32px 10px 0;
+  }
+
+  .baifa-modal-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+    white-space: normal;
+  }
+
+  .baifa-modal-close {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    padding: 4px 6px;
+    position: absolute;
+    right: 8px;
+    top: 6px;
+  }
+
+  .baifa-section-title {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 12px 0 4px;
+  }
+
+  .baifa-section-title:first-child {
+    margin-top: 0;
+  }
+
+  .baifa-section-body {
+    display: block;
+    font-weight: 400;
+    margin: 0 0 8px;
+  }
 </style>
 
 <div class="baifa-wrap">
@@ -305,3 +379,297 @@ title: 百法
     </tbody>
   </table>
 </div>
+
+<div class="baifa-modal" id="baifa-modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="baifa-modal-content">
+    <button type="button" class="baifa-modal-close" id="baifa-modal-close" aria-label="关闭">x</button>
+    <h3 class="baifa-modal-title" id="baifa-modal-title"></h3>
+    <div class="baifa-modal-desc" id="baifa-modal-desc"></div>
+  </div>
+</div>
+
+<script src="{{ site.baseurl }}/assets/js/interact.min.js"></script>
+<script>
+  const modal = document.getElementById('baifa-modal');
+  const modalContent = document.querySelector('.baifa-modal-content');
+  const modalTitle = document.getElementById('baifa-modal-title');
+  const modalDesc = document.getElementById('baifa-modal-desc');
+  const modalClose = document.getElementById('baifa-modal-close');
+  const buttons = Array.from(document.querySelectorAll('.item-btn'));
+  let dataPromise = null;
+  let lastAnchor = null;
+  let hasUserDragged = false;
+
+  function getYamlCandidates() {
+    const candidates = [];
+    const pageUrl = window.location.href;
+    const isFile = window.location.protocol === 'file:';
+    if (isFile) {
+      candidates.push(new URL('data/baifa.yaml', pageUrl).toString());
+    } else {
+      candidates.push(new URL('/data/baifa.yaml', window.location.origin).toString());
+      candidates.push(new URL('data/baifa.yaml', pageUrl).toString());
+    }
+    candidates.push('data/baifa.yaml');
+    return Array.from(new Set(candidates));
+  }
+
+  async function fetchYamlText() {
+    const urls = getYamlCandidates();
+    let lastError = null;
+    for (const url of urls) {
+      try {
+        const response = await fetch(url, { cache: 'no-cache' });
+        if (!response.ok) {
+          throw new Error(`Failed to load ${url}: ${response.status}`);
+        }
+        return await response.text();
+      } catch (error) {
+        lastError = error;
+      }
+    }
+    throw lastError || new Error('Failed to load YAML.');
+  }
+
+  function parseBaifaYaml(yamlText) {
+    const lines = yamlText.split(/\r?\n/);
+    const items = [];
+    let current = null;
+    let collectingDesc = false;
+    let descLines = [];
+
+    function finalizeCurrent() {
+      if (!current) {
+        return;
+      }
+      if (collectingDesc) {
+        current.desc = descLines.join('\n').replace(/\s+$/, '');
+      }
+      items.push(current);
+      current = null;
+      collectingDesc = false;
+      descLines = [];
+    }
+
+    for (const line of lines) {
+      const idMatch = line.match(/^\s*-\s*id:\s*(\d+)\s*$/);
+      if (idMatch) {
+        finalizeCurrent();
+        current = { id: Number(idMatch[1]), name: '', desc: '' };
+        continue;
+      }
+      if (!current) {
+        continue;
+      }
+      const nameMatch = line.match(/^\s*name:\s*(.*)\s*$/);
+      if (nameMatch) {
+        current.name = nameMatch[1].trim();
+        continue;
+      }
+      const descMatch = line.match(/^\s*desc:\s*\|/);
+      if (descMatch) {
+        collectingDesc = true;
+        descLines = [];
+        continue;
+      }
+      if (collectingDesc) {
+        if (/^\s{6}/.test(line)) {
+          descLines.push(line.slice(6));
+          continue;
+        }
+        current.desc = descLines.join('\n').replace(/\s+$/, '');
+        collectingDesc = false;
+        descLines = [];
+      }
+    }
+    finalizeCurrent();
+    return { items };
+  }
+
+  function parseYaml(yamlText) {
+    if (window.jsyaml && typeof window.jsyaml.load === 'function') {
+      return window.jsyaml.load(yamlText);
+    }
+    return parseBaifaYaml(yamlText);
+  }
+
+  function getItemId(text) {
+    const match = text.trim().match(/^(\d+)/);
+    return match ? Number(match[1]) : null;
+  }
+
+  function getItemName(text) {
+    return text.replace(/^\d+/, '').trim();
+  }
+
+  function escapeHtml(text) {
+    return String(text)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/\"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function normalizeDesc(desc) {
+    return String(desc)
+      .replace(/\r\n/g, '\n')
+      .replace(/\s*###\s+/g, '\n### ')
+      .trim();
+  }
+
+  function renderDesc(desc) {
+    if (!desc) {
+      return '<div class=\"baifa-section-body\">暂无解释。</div>';
+    }
+    const normalized = normalizeDesc(desc);
+    const lines = normalized.split('\n');
+    const sections = [];
+    let current = null;
+    let hasHeading = false;
+
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (trimmed.startsWith('### ')) {
+        hasHeading = true;
+        if (current) {
+          sections.push(current);
+        }
+        current = { title: trimmed.slice(4).trim(), body: [] };
+        continue;
+      }
+      if (!current) {
+        current = { title: '', body: [] };
+      }
+      current.body.push(line.trim());
+    }
+    if (current) {
+      sections.push(current);
+    }
+
+    if (!hasHeading) {
+      return `<div class=\"baifa-section-body\">${escapeHtml(normalized).replace(/\\n/g, '<br>')}</div>`;
+    }
+
+    const htmlParts = [];
+    for (const section of sections) {
+      if (section.title) {
+        htmlParts.push(`<div class=\"baifa-section-title\">${escapeHtml(section.title)}</div>`);
+      }
+      const bodyText = section.body.join('\\n').replace(/\\s+$/, '');
+      if (bodyText) {
+        htmlParts.push(`<div class=\"baifa-section-body\">${escapeHtml(bodyText).replace(/\\n/g, '<br>')}</div>`);
+      }
+    }
+    return htmlParts.join('');
+  }
+
+  function loadBaifaData() {
+    if (!dataPromise) {
+      dataPromise = fetchYamlText().then((yamlText) => parseYaml(yamlText));
+    }
+    return dataPromise;
+  }
+
+  function positionModal(anchor) {
+    if (!anchor) {
+      return;
+    }
+    if (hasUserDragged) {
+      return;
+    }
+    const rect = anchor.getBoundingClientRect();
+    const modalRect = modalContent.getBoundingClientRect();
+    const gap = 8;
+    const margin = 8;
+    const brLeft = rect.right + gap;
+    const brTop = rect.bottom + gap;
+    const fitsRight = brLeft + modalRect.width <= window.innerWidth - margin;
+    const fitsBottom = brTop + modalRect.height <= window.innerHeight - margin;
+    let left = brLeft;
+    let top = brTop;
+
+    if (!fitsRight || !fitsBottom) {
+      left = rect.left - modalRect.width - gap;
+      top = rect.top - modalRect.height - gap;
+    }
+
+    left = Math.max(margin, Math.min(left, window.innerWidth - modalRect.width - margin));
+    top = Math.max(margin, Math.min(top, window.innerHeight - modalRect.height - margin));
+    modalContent.style.left = `${left}px`;
+    modalContent.style.top = `${top}px`;
+  }
+
+  function openModal(title, desc, anchor) {
+    modalTitle.textContent = title;
+    modalDesc.innerHTML = renderDesc(desc);
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    hasUserDragged = false;
+    lastAnchor = anchor || lastAnchor;
+    positionModal(lastAnchor);
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+  }
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', async () => {
+      const rawText = button.textContent || '';
+      const id = getItemId(rawText);
+      if (!id) {
+        return;
+      }
+      const name = getItemName(rawText);
+      try {
+        const data = await loadBaifaData();
+        const items = (data && data.items) || [];
+        const item = items.find((entry) => Number(entry.id) === id);
+        const title = item && item.name ? `${id} ${item.name}` : `${id} ${name}`;
+        const desc = item && item.desc ? item.desc : '';
+        openModal(title, desc, button);
+      } catch (error) {
+        openModal(`${id} ${name}`, '解释加载失败，请稍后重试。', button);
+      }
+    });
+  });
+
+  modalClose.addEventListener('click', closeModal);
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeModal();
+    }
+  });
+  if (window.interact) {
+    window.interact(modalContent).draggable({
+      allowFrom: '.baifa-modal-title',
+      listeners: {
+        move(event) {
+          const margin = 8;
+          const rect = modalContent.getBoundingClientRect();
+          const currentLeft = Number.parseFloat(modalContent.style.left) || rect.left;
+          const currentTop = Number.parseFloat(modalContent.style.top) || rect.top;
+          const maxLeft = window.innerWidth - rect.width - margin;
+          const maxTop = window.innerHeight - rect.height - margin;
+          const left = Math.min(Math.max(margin, currentLeft + event.dx), maxLeft);
+          const top = Math.min(Math.max(margin, currentTop + event.dy), maxTop);
+          hasUserDragged = true;
+          modalContent.style.left = `${left}px`;
+          modalContent.style.top = `${top}px`;
+        },
+      },
+    });
+  }
+  window.addEventListener('resize', () => {
+    if (modal.classList.contains('active')) {
+      positionModal(lastAnchor);
+    }
+  });
+  window.addEventListener('scroll', () => {
+    if (modal.classList.contains('active')) {
+      positionModal(lastAnchor);
+    }
+  }, { passive: true });
+</script>
