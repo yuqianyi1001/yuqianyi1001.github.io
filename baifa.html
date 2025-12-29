@@ -104,6 +104,30 @@ title: 百法
     white-space: nowrap;
   }
 
+  .items-heart .item-btn {
+    background: #e6f2d8;
+    border-color: #b7cf94;
+    color: #2f3a20;
+  }
+
+  .items-color .item-btn {
+    background: #d9defa;
+    border-color: #9ea9e2;
+    color: #273055;
+  }
+
+  .items-nonconcurrent .item-btn {
+    background: #f7d7f9;
+    border-color: #d5a6d9;
+    color: #5a2a5f;
+  }
+
+  .items-unconditioned .item-btn {
+    background: #fff4a8;
+    border-color: #d9cb5a;
+    color: #4a3d00;
+  }
+
   .baifa-modal {
     background: transparent;
     display: none;
@@ -193,7 +217,7 @@ title: 百法
         <td class="title-cell" rowspan="12">大乘百法明门论</td>
         <td class="category heart" colspan="3">心法(8)</td>
         <td class="items-cell alt">
-          <div class="items">
+          <div class="items items-heart">
             <button type="button" class="item-btn">1.眼识</button>
             <button type="button" class="item-btn">2.耳识</button>
             <button type="button" class="item-btn">3.鼻识</button>
@@ -317,7 +341,7 @@ title: 百法
       <tr>
         <td class="category color" colspan="3">色法(11)</td>
         <td class="items-cell">
-          <div class="items">
+          <div class="items items-color">
             <button type="button" class="item-btn">60.眼</button>
             <button type="button" class="item-btn">61.耳</button>
             <button type="button" class="item-btn">62.鼻</button>
@@ -335,7 +359,7 @@ title: 百法
       <tr>
         <td class="category nonconcurrent" colspan="3">心不相应行法(24)</td>
         <td class="items-cell alt">
-          <div class="items">
+          <div class="items items-nonconcurrent">
             <button type="button" class="item-btn">71.得</button>
             <button type="button" class="item-btn">72.命根</button>
             <button type="button" class="item-btn">73.众同分</button>
@@ -366,7 +390,7 @@ title: 百法
       <tr>
         <td class="category unconditioned" colspan="3">无为法(6)</td>
         <td class="items-cell">
-          <div class="items">
+          <div class="items items-unconditioned">
             <button type="button" class="item-btn">95.虚空</button>
             <button type="button" class="item-btn">96.择灭</button>
             <button type="button" class="item-btn">97.非择灭</button>
@@ -627,7 +651,8 @@ title: 百法
         const data = await loadBaifaData();
         const items = (data && data.items) || [];
         const item = items.find((entry) => Number(entry.id) === id);
-        const title = item && item.name ? `${id} ${item.name}` : `${id} ${name}`;
+        const titleText = item && item.name ? item.name : name;
+        const title = `第${id}法：${titleText}`;
         const desc = item && item.desc ? item.desc : '';
         openModal(title, desc, button);
       } catch (error) {
