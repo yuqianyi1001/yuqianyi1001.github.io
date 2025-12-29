@@ -24,8 +24,7 @@
 * https://www.image-map.net/ 生成image map坐标
 * https://www.urldecoder.io/
 * https://md.doocs.org/ 公众号排版。图片需要先push到Github，且把图片路径修改为绝对路径后，才能复制到公众号里面而不丢失。
-* https://www.tablesgenerator.com/html_tables  表格编辑器。制作的表格有：
-  * baifa-table.html 
+* https://www.tablesgenerator.com/html_tables  表格编辑器。
 
 # 网站工具（未列在网站上）
 
