@@ -152,7 +152,7 @@ title: 百法
     padding: 16px 18px 20px;
     position: absolute;
     pointer-events: auto;
-    width: min(720px, 92vw);
+    /* width: min(720px, 92vw); */
   }
 
   .baifa-modal-title {
@@ -161,14 +161,14 @@ title: 百法
     background: #949393;
     border-radius: 4px;
     user-select: none;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     margin: 0 32px 10px 0;
   }
 
   .baifa-modal-desc {
     font-size: 15px;
-    line-height: 1.6;
+    line-height: 1.1;
     margin: 0;
     white-space: normal;
   }
@@ -294,12 +294,12 @@ title: 百法
             <button type="button" class="item-btn">37.恨</button>
             <button type="button" class="item-btn">38.覆</button>
             <button type="button" class="item-btn">39.恼</button>
-            <button type="button" class="item-btn">40.嫉</button>
-            <button type="button" class="item-btn">41.悭</button>
-            <button type="button" class="item-btn">42.诳</button>
-            <button type="button" class="item-btn">43.谄</button>
-            <button type="button" class="item-btn">44.害</button>
-            <button type="button" class="item-btn">45.憍</button>
+            <button type="button" class="item-btn">40.诳</button>
+            <button type="button" class="item-btn">41.谄</button>
+            <button type="button" class="item-btn">42.憍</button>
+            <button type="button" class="item-btn">43.害</button>
+            <button type="button" class="item-btn">44.嫉</button>
+            <button type="button" class="item-btn">45.悭</button>
           </div>
         </td>
       </tr>
@@ -413,6 +413,8 @@ title: 百法
 </div>
 
 <script src="{{ site.baseurl }}/assets/js/interact.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/js-yaml.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/baifa-sources.js"></script>
 <script>
   const modal = document.getElementById('baifa-modal');
   const modalContent = document.querySelector('.baifa-modal-content');
@@ -455,107 +457,15 @@ title: 百法
     throw lastError || new Error('Failed to load YAML.');
   }
 
-  function parseBaifaYaml(yamlText) {
-    const lines = yamlText.split(/\r?\n/);
-    const items = [];
-    let current = null;
-    let currentSource = null;
-    let collectingContent = false;
-    let contentIndent = 0;
-    let contentLines = [];
-
-    function finalizeContent() {
-      if (!collectingContent || !currentSource) {
-        return;
-      }
-      currentSource.content = contentLines.join('\n').replace(/\s+$/, '');
-      collectingContent = false;
-      contentLines = [];
-    }
-
-    function finalizeSource() {
-      if (!current || !currentSource) {
-        return;
-      }
-      finalizeContent();
-      current.sources.push(currentSource);
-      currentSource = null;
-    }
-
-    function finalizeItem() {
-      if (!current) {
-        return;
-      }
-      finalizeSource();
-      items.push(current);
-      current = null;
-    }
-
-    let index = 0;
-    while (index < lines.length) {
-      const line = lines[index];
-
-      if (collectingContent) {
-        const indent = line.match(/^ */)[0].length;
-        const baseIndent = contentIndent + 2;
-        if (indent >= baseIndent) {
-          contentLines.push(line.slice(baseIndent));
-          index += 1;
-          continue;
-        }
-        finalizeContent();
-        continue;
-      }
-
-      const idMatch = line.match(/^\s*-\s*id:\s*(\d+)\s*$/);
-      if (idMatch) {
-        finalizeItem();
-        current = { id: Number(idMatch[1]), name: '', sources: [] };
-        index += 1;
-        continue;
-      }
-      if (!current) {
-        index += 1;
-        continue;
-      }
-      const nameMatch = line.match(/^\s*name:\s*(.*)\s*$/);
-      if (nameMatch) {
-        current.name = nameMatch[1].trim();
-        index += 1;
-        continue;
-      }
-      const sourcesEmptyMatch = line.match(/^\s*sources:\s*\[\s*\]\s*$/);
-      if (sourcesEmptyMatch) {
-        current.sources = [];
-        index += 1;
-        continue;
-      }
-      const sourceMatch = line.match(/^\s*-\s*title:\s*(.*)\s*$/);
-      if (sourceMatch) {
-        finalizeSource();
-        currentSource = { title: sourceMatch[1].trim(), content: '' };
-        index += 1;
-        continue;
-      }
-      const contentMatch = line.match(/^\s*content:\s*\|/);
-      if (contentMatch) {
-        collectingContent = true;
-        contentIndent = line.match(/^ */)[0].length;
-        contentLines = [];
-        index += 1;
-        continue;
-      }
-      index += 1;
-    }
-    finalizeItem();
-    return { items };
-  }
-
   function parseYaml(yamlText) {
-    if (window.jsyaml && typeof window.jsyaml.load === 'function') {
-      return window.jsyaml.load(yamlText);
+    if (!window.jsyaml || typeof window.jsyaml.load !== 'function') {
+      throw new Error('js-yaml not loaded');
     }
-    return parseBaifaYaml(yamlText);
+    const data = window.jsyaml.load(yamlText) || {};
+    if (Array.isArray(data)) {
+      return data;
+    }
+    return Array.isArray(data.items) ? data.items : [];
   }
 
   function getItemId(text) {
@@ -580,8 +490,9 @@ title: 百法
     if (!sources || !sources.length) {
       return '<div class=\"baifa-section-body\">暂无解释。</div>';
     }
+    const orderedSources = window.baifaSortSources ? window.baifaSortSources(sources) : sources;
     const htmlParts = [];
-    for (const source of sources) {
+    for (const source of orderedSources) {
       if (source.title) {
         htmlParts.push(`<div class=\"baifa-section-title\">${escapeHtml(source.title)}</div>`);
       }
@@ -610,17 +521,8 @@ title: 百法
     const modalRect = modalContent.getBoundingClientRect();
     const gap = 8;
     const margin = 8;
-    const brLeft = rect.right + gap;
-    const brTop = rect.bottom + gap;
-    const fitsRight = brLeft + modalRect.width <= window.innerWidth - margin;
-    const fitsBottom = brTop + modalRect.height <= window.innerHeight - margin;
-    let left = brLeft;
-    let top = brTop;
-
-    if (!fitsRight || !fitsBottom) {
-      left = rect.left - modalRect.width - gap;
-      top = rect.top - modalRect.height - gap;
-    }
+    let left = rect.left;
+    let top = rect.bottom + gap;
 
     left = Math.max(margin, Math.min(left, window.innerWidth - modalRect.width - margin));
     top = Math.max(margin, Math.min(top, window.innerHeight - modalRect.height - margin));
@@ -658,7 +560,7 @@ title: 百法
       const name = getItemName(rawText);
       try {
         const data = await loadBaifaData();
-        const items = (data && data.items) || [];
+        const items = Array.isArray(data) ? data : (data && data.items) || [];
         const item = items.find((entry) => Number(entry.id) === id);
         const titleText = item && item.name ? item.name : name;
         const title = `第${id}法：${titleText}`;

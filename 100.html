@@ -99,16 +99,12 @@ title: 五位百法，可交互
     </p>
 </div>
 
+<script src="{{ site.baseurl }}/assets/js/js-yaml.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/baifa-sources.js"></script>
 <script>
     const baseUrl = '{{ site.baseurl }}';
     const yamlUrl = baseUrl ? `${baseUrl}/data/baifa.yaml` : '/data/baifa.yaml';
-    const sources = [
-        '《大乘阿毘达磨集论》无着菩萨',
-        '《成唯识论》',
-        '《显扬圣教论》无着菩萨',
-        '《百法直解》林国良',
-        '《大乘五蕴论》世亲菩萨',
-    ];
+    let sources = [];
     let baifaItems = [];
     let oneHundredHtml = [];
 
@@ -122,99 +118,14 @@ title: 五位百法，可交互
     }
 
     function parseYaml(text) {
-        const lines = text.split(/\r?\n/);
-        const items = [];
-        let current = null;
-        let currentSource = null;
-        let inContent = false;
-        let contentIndent = 0;
-        let contentLines = [];
-
-        function finalizeContent() {
-            if (!inContent || !currentSource) {
-                return;
-            }
-            currentSource.content = contentLines.join('\n').replace(/\s+$/, '');
-            inContent = false;
-            contentLines = [];
+        if (!window.jsyaml || typeof window.jsyaml.load !== 'function') {
+            throw new Error('js-yaml not loaded');
         }
-
-        function finalizeSource() {
-            if (!current || !currentSource) {
-                return;
-            }
-            finalizeContent();
-            current.sources.push(currentSource);
-            currentSource = null;
+        const data = window.jsyaml.load(text) || {};
+        if (Array.isArray(data)) {
+            return data;
         }
-
-        function finalizeItem() {
-            if (!current) {
-                return;
-            }
-            finalizeSource();
-            items.push(current);
-            current = null;
-        }
-
-        let index = 0;
-        while (index < lines.length) {
-            const line = lines[index];
-
-            if (inContent) {
-                const indent = line.match(/^ */)[0].length;
-                const baseIndent = contentIndent + 2;
-                if (indent >= baseIndent) {
-                    contentLines.push(line.slice(baseIndent));
-                    index += 1;
-                    continue;
-                }
-                finalizeContent();
-                continue;
-            }
-
-            const idMatch = line.match(/^\s*-\s*id:\s*(\d+)\s*$/);
-            if (idMatch) {
-                finalizeItem();
-                current = { id: Number(idMatch[1]), name: '', sources: [] };
-                index += 1;
-                continue;
-            }
-            if (!current) {
-                index += 1;
-                continue;
-            }
-            const nameMatch = line.match(/^\s*name:\s*(.*)\s*$/);
-            if (nameMatch) {
-                current.name = nameMatch[1].trim();
-                index += 1;
-                continue;
-            }
-            const sourcesEmptyMatch = line.match(/^\s*sources:\s*\[\s*\]\s*$/);
-            if (sourcesEmptyMatch) {
-                current.sources = [];
-                index += 1;
-                continue;
-            }
-            const sourceMatch = line.match(/^\s*-\s*title:\s*(.*)\s*$/);
-            if (sourceMatch) {
-                finalizeSource();
-                currentSource = { title: sourceMatch[1].trim(), content: '' };
-                index += 1;
-                continue;
-            }
-            const contentMatch = line.match(/^\s*content:\s*\|/);
-            if (contentMatch) {
-                inContent = true;
-                contentIndent = line.match(/^ */)[0].length;
-                contentLines = [];
-                index += 1;
-                continue;
-            }
-            index += 1;
-        }
-        finalizeItem();
-        return items;
+        return Array.isArray(data.items) ? data.items : [];
     }
 
     function toSourceMap(sourceList) {
@@ -230,12 +141,14 @@ title: 五位百法，可交互
 
     function renderItemTable(item) {
         const sections = toSourceMap(item.sources);
+        const sourceList = sources.length ? sources : (item.sources || []).map((source) => source.title);
+        const orderedList = window.baifaSortSourceTitles ? window.baifaSortSourceTitles(sourceList) : sourceList;
         const rows = [];
         rows.push('<table class="tg tg-item">');
         rows.push('  <tbody>');
         rows.push(`    <tr><th class="tg-1wig">#</th><td class="tg-0lax">${item.id}</td></tr>`);
         rows.push(`    <tr><th class="tg-1wig">名称</th><td class="tg-0lax">${escapeHtml(item.name)}</td></tr>`);
-        sources.forEach((source) => {
+        orderedList.forEach((source) => {
             const content = sections[source] || '';
             const html = content
                 ? escapeHtml(content).replace(/\n/g, '<br>')
@@ -249,9 +162,11 @@ title: 五位百法，可交互
 
     function buildTooltipHtml(item) {
         const sections = toSourceMap(item.sources);
+        const sourceList = sources.length ? sources : (item.sources || []).map((source) => source.title);
+        const orderedList = window.baifaSortSourceTitles ? window.baifaSortSourceTitles(sourceList) : sourceList;
         const lines = [];
         lines.push(`<div><strong>${item.id}. ${escapeHtml(item.name)}</strong></div>`);
-        sources.forEach((source) => {
+        orderedList.forEach((source) => {
             const content = sections[source] || '';
             if (!content) {
                 return;
@@ -270,6 +185,18 @@ title: 五位百法，可交互
             .then((response) => response.text())
             .then((text) => {
                 const items = parseYaml(text);
+                const sourceSet = new Set();
+                let collected = [];
+                items.forEach((item) => {
+                    (item.sources || []).forEach((source) => {
+                        if (!source || !source.title || sourceSet.has(source.title)) {
+                            return;
+                        }
+                        sourceSet.add(source.title);
+                        collected.push(source.title);
+                    });
+                });
+                sources = window.baifaSortSourceTitles ? window.baifaSortSourceTitles(collected) : collected;
                 baifaItems = [];
                 oneHundredHtml = [];
                 items.forEach((item) => {
