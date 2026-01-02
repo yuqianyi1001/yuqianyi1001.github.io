@@ -170,6 +170,48 @@ title: 百法
     color: #4a3d00;
   }
 
+  .item-btn.is-highlighted {
+    background: #d93025;
+    border-color: #b3261e;
+    box-shadow: 0 0 0 2px rgba(217, 48, 37, 0.55), 0 4px 10px rgba(0, 0, 0, 0.25);
+    color: #fff;
+  }
+
+  .baifa-tools {
+    background: #f2ede3;
+    border: 1px solid #c8bb9c;
+    border-radius: 8px;
+    margin: 18px 0 0;
+    padding: 12px 14px;
+  }
+
+  .baifa-tools-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 8px;
+  }
+
+  .baifa-tools-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .baifa-tools-btn {
+    background: #6a4b2a;
+    border: 1px solid #4f371f;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .baifa-tools-btn[aria-pressed="true"] {
+    background: #3f2a12;
+    border-color: #2d1d0c;
+  }
+
   .baifa-modal {
     background: transparent;
     display: none;
@@ -444,6 +486,23 @@ title: 百法
       </tr>
     </tbody>
   </table>
+  <div class="baifa-tools" aria-label="心和心所的相应关系">
+    <div class="baifa-tools-title">心和心所的相应关系</div>
+    <div class="baifa-tools-actions">
+      <button type="button" class="baifa-tools-btn" id="baifa-highlight-senses" aria-pressed="false">
+        前五识相应心所
+      </button>
+      <button type="button" class="baifa-tools-btn" id="baifa-highlight-sixth" aria-pressed="false">
+        意识相应心所
+      </button>
+      <button type="button" class="baifa-tools-btn" id="baifa-highlight-manas" aria-pressed="false">
+        末那识相应心所
+      </button>
+      <button type="button" class="baifa-tools-btn" id="baifa-highlight-alaya" aria-pressed="false">
+        阿赖耶识相应心所
+      </button>
+    </div>
+  </div>
 </div>
 
 <div class="baifa-modal" id="baifa-modal" role="dialog" aria-modal="true" aria-hidden="true">
@@ -464,9 +523,36 @@ title: 百法
   const modalDesc = document.getElementById('baifa-modal-desc');
   const modalClose = document.getElementById('baifa-modal-close');
   const buttons = Array.from(document.querySelectorAll('.item-btn'));
+  const senseHighlightButton = document.getElementById('baifa-highlight-senses');
+  const sixthHighlightButton = document.getElementById('baifa-highlight-sixth');
+  const manasHighlightButton = document.getElementById('baifa-highlight-manas');
+  const alayaHighlightButton = document.getElementById('baifa-highlight-alaya');
+  const senseMindIds = new Set([
+    9, 10, 11, 12, 13,
+    14, 15, 16, 17, 18,
+    19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
+    30, 31, 32,
+    46, 47,
+    48, 49, 50, 51, 52, 53, 54, 55,
+  ]);
+  const manasMindIds = new Set([
+    9, 10, 11, 12, 13,
+    18,
+    30, 32, 33, 35,
+    48, 49, 50, 51, 52, 53, 54, 55,
+  ]);
+  const alayaMindIds = new Set([9, 10, 11, 12, 13]);
+  const allMindIds = createIdRangeSet(9, 59);
+  const highlightButtons = [
+    { button: senseHighlightButton, ids: senseMindIds },
+    { button: sixthHighlightButton, ids: allMindIds },
+    { button: manasHighlightButton, ids: manasMindIds },
+    { button: alayaHighlightButton, ids: alayaMindIds },
+  ];
   let dataPromise = null;
   let lastAnchor = null;
   let hasUserDragged = false;
+  let activeHighlightButton = null;
 
   function getYamlCandidates() {
     const candidates = [];
@@ -517,6 +603,31 @@ title: 百法
 
   function getItemName(text) {
     return text.replace(/^\d+/, '').trim();
+  }
+
+  function createIdRangeSet(start, end) {
+    const ids = new Set();
+    for (let i = start; i <= end; i += 1) {
+      ids.add(i);
+    }
+    return ids;
+  }
+
+  function clearHighlights() {
+    buttons.forEach((button) => {
+      button.classList.remove('is-highlighted');
+    });
+  }
+
+  function applyHighlight(ids) {
+    buttons.forEach((button) => {
+      const id = getItemId(button.textContent || '');
+      if (id && ids.has(id)) {
+        button.classList.add('is-highlighted');
+      } else {
+        button.classList.remove('is-highlighted');
+      }
+    });
   }
 
   function escapeHtml(text) {
@@ -650,4 +761,30 @@ title: 百法
       positionModal(lastAnchor);
     }
   }, { passive: true });
+
+  function updateHighlightButtons() {
+    highlightButtons.forEach(({ button }) => {
+      if (!button) {
+        return;
+      }
+      button.setAttribute('aria-pressed', button === activeHighlightButton ? 'true' : 'false');
+    });
+  }
+
+  highlightButtons.forEach(({ button, ids }) => {
+    if (!button) {
+      return;
+    }
+    button.addEventListener('click', () => {
+      if (activeHighlightButton === button) {
+        activeHighlightButton = null;
+        clearHighlights();
+        updateHighlightButtons();
+        return;
+      }
+      applyHighlight(ids);
+      activeHighlightButton = button;
+      updateHighlightButtons();
+    });
+  });
 </script>
