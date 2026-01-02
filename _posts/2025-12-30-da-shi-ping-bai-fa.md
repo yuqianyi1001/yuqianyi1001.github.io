@@ -9,7 +9,7 @@ tags:
 
 在浩瀚的佛学典籍中，《大乘百法明门论》首先是“唯识宗”的入门基石。它如同一张精准的“心识地图”，将我们纷繁复杂的内心世界，系统地归纳为一百个基本元素，是理解“万法唯识”理论不可或缺的第一把钥匙。
 
-![百法海报](../images/baifa_poster.png)
+![百法海报](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/baifa_poster.png)
 
 然而，一个有趣的问题是：为何这样一部唯识宗的专门论典，却能超越宗派的藩篱，赢得禅宗、净土宗等祖师的共同推崇？
 
