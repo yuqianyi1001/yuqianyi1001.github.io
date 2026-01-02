@@ -177,6 +177,13 @@ title: 百法
     color: #fff;
   }
 
+  .item-btn.is-highlighted-buddha {
+    background: #64d466;
+    border-color: #2f9b3b;
+    box-shadow: 0 0 0 2px rgba(47, 155, 59, 0.55), 0 4px 10px rgba(0, 0, 0, 0.25);
+    color: #0d2b15;
+  }
+
   .baifa-tools {
     background: #f2ede3;
     border: 1px solid #c8bb9c;
@@ -501,6 +508,9 @@ title: 百法
       <button type="button" class="baifa-tools-btn" id="baifa-highlight-alaya" aria-pressed="false">
         阿赖耶识相应心所
       </button>
+      <button type="button" class="baifa-tools-btn" id="baifa-highlight-buddha" aria-pressed="false">
+        成佛后的相应心所
+      </button>
     </div>
   </div>
 </div>
@@ -527,6 +537,7 @@ title: 百法
   const sixthHighlightButton = document.getElementById('baifa-highlight-sixth');
   const manasHighlightButton = document.getElementById('baifa-highlight-manas');
   const alayaHighlightButton = document.getElementById('baifa-highlight-alaya');
+  const buddhaHighlightButton = document.getElementById('baifa-highlight-buddha');
   const senseMindIds = new Set([
     9, 10, 11, 12, 13,
     14, 15, 16, 17, 18,
@@ -542,13 +553,16 @@ title: 百法
     48, 49, 50, 51, 52, 53, 54, 55,
   ]);
   const alayaMindIds = new Set([9, 10, 11, 12, 13]);
+  const buddhaMindIds = createIdRangeSet(9, 29);
   const allMindIds = createIdRangeSet(9, 59);
   const highlightButtons = [
     { button: senseHighlightButton, ids: senseMindIds },
     { button: sixthHighlightButton, ids: allMindIds },
     { button: manasHighlightButton, ids: manasMindIds },
     { button: alayaHighlightButton, ids: alayaMindIds },
+    { button: buddhaHighlightButton, ids: buddhaMindIds, highlightClass: 'is-highlighted-buddha' },
   ];
+  const highlightClasses = ['is-highlighted', 'is-highlighted-buddha'];
   let dataPromise = null;
   let lastAnchor = null;
   let hasUserDragged = false;
@@ -615,17 +629,20 @@ title: 百法
 
   function clearHighlights() {
     buttons.forEach((button) => {
-      button.classList.remove('is-highlighted');
+      highlightClasses.forEach((highlightClass) => {
+        button.classList.remove(highlightClass);
+      });
     });
   }
 
-  function applyHighlight(ids) {
+  function applyHighlight(ids, highlightClass = 'is-highlighted') {
     buttons.forEach((button) => {
       const id = getItemId(button.textContent || '');
+      highlightClasses.forEach((itemClass) => {
+        button.classList.remove(itemClass);
+      });
       if (id && ids.has(id)) {
-        button.classList.add('is-highlighted');
-      } else {
-        button.classList.remove('is-highlighted');
+        button.classList.add(highlightClass);
       }
     });
   }
@@ -782,7 +799,8 @@ title: 百法
         updateHighlightButtons();
         return;
       }
-      applyHighlight(ids);
+      const config = highlightButtons.find((entry) => entry.button === button);
+      applyHighlight(ids, (config && config.highlightClass) || 'is-highlighted');
       activeHighlightButton = button;
       updateHighlightButtons();
     });
