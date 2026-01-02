@@ -54,14 +54,34 @@ title: 五位百法，可交互
             background-color: rgba(255, 255, 255, 0.8);
             padding: 5px 10px;
             border: 1px solid #00000025;
-            cursor: pointer;
             z-index: 1001;
             font-family:fantasy;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .zoom-button {
+            background: #ffffff;
+            border: 1px solid #00000025;
+            cursor: pointer;
+            font-family: fantasy;
+            padding: 2px 8px;
+            line-height: 1.2;
+        }
+
+        .zoom-display {
+            min-width: 48px;
+            text-align: center;
         }
     </style>
 
 
-<div class="zoom-control" id="zoomControl">75%</div>
+<div class="zoom-control" id="zoomControl">
+    <button class="zoom-button" id="zoomOut" type="button" title="缩小">-</button>
+    <span class="zoom-display" id="zoomDisplay">75%</span>
+    <button class="zoom-button" id="zoomIn" type="button" title="放大">+</button>
+</div>
 
 <div class="image-container">
     <img src="../5-categories-100-items.png" usemap="#image-map" alt="五位白法">
@@ -584,25 +604,39 @@ title: 五位百法，可交互
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-        const zoomControl = document.getElementById('zoomControl');
+        const zoomDisplay = document.getElementById('zoomDisplay');
+        const zoomIn = document.getElementById('zoomIn');
+        const zoomOut = document.getElementById('zoomOut');
         const imageContainer = document.querySelector('.image-container');
 
         const notes = document.querySelector('.notes');
 
-        let zoomLevels = [0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0];
+        let zoomLevels = [0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0, 1.1, 1.2];
         let currentZoomIndex = 1; // Start at 75%
 
-        zoomControl.addEventListener('click', function() {
-            currentZoomIndex = (currentZoomIndex + 1) % zoomLevels.length;
-            const newZoom = zoomLevels[currentZoomIndex];
-
+        function applyZoom(index) {
+            const newZoom = zoomLevels[index];
             imageContainer.style.transform = `scale(${newZoom})`;
             const marginTop = -(1 - newZoom) * 1000; // Calculate margin-top based on zoom level
             notes.style.marginTop = `${marginTop}px`;
-            zoomControl.textContent = `${newZoom * 100}%`;
+            zoomDisplay.textContent = `${newZoom * 100}%`;
+        }
 
-            
+        zoomIn.addEventListener('click', function() {
+            if (currentZoomIndex < zoomLevels.length - 1) {
+                currentZoomIndex += 1;
+            }
+            applyZoom(currentZoomIndex);
         });
+
+        zoomOut.addEventListener('click', function() {
+            if (currentZoomIndex > 0) {
+                currentZoomIndex -= 1;
+            }
+            applyZoom(currentZoomIndex);
+        });
+
+        applyZoom(currentZoomIndex);
 
         let map = document.getElementById('map1');
 
