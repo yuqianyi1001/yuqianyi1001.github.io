@@ -234,13 +234,14 @@ title: 百法交互表
 
   .baifa-modal-content {
     background: #d2d1d1;
+    border: 2px solid #a5a4a4;
     border-radius: 8px;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
     font-weight: 400;
     max-height: 80vh;
     max-width: 720px;
     overflow: auto;
-    padding: 16px 18px 20px;
+    padding: 8px 18px 20px;
     position: absolute;
     pointer-events: auto;
     /* width: min(720px, 92vw); */
@@ -254,7 +255,7 @@ title: 百法交互表
     user-select: none;
     font-size: 18px;
     font-weight: 700;
-    margin: 0 32px 10px 0;
+    margin: 0 64px 10px 0;
   }
 
   .baifa-modal-desc {
@@ -264,16 +265,58 @@ title: 百法交互表
     white-space: normal;
   }
 
-  .baifa-modal-close {
+  .baifa-modal-close,
+  .baifa-modal-copy {
+    align-items: center;
     background: transparent;
     border: none;
+    border-radius: 6px;
+    color: #4f371f;
     cursor: pointer;
-    font-size: 18px;
-    line-height: 1;
-    padding: 4px 6px;
+    display: inline-flex;
+    height: 24px;
+    justify-content: center;
+    padding: 0;
     position: absolute;
-    right: 8px;
     top: 6px;
+    width: 24px;
+  }
+
+  .baifa-modal-copy {
+    right: 36px;
+  }
+
+  .baifa-modal-close {
+    right: 8px;
+  }
+
+  .baifa-modal-close:hover,
+  .baifa-modal-copy:hover {
+    background: #b8b7b7;
+  }
+
+  .baifa-modal-close:focus-visible,
+  .baifa-modal-copy:focus-visible {
+    outline: 2px solid #4f371f;
+    outline-offset: 2px;
+  }
+
+  .baifa-modal-copy.is-copied {
+    color: #2f5d3a;
+  }
+
+  .baifa-modal-copy.is-failed {
+    color: #7a2b2b;
+  }
+
+  .baifa-modal-icon {
+    fill: none;
+    height: 16px;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+    width: 16px;
   }
 
   .baifa-section-title {
@@ -517,7 +560,17 @@ title: 百法交互表
 
 <div class="baifa-modal" id="baifa-modal" role="dialog" aria-modal="true" aria-hidden="true">
   <div class="baifa-modal-content">
-    <button type="button" class="baifa-modal-close" id="baifa-modal-close" aria-label="关闭">x</button>
+    <button type="button" class="baifa-modal-copy" id="baifa-modal-copy" aria-label="复制" title="复制">
+      <svg class="baifa-modal-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <rect x="9" y="9" width="10" height="10" rx="2"></rect>
+        <rect x="5" y="5" width="10" height="10" rx="2"></rect>
+      </svg>
+    </button>
+    <button type="button" class="baifa-modal-close" id="baifa-modal-close" aria-label="关闭" title="关闭">
+      <svg class="baifa-modal-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M6 6l12 12M18 6l-12 12"></path>
+      </svg>
+    </button>
     <h3 class="baifa-modal-title" id="baifa-modal-title"></h3>
     <div class="baifa-modal-desc" id="baifa-modal-desc"></div>
   </div>
@@ -531,6 +584,7 @@ title: 百法交互表
   const modalContent = document.querySelector('.baifa-modal-content');
   const modalTitle = document.getElementById('baifa-modal-title');
   const modalDesc = document.getElementById('baifa-modal-desc');
+  const modalCopy = document.getElementById('baifa-modal-copy');
   const modalClose = document.getElementById('baifa-modal-close');
   const buttons = Array.from(document.querySelectorAll('.item-btn'));
   const senseHighlightButton = document.getElementById('baifa-highlight-senses');
@@ -720,6 +774,64 @@ title: 百法交互表
     modal.setAttribute('aria-hidden', 'true');
   }
 
+  function getModalCopyText() {
+    const titleText = modalTitle.textContent ? modalTitle.textContent.trim() : '';
+    const descText = modalDesc.innerText ? modalDesc.innerText.trim() : '';
+    return [titleText, descText].filter(Boolean).join('\n\n');
+  }
+
+  function setCopyButtonState(state) {
+    if (!modalCopy) {
+      return;
+    }
+    modalCopy.classList.remove('is-copied', 'is-failed');
+    if (state === 'copied') {
+      modalCopy.classList.add('is-copied');
+      modalCopy.setAttribute('aria-label', '已复制');
+      modalCopy.setAttribute('title', '已复制');
+      return;
+    }
+    if (state === 'failed') {
+      modalCopy.classList.add('is-failed');
+      modalCopy.setAttribute('aria-label', '复制失败');
+      modalCopy.setAttribute('title', '复制失败');
+      return;
+    }
+    modalCopy.setAttribute('aria-label', '复制');
+    modalCopy.setAttribute('title', '复制');
+  }
+
+  async function copyModalText() {
+    const text = getModalCopyText();
+    if (!text) {
+      return;
+    }
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'absolute';
+        textarea.style.left = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+      }
+      setCopyButtonState('copied');
+      window.setTimeout(() => {
+        setCopyButtonState('default');
+      }, 1200);
+    } catch (error) {
+      setCopyButtonState('failed');
+      window.setTimeout(() => {
+        setCopyButtonState('default');
+      }, 1200);
+    }
+  }
+
   buttons.forEach((button) => {
     button.addEventListener('click', async () => {
       const rawText = button.textContent || '';
@@ -742,6 +854,9 @@ title: 百法交互表
     });
   });
 
+  if (modalCopy) {
+    modalCopy.addEventListener('click', copyModalText);
+  }
   modalClose.addEventListener('click', closeModal);
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
