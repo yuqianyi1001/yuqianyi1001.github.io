@@ -710,18 +710,35 @@ title: 百法交互表
       .replace(/'/g, '&#39;');
   }
 
+  function prioritizePlainExplanationSources(sourceList) {
+    if (!Array.isArray(sourceList) || sourceList.length === 0) {
+      return sourceList;
+    }
+    const preferred = [];
+    const rest = [];
+    sourceList.forEach((source) => {
+      if (source && source.title === '白话解释') {
+        preferred.push(source);
+      } else {
+        rest.push(source);
+      }
+    });
+    return preferred.concat(rest);
+  }
+
   function renderSources(sources) {
     if (!sources || !sources.length) {
       return '<div class=\"baifa-section-body\">暂无解释。</div>';
     }
     const orderedSources = window.baifaSortSources ? window.baifaSortSources(sources) : sources;
+    const prioritizedSources = prioritizePlainExplanationSources(orderedSources);
     const htmlParts = [];
-    for (const source of orderedSources) {
+    for (const source of prioritizedSources) {
       if (source.title) {
         htmlParts.push(`<div class=\"baifa-section-title\">${escapeHtml(source.title)}</div>`);
       }
       if (source.content) {
-        htmlParts.push(`<div class=\"baifa-section-body\">${escapeHtml(source.content).replace(/\\n/g, '<br>')}</div>`);
+        htmlParts.push(`<div class=\"baifa-section-body\">${escapeHtml(source.content).replace(/\r?\n/g, '<br>')}</div>`);
       }
     }
     return htmlParts.join('');
@@ -760,7 +777,7 @@ title: 百法交互表
       modalDesc.innerHTML = renderSources(content);
     } else {
       const text = content || '暂无解释。';
-      modalDesc.innerHTML = `<div class=\"baifa-section-body\">${escapeHtml(text)}</div>`;
+      modalDesc.innerHTML = `<div class=\"baifa-section-body\">${escapeHtml(text).replace(/\r?\n/g, '<br>')}</div>`;
     }
     modal.classList.add('active');
     modal.setAttribute('aria-hidden', 'false');

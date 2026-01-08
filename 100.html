@@ -159,16 +159,33 @@ title: 百法交互图
         return map;
     }
 
+    function prioritizePlainExplanationTitles(titleList) {
+        if (!Array.isArray(titleList) || titleList.length === 0) {
+            return titleList;
+        }
+        const preferred = [];
+        const rest = [];
+        titleList.forEach((title) => {
+            if (title === '白话解释') {
+                preferred.push(title);
+            } else {
+                rest.push(title);
+            }
+        });
+        return preferred.concat(rest);
+    }
+
     function renderItemTable(item) {
         const sections = toSourceMap(item.sources);
         const sourceList = sources.length ? sources : (item.sources || []).map((source) => source.title);
         const orderedList = window.baifaSortSourceTitles ? window.baifaSortSourceTitles(sourceList) : sourceList;
+        const prioritizedList = prioritizePlainExplanationTitles(orderedList);
         const rows = [];
         rows.push('<table class="tg tg-item">');
         rows.push('  <tbody>');
         rows.push(`    <tr><th class="tg-1wig">#</th><td class="tg-0lax">${item.id}</td></tr>`);
         rows.push(`    <tr><th class="tg-1wig">名称</th><td class="tg-0lax">${escapeHtml(item.name)}</td></tr>`);
-        orderedList.forEach((source) => {
+        prioritizedList.forEach((source) => {
             const content = sections[source] || '';
             const html = content
                 ? escapeHtml(content).replace(/\n/g, '<br>')
@@ -184,9 +201,10 @@ title: 百法交互图
         const sections = toSourceMap(item.sources);
         const sourceList = sources.length ? sources : (item.sources || []).map((source) => source.title);
         const orderedList = window.baifaSortSourceTitles ? window.baifaSortSourceTitles(sourceList) : sourceList;
+        const prioritizedList = prioritizePlainExplanationTitles(orderedList);
         const lines = [];
         lines.push(`<div><strong>${item.id}. ${escapeHtml(item.name)}</strong></div>`);
-        orderedList.forEach((source) => {
+        prioritizedList.forEach((source) => {
             const content = sections[source] || '';
             if (!content) {
                 return;
