@@ -157,7 +157,7 @@ tags:
 
 ### 1）能看的能力：从模糊到清晰，直到极致
 
-![](../images/2026-01-11-19-41-49.png)
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-01-11-19-41-49.png)
 
 第一个：能看的能力会变得越来越清晰。
 
@@ -169,9 +169,9 @@ tags:
 
 ### 2）能看的能力：还可能具备“透视”能力
 
-![](../images/2026-01-11-19-42-19.png)
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-01-11-19-42-19.png)
 
-![](../images/2026-01-11-19-42-41.png)
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-01-11-19-42-41.png)
 
 第二个能力：还能够有透视的能力。
 
