@@ -335,6 +335,51 @@ title: 百法交互表
     font-weight: 400;
     margin: 0 0 8px;
   }
+
+  .baifa-source-filters {
+    background: #f2ede3;
+    border: 1px solid #c8bb9c;
+    border-radius: 8px;
+    margin: 18px 0 0;
+    padding: 10px 12px;
+  }
+
+  .baifa-source-filters-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 6px;
+  }
+
+  .baifa-source-filters-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+  }
+
+  .baifa-filter-option {
+    align-items: center;
+    display: inline-flex;
+    font-size: 13px;
+    gap: 4px;
+    line-height: 1.2;
+  }
+
+  .baifa-filter-option.is-disabled {
+    color: #8a8a8a;
+  }
+
+  .baifa-filter-option.is-disabled input {
+    cursor: not-allowed;
+  }
+
+  .baifa-filter-option input {
+    accent-color: #6a4b2a;
+  }
+
+  .baifa-source-filters-hint {
+    color: #6d6d6d;
+    font-size: 13px;
+  }
 </style>
 
 <div class="baifa-wrap">
@@ -556,6 +601,10 @@ title: 百法交互表
       </button>
     </div>
   </div>
+  <div class="baifa-source-filters" id="baifa-source-filters" aria-label="解释来源筛选">
+    <div class="baifa-source-filters-title">解释来源（默认仅显示白话）</div>
+    <div class="baifa-source-filters-options" id="baifa-source-filters-options"></div>
+  </div>
 </div>
 
 <div class="baifa-modal" id="baifa-modal" role="dialog" aria-modal="true" aria-hidden="true">
@@ -584,6 +633,8 @@ title: 百法交互表
   const modalContent = document.querySelector('.baifa-modal-content');
   const modalTitle = document.getElementById('baifa-modal-title');
   const modalDesc = document.getElementById('baifa-modal-desc');
+  const sourceFilters = document.getElementById('baifa-source-filters');
+  const sourceFiltersOptions = document.getElementById('baifa-source-filters-options');
   const modalCopy = document.getElementById('baifa-modal-copy');
   const modalClose = document.getElementById('baifa-modal-close');
   const buttons = Array.from(document.querySelectorAll('.item-btn'));
@@ -617,10 +668,18 @@ title: 百法交互表
     { button: buddhaHighlightButton, ids: buddhaMindIds, highlightClass: 'is-highlighted-buddha' },
   ];
   const highlightClasses = ['is-highlighted', 'is-highlighted-buddha'];
+  const sourceSelection = new Map();
   let dataPromise = null;
   let lastAnchor = null;
   let hasUserDragged = false;
   let activeHighlightButton = null;
+  let currentSources = null;
+  let allSourceTitles = [];
+  let availableSourceTitles = new Set();
+
+  if (sourceFiltersOptions) {
+    sourceFiltersOptions.innerHTML = '<span class="baifa-source-filters-hint">来源加载中...</span>';
+  }
 
   function getYamlCandidates() {
     const candidates = [];
@@ -726,22 +785,157 @@ title: 百法交互表
     return preferred.concat(rest);
   }
 
-  function renderSources(sources) {
-    if (!sources || !sources.length) {
+  function getSourceTitleKey(source) {
+    if (!source || !source.title) {
+      return '未标注来源';
+    }
+    return source.title;
+  }
+
+  function isPlainExplanationTitle(title) {
+    return title && title.includes('白话');
+  }
+
+  function prioritizePlainExplanationTitles(titles) {
+    if (!Array.isArray(titles) || !titles.length) {
+      return titles || [];
+    }
+    const preferred = [];
+    const rest = [];
+    titles.forEach((title) => {
+      if (isPlainExplanationTitle(title)) {
+        preferred.push(title);
+      } else {
+        rest.push(title);
+      }
+    });
+    return preferred.concat(rest);
+  }
+
+  function sortSourceTitles(titles) {
+    const list = Array.isArray(titles) ? titles.slice() : [];
+    const sorted = window.baifaSortSourceTitles ? window.baifaSortSourceTitles(list) : list;
+    return prioritizePlainExplanationTitles(sorted);
+  }
+
+  function isSourceSelected(title) {
+    if (!title) {
+      return false;
+    }
+    if (sourceSelection.has(title)) {
+      return sourceSelection.get(title);
+    }
+    return isPlainExplanationTitle(title);
+  }
+
+  function setSourceSelected(title, selected) {
+    if (!title) {
+      return;
+    }
+    sourceSelection.set(title, selected);
+  }
+
+  function getOrderedSources(sources) {
+    if (!Array.isArray(sources) || !sources.length) {
+      return [];
+    }
+    const orderedSources = window.baifaSortSources ? window.baifaSortSources(sources) : sources.slice();
+    return prioritizePlainExplanationSources(orderedSources);
+  }
+
+  function renderSourcesFromOrdered(orderedSources) {
+    if (!orderedSources || !orderedSources.length) {
       return '<div class=\"baifa-section-body\">暂无解释。</div>';
     }
-    const orderedSources = window.baifaSortSources ? window.baifaSortSources(sources) : sources;
-    const prioritizedSources = prioritizePlainExplanationSources(orderedSources);
     const htmlParts = [];
-    for (const source of prioritizedSources) {
-      if (source.title) {
-        htmlParts.push(`<div class=\"baifa-section-title\">${escapeHtml(source.title)}</div>`);
+    for (const source of orderedSources) {
+      const titleText = getSourceTitleKey(source);
+      if (titleText) {
+        htmlParts.push(`<div class=\"baifa-section-title\">${escapeHtml(titleText)}</div>`);
       }
-      if (source.content) {
+      if (source && source.content) {
         htmlParts.push(`<div class=\"baifa-section-body\">${escapeHtml(source.content).replace(/\r?\n/g, '<br>')}</div>`);
       }
     }
     return htmlParts.join('');
+  }
+
+  function renderSources(sources) {
+    return renderSourcesFromOrdered(getOrderedSources(sources));
+  }
+
+  function collectAllSourceTitles(items) {
+    const titles = [];
+    const seen = new Set();
+    const list = Array.isArray(items) ? items : [];
+    list.forEach((item) => {
+      const sources = item && Array.isArray(item.sources) ? item.sources : [];
+      sources.forEach((source) => {
+        const title = getSourceTitleKey(source);
+        if (!seen.has(title)) {
+          seen.add(title);
+          titles.push(title);
+        }
+      });
+    });
+    return sortSourceTitles(titles);
+  }
+
+  function updateAvailableSourceTitles(sources) {
+    const set = new Set();
+    const list = Array.isArray(sources) ? sources : [];
+    list.forEach((source) => {
+      set.add(getSourceTitleKey(source));
+    });
+    availableSourceTitles = set;
+  }
+
+  function renderSourceFilters() {
+    if (!sourceFiltersOptions) {
+      return;
+    }
+    sourceFiltersOptions.innerHTML = '';
+    if (!allSourceTitles.length) {
+      sourceFiltersOptions.innerHTML = '<span class="baifa-source-filters-hint">暂无来源</span>';
+      return;
+    }
+    allSourceTitles.forEach((title, index) => {
+      const label = document.createElement('label');
+      label.className = 'baifa-filter-option';
+      const input = document.createElement('input');
+      const isAvailable = Array.isArray(currentSources) ? availableSourceTitles.has(title) : true;
+      input.type = 'checkbox';
+      input.id = `baifa-source-filter-${index}`;
+      input.checked = isSourceSelected(title);
+      input.disabled = !isAvailable;
+      if (!isAvailable) {
+        label.classList.add('is-disabled');
+      }
+      input.addEventListener('change', () => {
+        setSourceSelected(title, input.checked);
+        renderModalSources();
+      });
+      const span = document.createElement('span');
+      span.textContent = title;
+      label.appendChild(input);
+      label.appendChild(span);
+      sourceFiltersOptions.appendChild(label);
+    });
+  }
+
+  function renderModalSources() {
+    if (!Array.isArray(currentSources)) {
+      return;
+    }
+    const orderedSources = getOrderedSources(currentSources);
+    updateAvailableSourceTitles(currentSources);
+    renderSourceFilters();
+    const filteredSources = orderedSources.filter((source) => isSourceSelected(getSourceTitleKey(source)));
+    if (!filteredSources.length) {
+      modalDesc.innerHTML = '<div class=\"baifa-section-body\">暂无解释，可在下方勾选来源。</div>';
+      return;
+    }
+    modalDesc.innerHTML = renderSourcesFromOrdered(filteredSources);
   }
 
   function loadBaifaData() {
@@ -750,6 +944,17 @@ title: 百法交互表
     }
     return dataPromise;
   }
+
+  loadBaifaData()
+    .then((data) => {
+      allSourceTitles = collectAllSourceTitles(data);
+      renderSourceFilters();
+    })
+    .catch(() => {
+      if (sourceFiltersOptions) {
+        sourceFiltersOptions.innerHTML = '<span class="baifa-source-filters-hint">来源加载失败</span>';
+      }
+    });
 
   function positionModal(anchor) {
     if (!anchor) {
@@ -774,8 +979,12 @@ title: 百法交互表
   function openModal(title, content, anchor) {
     modalTitle.textContent = title;
     if (Array.isArray(content)) {
-      modalDesc.innerHTML = renderSources(content);
+      currentSources = content;
+      renderModalSources();
     } else {
+      currentSources = [];
+      updateAvailableSourceTitles(currentSources);
+      renderSourceFilters();
       const text = content || '暂无解释。';
       modalDesc.innerHTML = `<div class=\"baifa-section-body\">${escapeHtml(text).replace(/\r?\n/g, '<br>')}</div>`;
     }
