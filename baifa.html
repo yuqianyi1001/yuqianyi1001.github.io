@@ -345,9 +345,39 @@ title: 百法交互表
   }
 
   .baifa-source-filters-title {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
     font-size: 14px;
     font-weight: 700;
+    gap: 8px 12px;
+    justify-content: space-between;
     margin: 0 0 6px;
+  }
+
+  .baifa-source-filters-actions {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .baifa-source-action {
+    background: #fff4d6;
+    border: 1px solid #b79a65;
+    border-radius: 999px;
+    color: #4f371f;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 2px 10px;
+  }
+
+  .baifa-source-action:hover {
+    background: #f8e6bb;
+  }
+
+  .baifa-source-action:focus-visible {
+    outline: 2px solid #4f371f;
+    outline-offset: 2px;
   }
 
   .baifa-source-filters-options {
@@ -393,7 +423,7 @@ title: 百法交互表
     </colgroup>
     <tbody>
       <tr>
-        <td class="title-cell" rowspan="12">大乘百法明门论</td>
+        <td class="title-cell" rowspan="12">大乘百法明门论 世亲菩萨著</td>
         <td class="category heart" colspan="3">心法(8)</td>
         <td class="items-cell alt">
           <div class="items items-heart">
@@ -602,7 +632,13 @@ title: 百法交互表
     </div>
   </div>
   <div class="baifa-source-filters" id="baifa-source-filters" aria-label="解释来源筛选">
-    <div class="baifa-source-filters-title">解释来源（默认仅显示白话）</div>
+    <div class="baifa-source-filters-title">
+      <span>解释来源</span>
+      <span class="baifa-source-filters-actions">
+        <button type="button" class="baifa-source-action" id="baifa-source-select-all">全选</button>
+        <button type="button" class="baifa-source-action" id="baifa-source-select-plain">只显示白话解释</button>
+      </span>
+    </div>
     <div class="baifa-source-filters-options" id="baifa-source-filters-options"></div>
   </div>
 </div>
@@ -635,6 +671,8 @@ title: 百法交互表
   const modalDesc = document.getElementById('baifa-modal-desc');
   const sourceFilters = document.getElementById('baifa-source-filters');
   const sourceFiltersOptions = document.getElementById('baifa-source-filters-options');
+  const sourceSelectAll = document.getElementById('baifa-source-select-all');
+  const sourceSelectPlain = document.getElementById('baifa-source-select-plain');
   const modalCopy = document.getElementById('baifa-modal-copy');
   const modalClose = document.getElementById('baifa-modal-close');
   const buttons = Array.from(document.querySelectorAll('.item-btn'));
@@ -818,6 +856,14 @@ title: 百法交互表
     return prioritizePlainExplanationTitles(sorted);
   }
 
+  function refreshFiltersAndModal() {
+    if (Array.isArray(currentSources)) {
+      renderModalSources();
+    } else {
+      renderSourceFilters();
+    }
+  }
+
   function isSourceSelected(title) {
     if (!title) {
       return false;
@@ -833,6 +879,13 @@ title: 百法交互表
       return;
     }
     sourceSelection.set(title, selected);
+  }
+
+  function applySelectionToAllTitles(selector) {
+    allSourceTitles.forEach((title) => {
+      setSourceSelected(title, selector(title));
+    });
+    refreshFiltersAndModal();
   }
 
   function getOrderedSources(sources) {
@@ -955,6 +1008,18 @@ title: 百法交互表
         sourceFiltersOptions.innerHTML = '<span class="baifa-source-filters-hint">来源加载失败</span>';
       }
     });
+
+  if (sourceSelectAll) {
+    sourceSelectAll.addEventListener('click', () => {
+      applySelectionToAllTitles(() => true);
+    });
+  }
+
+  if (sourceSelectPlain) {
+    sourceSelectPlain.addEventListener('click', () => {
+      applySelectionToAllTitles((title) => isPlainExplanationTitle(title));
+    });
+  }
 
   function positionModal(anchor) {
     if (!anchor) {
