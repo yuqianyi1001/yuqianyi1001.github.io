@@ -74,6 +74,17 @@ title: 百法交互图
             min-width: 48px;
             text-align: center;
         }
+
+        #info code,
+        #gatha code,
+        .tg code {
+            background: #fbfaf8;
+            border: 1px solid #fae7bb;
+            border-radius: 3px;
+            font-family: "SFMono-Regular", Menlo, monospace;
+            font-size: 0.95em;
+            padding: 0 4px;
+        }
     </style>
 
 
@@ -137,6 +148,12 @@ title: 百法交互图
             .replace(/'/g, '&#39;');
     }
 
+    function renderMarkdown(text) {
+        return escapeHtml(text)
+            .replace(/`([^`]+)`/g, '<code>$1</code>')
+            .replace(/\r?\n/g, '<br>');
+    }
+
     function parseYaml(text) {
         if (!window.jsyaml || typeof window.jsyaml.load !== 'function') {
             throw new Error('js-yaml not loaded');
@@ -187,9 +204,7 @@ title: 百法交互图
         rows.push(`    <tr><th class="tg-1wig">名称</th><td class="tg-0lax">${escapeHtml(item.name)}</td></tr>`);
         prioritizedList.forEach((source) => {
             const content = sections[source] || '';
-            const html = content
-                ? escapeHtml(content).replace(/\n/g, '<br>')
-                : '';
+            const html = content ? renderMarkdown(content) : '';
             rows.push(`    <tr><th class="tg-1wig">${escapeHtml(source)}</th><td class="tg-0lax">${html}</td></tr>`);
         });
         rows.push('  </tbody>');
@@ -210,7 +225,7 @@ title: 百法交互图
                 return;
             }
             lines.push(`<div><strong>${escapeHtml(source)}</strong></div>`);
-            lines.push(`<div>${escapeHtml(content).replace(/\n/g, '<br>')}</div>`);
+            lines.push(`<div>${renderMarkdown(content)}</div>`);
         });
         if (lines.length === 1) {
             lines.push('<div>暂无解释。</div>');

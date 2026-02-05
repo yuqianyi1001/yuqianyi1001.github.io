@@ -336,6 +336,15 @@ title: 百法交互表
     margin: 0 0 8px;
   }
 
+  .baifa-section-body code {
+    background: #fbfaf8;
+    border: 1px solid #fae7bb;
+    border-radius: 3px;
+    font-family: "SFMono-Regular", Menlo, monospace;
+    font-size: 0.95em;
+    padding: 0 4px;
+  }
+
   .baifa-source-filters {
     background: #f2ede3;
     border: 1px solid #c8bb9c;
@@ -807,6 +816,12 @@ title: 百法交互表
       .replace(/'/g, '&#39;');
   }
 
+  function renderMarkdown(text) {
+    return escapeHtml(text)
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\r?\n/g, '<br>');
+  }
+
   function prioritizePlainExplanationSources(sourceList) {
     if (!Array.isArray(sourceList) || sourceList.length === 0) {
       return sourceList;
@@ -907,7 +922,7 @@ title: 百法交互表
         htmlParts.push(`<div class=\"baifa-section-title\">${escapeHtml(titleText)}</div>`);
       }
       if (source && source.content) {
-        htmlParts.push(`<div class=\"baifa-section-body\">${escapeHtml(source.content).replace(/\r?\n/g, '<br>')}</div>`);
+        htmlParts.push(`<div class=\"baifa-section-body\">${renderMarkdown(source.content)}</div>`);
       }
     }
     return htmlParts.join('');
@@ -1051,7 +1066,7 @@ title: 百法交互表
       updateAvailableSourceTitles(currentSources);
       renderSourceFilters();
       const text = content || '暂无解释。';
-      modalDesc.innerHTML = `<div class=\"baifa-section-body\">${escapeHtml(text).replace(/\r?\n/g, '<br>')}</div>`;
+      modalDesc.innerHTML = `<div class=\"baifa-section-body\">${renderMarkdown(text)}</div>`;
     }
     modal.classList.add('active');
     modal.setAttribute('aria-hidden', 'false');
