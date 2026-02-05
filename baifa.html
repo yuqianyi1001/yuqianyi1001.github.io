@@ -345,6 +345,20 @@ title: 百法交互表
     padding: 0 4px;
   }
 
+  .baifa-section-body p {
+    margin: 0 0 8px;
+  }
+
+  .baifa-section-body ul,
+  .baifa-section-body ol {
+    margin: 6px 0 8px 20px;
+    padding: 0;
+  }
+
+  .baifa-section-body li {
+    margin: 2px 0;
+  }
+
   .baifa-source-filters {
     background: #f2ede3;
     border: 1px solid #c8bb9c;
@@ -449,7 +463,7 @@ title: 百法交互表
       </tr>
       <tr>
         <td class="category heart-assoc" rowspan="8"><span class="category vertical">心所有法</span>(51)</td>
-        <td class="subcategory" colspan="2">遍行(5)</td>
+        <td class="subcategory" colspan="2" data-category="遍行">遍行(5)</td>
         <td class="items-cell">
           <div class="items items-neutral">
             <button type="button" class="item-btn">9.作意</button>
@@ -672,6 +686,7 @@ title: 百法交互表
 
 <script src="{{ site.baseurl }}/assets/js/interact.min.js"></script>
 <script src="{{ site.baseurl }}/assets/js/js-yaml.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/markdown-it.min.js"></script>
 <script src="{{ site.baseurl }}/assets/js/baifa-sources.js"></script>
 <script>
   const modal = document.getElementById('baifa-modal');
@@ -685,6 +700,7 @@ title: 百法交互表
   const modalCopy = document.getElementById('baifa-modal-copy');
   const modalClose = document.getElementById('baifa-modal-close');
   const buttons = Array.from(document.querySelectorAll('.item-btn'));
+  const categoryCells = Array.from(document.querySelectorAll('.subcategory[data-category]'));
   const senseHighlightButton = document.getElementById('baifa-highlight-senses');
   const sixthHighlightButton = document.getElementById('baifa-highlight-sixth');
   const manasHighlightButton = document.getElementById('baifa-highlight-manas');
@@ -716,6 +732,9 @@ title: 百法交互表
   ];
   const highlightClasses = ['is-highlighted', 'is-highlighted-buddha'];
   const sourceSelection = new Map();
+  const markdownRenderer = window.markdownit
+    ? window.markdownit({ html: false, breaks: true, linkify: true })
+    : null;
   let dataPromise = null;
   let lastAnchor = null;
   let hasUserDragged = false;
@@ -817,9 +836,13 @@ title: 百法交互表
   }
 
   function renderMarkdown(text) {
-    return escapeHtml(text)
-      .replace(/`([^`]+)`/g, '<code>$1</code>')
-      .replace(/\r?\n/g, '<br>');
+    if (!text) {
+      return '';
+    }
+    if (markdownRenderer) {
+      return markdownRenderer.render(String(text));
+    }
+    return escapeHtml(text).replace(/\r?\n/g, '<br>');
   }
 
   function prioritizePlainExplanationSources(sourceList) {
@@ -1156,6 +1179,25 @@ title: 百法交互表
         openModal(title, sources, button);
       } catch (error) {
         openModal(`${id} ${name}`, '解释加载失败，请稍后重试。', button);
+      }
+    });
+  });
+
+  categoryCells.forEach((cell) => {
+    cell.addEventListener('click', async () => {
+      const name = cell.dataset.category;
+      if (!name) {
+        return;
+      }
+      try {
+        const data = await loadBaifaData();
+        const items = Array.isArray(data) ? data : (data && data.items) || [];
+        const item = items.find((entry) => entry && entry.type === 'category' && entry.name === name);
+        const title = `${name}分类`;
+        const sources = item && item.sources ? item.sources : [];
+        openModal(title, sources, cell);
+      } catch (error) {
+        openModal(`${name}分类`, '解释加载失败，请稍后重试。', cell);
       }
     });
   });

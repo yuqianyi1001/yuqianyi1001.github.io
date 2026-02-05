@@ -85,6 +85,28 @@ title: 百法交互图
             font-size: 0.95em;
             padding: 0 4px;
         }
+
+        #info p,
+        #gatha p,
+        .tg p {
+            margin: 0 0 8px;
+        }
+
+        #info ul,
+        #info ol,
+        #gatha ul,
+        #gatha ol,
+        .tg ul,
+        .tg ol {
+            margin: 6px 0 8px 20px;
+            padding: 0;
+        }
+
+        #info li,
+        #gatha li,
+        .tg li {
+            margin: 2px 0;
+        }
     </style>
 
 
@@ -131,6 +153,7 @@ title: 百法交互图
 </div>
 
 <script src="{{ site.baseurl }}/assets/js/js-yaml.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/markdown-it.min.js"></script>
 <script src="{{ site.baseurl }}/assets/js/baifa-sources.js"></script>
 <script>
     const baseUrl = '{{ site.baseurl }}';
@@ -138,6 +161,9 @@ title: 百法交互图
     let sources = [];
     let baifaItems = [];
     let oneHundredHtml = [];
+    const markdownRenderer = window.markdownit
+        ? window.markdownit({ html: false, breaks: true, linkify: true })
+        : null;
 
     function escapeHtml(text) {
         return String(text)
@@ -149,9 +175,13 @@ title: 百法交互图
     }
 
     function renderMarkdown(text) {
-        return escapeHtml(text)
-            .replace(/`([^`]+)`/g, '<code>$1</code>')
-            .replace(/\r?\n/g, '<br>');
+        if (!text) {
+            return '';
+        }
+        if (markdownRenderer) {
+            return markdownRenderer.render(String(text));
+        }
+        return escapeHtml(text).replace(/\r?\n/g, '<br>');
     }
 
     function parseYaml(text) {
@@ -238,9 +268,15 @@ title: 百法交互图
             .then((response) => response.text())
             .then((text) => {
                 const items = parseYaml(text);
+                const filteredItems = items.filter((item) => (
+                    item &&
+                    Number.isFinite(item.id) &&
+                    item.id >= 1 &&
+                    item.id <= 100
+                ));
                 const sourceSet = new Set();
                 let collected = [];
-                items.forEach((item) => {
+                filteredItems.forEach((item) => {
                     (item.sources || []).forEach((source) => {
                         if (!source || !source.title || sourceSet.has(source.title)) {
                             return;
@@ -252,7 +288,7 @@ title: 百法交互图
                 sources = window.baifaSortSourceTitles ? window.baifaSortSourceTitles(collected) : collected;
                 baifaItems = [];
                 oneHundredHtml = [];
-                items.forEach((item) => {
+                filteredItems.forEach((item) => {
                     if (!item || !item.id) {
                         return;
                     }
@@ -270,7 +306,7 @@ title: 百法交互图
                     '.tg .tg-0lax{text-align:left;vertical-align:top}',
                     '.tg-item{margin:12px 0;width:100%;table-layout:fixed;}',
                     '</style>',
-                    items.map(renderItemTable).join('\n'),
+                    filteredItems.map(renderItemTable).join('\n'),
                 ].join('\n');
                 const container = document.getElementById('content');
                 if (container) {
