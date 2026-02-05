@@ -79,6 +79,12 @@ title: 百法交互表
     text-align: left;
   }
 
+  .category[data-category],
+  .subcategory[data-category],
+  .subcategory2[data-category] {
+    cursor: pointer;
+  }
+
   .items-cell {
     background: #e6eef8;
   }
@@ -447,7 +453,7 @@ title: 百法交互表
     <tbody>
       <tr>
         <td class="title-cell" rowspan="12">大乘百法明门论 世亲菩萨著</td>
-        <td class="category heart" colspan="3">心法(8)</td>
+        <td class="category heart" colspan="3" data-category="心法">心法(8)</td>
         <td class="items-cell alt">
           <div class="items items-heart">
             <button type="button" class="item-btn">1.眼识</button>
@@ -462,7 +468,7 @@ title: 百法交互表
         </td>
       </tr>
       <tr>
-        <td class="category heart-assoc" rowspan="8"><span class="category vertical">心所有法</span>(51)</td>
+        <td class="category heart-assoc" rowspan="8" data-category="心所有法"><span class="category vertical">心所有法</span>(51)</td>
         <td class="subcategory" colspan="2" data-category="遍行">遍行(5)</td>
         <td class="items-cell">
           <div class="items items-neutral">
@@ -475,7 +481,7 @@ title: 百法交互表
         </td>
       </tr>
       <tr>
-        <td class="subcategory" colspan="2">别境(5)</td>
+        <td class="subcategory" colspan="2" data-category="别境">别境(5)</td>
         <td class="items-cell alt">
           <div class="items items-neutral">
             <button type="button" class="item-btn">14.欲</button>
@@ -487,7 +493,7 @@ title: 百法交互表
         </td>
       </tr>
       <tr>
-        <td class="subcategory" colspan="2">善法(11)</td>
+        <td class="subcategory" colspan="2" data-category="善法">善法(11)</td>
         <td class="items-cell">
           <div class="items items-wholesome">
             <button type="button" class="item-btn">19.信</button>
@@ -505,7 +511,7 @@ title: 百法交互表
         </td>
       </tr>
       <tr>
-        <td class="subcategory" colspan="2">根本烦恼(6)</td>
+        <td class="subcategory" colspan="2" data-category="根本烦恼">根本烦恼(6)</td>
         <td class="items-cell alt">
           <div class="items items-affliction-root">
             <button type="button" class="item-btn">30.贪</button>
@@ -518,8 +524,8 @@ title: 百法交互表
         </td>
       </tr>
       <tr>
-        <td class="subcategory" rowspan="3"><span class="category vertical">随烦恼</span>(20)</td>
-        <td class="subcategory2">小随烦恼(10)</td>
+        <td class="subcategory" rowspan="3" data-category="随烦恼"><span class="category vertical">随烦恼</span>(20)</td>
+        <td class="subcategory2" data-category="小随烦恼">小随烦恼(10)</td>
         <td class="items-cell">
           <div class="items items-affliction-small">
             <button type="button" class="item-btn">36.忿</button>
@@ -536,7 +542,7 @@ title: 百法交互表
         </td>
       </tr>
       <tr>
-        <td class="subcategory2">中随烦恼(2)</td>
+        <td class="subcategory2" data-category="中随烦恼">中随烦恼(2)</td>
         <td class="items-cell alt">
           <div class="items items-affliction-medium">
             <button type="button" class="item-btn">46.无惭</button>
@@ -545,7 +551,7 @@ title: 百法交互表
         </td>
       </tr>
       <tr>
-        <td class="subcategory2">大随烦恼(8)</td>
+        <td class="subcategory2" data-category="大随烦恼">大随烦恼(8)</td>
         <td class="items-cell">
           <div class="items items-affliction-large">
             <button type="button" class="item-btn">48.不信</button>
@@ -571,7 +577,7 @@ title: 百法交互表
         </td>
       </tr>
       <tr>
-        <td class="category color" colspan="3">色法(11)</td>
+        <td class="category color" colspan="3" data-category="色法">色法(11)</td>
         <td class="items-cell">
           <div class="items items-color">
             <button type="button" class="item-btn">60.眼</button>
@@ -589,7 +595,7 @@ title: 百法交互表
         </td>
       </tr>
       <tr>
-        <td class="category nonconcurrent" colspan="3">心不相应行法(24)</td>
+        <td class="category nonconcurrent" colspan="3" data-category="不相应行法">心不相应行法(24)</td>
         <td class="items-cell alt">
           <div class="items items-nonconcurrent">
             <button type="button" class="item-btn">71.得</button>
@@ -620,7 +626,7 @@ title: 百法交互表
         </td>
       </tr>
       <tr>
-        <td class="category unconditioned" colspan="3">无为法(6)</td>
+        <td class="category unconditioned" colspan="3" data-category="无为法">无为法(6)</td>
         <td class="items-cell">
           <div class="items items-unconditioned">
             <button type="button" class="item-btn">95.虚空</button>
@@ -700,7 +706,7 @@ title: 百法交互表
   const modalCopy = document.getElementById('baifa-modal-copy');
   const modalClose = document.getElementById('baifa-modal-close');
   const buttons = Array.from(document.querySelectorAll('.item-btn'));
-  const categoryCells = Array.from(document.querySelectorAll('.subcategory[data-category]'));
+  const categoryCells = Array.from(document.querySelectorAll('.category[data-category], .subcategory[data-category], .subcategory2[data-category]'));
   const senseHighlightButton = document.getElementById('baifa-highlight-senses');
   const sixthHighlightButton = document.getElementById('baifa-highlight-sixth');
   const manasHighlightButton = document.getElementById('baifa-highlight-manas');
