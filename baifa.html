@@ -210,6 +210,15 @@ title: 百法交互表
     gap: 8px;
   }
 
+  .baifa-tools-note {
+    color: #5a4a2f;
+    font-size: 12px;
+  }
+
+  .baifa-tools-note.inline {
+    margin-left: 8px;
+  }
+
   .baifa-tools-btn {
     background: #6a4b2a;
     border: 1px solid #4f371f;
@@ -640,6 +649,27 @@ title: 百法交互表
       </tr>
     </tbody>
   </table>
+  <div class="baifa-tools" aria-label="五蕴和百法的对照关系">
+    <div class="baifa-tools-title">五蕴和百法的对照关系</div>
+    <div class="baifa-tools-actions">
+      <button type="button" class="baifa-tools-btn" id="baifa-highlight-skandha-form" aria-pressed="false">
+        色蕴
+      </button>
+      <button type="button" class="baifa-tools-btn" id="baifa-highlight-skandha-feeling" aria-pressed="false">
+        受蕴
+      </button>
+      <button type="button" class="baifa-tools-btn" id="baifa-highlight-skandha-perception" aria-pressed="false">
+        想蕴
+      </button>
+      <button type="button" class="baifa-tools-btn" id="baifa-highlight-skandha-volition" aria-pressed="false">
+        行蕴
+      </button>
+      <button type="button" class="baifa-tools-btn" id="baifa-highlight-skandha-consciousness" aria-pressed="false">
+        识蕴
+      </button>
+      <span class="baifa-tools-note inline">无为法不对照任何五蕴，因为蕴只是有为法。</span>
+    </div>
+  </div>
   <div class="baifa-tools" aria-label="心和心所的相应关系">
     <div class="baifa-tools-title">心和心所的相应关系</div>
     <div class="baifa-tools-actions">
@@ -707,11 +737,26 @@ title: 百法交互表
   const modalClose = document.getElementById('baifa-modal-close');
   const buttons = Array.from(document.querySelectorAll('.item-btn'));
   const categoryCells = Array.from(document.querySelectorAll('.category[data-category], .subcategory[data-category], .subcategory2[data-category]'));
+  const skandhaFormButton = document.getElementById('baifa-highlight-skandha-form');
+  const skandhaFeelingButton = document.getElementById('baifa-highlight-skandha-feeling');
+  const skandhaPerceptionButton = document.getElementById('baifa-highlight-skandha-perception');
+  const skandhaVolitionButton = document.getElementById('baifa-highlight-skandha-volition');
+  const skandhaConsciousnessButton = document.getElementById('baifa-highlight-skandha-consciousness');
   const senseHighlightButton = document.getElementById('baifa-highlight-senses');
   const sixthHighlightButton = document.getElementById('baifa-highlight-sixth');
   const manasHighlightButton = document.getElementById('baifa-highlight-manas');
   const alayaHighlightButton = document.getElementById('baifa-highlight-alaya');
   const buddhaHighlightButton = document.getElementById('baifa-highlight-buddha');
+  const skandhaFormIds = createIdRangeSet(60, 70);
+  const skandhaFeelingIds = new Set([11]);
+  const skandhaPerceptionIds = new Set([12]);
+  const skandhaVolitionIds = createIdRangeSet(9, 59);
+  skandhaVolitionIds.delete(11);
+  skandhaVolitionIds.delete(12);
+  createIdRangeSet(71, 94).forEach((id) => {
+    skandhaVolitionIds.add(id);
+  });
+  const skandhaConsciousnessIds = createIdRangeSet(1, 8);
   const senseMindIds = new Set([
     9, 10, 11, 12, 13,
     14, 15, 16, 17, 18,
@@ -730,6 +775,11 @@ title: 百法交互表
   const buddhaMindIds = createIdRangeSet(9, 29);
   const allMindIds = createIdRangeSet(9, 59);
   const highlightButtons = [
+    { button: skandhaFormButton, ids: skandhaFormIds },
+    { button: skandhaFeelingButton, ids: skandhaFeelingIds },
+    { button: skandhaPerceptionButton, ids: skandhaPerceptionIds },
+    { button: skandhaVolitionButton, ids: skandhaVolitionIds },
+    { button: skandhaConsciousnessButton, ids: skandhaConsciousnessIds },
     { button: senseHighlightButton, ids: senseMindIds },
     { button: sixthHighlightButton, ids: allMindIds },
     { button: manasHighlightButton, ids: manasMindIds },
