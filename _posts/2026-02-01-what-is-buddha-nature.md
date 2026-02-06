@@ -1,7 +1,9 @@
 ---
 layout: post
 title: 什么是佛性？
+wechat_link: https://mp.weixin.qq.com/s/c5aOkyECfDSxEGwUmRIMfA
 description: 佛性并不是一个神秘的“本体”，更像是成佛的潜力与可能性。本文从如来藏、般若、唯识三系的解释入手，落到人间佛教的现实修学。
+excerpt: 佛性并不是一个神秘的“本体”，更像是成佛的潜力与可能性。本文从如来藏、般若、唯识三系的解释入手，落到人间佛教的现实修学。
 tags: [教义解析, 佛性, 如来藏]
 ---
 

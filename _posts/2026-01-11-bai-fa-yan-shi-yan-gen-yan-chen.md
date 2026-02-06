@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 大乘基础之百法：眼识、眼根、色尘 | 天眼看到的世界会是怎样？| 所有众生都有眼根吗？
-wechat_link: 
+wechat_link: https://mp.weixin.qq.com/s/9AsZnqO6voveF7E8Iyo8Kg
 description: 
 excerpt: 
 tags:

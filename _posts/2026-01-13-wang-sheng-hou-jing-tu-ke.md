@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 在极乐世界将学习哪些佛法？——从《佛说阿弥陀经》看“往生后的课程表”
-wechat_link: 
+wechat_link: https://mp.weixin.qq.com/s/VmJ7OCs5oqp4i8QLEmci4g
 description: 
 excerpt: 
 tags:
