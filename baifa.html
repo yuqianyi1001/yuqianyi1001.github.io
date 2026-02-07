@@ -190,24 +190,30 @@ title: 百法交互表
     color: #0d2b15;
   }
 
+  .baifa-tools-grid {
+    display: grid;
+    gap: 16px;
+    margin: 18px 0 0;
+  }
+
   .baifa-tools {
     background: #f2ede3;
     border: 1px solid #c8bb9c;
     border-radius: 8px;
-    margin: 18px 0 0;
+    margin: 0;
     padding: 12px 14px;
   }
 
   .baifa-tools-title {
     font-size: 16px;
     font-weight: 700;
-    margin: 0 0 8px;
+    margin: 0 0 2px;
   }
 
   .baifa-tools-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px 8px;
   }
 
   .baifa-tools-note {
@@ -232,6 +238,42 @@ title: 百法交互表
   .baifa-tools-btn[aria-pressed="true"] {
     background: #3f2a12;
     border-color: #2d1d0c;
+  }
+
+  @media (min-width: 1160px) {
+    .baifa-tools-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .baifa-tools.is-full-row {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (min-width: 860px) {
+    .baifa-tools {
+      align-items: center;
+      column-gap: 5px;
+      display: grid;
+      grid-template-columns: minmax(40px, 80px) 1fr;
+      row-gap: 6px;
+    }
+
+    .baifa-tools-title {
+      margin: 0;
+    }
+
+    .baifa-tools-actions {
+      justify-content: flex-start;
+    }
+
+    .baifa-tools-note {
+      grid-column: 2 / -1;
+    }
+
+    .baifa-tools-note.inline {
+      margin-left: 0;
+    }
   }
 
   .baifa-modal {
@@ -665,45 +707,87 @@ title: 百法交互表
       </tr>
     </tbody>
   </table>
-  <div class="baifa-tools" aria-label="五蕴和百法的对照关系">
-    <div class="baifa-tools-title">五蕴和百法的对照关系</div>
-    <div class="baifa-tools-actions">
-      <button type="button" class="baifa-tools-btn" id="baifa-highlight-skandha-form" aria-pressed="false">
-        色蕴
-      </button>
-      <button type="button" class="baifa-tools-btn" id="baifa-highlight-skandha-feeling" aria-pressed="false">
-        受蕴
-      </button>
-      <button type="button" class="baifa-tools-btn" id="baifa-highlight-skandha-perception" aria-pressed="false">
-        想蕴
-      </button>
-      <button type="button" class="baifa-tools-btn" id="baifa-highlight-skandha-volition" aria-pressed="false">
-        行蕴
-      </button>
-      <button type="button" class="baifa-tools-btn" id="baifa-highlight-skandha-consciousness" aria-pressed="false">
-        识蕴
-      </button>
-      <span class="baifa-tools-note inline">无为法不对照任何五蕴，因为蕴只是有为法。</span>
+  <div class="baifa-tools-grid">
+    <div class="baifa-tools" aria-label="五蕴和百法的对照关系">
+    <div class="baifa-tools-title">五蕴对照</div>
+      <div class="baifa-tools-actions">
+        <button type="button" class="baifa-tools-btn" id="baifa-highlight-skandha-form" aria-pressed="false">
+          色蕴
+        </button>
+        <button type="button" class="baifa-tools-btn" id="baifa-highlight-skandha-feeling" aria-pressed="false">
+          受蕴
+        </button>
+        <button type="button" class="baifa-tools-btn" id="baifa-highlight-skandha-perception" aria-pressed="false">
+          想蕴
+        </button>
+        <button type="button" class="baifa-tools-btn" id="baifa-highlight-skandha-volition" aria-pressed="false">
+          行蕴
+        </button>
+        <button type="button" class="baifa-tools-btn" id="baifa-highlight-skandha-consciousness" aria-pressed="false">
+          识蕴
+        </button>
+        <span class="baifa-tools-note inline">无为法不对照任何五蕴，因为蕴只是有为法。</span>
+      </div>
     </div>
-  </div>
-  <div class="baifa-tools" aria-label="心和心所的相应关系">
-    <div class="baifa-tools-title">心和心所的相应关系</div>
-    <div class="baifa-tools-actions">
-      <button type="button" class="baifa-tools-btn" id="baifa-highlight-senses" aria-pressed="false">
-        前五识相应心所
-      </button>
-      <button type="button" class="baifa-tools-btn" id="baifa-highlight-sixth" aria-pressed="false">
-        意识相应心所
-      </button>
-      <button type="button" class="baifa-tools-btn" id="baifa-highlight-manas" aria-pressed="false">
-        末那识相应心所
-      </button>
-      <button type="button" class="baifa-tools-btn" id="baifa-highlight-alaya" aria-pressed="false">
-        阿赖耶识相应心所
-      </button>
-      <button type="button" class="baifa-tools-btn" id="baifa-highlight-buddha" aria-pressed="false">
-        成佛后的相应心所
-      </button>
+    <div class="baifa-tools" aria-label="十二处和百法的对照关系">
+    <div class="baifa-tools-title">十二处对照</div>
+      <div class="baifa-tools-actions">
+        <button type="button" class="baifa-tools-btn" id="baifa-highlight-base-inner" aria-pressed="false">
+          前内五处
+        </button>
+        <button type="button" class="baifa-tools-btn" id="baifa-highlight-base-outer" aria-pressed="false">
+          前外五处
+        </button>
+        <button type="button" class="baifa-tools-btn" id="baifa-highlight-base-mind" aria-pressed="false">
+          意处
+        </button>
+        <button type="button" class="baifa-tools-btn" id="baifa-highlight-base-dharma" aria-pressed="false">
+          法处
+        </button>
+      </div>
+    </div>
+    <div class="baifa-tools" aria-label="十八界和百法的对照关系">
+    <div class="baifa-tools-title">十八界对照</div>
+      <div class="baifa-tools-actions">
+        <button type="button" class="baifa-tools-btn" id="baifa-highlight-realm-roots" aria-pressed="false">
+          前五根界
+        </button>
+        <button type="button" class="baifa-tools-btn" id="baifa-highlight-realm-objects" aria-pressed="false">
+          前五境界
+        </button>
+        <button type="button" class="baifa-tools-btn" id="baifa-highlight-realm-senses" aria-pressed="false">
+          前五识界
+        </button>
+        <button type="button" class="baifa-tools-btn" id="baifa-highlight-realm-mind-root" aria-pressed="false">
+          意界（意根）
+        </button>
+        <button type="button" class="baifa-tools-btn" id="baifa-highlight-realm-consciousness" aria-pressed="false">
+          意识界
+        </button>
+        <button type="button" class="baifa-tools-btn" id="baifa-highlight-realm-dharma" aria-pressed="false">
+          法界
+        </button>
+      </div>
+    </div>
+    <div class="baifa-tools is-full-row" aria-label="心和心所的相应关系">
+    <div class="baifa-tools-title">心所相应</div>
+      <div class="baifa-tools-actions">
+        <button type="button" class="baifa-tools-btn" id="baifa-highlight-senses" aria-pressed="false">
+          前五识相应心所
+        </button>
+        <button type="button" class="baifa-tools-btn" id="baifa-highlight-sixth" aria-pressed="false">
+          意识相应心所
+        </button>
+        <button type="button" class="baifa-tools-btn" id="baifa-highlight-manas" aria-pressed="false">
+          末那识相应心所
+        </button>
+        <button type="button" class="baifa-tools-btn" id="baifa-highlight-alaya" aria-pressed="false">
+          阿赖耶识相应心所
+        </button>
+        <button type="button" class="baifa-tools-btn" id="baifa-highlight-buddha" aria-pressed="false">
+          成佛后的相应心所
+        </button>
+      </div>
     </div>
   </div>
   <div class="baifa-source-filters" id="baifa-source-filters" aria-label="解释来源筛选">
@@ -760,6 +844,16 @@ title: 百法交互表
   const skandhaPerceptionButton = document.getElementById('baifa-highlight-skandha-perception');
   const skandhaVolitionButton = document.getElementById('baifa-highlight-skandha-volition');
   const skandhaConsciousnessButton = document.getElementById('baifa-highlight-skandha-consciousness');
+  const baseInnerButton = document.getElementById('baifa-highlight-base-inner');
+  const baseOuterButton = document.getElementById('baifa-highlight-base-outer');
+  const baseMindButton = document.getElementById('baifa-highlight-base-mind');
+  const baseDharmaButton = document.getElementById('baifa-highlight-base-dharma');
+  const realmRootsButton = document.getElementById('baifa-highlight-realm-roots');
+  const realmObjectsButton = document.getElementById('baifa-highlight-realm-objects');
+  const realmSensesButton = document.getElementById('baifa-highlight-realm-senses');
+  const realmMindRootButton = document.getElementById('baifa-highlight-realm-mind-root');
+  const realmConsciousnessButton = document.getElementById('baifa-highlight-realm-consciousness');
+  const realmDharmaButton = document.getElementById('baifa-highlight-realm-dharma');
   const senseHighlightButton = document.getElementById('baifa-highlight-senses');
   const sixthHighlightButton = document.getElementById('baifa-highlight-sixth');
   const manasHighlightButton = document.getElementById('baifa-highlight-manas');
@@ -775,6 +869,24 @@ title: 百法交互表
     skandhaVolitionIds.add(id);
   });
   const skandhaConsciousnessIds = createIdRangeSet(1, 8);
+  const baseInnerIds = createIdRangeSet(60, 64);
+  const baseOuterIds = createIdRangeSet(65, 69);
+  const baseMindIds = createIdRangeSet(1, 8);
+  const baseDharmaIds = createIdRangeSet(9, 59);
+  createIdRangeSet(71, 100).forEach((id) => {
+    baseDharmaIds.add(id);
+  });
+  baseDharmaIds.add(70);
+  const realmRootsIds = createIdRangeSet(60, 64);
+  const realmObjectsIds = createIdRangeSet(65, 69);
+  const realmSensesIds = createIdRangeSet(1, 5);
+  const realmMindRootIds = new Set([7, 8]);
+  const realmConsciousnessIds = new Set([6]);
+  const realmDharmaIds = createIdRangeSet(9, 59);
+  createIdRangeSet(71, 100).forEach((id) => {
+    realmDharmaIds.add(id);
+  });
+  realmDharmaIds.add(70);
   const senseMindIds = new Set([
     9, 10, 11, 12, 13,
     14, 15, 16, 17, 18,
@@ -798,6 +910,16 @@ title: 百法交互表
     { button: skandhaPerceptionButton, ids: skandhaPerceptionIds },
     { button: skandhaVolitionButton, ids: skandhaVolitionIds },
     { button: skandhaConsciousnessButton, ids: skandhaConsciousnessIds },
+    { button: baseInnerButton, ids: baseInnerIds },
+    { button: baseOuterButton, ids: baseOuterIds },
+    { button: baseMindButton, ids: baseMindIds },
+    { button: baseDharmaButton, ids: baseDharmaIds },
+    { button: realmRootsButton, ids: realmRootsIds },
+    { button: realmObjectsButton, ids: realmObjectsIds },
+    { button: realmSensesButton, ids: realmSensesIds },
+    { button: realmMindRootButton, ids: realmMindRootIds },
+    { button: realmConsciousnessButton, ids: realmConsciousnessIds },
+    { button: realmDharmaButton, ids: realmDharmaIds },
     { button: senseHighlightButton, ids: senseMindIds },
     { button: sixthHighlightButton, ids: allMindIds },
     { button: manasHighlightButton, ids: manasMindIds },
