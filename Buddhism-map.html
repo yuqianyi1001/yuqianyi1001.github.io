@@ -3,175 +3,349 @@ layout: individual
 title: 佛法地图
 ---
 
-<svg id="chart" width="1200" height="1200"></svg>
+<svg id="chart" width="2600" height="1900"></svg>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script>
-const data = {
-  "nodes": [
-    {"id": "三十七道品", "group": "核心"},
-
-    {"id": "四念住", "group": "类别"},
-    {"id": "身念住", "group": "四念住", "desc": "观身不净"},
-    {"id": "受念住", "group": "四念住", "desc": "观受是苦"},
-    {"id": "心念住", "group": "四念住", "desc": "观心无常"},
-    {"id": "法念住", "group": "四念住", "desc": "观法无我"},
-
-    {"id": "四正勤", "group": "类别"},
-    {"id": "未生恶令不生", "group": "四正勤"},
-    {"id": "已生恶令断", "group": "四正勤"},
-    {"id": "未生善令生", "group": "四正勤"},
-    {"id": "已生善令增长", "group": "四正勤"},
-
-    {"id": "四神足", "group": "类别"},
-    {"id": "欲神足", "group": "四神足"},
-    {"id": "精进神足", "group": "四神足"},
-    {"id": "心神足", "group": "四神足"},
-    {"id": "观神足", "group": "四神足"},
-
-    {"id": "五根", "group": "类别"},
-    {"id": "信根", "group": "五根"},
-    {"id": "精进根", "group": "五根"},
-    {"id": "念根", "group": "五根"},
-    {"id": "定根", "group": "五根"},
-    {"id": "慧根", "group": "五根"},
-
-    {"id": "五力", "group": "类别"},
-    {"id": "信力", "group": "五力"},
-    {"id": "精进力", "group": "五力"},
-    {"id": "念力", "group": "五力"},
-    {"id": "定力", "group": "五力"},
-    {"id": "慧力", "group": "五力"},
-
-    {"id": "七觉支", "group": "类别"},
-    {"id": "念觉支", "group": "七觉支"},
-    {"id": "择法觉支", "group": "七觉支"},
-    {"id": "精进觉支", "group": "七觉支"},
-    {"id": "喜觉支", "group": "七觉支"},
-    {"id": "轻安觉支", "group": "七觉支"},
-    {"id": "定觉支", "group": "七觉支"},
-    {"id": "舍觉支", "group": "七觉支"},
-
-    {"id": "八正道", "group": "类别"},
-    {"id": "正见", "group": "八正道"},
-    {"id": "正思惟", "group": "八正道"},
-    {"id": "正语", "group": "八正道"},
-    {"id": "正业", "group": "八正道"},
-    {"id": "正命", "group": "八正道"},
-    {"id": "正精进", "group": "八正道"},
-    {"id": "正念", "group": "八正道"},
-    {"id": "正定", "group": "八正道"}
-  ],
-  "links": [
-    {"source": "三十七道品", "target": "四念住"},
-    {"source": "三十七道品", "target": "四正勤"},
-    {"source": "三十七道品", "target": "四神足"},
-    {"source": "三十七道品", "target": "五根"},
-    {"source": "三十七道品", "target": "五力"},
-    {"source": "三十七道品", "target": "七觉支"},
-    {"source": "三十七道品", "target": "八正道"},
-
-    {"source": "四念住", "target": "身念住"},
-    {"source": "四念住", "target": "受念住"},
-    {"source": "四念住", "target": "心念住"},
-    {"source": "四念住", "target": "法念住"},
-
-    {"source": "四正勤", "target": "未生恶令不生"},
-    {"source": "四正勤", "target": "已生恶令断"},
-    {"source": "四正勤", "target": "未生善令生"},
-    {"source": "四正勤", "target": "已生善令增长"},
-
-    {"source": "四神足", "target": "欲神足"},
-    {"source": "四神足", "target": "精进神足"},
-    {"source": "四神足", "target": "心神足"},
-    {"source": "四神足", "target": "观神足"},
-
-    {"source": "五根", "target": "信根"},
-    {"source": "五根", "target": "精进根"},
-    {"source": "五根", "target": "念根"},
-    {"source": "五根", "target": "定根"},
-    {"source": "五根", "target": "慧根"},
-
-    {"source": "五力", "target": "信力"},
-    {"source": "五力", "target": "精进力"},
-    {"source": "五力", "target": "念力"},
-    {"source": "五力", "target": "定力"},
-    {"source": "五力", "target": "慧力"},
-
-    {"source": "七觉支", "target": "念觉支"},
-    {"source": "七觉支", "target": "择法觉支"},
-    {"source": "七觉支", "target": "精进觉支"},
-    {"source": "七觉支", "target": "喜觉支"},
-    {"source": "七觉支", "target": "轻安觉支"},
-    {"source": "七觉支", "target": "定觉支"},
-    {"source": "七觉支", "target": "舍觉支"},
-
-    {"source": "八正道", "target": "正见"},
-    {"source": "八正道", "target": "正思惟"},
-    {"source": "八正道", "target": "正语"},
-    {"source": "八正道", "target": "正业"},
-    {"source": "八正道", "target": "正命"},
-    {"source": "八正道", "target": "正精进"},
-    {"source": "八正道", "target": "正念"},
-    {"source": "八正道", "target": "正定"},
-
-    {"source": "精进根", "target": "精进力"},
-    {"source": "四正勤", "target": "精进力"}
+const treeData = {
+  id: "三十七道品",
+  group: "核心",
+  children: [
+    {
+      id: "四念住",
+      group: "类别",
+      children: [
+        { id: "身念住", group: "四念住", desc: "观身不净" },
+        { id: "受念住", group: "四念住", desc: "观受是苦" },
+        { id: "心念住", group: "四念住", desc: "观心无常" },
+        { id: "法念住", group: "四念住", desc: "观法无我" }
+      ]
+    },
+    {
+      id: "四正勤",
+      group: "类别",
+      children: [
+        { id: "未生恶令不生", group: "四正勤" },
+        { id: "已生恶令断", group: "四正勤" },
+        { id: "未生善令生", group: "四正勤" },
+        { id: "已生善令增长", group: "四正勤" }
+      ]
+    },
+    {
+      id: "四神足",
+      group: "类别",
+      children: [
+        { id: "欲神足", group: "四神足" },
+        { id: "精进神足", group: "四神足" },
+        { id: "心神足", group: "四神足" },
+        { id: "观神足", group: "四神足" }
+      ]
+    },
+    {
+      id: "五根",
+      group: "类别",
+      children: [
+        { id: "信根", group: "五根" },
+        { id: "精进根", group: "五根" },
+        { id: "念根", group: "五根" },
+        { id: "定根", group: "五根" },
+        { id: "慧根", group: "五根" }
+      ]
+    },
+    {
+      id: "五力",
+      group: "类别",
+      children: [
+        { id: "信力", group: "五力" },
+        { id: "精进力", group: "五力" },
+        { id: "念力", group: "五力" },
+        { id: "定力", group: "五力" },
+        { id: "慧力", group: "五力" }
+      ]
+    },
+    {
+      id: "七觉支",
+      group: "类别",
+      children: [
+        { id: "念觉支", group: "七觉支" },
+        { id: "择法觉支", group: "七觉支" },
+        { id: "精进觉支", group: "七觉支" },
+        { id: "喜觉支", group: "七觉支" },
+        { id: "轻安觉支", group: "七觉支" },
+        { id: "定觉支", group: "七觉支" },
+        { id: "舍觉支", group: "七觉支" }
+      ]
+    },
+    {
+      id: "八正道",
+      group: "类别",
+      children: [
+        { id: "正见", group: "八正道" },
+        { id: "正思惟", group: "八正道" },
+        { id: "正语", group: "八正道" },
+        { id: "正业", group: "八正道" },
+        { id: "正命", group: "八正道" },
+        { id: "正精进", group: "八正道" },
+        { id: "正念", group: "八正道" },
+        { id: "正定", group: "八正道" }
+      ]
+    }
   ]
 };
 
-const svg = d3.select("#chart"),
-      width = +svg.attr("width"),
-      height = +svg.attr("height");
+const crossLinks = [
+  { source: "精进根", target: "精进力", style: "dot", curve: true },
+  { source: "信根", target: "信力", style: "dot", curve: true },
+  { source: "念根", target: "念力", style: "dot", curve: true },
+  { source: "定根", target: "定力", style: "dot", curve: true },
+  { source: "慧根", target: "慧力", style: "dot", curve: true },
+  { source: "精进觉支", target: "精进力", style: "dot", curve: true },
+  { source: "四正勤", target: "精进力", style: "dot", targetAnchor: "top",sourceAnchor: "bottom-center"},
+  { source: "四正勤", target: "精进根", style: "dot", targetAnchor: "top", sourceAnchor: "bottom-center" },
+  { source: "四正勤", target: "精进觉支", style: "dot", targetAnchor: "top", sourceAnchor: "bottom-center" },
+  { source: "四正勤", target: "精进神足", style: "dot", targetAnchor: "top", sourceAnchor: "bottom-center" },
+  { source: "四念住", target: "念力", style: "dot", targetAnchor: "top",sourceAnchor: "bottom-center" },
+  { source: "四念住", target: "念根", style: "dot", targetAnchor: "top",sourceAnchor: "bottom-center" },
+  { source: "四念住", target: "念觉支", style: "dot", targetAnchor: "top", sourceAnchor: "bottom-center" },
+  { source: "四念住", target: "正念", style: "dot", targetAnchor: "top", sourceAnchor: "bottom-center" }
+];
 
-const simulation = d3.forceSimulation(data.nodes)
-  .force("link", d3.forceLink(data.links).id(d => d.id).distance(120))
-  .force("charge", d3.forceManyBody().strength(-300))
-  .force("center", d3.forceCenter(width / 2, height / 2));
+const svg = d3.select("#chart");
 
-const link = svg.append("g")
-  .selectAll("line")
-  .data(data.links)
-  .join("line")
-  .attr("stroke", "#aaa");
+const styleConfig = {
+  root: { fontSize: 24, paddingX: 18, paddingY: 12, fill: "#f4b66b", stroke: "#cc8a3c", textColor: "#2b1b08", fontWeight: 700 },
+  category: { fontSize: 20, paddingX: 16, paddingY: 10, fill: "#cfe8f5", stroke: "#8fb9d3", textColor: "#0f2430", fontWeight: 600 },
+  leaf: { fontSize: 18, paddingX: 14, paddingY: 8, fill: "#e7f3fb", stroke: "#a8c6d8", textColor: "#123342", fontWeight: 500 }
+};
 
-const node = svg.append("g")
-  .selectAll("circle")
-  .data(data.nodes)
-  .join("circle")
-  .attr("r", 20)
-  .attr("fill", d => d.group === "核心" ? "orange" : "lightblue")
-  .call(d3.drag()
-    .on("start", dragstarted)
-    .on("drag", dragged)
-    .on("end", dragended));
+function getNodeStyle(depth) {
+  if (depth === 0) {
+    return styleConfig.root;
+  }
+  if (depth === 1) {
+    return styleConfig.category;
+  }
+  return styleConfig.leaf;
+}
 
-const label = svg.append("g")
-  .selectAll("text")
-  .data(data.nodes)
-  .join("text")
-  .text(d => d.id)
-  .attr("font-size", 12)
-  .attr("dy", -25);
+function splitLabel(text) {
+  const str = String(text || "");
+  const len = str.length;
+  if (len <= 4) {
+    return [str];
+  }
+  if (len <= 8) {
+    const mid = Math.ceil(len / 2);
+    return [str.slice(0, mid), str.slice(mid)];
+  }
+  const third = Math.ceil(len / 3);
+  return [str.slice(0, third), str.slice(third, third * 2), str.slice(third * 2)];
+}
 
-simulation.on("tick", () => {
-  link.attr("x1", d => d.source.x)
-      .attr("y1", d => d.source.y)
-      .attr("x2", d => d.target.x)
-      .attr("y2", d => d.target.y);
-
-  node.attr("cx", d => d.x).attr("cy", d => d.y);
-  label.attr("x", d => d.x).attr("y", d => d.y);
+const root = d3.hierarchy(treeData);
+root.each((node) => {
+  const style = getNodeStyle(node.depth);
+  const lineHeight = style.fontSize * 1.25;
+  const isLeaf = !node.children || node.children.length === 0;
+  let lines = [];
+  let boxWidth = 0;
+  let boxHeight = 0;
+  if (isLeaf) {
+    const text = String(node.data.id || "");
+    const charCount = Math.max(text.length, 1);
+    lines = [text];
+    boxWidth = Math.max(35, (style.fontSize + style.paddingX * 2) * 0.7);
+    boxHeight = Math.max(style.fontSize + style.paddingY * 2, charCount * lineHeight + style.paddingY * 2);
+    node.data.isVertical = true;
+  } else {
+    const text = String(node.data.id || "");
+    const charWidth = style.fontSize * 0.95;
+    if (node.depth === 0) {
+      lines = [text];
+      boxWidth = Math.max(120, (text.length * charWidth + style.paddingX * 2) * 2);
+      boxHeight = Math.max(style.fontSize + style.paddingY * 2, lineHeight + style.paddingY * 2);
+    } else {
+      lines = splitLabel(node.data.id);
+      const maxLineLength = Math.max(...lines.map((line) => line.length));
+      boxWidth = Math.max(60, maxLineLength * charWidth + style.paddingX * 2);
+      boxHeight = Math.max(style.fontSize + style.paddingY * 2, lines.length * lineHeight + style.paddingY * 2);
+    }
+    node.data.isVertical = false;
+  }
+  node.data.lines = lines;
+  node.data.lineHeight = lineHeight;
+  node.data.boxWidth = boxWidth;
+  node.data.boxHeight = boxHeight;
+  node.data.style = style;
 });
 
-function dragstarted(event, d) {
-  if (!event.active) simulation.alphaTarget(0.3).restart();
-  d.fx = d.x; d.fy = d.y;
+const nodesForSize = root.descendants();
+const sizeReferenceNodes = nodesForSize.filter((d) => d.depth > 0);
+const maxBoxWidth = d3.max(sizeReferenceNodes, (d) => d.data.boxWidth) || d3.max(nodesForSize, (d) => d.data.boxWidth) || 140;
+const maxBoxHeight = d3.max(sizeReferenceNodes, (d) => d.data.boxHeight) || d3.max(nodesForSize, (d) => d.data.boxHeight) || 60;
+
+const spacingX = 0;
+const spacingY = 24;
+const treeLayout = d3.tree()
+  .nodeSize([
+    maxBoxWidth + spacingX,
+    maxBoxHeight + spacingY
+  ])
+  .separation((a, b) => (a.parent === b.parent ? 0.6 : 0.85));
+treeLayout(root);
+
+const nodes = root.descendants();
+const links = root.links();
+const leafNodes = nodes.filter((node) => !node.children || node.children.length === 0);
+if (leafNodes.length) {
+  const targetTop = d3.max(leafNodes, (node) => node.y - (node.data.boxHeight || 0) / 2);
+  leafNodes.forEach((node) => {
+    node.y = targetTop + (node.data.boxHeight || 0) / 2;
+  });
 }
-function dragged(event, d) {
-  d.fx = event.x; d.fy = event.y;
+const nodeById = new Map(nodes.map((node) => [node.data.id, node]));
+const linkPath = d3.linkVertical()
+  .x((d) => d.x)
+  .y((d) => d.y);
+const curveOffset = 40;
+
+function getBottomAnchor(node) {
+  return { x: node.x, y: node.y + (node.data.boxHeight || 0) / 2 };
 }
-function dragended(event, d) {
-  if (!event.active) simulation.alphaTarget(0);
-  d.fx = null; d.fy = null;
+
+function getTopAnchor(node) {
+  return { x: node.x, y: node.y - (node.data.boxHeight || 0) / 2 };
 }
+
+function getSourceAnchor(node, anchor) {
+  if (anchor === "top") {
+    return getTopAnchor(node);
+  }
+  if (anchor === "bottom" || anchor === "bottom-center") {
+    return getBottomAnchor(node);
+  }
+  return { x: node.x, y: node.y };
+}
+
+function getTargetAnchor(node, anchor) {
+  if (anchor === "top") {
+    return getTopAnchor(node);
+  }
+  if (anchor === "bottom" || anchor === "bottom-center") {
+    return getBottomAnchor(node);
+  }
+  return { x: node.x, y: node.y };
+}
+
+function buildCrossLinkPath(source, target, shouldCurve, targetAnchor, sourceAnchor) {
+  if (!source || !target) {
+    return null;
+  }
+  const start = getSourceAnchor(source, sourceAnchor || (shouldCurve ? "bottom" : null));
+  const end = getTargetAnchor(target, targetAnchor || (shouldCurve ? "bottom" : null));
+  if (!shouldCurve && targetAnchor !== "top") {
+    return linkPath({ source, target });
+  }
+  const arcY = shouldCurve ? Math.max(start.y, end.y) + curveOffset : (start.y + end.y) / 2;
+  return `M${start.x},${start.y} C${start.x},${arcY} ${end.x},${arcY} ${end.x},${end.y}`;
+}
+
+
+let x0 = Infinity;
+let x1 = -Infinity;
+let y0 = Infinity;
+let y1 = -Infinity;
+nodes.forEach((d) => {
+  const halfW = (d.data.boxWidth || 0) / 2;
+  const halfH = (d.data.boxHeight || 0) / 2;
+  const left = d.x - halfW;
+  const right = d.x + halfW;
+  const top = d.y - halfH;
+  const bottom = d.y + halfH;
+  if (left < x0) x0 = left;
+  if (right > x1) x1 = right;
+  if (top < y0) y0 = top;
+  if (bottom > y1) y1 = bottom;
+});
+const paddingX = 60;
+const paddingY = 40;
+const extraBottom = crossLinks.some((link) => link.curve) ? curveOffset + 40 : 0;
+const chartWidth = x1 - x0 + paddingX * 2;
+const chartHeight = y1 - y0 + paddingY * 2 + extraBottom;
+svg.attr("width", chartWidth).attr("height", chartHeight);
+
+const chart = svg.append("g")
+  .attr("transform", `translate(${paddingX - x0}, ${paddingY - y0})`);
+
+const link = chart.append("g")
+  .attr("fill", "none")
+  .attr("stroke", "#aaa")
+  .attr("stroke-width", 2.2)
+  .selectAll("path")
+  .data(links)
+  .join("path")
+  .attr("d", linkPath);
+
+const crossLink = chart.append("g")
+  .attr("fill", "none")
+  .attr("stroke", "#4f4f4f")
+  .attr("stroke-width", 2.4)
+  .attr("stroke-dasharray", "2 5")
+  .attr("stroke-linecap", "round")
+  .attr("pointer-events", "none")
+  .selectAll("path")
+  .data(crossLinks)
+  .join("path")
+  .attr("d", (d) => {
+    const source = nodeById.get(d.source);
+    const target = nodeById.get(d.target);
+    return buildCrossLinkPath(source, target, d.curve, d.targetAnchor, d.sourceAnchor);
+  });
+
+const node = chart.append("g")
+  .selectAll("g")
+  .data(nodes)
+  .join("g")
+  .attr("transform", (d) => `translate(${d.x}, ${d.y})`);
+
+node.append("rect")
+  .attr("x", (d) => -d.data.boxWidth / 2)
+  .attr("y", (d) => -d.data.boxHeight / 2)
+  .attr("width", (d) => d.data.boxWidth)
+  .attr("height", (d) => d.data.boxHeight)
+  .attr("rx", 12)
+  .attr("fill", (d) => d.data.style.fill)
+  .attr("stroke", (d) => d.data.style.stroke)
+  .attr("stroke-width", 2);
+
+node.append("text")
+  .attr("text-anchor", "middle")
+  .attr("font-family", "\"Noto Serif SC\", \"Source Han Serif SC\", \"SimSun\", serif")
+  .attr("font-size", (d) => d.data.style.fontSize)
+  .attr("font-weight", (d) => d.data.style.fontWeight)
+  .attr("fill", (d) => d.data.style.textColor)
+  .attr("dominant-baseline", "middle")
+  .each(function(d) {
+    const text = d3.select(this);
+    const lines = d.data.lines || [];
+    if (d.data.isVertical) {
+      const chars = String(lines[0] || "").split("");
+      const lineHeight = d.data.lineHeight || 20;
+      const startY = -((chars.length - 1) / 2) * lineHeight;
+      chars.forEach((char, index) => {
+        text.append("tspan")
+          .attr("x", 0)
+          .attr("y", startY + index * lineHeight)
+          .text(char);
+      });
+      return;
+    }
+    const lineHeight = d.data.lineHeight || 20;
+    const startY = -((lines.length - 1) / 2) * lineHeight;
+    lines.forEach((line, index) => {
+      text.append("tspan")
+        .attr("x", 0)
+        .attr("y", startY + index * lineHeight)
+        .text(line);
+    });
+  });
 </script>
