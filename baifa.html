@@ -259,7 +259,17 @@ title: 百法交互表
     padding: 8px 18px 20px;
     position: absolute;
     pointer-events: auto;
+    opacity: 0;
+    transition: opacity 290ms ease;
     /* width: min(720px, 92vw); */
+  }
+
+  .baifa-modal.is-open .baifa-modal-content {
+    opacity: 1;
+  }
+
+  .baifa-modal.is-closing .baifa-modal-content {
+    opacity: 0;
   }
 
   .baifa-modal-title {
@@ -332,6 +342,12 @@ title: 百法交互表
     stroke-linejoin: round;
     stroke-width: 2;
     width: 16px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .baifa-modal-content {
+      transition: none;
+    }
   }
 
   .baifa-section-title {
@@ -735,6 +751,8 @@ title: 百法交互表
   const sourceSelectPlain = document.getElementById('baifa-source-select-plain');
   const modalCopy = document.getElementById('baifa-modal-copy');
   const modalClose = document.getElementById('baifa-modal-close');
+  const modalAnimationDuration = 290;
+  let closeModalTimer = null;
   const buttons = Array.from(document.querySelectorAll('.item-btn'));
   const categoryCells = Array.from(document.querySelectorAll('.category[data-category], .subcategory[data-category], .subcategory2[data-category]'));
   const skandhaFormButton = document.getElementById('baifa-highlight-skandha-form');
@@ -1115,6 +1133,44 @@ title: 百法交互表
     });
   }
 
+  function getModalSize() {
+    const width = modalContent.offsetWidth;
+    const height = modalContent.offsetHeight;
+    if (width && height) {
+      return { width, height };
+    }
+    const rect = modalContent.getBoundingClientRect();
+    return { width: rect.width, height: rect.height };
+  }
+
+  function getModalCenteredPosition(size) {
+    const margin = 8;
+    let left = (window.innerWidth - size.width) / 2;
+    let top = (window.innerHeight - size.height) / 2;
+    left = Math.max(margin, Math.min(left, window.innerWidth - size.width - margin));
+    top = Math.max(margin, Math.min(top, window.innerHeight - size.height - margin));
+    return { left, top };
+  }
+
+  function getModalTargetPosition(anchor, size) {
+    if (!anchor) {
+      return getModalCenteredPosition(size);
+    }
+    const rect = anchor.getBoundingClientRect();
+    const gap = 8;
+    const margin = 8;
+    let left = rect.left;
+    let top = rect.bottom + gap;
+    left = Math.max(margin, Math.min(left, window.innerWidth - size.width - margin));
+    top = Math.max(margin, Math.min(top, window.innerHeight - size.height - margin));
+    return { left, top };
+  }
+
+  function applyModalPosition(position) {
+    modalContent.style.left = `${position.left}px`;
+    modalContent.style.top = `${position.top}px`;
+  }
+
   function positionModal(anchor) {
     if (!anchor) {
       return;
@@ -1122,17 +1178,9 @@ title: 百法交互表
     if (hasUserDragged) {
       return;
     }
-    const rect = anchor.getBoundingClientRect();
-    const modalRect = modalContent.getBoundingClientRect();
-    const gap = 8;
-    const margin = 8;
-    let left = rect.left;
-    let top = rect.bottom + gap;
-
-    left = Math.max(margin, Math.min(left, window.innerWidth - modalRect.width - margin));
-    top = Math.max(margin, Math.min(top, window.innerHeight - modalRect.height - margin));
-    modalContent.style.left = `${left}px`;
-    modalContent.style.top = `${top}px`;
+    const size = getModalSize();
+    const target = getModalTargetPosition(anchor, size);
+    applyModalPosition(target);
   }
 
   function openModal(title, content, anchor) {
@@ -1147,16 +1195,35 @@ title: 百法交互表
       const text = content || '暂无解释。';
       modalDesc.innerHTML = `<div class=\"baifa-section-body\">${renderMarkdown(text)}</div>`;
     }
+    if (closeModalTimer) {
+      window.clearTimeout(closeModalTimer);
+      closeModalTimer = null;
+    }
     modal.classList.add('active');
+    modal.classList.remove('is-open', 'is-closing');
     modal.setAttribute('aria-hidden', 'false');
     hasUserDragged = false;
     lastAnchor = anchor || lastAnchor;
     positionModal(lastAnchor);
+    window.requestAnimationFrame(() => {
+      modal.classList.add('is-open');
+    });
   }
 
   function closeModal() {
-    modal.classList.remove('active');
+    if (!modal.classList.contains('active')) {
+      return;
+    }
+    modal.classList.add('is-closing');
+    modal.classList.remove('is-open');
     modal.setAttribute('aria-hidden', 'true');
+    if (closeModalTimer) {
+      window.clearTimeout(closeModalTimer);
+    }
+    closeModalTimer = window.setTimeout(() => {
+      modal.classList.remove('active', 'is-closing');
+      closeModalTimer = null;
+    }, modalAnimationDuration);
   }
 
   function getModalCopyText() {

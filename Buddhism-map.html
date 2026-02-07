@@ -112,9 +112,9 @@ const crossLinks = [
 const svg = d3.select("#chart");
 
 const styleConfig = {
-  root: { fontSize: 24, paddingX: 18, paddingY: 12, fill: "#f4b66b", stroke: "#cc8a3c", textColor: "#2b1b08", fontWeight: 700 },
-  category: { fontSize: 20, paddingX: 16, paddingY: 10, fill: "#cfe8f5", stroke: "#8fb9d3", textColor: "#0f2430", fontWeight: 600 },
-  leaf: { fontSize: 18, paddingX: 14, paddingY: 8, fill: "#e7f3fb", stroke: "#a8c6d8", textColor: "#123342", fontWeight: 500 }
+  root: { fontSize: 22, paddingX: 18, paddingY: 12, fill: "#f4b66b", stroke: "#cc8a3c", textColor: "#2b1b08", fontWeight: 700 },
+  category: { fontSize: 18, paddingX: 16, paddingY: 10, fill: "#cfe8f5", stroke: "#8fb9d3", textColor: "#0f2430", fontWeight: 600 },
+  leaf: { fontSize: 16, paddingX: 14, paddingY: 8, fill: "#e7f3fb", stroke: "#a8c6d8", textColor: "#123342", fontWeight: 500 }
 };
 
 function getNodeStyle(depth) {
@@ -153,7 +153,7 @@ root.each((node) => {
     const text = String(node.data.id || "");
     const charCount = Math.max(text.length, 1);
     lines = [text];
-    boxWidth = Math.max(35, (style.fontSize + style.paddingX * 2) * 0.7);
+    boxWidth = Math.max(30, (style.fontSize + style.paddingX * 2) * 0.595);
     boxHeight = Math.max(style.fontSize + style.paddingY * 2, charCount * lineHeight + style.paddingY * 2);
     node.data.isVertical = true;
   } else {
@@ -183,7 +183,7 @@ const sizeReferenceNodes = nodesForSize.filter((d) => d.depth > 0);
 const maxBoxWidth = d3.max(sizeReferenceNodes, (d) => d.data.boxWidth) || d3.max(nodesForSize, (d) => d.data.boxWidth) || 140;
 const maxBoxHeight = d3.max(sizeReferenceNodes, (d) => d.data.boxHeight) || d3.max(nodesForSize, (d) => d.data.boxHeight) || 60;
 
-const spacingX = 0;
+const spacingX = -20;
 const spacingY = 24;
 const treeLayout = d3.tree()
   .nodeSize([
