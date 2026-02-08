@@ -29,8 +29,6 @@ title: 百法交互表
     font-weight: 700;
     letter-spacing: 4px;
     text-align: center;
-    text-orientation: upright;
-    writing-mode: vertical-rl;
   }
 
   .category {
@@ -39,10 +37,11 @@ title: 百法交互表
     text-align: left;
   }
 
-  .category.vertical {
+  .vertical-fallback {
+    display: inline-block;
+    line-height: 1.2;
     text-align: center;
-    text-orientation: upright;
-    writing-mode: vertical-rl;
+    white-space: normal;
   }
 
   .category.heart {
@@ -519,7 +518,7 @@ title: 百法交互表
     </colgroup>
     <tbody>
       <tr>
-        <td class="title-cell" rowspan="12">大乘百法明门论 世亲菩萨著</td>
+        <td class="title-cell" rowspan="12"><span class="vertical-fallback">大<br>乘<br>百<br>法<br>明<br>门<br>论<br>世<br>亲<br>菩<br>萨<br>著</span></td>
         <td class="category heart" colspan="3" data-category="心法">心法(8)</td>
         <td class="items-cell alt">
           <div class="items items-heart">
@@ -535,7 +534,7 @@ title: 百法交互表
         </td>
       </tr>
       <tr>
-        <td class="category heart-assoc" rowspan="8" data-category="心所有法"><span class="category vertical">心所有法</span>(51)</td>
+        <td class="category heart-assoc" rowspan="8" data-category="心所有法"><span class="vertical-fallback">心<br>所<br>有<br>法<br>(51)</span></td>
         <td class="subcategory" colspan="2" data-category="遍行">遍行(5)</td>
         <td class="items-cell">
           <div class="items items-neutral">
@@ -591,7 +590,7 @@ title: 百法交互表
         </td>
       </tr>
       <tr>
-        <td class="subcategory" rowspan="3" data-category="随烦恼"><span class="category vertical">随烦恼</span>(20)</td>
+        <td class="subcategory" rowspan="3" data-category="随烦恼"><span class="vertical-fallback">随<br>烦<br>恼<br>(20)</span></td>
         <td class="subcategory2" data-category="小随烦恼">小随烦恼(10)</td>
         <td class="items-cell">
           <div class="items items-affliction-small">
