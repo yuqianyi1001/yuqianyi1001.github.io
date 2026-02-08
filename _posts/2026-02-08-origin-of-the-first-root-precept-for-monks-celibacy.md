@@ -3,6 +3,7 @@ layout: post
 title: 出家第一根本戒，不淫戒的由来
 description: 《四分律》里的缘起故事：佛陀如何因事制戒，制定出家第一根本重戒——不净行戒（不淫戒）。
 tags: [佛学, 佛法, 佛教, 戒律, 四分律, 不淫戒, 不净行戒, 因事制戒, 律藏]
+wechat_link: https://mp.weixin.qq.com/s/VyBq6hDnzvMoMLOEgSh_KQ
 ---
 
 # 出家第一根本戒，不淫戒的由来

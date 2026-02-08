@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 释迦族被灭的完整故事
+wechat_link: https://mp.weixin.qq.com/s/VA4a_BIgk28DzBXE9E4UCA
 description: 按《阿含经》原文脉络，从联姻中的欺骗、童年羞辱到战争与因果清算，完整讲述释迦族悲剧的“从因到果”，并澄清常见误传。
 excerpt: 按《阿含经》原文脉络，从联姻中的欺骗、童年羞辱到战争与因果清算，完整讲述释迦族悲剧的“从因到果”，并澄清常见误传。
 tags: [佛教, 阿含经, 因果, 佛教故事, 正见, 释迦族, 流离王]
