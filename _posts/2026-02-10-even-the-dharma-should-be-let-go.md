@@ -1,7 +1,7 @@
 ---
 layout: post
 title: “法尚应舍”的误解和正解
-wechat_link:
+wechat_link: https://mp.weixin.qq.com/s/LzhBtTjrNLkgD8Az-pfiEw
 description: "“法尚应舍，何况非法”不是让你抛弃正法，而是让你放下执着：义理需要校准，方法可以依止，但不应执为唯一。"
 excerpt: "“法尚应舍，何况非法”不是让你抛弃正法，而是让你放下执着：义理需要校准，方法可以依止，但不应执为唯一。"
 tags: [佛学, 佛法, 金刚经, 空性, 法执, 修行方法]
