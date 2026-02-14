@@ -4,8 +4,6 @@ title: 愚千一，提倡讲逻辑，讲层次，讲科学的人间佛教
 permalink: /about/
 ---
 
----
-
 <div style="display: block; text-align: center;">
   <div style="font-size:smaller">欢迎关注我的微信公众号，请搜<b><u>愚千一</u></b>或直接输入ID： Yuqianyi1001。<br></div>
   <image src="../images/signature.png" />
@@ -114,6 +112,7 @@ Email： [jeffwoo2019@gmail.com](mailto:jeffwoo2019@gmail.com)
 *   《岛王统史》（南传大藏经部类）
 *   《显扬圣教论》（20卷）无著
 *   《大乘五蕴论》（1卷）世亲
+*   《大乘广五蕴论》（1卷）安慧
 
 ### 印顺法师著作
 
@@ -122,6 +121,7 @@ Email： [jeffwoo2019@gmail.com](mailto:jeffwoo2019@gmail.com)
 *   《中国禅宗史》，2024/4/17
 *   《成佛之道》（偈颂部分）
 *   《大乘起信论讲记》 2025-11-30 读完（约18个小时）
+*   《大乘广五蕴论讲记》 2026-2
 
 ### 现代佛学书籍
 
