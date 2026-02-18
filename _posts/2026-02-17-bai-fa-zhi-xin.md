@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 百法之信 ｜ 佛教正信是什么 ｜信的层次和开悟 
-wechat_link: 
+wechat_link: https://mp.weixin.qq.com/s/ZuGFbrTIl9CUVc4SPVzxzw
 description: 分享了百法中的“信心所”。介绍了它的分类、定义、特质、层次，以及和其他信仰的区别。在信的层次里面，顺便介绍了开悟。以及佛教最提倡的正信是什么。
 excerpt: 
 tags:
