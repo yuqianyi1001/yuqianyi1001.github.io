@@ -17,7 +17,7 @@ tags:
 
 ## 一、信在百法中的位置与定义
 
-![](../images/2026-02-17-18-07-44.png)
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-02-17-18-07-44.png)
 
 这是信在百法中的位置。从表格中很容易看到，信所在的位置是在心所有法的善法里面（心所有法也简称心法）。
 
@@ -71,7 +71,7 @@ tags:
 
 「信」的层次我简单分成三个层次：
 
-![](../images/2026-02-17-18-08-42.png)
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-02-17-18-08-42.png)
 
 ### 1）第一个层：入门级
 
@@ -92,7 +92,7 @@ tags:
 
 这里顺便提一下开悟：其实开悟也可以分为解悟和证悟，和解信、证信是一样的意思，也可以对照一下。
 
-![](../images/2026-02-17-18-09-10.png)
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-02-17-18-09-10.png)
 
 如果对佛法核心的理论都融会贯通了以后，可以叫做解悟；而证悟是见道了、证果了，这才能叫做证悟。
 
@@ -108,7 +108,7 @@ tags:
 
 下面再说一下信的功能，或者叫信的作用：就是对治不信。
 
-![](../images/2026-02-17-18-11-09.png)
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-02-17-18-11-09.png)
 
 信和不信是一个相反的状态，它就像天平一样：要么掉下去，要么抬起来；如果卡在中间，那就是疑。
 
@@ -124,7 +124,7 @@ tags:
 
 最后我们做一下扩展，对比一下百法中的信和其他信仰的区别。
 
-![](../images/2026-02-17-18-09-56.png)
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-02-17-18-09-56.png)
 
 百法中的信，也可以说是佛教提倡的正信。除此之外，还有民间信仰、附佛外道，我把这归为一类；除此以外，还有其他宗教信仰和其他非宗教信仰，我把这些归为另一类。
 
