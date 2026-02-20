@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/cbeta-git/xml-p5a/master/schema/cbeta-p5a.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:cb="http://www.cbeta.org/ns/1.0" xml:id="T30n1579">
+<teiHeader>
+	<fileDesc>
+		<titleStmt>
+			<title>Taishō Tripiṭaka, Electronic version, No. 1579 瑜伽師地論</title>
+			<title xml:lang="zh-Hant">大正新脩大藏經數位版, No. 1579 瑜伽師地論</title>
+			<author>彌勒菩薩說  唐 玄奘譯</author>
+			<respStmt>
+				<resp>Electronic Version by</resp>
+				<name>CBETA</name>
+			</respStmt>
+		</titleStmt>
+		<editionStmt>
+			<edition>單卷版 XML TEI P5b</edition>
+		</editionStmt>
+		<extent>100卷</extent>
+		<publicationStmt>
+			<idno type="CBETA">
+				<idno type="canon">T</idno>.<idno type="vol">30</idno>.<idno type="no">1579</idno>
+			</idno>
+			<distributor>
+				<name>中華電子佛典協會 (CBETA)</name>
+				<address>
+					<addrLine><email>service@cbeta.org</email></addrLine>
+				</address>
+			</distributor>
+			<availability>
+				<p>Available for non-commercial use when distributed with this header intact.</p>
+			</availability>
+			<date>2023-11-09 21:01:39 +0800</date>
+		</publicationStmt>
+		<sourceDesc>
+			<bibl>
+				<title level="s">Taishō Tripiṭaka</title>
+				<title level="s" xml:lang="zh-Hant">大正新脩大藏經</title>
+				<title level="m" xml:lang="zh-Hant">瑜伽師地論</title>
+			</bibl>
+		</sourceDesc>
+	</fileDesc>
+	<encodingDesc>
+		<projectDesc>
+			<p xml:lang="en" cb:type="ly">Text as provided by Mr. Hsiao Chen-Kuo, Tripitaka Koreana as provided by Mr. Christian Wittern, Text as provided by Mr. Christian Wittern, Text as inputted by Seeland Monastery, The Outline as provided by Ven. Huimin, Punctuated text as provided by Yogācārabhūmi Database</p>
+			<p xml:lang="zh-Hant" cb:type="ly">蕭鎮國大德提供，維習安大德提供之高麗藏 CD 經文，維習安大德提供，西蓮淨苑輸入，惠敏法師提供科判，《瑜伽師地論》資料庫提供新式標點</p>
+		</projectDesc>
+		<editorialDecl>			
+			<punctuation resp="CBETA"><p>新式標點</p></punctuation>
+		</editorialDecl>
+		<tagsDecl>
+			<namespace name="http://www.tei-c.org/ns/1.0">
+				<tagUsage gi="rdg">
+					<listWit>
+						<witness xml:id="wit.orig">【大】</witness>
+						<witness xml:id="wit.cbeta">【CB】</witness>
+					</listWit>
+				</tagUsage>
+			</namespace>
+		</tagsDecl>
+			</encodingDesc>
+	<profileDesc>
+		<langUsage>
+			<language ident="sa">Sanskrit</language>
+			<language ident="en">English</language>
+			<language ident="zh-Hant">Chinese (Traditional)</language>
+		</langUsage>
+	</profileDesc>
+	<revisionDesc>
+		<change when="2013-05-20">
+			<name>CW</name><name>Ray Chou 周邦信</name>P4 to P5 conversion by p4top5a.py, intended for publication
+		</change>
+		<change when="1999-07-01T16:18:25">
+			CW (ed.) converted to XML with CBXML.BAT (99/6/30)
+		</change>
+	</revisionDesc>
+</teiHeader>
+<text><body>
+<cb:mulu n="1" level="1" type="分">1 本地分</cb:mulu><cb:mulu n="3" level="2" type="其他">3-5 有尋有伺等三地</cb:mulu><cb:mulu n="6" level="3" type="其他">6章 雜染等起施設建立(三雜染)</cb:mulu><cb:mulu n="38" level="4" type="其他">3節 生雜染</cb:mulu><cb:mulu n="80" level="5" type="其他">4項 生流轉</cb:mulu><cb:mulu n="22" level="6" type="其他">4目 緣起差別</cb:mulu><cb:mulu level="7">1</cb:mulu><cb:div n="1" type="fen"><cb:div n="3-5" type="di"><cb:div n="6" type="zhang"><cb:div n="3" type="jie"><cb:div n="4" type="xiang"><cb:div n="4" type="mu">
+<milestone n="10" unit="juan"/>
+<lb n="0323b08" ed="T"/>
+<lb n="0323b09" ed="T"/>
+<lb n="0323b10" ed="T"/><cb:juan n="010" fun="open"><cb:mulu n="010" type="卷"></cb:mulu><cb:mulu level="7">2</cb:mulu><cb:jhead><title>瑜伽師地論</title>卷第十</cb:jhead>
+<lb n="0323b11" ed="T"/>
+<lb n="0323b12" ed="T"/><byline cb:type="author">彌勒菩薩說</byline>
+<lb n="0323b13" ed="T"/><byline cb:type="Translator"><anchor xml:id="fxT30p0323b01"/>三藏法師玄奘奉　詔譯</byline>
+<lb n="0323b14" ed="T"/><cb:jhead type="pin">本地分中有尋有伺等三地之七</cb:jhead></cb:juan>
+<lb n="0323b15" ed="T"/><p xml:id="pT30p0323b1501">欲愛云何？謂欲界諸行為緣所生，於欲界
+<lb n="0323b16" ed="T"/>行染污希求，由此能生欲界苦果。色愛云
+<lb n="0323b17" ed="T"/>何？謂色界諸行為緣所生，於色界行染污
+<lb n="0323b18" ed="T"/>希求，由此能生色界苦果。無色愛云何？謂
+<lb n="0323b19" ed="T"/>無色界<note n="0323005" resp="Taisho" type="orig" place="foot text">〔諸〕－【三】【宮】【聖】</note><note n="0323005" resp="CBETA" type="mod">諸【大】，〔－〕【宋】【元】【明】【宮】【聖】</note><app n="0323005"><lem wit="【大】">諸</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】"><space quantity="0"/></rdg></app>行為緣所生，於無色界行染污
+<lb n="0323b20" ed="T"/>希求，由此能生無色界苦果。</p><p xml:id="pT30p0323b2012" cb:place="inline">欲取云何？謂
+<lb n="0323b21" ed="T"/>於諸欲所有欲貪。見取云何？謂除薩迦耶
+<lb n="0323b22" ed="T"/>見，於所餘見所有欲貪。戒禁取云何？謂於
+<lb n="0323b23" ed="T"/>邪願所起戒禁所有欲貪。我語取云何？謂
+<lb n="0323b24" ed="T"/>於薩迦耶見所有欲貪。初唯能生欲界苦
+<lb n="0323b25" ed="T"/>果，餘三通生三界苦果。</p><p xml:id="pT30p0323b2510" cb:place="inline">欲有云何？謂欲界
+<lb n="0323b26" ed="T"/><note n="0323006" resp="Taisho" type="orig" place="foot text">前時＝本【三】【聖】</note><note n="0323006" resp="CBETA" type="mod">前時【大】，本【宋】【元】【明】【聖】</note><app n="0323006"><lem wit="【大】">前時</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">本</rdg></app>有、業有、死有、中有、生有，及那落迦、
+<lb n="0323b27" ed="T"/>傍生、餓鬼、人、天有，總說名欲有。此復由先所
+<lb n="0323b28" ed="T"/>作諸行煩惱攝受之所熏發。</p><p xml:id="pT30p0323b2812" cb:place="inline">色有云何？謂
+<lb n="0323b29" ed="T"/>除那落迦、傍生、餓鬼、人有，所餘是色有應知。</p>
+<pb n="0323c" ed="T" xml:id="T30.1579.0323c"/>
+<lb n="0323c01" ed="T"/><p xml:id="pT30p0323c0101">無色有云何？謂復除中有，<note n="0323007" resp="Taisho" type="orig" place="foot text">所餘＝餘所【宮】【聖】</note><note n="0323007" resp="CBETA" type="mod">所餘【大】，餘所【宮】【聖】</note><app n="0323007"><lem wit="【大】">所餘</lem><rdg resp="Taisho" wit="【宮】 【聖】">餘所</rdg></app>是無色有
+<lb n="0323c02" ed="T"/>應知。</p><p xml:id="pT30p0323c0203" cb:place="inline">問：依何義故建立七有，所謂那落迦、
+<lb n="0323c03" ed="T"/>傍生、餓鬼、人、天有，業有、中有？</p><p xml:id="pT30p0323c0312" cb:place="inline">答：依三種所作
+<lb n="0323c04" ed="T"/>故。一、能引有，謂一；二、趣有有，謂一；三、受用
+<lb n="0323c05" ed="T"/>果有，謂五。</p><p xml:id="pT30p0323c0505" cb:place="inline">生云何？謂於胎、卵二生，初託生
+<lb n="0323c06" ed="T"/>時。等生云何？謂即於彼身分圓滿，仍未出
+<lb n="0323c07" ed="T"/>時。趣云何？謂從彼出。起云何？謂出已增長。
+<lb n="0323c08" ed="T"/>出現云何？謂於濕、化二生，身分頓起。蘊得云
+<lb n="0323c09" ed="T"/>何？謂即於彼諸生位中五取蘊轉。界得云
+<lb n="0323c10" ed="T"/>何？謂即彼諸蘊因緣所攝性。處得云何？謂即
+<lb n="0323c11" ed="T"/>彼諸蘊餘緣所攝性。諸蘊生起云何？謂即彼
+<lb n="0323c12" ed="T"/>諸蘊日日飲食之所資長。命根出現云何？謂
+<lb n="0323c13" ed="T"/>即彼諸蘊餘壽力故得相續住。</p><p xml:id="pT30p0323c1313" cb:place="inline">此生支略義
+<lb n="0323c14" ed="T"/>者，謂若生自性、若生處位、若所生、若因緣所
+<lb n="0323c15" ed="T"/>攝、若任持所引、若俱生依持，是名略義。</p>
+<lb n="0323c16" ed="T"/><p xml:id="pT30p0323c1601">衰云何？謂依止劣故，令彼掉動。老云何？謂
+<lb n="0323c17" ed="T"/>髮色衰變。<note n="0323c1701" resp="CBETA" type="add" cb:note_key="T30.0323c17.05">襵【CB】，攝【大】</note><app n="0323c1701"><lem resp="CBETA.maha" wit="【CB】" cb:provider="蘇勁 (2019-11-27)">襵<note type="cf1">T30n1579_p0769a20</note></lem><rdg wit="【大】">攝</rdg></app>云何？謂皮膚緩皺。熟云何？謂火
+<lb n="0323c18" ed="T"/>力衰減，無復勢力受用欲塵。氣力損壞云
+<lb n="0323c19" ed="T"/>何？謂性多疾病故，無有勢力能作事業。
+<lb n="0323c20" ed="T"/>黑黶間身云何？謂黯黑出現，損其容色。身脊
+<lb n="0323c21" ed="T"/>傴曲、喘息奔急云何？謂行步威儀身形所顯，
+<lb n="0323c22" ed="T"/>由此發起極重喘嗽。形貌僂前云何？謂坐
+<lb n="0323c23" ed="T"/>威儀位，身首低曲。憑據杖策云何？謂住威
+<lb n="0323c24" ed="T"/>儀位，依杖力而住。昏昧云何？謂臥威儀位，
+<lb n="0323c25" ed="T"/>數重睡眠。羸劣云何？謂即於此位，無力速
+<lb n="0323c26" ed="T"/>覺。損減云何？謂念慧衰退。衰退云何？謂念慧
+<lb n="0323c27" ed="T"/>劣故，至於善法不能現行。諸根耄熟云何？
+<lb n="0323c28" ed="T"/>謂身體尫羸。功用破壞云何？謂彼於境不復
+<lb n="0323c29" ed="T"/>明利。諸行朽故云何？謂彼於後將欲終時。
+<pb n="0324a" ed="T" xml:id="T30.1579.0324a"/>
+<lb n="0324a01" ed="T"/>其形腐敗云何？謂壽量將盡，身形臨壞，於
+<lb n="0324a02" ed="T"/>諸事業無復功能。</p><p xml:id="pT30p0324a0208" cb:place="inline">此老略義者，謂依止變
+<lb n="0324a03" ed="T"/>壞、<note n="0324001" resp="Taisho" type="orig" place="foot text">鬚＝鬢【三】【宮】</note><note n="0324001" resp="CBETA" type="mod">鬚【大】，鬢【宋】【元】【明】【宮】</note><app n="0324001"><lem wit="【大】">鬚</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">鬢</rdg></app>髮變壞、充悅變壞、火力變壞、無病變
+<lb n="0324a04" ed="T"/>壞、色相變壞、威儀變壞、無色諸根變壞、有色
+<lb n="0324a05" ed="T"/>諸根變壞、時分已過、壽量將盡，略義應知。</p>
+<lb n="0324a06" ed="T"/><p xml:id="pT30p0324a0601">彼彼有情云何？謂那落迦等。有情種類云何？
+<lb n="0324a07" ed="T"/>謂即彼一切。終云何？謂諸有情離解支節而
+<lb n="0324a08" ed="T"/>死。盡云何？謂諸有情由解支節而死。壞云
+<lb n="0324a09" ed="T"/>何？謂識離身。沒云何？謂諸色根滅。捨壽云
+<lb n="0324a10" ed="T"/>何？謂氣將盡位。捨煖云何？謂不動位。棄捨
+<lb n="0324a11" ed="T"/>諸蘊命根謝滅云何？謂時死。死云何？謂遇
+<lb n="0324a12" ed="T"/>橫緣，非時而死。時運盡云何？謂初死未久
+<lb n="0324a13" ed="T"/>位。又死魔業名時運盡。</p><p xml:id="pT30p0324a1310" cb:place="inline">此死略義者：謂若死、
+<lb n="0324a14" ed="T"/>若死法、若死差別、若死後位，是名略義。</p><p xml:id="pT30p0324a1416" cb:place="inline">如
+<lb n="0324a15" ed="T"/>是名為緣起差別應知。</p></cb:div>
+<cb:div n="5" type="mu"><cb:mulu n="23" level="6" type="其他">5目 緣起次第</cb:mulu>
+<lb n="0324a16" ed="T"/><p xml:id="pT30p0324a1601">問：何因緣故，無明等諸有支作如是次第
+<lb n="0324a17" ed="T"/>說？</p><p xml:id="pT30p0324a1702" cb:place="inline">答：諸愚癡者要先愚於所應知事，次即於
+<lb n="0324a18" ed="T"/>彼發起邪行。由邪行故，令心顛倒。心顛倒
+<lb n="0324a19" ed="T"/>故，結生相續。生相續故，諸根圓滿。根圓滿
+<lb n="0324a20" ed="T"/>故，二受用境。受用境故，若耽著，若希求。由希
+<lb n="0324a21" ed="T"/>求故，於方覓時煩惱滋長。煩惱滋長故，發
+<lb n="0324a22" ed="T"/>起後有愛非愛業。由所起業滋長力故，於
+<lb n="0324a23" ed="T"/>五趣生死中苦果生。苦果生已，有老死等苦。
+<lb n="0324a24" ed="T"/>謂內身變異所引老死苦，及境界變異所引
+<lb n="0324a25" ed="T"/>憂歎苦熱惱之苦。是故世尊如是次第說十
+<lb n="0324a26" ed="T"/>二支。</p><p xml:id="pT30p0324a2603" cb:place="inline">復有次第差別，謂依二種緣建立緣
+<lb n="0324a27" ed="T"/>起次第：一、內身緣，二、受用境界緣。內身緣，前
+<lb n="0324a28" ed="T"/>六支所攝；受用境界緣，後六支所攝。先於內
+<lb n="0324a29" ed="T"/>身起我執等愚，由此不了諸業所引苦果
+<pb n="0324b" ed="T" xml:id="T30.1579.0324b"/>
+<lb n="0324b01" ed="T"/>異熟故，發起諸業。既發起已，即隨彼業多
+<lb n="0324b02" ed="T"/>起尋思。由業與識為助伴故，能感當來三
+<lb n="0324b03" ed="T"/>種苦果。謂根初起所攝苦果、根圓滿所攝苦
+<lb n="0324b04" ed="T"/>果、受用境界所攝苦果。即名色為先，觸為
+<lb n="0324b05" ed="T"/>最後。又於現法中，依觸緣受，發起於愛。由
+<lb n="0324b06" ed="T"/>受用境界緣廣起追求，或由事業門，或由
+<lb n="0324b07" ed="T"/>利養門，或由戒禁門，或由解脫門，發起欲
+<lb n="0324b08" ed="T"/>求、內身求、邪解脫求。如是求時，令先所起
+<lb n="0324b09" ed="T"/>煩惱及業所引五趣生死果生。既得生已，老
+<lb n="0324b10" ed="T"/>死隨逐。</p><p xml:id="pT30p0324b1004" cb:place="inline">復有次第差別，謂由三種有情聚。一、
+<lb n="0324b11" ed="T"/>樂出世清淨，二、樂世間清淨，三、樂著境界。由
+<lb n="0324b12" ed="T"/>初聚故，滅諸緣起，增白淨品。由第二有情
+<lb n="0324b13" ed="T"/>聚故，不如實知諸諦道理。若住正念，或
+<lb n="0324b14" ed="T"/>作福業，或作有漏修所引不動業；若不住
+<lb n="0324b15" ed="T"/>正念，便發非福業。或起追悔所引，或不追
+<lb n="0324b16" ed="T"/>悔歡喜所引心相續住。彼又如前，於下中上
+<lb n="0324b17" ed="T"/>生處，次第能感當來三種苦果，謂名色為
+<lb n="0324b18" ed="T"/>先，觸為最後。由第三有情聚故，依現受用
+<lb n="0324b19" ed="T"/>境所生受，於現法中如前次第起後六支，
+<lb n="0324b20" ed="T"/>謂<note n="0324002" resp="Taisho" type="orig" place="foot text">受＝愛【三】</note><note n="0324002" resp="CBETA" type="mod">受【大】，愛【宋】【元】【明】</note><app n="0324002"><lem wit="【大】">受</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">愛</rdg></app>為先，老死為後。</p></cb:div>
+<cb:div n="6" type="mu"><cb:mulu n="24" level="6" type="其他">6目 緣起釋離</cb:mulu><p xml:id="pT30p0324b2009" cb:place="inline">問：何因緣故，逆次第
+<lb n="0324b21" ed="T"/>中老死為先說諸緣起？</p><p xml:id="pT30p0324b2110" cb:place="inline">答：依止宣說諦道
+<lb n="0324b22" ed="T"/>理故，以生及老死能顯苦諦。如世尊言：新
+<lb n="0324b23" ed="T"/>名色滅為上首法。</p>
+<lb n="0324b24" ed="T"/><p xml:id="pT30p0324b2401">問：何故不言諸無明滅為上首耶？</p><p xml:id="pT30p0324b2414" cb:place="inline">答：依心
+<lb n="0324b25" ed="T"/>解脫者而施設故。由彼於現法中種子苦
+<lb n="0324b26" ed="T"/>及當來苦果不生而滅，故說名色為先，受
+<lb n="0324b27" ed="T"/>為最後，得究竟滅。又於現法中受諸受
+<lb n="0324b28" ed="T"/>時，愛及隨眠永拔不起說名為滅。由彼滅
+<lb n="0324b29" ed="T"/>故，以彼為先餘支亦滅。</p><p xml:id="pT30p0324b2910" cb:place="inline">如是等類，宣說緣
+<pb n="0324c" ed="T" xml:id="T30.1579.0324c"/>
+<lb n="0324c01" ed="T"/>起次第應知。</p></cb:div>
+<cb:div n="7" type="mu"><cb:mulu n="25" level="6" type="其他">7目 緣起釋詞</cb:mulu><p xml:id="pT30p0324c0106" cb:place="inline">問：何故緣起說為緣起？</p><p xml:id="pT30p0324c0122" cb:place="inline">答：由
+<lb n="0324c02" ed="T"/>煩惱繫縛，往諸趣中數數生起故，<note n="0324003" resp="Taisho" type="orig" place="foot text">名＋（為）【三】【宮】</note><note n="0324003" resp="CBETA" type="mod">名【大】，名為【宋】【元】【明】【宮】</note><app n="0324003"><lem wit="【大】">名</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">名為</rdg></app>緣起。
+<lb n="0324c03" ed="T"/>此依字釋名。</p><p xml:id="pT30p0324c0306" cb:place="inline">復次，依託眾緣，速謝滅已，<note n="0324004" resp="Taisho" type="orig" place="foot text">續＝還【聖】</note><note n="0324004" resp="CBETA" type="mod">續【大】，還【聖】</note><app n="0324004"><lem wit="【大】">續</lem><rdg resp="Taisho" wit="【聖】">還</rdg></app>
+<lb n="0324c04" ed="T"/>和合生，故名緣起。此依剎那義釋。</p><p xml:id="pT30p0324c0414" cb:place="inline">復次，眾
+<lb n="0324c05" ed="T"/>緣過去而不捨離，依自相續而得生起，故
+<lb n="0324c06" ed="T"/>名緣起。如說：此有故彼有，此生故彼生，非
+<lb n="0324c07" ed="T"/>餘。依此義故，釋名應知。</p><p xml:id="pT30p0324c0710" cb:place="inline">復次，數數謝滅，
+<lb n="0324c08" ed="T"/>復相續起，故名緣起。此依數壞數滅義釋。</p>
+<lb n="0324c09" ed="T"/><p xml:id="pT30p0324c0901">復次，於過去世覺緣性已，等相續起，故名
+<lb n="0324c10" ed="T"/>緣起。如世尊言：我已覺悟，正起宣說，即由
+<lb n="0324c11" ed="T"/>此名展轉傳說，故名緣起。</p></cb:div>
+<cb:div n="8" type="mu"><cb:mulu n="26" level="6" type="其他">8目 緣生四緣與二因</cb:mulu><p xml:id="pT30p0324c1111" cb:place="inline">問：無明望行為
+<lb n="0324c12" ed="T"/>幾種緣？</p><p xml:id="pT30p0324c1204" cb:place="inline">答：望諸色行為增上緣，望無色行
+<lb n="0324c13" ed="T"/>為三緣。謂等無間緣、所緣緣、增上緣。如是
+<lb n="0324c14" ed="T"/>餘支為緣多少，應如此知。謂有色支望有
+<lb n="0324c15" ed="T"/>色支，為一增上緣；望無色支為二緣，謂所
+<lb n="0324c16" ed="T"/>緣緣及增上緣。若無色支望有色支，唯為
+<lb n="0324c17" ed="T"/>一緣；望無色支為三緣；謂等無間緣、所緣
+<lb n="0324c18" ed="T"/>緣、增上緣。</p><p xml:id="pT30p0324c1805" cb:place="inline">問：何故諸支相望無因緣耶？</p><p xml:id="pT30p0324c1816" cb:place="inline">答：
+<lb n="0324c19" ed="T"/>因緣者，自體種子緣所顯故。</p><p xml:id="pT30p0324c1912" cb:place="inline">問：若諸支相望
+<lb n="0324c20" ed="T"/>無因緣者，何故說言：依因果體性建立緣
+<lb n="0324c21" ed="T"/>起耶？</p><p xml:id="pT30p0324c2103" cb:place="inline">答：依增上緣所攝引發因、牽引因、生
+<lb n="0324c22" ed="T"/>起因故，說名為因。</p><p xml:id="pT30p0324c2208" cb:place="inline">問：幾支是引因所攝？</p><p xml:id="pT30p0324c2216" cb:place="inline">答：
+<lb n="0324c23" ed="T"/>從無明乃至受。</p><p xml:id="pT30p0324c2307" cb:place="inline">問：幾支是生因所攝？</p><p xml:id="pT30p0324c2315" cb:place="inline">答：從
+<lb n="0324c24" ed="T"/>愛乃至有。</p><p xml:id="pT30p0324c2405" cb:place="inline">問：幾支是生、引二因果所攝耶？</p><p xml:id="pT30p0324c2417" cb:place="inline">答：
+<lb n="0324c25" ed="T"/>於現法後法中，識等乃至受，於生、老死位
+<lb n="0324c26" ed="T"/>所攝諸支。</p></cb:div>
+<cb:div n="9" type="mu"><cb:mulu n="27" level="6" type="其他">9目 以分別緣中三十門分別</cb:mulu><p xml:id="pT30p0324c2605" cb:place="inline">問：若說無明以不如理作意為
+<lb n="0324c27" ed="T"/>因，何因緣故於緣起教中不先說耶？</p><p xml:id="pT30p0324c2715" cb:place="inline">答：彼
+<lb n="0324c28" ed="T"/>唯是不斷因故，非雜染因故。所以者何？非
+<lb n="0324c29" ed="T"/>不愚者起此作意。依雜染因說緣起教。無
+<pb n="0325a" ed="T" xml:id="T30.1579.0325a"/>
+<lb n="0325a01" ed="T"/>明自性是染污，不如理作意自性非染污，
+<lb n="0325a02" ed="T"/>故彼不能染污無明，然由無明力所染污。
+<lb n="0325a03" ed="T"/>又生雜染業煩惱力之所熏發，業之初因謂
+<lb n="0325a04" ed="T"/>初緣起。是故不說不如理作意。</p><p xml:id="pT30p0325a0413" cb:place="inline">問：何故不
+<lb n="0325a05" ed="T"/>說自體為自體緣耶？</p><p xml:id="pT30p0325a0509" cb:place="inline">答：由彼自體若不
+<lb n="0325a06" ed="T"/>得餘緣，於自體雜染不能增長，亦不損
+<lb n="0325a07" ed="T"/>減，是故不說。</p><p xml:id="pT30p0325a0706" cb:place="inline">問：何因緣故，福行、不動行由
+<lb n="0325a08" ed="T"/>正簡擇功力而起，仍說用無明為緣耶？</p><p xml:id="pT30p0325a0816" cb:place="inline">答：
+<lb n="0325a09" ed="T"/>由不了達世俗苦因為緣，起非福行；由
+<lb n="0325a10" ed="T"/>不了達勝義苦因為緣，生福及不動行；是
+<lb n="0325a11" ed="T"/>故亦說彼以無明為緣。</p><p xml:id="pT30p0325a1110" cb:place="inline">問：如經中說：諸業
+<lb n="0325a12" ed="T"/>以貪瞋癡為緣。何故此中唯說癡為緣耶？
+<lb n="0325a13" ed="T"/>答：此中通說福、非福、不動業緣，貪瞋癡緣唯
+<lb n="0325a14" ed="T"/>生非福業故。</p><p xml:id="pT30p0325a1406" cb:place="inline">問：身業、語業思所發起，是則
+<lb n="0325a15" ed="T"/>行亦緣行；何故但說無明緣行？</p><p xml:id="pT30p0325a1513" cb:place="inline">答：依發起
+<lb n="0325a16" ed="T"/>一切行緣而說故，及依生善、染污思緣而
+<lb n="0325a17" ed="T"/>說故。</p><p xml:id="pT30p0325a1703" cb:place="inline">問：識亦以名色為緣，何故此中但說
+<lb n="0325a18" ed="T"/>行為緣耶？</p><p xml:id="pT30p0325a1805" cb:place="inline">答：行為識雜染緣，能引、能生後
+<lb n="0325a19" ed="T"/>有果故。非如名色，但為所依、所緣，生起緣
+<lb n="0325a20" ed="T"/>故。</p><p xml:id="pT30p0325a2002" cb:place="inline">問：名色亦由大種所造及由觸生，何故
+<lb n="0325a21" ed="T"/>但說識為緣耶？</p><p xml:id="pT30p0325a2107" cb:place="inline">答：識能為彼新生因故。彼
+<lb n="0325a22" ed="T"/>既生已，或正生時，大種及觸唯能與彼為
+<lb n="0325a23" ed="T"/>建立因。</p>
+<lb n="0325a24" ed="T"/><p xml:id="pT30p0325a2401">問：如經中說：六界為緣得入母胎。何故此
+<lb n="0325a25" ed="T"/>中唯說識界？</p><p xml:id="pT30p0325a2506" cb:place="inline">答：若有識界，決定於母胎中
+<lb n="0325a26" ed="T"/>精血、大種、腹<note n="0325001" resp="Taisho" type="orig" place="foot text">穴＝冗【宋】【元】【宮】</note><note n="0325001" resp="CBETA" type="mod">穴【大】，冗【宋】【元】【宮】</note><app n="0325001"><lem wit="【大】">穴</lem><rdg resp="Taisho" wit="【宋】 【元】 【宮】">冗</rdg></app>無闕故。又識界勝故。又依
+<lb n="0325a27" ed="T"/>一切生、一切有生時而說故。</p><p xml:id="pT30p0325a2712" cb:place="inline">問：六處亦以飲
+<lb n="0325a28" ed="T"/>食為緣，何故此中但說名色為緣耶？</p><p xml:id="pT30p0325a2815" cb:place="inline">答：此
+<lb n="0325a29" ed="T"/>中說名色是彼生因故。彼<note n="0325002" resp="Taisho" type="orig" place="foot text">既＝即【三】【宮】</note><note n="0325002" resp="CBETA" type="mod">既【大】，即【宋】【元】【明】【宮】</note><app n="0325002"><lem wit="【大】">既</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">即</rdg></app>生已，亦以飲
+<pb n="0325b" ed="T" xml:id="T30.1579.0325b"/>
+<lb n="0325b01" ed="T"/>食為<note n="0325003" resp="Taisho" type="orig" place="foot text">任＝住【宋】【元】</note><note n="0325003" resp="CBETA" type="mod">任【大】，住【宋】【元】</note><app n="0325003"><lem wit="【大】">任</lem><rdg resp="Taisho" wit="【宋】 【元】">住</rdg></app>持因。</p><p xml:id="pT30p0325b0106" cb:place="inline">問：觸以三和為緣，何故此
+<lb n="0325b02" ed="T"/>中但說六處為緣？</p><p xml:id="pT30p0325b0208" cb:place="inline">答：若有六處，定有餘二
+<lb n="0325b03" ed="T"/>無闕故。又六處勝故，由六處攝二種故。</p><p xml:id="pT30p0325b0316" cb:place="inline">問：
+<lb n="0325b04" ed="T"/>若自所逼迫，若他所逼迫，若時候變異，若
+<lb n="0325b05" ed="T"/>先業所引，皆得生受；何故此中但顯觸為
+<lb n="0325b06" ed="T"/>彼緣？</p><p xml:id="pT30p0325b0603" cb:place="inline">答：觸是彼近因故，由觸所引故；餘緣
+<lb n="0325b07" ed="T"/>所生受亦從觸生故，必不離觸，是故偏說。</p>
+<lb n="0325b08" ed="T"/><p xml:id="pT30p0325b0801">問：經中亦說無明為緣生愛，順愛境界亦
+<lb n="0325b09" ed="T"/>得為緣，何故此中但說受為緣耶？</p><p xml:id="pT30p0325b0914" cb:place="inline">答：以受
+<lb n="0325b10" ed="T"/>力故，於相似境，或求和合，或求乖離。由
+<lb n="0325b11" ed="T"/>愚癡力，但於諸受起盡等相不如實知，由
+<lb n="0325b12" ed="T"/>此不能制御其心。</p><p xml:id="pT30p0325b1208" cb:place="inline">問：由隨眠未斷，順彼
+<lb n="0325b13" ed="T"/>諸法取皆得生，何故此中但說愛為取緣？</p>
+<lb n="0325b14" ed="T"/><p xml:id="pT30p0325b1401">答：由希望生故，於追求時，能發隨眠，及能
+<lb n="0325b15" ed="T"/>引彼隨順法故。</p><p xml:id="pT30p0325b1507" cb:place="inline">問：前已說無明為緣發起
+<lb n="0325b16" ed="T"/>業有，何故今者說取緣有？</p><p xml:id="pT30p0325b1611" cb:place="inline">答：由取力故，即
+<lb n="0325b17" ed="T"/>令彼業於彼彼生處能引識、名色等果。</p><p xml:id="pT30p0325b1716" cb:place="inline">問：
+<lb n="0325b18" ed="T"/>生亦以精血等為緣，何故此中唯說有緣
+<lb n="0325b19" ed="T"/>生耶？</p><p xml:id="pT30p0325b1903" cb:place="inline">答：由有有故，定有餘緣無闕。又有
+<lb n="0325b20" ed="T"/>勝故，唯說彼為緣。</p><p xml:id="pT30p0325b2008" cb:place="inline">問：亦由遠行、不避不平
+<lb n="0325b21" ed="T"/>等、他所逼迫為緣，老死可得，何故此中但
+<lb n="0325b22" ed="T"/>說生緣老死耶？</p><p xml:id="pT30p0325b2207" cb:place="inline">答：雖由彼諸緣，必以生
+<lb n="0325b23" ed="T"/>為根本故。縱闕彼緣，但生為緣，定有老
+<lb n="0325b24" ed="T"/>死故。</p>
+<lb n="0325b25" ed="T"/><p xml:id="pT30p0325b2501">問：此十二支，幾是煩惱道？幾是業道？幾是苦
+<lb n="0325b26" ed="T"/>道？</p><p xml:id="pT30p0325b2602" cb:place="inline">答：三是煩惱道，二是業道，餘是苦道。</p><p xml:id="pT30p0325b2616" cb:place="inline">問：幾
+<lb n="0325b27" ed="T"/>唯是因，幾唯是果，幾通因果？</p><p xml:id="pT30p0325b2712" cb:place="inline">答：初一唯因，
+<lb n="0325b28" ed="T"/>後一唯果，餘通因果。又即於此問，更作餘
+<lb n="0325b29" ed="T"/>答：三唯是因，二唯是果，當知所餘亦因亦
+<pb n="0325c" ed="T" xml:id="T30.1579.0325c"/>
+<lb n="0325c01" ed="T"/>果。</p><p xml:id="pT30p0325c0102" cb:place="inline">問：幾是獨相，幾是雜相？</p><p xml:id="pT30p0325c0111" cb:place="inline">答：三是獨相，行等
+<lb n="0325c02" ed="T"/>是雜相。</p><p xml:id="pT30p0325c0204" cb:place="inline">問：何故行、有是雜相？</p><p xml:id="pT30p0325c0212" cb:place="inline">答：由<note n="0325c0201" resp="CBETA" type="add">二【CB】【麗-CB】，一【大】</note><app n="0325c0201"><lem resp="CBETA.maha CBETA.say" wit="【CB】 【麗-CB】">二<note type="cf1">K15n0570_p0534a16</note></lem><rdg wit="【大】">一</rdg></app>種說
+<lb n="0325c03" ed="T"/>故。謂能引愛非愛果故，及能生趣差別故。</p>
+<lb n="0325c04" ed="T"/><p xml:id="pT30p0325c0401">問：何故識與名色、六處一分有雜相？</p><p xml:id="pT30p0325c0415" cb:place="inline">答：由
+<lb n="0325c05" ed="T"/>三種說故。謂依雜染時故，依<note n="0325004" resp="Taisho" type="orig" place="foot text">潤＝閏【三】【宮】</note><note n="0325004" resp="CBETA" type="mod">潤【大】，閏【宋】【元】【明】【宮】</note><app n="0325004"><lem wit="【大】">潤</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">閏</rdg></app>時故，依
+<lb n="0325c06" ed="T"/>轉時故。</p><p xml:id="pT30p0325c0604" cb:place="inline">問：何故識乃至受，與<note n="0325c0601" resp="CBETA.eva" type="add">CBETA 按：目前漢譯藏經都顯示「老死」之前沒有「生」字，但梵、藏、《瑜伽師地論記》等資料在「老死」之前有「生」字。</note>老死有雜相？
+<lb n="0325c07" ed="T"/>答：由二種說故。謂別顯苦相故，及顯引生
+<lb n="0325c08" ed="T"/>差別故。</p><p xml:id="pT30p0325c0804" cb:place="inline">復次，於緣起中：云何數往義？謂生
+<lb n="0325c09" ed="T"/>已不住義。云何和合義？謂諸緣聚集義。云何
+<lb n="0325c10" ed="T"/>起義？謂諸緣和合之所引攝新新生義。云何
+<lb n="0325c11" ed="T"/>緣起？云何緣生？謂諸行生起法性，是名緣
+<lb n="0325c12" ed="T"/>起；即彼生已，說名緣生。</p><p xml:id="pT30p0325c1210" cb:place="inline">問：幾支苦諦攝及現
+<lb n="0325c13" ed="T"/>法為苦？答：二，謂生及老死。</p><p xml:id="pT30p0325c1311" cb:place="inline">問：幾支苦諦攝，
+<lb n="0325c14" ed="T"/>當來為苦？答：識乃至受種子性。</p><p xml:id="pT30p0325c1413" cb:place="inline">問：幾支集諦
+<lb n="0325c15" ed="T"/>攝？答：所餘支。</p><p xml:id="pT30p0325c1506" cb:place="inline">問：無明與行為作俱有緣？為
+<lb n="0325c16" ed="T"/>作無間滅緣？為作久遠滅緣？</p><p xml:id="pT30p0325c1612" cb:place="inline">答：當知具作
+<lb n="0325c17" ed="T"/>三緣。謂由無知，於隨順諸行法中，為俱有
+<lb n="0325c18" ed="T"/>覆障緣，為彼彼事發起諸行。又由惡見、放
+<lb n="0325c19" ed="T"/>逸俱行無知，為無間滅生起緣，發起諸行。
+<lb n="0325c20" ed="T"/>又由無知，為久遠滅引發緣故，建立順彼
+<lb n="0325c21" ed="T"/>當生相續。</p><p xml:id="pT30p0325c2105" cb:place="inline">問：云何應知諸行望識為三種
+<lb n="0325c22" ed="T"/>緣？</p><p xml:id="pT30p0325c2202" cb:place="inline">答：由能熏發彼種子故，為俱有緣。次後
+<lb n="0325c23" ed="T"/>由彼勢力轉故，為無間滅生起緣。由彼當
+<lb n="0325c24" ed="T"/>來果得生故，為久遠滅引發緣。如行望識，
+<lb n="0325c25" ed="T"/>如是識望名色、名色望六處、六處望觸、觸
+<lb n="0325c26" ed="T"/>望受亦爾。</p>
+<lb n="0325c27" ed="T"/><p xml:id="pT30p0325c2701">問：云何應知受望愛為三種緣？</p><p xml:id="pT30p0325c2713" cb:place="inline">答：當知由
+<lb n="0325c28" ed="T"/>彼起樂著故，為俱有緣。從此無間，由彼勢
+<lb n="0325c29" ed="T"/>力起追求等作用轉故，為無間滅生起緣。
+<pb n="0326a" ed="T" xml:id="T30.1579.0326a"/>
+<lb n="0326a01" ed="T"/>建立當來難可解脫彼相續故，為久遠滅
+<lb n="0326a02" ed="T"/>引發緣。</p><p xml:id="pT30p0326a0204" cb:place="inline">問：云何愛望取為三種緣？</p><p xml:id="pT30p0326a0214" cb:place="inline">答：由欲
+<lb n="0326a03" ed="T"/>貪俱行，於隨順取法中，欲樂安立故，為俱
+<lb n="0326a04" ed="T"/>有緣。由無間滅勢力轉故，為生起緣。建立
+<lb n="0326a05" ed="T"/>當來難可解脫彼相續故，為久遠滅引發
+<lb n="0326a06" ed="T"/>緣。</p><p xml:id="pT30p0326a0602" cb:place="inline">問：云何取望有為三種緣？</p><p xml:id="pT30p0326a0612" cb:place="inline">答：由與彼俱，
+<lb n="0326a07" ed="T"/>令業能招諸趣果故，為俱有緣。又由彼
+<lb n="0326a08" ed="T"/>力，於此生處能引識等故，為無間滅生起
+<lb n="0326a09" ed="T"/>緣。又能引發彼界功能故，為久遠滅引發
+<lb n="0326a10" ed="T"/>緣。</p><p xml:id="pT30p0326a1002" cb:place="inline">問：云何有望生為三種緣？</p><p xml:id="pT30p0326a1012" cb:place="inline">答：熏發彼種
+<lb n="0326a11" ed="T"/>子故，為俱有緣。由彼勢力無間隨轉故，為
+<lb n="0326a12" ed="T"/>生起緣。雖久遠滅而果轉故，為引發緣。如
+<lb n="0326a13" ed="T"/>有望生，當知生望老死為緣亦爾。</p><p xml:id="pT30p0326a1314" cb:place="inline">復次，建
+<lb n="0326a14" ed="T"/>立有支有二種：一、就勝分建立，謂取所攝
+<lb n="0326a15" ed="T"/>受業，如前已說。二、全分建立，謂業及識乃
+<lb n="0326a16" ed="T"/>至受所有種子，取所攝受，建立為有應知。</p>
+<lb n="0326a17" ed="T"/><p xml:id="pT30p0326a1701">問：是諸有支唯有次第與行為緣乃至老
+<lb n="0326a18" ed="T"/>死，更有餘業用耶？</p><p xml:id="pT30p0326a1808" cb:place="inline">答：<note n="0326001" resp="Taisho" type="orig" place="foot text">〔即〕－【三】【宮】，即＝此【甲】</note><note n="0326001" resp="CBETA" type="mod">即【大】，〔－〕【宋】【元】【明】【宮】，此【甲】</note><app n="0326001"><lem wit="【大】">即</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg><rdg resp="Taisho" wit="【甲】">此</rdg></app>此業用，及於各別
+<lb n="0326a19" ed="T"/>所行境中，如其所應所有業用，當知是名
+<lb n="0326a20" ed="T"/>第二業用。</p>
+<lb n="0326a21" ed="T"/><p xml:id="pT30p0326a2101">問：無明唯與行為緣，亦與餘支為緣耶？</p><p xml:id="pT30p0326a2116" cb:place="inline">答：
+<lb n="0326a22" ed="T"/>無明乃至亦與老死為緣。前言唯與行為
+<lb n="0326a23" ed="T"/>緣者，但說近緣義。如是所餘盡應當知。復
+<lb n="0326a24" ed="T"/>次，後支非前支緣。何以故？如為斷後支故，
+<lb n="0326a25" ed="T"/>勤作功用斷於前支，由前斷故，後亦隨斷。
+<lb n="0326a26" ed="T"/>非為斷前故，勤作功用斷於後支。是故當
+<lb n="0326a27" ed="T"/>知唯此為彼緣。</p><p xml:id="pT30p0326a2707" cb:place="inline">問：云何說言此有故彼有？</p>
+<lb n="0326a28" ed="T"/><p xml:id="pT30p0326a2801">答：由未斷緣，餘得生義故。</p><p xml:id="pT30p0326a2811" cb:place="inline">問：云何此生故彼
+<lb n="0326a29" ed="T"/>生？</p><p xml:id="pT30p0326a2902" cb:place="inline">答：由無常緣，餘得生義故。</p><p xml:id="pT30p0326a2912" cb:place="inline">問：何故說言
+<pb n="0326b" ed="T" xml:id="T30.1579.0326b"/>
+<lb n="0326b01" ed="T"/>有生故有老死，要由生緣而有老死，如是
+<lb n="0326b02" ed="T"/>乃至無明望行？</p><p xml:id="pT30p0326b0207" cb:place="inline">答：由此言教道理，顯從無
+<lb n="0326b03" ed="T"/>實作用緣，餘得生義故。</p><p xml:id="pT30p0326b0310" cb:place="inline">問：何故說言有生
+<lb n="0326b04" ed="T"/>故有老死，非離生緣而有老死，如是乃至
+<lb n="0326b05" ed="T"/>無明望行？</p><p xml:id="pT30p0326b0505" cb:place="inline">答：由此言教道理，顯從自相續
+<lb n="0326b06" ed="T"/>緣；即自相續，餘得生義故。</p><p xml:id="pT30p0326b0611" cb:place="inline">問：若法無明為
+<lb n="0326b07" ed="T"/>緣，彼法是行耶？設是行者，彼無明為緣耶？</p>
+<lb n="0326b08" ed="T"/><p xml:id="pT30p0326b0801">答：應作四句。或有行非無明為緣，謂無漏
+<lb n="0326b09" ed="T"/>及無覆無記身語意行。或無明為緣而非是
+<lb n="0326b10" ed="T"/>行，謂除行所攝有支所餘有支。或有亦無
+<lb n="0326b11" ed="T"/>明為緣亦是行，謂福、非福、不動身語意行。除
+<lb n="0326b12" ed="T"/>如是相，是第四句。</p><p xml:id="pT30p0326b1208" cb:place="inline">問：若行為緣，彼亦識耶？
+<lb n="0326b13" ed="T"/>設是識者，行為緣耶？</p><p xml:id="pT30p0326b1309" cb:place="inline">答：應作四句。或行為
+<lb n="0326b14" ed="T"/>緣非識，謂除識所餘有支。或識非行為緣，
+<lb n="0326b15" ed="T"/>謂無漏識及無覆無記識，除異熟生。或亦識
+<lb n="0326b16" ed="T"/>亦行為緣，謂後有種子識及果識。除如是
+<lb n="0326b17" ed="T"/>相，是第四句。由此道理，乃至觸緣受，隨其
+<lb n="0326b18" ed="T"/>所應四句應知。</p><p xml:id="pT30p0326b1807" cb:place="inline">問：若受為緣，皆是愛耶？設
+<lb n="0326b19" ed="T"/>是愛者，皆受為緣耶？</p><p xml:id="pT30p0326b1909" cb:place="inline">答：應作四句：或有是
+<lb n="0326b20" ed="T"/>愛非受為緣，謂希求勝解脫，及依善愛而
+<lb n="0326b21" ed="T"/>捨餘愛。或受為緣而非是愛，謂<note n="0326002" resp="Taisho" type="orig" place="foot text">〔除〕－【三】【宮】【聖】</note><note n="0326002" resp="CBETA" type="mod">除【大】，〔－〕【宋】【元】【明】【宮】【聖】</note><app n="0326002"><lem wit="【大】">除</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】"><space quantity="0"/></rdg></app>無明觸
+<lb n="0326b22" ed="T"/>所生<note n="0326003" resp="Taisho" type="orig" place="foot text">受＝愛【三】【宮】【聖】</note><note n="0326003" resp="CBETA" type="mod">受【大】，愛【宋】【元】【明】【宮】【聖】</note><app n="0326003"><lem wit="【大】">受</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】">愛</rdg></app>為緣，所餘有支法生。或有受為緣
+<lb n="0326b23" ed="T"/>亦是愛，謂無明觸所生受為緣，染污愛生。
+<lb n="0326b24" ed="T"/>除如是相，是第四句。</p><p xml:id="pT30p0326b2409" cb:place="inline">問：若愛為緣，皆是取
+<lb n="0326b25" ed="T"/>耶？設是取者，皆愛為緣耶？</p><p xml:id="pT30p0326b2511" cb:place="inline">答：當知此中是
+<lb n="0326b26" ed="T"/>順後句。謂所有取皆愛為緣。或愛為緣而
+<lb n="0326b27" ed="T"/>非是取。謂除取所餘有支，及緣善愛、勤精
+<lb n="0326b28" ed="T"/>進等諸善法生。</p><p xml:id="pT30p0326b2807" cb:place="inline">問：若取為緣，皆是有耶？設是
+<lb n="0326b29" ed="T"/>有者，皆取為緣耶？</p><p xml:id="pT30p0326b2908" cb:place="inline">答：亦應作順後句。謂所
+<pb n="0326c" ed="T" xml:id="T30.1579.0326c"/>
+<lb n="0326c01" ed="T"/>有有皆取為緣。或取為緣而非是有。謂除
+<lb n="0326c02" ed="T"/>有，所餘有支。</p><p xml:id="pT30p0326c0206" cb:place="inline">問：若有為緣，皆是生耶？設是生
+<lb n="0326c03" ed="T"/>者，皆有為緣耶？</p><p xml:id="pT30p0326c0307" cb:place="inline">答：諸<note n="0326004" resp="Taisho" type="orig" place="foot text">所有＝有所【聖】</note><note n="0326004" resp="CBETA" type="mod">所有【大】，有所【聖】</note><app n="0326004"><lem wit="【大】">所有</lem><rdg resp="Taisho" wit="【聖】">有所</rdg></app>生皆有為緣。或
+<lb n="0326c04" ed="T"/>有為緣而非是生。謂除生，所餘老死最後
+<lb n="0326c05" ed="T"/>有支。</p><p xml:id="pT30p0326c0503" cb:place="inline">問：若生為緣，皆老死耶？設是老死，皆生
+<lb n="0326c06" ed="T"/>為緣耶？</p><p xml:id="pT30p0326c0604" cb:place="inline">答：所有老死皆生為緣。或生為緣
+<lb n="0326c07" ed="T"/>而非老死。所謂疾病、怨憎合會、親愛別離、
+<lb n="0326c08" ed="T"/>所求不遂、及彼所起愁歎憂苦種種熱惱。</p>
+<lb n="0326c09" ed="T"/><p xml:id="pT30p0326c0901">問：是諸有支，幾與道支所攝正見為勝障礙？</p>
+<lb n="0326c10" ed="T"/><p xml:id="pT30p0326c1001">答：無明，及彼所起意行，若有一分能為勝障。
+<lb n="0326c11" ed="T"/>如於正見，如是於正思惟及正精進亦爾。
+<lb n="0326c12" ed="T"/>若正語、正業、正命，以身行、語行及有一分
+<lb n="0326c13" ed="T"/>為勝障礙。若正<note n="0326005" resp="Taisho" type="orig" place="foot text">命＝念【三】【宮】</note><note n="0326005" resp="CBETA" type="mod">命【大】，念【宋】【元】【明】【宮】</note><app n="0326005"><lem wit="【大】">命</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">念</rdg></app>、正定，以餘有支為勝障
+<lb n="0326c14" ed="T"/>礙應知。</p><p xml:id="pT30p0326c1404" cb:place="inline">問：是諸有支，幾唯雜染品？幾通雜
+<lb n="0326c15" ed="T"/>染、清淨品？</p><p xml:id="pT30p0326c1505" cb:place="inline">答：四唯雜染品，餘通雜染、清淨品。</p>
+<lb n="0326c16" ed="T"/><p xml:id="pT30p0326c1601">問：云何生支通二品耶？</p><p xml:id="pT30p0326c1610" cb:place="inline">答：若生惡趣及有難
+<lb n="0326c17" ed="T"/>處，唯是雜染品；若生人天諸無難處，此通
+<lb n="0326c18" ed="T"/>染淨品。當知餘支，隨其所應皆通二品。</p><p xml:id="pT30p0326c1816" cb:place="inline">問：
+<lb n="0326c19" ed="T"/>何等無明不有故行不有，何等無明滅故行
+<lb n="0326c20" ed="T"/>滅耶？</p><p xml:id="pT30p0326c2003" cb:place="inline">答：有三種，發起、纏、隨眠無明，由此無
+<lb n="0326c21" ed="T"/>明滅故，彼無明滅；由彼滅故，行亦隨滅。</p>
+<lb n="0326c22" ed="T"/><p xml:id="pT30p0326c2201">問：何等行不有故識不有，何等行滅故識滅
+<lb n="0326c23" ed="T"/>耶？</p><p xml:id="pT30p0326c2302" cb:place="inline">答：諸行於自相續中已作已滅，及未起
+<lb n="0326c24" ed="T"/>對治，又由意行有故，起身語行；由此有
+<lb n="0326c25" ed="T"/>故彼有。彼無故，彼緣識亦無；此若全滅，當
+<lb n="0326c26" ed="T"/>知識亦隨滅。</p><p xml:id="pT30p0326c2606" cb:place="inline">問：何等識不有故名色不有，
+<lb n="0326c27" ed="T"/>何等識滅故名色滅耶？</p><p xml:id="pT30p0326c2710" cb:place="inline">答：種子識不有故，果
+<lb n="0326c28" ed="T"/>識不有。此俱滅故，俱名色滅。如識望名色
+<lb n="0326c29" ed="T"/>道理，如是餘支乃至受，隨其所應，當知亦
+<pb n="0327a" ed="T" xml:id="T30.1579.0327a"/>
+<lb n="0327a01" ed="T"/>爾。如無明緣行道理，如是愛緣取、取緣有
+<lb n="0327a02" ed="T"/>道理，當知亦爾。如行緣識道理，如是有緣
+<lb n="0327a03" ed="T"/>生，當知亦爾。如識緣名色道理，生緣老
+<lb n="0327a04" ed="T"/>死，當知亦爾。</p><p xml:id="pT30p0327a0406" cb:place="inline">問：何等受不有故愛不有，何
+<lb n="0327a05" ed="T"/>等受滅故愛滅耶？</p><p xml:id="pT30p0327a0508" cb:place="inline">答：如行緣識道理，當知
+<lb n="0327a06" ed="T"/>亦爾。</p><p xml:id="pT30p0327a0603" cb:place="inline">問：如前所說八緣起門，幾門是十二支
+<lb n="0327a07" ed="T"/>緣起所顯，幾門非耶？</p><p xml:id="pT30p0327a0709" cb:place="inline">答：三門是彼所顯，謂二
+<lb n="0327a08" ed="T"/>一分所顯，一全分所顯；餘門非。何等為二一
+<lb n="0327a09" ed="T"/>分所顯？謂內識生門、自業所作門。何等為一
+<lb n="0327a10" ed="T"/>全分所顯？謂有情世間轉門。</p><p xml:id="pT30p0327a1012" cb:place="inline">問：不如實知
+<lb n="0327a11" ed="T"/>緣起道理者，有幾種過患耶？</p><p xml:id="pT30p0327a1112" cb:place="inline">答：有五。謂起
+<lb n="0327a12" ed="T"/>我見，及能發起前際俱行見。如前際俱行
+<lb n="0327a13" ed="T"/>見，如是後際俱行見、前後際俱行見亦爾。又
+<lb n="0327a14" ed="T"/>於彼見猛利堅執，有取有<note n="0327001" resp="Taisho" type="orig" place="foot text">怖＝悕【三】【宮】</note><note n="0327001" resp="CBETA" type="mod">怖【大】，悕【宋】【元】【明】【宮】</note><app n="0327001"><lem wit="【大】">怖</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">悕</rdg></app>，於現法中
+<lb n="0327a15" ed="T"/>不般涅槃，是名第五過患。</p><p xml:id="pT30p0327a1511" cb:place="inline">問：如實知者，有
+<lb n="0327a16" ed="T"/>幾種勝利耶？答：翻前五過，應知勝利亦有
+<lb n="0327a17" ed="T"/>五種。</p><p xml:id="pT30p0327a1703" cb:place="inline">復次，是十二支緣起，幾支是實有？謂九。
+<lb n="0327a18" ed="T"/>幾支非實有？謂餘。</p><p xml:id="pT30p0327a1808" cb:place="inline">幾一事為自性？謂五。幾
+<lb n="0327a19" ed="T"/>非一事為自性？謂餘。</p><p xml:id="pT30p0327a1909" cb:place="inline">幾是所知障因？謂一。</p>
+<lb n="0327a20" ed="T"/><p xml:id="pT30p0327a2001">幾能生苦？謂五。幾苦胎藏？謂五。幾唯是苦？謂
+<lb n="0327a21" ed="T"/>二。</p><p xml:id="pT30p0327a2102" cb:place="inline">幾說為因分？謂前六，無明乃至觸，及愛、
+<lb n="0327a22" ed="T"/>取、有三，說為因分。幾說為果分？謂後二說
+<lb n="0327a23" ed="T"/>為果分。幾說為雜因果分？謂所餘支說為
+<lb n="0327a24" ed="T"/>雜分。所以者何？有二種受名為雜分。一、謂
+<lb n="0327a25" ed="T"/>後法以觸為緣因受；二、謂現法與愛為緣
+<lb n="0327a26" ed="T"/>果受。此二雜說為觸緣受。</p><p xml:id="pT30p0327a2611" cb:place="inline">復次，幾支能生
+<lb n="0327a27" ed="T"/>愛非愛境界果？幾支能生自體果？謂前六支
+<lb n="0327a28" ed="T"/>能生前果，後三支能生後果，一支俱生二
+<lb n="0327a29" ed="T"/>果。</p><p xml:id="pT30p0327a2902" cb:place="inline">復次，幾支樂受俱行？謂除二，所餘支。幾支
+<pb n="0327b" ed="T" xml:id="T30.1579.0327b"/>
+<lb n="0327b01" ed="T"/>苦受俱行？謂即彼及所除中一。幾支不苦不
+<lb n="0327b02" ed="T"/>樂受俱行？謂如樂受道理應知。幾支不與
+<lb n="0327b03" ed="T"/>受俱行？謂所除中一。</p><p xml:id="pT30p0327b0309" cb:place="inline">復次，幾支壞苦攝？謂樂
+<lb n="0327b04" ed="T"/>受俱行支及非受俱行支一分。幾支苦苦攝？
+<lb n="0327b05" ed="T"/>謂苦受俱行支及非受俱行支一分。幾支行
+<lb n="0327b06" ed="T"/>苦攝？謂所有壞苦、苦苦支，亦是行苦支。或
+<lb n="0327b07" ed="T"/>有行苦所攝，非餘二苦。謂不苦不樂受俱行
+<lb n="0327b08" ed="T"/>支及非受俱行支一分。</p><p xml:id="pT30p0327b0810" cb:place="inline">問：於一切生處及三
+<lb n="0327b09" ed="T"/>摩鉢底中，皆有一切支現行可得耶？</p><p xml:id="pT30p0327b0915" cb:place="inline">答：不
+<lb n="0327b10" ed="T"/>可得。謂無想天中，及滅盡定、無想定中，有
+<lb n="0327b11" ed="T"/>色支可得，非無色支。若生無色界，無色支
+<lb n="0327b12" ed="T"/>可得，非有色支。</p><p xml:id="pT30p0327b1207" cb:place="inline">問：頗有依支得離支耶？</p>
+<lb n="0327b13" ed="T"/><p xml:id="pT30p0327b1301">答：有。謂依上地支離下地支。此但一分，非
+<lb n="0327b14" ed="T"/>全；唯暫時，非究竟。</p><p xml:id="pT30p0327b1408" cb:place="inline">問：幾支染污，幾支不染
+<lb n="0327b15" ed="T"/>污？</p><p xml:id="pT30p0327b1502" cb:place="inline">答：三染。餘通二種，若不染污，善及無覆
+<lb n="0327b16" ed="T"/>無記別故，分為二種應知。</p><p xml:id="pT30p0327b1611" cb:place="inline">問：幾支欲界繫？</p>
+<lb n="0327b17" ed="T"/><p xml:id="pT30p0327b1701">答：一切支，和合等起故。</p><p xml:id="pT30p0327b1710" cb:place="inline">問：幾支色界繫？</p><p xml:id="pT30p0327b1716" cb:place="inline">答：一
+<lb n="0327b18" ed="T"/>切一分。</p><p xml:id="pT30p0327b1804" cb:place="inline">問：云何應知彼有老耶？</p><p xml:id="pT30p0327b1813" cb:place="inline">答：彼諸行
+<lb n="0327b19" ed="T"/>有朽壞腐敗性故。如色界繫，當知無色界
+<lb n="0327b20" ed="T"/>繫亦爾。</p><p xml:id="pT30p0327b2004" cb:place="inline">問：幾支是學？</p><p xml:id="pT30p0327b2009" cb:place="inline">答：無。</p><p xml:id="pT30p0327b2011" cb:place="inline">問：幾支是無學？</p><p xml:id="pT30p0327b2017" cb:place="inline">答：
+<lb n="0327b21" ed="T"/>亦無。</p><p xml:id="pT30p0327b2103" cb:place="inline">問：幾支是非學非無學？</p><p xml:id="pT30p0327b2112" cb:place="inline">答：一切。</p><p xml:id="pT30p0327b2115" cb:place="inline">問：所
+<lb n="0327b22" ed="T"/>有善有漏支，彼何故非學耶？</p><p xml:id="pT30p0327b2212" cb:place="inline">答：墮流轉故。
+<lb n="0327b23" ed="T"/>若學所有善有漏法，彼與流轉相違故，及
+<lb n="0327b24" ed="T"/>用明為緣故，非支。</p><p xml:id="pT30p0327b2408" cb:place="inline">問：預流果當言幾支已
+<lb n="0327b25" ed="T"/>斷耶？</p><p xml:id="pT30p0327b2503" cb:place="inline">答：一切一分，無全斷者。如預流果，如
+<lb n="0327b26" ed="T"/>是一來果亦爾。</p><p xml:id="pT30p0327b2607" cb:place="inline">問：不還果當言幾支已斷
+<lb n="0327b27" ed="T"/>耶？</p><p xml:id="pT30p0327b2702">答：欲界一切，色無色界不定。</p></cb:div>
+<cb:div n="10" type="mu"><cb:mulu n="28" level="6" type="其他">10目 攝諸經(十六門)</cb:mulu><p xml:id="pT30p0327b2713" cb:place="inline">問：阿羅漢當
+<lb n="0327b28" ed="T"/>言幾支已斷耶？</p><p xml:id="pT30p0327b2807" cb:place="inline">答：三界一切。</p><p xml:id="pT30p0327b2812" cb:place="inline">復次，於彼彼
+<lb n="0327b29" ed="T"/>經中，由幾種言說道理說緣起耶？謂略說
+<pb n="0327c" ed="T" xml:id="T30.1579.0327c"/>
+<lb n="0327c01" ed="T"/>由六種言說道理：一、由順次第說，二、由逆
+<lb n="0327c02" ed="T"/>次第說，三、由一分支說，四、由具分支說，五、
+<lb n="0327c03" ed="T"/>由黑品說，六、由白品說。</p><p xml:id="pT30p0327c0310" cb:place="inline">問：如世尊說緣起
+<lb n="0327c04" ed="T"/>甚深，此甚深義云何應知？</p><p xml:id="pT30p0327c0411" cb:place="inline">答：由十種相，應
+<lb n="0327c05" ed="T"/>知緣起甚深義。謂依無常義、苦義、空義、無
+<lb n="0327c06" ed="T"/>我義說。依無常義者，謂從自種子生，亦
+<lb n="0327c07" ed="T"/>待他緣。又從他緣生，亦待自種子。又從自
+<lb n="0327c08" ed="T"/>種子<note n="0327c0801" resp="CBETA" type="add">及【CB】【麗-CB】，又【大】</note><app n="0327c0801"><lem resp="CBETA.maha CBETA.say" wit="【CB】 【麗-CB】">及<note type="cf1">K15n0570_p0537a16</note><note type="cf2">T42n1828_p0376b04</note></lem><rdg wit="【大】">又</rdg></app>從他緣生，而種及緣於此生事無
+<lb n="0327c09" ed="T"/>作、無用，亦無運轉。又復此二因性功能非
+<lb n="0327c10" ed="T"/>不是有。又諸有支雖無始來其相成就，然
+<lb n="0327c11" ed="T"/>剎那剎那新新相轉。又緣起支雖剎那速滅，
+<lb n="0327c12" ed="T"/>然似停住運動相現。依苦義者，謂緣起支
+<lb n="0327c13" ed="T"/>一味苦相，而似三種相現。依空義者，謂緣
+<lb n="0327c14" ed="T"/>起支雖離有情、作者、<note n="0327002" resp="Taisho" type="orig" place="foot text">受＝苦【三】【宮】</note><note n="0327002" resp="CBETA" type="mod">受【大】，苦【宋】【元】【明】【宮】</note><app n="0327002"><lem wit="【大】">受</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">苦</rdg></app>者，然似不離顯
+<lb n="0327c15" ed="T"/>現而說。依無我義者，謂緣起支雖不自在，
+<lb n="0327c16" ed="T"/>實無有我相，然似我相顯現，依勝義諦，諸
+<lb n="0327c17" ed="T"/>法自性雖不可說，而言諸法自性可說。</p><p xml:id="pT30p0327c1716" cb:place="inline">問：
+<lb n="0327c18" ed="T"/>應以幾智知緣起耶？</p><p xml:id="pT30p0327c1809" cb:place="inline">答：二。謂以法住智
+<lb n="0327c19" ed="T"/>及真實智。云何以法住智？謂如佛施設開
+<lb n="0327c20" ed="T"/>示，無倒而知。云何以真實智？謂如學見跡，
+<lb n="0327c21" ed="T"/>觀甚深義。</p><p xml:id="pT30p0327c2105" cb:place="inline">問：如世尊言：是諸緣起非我所
+<lb n="0327c22" ed="T"/>作，亦非餘作。所以者何？若佛出世，若不出
+<lb n="0327c23" ed="T"/>世，安住法性、法住、法界。云何法性？云何法
+<lb n="0327c24" ed="T"/>住？云何法界？</p><p xml:id="pT30p0327c2406" cb:place="inline">答：是諸緣起無始時來理成就
+<lb n="0327c25" ed="T"/>性，是名法性。如成就性，以無顛倒文句安
+<lb n="0327c26" ed="T"/>立，是名法住。由此法住，以彼法性為因，是
+<lb n="0327c27" ed="T"/>故說彼名為法界。</p><p xml:id="pT30p0327c2708" cb:place="inline">問：如經言：生若無者，無
+<lb n="0327c28" ed="T"/>處無位生可是有。若一切種生非有者，生
+<lb n="0327c29" ed="T"/>緣老死應不可得，何故此中說彼自性緣
+<pb n="0328a" ed="T" xml:id="T30.1579.0328a"/>
+<lb n="0328a01" ed="T"/>自性耶？</p><p xml:id="pT30p0328a0104" cb:place="inline">答：依自種子果生說故。謂識乃至
+<lb n="0328a02" ed="T"/>受支是生種子故，義說為生。由此有故，後
+<lb n="0328a03" ed="T"/>時即此果支名有緣生。如是餘支，如經所
+<lb n="0328a04" ed="T"/>說，隨其所應盡當知。</p>
+<lb n="0328a05" ed="T"/><p xml:id="pT30p0328a0501">問：已說一切支非更互為緣，何故建立名
+<lb n="0328a06" ed="T"/>色與識互為緣耶？</p><p xml:id="pT30p0328a0608" cb:place="inline">答：識於現法中，用名色
+<lb n="0328a07" ed="T"/>為緣故；名色復於後法中，用識為緣故。所
+<lb n="0328a08" ed="T"/>以者何？以於母腹中有相續時，說互為緣
+<lb n="0328a09" ed="T"/>故。由識為緣，於母腹中諸精血色，名所攝
+<lb n="0328a10" ed="T"/>受，和合共成羯羅藍性。即此名色為緣，復
+<lb n="0328a11" ed="T"/>令彼識於此得住。</p><p xml:id="pT30p0328a1108" cb:place="inline">問：何故菩薩觀黑品時，
+<lb n="0328a12" ed="T"/>唯至識支，其意轉還，非至餘支耶？</p><p xml:id="pT30p0328a1214" cb:place="inline">答：由此
+<lb n="0328a13" ed="T"/>二支更互為緣故，如識緣名色，如是名色
+<lb n="0328a14" ed="T"/>亦緣識，是故觀心至識轉還。於餘支中，無
+<lb n="0328a15" ed="T"/>有如是轉還道理。於此一處，顯示更互為
+<lb n="0328a16" ed="T"/>緣道理，故名轉還。於還滅品中，名色非是
+<lb n="0328a17" ed="T"/>後有識還滅因，由此因緣，復<note n="0328001" resp="Taisho" type="orig" place="foot text">過＝還【三】，遇【宮】</note><note n="0328001" resp="CBETA" type="mod">過【大】，還【宋】【元】【明】，遇【宮】</note><app n="0328001"><lem wit="【大】">過</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">還</rdg><rdg resp="Taisho" wit="【宮】">遇</rdg></app>觀察。</p><p xml:id="pT30p0328a1715" cb:place="inline">問：何
+<lb n="0328a18" ed="T"/>因緣故，說緣起支非自作、非他作、非俱作，
+<lb n="0328a19" ed="T"/>亦非無因生耶？</p><p xml:id="pT30p0328a1907" cb:place="inline">答：生者非有故，緣無作用
+<lb n="0328a20" ed="T"/>故，緣力所生故。</p><p xml:id="pT30p0328a2007" cb:place="inline">問：於緣起中，何等是苦芽，
+<lb n="0328a21" ed="T"/>誰守養苦<note n="0328002" resp="Taisho" type="orig" place="foot text">芽＝牙【三】【宮】＊</note><note n="0328002" resp="CBETA" type="mod">芽【大】＊，牙【宋】【元】【明】【宮】＊</note><app n="0328002"><lem wit="【大】">芽</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">牙</rdg></app>？何等為苦樹？</p><p xml:id="pT30p0328a2111" cb:place="inline">答：無明、行緣所
+<lb n="0328a22" ed="T"/>引識乃至受，是苦<app type="star" corresp="#0328002"><lem wit="【大】">芽</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">牙</rdg></app>。受緣所引愛乃至有，是
+<lb n="0328a23" ed="T"/>守養苦<app type="star" corresp="#0328002"><lem wit="【大】">芽</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">牙</rdg></app>。生與老死，當知是苦樹。</p><p xml:id="pT30p0328a2314" cb:place="inline">問：幾緣
+<lb n="0328a24" ed="T"/>起支當知如炷？</p><p xml:id="pT30p0328a2407" cb:place="inline">答：識乃至受。</p><p xml:id="pT30p0328a2412" cb:place="inline">問：幾支如膏？</p>
+<lb n="0328a25" ed="T"/><p xml:id="pT30p0328a2501">答：<note n="0328003" resp="Taisho" type="orig" place="foot text">元＝無【三】【宮】</note><note n="0328003" resp="CBETA" type="mod" cb:note_key="T30.0328a25.02">無【CB】【磧-CB】【宋】【元】【明】【宮】，元【大】</note><app n="0328003"><lem resp="CBETA.maha" wit="【CB】 【磧-CB】" cb:provider="蘇勁 (2019-11-27)">無<note type="cf1">Q15_p0209b17</note></lem><rdg wit="【大】">元</rdg><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">無</rdg></app>明、行、愛、取、有。</p><p xml:id="pT30p0328a2520" cb:place="inline">問：幾支如焰？</p><p xml:id="pT30p0328a2525" cb:place="inline">答：生、老死
+<lb n="0328a26" ed="T"/>應知。</p><p xml:id="pT30p0328a2603" cb:place="inline">問：何因緣故，於緣起黑品教中說名
+<lb n="0328a27" ed="T"/>增益？</p><p xml:id="pT30p0328a2703" cb:place="inline">答：一切有支純大苦聚為後果故。又諸
+<lb n="0328a28" ed="T"/>有支，前前為緣，後後所隨故。</p><p xml:id="pT30p0328a2812" cb:place="inline">問：何因緣故，
+<lb n="0328a29" ed="T"/>於白品教中說名損減？</p><p xml:id="pT30p0328a2910" cb:place="inline">答：由一切支，前前
+<pb n="0328b" ed="T" xml:id="T30.1579.0328b"/>
+<lb n="0328b01" ed="T"/>永斷，後後<note n="0328004" resp="Taisho" type="orig" place="foot text">減＝滅【三】</note><note n="0328004" resp="CBETA" type="mod">減【大】，滅【宋】【元】【明】</note><app n="0328004"><lem wit="【大】">減</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">滅</rdg></app>故。又是純大苦聚損減因故。</p>
+<lb n="0328b02" ed="T"/><p xml:id="pT30p0328b0201">問：幾緣起支名有因法？</p><p xml:id="pT30p0328b0210" cb:place="inline">答：謂前七。</p><p xml:id="pT30p0328b0214" cb:place="inline">問：幾緣起
+<lb n="0328b03" ed="T"/>支名有因苦？</p><p xml:id="pT30p0328b0306" cb:place="inline">答：餘五。</p><p xml:id="pT30p0328b0309" cb:place="inline">問：幾支滅是漏盡所顯？</p>
+<lb n="0328b04" ed="T"/><p xml:id="pT30p0328b0401">答：三。</p><p xml:id="pT30p0328b0403" cb:place="inline">問：幾支滅是緣盡所顯？</p><p xml:id="pT30p0328b0412" cb:place="inline">答：即此三是餘
+<lb n="0328b05" ed="T"/>支緣故。</p><p xml:id="pT30p0328b0504" cb:place="inline">問：幾支滅是受盡所顯？</p><p xml:id="pT30p0328b0513" cb:place="inline">答：一。謂由煩
+<lb n="0328b06" ed="T"/>惱已斷故，所依滅時，此一切受皆永息滅
+<lb n="0328b07" ed="T"/>故。</p><p xml:id="pT30p0328b0702" cb:place="inline">問：何因緣故，依止緣起建立七十七智
+<lb n="0328b08" ed="T"/>耶？</p><p xml:id="pT30p0328b0802" cb:place="inline">答：為顯有因雜染智故，又復為顯於自
+<lb n="0328b09" ed="T"/>相續自已所作雜染智故，又復為顯前際
+<lb n="0328b10" ed="T"/>諸支無始時故，又復為顯後際諸支容有
+<lb n="0328b11" ed="T"/>雜染還滅義故，又復為顯支所不攝諸有
+<lb n="0328b12" ed="T"/>漏慧遍知義故。於一一支皆作七智，當知
+<lb n="0328b13" ed="T"/>總有七十七智。</p><p xml:id="pT30p0328b1307" cb:place="inline">問：何因緣故，於緣起中建
+<lb n="0328b14" ed="T"/>立四十四智耶？</p><p xml:id="pT30p0328b1407" cb:place="inline">答：為顯於一一支，依四聖
+<lb n="0328b15" ed="T"/>諦觀察道理，是故總有四十四智。</p><p xml:id="pT30p0328b1514" cb:place="inline">復次，若
+<lb n="0328b16" ed="T"/>生欲界，依欲界身，引發上地若眼若耳，由
+<lb n="0328b17" ed="T"/>此見聞下地、自地所有色聲。又依此身，起
+<lb n="0328b18" ed="T"/>三界意及不繫意而現在前。若生色無色界，
+<lb n="0328b19" ed="T"/>除其下地，一切現前如在欲界。</p></cb:div></cb:div></cb:div>
+<cb:div n="4" type="jie"><cb:mulu n="39" level="4" type="其他">4節 明斷三雜染修六現觀</cb:mulu>
+<lb n="0328b20" ed="T"/><p xml:id="pT30p0328b2001">復次，此三種雜染，謂煩惱雜染、業雜染、生雜
+<lb n="0328b21" ed="T"/>染，為欲斷故，修六種現觀應知。何等為
+<lb n="0328b22" ed="T"/>六？謂思現觀、信現觀、戒現觀、現觀智諦現
+<lb n="0328b23" ed="T"/>觀、現觀邊智諦現觀、究竟現觀。</p></cb:div></cb:div></cb:div>
+<lb n="0328b24" ed="T"/><cb:juan n="010" fun="close"><cb:jhead><title>瑜伽師地論</title>卷第十</cb:jhead></cb:juan>
+</cb:div></body></text></TEI>

@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/cbeta-git/xml-p5a/master/schema/cbeta-p5a.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:cb="http://www.cbeta.org/ns/1.0" xml:id="T30n1579">
+<teiHeader>
+	<fileDesc>
+		<titleStmt>
+			<title>Taishō Tripiṭaka, Electronic version, No. 1579 瑜伽師地論</title>
+			<title xml:lang="zh-Hant">大正新脩大藏經數位版, No. 1579 瑜伽師地論</title>
+			<author>彌勒菩薩說  唐 玄奘譯</author>
+			<respStmt>
+				<resp>Electronic Version by</resp>
+				<name>CBETA</name>
+			</respStmt>
+		</titleStmt>
+		<editionStmt>
+			<edition>單卷版 XML TEI P5b</edition>
+		</editionStmt>
+		<extent>100卷</extent>
+		<publicationStmt>
+			<idno type="CBETA">
+				<idno type="canon">T</idno>.<idno type="vol">30</idno>.<idno type="no">1579</idno>
+			</idno>
+			<distributor>
+				<name>中華電子佛典協會 (CBETA)</name>
+				<address>
+					<addrLine><email>service@cbeta.org</email></addrLine>
+				</address>
+			</distributor>
+			<availability>
+				<p>Available for non-commercial use when distributed with this header intact.</p>
+			</availability>
+			<date>2023-11-09 21:01:39 +0800</date>
+		</publicationStmt>
+		<sourceDesc>
+			<bibl>
+				<title level="s">Taishō Tripiṭaka</title>
+				<title level="s" xml:lang="zh-Hant">大正新脩大藏經</title>
+				<title level="m" xml:lang="zh-Hant">瑜伽師地論</title>
+			</bibl>
+		</sourceDesc>
+	</fileDesc>
+	<encodingDesc>
+		<projectDesc>
+			<p xml:lang="en" cb:type="ly">Text as provided by Mr. Hsiao Chen-Kuo, Tripitaka Koreana as provided by Mr. Christian Wittern, Text as provided by Mr. Christian Wittern, Text as inputted by Seeland Monastery, The Outline as provided by Ven. Huimin, Punctuated text as provided by Yogācārabhūmi Database</p>
+			<p xml:lang="zh-Hant" cb:type="ly">蕭鎮國大德提供，維習安大德提供之高麗藏 CD 經文，維習安大德提供，西蓮淨苑輸入，惠敏法師提供科判，《瑜伽師地論》資料庫提供新式標點</p>
+		</projectDesc>
+		<editorialDecl>			
+			<punctuation resp="CBETA"><p>新式標點</p></punctuation>
+		</editorialDecl>
+		<tagsDecl>
+			<namespace name="http://www.tei-c.org/ns/1.0">
+				<tagUsage gi="rdg">
+					<listWit>
+						<witness xml:id="wit.orig">【大】</witness>
+						<witness xml:id="wit.cbeta">【CB】</witness>
+					</listWit>
+				</tagUsage>
+			</namespace>
+		</tagsDecl>
+		<charDecl>
+			<char xml:id="CB01462">
+				<charName>CBETA CHARACTER CB01462</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[飢-几+是]</value>
+				</charProp>
+				<mapping type="unicode">U+2974A</mapping>
+				<mapping cb:dec="984502" type="PUA">U+F05B6</mapping>
+			</char>
+		</charDecl>
+	</encodingDesc>
+	<profileDesc>
+		<langUsage>
+			<language ident="sa">Sanskrit</language>
+			<language ident="en">English</language>
+			<language ident="zh-Hant">Chinese (Traditional)</language>
+		</langUsage>
+	</profileDesc>
+	<revisionDesc>
+		<change when="2013-05-20">
+			<name>CW</name><name>Ray Chou 周邦信</name>P4 to P5 conversion by p4top5a.py, intended for publication
+		</change>
+		<change when="1999-07-01T16:18:25">
+			CW (ed.) converted to XML with CBXML.BAT (99/6/30)
+		</change>
+	</revisionDesc>
+</teiHeader>
+<text><body>
+<cb:mulu n="2" level="1" type="分">2 攝決擇分</cb:mulu><cb:mulu n="10" level="2" type="其他">13 聲聞地</cb:mulu><cb:mulu n="2" level="3" type="其他">2章 正決擇</cb:mulu><cb:mulu n="132" level="4" type="其他">3節 六十四門雜決擇</cb:mulu><cb:mulu n="360" level="5" type="其他">50項 眾生四支</cb:mulu><cb:div n="2" type="fen"><cb:div n="2" type="di"><cb:div n="2" type="zhang"><cb:div n="3" type="jie">
+<milestone n="71" unit="juan"/>
+<lb n="0690b08" ed="T"/>
+<lb n="0690b09" ed="T"/>
+<lb n="0690b10" ed="T"/><cb:juan n="071" fun="open"><cb:mulu n="071" type="卷"></cb:mulu><cb:jhead><title>瑜伽師地論</title>卷第七十一</cb:jhead>
+<lb n="0690b11" ed="T"/>
+<lb n="0690b12" ed="T"/><byline cb:type="author">彌勒菩薩說</byline>
+<lb n="0690b13" ed="T"/><byline cb:type="Translator"><anchor xml:id="fxT30p0690b01"/>三藏法師玄奘奉　詔譯</byline>
+<lb n="0690b14" ed="T"/><cb:jhead type="pin">攝決擇分中聲聞地之五</cb:jhead></cb:juan>
+<cb:div n="51" type="xiang"><cb:mulu n="361" level="5" type="其他">51項 七義及七喜</cb:mulu>
+<lb n="0690b15" ed="T"/><p xml:id="pT30p0690b1501">復次，有七種義。一、應推義，二、應攝義，三、應避
+<lb n="0690b16" ed="T"/>義，四、應引義，五、應遮義，六、應持義，七、應發
+<lb n="0690b17" ed="T"/>義。復次，有七種喜。一、聞所引喜，二、思所引
+<lb n="0690b18" ed="T"/>喜，三、修所引喜，四、離蓋所引喜，五、議論所
+<lb n="0690b19" ed="T"/>引喜，六、念自功德所引喜，七、於諸下劣
+<lb n="0690b20" ed="T"/>不生知足所引喜。</p></cb:div>
+<cb:div n="52" type="xiang"><cb:mulu n="362" level="5" type="其他">52項 五種法</cb:mulu><p xml:id="pT30p0690b2008" cb:place="inline">復次，有五種法。一、教法，
+<lb n="0690b21" ed="T"/>二、行法，三、攝受法，四、受用法，五、證法。</p></cb:div>
+<cb:div n="53" type="xiang"><cb:mulu n="363" level="5" type="其他">53項 善射三德</cb:mulu>
+<lb n="0690b22" ed="T"/><p xml:id="pT30p0690b2201">復次，具三種德，方能善射。一、由弓德，二、由
+<lb n="0690b23" ed="T"/>箭德，三、由中的德。弓有二德。一、其性堅牢，
+<lb n="0690b24" ed="T"/>二、善作究竟。箭有一德。善作究竟。中的有
+<lb n="0690b25" ed="T"/>三德。一、究竟工巧，二、串習工巧，三、師學工巧。</p></cb:div>
+<cb:div n="54" type="xiang"><cb:mulu n="364" level="5" type="其他">54項 佛教差別及理趣</cb:mulu>
+<lb n="0690b26" ed="T"/><p xml:id="pT30p0690b2601">復次，如來教有三種。一、長時教，二、無間教，三、
+<lb n="0690b27" ed="T"/>不重說教。</p>
+<lb n="0690b28" ed="T"/><p xml:id="pT30p0690b2801">復次，如來無量法教，皆由三種理趣。一、由義
+<lb n="0690b29" ed="T"/>差別理趣，二、由文差別理趣，三、由難釋差
+<pb n="0690c" ed="T" xml:id="T30.1579.0690c"/>
+<lb n="0690c01" ed="T"/>別理趣。</p></cb:div>
+<cb:div n="55" type="xiang"><cb:mulu n="365" level="5" type="其他">55項 涉道五對治及尸羅</cb:mulu>
+<lb n="0690c02" ed="T"/><p xml:id="pT30p0690c0201">復次，夫涉道者，須五對治。一、焰光對治，二、
+<lb n="0690c03" ed="T"/>艱險對治，三、江河對治，四、枯竭對治，五、身勞
+<lb n="0690c04" ed="T"/>對治。</p>
+<lb n="0690c05" ed="T"/><p xml:id="pT30p0690c0501">復次，尸羅有二種相，能<note n="0690007" resp="Taisho" type="orig" place="foot text">往＝生【三】</note><note n="0690007" resp="CBETA" type="mod">往【大】，生【宋】【元】【明】</note><app n="0690007"><lem wit="【大】">往</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">生</rdg></app>善趣。一、攝受尸
+<lb n="0690c06" ed="T"/>羅，二、不缺尸羅。</p></cb:div>
+<cb:div n="56" type="xiang"><cb:mulu n="366" level="5" type="其他">56項 受欲及變壞</cb:mulu>
+<lb n="0690c07" ed="T"/><p xml:id="pT30p0690c0701">復次，諸受欲者，於現法中<note n="0690008" resp="Taisho" type="orig" place="foot text">（法）＋有【三】【宮】</note><note n="0690008" resp="CBETA" type="mod">有【大】，法有【宋】【元】【明】【宮】</note><app n="0690008"><lem wit="【大】">有</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">法有</rdg></app>三種義。一、追
+<lb n="0690c08" ed="T"/>尋財寶，二、守護財寶，三、耽著受用。復次，壽命
+<lb n="0690c09" ed="T"/>變壞有二種。一、麁變壞，二、細變壞。變壞分位
+<lb n="0690c10" ed="T"/>亦有二種。一、麁，二、細。</p></cb:div>
+<cb:div n="57" type="xiang"><cb:mulu n="367" level="5" type="其他">57項 智二德</cb:mulu><p xml:id="pT30p0690c1009" cb:place="inline">復次，智有二德。一、正
+<lb n="0690c11" ed="T"/>行義德，二、自性德。正行義德者，謂速疾正行、
+<lb n="0690c12" ed="T"/>決定正行、微細正行。自性德者，謂是定地，不
+<lb n="0690c13" ed="T"/>可退轉，是出世間，已善修習，於自所行無
+<lb n="0690c14" ed="T"/>有罣礙，勝餘一切自類善根，勝於一切他
+<lb n="0690c15" ed="T"/>類善根。</p></cb:div>
+<cb:div n="58" type="xiang"><cb:mulu n="368" level="5" type="其他">58項 四念住對治三顧戀</cb:mulu>
+<lb n="0690c16" ed="T"/><p xml:id="pT30p0690c1601">復次，有三顧戀，修四念住能為對治。一、顧
+<lb n="0690c17" ed="T"/>戀助伴，二、顧戀利養，三、顧戀後有。</p></cb:div>
+<cb:div n="59" type="xiang"><cb:mulu n="369" level="5" type="其他">59項 釋加行等三句</cb:mulu><p xml:id="pT30p0690c1714" cb:place="inline">復次，加
+<lb n="0690c18" ed="T"/>行故、現觀故、相續故。欲貪、無明對治，是加行；
+<lb n="0690c19" ed="T"/>現見安立、非安立諦，是現觀；已離欲、未離欲，
+<lb n="0690c20" ed="T"/>是相續。又依故、地故、品故、未修定故、已修
+<lb n="0690c21" ed="T"/>未得得故、所依清淨障故、作意清淨障故、
+<lb n="0690c22" ed="T"/>彼障對治故。</p></cb:div>
+<cb:div n="60" type="xiang"><cb:mulu n="370" level="5" type="其他">60項 六種現觀(二十三門)</cb:mulu>
+<cb:div n="1" type="mu"><cb:mulu n="342" level="6" type="其他">1目 六種觀相</cb:mulu>
+<lb n="0690c23" ed="T"/><p xml:id="pT30p0690c2301">復次，如說六種現觀，謂思現觀乃至究竟現
+<lb n="0690c24" ed="T"/>觀。</p><p xml:id="pT30p0690c2402" cb:place="inline">問：思現觀有何相？</p><p xml:id="pT30p0690c2409" cb:place="inline">答：若有成就思現觀
+<lb n="0690c25" ed="T"/>者，能決定了諸行無常、一切行苦、諸法無我、
+<lb n="0690c26" ed="T"/>涅槃寂靜。住異生位，已能證得如是決定，
+<lb n="0690c27" ed="T"/>非諸沙門、若婆羅門、若天魔梵及餘所能如
+<lb n="0690c28" ed="T"/>法引奪。</p><p xml:id="pT30p0690c2804" cb:place="inline">問：信現觀有何相？</p><p xml:id="pT30p0690c2811" cb:place="inline">答：若有成就信
+<lb n="0690c29" ed="T"/>現觀者，或是異生、或非異生，或於現法<note n="0690009" resp="Taisho" type="orig" place="foot text">〔或於現法〕－【三】</note><note n="0690009" resp="CBETA" type="mod">或於現法【大】，〔－〕【宋】【元】【明】</note><app n="0690009"><lem wit="【大】">或
+<pb n="0691a" ed="T" xml:id="T30.1579.0691a"/>
+<lb n="0691a01" ed="T"/>於現法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>及後法中，終不妄稱餘是大師、餘
+<lb n="0691a02" ed="T"/>法善說、餘僧正行。</p><p xml:id="pT30p0691a0208" cb:place="inline">問：戒現觀有何相？</p><p xml:id="pT30p0691a0215" cb:place="inline">答：若有
+<lb n="0691a03" ed="T"/>成就戒現觀者，終不復能乃至故心斷傍
+<lb n="0691a04" ed="T"/>生命、不與而取、習欲邪行、知而妄語、飲米
+<lb n="0691a05" ed="T"/>等酒諸放逸處。</p><p xml:id="pT30p0691a0507" cb:place="inline">問：現觀智諦現觀有何相？</p><p xml:id="pT30p0691a0517" cb:place="inline">答：
+<lb n="0691a06" ed="T"/>若有成就現觀智諦現觀者，終不復能依
+<lb n="0691a07" ed="T"/>諸妄見而有所作，於自所證而有疑惑，於
+<lb n="0691a08" ed="T"/>諸生處而有貪染。現行世相計為清淨，誹
+<lb n="0691a09" ed="T"/>謗聲聞、獨覺、大乘作惡趣業，何況能造<note n="0691001" resp="Taisho" type="orig" place="foot text">害＝善【元】</note><note n="0691001" resp="CBETA" type="mod">害【大】，善【元】</note><app n="0691001"><lem wit="【大】">害</lem><rdg resp="Taisho" wit="【元】">善</rdg></app>
+<lb n="0691a10" ed="T"/>父母等諸無間業，乃至不能生第八有。</p><p xml:id="pT30p0691a1016" cb:place="inline">問：
+<lb n="0691a11" ed="T"/>現觀邊智諦現觀有何相？</p><p xml:id="pT30p0691a1111" cb:place="inline">答：若有成就現觀
+<lb n="0691a12" ed="T"/>邊智諦現觀者，終不於彼他所詰問而生
+<lb n="0691a13" ed="T"/>怖畏。</p><p xml:id="pT30p0691a1303" cb:place="inline">問：究竟現觀有何相？</p><p xml:id="pT30p0691a1311" cb:place="inline">答：若有成就究
+<lb n="0691a14" ed="T"/>竟現觀者，終不復能犯於五處，亦不復能
+<lb n="0691a15" ed="T"/>乃至故斷諸傍生命、不與而取、行非梵行
+<lb n="0691a16" ed="T"/>習婬欲法、知而妄語、蓄積財寶諸妙欲具而
+<lb n="0691a17" ed="T"/>受用之，亦不怖畏不可記事，亦不妄計
+<lb n="0691a18" ed="T"/>所有苦樂自作、他作、自他俱作、非自非他為
+<lb n="0691a19" ed="T"/>因而生。如是等類，當知是名諸現觀相。</p></cb:div>
+<cb:div n="2" type="mu"><cb:mulu n="343" level="6" type="其他">2目 六種觀體</cb:mulu><p xml:id="pT30p0691a1916" cb:place="inline">問：
+<lb n="0691a20" ed="T"/>思現觀何自性？</p><p xml:id="pT30p0691a2007" cb:place="inline">答：上品思所成慧為自性，或
+<lb n="0691a21" ed="T"/>此俱行菩提分法為自性。</p><p xml:id="pT30p0691a2111" cb:place="inline">問：信現觀何自性？</p>
+<lb n="0691a22" ed="T"/><p xml:id="pT30p0691a2201">答：緣三寶境，上品世間、出世間清淨信為自
+<lb n="0691a23" ed="T"/>性，或此俱行菩提分法為自性。</p><p xml:id="pT30p0691a2313" cb:place="inline">問：戒現觀何
+<lb n="0691a24" ed="T"/>自性？</p><p xml:id="pT30p0691a2403" cb:place="inline">答：聖所愛身語業為自性，或此俱行菩
+<lb n="0691a25" ed="T"/>提分法為自性。</p><p xml:id="pT30p0691a2507" cb:place="inline">問：現觀智諦現觀何自性？</p><p xml:id="pT30p0691a2517" cb:place="inline">答：
+<lb n="0691a26" ed="T"/>緣非安立諦境慧為自性，或此俱行菩提分
+<lb n="0691a27" ed="T"/>法為自性。</p><p xml:id="pT30p0691a2705" cb:place="inline">問：現觀邊智諦現觀何自性？</p><p xml:id="pT30p0691a2716" cb:place="inline">答：緣
+<lb n="0691a28" ed="T"/>安立諦境慧為自性，或此俱行菩提分法為
+<lb n="0691a29" ed="T"/>自性。</p><p xml:id="pT30p0691a2903" cb:place="inline">問：究竟現觀何自性？</p><p xml:id="pT30p0691a2911" cb:place="inline">答：盡、無生智等為
+<pb n="0691b" ed="T" xml:id="T30.1579.0691b"/>
+<lb n="0691b01" ed="T"/>自性，或此俱行菩提分法為自性。</p></cb:div>
+<cb:div n="3" type="mu"><cb:mulu n="344" level="6" type="其他">3目 繫不繫</cb:mulu>
+<lb n="0691b02" ed="T"/><p xml:id="pT30p0691b0201">問：此六現觀，幾欲界繫，乃至幾不繫？</p><p xml:id="pT30p0691b0215" cb:place="inline">答：一、唯
+<lb n="0691b03" ed="T"/>欲界繫；一種一分，或欲界繫、或色界繫、或無
+<lb n="0691b04" ed="T"/>色界繫；即此一分及餘三，此四是不繫；一，通
+<lb n="0691b05" ed="T"/>繫及不繫。</p></cb:div>
+<cb:div n="4" type="mu"><cb:mulu n="345" level="6" type="其他">4目 依地</cb:mulu>
+<lb n="0691b06" ed="T"/><p xml:id="pT30p0691b0601">問：此<note n="0691002" resp="Taisho" type="orig" place="foot text">六＝入【元】</note><note n="0691002" resp="CBETA" type="mod">六【大】，入【元】</note><app n="0691002"><lem wit="【大】">六</lem><rdg resp="Taisho" wit="【元】">入</rdg></app>現觀，幾依未至依可得？幾乃至依
+<lb n="0691b07" ed="T"/>無所有處依可得？</p><p xml:id="pT30p0691b0708" cb:place="inline">答：一，依非依可得；餘，依
+<lb n="0691b08" ed="T"/>一切依可得。又三，依五依生；一種一分亦爾。</p>
+<lb n="0691b09" ed="T"/><p xml:id="pT30p0691b0901">問：若現觀智諦現觀離眾相故，名無分別，云
+<lb n="0691b10" ed="T"/>何依有尋有伺依可得？</p><p xml:id="pT30p0691b1010" cb:place="inline">答：由彼思惟尋伺
+<lb n="0691b11" ed="T"/>等全分靜慮真如而入於定，是故雖依有
+<lb n="0691b12" ed="T"/>尋有伺靜慮可得，然是離相無有分別。</p></cb:div>
+<cb:div n="5" type="mu"><cb:mulu n="346" level="6" type="其他">5目 緣諦</cb:mulu><p xml:id="pT30p0691b1216" cb:place="inline">問：
+<lb n="0691b13" ed="T"/>此諸現觀，幾緣世俗諦？幾緣勝義諦？</p><p xml:id="pT30p0691b1315" cb:place="inline">答：一
+<lb n="0691b14" ed="T"/>緣世俗諦，及一種一分；一無所緣；二緣安
+<lb n="0691b15" ed="T"/>立勝義諦，及一種一分；一緣非安立勝義諦，
+<lb n="0691b16" ed="T"/>及一種一分。</p></cb:div>
+<cb:div n="6" type="mu"><cb:mulu n="347" level="6" type="其他">6目 有相無相</cb:mulu>
+<lb n="0691b17" ed="T"/><p xml:id="pT30p0691b1701">問：此諸現觀，幾有相？幾無相？</p><p xml:id="pT30p0691b1712" cb:place="inline">答：四有相，一無
+<lb n="0691b18" ed="T"/>相，一亦有相亦無相。</p></cb:div>
+<cb:div n="7" type="mu"><cb:mulu n="348" level="6" type="其他">7目 幾有分別幾無分別</cb:mulu>
+<lb n="0691b19" ed="T"/><p xml:id="pT30p0691b1901">問：此諸現觀，幾有分別？幾無分別？</p><p xml:id="pT30p0691b1914" cb:place="inline">答：如有相、
+<lb n="0691b20" ed="T"/>無相，當知有分別、無分別亦爾。</p></cb:div>
+<cb:div n="8" type="mu"><cb:mulu n="349" level="6" type="其他">8目 喜樂捨俱行</cb:mulu><p xml:id="pT30p0691b2013" cb:place="inline">問：此諸現觀，
+<lb n="0691b21" ed="T"/>幾喜俱行？幾樂俱行？幾捨俱行？</p><p xml:id="pT30p0691b2113" cb:place="inline">答：初唯喜俱
+<lb n="0691b22" ed="T"/>行，餘通喜、樂、捨俱行。</p></cb:div>
+<cb:div n="9" type="mu"><cb:mulu n="350" level="6" type="其他">9目 辨四對治</cb:mulu>
+<lb n="0691b23" ed="T"/><p xml:id="pT30p0691b2301">問：此諸現觀，幾是壞對治？幾是斷對治？幾是
+<lb n="0691b24" ed="T"/>持對治？幾是遠分對治？</p><p xml:id="pT30p0691b2410" cb:place="inline">答：二唯壞對治，一通
+<lb n="0691b25" ed="T"/>斷、持、遠分對治，一通持、遠分對治，二非對
+<lb n="0691b26" ed="T"/>治。</p></cb:div>
+<cb:div n="10" type="mu"><cb:mulu n="351" level="6" type="其他">10目 辨二對治</cb:mulu>
+<lb n="0691b27" ed="T"/><p xml:id="pT30p0691b2701">問：此諸現觀，幾是諸纏制伏對治？幾是隨眠
+<lb n="0691b28" ed="T"/>永害對治？</p><p xml:id="pT30p0691b2805" cb:place="inline">答：三是諸纏制伏對治，一俱對治，
+<lb n="0691b29" ed="T"/>二俱非對治。</p></cb:div>
+<cb:div n="11" type="mu"><cb:mulu n="352" level="6" type="其他">11目 辨三品惑</cb:mulu>
+<pb n="0691c" ed="T" xml:id="T30.1579.0691c"/>
+<lb n="0691c01" ed="T"/><p xml:id="pT30p0691c0101">問：此諸現觀，幾是地地軟中上品煩惱斷對
+<lb n="0691c02" ed="T"/>治？</p><p xml:id="pT30p0691c0202" cb:place="inline">答：一。餘隨順此，為此助伴，非斷對治。</p></cb:div>
+<cb:div n="12" type="mu"><cb:mulu n="353" level="6" type="其他">12目 辨三品惑</cb:mulu>
+<lb n="0691c03" ed="T"/><p xml:id="pT30p0691c0301">問：六現觀<note n="0691003" resp="Taisho" type="orig" place="foot text">〔得〕－【三】【宮】</note><note n="0691003" resp="CBETA" type="mod">得【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0691003"><lem wit="【大】">得</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>九遍<note n="0691004" resp="Taisho" type="orig" place="foot text">知＝智【三】【宮】＊</note><note n="0691004" resp="CBETA" type="mod">知【大】＊，智【宋】【元】【明】【宮】＊</note><app n="0691004"><lem wit="【大】">知</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">智</rdg></app>。謂欲繫見苦、集所
+<lb n="0691c04" ed="T"/>斷煩惱斷故，立初遍<app type="star" corresp="#0691004"><lem wit="【大】">知</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">智</rdg></app>；色無色繫見苦、集
+<lb n="0691c05" ed="T"/>所斷煩惱斷故，立第二遍<app type="star" corresp="#0691004"><lem wit="【大】">知</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">智</rdg></app>；欲繫見滅所
+<lb n="0691c06" ed="T"/>斷煩惱斷故，立第三遍<app type="star" corresp="#0691004"><lem wit="【大】">知</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">智</rdg></app>；<note n="0691005" resp="Taisho" type="orig" place="foot text">〔色無色繫〕－【三】【宮】【聖】＊</note><note n="0691005" resp="CBETA" type="mod">色無色繫【大】＊，〔－〕【宋】【元】【明】【宮】【聖】＊</note><app n="0691005"><lem wit="【大】">色無色繫</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】"><space quantity="0"/></rdg></app>見
+<lb n="0691c07" ed="T"/><note n="0691006" resp="Taisho" type="orig" place="foot text">滅＝道【三】【宮】【聖】</note><note n="0691006" resp="CBETA" type="mod">滅【大】，道【宋】【元】【明】【宮】【聖】</note><app n="0691006"><lem wit="【大】">滅</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】">道</rdg></app>所斷煩惱斷故，立第四遍<app type="star" corresp="#0691004"><lem wit="【大】">知</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">智</rdg></app>；<note n="0691007" resp="Taisho" type="orig" place="foot text">欲繫見道＝色無色繫見滅【三】【宮】【聖】</note><note n="0691007" resp="CBETA" type="mod">欲繫見道【大】，色無色繫見滅【宋】【元】【明】【宮】【聖】</note><app n="0691007"><lem wit="【大】">欲繫見
+<lb n="0691c08" ed="T"/>道</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】">色無色繫見滅</rdg></app>所斷煩惱斷故，立第五遍<app type="star" corresp="#0691004"><lem wit="【大】">知</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">智</rdg></app>；<app type="star" corresp="#0691005"><lem wit="【大】">色無色繫</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】"><space quantity="0"/></rdg></app>
+<lb n="0691c09" ed="T"/>見道所斷煩惱斷故，立第六遍<app type="star" corresp="#0691004"><lem wit="【大】">知</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">智</rdg></app>；下分結
+<lb n="0691c10" ed="T"/>斷故，立第七遍<app type="star" corresp="#0691004"><lem wit="【大】">知</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">智</rdg></app>；色貪斷故，立第八遍<app type="star" corresp="#0691004"><lem wit="【大】">知</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">智</rdg></app>；
+<lb n="0691c11" ed="T"/>無色貪斷故，立第九遍<app type="star" corresp="#0691004"><lem wit="【大】">知</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">智</rdg></app>。此六現觀，誰得
+<lb n="0691c12" ed="T"/>幾遍<app type="star" corresp="#0691004"><lem wit="【大】">知</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">智</rdg></app>果？</p><p xml:id="pT30p0691c1205" cb:place="inline">答：一得九遍<app type="star" corresp="#0691004"><lem wit="【大】">知</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">智</rdg></app>果，餘不得彼
+<lb n="0691c13" ed="T"/>果。</p></cb:div>
+<cb:div n="13" type="mu"><cb:mulu n="354" level="6" type="其他">13目 斷惑時分</cb:mulu><p xml:id="pT30p0691c1302" cb:place="inline">問：此諸現觀能為煩惱斷對治者，為生
+<lb n="0691c14" ed="T"/>已作斷對治耶？為未生耶？</p><p xml:id="pT30p0691c1411" cb:place="inline">答：此非未生，
+<lb n="0691c15" ed="T"/>雖言生已，而非後時。當知煩惱斷時、對治
+<lb n="0691c16" ed="T"/>生時，平等平等；即於爾時，<note n="0691008" resp="Taisho" type="orig" place="foot text">假＋（託）【宋】</note><note n="0691008" resp="CBETA" type="mod">假【大】，假託【宋】</note><app n="0691008"><lem wit="【大】">假</lem><rdg resp="Taisho" wit="【宋】">假託</rdg></app>施設說對治
+<lb n="0691c17" ed="T"/>生已，諸煩惱斷。</p></cb:div>
+<cb:div n="14" type="mu"><cb:mulu n="355" level="6" type="其他">14目 得果</cb:mulu><p xml:id="pT30p0691c1707" cb:place="inline">問：此諸現觀，誰得幾果？</p><p xml:id="pT30p0691c1722" cb:place="inline">答：一
+<lb n="0691c18" ed="T"/>得一切四果，一得圓滿沙門果時，餘是得
+<lb n="0691c19" ed="T"/>一助伴、是得前行。</p></cb:div>
+<cb:div n="15" type="mu"><cb:mulu n="356" level="6" type="其他">15目 轉根</cb:mulu><p xml:id="pT30p0691c1908" cb:place="inline">問：是諸現觀，幾能轉根？</p>
+<lb n="0691c20" ed="T"/><p xml:id="pT30p0691c2001">答：除一，餘一切。</p></cb:div>
+<cb:div n="16" type="mu"><cb:mulu n="357" level="6" type="其他">16目 引發神通功德</cb:mulu>
+<lb n="0691c21" ed="T"/><p xml:id="pT30p0691c2101">問：是諸現觀，幾能引發諸神通等殊勝功德？</p>
+<lb n="0691c22" ed="T"/><p xml:id="pT30p0691c2201">答：除一，餘一切。</p></cb:div>
+<cb:div n="17" type="mu"><cb:mulu n="358" level="6" type="其他">17目 作業</cb:mulu>
+<lb n="0691c23" ed="T"/><p xml:id="pT30p0691c2301">問：思現觀，當言作何業？乃至究竟現觀，當
+<lb n="0691c24" ed="T"/>言作何業？</p><p xml:id="pT30p0691c2405" cb:place="inline">答：思現觀，當言能生正行所攝
+<lb n="0691c25" ed="T"/>清淨品善法為業，能生無罪歡喜為業，能
+<lb n="0691c26" ed="T"/>轉一切所疑為業，能趣入修功德為業，能
+<lb n="0691c27" ed="T"/>引所餘現觀為業，能往一切善趣為業。信
+<lb n="0691c28" ed="T"/>現觀，由意樂故，於三寶中能生不動勝解
+<lb n="0691c29" ed="T"/>為業，正行清淨為業，一分能往善趣為業。
+<pb n="0692a" ed="T" xml:id="T30.1579.0692a"/>
+<lb n="0692a01" ed="T"/>戒現觀，解脫惡趣眾苦為業。現觀智諦現
+<lb n="0692a02" ed="T"/>觀，能得一切沙門果為業，能引發一切功
+<lb n="0692a03" ed="T"/>德清淨為業，能引所餘現觀為業，能於善
+<lb n="0692a04" ed="T"/>趣助感光淨果及異熟為業。現觀邊智諦
+<lb n="0692a05" ed="T"/>現觀，能於一切安立諦中，問答善巧為業，
+<lb n="0692a06" ed="T"/>速疾通慧為業，能引此後現觀為業。究竟
+<lb n="0692a07" ed="T"/>現觀，能引第一現法樂住為業，解脫一切
+<lb n="0692a08" ed="T"/>生死大苦為業，<note n="0692001" resp="Taisho" type="orig" place="foot text">住＝任【三】【宮】【聖】</note><note n="0692001" resp="CBETA" type="mod">住【大】，任【宋】【元】【明】【宮】【聖】</note><app n="0692001"><lem wit="【大】">住</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】">任</rdg></app>持最後身為業。</p></cb:div>
+<cb:div n="18" type="mu"><cb:mulu n="359" level="6" type="其他">18目 差別</cb:mulu><p xml:id="pT30p0692a0814" cb:place="inline">問：思
+<lb n="0692a09" ed="T"/>現觀有幾種？乃至究竟現觀有幾種？</p><p xml:id="pT30p0692a0915" cb:place="inline">答：思現
+<lb n="0692a10" ed="T"/>觀，當知有無量種。謂契經思，應誦思，記別
+<lb n="0692a11" ed="T"/>思，乃至方廣、未曾有法、論<note n="0692002" resp="Taisho" type="orig" place="foot text">議＝義【三】【宮】</note><note n="0692002" resp="CBETA" type="mod">議【大】，義【宋】【元】【明】【宮】</note><app n="0692002"><lem wit="【大】">議</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">義</rdg></app>思，苦思，集、滅道
+<lb n="0692a12" ed="T"/>思，真如、實際、法界思，蘊、界、處等思，聲聞乘等
+<lb n="0692a13" ed="T"/>思，大乘思。如是等類，當知差別有無量思。
+<lb n="0692a14" ed="T"/>信現觀，亦無量種。謂正憶念過去無量三藐
+<lb n="0692a15" ed="T"/>三佛陀，及彼法、彼僧。如於過去，未來、現在亦
+<lb n="0692a16" ed="T"/>爾。又正憶念此世界中，及餘十方無量世界
+<lb n="0692a17" ed="T"/>所有如來，及彼法、彼僧。隨正憶念有爾所量，
+<lb n="0692a18" ed="T"/>亦有爾所信現觀體品數差別。戒現觀，亦無
+<lb n="0692a19" ed="T"/>量種。謂隨遠離十種不善性罪業道差別多
+<lb n="0692a20" ed="T"/>種。又隨相續亦有多種。謂預流身乃至阿羅
+<lb n="0692a21" ed="T"/>漢身，獨覺、菩薩、如來身等無量差別。現觀智
+<lb n="0692a22" ed="T"/>諦現觀，亦無量種。謂念住、正斷、神足、根、力、覺
+<lb n="0692a23" ed="T"/>支、道支等菩提分法無量差別。如現觀智諦
+<lb n="0692a24" ed="T"/>現觀，當知現觀邊智諦現觀、究竟現觀亦爾。</p></cb:div>
+<cb:div n="19" type="mu"><cb:mulu n="360" level="6" type="其他">19目 名言安立以辨自性</cb:mulu>
+<lb n="0692a25" ed="T"/><p xml:id="pT30p0692a2501">問：此諸現觀，由如是名、由如是言所安
+<lb n="0692a26" ed="T"/>立故；當言是彼自性，當言非彼自性耶？</p>
+<lb n="0692a27" ed="T"/><p xml:id="pT30p0692a2701">答：世俗說故，當言是彼自性；第一義故，當言
+<lb n="0692a28" ed="T"/>非彼自性。何以故？一切法義，法爾不可說
+<lb n="0692a29" ed="T"/>故。</p></cb:div>
+<cb:div n="20" type="mu"><cb:mulu n="361" level="6" type="其他">20目 因果</cb:mulu>
+<pb n="0692b" ed="T" xml:id="T30.1579.0692b"/>
+<lb n="0692b01" ed="T"/><p xml:id="pT30p0692b0101">問：思現觀何因何果？如是乃至究竟現觀何
+<lb n="0692b02" ed="T"/>因何果？</p><p xml:id="pT30p0692b0204" cb:place="inline">答：思現觀，以佛出世、親近善士、聽
+<lb n="0692b03" ed="T"/>聞正法、相續成熟、如理作意為因，以所作
+<lb n="0692b04" ed="T"/>業為果。如思現觀，一切現觀，當知亦爾。此
+<lb n="0692b05" ed="T"/>中差別者，信現觀，亦以餘現觀為因；戒現
+<lb n="0692b06" ed="T"/>觀亦爾。現觀智諦現觀，亦以思現觀為因，
+<lb n="0692b07" ed="T"/>亦以順決擇分善根為因，亦以自種<note n="0692003" resp="Taisho" type="orig" place="foot text">姓＝性【明】＊</note><note n="0692003" resp="CBETA" type="mod">姓【大】＊，性【明】＊</note><app n="0692003"><lem wit="【大】">姓</lem><rdg resp="Taisho" wit="【明】">性</rdg></app>為
+<lb n="0692b08" ed="T"/>因。現觀邊智諦現觀，亦以現觀智諦現觀為
+<lb n="0692b09" ed="T"/>因；究竟現觀亦爾。</p></cb:div>
+<cb:div n="21" type="mu"><cb:mulu n="362" level="6" type="其他">21目 以七作意相攝</cb:mulu>
+<lb n="0692b10" ed="T"/><p xml:id="pT30p0692b1001">問：六現觀，七作意謂了相等。為六現觀攝七
+<lb n="0692b11" ed="T"/>作意，為七作意攝六現觀耶？</p><p xml:id="pT30p0692b1112" cb:place="inline">答：二現觀，非
+<lb n="0692b12" ed="T"/>作意攝；一現觀，攝樂作意攝；一現觀，攝樂作
+<lb n="0692b13" ed="T"/>意、觀察作意攝；一現觀，遠離作意、攝樂作意、
+<lb n="0692b14" ed="T"/><note n="0692004" resp="Taisho" type="orig" place="foot text">加行＝方便【三】【聖】＊</note><note n="0692004" resp="CBETA" type="mod">加行【大】＊，方便【宋】【元】【明】【聖】＊</note><app n="0692004"><lem wit="【大】">加行</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">方便</rdg></app>究竟作意攝；一現觀，<app type="star" corresp="#0692004"><lem wit="【大】">加行</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">方便</rdg></app>究竟果作
+<lb n="0692b15" ed="T"/>意攝。餘作意，當知是現觀等流攝，非現觀
+<lb n="0692b16" ed="T"/>攝。謂了相作意、勝解作意。</p></cb:div>
+<cb:div n="22" type="mu"><cb:mulu n="363" level="6" type="其他">22目 現觀等流</cb:mulu>
+<lb n="0692b17" ed="T"/><p xml:id="pT30p0692b1701">問：無邊際智，及順決擇分善根，何現觀攝？</p><p xml:id="pT30p0692b1717" cb:place="inline">答：
+<lb n="0692b18" ed="T"/>非諸現觀攝，當知是現觀等流。</p></cb:div>
+<cb:div n="23" type="mu"><cb:mulu n="364" level="6" type="其他">23目 辨諸句</cb:mulu><p xml:id="pT30p0692b1813" cb:place="inline">問：諸思現觀，
+<lb n="0692b19" ed="T"/>亦信現觀耶？設信現觀，亦思現觀耶？</p><p xml:id="pT30p0692b1915" cb:place="inline">答：應作
+<lb n="0692b20" ed="T"/>四句。或有思現觀，非信現觀，謂除緣寶決
+<lb n="0692b21" ed="T"/>定思，諸餘緣決定思。或有信現觀，非思現
+<lb n="0692b22" ed="T"/>觀，謂緣寶聞、修所成信。或有思現觀，亦信現
+<lb n="0692b23" ed="T"/>觀，謂緣寶決定思。除上爾所相，是第四句。
+<lb n="0692b24" ed="T"/>由此道理，應知所餘，亦應作四句。復有無
+<lb n="0692b25" ed="T"/>量一行、順前句、順後句、四句等道理，依聲
+<lb n="0692b26" ed="T"/>聞地決擇道理，皆當了知。</p></cb:div></cb:div>
+<cb:div n="61" type="xiang"><cb:mulu n="371" level="5" type="其他">61項 慳垢別</cb:mulu>
+<lb n="0692b27" ed="T"/><p xml:id="pT30p0692b2701">復次，慳之與垢合名慳垢。由八種垢污心相
+<lb n="0692b28" ed="T"/>續，能與其慳作安足處，是故說彼名為慳
+<lb n="0692b29" ed="T"/>垢。云何為八？一、於惠施先不串習，於現法
+<pb n="0692c" ed="T" xml:id="T30.1579.0692c"/>
+<lb n="0692c01" ed="T"/>中愛重財食。二、於身命極重顧戀，不顧後
+<lb n="0692c02" ed="T"/>世。三、與慳者恒共止住，又隨順彼。四、見所
+<lb n="0692c03" ed="T"/>施田無勝功德，及<note n="0692005" resp="Taisho" type="orig" place="foot text">簡＝揀【元】【明】</note><note n="0692005" resp="CBETA" type="mod">簡【大】，揀【元】【明】</note><app n="0692005"><lem wit="【大】">簡</lem><rdg resp="Taisho" wit="【元】 【明】">揀</rdg></app>擇福田。五、於慈悲先
+<lb n="0692c04" ed="T"/>不串習，及於彼處不見勝德。六、以諸財寶
+<lb n="0692c05" ed="T"/>難可積集，數習彼想，故生嬾惰及與懈怠。
+<lb n="0692c06" ed="T"/>七、執取於見，及謂惠捨有彼雜染。八、希求
+<lb n="0692c07" ed="T"/>財寶而行惠施，及迴向於彼。</p></cb:div>
+<cb:div n="62" type="xiang"><cb:mulu n="372" level="5" type="其他">62項 調善別</cb:mulu>
+<lb n="0692c08" ed="T"/><p xml:id="pT30p0692c0801">復次，有五種行名為調善。一、感財富行，二、
+<lb n="0692c09" ed="T"/>感善趣行，三、感無苦行，四、感自義行，五、感他
+<lb n="0692c10" ed="T"/>義行。感財富行者，謂施性福業事。感善趣行
+<lb n="0692c11" ed="T"/>者，謂戒性福業事。感無苦行者，謂修性福業
+<lb n="0692c12" ed="T"/>事。感自義行者，謂聲聞、獨覺道。感他義行者，
+<lb n="0692c13" ed="T"/>謂菩薩道。</p><p xml:id="pT30p0692c1305" cb:place="inline">為得彼故，應修五想。一、於諸欲
+<lb n="0692c14" ed="T"/>中修不淨想，二、於自身命修速滅想，三、於
+<lb n="0692c15" ed="T"/>欲界中修有怖想，四、於諸行中修無常想，
+<lb n="0692c16" ed="T"/>五、於諸眾生修哀愍想。</p></cb:div>
+<cb:div n="63" type="xiang"><cb:mulu n="373" level="5" type="其他">63項 釋經中七善</cb:mulu>
+<cb:div n="1" type="mu"><cb:mulu n="365" level="6" type="其他">1目 知法</cb:mulu><p xml:id="pT30p0692c1610" cb:place="inline">復次，當釋<note n="0692006" resp="Taisho" type="orig" place="foot text">醍醐＝<g ref="#CB01462"/>餬【宋】【宮】【聖】</note><note n="0692006" resp="CBETA" type="mod">醍醐【大】，<g ref="#CB01462"/>餬【宋】【宮】【聖】</note><app n="0692006"><lem wit="【大】">醍醐</lem><rdg resp="Taisho" wit="【宋】 【宮】 【聖】"><g ref="#CB01462"/>餬</rdg></app>喻
+<lb n="0692c17" ed="T"/>經。</p><p xml:id="pT30p0692c1702" cb:place="inline">云何了知契經乃至論義？謂略由五相。
+<lb n="0692c18" ed="T"/>一、了知假名故；二、了知攝受故；三、了知次
+<lb n="0692c19" ed="T"/>第故；四、了知聖教故；五、了知依處故。云何
+<lb n="0692c20" ed="T"/>了知假名？謂能了知差別法門名<note n="0692007" resp="Taisho" type="orig" place="foot text">想＝相【明】</note><note n="0692007" resp="CBETA" type="mod">想【大】，相【明】</note><app n="0692007"><lem wit="【大】">想</lem><rdg resp="Taisho" wit="【明】">相</rdg></app>施設。
+<lb n="0692c21" ed="T"/>云何了知攝受？謂能了知名身、句身、文身，由
+<lb n="0692c22" ed="T"/>此宣說差別法門。云何了知次第？謂能了
+<lb n="0692c23" ed="T"/>知從此法門至彼法門、從此句至彼句所
+<lb n="0692c24" ed="T"/>有次第。云何了知聖教？謂能了知如是法
+<lb n="0692c25" ed="T"/>門，如來所說、或弟子說、或在家說、或出家說。
+<lb n="0692c26" ed="T"/>云何了知依處？謂能了知如是法門，依自
+<lb n="0692c27" ed="T"/>利說；如是法門，依利他說；如是法門，乃至
+<lb n="0692c28" ed="T"/>為令天人利益安樂故說。如是名為略由
+<lb n="0692c29" ed="T"/>五相，了知契經乃至論義。</p></cb:div>
+<cb:div n="2" type="mu"><cb:mulu n="366" level="6" type="其他">2目 知義</cb:mulu><p xml:id="pT30p0692c2911" cb:place="inline">云何了知彼彼語
+<pb n="0693a" ed="T" xml:id="T30.1579.0693a"/>
+<lb n="0693a01" ed="T"/>義？亦由五相。一、了知緣起故；二、了知句差
+<lb n="0693a02" ed="T"/>別故；三、了知次第故；四、了知道理故；五、了
+<lb n="0693a03" ed="T"/>知略義故。</p><p xml:id="pT30p0693a0305" cb:place="inline">云何了知緣起？謂能了知一分
+<lb n="0693a04" ed="T"/>所化應示現義，乃至一分所化應慶喜義。
+<lb n="0693a05" ed="T"/>云何了知句差別？謂能了知異門、異相訓釋
+<lb n="0693a06" ed="T"/>言詞品類差別。云何了知次第？謂能了知解
+<lb n="0693a07" ed="T"/>釋次第、成立次第、圓滿次第。云何了知道理？
+<lb n="0693a08" ed="T"/>謂能了知四種道理。一、觀待道理，二、證成道
+<lb n="0693a09" ed="T"/>理，三、作用道理，四、法爾道理。云何了知略
+<lb n="0693a10" ed="T"/>義？謂能了知此是蘊相應語，此是界、處、緣起、
+<lb n="0693a11" ed="T"/>處非處、諦相應語，此是念住等相應語，乃至
+<lb n="0693a12" ed="T"/>此是八聖支道相應語，此是業相應語，此是
+<lb n="0693a13" ed="T"/>煩惱相應語，此是增上戒等學相應語。</p></cb:div>
+<cb:div n="3" type="mu"><cb:mulu n="367" level="6" type="其他">3目 知時</cb:mulu><p xml:id="pT30p0693a1316" cb:place="inline">復次，
+<lb n="0693a14" ed="T"/>云何知時？謂由五相故。一、通達正現在前
+<lb n="0693a15" ed="T"/>雜染故；二、通達將現在前雜染故；三、通達
+<lb n="0693a16" ed="T"/>不染污位故；四、等起對治作意故；五、對治作
+<lb n="0693a17" ed="T"/>意故。</p></cb:div>
+<cb:div n="4" type="mu"><cb:mulu n="368" level="6" type="其他">4目 知量</cb:mulu>
+<lb n="0693a18" ed="T"/><p xml:id="pT30p0693a1801">復次，云何知量？謂於所食、所飲、所噉，乃至廣
+<lb n="0693a19" ed="T"/>說。當知此中，略說二種斷隨順性。一、任持隨
+<lb n="0693a20" ed="T"/>順性，二、精進隨順性。</p><p xml:id="pT30p0693a2009" cb:place="inline">任持隨順性者，謂於所
+<lb n="0693a21" ed="T"/>食、所飲、所噉、所甞、善知其量。精進隨順性者，
+<lb n="0693a22" ed="T"/>謂於若行、若住，乃至廣說善知其量。此中云
+<lb n="0693a23" ed="T"/>何於所食等善知其量？謂於受取及受用
+<lb n="0693a24" ed="T"/>中，皆善知量。</p><p xml:id="pT30p0693a2406" cb:place="inline">於受取中善知量者，謂於此
+<lb n="0693a25" ed="T"/>時應受，從此應受，此所應受，齊此應受。何
+<lb n="0693a26" ed="T"/>時應受？謂日初分，即於此時為受用故。從
+<lb n="0693a27" ed="T"/>何應受？謂除五種非所行處。何所應受？謂
+<lb n="0693a28" ed="T"/>清淨物，如來所許，除酒肉等所不應飲、不
+<lb n="0693a29" ed="T"/>應食物。齊何應受？謂知量而受，勿令自
+<pb n="0693b" ed="T" xml:id="T30.1579.0693b"/>
+<lb n="0693b01" ed="T"/>損，或損於他。</p><p xml:id="pT30p0693b0106" cb:place="inline">於受用中善知量者，謂如所
+<lb n="0693b02" ed="T"/>受，於此時中應可受用。於何時中應可受
+<lb n="0693b03" ed="T"/>用？謂如前說日之初分，是受用時。於何處
+<lb n="0693b04" ed="T"/>所應可受用？謂於好處，或居道場、或在聚
+<lb n="0693b05" ed="T"/>落。何所應受用？謂如前說清淨物等。齊何
+<lb n="0693b06" ed="T"/>應受用？謂善知量，應可受用，勿令飢惱、勿
+<lb n="0693b07" ed="T"/>不順斷、勿令諸界起不平等。</p><p xml:id="pT30p0693b0712" cb:place="inline">云何於勤精
+<lb n="0693b08" ed="T"/>進善知其量？謂於此時、此處、此事、齊此應
+<lb n="0693b09" ed="T"/>勤精進。於何等時應勤精進？謂於應行時
+<lb n="0693b10" ed="T"/>而行，乃至於應解睡眠時而解睡眠。於
+<lb n="0693b11" ed="T"/>何處所應勤精進？謂於閑林、或在道場、或
+<lb n="0693b12" ed="T"/>居內院、或經行處應修精進。於何等事應
+<lb n="0693b13" ed="T"/>修精進？謂應勤行、勤住，乃至勤解睡眠勞
+<lb n="0693b14" ed="T"/><note n="0693001" resp="Taisho" type="orig" place="foot text">惓＝倦【三】【宮】</note><note n="0693001" resp="CBETA" type="mod">惓【大】，倦【宋】【元】【明】【宮】</note><app n="0693001"><lem wit="【大】">惓</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">倦</rdg></app>。齊何應修所有精進？謂善知量而修精
+<lb n="0693b15" ed="T"/>進，勿因此故，<note n="0693002" resp="Taisho" type="orig" place="foot text">太＝大【聖】＊</note><note n="0693002" resp="CBETA" type="mod">太【大】＊，大【聖】＊</note><app n="0693002"><lem wit="【大】">太</lem><rdg resp="Taisho" wit="【聖】">大</rdg></app>沈、<app type="star" corresp="#0693002"><lem wit="【大】">太</lem><rdg resp="Taisho" wit="【聖】">大</rdg></app>舉。</p></cb:div>
+<cb:div n="5" type="mu"><cb:mulu n="369" level="6" type="其他">5目 知眾及知高卑</cb:mulu>
+<lb n="0693b16" ed="T"/><p xml:id="pT30p0693b1601">復次，云何善知剎帝利眾？謂善了知剎帝利
+<lb n="0693b17" ed="T"/>眾如是名、如是種、如是<app type="star" corresp="#0692003"><lem wit="【大】">姓</lem><rdg resp="Taisho" wit="【明】">性</rdg></app>、如是食，乃至如
+<lb n="0693b18" ed="T"/>是壽量邊際。如是乃至善知長者、居士等眾。</p>
+<lb n="0693b19" ed="T"/><p xml:id="pT30p0693b1901">云何善知諸沙門眾？謂能善知彼如是名，
+<lb n="0693b20" ed="T"/>此是少年、此是長年、此是耆年，此持經者，乃
+<lb n="0693b21" ed="T"/>至此是能持論者，善知此是瑜伽師等。</p></cb:div>
+<cb:div n="6" type="mu"><cb:mulu n="370" level="6" type="其他">6目 自知</cb:mulu><p xml:id="pT30p0693b2116" cb:place="inline">復次，
+<lb n="0693b22" ed="T"/>云何善知我於是中，應當往詣，乃至應默？
+<lb n="0693b23" ed="T"/>謂若略說，為此應往乃至應默，及如此應
+<lb n="0693b24" ed="T"/>往乃至應默。何所為故，詣在家眾乃至應
+<lb n="0693b25" ed="T"/>默？謂為乞求資生眾具；或復為令未信者
+<lb n="0693b26" ed="T"/>信，信者增長；或為慰問遭重疾病、受眾苦
+<lb n="0693b27" ed="T"/>者；或為開解諸愁憂者；或為和好展轉怨
+<lb n="0693b28" ed="T"/>對互相違者；或為隨順他所作事；或復為他
+<lb n="0693b29" ed="T"/>之所勸請；或為隨從軌範、親教同梵行者；
+<pb n="0693c" ed="T" xml:id="T30.1579.0693c"/>
+<lb n="0693c01" ed="T"/>或為經營僧所作事；是故應往乃至應默。
+<lb n="0693c02" ed="T"/>云何了知應如是往？謂如聲聞地已說其
+<lb n="0693c03" ed="T"/>相。云何了知應如是住？謂往詣已，不應即
+<lb n="0693c04" ed="T"/>入，至內門側伏慢而住，或無疑慮徐入其
+<lb n="0693c05" ed="T"/>家，至相見處從容而住，先言慰問，含笑開
+<lb n="0693c06" ed="T"/>顏，遠離<note n="0693003" resp="Taisho" type="orig" place="foot text">嚬＝頻【宋】【宮】，顰【元】【明】，嚬蹙＝顰慼【聖】</note><note n="0693003" resp="CBETA" type="mod">嚬蹙【大】，頻蹙【宋】【宮】，顰蹙【元】【明】，顰慼【聖】</note><app n="0693003"><lem wit="【大】">嚬蹙</lem><rdg resp="Taisho" wit="【宋】 【宮】">頻蹙</rdg><rdg resp="Taisho" wit="【元】 【明】">顰蹙</rdg><rdg resp="Taisho" wit="【聖】">顰慼</rdg></app>，方申愛語。云何了知應如
+<lb n="0693c07" ed="T"/>是坐？謂佛開許隨其所有如法之座，以正
+<lb n="0693c08" ed="T"/>威儀端嚴而坐。云何了知應如是語？謂善
+<lb n="0693c09" ed="T"/>了知如時、如理、如量、寂靜、質直而語。時有三
+<lb n="0693c10" ed="T"/>種。一者、樂聞，非不樂聞。不樂聞者，謂如有
+<lb n="0693c11" ed="T"/>一，或飢、或渴、或身疲倦、或風熱等之所逼惱。
+<lb n="0693c12" ed="T"/>是名初時。二者、安住如法威儀，非非威儀。
+<lb n="0693c13" ed="T"/>或復有一，雖樂欲聞，非威儀住。非威儀者，
+<lb n="0693c14" ed="T"/>謂不應立為坐者說，除彼重病。如別解脫
+<lb n="0693c15" ed="T"/>經廣說其相。是第二時。三者、其心無有染
+<lb n="0693c16" ed="T"/>惱，非染惱心。染惱心者，謂如有一，其心<note n="0693004" resp="Taisho" type="orig" place="foot text">怱＝忽【明】</note><note n="0693004" resp="CBETA" type="mod">怱【大】，忽【明】</note><app n="0693004"><lem wit="【大】">怱</lem><rdg resp="Taisho" wit="【明】">忽</rdg></app>
+<lb n="0693c17" ed="T"/>遽，於彼彼事增上勤劬，或荒或亂，或復渾濁；
+<lb n="0693c18" ed="T"/>或他僕使，或作業者，或復殺者、敵者、怨者。是
+<lb n="0693c19" ed="T"/>第三時。理有三種。謂有求請、如法求請、如
+<lb n="0693c20" ed="T"/>量求請，方為宣說、如法為說、有義利說。由
+<lb n="0693c21" ed="T"/>三種相，當知如量。一、不亂不雜而有所說；
+<lb n="0693c22" ed="T"/>二、圓滿文句宣說諸法；三、凡所宣說言詞
+<lb n="0693c23" ed="T"/>不重，謂不重說所有言詞。若諸語言無用
+<lb n="0693c24" ed="T"/>非義，尚不少說，何況多說。當知寂靜，亦有
+<lb n="0693c25" ed="T"/>三種：一、威儀寂靜，二、言音寂靜，三、其心寂靜。
+<lb n="0693c26" ed="T"/>威儀寂靜者，謂諸根寂靜、無有躁擾、亦不
+<lb n="0693c27" ed="T"/>高舉、<note n="0693005" resp="Taisho" type="orig" place="foot text">支＝肢【三】【宮】</note><note n="0693005" resp="CBETA" type="mod">支【大】，肢【宋】【元】【明】【宮】</note><app n="0693005"><lem wit="【大】">支</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">肢</rdg></app>節不動而有所說。言音寂靜者，謂
+<lb n="0693c28" ed="T"/>有所說聲不太高，亦不太急。心寂靜者，謂
+<lb n="0693c29" ed="T"/>雖觸惱，亦不生憤而有所說，況不觸惱。又
+<pb n="0694a" ed="T" xml:id="T30.1579.0694a"/>
+<lb n="0694a01" ed="T"/>無染心而有所說。又質直語，亦有三種。謂
+<lb n="0694a02" ed="T"/>如時語時乃至寂靜語時，或由宿習方便，任
+<lb n="0694a03" ed="T"/>性而語；或由現法串<note n="0694001" resp="Taisho" type="orig" place="foot text">習＋（方便）【三】</note><note n="0694001" resp="CBETA" type="mod">習【大】，習方便【宋】【元】【明】</note><app n="0694001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">習方便</rdg></app><app type="star" corresp="#0692004"><lem wit="【大】">加行</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">方便</rdg></app>作意而語；
+<lb n="0694a04" ed="T"/>或由愛樂學處，以思擇力而自制伏，方有
+<lb n="0694a05" ed="T"/>所說。於一切時無有虛誑，若隱、若顯，所言
+<lb n="0694a06" ed="T"/>無二。云何了知應默？謂善了知，於五時中
+<lb n="0694a07" ed="T"/>應當默然。一者、說者正說語時，若彼聽者故
+<lb n="0694a08" ed="T"/>作異言，現相諠亂，爾時說者宜當默然。二
+<lb n="0694a09" ed="T"/>者、說者正說語時，若彼聽者撥言且止，吾不
+<lb n="0694a10" ed="T"/>欲聞，爾時說者宜當默然。三者、說者正說
+<lb n="0694a11" ed="T"/>語時，若彼聽者於說者所起求過心，發違
+<lb n="0694a12" ed="T"/>諍言，現相乖背，爾時說者宜當默然。四者、
+<lb n="0694a13" ed="T"/>施主以衣食等來相屈請，爾時受者宜當默
+<lb n="0694a14" ed="T"/>然，而許可之。五者、若有敵論者來，現相<note n="0694002" resp="Taisho" type="orig" place="foot text">較＝繫【聖】</note><note n="0694002" resp="CBETA" type="mod">較【大】，繫【聖】</note><app n="0694002"><lem wit="【大】">較</lem><rdg resp="Taisho" wit="【聖】">繫</rdg></app>
+<lb n="0694a15" ed="T"/>論，爾時論者宜當默然，聽其言說。</p>
+<lb n="0694a16" ed="T"/><p xml:id="pT30p0694a1601">復次，且由三相應自了知己所有信，乃至是
+<lb n="0694a17" ed="T"/>善男子。一、由依處故；二、由自性故；三、由時
+<lb n="0694a18" ed="T"/>分故。云何由依處故了知己信？謂如實知，
+<lb n="0694a19" ed="T"/>若事是信之所依處，信緣彼生，當知彼事決
+<lb n="0694a20" ed="T"/>定是我信所依處。云何由自性故了知己
+<lb n="0694a21" ed="T"/>信？謂如實知軟中上品己所有信。云何由
+<lb n="0694a22" ed="T"/>時分故了知己信？謂如實知，我於某時已
+<lb n="0694a23" ed="T"/>得是信。如了知信，如是戒等辯等為後，皆
+<lb n="0694a24" ed="T"/>當了知。此中信是趣入支；戒是入已奢摩他
+<lb n="0694a25" ed="T"/>支；聞是毘鉢舍那支；捨是奢摩他、毘鉢舍那
+<lb n="0694a26" ed="T"/>資糧支；內思所成慧及他隨順教授教誡，是
+<lb n="0694a27" ed="T"/>能攝受奢摩他、毘鉢舍那支。依止此故，證奢
+<lb n="0694a28" ed="T"/>摩他、毘鉢舍那，及能證得諸沙門果。於自所
+<lb n="0694a29" ed="T"/>證諸深細義，若有欲加而生疑惑，為斷疑
+<pb n="0694b" ed="T" xml:id="T30.1579.0694b"/>
+<lb n="0694b01" ed="T"/>故，如自所證為彼宣說。又為降伏諸敵論
+<lb n="0694b02" ed="T"/>者，故須有辯。於他身語邪行起時，須有
+<lb n="0694b03" ed="T"/>忍辱柔和所攝善男子性。</p><p xml:id="pT30p0694b0311" cb:place="inline">復次，由三因緣，發
+<lb n="0694b04" ed="T"/>生不信。一、由不正知三寶功德故；二、行外
+<lb n="0694b05" ed="T"/>道見故；三、未遇諸佛及聖弟子三種神變，
+<lb n="0694b06" ed="T"/>隨其一種所調伏故。</p>
+<lb n="0694b07" ed="T"/><p xml:id="pT30p0694b0701">復次，由三因緣，不能數往寂靜園林。一、放
+<lb n="0694b08" ed="T"/>逸懈怠所拘執故；二、多事業故；三、信順人
+<lb n="0694b09" ed="T"/>故。</p>
+<lb n="0694b10" ed="T"/><p xml:id="pT30p0694b1001">復次，由三因緣，為性不好造詣於他。一、性
+<lb n="0694b11" ed="T"/>無畏故；二、性高慢故；三、依文字故。由三因
+<lb n="0694b12" ed="T"/>緣，為性不好親近於他。一、性不黠利故；二、
+<lb n="0694b13" ed="T"/>性非福田故；三、無極欲樂故。由三因緣，為
+<lb n="0694b14" ed="T"/>性不好請問於他：一、於法不善故；二、於義
+<lb n="0694b15" ed="T"/>不善故；三、於二俱不善故。由三因緣，不能
+<lb n="0694b16" ed="T"/>審聽。一、多尋伺故；二、多物務故；三、多諸蓋纏
+<lb n="0694b17" ed="T"/>雜染心故。由三因緣，為性不能決定任持。
+<lb n="0694b18" ed="T"/>一、不聽聞故；二、惡聽聞故；三、覆慧勝慧
+<lb n="0694b19" ed="T"/>故。由三因緣，為性不能觀察諸法。一、樂著
+<lb n="0694b20" ed="T"/>戲論故；二、愛居憒鬧故；三、不成就<note n="0694003" resp="Taisho" type="orig" place="foot text">審＋（觀）【三】【宮】【聖】</note><note n="0694003" resp="CBETA" type="mod">審【大】，審觀【宋】【元】【明】【宮】【聖】</note><app n="0694003"><lem wit="【大】">審</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】">審觀</rdg></app>察
+<lb n="0694b21" ed="T"/>慧故。由三因緣，為性不能法隨法行。一、由
+<lb n="0694b22" ed="T"/>顧惜身命；二、由即彼增上力故，樂著利養；
+<lb n="0694b23" ed="T"/>三、由樂著恭敬。由三因緣，不樂修行利他
+<lb n="0694b24" ed="T"/>之行。一、性是下劣種<app type="star" corresp="#0692003"><lem wit="【大】">姓</lem><rdg resp="Taisho" wit="【明】">性</rdg></app>故；二、<note n="0694004" resp="Taisho" type="orig" place="foot text">悲＝卑【三】</note><note n="0694004" resp="CBETA" type="mod">悲【大】，卑【宋】【元】【明】</note><app n="0694004"><lem wit="【大】">悲</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">卑</rdg></app>微薄故；三、
+<lb n="0694b25" ed="T"/>無勢力故。</p><p xml:id="pT30p0694b2505" cb:place="inline">如是白品，與上相違，應知其相。</p>
+<lb n="0694b26" ed="T"/><p xml:id="pT30p0694b2601">復次，諸聖弟子，非一眾多種種遊觀其事可
+<lb n="0694b27" ed="T"/>得，所謂河濱遊觀、山谷遊觀、鬼趣遊觀，如
+<lb n="0694b28" ed="T"/>是等類種種遊觀其事可得。問：何因緣故，諸
+<lb n="0694b29" ed="T"/>大聲聞已得神通，乃往鬼趣詰問諸鬼自
+<pb n="0694c" ed="T" xml:id="T30.1579.0694c"/>
+<lb n="0694c01" ed="T"/>先業報，為為除自疑故？為為饒益眾生
+<lb n="0694c02" ed="T"/>故？若為除自疑者，已得神通，不應道理。
+<lb n="0694c03" ed="T"/>若為饒益眾生者，當說云何饒益眾生？答：
+<lb n="0694c04" ed="T"/>為饒益眾生故，謂欲饒益此諸餓鬼及餘
+<lb n="0694c05" ed="T"/>眾生。何以故？由神通力，令諸餓鬼憶念宿
+<lb n="0694c06" ed="T"/>世，自說先身所作惡業，深生厭悔，因為說
+<lb n="0694c07" ed="T"/>法，便能領悟。由此因緣，速<note n="0694005" resp="Taisho" type="orig" place="foot text">離＝免【三】【宮】</note><note n="0694005" resp="CBETA" type="mod">離【大】，免【宋】【元】【明】【宮】</note><app n="0694005"><lem wit="【大】">離</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">免</rdg></app>鬼趣，如是
+<lb n="0694c08" ed="T"/>說名饒益諸鬼。已得神通諸大聲聞，聞彼
+<lb n="0694c09" ed="T"/>所說種種所受不可愛果先世惡業，乃還人
+<lb n="0694c10" ed="T"/>間，展轉宣告，他既聞已，心生厭患，斷惡修
+<lb n="0694c11" ed="T"/>善，如是說名利餘眾生。</p></cb:div></cb:div>
+<cb:div n="64" type="xiang"><cb:mulu n="374" level="5" type="其他">64項 六種相</cb:mulu>
+<lb n="0694c12" ed="T"/><p xml:id="pT30p0694c1201">復次，由六種相，當知欲行諸色名麁。云何
+<lb n="0694c13" ed="T"/>六相說彼名麁？一、眾多故麁；二、沈重故麁；
+<lb n="0694c14" ed="T"/>三、不淨故麁；四、堅強故麁；五、變壞故麁；六、不
+<lb n="0694c15" ed="T"/>隨心轉故麁。</p></cb:div></cb:div></cb:div>
+<cb:div n="3" type="zhang"><cb:mulu n="3" level="3" type="其他">3章 餘不復現</cb:mulu><p xml:id="pT30p0694c1506" cb:place="inline">於此地中餘決擇文，更不復
+<lb n="0694c16" ed="T"/>現。</p><p xml:id="pT30p0694c1602">又獨覺地諸決擇文，亦不復現。<note n="0694006" resp="Taisho" type="orig" place="foot text">此下聖本有光明皇后願文，聖本背書曰大唐貞觀廿一年歲次丁未春正月戉子朔廿三日庚戌拾長安弘福寺翻經院三藏法師玄奘奉詔譯弟子觀自在從無始時來逢緣起過造罪恒沙迷沒愛河縈纏楚毒敬寫西域新翻經論以通未聞之所願四生六道等出塵勞法界有窮斯願無泯</note></p></cb:div></cb:div><cb:div type="other"><cb:mulu level="2" type="其他">14 （獨覺地缺）</cb:mulu></cb:div>
+<lb n="0694c17" ed="T"/><cb:juan n="071" fun="close"><cb:jhead><title>瑜伽師地論</title>卷第七十一</cb:jhead></cb:juan>
+</cb:div></body></text></TEI>

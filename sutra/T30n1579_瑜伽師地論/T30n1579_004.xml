@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/cbeta-git/xml-p5a/master/schema/cbeta-p5a.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:cb="http://www.cbeta.org/ns/1.0" xml:id="T30n1579">
+<teiHeader>
+	<fileDesc>
+		<titleStmt>
+			<title>Taishō Tripiṭaka, Electronic version, No. 1579 瑜伽師地論</title>
+			<title xml:lang="zh-Hant">大正新脩大藏經數位版, No. 1579 瑜伽師地論</title>
+			<author>彌勒菩薩說  唐 玄奘譯</author>
+			<respStmt>
+				<resp>Electronic Version by</resp>
+				<name>CBETA</name>
+			</respStmt>
+		</titleStmt>
+		<editionStmt>
+			<edition>單卷版 XML TEI P5b</edition>
+		</editionStmt>
+		<extent>100卷</extent>
+		<publicationStmt>
+			<idno type="CBETA">
+				<idno type="canon">T</idno>.<idno type="vol">30</idno>.<idno type="no">1579</idno>
+			</idno>
+			<distributor>
+				<name>中華電子佛典協會 (CBETA)</name>
+				<address>
+					<addrLine><email>service@cbeta.org</email></addrLine>
+				</address>
+			</distributor>
+			<availability>
+				<p>Available for non-commercial use when distributed with this header intact.</p>
+			</availability>
+			<date>2023-11-09 21:01:39 +0800</date>
+		</publicationStmt>
+		<sourceDesc>
+			<bibl>
+				<title level="s">Taishō Tripiṭaka</title>
+				<title level="s" xml:lang="zh-Hant">大正新脩大藏經</title>
+				<title level="m" xml:lang="zh-Hant">瑜伽師地論</title>
+			</bibl>
+		</sourceDesc>
+	</fileDesc>
+	<encodingDesc>
+		<projectDesc>
+			<p xml:lang="en" cb:type="ly">Text as provided by Mr. Hsiao Chen-Kuo, Tripitaka Koreana as provided by Mr. Christian Wittern, Text as provided by Mr. Christian Wittern, Text as inputted by Seeland Monastery, The Outline as provided by Ven. Huimin, Punctuated text as provided by Yogācārabhūmi Database</p>
+			<p xml:lang="zh-Hant" cb:type="ly">蕭鎮國大德提供，維習安大德提供之高麗藏 CD 經文，維習安大德提供，西蓮淨苑輸入，惠敏法師提供科判，《瑜伽師地論》資料庫提供新式標點</p>
+		</projectDesc>
+		<editorialDecl>			
+			<punctuation resp="CBETA"><p>新式標點</p></punctuation>
+		</editorialDecl>
+		<tagsDecl>
+			<namespace name="http://www.tei-c.org/ns/1.0">
+				<tagUsage gi="rdg">
+					<listWit>
+						<witness xml:id="wit.orig">【大】</witness>
+						<witness xml:id="wit.cbeta">【CB】</witness>
+					</listWit>
+				</tagUsage>
+			</namespace>
+		</tagsDecl>
+		<charDecl>
+			<char xml:id="CB00828">
+				<charName>CBETA CHARACTER CB00828</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[金*敖]</value>
+				</charProp>
+				<charProp>
+					<localName>normalized form</localName>
+					<value>鏊</value>
+				</charProp>
+				<mapping type="unicode">U+28AFC</mapping>
+				<mapping cb:dec="983868" type="PUA">U+F033C</mapping>
+			</char>
+			<char xml:id="CB01231">
+				<charName>CBETA CHARACTER CB01231</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[口*歇]</value>
+				</charProp>
+				<charProp>
+					<localName>normalized form</localName>
+					<value>喝</value>
+				</charProp>
+				<mapping type="unicode">U+20FD2</mapping>
+				<mapping cb:dec="984271" type="PUA">U+F04CF</mapping>
+			</char>
+			<char xml:id="CB01479">
+				<charName>CBETA CHARACTER CB01479</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[此/朿]</value>
+				</charProp>
+				<mapping type="unicode">U+3B70</mapping>
+				<mapping cb:dec="984519" type="PUA">U+F05C7</mapping>
+			</char>
+			<char xml:id="CB01493">
+				<charName>CBETA CHARACTER CB01493</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[口*舀]</value>
+				</charProp>
+				<charProp>
+					<localName>normalized form</localName>
+					<value>啗</value>
+				</charProp>
+				<mapping type="unicode">U+35D6</mapping>
+				<mapping cb:dec="984533" type="PUA">U+F05D5</mapping>
+			</char>
+			<char xml:id="CB14694">
+				<charName>CBETA CHARACTER CB14694</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[胎-ㄙ+口]</value>
+				</charProp>
+				<mapping type="normal_unicode">U+266D7</mapping>
+				<mapping cb:dec="997734" type="PUA">U+F3966</mapping>
+			</char>
+		</charDecl>
+	</encodingDesc>
+	<profileDesc>
+		<langUsage>
+			<language ident="sa">Sanskrit</language>
+			<language ident="en">English</language>
+			<language ident="zh-Hant">Chinese (Traditional)</language>
+		</langUsage>
+	</profileDesc>
+	<revisionDesc>
+		<change when="2013-05-20">
+			<name>CW</name><name>Ray Chou 周邦信</name>P4 to P5 conversion by p4top5a.py, intended for publication
+		</change>
+		<change when="1999-07-01T16:18:25">
+			CW (ed.) converted to XML with CBXML.BAT (99/6/30)
+		</change>
+	</revisionDesc>
+</teiHeader>
+<text><body>
+<cb:mulu n="1" level="1" type="分">1 本地分</cb:mulu><cb:mulu n="2" level="2" type="其他">2 意地</cb:mulu><cb:mulu n="2" level="3" type="其他">2章 以十門解釋地義</cb:mulu><cb:mulu n="9" level="4" type="其他">2節 後二門</cb:mulu><cb:mulu n="15" level="5" type="其他">2項 事緣起門</cb:mulu><cb:div n="1" type="fen">
+<milestone n="4" unit="juan"/>
+<lb n="0294b06" ed="T"/>
+<lb n="0294b07" ed="T"/>
+<lb n="0294b08" ed="T"/><cb:juan n="004" fun="open"><cb:mulu n="004" type="卷"></cb:mulu><cb:jhead><title>瑜伽師地論</title>卷第四</cb:jhead>
+<lb n="0294b09" ed="T"/>
+<lb n="0294b10" ed="T"/><byline cb:type="author">彌勒菩薩說</byline>
+<lb n="0294b11" ed="T"/><byline cb:type="Translator"><anchor xml:id="fxT30p0294b01"/>三藏法師玄奘奉　詔譯</byline>
+<lb n="0294b12" ed="T"/><cb:jhead type="pin">本地分中有尋有伺等三地之<note n="0294005" resp="Taisho" type="orig" place="foot text">一＋（第三第四第五）夾註【明】</note><note n="0294005" resp="CBETA" type="mod">一【大】，一<note place="inline">第三第四第五</note>【明】</note><app n="0294005"><lem wit="【大】">一</lem><rdg resp="Taisho" wit="【明】">一<note place="inline">第三第四第五</note></rdg></app></cb:jhead></cb:juan>
+<cb:div n="3-5" type="di"><cb:mulu n="3" level="2" type="其他">3-5 有尋有伺等三地</cb:mulu>
+<cb:div n="1" type="zhang"><cb:mulu n="1" level="3" type="其他">1章 總標列五門</cb:mulu>
+<lb n="0294b13" ed="T"/><p xml:id="pT30p0294b1301">已說意地。</p><p xml:id="pT30p0294b1305" cb:place="inline">云何有尋有伺地？云何無尋唯伺
+<lb n="0294b14" ed="T"/>地？云何無尋無伺地？</p><p xml:id="pT30p0294b1409" cb:place="inline">總嗢<note n="0294b1401" resp="CBETA" type="add" cb:note_key="T30.0294b14.11">拕【大】，柁【宮-CB】</note><app n="0294b1401"><lem wit="【大】">拕</lem><rdg resp="CBETA.poyung" wit="【宮-CB】" cb:provider="趙文平 (2021-07-27)">柁<note type="cf1">《福州藏》（日本宮內廳書陵部藏本第2391號第2圖第5行）</note></rdg></app>南曰：</p>
+<lb n="0294b15" ed="T"/><lg xml:id="lgT30p0294b1501"><l>界、相、如理、不如理、<caesura/>雜染等起最為後。</l></lg>
+<lb n="0294b16" ed="T"/><p xml:id="pT30p0294b1601">如是三地，略以五門施設建立。一、界施設
+<lb n="0294b17" ed="T"/>建立，二、相施設建立，三、如理作意施設建立，
+<lb n="0294b18" ed="T"/>四、不如理作意施設建立，五、雜染等起施設
+<lb n="0294b19" ed="T"/>建立。</p></cb:div><cb:div n="2" type="zhang"><cb:mulu n="2" level="3" type="其他">2章 界施設建立</cb:mulu><p xml:id="pT30p0294b1903" cb:place="inline">云何界施設建立？</p><p xml:id="pT30p0294b1918" cb:place="inline">別嗢<note n="0294b1901" resp="CBETA" type="add">拕【大】，柁【宮-CB】</note><app n="0294b1901"><lem wit="【大】">拕</lem><rdg resp="CBETA.poyung" wit="【宮-CB】" cb:provider="趙文平 (2021-07-27)">柁<note type="cf1">《福州藏》（日本宮內廳書陵部藏本第2391號第3圖第4行）</note></rdg></app>南曰：</p>
+<lb n="0294b20" ed="T"/><lg xml:id="lgT30p0294b2001"><l>數、處、量、壽、受用、生、<caesura/>自體、因緣果分別。</l></lg>
+<lb n="0294b21" ed="T"/><p xml:id="pT30p0294b2101">當知界建立由八<note n="0294006" resp="Taisho" type="orig" place="foot text">〔種〕－【三】【宮】【聖】</note><note n="0294006" resp="CBETA" type="mod">種【大】，〔－〕【宋】【元】【明】【宮】【聖】</note><app n="0294006"><lem wit="【大】">種</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】"><space quantity="0"/></rdg></app>相。一、數建立，二、處建
+<lb n="0294b22" ed="T"/>立，三、有情量建立，四、有情壽建立，五、有情受
+<lb n="0294b23" ed="T"/>用建立，六、生建立，七、自體建立，八、因緣果建
+<lb n="0294b24" ed="T"/>立。</p>
+<cb:div n="1" type="jie"><cb:mulu n="10" level="4" type="其他">1節 數建立</cb:mulu><p xml:id="pT30p0294b2402" cb:place="inline">云何數建立？略有三界。謂欲界、色界、無色
+<lb n="0294b25" ed="T"/>界。如是三種，名墮攝界。</p><p xml:id="pT30p0294b2510" cb:place="inline">非墮攝界者，謂方
+<lb n="0294b26" ed="T"/>便，并薩迦耶滅，及無戲論無漏界。</p><p xml:id="pT30p0294b2614" cb:place="inline">此中欲界
+<lb n="0294b27" ed="T"/>及色界初靜慮，除靜慮中間若定、若生，名有
+<lb n="0294b28" ed="T"/>尋有伺地。</p><p xml:id="pT30p0294b2805" cb:place="inline">即靜慮中間若定、若生，名無尋唯
+<lb n="0294b29" ed="T"/>伺地。隨一有情，由修此故，得為大梵。</p><p xml:id="pT30p0294b2915" cb:place="inline">從第
+<pb n="0294c" ed="T" xml:id="T30.1579.0294c"/>
+<lb n="0294c01" ed="T"/>二靜慮，餘有色界及無色界全，名無尋無伺
+<lb n="0294c02" ed="T"/>地。</p><p xml:id="pT30p0294c0202" cb:place="inline">此中由離尋伺欲道理故，說名無尋無
+<lb n="0294c03" ed="T"/>伺地，不由不現行故。</p><p xml:id="pT30p0294c0309" cb:place="inline">所以者何？未離欲界
+<lb n="0294c04" ed="T"/>欲者，由教導作意差別故，於一時間亦有
+<lb n="0294c05" ed="T"/>無尋無伺意現行。</p><p xml:id="pT30p0294c0508" cb:place="inline">已離尋伺欲者，亦有尋
+<lb n="0294c06" ed="T"/>伺現行。如出彼定、及生彼者。</p><p xml:id="pT30p0294c0612" cb:place="inline">若無漏界有
+<lb n="0294c07" ed="T"/>為定所攝初靜慮，亦名有尋有伺地。依尋伺
+<lb n="0294c08" ed="T"/>處法，緣真如為境入此定故，不由分別
+<lb n="0294c09" ed="T"/>現行故。</p><p xml:id="pT30p0294c0904">餘如前說。</p></cb:div>
+<cb:div n="2" type="jie"><cb:mulu n="11" level="4" type="其他">2節 處所建立</cb:mulu><p xml:id="pT30p0294c0908" cb:place="inline">處所建立者，於欲界中
+<lb n="0294c10" ed="T"/>有三十六處。謂八大那落迦。</p><p xml:id="pT30p0294c1012" cb:place="inline">何等為八？一、
+<lb n="0294c11" ed="T"/>等活，二、黑繩，三、眾合，四、號叫，五、大號叫，六、
+<lb n="0294c12" ed="T"/>燒熱，七、極燒熱，八、無間。此諸大那落迦處，廣
+<lb n="0294c13" ed="T"/>十千踰繕那。此外復有八寒那落迦處。何等
+<lb n="0294c14" ed="T"/>為八？一、<note n="0294007" resp="Taisho" type="orig" place="foot text">皰＝炮【三】【宮】＊</note><note n="0294007" resp="CBETA" type="mod">皰【大】＊，炮【宋】【元】【明】【宮】＊</note><app n="0294007"><lem wit="【大】">皰</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">炮</rdg></app>那落迦，二、<app type="star" corresp="#0294007"><lem wit="【大】">皰</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">炮</rdg></app>裂那落迦，三、<g ref="#CB01231"/>哳
+<lb n="0294c15" ed="T"/>詀那落迦，四、郝郝凡那落迦，五、虎虎凡那落
+<lb n="0294c16" ed="T"/>迦，六、青蓮那落迦，七、紅蓮那落迦，八、大紅蓮
+<lb n="0294c17" ed="T"/>那落迦。從此下三萬二千踰繕那，至等活那
+<lb n="0294c18" ed="T"/>落迦。從此復隔四千踰繕那，有餘那落迦。
+<lb n="0294c19" ed="T"/><note n="0294008" resp="Taisho" type="orig" place="foot text">如＋（是）【三】【宮】</note><note n="0294008" resp="CBETA" type="mod">如【大】，如是【宋】【元】【明】【宮】</note><app n="0294008"><lem wit="【大】">如</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">如是</rdg></app>等活大那落迦處，初寒那落迦處亦爾。
+<lb n="0294c20" ed="T"/>從此復隔二千踰繕那，有餘那落迦應知。
+<lb n="0294c21" ed="T"/>又有餓鬼處所。又有非天處所。傍生即與
+<lb n="0294c22" ed="T"/>人天同處，故不別建立。復有四大洲，如前
+<lb n="0294c23" ed="T"/>說。復有八中洲。又欲界<note n="0294009" resp="Taisho" type="orig" place="foot text">天＝大【元】</note><note n="0294009" resp="CBETA" type="mod">天【大】，大【元】</note><app n="0294009"><lem wit="【大】">天</lem><rdg resp="Taisho" wit="【元】">大</rdg></app>有六處。一、四大
+<lb n="0294c24" ed="T"/>王眾天，二、三十三天，三、時分天，四、知足天，五、
+<lb n="0294c25" ed="T"/>樂化天，六、他化自在天。復有摩羅天宮，即他
+<lb n="0294c26" ed="T"/>化自在天攝，然處所高勝。復有獨一那落迦、
+<lb n="0294c27" ed="T"/>近邊那落迦，即大那落迦及寒那落迦。以近
+<lb n="0294c28" ed="T"/>邊故，不別立處。又於人中，亦有一分獨一
+<lb n="0294c29" ed="T"/>那落迦可得。如尊者取<note n="0294010" resp="Taisho" type="orig" place="foot text">菉＝綠【三】【宮】＊【聖】</note><note n="0294010" resp="CBETA" type="mod">菉【大】＊，綠【宋】【元】【明】【宮】＊【聖】</note><app n="0294010"><lem wit="【大】">菉</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】">綠</rdg></app>豆子說：我見諸
+<pb n="0295a" ed="T" xml:id="T30.1579.0295a"/>
+<lb n="0295a01" ed="T"/>有情，燒然、極燒然、遍極燒然，總一燒然聚。
+<lb n="0295a02" ed="T"/>如是等三十六處，總名欲界。</p>
+<lb n="0295a03" ed="T"/><p xml:id="pT30p0295a0301">復次，色界有十八處。謂梵眾天、梵前益天、大
+<lb n="0295a04" ed="T"/>梵天，此三由軟中上品熏修初靜慮故。少
+<lb n="0295a05" ed="T"/>光天、無量光天、極淨光天，此三由軟中上品
+<lb n="0295a06" ed="T"/>熏修第二靜慮故。少淨天、無量淨天、遍淨天，
+<lb n="0295a07" ed="T"/>此三由軟中上品熏修第三靜慮故。無雲
+<lb n="0295a08" ed="T"/>天、福生天、廣果天，此三由軟中上品熏修第
+<lb n="0295a09" ed="T"/>四靜慮故。無想天即廣果攝，無別處所。復
+<lb n="0295a10" ed="T"/>有諸聖，住止不共五淨宮地。謂無煩、無熱、善
+<lb n="0295a11" ed="T"/>現、善見及色究竟。由軟、中、上、上勝、上極品雜
+<lb n="0295a12" ed="T"/>熏修第四靜慮故。復有超過淨宮大自在
+<lb n="0295a13" ed="T"/>住處。有十地菩薩，由極<note n="0295001" resp="Taisho" type="orig" place="foot text">熏＝重【元】</note><note n="0295001" resp="CBETA" type="mod">熏【大】，重【元】</note><app n="0295001"><lem wit="【大】">熏</lem><rdg resp="Taisho" wit="【元】">重</rdg></app>修第十地故，得
+<lb n="0295a14" ed="T"/>生其中。</p></cb:div>
+<cb:div n="3" type="jie"><cb:mulu n="12" level="4" type="其他">3節 有情量建立</cb:mulu>
+<lb n="0295a15" ed="T"/><p xml:id="pT30p0295a1501">復次，無色界有四處所，或無處所。</p><p xml:id="pT30p0295a1514" cb:place="inline">有情量建
+<lb n="0295a16" ed="T"/>立者，謂贍部洲人身量不定，或時高大，或時
+<lb n="0295a17" ed="T"/>卑小，然隨自肘三肘半量。東毘提訶身量決
+<lb n="0295a18" ed="T"/>定，亦隨自肘三肘半量，身又高大。如東毘
+<lb n="0295a19" ed="T"/>提訶如是，西瞿陀尼、北拘盧洲身量亦爾，轉
+<lb n="0295a20" ed="T"/>復高大。四大王眾天身量如拘盧舍四分之
+<lb n="0295a21" ed="T"/>一。三十三天身量復增一足。帝釋身量半拘
+<lb n="0295a22" ed="T"/>盧舍。時分天身量亦半拘盧舍。此上一切，如
+<lb n="0295a23" ed="T"/>欲界天身量，當知漸漸各增一足。梵眾天身
+<lb n="0295a24" ed="T"/>量半踰繕那。梵前益天身量一踰繕那。大梵
+<lb n="0295a25" ed="T"/>天身量一踰繕那半。少光天身量二踰繕那。
+<lb n="0295a26" ed="T"/>此上一切餘天身量各漸倍增。除無雲天。應
+<lb n="0295a27" ed="T"/>知彼天減三踰繕那。又大那落迦身量不定。
+<lb n="0295a28" ed="T"/>若作及增長極重惡不善業者，彼感身形
+<lb n="0295a29" ed="T"/>其量廣大；餘則不爾。如大那落迦如是，寒
+<pb n="0295b" ed="T" xml:id="T30.1579.0295b"/>
+<lb n="0295b01" ed="T"/>那落迦、獨一那落迦、近邊那落迦、傍生、餓鬼亦
+<lb n="0295b02" ed="T"/>爾。諸非天身量大小，如三十三天。當知無色
+<lb n="0295b03" ed="T"/>界無有色故，無有身量。</p></cb:div>
+<cb:div n="4" type="jie"><cb:mulu n="13" level="4" type="其他">4節 有情壽建立</cb:mulu><p xml:id="pT30p0295b0310" cb:place="inline">壽建立者，謂贍部
+<lb n="0295b04" ed="T"/>洲人壽量不定。彼人以三十日夜為一月，
+<lb n="0295b05" ed="T"/>十二月為一歲。或於一時壽無量歲，或於
+<lb n="0295b06" ed="T"/>一時壽八萬歲，或於一時壽量漸減乃至十
+<lb n="0295b07" ed="T"/>歲。東毘提訶人壽量決定二百五十歲。西瞿
+<lb n="0295b08" ed="T"/>陀尼人壽量決定五百歲。北拘盧洲人壽量
+<lb n="0295b09" ed="T"/>決定千歲。又人間五十歲是四大王眾天一日
+<lb n="0295b10" ed="T"/>一夜。以此日夜，三十日夜為一月，十二月
+<lb n="0295b11" ed="T"/>為一歲。彼諸天眾壽量五百歲。人間百歲是
+<lb n="0295b12" ed="T"/>三十三天一日一夜。以此日夜如前說，彼
+<lb n="0295b13" ed="T"/>諸天眾壽量千歲。如是所餘，乃至他化自在
+<lb n="0295b14" ed="T"/>天，日夜及壽量各增前一倍。又四大王眾天
+<lb n="0295b15" ed="T"/>滿足壽量是等活大那落迦一日一夜。即以
+<lb n="0295b16" ed="T"/>此三十日夜為一月，十二月為一歲。彼大
+<lb n="0295b17" ed="T"/>那落迦壽五百歲。以四大王眾天壽量成等
+<lb n="0295b18" ed="T"/>活大那落迦壽量，如是以三十三天壽量
+<lb n="0295b19" ed="T"/>成黑繩大那落迦壽量，以時分天壽量成
+<lb n="0295b20" ed="T"/>眾合大那落迦壽量，以知足天壽量成號
+<lb n="0295b21" ed="T"/>叫大那落迦壽量，以樂化天壽量成大號叫
+<lb n="0295b22" ed="T"/>大那落迦壽量，以他化自在天壽量成燒
+<lb n="0295b23" ed="T"/>熱大那落迦壽量，應知亦爾。極燒<note n="0295002" resp="Taisho" type="orig" place="foot text">熱＝然【三】【宮】</note><note n="0295002" resp="CBETA" type="mod">熱【大】，然【宋】【元】【明】【宮】</note><app n="0295002"><lem wit="【大】">熱</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">然</rdg></app>大那
+<lb n="0295b24" ed="T"/>落迦有情壽半中劫。無間大那落迦有情壽
+<lb n="0295b25" ed="T"/>一中劫。非天壽量如三十三天。傍生、餓鬼壽
+<lb n="0295b26" ed="T"/>量不定。又寒那落迦於大那落迦次第相望，
+<lb n="0295b27" ed="T"/>壽量近半應知。又近邊那落迦、獨一那落迦
+<lb n="0295b28" ed="T"/>受生有情壽量不定。梵眾天壽二十中劫一
+<lb n="0295b29" ed="T"/>劫，梵前益天壽四十中劫一劫，大梵天壽六
+<pb n="0295c" ed="T" xml:id="T30.1579.0295c"/>
+<lb n="0295c01" ed="T"/>十中劫一劫，少光天壽八十中劫二劫。自此
+<lb n="0295c02" ed="T"/>以上，餘色界天壽量相望，各漸倍增。唯除無
+<lb n="0295c03" ed="T"/>雲。當知彼天壽減三劫。空無邊處壽二萬
+<lb n="0295c04" ed="T"/>劫，識無邊處壽四萬劫，無所有處壽六萬劫，
+<lb n="0295c05" ed="T"/>非想非非想處壽八萬劫。除北拘盧洲，餘一
+<lb n="0295c06" ed="T"/>切處悉有中<note n="0295003" resp="Taisho" type="orig" place="foot text">夭＝天【元】，殀【聖】</note><note n="0295003" resp="CBETA" type="mod">夭【大】，天【元】，殀【聖】</note><app n="0295003"><lem wit="【大】">夭</lem><rdg resp="Taisho" wit="【元】">天</rdg><rdg resp="Taisho" wit="【聖】">殀</rdg></app>。又人、鬼、傍生趣有餘滓身；
+<lb n="0295c07" ed="T"/>天及那落迦與識俱沒，無餘滓身。</p></cb:div>
+<cb:div n="5" type="jie"><cb:mulu n="14" level="4" type="其他">5節 有情受用建立</cb:mulu>
+<lb n="0295c08" ed="T"/><p xml:id="pT30p0295c0801">受用建立者，略有三種。謂受用苦樂、受用飲
+<lb n="0295c09" ed="T"/>食、受用婬欲。</p>
+<cb:div n="1" type="xiang"><cb:mulu n="16" level="5" type="其他">1項 受用苦樂</cb:mulu>
+<cb:div n="1" type="mu"><cb:mulu n="3" level="6" type="其他">1目 受用苦</cb:mulu><p xml:id="pT30p0295c0906" cb:place="inline">受用苦樂者，謂那落迦有情多
+<lb n="0295c10" ed="T"/>分受用極治罰苦；傍生有情多分受用相食
+<lb n="0295c11" ed="T"/>噉苦；餓鬼有情多分受用極飢渴苦；人趣有
+<lb n="0295c12" ed="T"/>情多分受用匱乏追求種種之苦；天趣有情
+<lb n="0295c13" ed="T"/>多分受用衰惱墜沒之苦。</p><p xml:id="pT30p0295c1311" cb:place="inline">又於等活大那落
+<lb n="0295c14" ed="T"/>迦中，多受如是極治罰苦。謂彼有情，多共聚
+<lb n="0295c15" ed="T"/>集，業增上生，種種苦具次第而起，更相殘害，
+<lb n="0295c16" ed="T"/>悶絕躄地。次虛空中有大聲發，唱如是言：
+<lb n="0295c17" ed="T"/>此諸有情可還等活！可還等活！次彼有情欻
+<lb n="0295c18" ed="T"/>然復起，復由如前所說苦具更相殘害。由
+<lb n="0295c19" ed="T"/>此因緣，長時受苦，乃至先世所造一切惡不
+<lb n="0295c20" ed="T"/>善業未盡未出。故此那落迦名為等活。</p><p xml:id="pT30p0295c2016" cb:place="inline">又
+<lb n="0295c21" ed="T"/>於黑繩大那落迦中，多受如是治罰重苦。謂
+<lb n="0295c22" ed="T"/>彼有情多分為彼所攝獄卒以黑繩<note n="0295004" resp="Taisho" type="orig" place="foot text">拼＝栟【宋】【元】【宮】＊</note><note n="0295004" resp="CBETA" type="mod">拼【大】＊，栟【宋】【元】【宮】＊</note><app n="0295004"><lem wit="【大】">拼</lem><rdg resp="Taisho" wit="【宋】 【元】 【宮】">栟</rdg></app>
+<lb n="0295c23" ed="T"/>之，或為四方、或為八方、或為種種圖畵文
+<lb n="0295c24" ed="T"/>像。彼既<app type="star" corresp="#0295004"><lem wit="【大】">拼</lem><rdg resp="Taisho" wit="【宋】 【元】 【宮】">栟</rdg></app>已，隨其處所，若鑿、若斲、若斫、若
+<lb n="0295c25" ed="T"/>剜。由如是等種種因緣，長時受苦，乃至先
+<lb n="0295c26" ed="T"/>世所造一切惡不善業未盡未出。故此那落
+<lb n="0295c27" ed="T"/>迦名為黑繩。</p><p xml:id="pT30p0295c2706" cb:place="inline">又於眾合大那落迦中，多受
+<lb n="0295c28" ed="T"/>如是治罰重苦。謂彼有情，或時展轉聚集和
+<lb n="0295c29" ed="T"/>合，爾時便有彼攝獄卒驅逼令入兩鐵羺
+<pb n="0296a" ed="T" xml:id="T30.1579.0296a"/>
+<lb n="0296a01" ed="T"/>頭大山之間。彼既入已，兩山迫之；既被迫已，
+<lb n="0296a02" ed="T"/>一切門中血便流注。如兩鐵羺頭，如是兩
+<lb n="0296a03" ed="T"/>鐵羝頭、兩鐵馬頭、兩鐵象頭、兩鐵師子頭、兩
+<lb n="0296a04" ed="T"/>鐵虎頭亦爾。復令和合，置大鐵槽中，便即
+<lb n="0296a05" ed="T"/>壓之，如壓甘蔗。既被壓已，血便流注。復和
+<lb n="0296a06" ed="T"/>合已，有大鐵山從上而墮，令彼有情躄在
+<lb n="0296a07" ed="T"/>鐵地，若斫若刺，或擣或裂。既被斫刺及擣裂
+<lb n="0296a08" ed="T"/>已，血便流注。由此因緣，長時受苦，乃至先
+<lb n="0296a09" ed="T"/>世所作一切惡不善業未盡未出。故此那落
+<lb n="0296a10" ed="T"/>迦名為眾合。</p><p xml:id="pT30p0296a1006" cb:place="inline">又於號叫大那落迦中，多受
+<lb n="0296a11" ed="T"/>如是治罰重苦。謂彼有情尋求舍宅，便入大
+<lb n="0296a12" ed="T"/>鐵室中。彼纔入已，即便火起；由此燒然，若極
+<lb n="0296a13" ed="T"/>燒然，遍極燒然。既被燒已，苦痛逼切，發聲號
+<lb n="0296a14" ed="T"/>叫。由此因緣，長時受苦，乃至先世所造一
+<lb n="0296a15" ed="T"/>切惡不善業未盡未出。故此那落迦名為號
+<lb n="0296a16" ed="T"/>叫。</p><p xml:id="pT30p0296a1602" cb:place="inline">又於大號叫大那落迦中，所受苦惱與
+<lb n="0296a17" ed="T"/>此差別。謂彼室宅其如胎藏。故此那落迦
+<lb n="0296a18" ed="T"/>名大號叫。</p><p xml:id="pT30p0296a1805" cb:place="inline">又於燒熱大那落迦中，多受如
+<lb n="0296a19" ed="T"/>是治罰重苦。謂彼所攝獄卒，以諸有情置
+<lb n="0296a20" ed="T"/>無量踰繕那熱、極熱、遍極燒然大鐵<note n="0296001" resp="Taisho" type="orig" place="foot text"><g ref="#CB00828"/>＝熬【三】【宮】</note><note n="0296001" resp="CBETA" type="mod"><g ref="#CB00828"/>【大】，熬【宋】【元】【明】【宮】</note><app n="0296001"><lem wit="【大】"><g ref="#CB00828"/></lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">熬</rdg></app>上，左
+<lb n="0296a21" ed="T"/>右轉之，表裏燒煿。又如炙魚，以大鐵丳從
+<lb n="0296a22" ed="T"/>下貫之，徹頂而出，反覆炙之，令彼有情諸
+<lb n="0296a23" ed="T"/>根毛孔及以口中悉皆焰起。復以有情置熱、
+<lb n="0296a24" ed="T"/>極熱、遍極燒然大鐵地上，或仰或覆，以熱、極
+<lb n="0296a25" ed="T"/>熱、遍極燒然大鐵椎棒，或打或築、遍打遍築，
+<lb n="0296a26" ed="T"/>令如肉摶。由此因緣，長時受苦，乃至先世
+<lb n="0296a27" ed="T"/>所造一切惡不善業未盡未出。故此那落迦
+<lb n="0296a28" ed="T"/>名為燒熱。</p><p xml:id="pT30p0296a2805" cb:place="inline">又於極燒熱大那落迦中，所受
+<lb n="0296a29" ed="T"/>苦惱與此差別。謂以三支大熱鐵丳從下
+<pb n="0296b" ed="T" xml:id="T30.1579.0296b"/>
+<lb n="0296b01" ed="T"/>貫之，徹其兩<note n="0296002" resp="Taisho" type="orig" place="foot text">膊＝髆【三】</note><note n="0296002" resp="CBETA" type="mod">膊【大】，髆【宋】【元】【明】</note><app n="0296002"><lem wit="【大】">膊</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">髆</rdg></app>及頂而出。由此因緣，眼
+<lb n="0296b02" ed="T"/>耳鼻口及諸毛孔猛焰流出。又以熱、極熱、遍
+<lb n="0296b03" ed="T"/>極燒然大銅鐵鍱遍<note n="0296003" resp="Taisho" type="orig" place="foot text">裹＝里【宋】</note><note n="0296003" resp="CBETA" type="mod">裹【大】，里【宋】</note><app n="0296003"><lem wit="【大】">裹</lem><rdg resp="Taisho" wit="【宋】">里</rdg></app>其身。又復倒擲置
+<lb n="0296b04" ed="T"/>熱、極熱、遍極燒然彌滿灰水大鐵鑊中而煎
+<lb n="0296b05" ed="T"/>煮之。其湯涌沸，令此有情隨湯飄轉，或出或
+<lb n="0296b06" ed="T"/>沒，<note n="0296004" resp="Taisho" type="orig" place="foot text">令＝念【元】【明】</note><note n="0296004" resp="CBETA" type="mod">令【大】，念【元】【明】</note><app n="0296004"><lem wit="【大】">令</lem><rdg resp="Taisho" wit="【元】 【明】">念</rdg></app>其血肉及以皮脈悉皆銷爛、唯骨<note n="0296005" resp="Taisho" type="orig" place="foot text">瑣＝鎖【元】【明】</note><note n="0296005" resp="CBETA" type="mod">瑣【大】，鎖【元】【明】</note><app n="0296005"><lem wit="【大】">瑣</lem><rdg resp="Taisho" wit="【元】 【明】">鎖</rdg></app>
+<lb n="0296b07" ed="T"/>在，尋復<note n="0296006" resp="Taisho" type="orig" place="foot text">漉＝鹿【元】</note><note n="0296006" resp="CBETA" type="mod">漉【大】，鹿【元】</note><app n="0296006"><lem wit="【大】">漉</lem><rdg resp="Taisho" wit="【元】">鹿</rdg></app>之，置鐵地上，令其皮肉及以血
+<lb n="0296b08" ed="T"/>脈復生如故，還置鑊中。餘如燒熱大那落
+<lb n="0296b09" ed="T"/>迦說。由此因緣，長時受苦，乃至先世所造
+<lb n="0296b10" ed="T"/>一切惡不善業未盡未出。故此那落迦名極
+<lb n="0296b11" ed="T"/>燒熱。</p><p xml:id="pT30p0296b1103" cb:place="inline">又於無間大那落迦中，彼諸有情恒
+<lb n="0296b12" ed="T"/>受如是極治罰苦。謂從東方多百踰繕那燒
+<lb n="0296b13" ed="T"/>熱、極燒熱、遍極燒然大鐵地上有猛熾火騰
+<lb n="0296b14" ed="T"/>焰而來，刺彼有情，穿皮入肉，斷筋破骨，復
+<lb n="0296b15" ed="T"/>徹其髓，燒如脂燭，如是舉身皆成猛焰。如
+<lb n="0296b16" ed="T"/>從東方，南西北方亦復如是。由此因緣，彼
+<lb n="0296b17" ed="T"/>諸有情與猛焰和雜，唯見火聚從四方來，
+<lb n="0296b18" ed="T"/>火焰和雜，無有間隙，所受苦痛亦無間隙，
+<lb n="0296b19" ed="T"/>唯聞苦逼號叫之聲，知有眾生。又以鐵箕
+<lb n="0296b20" ed="T"/>盛滿燒然、極燒然、遍極燒然猛焰鐵炭而簸
+<lb n="0296b21" ed="T"/><note n="0296007" resp="Taisho" type="orig" place="foot text">剪＝揃【三】【宮】</note><note n="0296007" resp="CBETA" type="mod">剪【大】，揃【宋】【元】【明】【宮】</note><app n="0296007"><lem wit="【大】">剪</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">揃</rdg></app>之。復置熱鐵地上，令登大熱鐵山，上而
+<lb n="0296b22" ed="T"/>復下，下而復上。從其口中拔出其舌，以百
+<lb n="0296b23" ed="T"/>鐵釘釘而張之，令無皺襵，如張牛皮。復
+<lb n="0296b24" ed="T"/>更仰臥熱鐵地上，以熱燒鐵鉗鉗口令開，
+<lb n="0296b25" ed="T"/>以燒然、極燒然、遍極燒然大熱鐵丸置其口
+<lb n="0296b26" ed="T"/>中，即燒其口及以咽喉，徹於<note n="0296008" resp="Taisho" type="orig" place="foot text">府＝腑【三】【三】【宮】＊</note><note n="0296008" resp="CBETA" type="mod">府【大】＊，腑【宋】【元】【明】【宮】＊</note><app n="0296008"><lem wit="【大】">府</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">腑</rdg></app><note n="0296009" resp="Taisho" type="orig" place="foot text">藏＝臟【宋】【元】【宮】</note><note n="0296009" resp="CBETA" type="mod">藏【大】，臟【宋】【元】【宮】</note><app n="0296009"><lem wit="【大】">藏</lem><rdg resp="Taisho" wit="【宋】 【元】 【宮】">臟</rdg></app>，從下
+<lb n="0296b27" ed="T"/>而出。又以洋銅而灌其口，燒喉及口，徹
+<lb n="0296b28" ed="T"/>於<app type="star" corresp="#0296008"><lem wit="【大】">府</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">腑</rdg></app><anchor xml:id="fxT30p0296b02"/>藏，從下流出。所餘苦惱，如極熱說。
+<lb n="0296b29" ed="T"/>由此因緣，長時受苦，乃至先世所造一切
+<pb n="0296c" ed="T" xml:id="T30.1579.0296c"/>
+<lb n="0296c01" ed="T"/>惡不善業未盡未出。故此那落迦名為無
+<lb n="0296c02" ed="T"/>間，多是造作無間之業來生是中。此但略
+<lb n="0296c03" ed="T"/>說麁顯苦具，非於如是大那落迦中，所餘
+<lb n="0296c04" ed="T"/>種種眾多苦具而不可得。</p><p xml:id="pT30p0296c0411" cb:place="inline">又於近邊諸那落
+<lb n="0296c05" ed="T"/>迦中，有情之類受用如是治罰重苦。謂彼一
+<lb n="0296c06" ed="T"/>切諸大那落迦皆有四方、四岸、四門，鐵牆圍
+<lb n="0296c07" ed="T"/>遶。從其四方四門出已，其一一門外有四出
+<lb n="0296c08" ed="T"/>園。謂煻煨齊膝。彼諸有情出求舍宅，遊行
+<lb n="0296c09" ed="T"/>至此，下足之時、皮肉及血，並即<note n="0296010" resp="Taisho" type="orig" place="foot text">消＝銷【明】</note><note n="0296010" resp="CBETA" type="mod">消【大】，銷【明】</note><app n="0296010"><lem wit="【大】">消</lem><rdg resp="Taisho" wit="【明】">銷</rdg></app>爛，舉足
+<lb n="0296c10" ed="T"/>還生。次此煻煨無間，即有死屍糞泥。此諸有
+<lb n="0296c11" ed="T"/>情為求舍宅，從彼出已，漸漸遊行，陷入其
+<lb n="0296c12" ed="T"/>中，首足俱沒。又屍糞埿內多有諸蟲，名孃
+<lb n="0296c13" ed="T"/>矩吒，穿皮入肉，斷筋破骨，取髓而食。次屍
+<lb n="0296c14" ed="T"/>糞埿無間，有利刀劍仰刃為路。彼諸有情為
+<lb n="0296c15" ed="T"/>求舍宅，從彼出已，遊行至此。下足之時，皮
+<lb n="0296c16" ed="T"/>肉筋血悉皆消爛，舉足之時，還復如故。次刀
+<lb n="0296c17" ed="T"/>劍刃路無間，有刃葉林。彼諸有情為求舍宅，
+<lb n="0296c18" ed="T"/>從彼出已，往趣彼<note n="0296011" resp="Taisho" type="orig" place="foot text">蔭＝陰【三】【宮】</note><note n="0296011" resp="CBETA" type="mod">蔭【大】，陰【宋】【元】【明】【宮】</note><app n="0296011"><lem wit="【大】">蔭</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">陰</rdg></app>，纔坐其下，微風遂起，
+<lb n="0296c19" ed="T"/>刃葉墮落，斫截其身一切支節，便即躄地。
+<lb n="0296c20" ed="T"/>有黑<note n="0296012" resp="Taisho" type="orig" place="foot text">釐＝梨【宮】</note><note n="0296012" resp="CBETA" type="mod">黧【CB】【麗-CB】，釐【大】，梨【宮】</note><app n="0296012"><lem resp="CBETA.maha CBETA.say" wit="【CB】 【麗-CB】">黧<note type="cf1">K15n0570_p0491c23</note><note type="cf2">T54n2128_p0626a09</note></lem><rdg wit="【大】">釐</rdg><rdg resp="Taisho" wit="【宮】">梨</rdg></app>狗，<note n="0296013" resp="Taisho" type="orig" place="foot text">摣＝楂【宋】【元】【宮】【聖】</note><note n="0296013" resp="CBETA" type="mod">摣【大】，楂【宋】【元】【宮】【聖】</note><app n="0296013"><lem wit="【大】">摣</lem><rdg resp="Taisho" wit="【宋】 【元】 【宮】 【聖】">楂</rdg></app>掣脊<note n="0296c2001" resp="CBETA" type="add"><g ref="#CB14694"/>【CB】【麗-CB】，胎【大】</note><app n="0296c2001"><lem resp="CBETA.maha CBETA.say" wit="【CB】 【麗-CB】"><g ref="#CB14694"/><note type="cf1">K15n0570_p0492a01</note><note type="cf2">T52n2110_p0500b15</note></lem><rdg wit="【大】">胎</rdg></app>而噉食之。從此刃
+<lb n="0296c21" ed="T"/>葉林無間，有鐵設<note n="0296014" resp="Taisho" type="orig" place="foot text">拉＝柆【宋】</note><note n="0296014" resp="CBETA" type="mod">拉【大】，柆【宋】</note><app n="0296014"><lem wit="【大】">拉</lem><rdg resp="Taisho" wit="【宋】">柆</rdg></app>末梨林。彼諸有情為
+<lb n="0296c22" ed="T"/>求舍宅，便來趣之，遂登其上。當登之時，
+<lb n="0296c23" ed="T"/>一切刺鋒悉迴向下，欲下之時，一切刺鋒復
+<lb n="0296c24" ed="T"/>迴向上。由此因緣，貫刺其身，遍諸支節。爾
+<lb n="0296c25" ed="T"/>時便有鐵<g ref="#CB01479"/>大烏上彼頭上，或上其髆，<note n="0296015" resp="Taisho" type="orig" place="foot text">探＝<g ref="#CB01493"/>【三】【宮】</note><note n="0296015" resp="CBETA" type="mod">探【大】，<g ref="#CB01493"/>【宋】【元】【明】【宮】</note><app n="0296015"><lem wit="【大】">探</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><g ref="#CB01493"/></rdg></app>
+<lb n="0296c26" ed="T"/>啄眼睛而噉食之。從鐵設拉末梨林無間，
+<lb n="0296c27" ed="T"/>有廣大河，沸熱灰水彌滿其中。彼諸有情
+<lb n="0296c28" ed="T"/>尋求舍宅，從彼出已，來墮此中。猶如以豆
+<lb n="0296c29" ed="T"/>置之大鑊，然猛熾火而煎煮之，隨湯騰涌
+<pb n="0297a" ed="T" xml:id="T30.1579.0297a"/>
+<lb n="0297a01" ed="T"/>周旋迴復。於河兩岸有諸獄卒，手執杖索
+<lb n="0297a02" ed="T"/>及以大網，行列而住，遮彼有情，不令得出，
+<lb n="0297a03" ed="T"/>或以索羂，或以網漉。復置廣大熱鐵地上，
+<lb n="0297a04" ed="T"/>仰彼有情而問之言：汝等今者欲何所須？
+<lb n="0297a05" ed="T"/>如是答言：我等今者竟無覺知，然為種種
+<lb n="0297a06" ed="T"/>飢苦所逼。時彼獄卒即以鐵<note n="0297001" resp="Taisho" type="orig" place="foot text">鉗鉗＝鉆鉆【宮】，鈷鈷【聖】</note><note n="0297001" resp="CBETA" type="mod">鉗鉗【大】，鉆鉆【宮】，鈷鈷【聖】</note><app n="0297001"><lem wit="【大】">鉗鉗</lem><rdg resp="Taisho" wit="【宮】">鉆鉆</rdg><rdg resp="Taisho" wit="【聖】">鈷鈷</rdg></app>口令
+<lb n="0297a07" ed="T"/>開，便以極熱燒然鐵丸置其口中，餘如前
+<lb n="0297a08" ed="T"/>說。若彼答言：我今唯為渴苦所逼。爾時獄
+<lb n="0297a09" ed="T"/>卒便即洋銅以灌其口。由是因緣，長時受
+<lb n="0297a10" ed="T"/>苦，乃至先世所造一切能感那落迦惡不
+<lb n="0297a11" ed="T"/>善業未盡未出。此中若刀劍刃路、若刃葉
+<lb n="0297a12" ed="T"/>林、若鐵設拉末梨林總之為一，故有四園。</p>
+<lb n="0297a13" ed="T"/><p xml:id="pT30p0297a1301">又於寒那落迦受生有情，多受如是極重
+<lb n="0297a14" ed="T"/><note n="0297a1401" resp="CBETA" type="add">寒【CB】【麗-CB】，塞【大】</note><app n="0297a1401"><lem resp="CBETA.maha CBETA.say" wit="【CB】 【麗-CB】">寒<note type="cf1">K15n0570_p0492b03</note></lem><rdg wit="【大】">塞</rdg></app>苦。謂皰那落迦中受生有情，即為彼地極
+<lb n="0297a15" ed="T"/>重廣大寒觸所觸，一切身分悉皆卷縮，猶如
+<lb n="0297a16" ed="T"/>瘡皰。故此那落迦名皰那落迦。皰裂那落迦
+<lb n="0297a17" ed="T"/>與此差別。猶如皰潰，膿血流出，其瘡卷皺。故
+<lb n="0297a18" ed="T"/>此那落迦名為皰裂。又<g ref="#CB01231"/>哳詀、郝郝凡、虎虎
+<lb n="0297a19" ed="T"/>凡、此三那落迦由彼有情苦音差別以立
+<lb n="0297a20" ed="T"/>其名。青蓮那落迦中，由彼地極重廣大寒觸
+<lb n="0297a21" ed="T"/>所觸，一切身分悉皆青瘀，皮膚破裂，或五或
+<lb n="0297a22" ed="T"/>六。故此那落迦名曰青蓮。紅蓮那落迦與此
+<lb n="0297a23" ed="T"/>差別。過此青已，色變紅赤，皮膚分裂或十
+<lb n="0297a24" ed="T"/>或多。故此那落迦名曰紅蓮。大紅蓮那落迦
+<lb n="0297a25" ed="T"/>與此差別。謂彼身分極大紅赤，皮膚分裂或
+<lb n="0297a26" ed="T"/>百或多。故此那落迦名大紅蓮。</p><p xml:id="pT30p0297a2613" cb:place="inline">又獨一那落
+<lb n="0297a27" ed="T"/>迦中受生有情，各於自身自業所感，多受
+<lb n="0297a28" ed="T"/>如是種種大苦。如吉祥問採<app type="star" corresp="#0294010"><lem wit="【大】">菉</lem><rdg resp="Taisho" wit="【宮】">綠</rdg></app>豆子經中
+<lb n="0297a29" ed="T"/>廣說。故此那落迦名為獨一。</p>
+<pb n="0297b" ed="T" xml:id="T30.1579.0297b"/>
+<lb n="0297b01" ed="T"/><p xml:id="pT30p0297b0101">又傍生趣更相殘害，如羸弱者為諸強力之
+<lb n="0297b02" ed="T"/>所殺害，由此因緣受種種苦。以不自在，
+<lb n="0297b03" ed="T"/>他所驅馳，多被鞭撻，與彼人天為資生具。
+<lb n="0297b04" ed="T"/>由此因緣具受種種極重苦惱。</p>
+<lb n="0297b05" ed="T"/><p xml:id="pT30p0297b0501">又餓鬼趣略有三種。一者、由外障礙飲食，
+<lb n="0297b06" ed="T"/>二者、由內障礙飲食，三者、飲食無有障礙。
+<lb n="0297b07" ed="T"/>云何由外障礙飲食？謂彼有情、由習上品
+<lb n="0297b08" ed="T"/>慳故，生鬼趣中，常與飢渴相應。皮肉血脈
+<lb n="0297b09" ed="T"/>皆悉枯槁，猶如<note n="0297002" resp="Taisho" type="orig" place="foot text">火＝災【聖】</note><note n="0297002" resp="CBETA" type="mod">火【大】，災【聖】</note><app n="0297002"><lem wit="【大】">火</lem><rdg resp="Taisho" wit="【聖】">災</rdg></app>炭，頭髮<note n="0297003" resp="Taisho" type="orig" place="foot text">蓬＝髼【三】【宮】</note><note n="0297003" resp="CBETA" type="mod">蓬【大】，髼【宋】【元】【明】【宮】</note><app n="0297003"><lem wit="【大】">蓬</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">髼</rdg></app>亂，其面黯黑，
+<lb n="0297b10" ed="T"/>脣口乾焦，常以其舌舐略口面。飢渴慞惶，處
+<lb n="0297b11" ed="T"/>處馳走。所到泉池，為餘有情手執刀杖及
+<lb n="0297b12" ed="T"/>以羂索行列守護，令不得趣。或強趣之，便
+<lb n="0297b13" ed="T"/>見其泉變成膿血，自不欲飲。如是等鬼，是
+<lb n="0297b14" ed="T"/>名由外障礙飲食。云何由內障礙飲食？謂
+<lb n="0297b15" ed="T"/>彼有情，口或如針，口或如炬，或復頸癭，其腹
+<lb n="0297b16" ed="T"/>寬大。由此因緣，縱得飲食，無他障礙，自然
+<lb n="0297b17" ed="T"/>不能若噉若飲。如是等鬼，是名由內障礙
+<lb n="0297b18" ed="T"/>飲食。云何飲食無有障礙？謂有餓鬼，名猛
+<lb n="0297b19" ed="T"/>焰鬘。隨所飲噉，皆被燒然。由此因緣，飢渴
+<lb n="0297b20" ed="T"/>大苦未甞暫息。復有餓鬼，名食糞穢。或有
+<lb n="0297b21" ed="T"/>一分食糞飲溺；或有一分唯能飲噉極可
+<lb n="0297b22" ed="T"/>厭惡生熟臭穢，縱得香美而不能食。或有
+<lb n="0297b23" ed="T"/>一分自割身肉而噉食之，縱得餘食，竟不
+<lb n="0297b24" ed="T"/>能噉。如是等鬼，是名飲食無有障礙。</p>
+<lb n="0297b25" ed="T"/><p xml:id="pT30p0297b2501">又人趣中受生有情，多受如是匱乏之苦。所
+<lb n="0297b26" ed="T"/>謂俱生飢渴匱乏苦；所欲不果匱乏苦；麁
+<lb n="0297b27" ed="T"/>疎飲食匱乏苦；逼切追求攝受等匱乏苦；時
+<lb n="0297b28" ed="T"/>節變異，若寒若熱匱乏苦；無有舍宅覆障，所
+<lb n="0297b29" ed="T"/>作淋漏匱乏苦；黑闇等障，所作事業皆悉休
+<pb n="0297c" ed="T" xml:id="T30.1579.0297c"/>
+<lb n="0297c01" ed="T"/>廢匱乏苦。又受變壞老病死苦。由那落迦
+<lb n="0297c02" ed="T"/>中謂死為樂，故於彼趣不立為苦。</p><p xml:id="pT30p0297c0214" cb:place="inline">又天趣
+<lb n="0297c03" ed="T"/>中無解支節苦，而有死墮苦。如經中說：有
+<lb n="0297c04" ed="T"/>諸天子將欲沒時，五相先現。一、衣無垢染，
+<lb n="0297c05" ed="T"/>有垢染現；二、鬘舊不萎，今乃萎顇；三、兩腋
+<lb n="0297c06" ed="T"/><note n="0297004" resp="Taisho" type="orig" place="foot text">汗＝汁【元】</note><note n="0297004" resp="CBETA" type="mod">汗【大】，汁【元】</note><app n="0297004"><lem wit="【大】">汗</lem><rdg resp="Taisho" wit="【元】">汁</rdg></app>流；四、身便臭穢；五、天及天子不樂本座。
+<lb n="0297c07" ed="T"/>時彼天子偃臥林間，所有<note n="0297005" resp="Taisho" type="orig" place="foot text">婇＝綵【宋】【元】【宮】</note><note n="0297005" resp="CBETA" type="mod">婇【大】，綵【宋】【元】【宮】</note><app n="0297005"><lem wit="【大】">婇</lem><rdg resp="Taisho" wit="【宋】 【元】 【宮】">綵</rdg></app>女與餘天子
+<lb n="0297c08" ed="T"/>共為遊戲。彼既見已，由此因緣，生大憂苦。
+<lb n="0297c09" ed="T"/>復受陵<note n="0297006" resp="Taisho" type="orig" place="foot text">蔑＝懱【三】【宮】＊</note><note n="0297006" resp="CBETA" type="mod">蔑【大】＊，懱【宋】【元】【明】【宮】＊</note><app n="0297006"><lem wit="【大】">蔑</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">懱</rdg></app>悚<note n="0297007" resp="Taisho" type="orig" place="foot text">慄＝慓【宋】【宮】</note><note n="0297007" resp="CBETA" type="mod">慄【大】，慓【宋】【宮】</note><app n="0297007"><lem wit="【大】">慄</lem><rdg resp="Taisho" wit="【宋】 【宮】">慓</rdg></app>之苦。所以者何？由有廣
+<lb n="0297c10" ed="T"/>大福聚成就及廣大五欲天子生時，所餘薄
+<lb n="0297c11" ed="T"/>福諸舊天子見已惶怖。由此因緣，受大憂苦。
+<lb n="0297c12" ed="T"/><note n="0297008" resp="Taisho" type="orig" place="foot text">又＝及【三】【宮】</note><note n="0297008" resp="CBETA" type="mod">又【大】，及【宋】【元】【明】【宮】</note><app n="0297008"><lem wit="【大】">又</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">及</rdg></app>受斫截破壞、驅擯殘害之苦。所以者何？
+<lb n="0297c13" ed="T"/>由天與非天共戰諍時，天與非天互相違
+<lb n="0297c14" ed="T"/>拒，即執四仗，所謂金、銀、頗胝、琉璃，共相戰
+<lb n="0297c15" ed="T"/>鬪。爾時諸天及與非天，或斷支節，或破其
+<lb n="0297c16" ed="T"/>身，或復致死。若傷身斷節，續還如故，若斷
+<lb n="0297c17" ed="T"/>其首，即便殞<note n="0297009" resp="Taisho" type="orig" place="foot text">沒＝歿【明】</note><note n="0297009" resp="CBETA" type="mod">沒【大】，歿【明】</note><app n="0297009"><lem wit="【大】">沒</lem><rdg resp="Taisho" wit="【明】">歿</rdg></app>。天與非天互有他勝，然天
+<lb n="0297c18" ed="T"/>多勝，力勢強故。然其彼二，若為他勝，即退入
+<lb n="0297c19" ed="T"/>自宮，己之同類竟不慰問。由此因緣，便懷
+<lb n="0297c20" ed="T"/>憂慼。若天得勝，便入非天宮中，為悅其女，
+<lb n="0297c21" ed="T"/>起此違諍；若非天得勝，即入天宮，為求四
+<lb n="0297c22" ed="T"/>種<note n="0297010" resp="Taisho" type="orig" place="foot text">蘇＝酥【元】【明】＊</note><note n="0297010" resp="CBETA" type="mod">蘇【大】＊，酥【元】【明】＊</note><app n="0297010"><lem wit="【大】">蘇</lem><rdg resp="Taisho" wit="【元】 【明】">酥</rdg></app>陀味故，共相戰諍。又諸非天，當知天
+<lb n="0297c23" ed="T"/>趣所攝。然由意志多懷詐幻，諂誑多故，不
+<lb n="0297c24" ed="T"/>如諸天為淨法器。由此因緣，有時經中說
+<lb n="0297c25" ed="T"/>為別趣，實是天類。由不受行諸天法故，說
+<lb n="0297c26" ed="T"/>為非天。復有強力天子，纔一發憤，諸劣天
+<lb n="0297c27" ed="T"/>子便被驅擯，出其自宮。是故諸天受三種
+<lb n="0297c28" ed="T"/>苦。謂死墮苦，陵<app type="star" corresp="#0297006"><lem wit="【大】">蔑</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">懱</rdg></app>苦，斫截破壞、殘害驅擯
+<lb n="0297c29" ed="T"/>苦。</p><p xml:id="pT30p0297c2902" cb:place="inline">又色、無色界有情無有如是等苦，由彼有
+<pb n="0298a" ed="T" xml:id="T30.1579.0298a"/>
+<lb n="0298a01" ed="T"/>情非苦受器故。然由麁重苦故，說彼有苦。
+<lb n="0298a02" ed="T"/>有煩惱故，有障<note n="0298001" resp="Taisho" type="orig" place="foot text">〔礙〕－【三】【宮】</note><note n="0298001" resp="CBETA" type="mod">礙【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0298001"><lem wit="【大】">礙</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>故，於死及住不自在
+<lb n="0298a03" ed="T"/>故。</p></cb:div>
+<cb:div n="2" type="mu"><cb:mulu n="4" level="6" type="其他">2目 受用樂</cb:mulu><p xml:id="pT30p0298a0302" cb:place="inline">又無漏界中，一切麁重諸苦永斷。是故唯
+<lb n="0298a04" ed="T"/>此是勝義樂，當知所餘一切是苦。</p><p xml:id="pT30p0298a0414" cb:place="inline">又於四種
+<lb n="0298a05" ed="T"/>那落迦中無有樂受。如那落迦中，三種餓
+<lb n="0298a06" ed="T"/>鬼中亦爾。諸大力鬼、傍生、人中，有外門所生
+<lb n="0298a07" ed="T"/>資具樂可得，然為眾苦之所相雜。</p><p xml:id="pT30p0298a0714" cb:place="inline">又人趣
+<lb n="0298a08" ed="T"/>中，轉輪王樂最勝微妙。由彼輪王出現世時，
+<lb n="0298a09" ed="T"/>有成就七寶自然出現，故說彼王具足七
+<lb n="0298a10" ed="T"/>寶。</p><p xml:id="pT30p0298a1002" cb:place="inline">何等為七？所謂輪寶、象寶、馬寶、末尼珠寶、
+<lb n="0298a11" ed="T"/>女寶、主藏臣寶、主兵臣寶。爾時輪寶等現，其
+<lb n="0298a12" ed="T"/>相云何？七寶現相，如經廣說。</p><p xml:id="pT30p0298a1212" cb:place="inline">若彼輪王王四
+<lb n="0298a13" ed="T"/>洲者，一切小王望風順化，各自白言：<note n="0298002" resp="Taisho" type="orig" place="foot text">某＝其【三】【宮】</note><note n="0298002" resp="CBETA" type="mod">某【大】，其【宋】【元】【明】【宮】</note><app n="0298002"><lem wit="【大】">某</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">其</rdg></app>城
+<lb n="0298a14" ed="T"/>邑聚落，天之所有，唯願大王垂恩教勅，我等
+<lb n="0298a15" ed="T"/>皆當為天僕隸。爾時輪王便即勅令：汝等諸
+<lb n="0298a16" ed="T"/>王！各於自境以理獎化，當以如法，勿以
+<lb n="0298a17" ed="T"/>非法。又復汝等於國於家勿行非法行，勿
+<lb n="0298a18" ed="T"/>行不平等行。若彼輪王王三洲者，先遣使
+<lb n="0298a19" ed="T"/>往，然後從化。</p><p xml:id="pT30p0298a1906" cb:place="inline">若彼輪王王二洲者，興師現
+<lb n="0298a20" ed="T"/>威，後乃從化。若彼輪王王一洲者，便自往
+<lb n="0298a21" ed="T"/>彼，奮戈揮刃，然後從化。</p>
+<lb n="0298a22" ed="T"/><p xml:id="pT30p0298a2201">復次，諸天受其廣大天之富樂。形色殊妙，多
+<lb n="0298a23" ed="T"/>諸適悅，於自宮中而得久住。其身內外皆
+<lb n="0298a24" ed="T"/>悉清潔，無有臭穢。又人身內多有不淨，所
+<lb n="0298a25" ed="T"/>謂塵垢筋骨脾腎心肝；彼皆無有。</p><p xml:id="pT30p0298a2514" cb:place="inline">又彼諸天
+<lb n="0298a26" ed="T"/>有四種宮殿，所謂金、銀、頗胝、琉璃所成，種
+<lb n="0298a27" ed="T"/>種文綵綺飾莊嚴。種種臺閣、種種樓觀、種種
+<lb n="0298a28" ed="T"/>層級、種種窓牖、種種羅網，皆可愛樂。種種末
+<lb n="0298a29" ed="T"/>尼以為綺鈿，周匝放光，共相照曜。</p><p xml:id="pT30p0298a2914" cb:place="inline">復有食
+<pb n="0298b" ed="T" xml:id="T30.1579.0298b"/>
+<lb n="0298b01" ed="T"/>樹，從其樹裏出四食味，名曰蘇陀，所謂青
+<lb n="0298b02" ed="T"/>黃赤白。復有飲樹，從此流出甘美之飲。復
+<lb n="0298b03" ed="T"/>有乘樹，從此出生種種妙乘，所謂車輅輦
+<lb n="0298b04" ed="T"/>輿等。復有衣樹，從此出生種種妙衣，其衣
+<lb n="0298b05" ed="T"/>細軟，妙色鮮潔，雜綵間飾。復有莊嚴具樹，從
+<lb n="0298b06" ed="T"/>此出生種種微妙莊嚴之具，所謂末尼、臂印、
+<lb n="0298b07" ed="T"/>耳璫、環釧，及以手足綺飾之具。如是等類諸
+<lb n="0298b08" ed="T"/>莊嚴具，皆以種種妙末尼寶而間飾之。復
+<lb n="0298b09" ed="T"/>有熏香鬘樹，從此出生種種塗香、種種熏香、
+<lb n="0298b10" ed="T"/>種種花鬘。復有大集會樹，最勝微妙。其根深
+<lb n="0298b11" ed="T"/>固五十踰繕那，其身高挺百踰繕那，枝條及
+<lb n="0298b12" ed="T"/>葉遍覆八十踰繕那；雜花開發，其香順風
+<lb n="0298b13" ed="T"/>熏百踰繕那，逆風熏五十踰繕那。於此樹
+<lb n="0298b14" ed="T"/>下，三十三天雨四月中，以天妙五欲共相娛
+<lb n="0298b15" ed="T"/>樂。復有歌笑舞樂<note n="0298003" resp="Taisho" type="orig" place="foot text">〔之〕－【三】【宮】</note><note n="0298003" resp="CBETA" type="mod">之【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0298003"><lem wit="【大】">之</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>樹，從此出生歌笑舞
+<lb n="0298b16" ed="T"/>等種種樂器。</p><p xml:id="pT30p0298b1606" cb:place="inline">又有資具之樹，從此出生種
+<lb n="0298b17" ed="T"/>種資具，所謂食飲之具、坐臥之具、如是等類
+<lb n="0298b18" ed="T"/>種種資具。又彼諸天欲受用時，隨欲隨業，
+<lb n="0298b19" ed="T"/>應其所須，來現手中。</p>
+<lb n="0298b20" ed="T"/><p xml:id="pT30p0298b2001">又諸非天，隨其所應，受用種種宮殿富樂應
+<lb n="0298b21" ed="T"/>知。又北拘盧洲有如是相樹，名曰如意。彼
+<lb n="0298b22" ed="T"/>諸人眾所欲資具，從樹而取。不由思惟，隨
+<lb n="0298b23" ed="T"/>其所須，自然在手。復有秔稻，不種而穫。無
+<lb n="0298b24" ed="T"/>有我所。又彼有情竟無繫屬、決定勝進。</p><p xml:id="pT30p0298b2416" cb:place="inline">又
+<lb n="0298b25" ed="T"/>天帝釋有普勝殿，於諸殿中最為殊勝。仍
+<lb n="0298b26" ed="T"/>於其處有百樓觀，一一樓觀有百臺閣，一一
+<lb n="0298b27" ed="T"/>臺閣有七房室，一一房室有七天女，一一天女
+<lb n="0298b28" ed="T"/>有七侍女。</p><p xml:id="pT30p0298b2805" cb:place="inline">又彼諸天所有地界，平正如掌，竟
+<lb n="0298b29" ed="T"/>無高下。履觸之時，便生安樂，下足之時，陷便
+<pb n="0298c" ed="T" xml:id="T30.1579.0298c"/>
+<lb n="0298c01" ed="T"/>至膝，舉足之時，隨足還起。於一切時，自然
+<lb n="0298c02" ed="T"/>而有曼陀羅華遍布其上。時有微風吹去
+<lb n="0298c03" ed="T"/>萎華，復引新者。</p><p xml:id="pT30p0298c0307" cb:place="inline">又彼天宮四面各有大街。
+<lb n="0298c04" ed="T"/>其形殊妙，軌式可觀，清淨端嚴，度量齊整。復
+<lb n="0298c05" ed="T"/>於四面有四大門，規模宏壯，色相希奇，觀
+<lb n="0298c06" ed="T"/>之無厭，實為殊絕。多有異類妙色藥叉常
+<lb n="0298c07" ed="T"/>所守護。</p><p xml:id="pT30p0298c0704" cb:place="inline">復於四面有四園苑：一名繢車，二
+<lb n="0298c08" ed="T"/>名麁澁，三名和雜，四名喜林。其四園外有
+<lb n="0298c09" ed="T"/>四勝地，色相殊妙，形狀可觀，端嚴無比。其宮
+<lb n="0298c10" ed="T"/>東北隅，有天會處，名曰善法。</p><p xml:id="pT30p0298c1012" cb:place="inline">諸天入中，思
+<lb n="0298c11" ed="T"/>惟、稱量、觀察妙義。近此園側，有如意石，其
+<lb n="0298c12" ed="T"/>色黃白，形質殊妙，其相可觀，嚴麗無比。</p><p xml:id="pT30p0298c1216" cb:place="inline">又
+<lb n="0298c13" ed="T"/>彼天身自然光曜。闇相若現，乃知晝去夜分
+<lb n="0298c14" ed="T"/>方來。便於天妙五欲遊戲之中，嬾<note n="0298004" resp="Taisho" type="orig" place="foot text">墮＝惰【三】【宮】</note><note n="0298004" resp="CBETA" type="mod">墮【大】，惰【宋】【元】【明】【宮】</note><app n="0298004"><lem wit="【大】">墮</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">惰</rdg></app>睡眠。
+<lb n="0298c15" ed="T"/>異類之鳥不復和鳴。由此等相以表晝夜。
+<lb n="0298c16" ed="T"/>又彼諸天眾妙五欲甚可愛樂，唯發喜樂。彼
+<lb n="0298c17" ed="T"/>諸天眾恒為放逸之所持行。常聞種種歌舞
+<lb n="0298c18" ed="T"/>音樂鼓噪之聲，調戲言笑談謔等聲。常見種
+<lb n="0298c19" ed="T"/>種可意之色。常齅種種微妙之香，恒甞種種
+<lb n="0298c20" ed="T"/>美好之味。恒觸種種天諸<note n="0298005" resp="Taisho" type="orig" place="foot text">婇＝綵【宋】【元】【宮】</note><note n="0298005" resp="CBETA" type="mod">婇【大】，綵【宋】【元】【宮】</note><app n="0298005"><lem wit="【大】">婇</lem><rdg resp="Taisho" wit="【宋】 【元】 【宮】">綵</rdg></app>女最勝之觸。
+<lb n="0298c21" ed="T"/>恒為是樂牽引其意，以度其時。</p><p xml:id="pT30p0298c2113" cb:place="inline">又彼諸天
+<lb n="0298c22" ed="T"/>多受如是眾妙欲樂，常無疾病，亦無衰老，
+<lb n="0298c23" ed="T"/>無飲食等匱乏所作俱生之苦，無如前說
+<lb n="0298c24" ed="T"/>於人趣中有餘匱乏之苦。</p></cb:div>
+<lb n="0298c25" ed="T"/><cb:juan n="004" fun="close"><cb:jhead><title>瑜伽師地論</title>卷第四<note n="0298006" resp="Taisho" type="orig" place="foot text">此下聖本有光明皇后願文</note></cb:jhead></cb:juan>
+</cb:div></cb:div></cb:div></cb:div></cb:div></body></text></TEI>
