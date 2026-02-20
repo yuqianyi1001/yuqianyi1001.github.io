@@ -1,0 +1,589 @@
+---
+layout: individual
+title: 三十七道品
+---
+
+<style>
+  .daopin-wrap {
+    margin: 48px auto 24px;
+    max-width: 1280px;
+    padding: 0 12px 28px;
+  }
+
+  .daopin-table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  .daopin-table td {
+    border: 1px solid #333;
+    padding: 8px;
+    vertical-align: middle;
+  }
+
+  .title-cell {
+    background: #ebebeb;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+  .vertical-fallback {
+    display: inline-block;
+    line-height: 1.2;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .category {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+  }
+
+  .category-1 {
+    background: #eef6e9;
+  }
+
+  .category-2 {
+    background: #f9d8da;
+  }
+
+  .category-3 {
+    background: #d6dcfa;
+  }
+
+  .category-4 {
+    background: #fcedfd;
+  }
+
+  .category-5 {
+    background: #fffbdd;
+  }
+
+  .category-6 {
+    background: #f4dac6;
+  }
+
+  .category-7 {
+    background: #dbf1fb;
+  }
+
+  .items-cell {
+    background: #f5f8fc;
+  }
+
+  .items-cell-1 {
+    background: #f7fbf4;
+  }
+
+  .items-cell-2 {
+    background: #fdf3f4;
+  }
+
+  .items-cell-3 {
+    background: #f3f5fe;
+  }
+
+  .items-cell-4 {
+    background: #fdf5fe;
+  }
+
+  .items-cell-5 {
+    background: #fffdf0;
+  }
+
+  .items-cell-6 {
+    background: #fbf1e8;
+  }
+
+  .items-cell-7 {
+    background: #f1f8fd;
+  }
+
+  .items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .item-btn {
+    background: #c4c4c4;
+    border: 1px solid #969696;
+    border-radius: 4px;
+    color: #222;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 4px 8px;
+    white-space: nowrap;
+  }
+
+  .item-btn.item-yellow {
+    background: #ffeb00;
+    border-color: #c7ad00;
+    color: #3d3300;
+  }
+
+  .item-btn.item-orange {
+    background: #d6934c;
+    border-color: #9a5818;
+    color: #3f1f00;
+  }
+
+  .item-btn.item-green {
+    background: #89c481;
+    border-color: #3d8737;
+    color: #0f2f0f;
+  }
+
+  .item-btn.item-purple {
+    background: #b08bdc;
+    border-color: #7654ad;
+    color: #231240;
+  }
+
+  .daopin-modal {
+    background: transparent;
+    display: none;
+    inset: 0;
+    pointer-events: none;
+    position: fixed;
+    z-index: 1000;
+  }
+
+  .daopin-modal.active {
+    display: block;
+  }
+
+  .daopin-modal-content {
+    background: #d2d1d1;
+    border: 2px solid #a5a4a4;
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    font-weight: 400;
+    max-height: 80vh;
+    max-width: 720px;
+    overflow: auto;
+    padding: 8px 18px 20px;
+    pointer-events: auto;
+    position: absolute;
+    width: min(720px, 92vw);
+  }
+
+  .daopin-modal-title {
+    background: #949393;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 48px 10px 0;
+    padding: 5px;
+  }
+
+  .daopin-modal-desc {
+    font-size: 15px;
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  .daopin-modal-close {
+    align-items: center;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: #4f371f;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 20px;
+    height: 28px;
+    justify-content: center;
+    line-height: 1;
+    padding: 0;
+    position: absolute;
+    right: 8px;
+    top: 6px;
+    width: 28px;
+  }
+
+  .daopin-modal-close:hover {
+    background: #b8b7b7;
+  }
+
+  .daopin-section-title {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 12px 0 4px;
+  }
+
+  .daopin-section-title:first-child {
+    margin-top: 0;
+  }
+
+  .daopin-section-body {
+    display: block;
+    font-weight: 400;
+    margin: 0 0 8px;
+  }
+
+  .daopin-section-body code {
+    background: #fbfaf8;
+    border: 1px solid #fae7bb;
+    border-radius: 3px;
+    font-family: "SFMono-Regular", Menlo, monospace;
+    font-size: 0.95em;
+    padding: 0 4px;
+  }
+
+  .daopin-section-body p {
+    margin: 0 0 8px;
+  }
+
+  .daopin-section-body ul,
+  .daopin-section-body ol {
+    margin: 6px 0 8px 20px;
+    padding: 0;
+  }
+
+  .daopin-section-body li {
+    margin: 2px 0;
+  }
+
+  @media (max-width: 860px) {
+    .title-cell {
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+
+    .category {
+      font-size: 17px;
+    }
+
+    .item-btn {
+      font-size: 13px;
+      padding: 4px 6px;
+    }
+  }
+</style>
+
+<div class="daopin-wrap">
+  <table class="daopin-table">
+    <colgroup>
+      <col style="width: 64px;">
+      <col style="width: 220px;">
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <td class="title-cell" rowspan="7"><span class="vertical-fallback">三<br>十<br>七<br>道<br>品</span></td>
+        <td class="category category-1">四念处</td>
+        <td class="items-cell items-cell-1">
+          <div class="items">
+            <button type="button" class="item-btn item-yellow">1. 身念处</button>
+            <button type="button" class="item-btn item-yellow">2. 受念处</button>
+            <button type="button" class="item-btn item-yellow">3. 心念处</button>
+            <button type="button" class="item-btn item-yellow">4. 法念处</button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="category category-2">四正勤（四正断）</td>
+        <td class="items-cell items-cell-2">
+          <div class="items">
+            <button type="button" class="item-btn item-orange">1. 已生恶令断</button>
+            <button type="button" class="item-btn item-orange">2. 未生恶令不生</button>
+            <button type="button" class="item-btn item-orange">3. 未生善令生</button>
+            <button type="button" class="item-btn item-orange">4. 已生善令增长</button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="category category-3">四如意足（四神足）</td>
+        <td class="items-cell items-cell-3">
+          <div class="items">
+            <button type="button" class="item-btn">1. 欲如意足</button>
+            <button type="button" class="item-btn item-orange">2. 精进如意足</button>
+            <button type="button" class="item-btn item-yellow">3. 念如意足</button>
+            <button type="button" class="item-btn item-yellow">4. 思惟如意足</button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="category category-4">五根</td>
+        <td class="items-cell items-cell-4">
+          <div class="items">
+            <button type="button" class="item-btn">1. 信根</button>
+            <button type="button" class="item-btn item-orange">2. 精进根</button>
+            <button type="button" class="item-btn item-yellow">3. 念根</button>
+            <button type="button" class="item-btn item-green">4. 定根</button>
+            <button type="button" class="item-btn item-purple">5. 慧根</button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="category category-5">五力</td>
+        <td class="items-cell items-cell-5">
+          <div class="items">
+            <button type="button" class="item-btn">1. 信力</button>
+            <button type="button" class="item-btn item-orange">2. 精进力</button>
+            <button type="button" class="item-btn item-yellow">3. 念力</button>
+            <button type="button" class="item-btn item-green">4. 定力</button>
+            <button type="button" class="item-btn item-purple">5. 慧力</button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="category category-6">七觉支（七觉分）</td>
+        <td class="items-cell items-cell-6">
+          <div class="items">
+            <button type="button" class="item-btn">1. 择法觉支</button>
+            <button type="button" class="item-btn item-orange">2. 精进觉支</button>
+            <button type="button" class="item-btn">3. 喜觉支</button>
+            <button type="button" class="item-btn">4. 除觉支</button>
+            <button type="button" class="item-btn">5. 舍觉支</button>
+            <button type="button" class="item-btn item-green">6. 定觉支</button>
+            <button type="button" class="item-btn item-yellow">7. 念觉支</button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="category category-7">八正道</td>
+        <td class="items-cell items-cell-7">
+          <div class="items">
+            <button type="button" class="item-btn item-purple">1. 正见</button>
+            <button type="button" class="item-btn">2. 正思惟</button>
+            <button type="button" class="item-btn">3. 正语</button>
+            <button type="button" class="item-btn">4. 正业</button>
+            <button type="button" class="item-btn">5. 正命</button>
+            <button type="button" class="item-btn item-orange">6. 正方便（正精进）</button>
+            <button type="button" class="item-btn item-yellow">7. 正念</button>
+            <button type="button" class="item-btn item-green">8. 正定</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="daopin-modal" id="daopin-modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="daopin-modal-content">
+    <button type="button" class="daopin-modal-close" id="daopin-modal-close" aria-label="关闭" title="关闭">×</button>
+    <h3 class="daopin-modal-title" id="daopin-modal-title"></h3>
+    <div class="daopin-modal-desc" id="daopin-modal-desc"></div>
+  </div>
+</div>
+
+<script src="{{ site.baseurl }}/assets/js/js-yaml.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/markdown-it.min.js"></script>
+<script>
+  (function () {
+    var modal = document.getElementById('daopin-modal');
+    var modalContent = document.querySelector('.daopin-modal-content');
+    var modalTitle = document.getElementById('daopin-modal-title');
+    var modalDesc = document.getElementById('daopin-modal-desc');
+    var modalClose = document.getElementById('daopin-modal-close');
+    var itemButtons = Array.prototype.slice.call(document.querySelectorAll('.item-btn'));
+    var dataPromise = null;
+    var markdownRenderer = window.markdownit
+      ? window.markdownit({ html: false, breaks: true, linkify: true })
+      : null;
+
+    function escapeHtml(text) {
+      return String(text)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/\"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function renderMarkdown(text) {
+      if (!text) {
+        return '';
+      }
+      if (markdownRenderer) {
+        return markdownRenderer.render(String(text));
+      }
+      return escapeHtml(text).replace(/\r?\n/g, '<br>');
+    }
+
+    function normalizeName(text) {
+      return String(text || '')
+        .replace(/\s+/g, '')
+        .replace(/[()（）]/g, '')
+        .trim();
+    }
+
+    function parseYaml(text) {
+      if (!window.jsyaml || typeof window.jsyaml.load !== 'function') {
+        throw new Error('js-yaml not loaded');
+      }
+      var data = window.jsyaml.load(text) || {};
+      if (Array.isArray(data)) {
+        return data;
+      }
+      return Array.isArray(data.items) ? data.items : [];
+    }
+
+    function getYamlCandidates() {
+      var candidates = [];
+      var pageUrl = new URL(window.location.href);
+      var baseUrl = '{{ site.baseurl }}';
+
+      function add(url) {
+        if (url && candidates.indexOf(url) === -1) {
+          candidates.push(url);
+        }
+      }
+
+      if (baseUrl) {
+        add(baseUrl + '/37.yaml');
+        add(baseUrl + '/data/37.yaml');
+      } else {
+        add('/37.yaml');
+        add('/data/37.yaml');
+      }
+      add(new URL('37.yaml', pageUrl).toString());
+      add(new URL('data/37.yaml', pageUrl).toString());
+      add('37.yaml');
+      add('data/37.yaml');
+      return candidates;
+    }
+
+    async function fetchYamlText() {
+      var candidates = getYamlCandidates();
+      for (var i = 0; i < candidates.length; i += 1) {
+        var url = candidates[i];
+        try {
+          var response = await fetch(url, { cache: 'no-cache' });
+          if (response && response.ok) {
+            return await response.text();
+          }
+        } catch (error) {
+          // try next candidate
+        }
+      }
+      throw new Error('37.yaml not found');
+    }
+
+    function loadDaopinData() {
+      if (!dataPromise) {
+        dataPromise = fetchYamlText().then(function (yamlText) {
+          return parseYaml(yamlText);
+        });
+      }
+      return dataPromise;
+    }
+
+    function getItemNameFromButton(text) {
+      return String(text || '').replace(/^\s*\d+\.\s*/, '').trim();
+    }
+
+    function findItemByName(items, name) {
+      var list = Array.isArray(items) ? items : [];
+      var target = normalizeName(name);
+      for (var i = 0; i < list.length; i += 1) {
+        var item = list[i];
+        if (!item || !item.name) {
+          continue;
+        }
+        if (normalizeName(item.name) === target) {
+          return item;
+        }
+        if (Array.isArray(item.aliases)) {
+          for (var j = 0; j < item.aliases.length; j += 1) {
+            if (normalizeName(item.aliases[j]) === target) {
+              return item;
+            }
+          }
+        }
+      }
+      return null;
+    }
+
+    function renderSources(sources) {
+      if (!Array.isArray(sources) || sources.length === 0) {
+        return '<div class="daopin-section-body">暂无解释。</div>';
+      }
+      var htmlParts = [];
+      sources.forEach(function (source) {
+        if (!source) {
+          return;
+        }
+        if (source.title) {
+          htmlParts.push('<div class="daopin-section-title">' + escapeHtml(source.title) + '</div>');
+        }
+        htmlParts.push('<div class="daopin-section-body">' + renderMarkdown(source.content || '') + '</div>');
+      });
+      return htmlParts.join('');
+    }
+
+    function positionModal(anchor) {
+      var rect = anchor ? anchor.getBoundingClientRect() : null;
+      var width = modalContent.offsetWidth || 720;
+      var height = modalContent.offsetHeight || 320;
+      var margin = 8;
+      var left;
+      var top;
+
+      if (rect) {
+        left = rect.left;
+        top = rect.bottom + 8;
+      } else {
+        left = (window.innerWidth - width) / 2;
+        top = (window.innerHeight - height) / 2;
+      }
+
+      left = Math.max(margin, Math.min(left, window.innerWidth - width - margin));
+      top = Math.max(margin, Math.min(top, window.innerHeight - height - margin));
+
+      modalContent.style.left = left + 'px';
+      modalContent.style.top = top + 'px';
+    }
+
+    function openModal(title, sources, anchor) {
+      modalTitle.textContent = title;
+      modalDesc.innerHTML = renderSources(sources);
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+      window.requestAnimationFrame(function () {
+        positionModal(anchor);
+      });
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+
+    itemButtons.forEach(function (button) {
+      button.addEventListener('click', async function () {
+        var name = getItemNameFromButton(button.textContent);
+        try {
+          var items = await loadDaopinData();
+          var item = findItemByName(items, name);
+          if (!item) {
+            openModal(name, [{ title: '提示', content: '未在 37.yaml 中找到该道品解释。' }], button);
+            return;
+          }
+          openModal(item.name || name, item.sources || [], button);
+        } catch (error) {
+          openModal(name, [{ title: '错误', content: '解释加载失败，请稍后重试。' }], button);
+        }
+      });
+    });
+
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', function (event) {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    });
+  })();
+</script>
