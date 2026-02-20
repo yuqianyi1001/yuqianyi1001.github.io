@@ -299,13 +299,13 @@ title: 三十七道品
         </td>
       </tr>
       <tr>
-        <td class="category category-3">四如意足（四神足）</td>
+        <td class="category category-3">四神足（四如意足）</td>
         <td class="items-cell items-cell-3">
           <div class="items">
-            <button type="button" class="item-btn">1. 欲如意足</button>
-            <button type="button" class="item-btn item-orange">2. 精进如意足</button>
-            <button type="button" class="item-btn item-yellow">3. 念如意足</button>
-            <button type="button" class="item-btn item-yellow">4. 思惟如意足</button>
+            <button type="button" class="item-btn">1. 欲神足（欲如意足）</button>
+            <button type="button" class="item-btn item-orange">2. 勤神足（精进如意足）</button>
+            <button type="button" class="item-btn item-yellow">3. 心神足（心如意足）</button>
+            <button type="button" class="item-btn item-yellow">4. 观神足（思惟如意足）</button>
           </div>
         </td>
       </tr>
@@ -352,7 +352,7 @@ title: 三十七道品
         <td class="items-cell items-cell-7">
           <div class="items">
             <button type="button" class="item-btn item-purple">1. 正见</button>
-            <button type="button" class="item-btn">2. 正思惟</button>
+            <button type="button" class="item-btn">2. 正思惟（正志）</button>
             <button type="button" class="item-btn">3. 正语</button>
             <button type="button" class="item-btn">4. 正业</button>
             <button type="button" class="item-btn">5. 正命</button>
@@ -480,6 +480,33 @@ title: 三十七道品
       return String(text || '').replace(/^\s*\d+\.\s*/, '').trim();
     }
 
+    function getNameVariants(text) {
+      var raw = String(text || '').trim();
+      if (!raw) {
+        return [];
+      }
+      var variants = [];
+      var seen = {};
+
+      function add(name) {
+        var key = normalizeName(name);
+        if (!key || seen[key]) {
+          return;
+        }
+        seen[key] = true;
+        variants.push(name);
+      }
+
+      add(raw);
+      raw.split(/[()（）]/).forEach(function (part) {
+        var piece = String(part || '').trim();
+        if (piece) {
+          add(piece);
+        }
+      });
+      return variants;
+    }
+
     function findItemByName(items, name) {
       var list = Array.isArray(items) ? items : [];
       var target = normalizeName(name);
@@ -488,13 +515,19 @@ title: 三十七道品
         if (!item || !item.name) {
           continue;
         }
-        if (normalizeName(item.name) === target) {
-          return item;
+        var itemNames = getNameVariants(item.name);
+        for (var n = 0; n < itemNames.length; n += 1) {
+          if (normalizeName(itemNames[n]) === target) {
+            return item;
+          }
         }
         if (Array.isArray(item.aliases)) {
           for (var j = 0; j < item.aliases.length; j += 1) {
-            if (normalizeName(item.aliases[j]) === target) {
-              return item;
+            var aliasNames = getNameVariants(item.aliases[j]);
+            for (var k = 0; k < aliasNames.length; k += 1) {
+              if (normalizeName(aliasNames[k]) === target) {
+                return item;
+              }
             }
           }
         }
