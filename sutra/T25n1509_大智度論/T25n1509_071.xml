@@ -1,0 +1,957 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/cbeta-git/xml-p5a/master/schema/cbeta-p5a.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:cb="http://www.cbeta.org/ns/1.0" xml:id="T25n1509">
+<teiHeader>
+	<fileDesc>
+		<titleStmt>
+			<title>Taishō Tripiṭaka, Electronic version, No. 1509 大智度論</title>
+			<title xml:lang="zh-Hant">大正新脩大藏經數位版, No. 1509 大智度論</title>
+			<author>龍樹菩薩造  後秦 鳩摩羅什譯</author>
+			<respStmt>
+				<resp>Electronic Version by</resp>
+				<name>CBETA</name>
+			</respStmt>
+		</titleStmt>
+		<editionStmt>
+			<edition>單卷版 XML TEI P5b</edition>
+		</editionStmt>
+		<extent>100卷</extent>
+		<publicationStmt>
+			<idno type="CBETA">
+				<idno type="canon">T</idno>.<idno type="vol">25</idno>.<idno type="no">1509</idno>
+			</idno>
+			<distributor>
+				<name>中華電子佛典協會 (CBETA)</name>
+				<address>
+					<addrLine><email>service@cbeta.org</email></addrLine>
+				</address>
+			</distributor>
+			<availability>
+				<p>Available for non-commercial use when distributed with this header intact.</p>
+			</availability>
+			<date>2023-11-13 17:19:28 +0800</date>
+		</publicationStmt>
+		<sourceDesc>
+			<bibl>
+				<title level="s">Taishō Tripiṭaka</title>
+				<title level="s" xml:lang="zh-Hant">大正新脩大藏經</title>
+				<title level="m" xml:lang="zh-Hant">大智度論</title>
+			</bibl>
+		</sourceDesc>
+	</fileDesc>
+	<encodingDesc>
+		<projectDesc>
+			<p xml:lang="en" cb:type="ly">Text as provided by Mr. Christian Wittern, Text as provided by Electronic Buddhadharma Society (EBS), Text as provided by Chung Sheng Publishing Company, Text as provided by Anonymous from USA, Punctuated text as provided by Ven. Houguan, Others</p>
+			<p xml:lang="zh-Hant" cb:type="ly">維習安大德提供，佛教電腦資訊庫功德會提供，眾生出版社提供，北美某大德提供，厚觀法師提供新式標點，其他</p>
+		</projectDesc>
+		<editorialDecl>
+			<punctuation resp="CBETA"><p>新式標點</p></punctuation>
+		</editorialDecl>
+		<tagsDecl>
+			<namespace name="http://www.tei-c.org/ns/1.0">
+				<tagUsage gi="rdg">
+					<listWit>
+						<witness xml:id="wit.orig">【大】</witness>
+						<witness xml:id="wit.cbeta">【CB】</witness>
+					</listWit>
+				</tagUsage>
+			</namespace>
+		</tagsDecl>
+		<charDecl>
+			<char xml:id="CB01505">
+				<charName>CBETA CHARACTER CB01505</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[卄/狠]</value>
+				</charProp>
+				<mapping type="unicode">U+26D2D</mapping>
+				<mapping cb:dec="984545" type="PUA">U+F05E1</mapping>
+			</char>
+			<char xml:id="CB01633">
+				<charName>CBETA CHARACTER CB01633</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[臨-臣+馬]</value>
+				</charProp>
+				<mapping type="unicode">U+2EA97</mapping>
+				<mapping cb:dec="984673" type="PUA">U+F0661</mapping>
+			</char>
+		</charDecl>
+	</encodingDesc>
+	<profileDesc>
+		<langUsage>
+			<language ident="en">English</language>
+			<language ident="zh-Hant">Chinese (Traditional)</language>
+		</langUsage>
+	</profileDesc>
+	<revisionDesc>
+		<change when="2013-05-20">
+			<name>CW</name><name>Ray Chou 周邦信</name>P4 to P5 conversion by p4top5a.py, intended for publication
+		</change>
+		<change when="1999-04-30T12:02:10">
+			CW (ed.) Created initial TEI version with BASICM.BAT (99/4/29)
+		</change>
+		<change when="1999-05-08T22:32:46">
+			CW (ed.) converted to XML with CBXML.BAT (99/5/8)
+		</change>
+	</revisionDesc>
+</teiHeader>
+<text><body>
+<cb:mulu n="49" level="1" type="品">49 問相品</cb:mulu>
+<milestone unit="juan" n="71"/>
+<lb n="0552c16" ed="T"/>
+<lb n="0552c17" ed="T"/>
+<lb n="0552c18" ed="T"/><cb:juan n="071" fun="open"><cb:mulu n="071" type="卷"></cb:mulu><cb:jhead><note resp="Taisho" n="0552021" place="foot text" type="orig">（（大智…一））十六字＝（（摩訶般若波羅蜜品第四十九大事品七十一））十八字【石】題下有譬喻品善知識教發心品十字夾註</note><note resp="CBETA" n="0552021" type="mod">（大智…一）十六字【大】，（摩訶般若波羅蜜品第四十九大事品七十一<note place="inline">譬喻品善知識教發心品</note>）十八字【石】</note><app n="0552021" cb:word-count="16"><lem wit="【大】"><title type="jing">大智度論釋</title><note resp="Taisho" n="0552022" place="foot text" type="orig">（（大事…十））七字＝（（釋成辦品第五十））七字【宋】，（（成辦品第五十））六字【元】【明】，題下宋本元本俱有夾註訖第五十三品六字明本有經作大事起成辦品八字，（（釋第五十品，訖第五十三品，成辦品））十四字【宮】，（（摩訶般若波羅蜜品第四十九大事興品））十六字【聖】</note><note resp="CBETA" n="0552022" type="mod">（大事…十）七字【大】，（釋成辦品第五十<note place="inline">訖第五十三品</note>）十三字【宋】，（成辦品第五十<note place="inline">訖第五十三品</note>）十二字【元】，（成辦品第五十<note place="inline">經作大事起成辦品</note>）十四字【明】，（釋第五十品，訖第五十三品，成辦品）十四字【宮】，摩訶般若波羅蜜品第四十九大事興品【聖】</note><app n="0552022" cb:word-count="7"><lem wit="【大】">大事起品第五十</lem><rdg resp="Taisho" wit="【宋】">釋成辦品第五十<note place="inline">訖第五十三品</note></rdg><rdg resp="Taisho" wit="【元】">成辦品第五十<note place="inline">訖第五十三品</note></rdg><rdg resp="Taisho" wit="【明】">成辦品第五十<note place="inline">經作大事起成辦品</note></rdg><rdg resp="Taisho" wit="【宮】">釋第五十品，訖第五十三品，成辦品</rdg><rdg resp="Taisho" wit="【聖】">摩訶般若波羅蜜品第四十九大事興品</rdg></app><note place="inline"><note resp="Taisho" n="0552023" place="foot text" type="orig">卷＋（第）【宮】</note><note resp="CBETA" n="0552023" type="mod">卷【大】，卷第【宮】</note><app n="0552023"><lem wit="【大】">卷</lem><rdg resp="Taisho" wit="【宮】">卷第</rdg></app>七
+<lb n="0552c19" ed="T"/>十一</note></lem><rdg resp="Taisho" wit="【石】">摩訶般若波羅蜜品第四十九大事品七十一<note place="inline">譬喻品善知識教發心品</note></rdg></app></cb:jhead></cb:juan>
+<lb n="0552c20" ed="T"/>
+<lb n="0552c21" ed="T"/><note resp="Taisho" n="0552024" place="foot text" type="orig">〔聖者…譯〕十七字－【聖】【石】</note><note resp="CBETA" n="0552024" type="mod">（聖者…譯）十七字【大】，〔－〕【聖】【石】</note><app n="0552024" cb:word-count="17"><lem wit="【大】"><byline cb:type="author">聖者龍樹造</byline>
+<lb n="0552c22" ed="T"/><byline cb:type="Translator"><anchor xml:id="fxT25p0552c04"/>後秦龜茲國三藏鳩摩羅什譯</byline></lem><rdg resp="Taisho" wit="【聖】 【石】"><space quantity="0"/></rdg></app>
+<lb n="0552c23" ed="T"/><cb:div type="pin"><cb:mulu n="50" level="1" type="品">50 大事起品</cb:mulu><p xml:id="pT25p0552c2308"><note resp="Taisho" n="0552025" place="foot text" type="orig">〔經〕－【宋】【宮】【石】</note><note resp="CBETA" n="0552025" type="mod">【經】【大】，〔－〕【宋】【宮】【石】</note><app n="0552025"><lem wit="【大】">【經】</lem><rdg resp="Taisho" wit="【宋】 【宮】 【石】"><space quantity="0"/></rdg></app></p><p xml:id="pT25p0552c2309" cb:place="inline">爾時，須菩提白佛言：「世尊！是深般若波羅
+<lb n="0552c24" ed="T"/>蜜為大事故起、不可思議事故起、不可稱事
+<pb n="0553a" ed="T" xml:id="T25.1509.0553a"/>
+<lb n="0553a01" ed="T"/>故起、無有量事故起。世尊！是深般若波羅蜜
+<lb n="0553a02" ed="T"/>無等等事故起。」</p>
+<lb n="0553a03" ed="T"/><p xml:id="pT25p0553a0301">佛告須菩提：「如是！如是！<note resp="Taisho" n="0553001" place="foot text" type="orig">〔是〕－【三】【宮】＊</note><note resp="CBETA" n="0553001" type="mod">是【大】＊，〔－〕【宋】【元】【明】【宮】＊</note><app n="0553001"><lem wit="【大】">是</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>深般若波羅蜜為
+<lb n="0553a04" ed="T"/>大事故起，乃至無等等事故起。何以故？般若
+<lb n="0553a05" ed="T"/>波羅蜜中含受五波羅蜜，般若波羅蜜中含受
+<lb n="0553a06" ed="T"/>內空乃至無法有法空，含受四念處乃至八聖
+<lb n="0553a07" ed="T"/>道分，是深般若波羅蜜中含受佛十力乃至一
+<lb n="0553a08" ed="T"/>切種智。譬如灌頂王，國土中尊，諸有官事皆
+<lb n="0553a09" ed="T"/>委大臣，國王安樂無事；如是，須菩提！所有聲
+<lb n="0553a10" ed="T"/>聞辟支佛法、若菩薩法、若佛法，一切皆在般若
+<lb n="0553a11" ed="T"/>波羅蜜中，般若波羅蜜能成辦其事。以是故，
+<lb n="0553a12" ed="T"/>須菩提！般若波羅蜜為大事故起，乃至無等
+<lb n="0553a13" ed="T"/>等事故起。復次，須菩提！是般若波羅蜜不取
+<lb n="0553a14" ed="T"/>色、不著色故能成辦，受、想、行、識不取、不著故
+<lb n="0553a15" ed="T"/>能成辦；乃至一切種智不取、不著故能成辦；
+<lb n="0553a16" ed="T"/>須陀洹果乃至阿羅漢果、辟支佛道乃至阿
+<lb n="0553a17" ed="T"/>耨多羅三藐三菩提不取、不著故能成辦。」</p><p xml:id="pT25p0553a1717" cb:place="inline">須
+<lb n="0553a18" ed="T"/>菩提白佛言：「云何色不取、不著故般若波羅
+<lb n="0553a19" ed="T"/>蜜能成辦？云何受、想、行、識乃至阿耨多羅三
+<lb n="0553a20" ed="T"/>藐三菩提不取、不著故般若波羅蜜能成辦？」</p>
+<lb n="0553a21" ed="T"/><p xml:id="pT25p0553a2101">佛告須菩提：「於汝意云何？頗見是色可取、可
+<lb n="0553a22" ed="T"/>著不？」</p><p xml:id="pT25p0553a2203" cb:place="inline">須菩提言：「不也！世尊！」</p><p xml:id="pT25p0553a2211" cb:place="inline">「須菩提！於汝意云
+<lb n="0553a23" ed="T"/>何？頗見受、想、行、識乃至阿耨多羅三藐三菩
+<lb n="0553a24" ed="T"/>提可取、可著不？」</p><p xml:id="pT25p0553a2407" cb:place="inline">須菩提言：「不也！世尊！」</p><p xml:id="pT25p0553a2415" cb:place="inline">佛言：
+<lb n="0553a25" ed="T"/>「善哉！善哉！須菩提！我亦不見是色可取、可著，
+<lb n="0553a26" ed="T"/>不見故不取，不取故不著；我亦不見受、想、行、
+<lb n="0553a27" ed="T"/>識乃至阿耨多羅三藐三菩提及一切種智可
+<lb n="0553a28" ed="T"/>取、可著，不見故不取，不取故不著；須菩提！
+<lb n="0553a29" ed="T"/>我亦不見佛法、如來法、自然人法、一切智人法
+<pb n="0553b" ed="T" xml:id="T25.1509.0553b"/>
+<lb n="0553b01" ed="T"/>可取、可著，不見故不取，不取故不著。以是故，
+<lb n="0553b02" ed="T"/>須菩提！諸菩薩摩訶薩，色亦不應取、亦不
+<lb n="0553b03" ed="T"/>應著，受、想、行、識乃至佛法、如來法、自然人法、
+<lb n="0553b04" ed="T"/>一切智人法亦不應取、亦不應著。」</p><p xml:id="pT25p0553b0414" cb:place="inline">爾時，欲、色
+<lb n="0553b05" ed="T"/>界諸天子白佛言：「世尊！是般若波羅蜜，甚
+<lb n="0553b06" ed="T"/>深、難見、難解、不可思惟比類知；微妙、善巧、智
+<lb n="0553b07" ed="T"/>慧、寂滅者可知。能信是般若波羅蜜者，當知
+<lb n="0553b08" ed="T"/>是菩薩多供養<note resp="Taisho" n="0553002" place="foot text" type="orig">〔諸〕－【三】【宮】</note><note resp="CBETA" n="0553002" type="mod">諸【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0553002"><lem wit="【大】">諸</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>佛、多種善根、與善知識相
+<lb n="0553b09" ed="T"/>隨，能信解深般若波羅蜜。世尊！若三千大
+<lb n="0553b10" ed="T"/>千世界中所有眾生皆作信行、法行人、八人、
+<lb n="0553b11" ed="T"/><note resp="Taisho" n="0553003" place="foot text" type="orig">〔得〕－【三】【宮】</note><note resp="CBETA" n="0553003" type="mod">得【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0553003"><lem wit="【大】">得</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>須陀洹、斯陀含、阿那含、阿羅漢、辟支佛若
+<lb n="0553b12" ed="T"/>智、若斷，不如是菩薩一日行深般若波羅蜜，
+<lb n="0553b13" ed="T"/>忍、欲、思惟、籌量。何以故？是信行、法行人、八人、
+<lb n="0553b14" ed="T"/>須陀洹、斯陀含、阿那含、阿羅漢、辟支佛若智、若
+<lb n="0553b15" ed="T"/>斷，即是菩薩摩訶薩無生法忍。」</p><p xml:id="pT25p0553b1513" cb:place="inline">佛告欲、色界
+<lb n="0553b16" ed="T"/>諸天子：「如是！如是！諸天子！若信行、法行人、
+<lb n="0553b17" ed="T"/>八人、須陀洹<note resp="Taisho" n="0553004" place="foot text" type="orig">乃至＝斯陀含阿那含【聖】</note><note resp="CBETA" n="0553004" type="mod">乃至【大】，斯陀含阿那含【聖】</note><app n="0553004"><lem wit="【大】">乃至</lem><rdg resp="Taisho" wit="【聖】">斯陀含阿那含</rdg></app>阿羅漢、辟支佛，即是菩薩
+<lb n="0553b18" ed="T"/>摩訶薩無生法忍。諸天子！若善男子、善女人
+<lb n="0553b19" ed="T"/>聞是深般若波羅蜜，書、<note resp="Taisho" n="0553005" place="foot text" type="orig">持受＝受持【三】【聖】</note><note resp="CBETA" n="0553005" type="mod">持受【大】，受持【宋】【元】【明】【聖】</note><app n="0553005"><lem wit="【大】">持受</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">受持</rdg></app>、讀、誦、說、正憶念，
+<lb n="0553b20" ed="T"/>是善男子、善女人疾得涅槃，勝求聲聞、辟支
+<lb n="0553b21" ed="T"/>佛乘善男子、善女人遠離<note resp="Taisho" n="0553006" place="foot text" type="orig">〔深〕－【石】</note><note resp="CBETA" n="0553006" type="mod">深【大】，〔－〕【石】</note><app n="0553006"><lem wit="【大】">深</lem><rdg resp="Taisho" wit="【石】"><space quantity="0"/></rdg></app>般若波羅蜜行
+<lb n="0553b22" ed="T"/>餘經，若一劫、若減一劫。何以故？是深般若
+<lb n="0553b23" ed="T"/>波羅蜜中廣說上妙法，是信行、法行人、八人、
+<lb n="0553b24" ed="T"/>須陀洹、斯陀含、阿那含、阿羅漢、辟支佛所應
+<lb n="0553b25" ed="T"/>學；菩薩摩訶薩亦所應學，學已得阿耨多羅
+<lb n="0553b26" ed="T"/>三藐三菩提。」</p><p xml:id="pT25p0553b2606" cb:place="inline">是時欲、色界諸天子俱發聲言：
+<lb n="0553b27" ed="T"/>「世尊！是深般若波羅蜜名摩訶波羅蜜，世尊！
+<lb n="0553b28" ed="T"/>是般若波羅蜜名不可思議、不可稱、無有量、無
+<lb n="0553b29" ed="T"/>等等波羅蜜。信行、法行人、八人學是深般若
+<pb n="0553c" ed="T" xml:id="T25.1509.0553c"/>
+<lb n="0553c01" ed="T"/>波羅蜜，得成就；須陀洹、斯陀含、阿那含、阿羅
+<lb n="0553c02" ed="T"/>漢、辟支佛學是深般若波羅蜜，得成；菩薩摩
+<lb n="0553c03" ed="T"/>訶薩是深般若波羅蜜中學，得阿耨多羅三
+<lb n="0553c04" ed="T"/>藐三菩提。是深般若波羅蜜亦不增、亦不減。」</p>
+<lb n="0553c05" ed="T"/><p xml:id="pT25p0553c0501">是時諸欲、色界天子頂禮佛足，遶佛而去；<note resp="Taisho" n="0553007" place="foot text" type="orig">〔去〕－【聖】</note><note resp="CBETA" n="0553007" type="mod">去【大】，〔－〕【聖】</note><app n="0553007"><lem wit="【大】">去</lem><rdg resp="Taisho" wit="【聖】"><space quantity="0"/></rdg></app>
+<lb n="0553c06" ed="T"/>是不遠，忽然不現，各還本處。</p><p xml:id="pT25p0553c0612" cb:place="inline">須菩提白佛言：
+<lb n="0553c07" ed="T"/>「世尊！若菩薩摩訶薩聞是<note resp="Taisho" n="0553008" place="foot text" type="orig">〔深〕－【三】【宮】</note><note resp="CBETA" n="0553008" type="mod">深【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0553008"><lem wit="【大】">深</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>般若波羅蜜即
+<lb n="0553c08" ed="T"/>時信解者，從何處終來生是間？」</p><p xml:id="pT25p0553c0813" cb:place="inline">佛告須菩提：
+<lb n="0553c09" ed="T"/>「若菩薩摩訶薩聞是深般若波羅蜜即時信
+<lb n="0553c10" ed="T"/>解，不沒、不<note resp="Taisho" n="0553009" place="foot text" type="orig">却＝怯【三】【聖】【石】</note><note resp="CBETA" n="0553009" type="mod">却【大】，怯【宋】【元】【明】【聖】【石】</note><app n="0553009"><lem wit="【大】">却</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】 【石】">怯</rdg></app>、不難、不疑、不悔，歡喜樂聽，
+<lb n="0553c11" ed="T"/>聽已憶念，<note resp="Taisho" n="0553010" place="foot text" type="orig">〔終〕－【聖】</note><note resp="CBETA" n="0553010" type="mod">終【大】，〔－〕【聖】</note><app n="0553010"><lem wit="【大】">終</lem><rdg resp="Taisho" wit="【聖】"><space quantity="0"/></rdg></app>不遠離是深般若波羅蜜，若行、
+<lb n="0553c12" ed="T"/>若住、若坐、若臥，終不廢忘，常隨法師。譬如新
+<lb n="0553c13" ed="T"/>生犢子不離其母；菩薩摩訶薩亦如是，為聞
+<lb n="0553c14" ed="T"/>深般若波羅蜜故，終不遠離法師，乃至得是
+<lb n="0553c15" ed="T"/>深般若波羅蜜，口誦、心解，正見通達。須菩提！
+<lb n="0553c16" ed="T"/>當知是菩薩從人道中終還生是間人中。<note resp="Taisho" n="0553011" place="foot text" type="orig">〔何〕－【聖】</note><note resp="CBETA" n="0553011" type="mod">何【大】，〔－〕【聖】</note><app n="0553011"><lem wit="【大】">何</lem><rdg resp="Taisho" wit="【聖】"><space quantity="0"/></rdg></app>
+<lb n="0553c17" ed="T"/>以故？是求佛道者前世時聞深般若波羅蜜，
+<lb n="0553c18" ed="T"/>書、<note resp="Taisho" n="0553012" place="foot text" type="orig">持＝受【三】【宮】【聖】【石】</note><note resp="CBETA" n="0553012" type="mod">持【大】，受【宋】【元】【明】【宮】【聖】【石】</note><app n="0553012"><lem wit="【大】">持</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】 【石】">受</rdg></app>、恭敬、尊重、讚歎、華香乃至幡蓋供養。以
+<lb n="0553c19" ed="T"/>是因緣故，人中命終還生人中，聞是深般若
+<lb n="0553c20" ed="T"/>波羅蜜，即時信解。」</p><p xml:id="pT25p0553c2008" cb:place="inline">須菩提白佛言：「世尊！頗
+<lb n="0553c21" ed="T"/>有菩薩摩訶薩如是功德成就，他方世界供
+<lb n="0553c22" ed="T"/>養諸佛，於彼命終來生是間，聞深般若波羅
+<lb n="0553c23" ed="T"/>蜜即時信解，書、持、讀、誦、正憶念，有是者不？」</p><p xml:id="pT25p0553c2317" cb:place="inline">佛
+<lb n="0553c24" ed="T"/>言：「有！菩薩如是功德成就，他方世界供養諸
+<lb n="0553c25" ed="T"/>佛，於彼命終，來生是間，聞<note resp="Taisho" n="0553013" place="foot text" type="orig">〔是〕－【宋】【元】</note><note resp="CBETA" n="0553013" type="mod">是【大】，〔－〕【宋】【元】</note><app n="0553013"><lem wit="【大】">是</lem><rdg resp="Taisho" wit="【宋】 【元】"><space quantity="0"/></rdg></app>深般若波羅
+<lb n="0553c26" ed="T"/>蜜，即時信解，書、持、讀、誦、<note resp="Taisho" n="0553014" place="foot text" type="orig">〔說〕－【三】【宮】</note><note resp="CBETA" n="0553014" type="mod">說【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0553014"><lem wit="【大】">說</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>、正憶念。何以故？
+<lb n="0553c27" ed="T"/>是菩薩摩訶薩從他方諸佛所聞是深般若
+<lb n="0553c28" ed="T"/>波羅蜜，信解、書、持、讀、誦、說、正憶念，於彼間終，
+<lb n="0553c29" ed="T"/>來生此間，當知是人是先世功德成就。</p>
+<pb n="0554a" ed="T" xml:id="T25.1509.0554a"/>
+<lb n="0554a01" ed="T"/><p xml:id="pT25p0554a0101">「復次，須菩提！有菩薩從彌勒菩薩摩訶薩聞
+<lb n="0554a02" ed="T"/>是深般若波羅蜜，以是善根因緣故，來生此
+<lb n="0554a03" ed="T"/>間。須菩提！復有菩薩摩訶薩前世時雖聞
+<lb n="0554a04" ed="T"/>深般若波羅蜜，不問中事；來生人中，聞是深
+<lb n="0554a05" ed="T"/>般若波羅蜜，心有疑悔，難悟。須菩提！如是菩
+<lb n="0554a06" ed="T"/>薩，當知先世雖聞是深般若波羅蜜，不問故，
+<lb n="0554a07" ed="T"/>今續生疑悔，難悟。須菩提！若菩薩先世雖聞
+<lb n="0554a08" ed="T"/>禪波羅蜜，不問中事；今世聞般若波羅蜜
+<lb n="0554a09" ed="T"/>時，不問故，續生疑悔。須菩提！若<note resp="Taisho" n="0554001" place="foot text" type="orig">菩薩＋（摩訶薩）【聖】</note><note resp="CBETA" n="0554001" type="mod">菩薩【大】，菩薩摩訶薩【聖】</note><app n="0554001"><lem wit="【大】">菩薩</lem><rdg resp="Taisho" wit="【聖】">菩薩摩訶薩</rdg></app>先世
+<lb n="0554a10" ed="T"/>雖聞毘梨耶波羅蜜，不問中事；今世聞<note resp="Taisho" n="0554002" place="foot text" type="orig">（深）＋般若【聖】＊</note><note resp="CBETA" n="0554002" type="mod">般若【大】＊，深般若【聖】＊</note><app n="0554002"><lem wit="【大】">般
+<lb n="0554a11" ed="T"/>若</lem><rdg resp="Taisho" wit="【聖】">深般若</rdg></app>波羅蜜，不問故，續復疑悔。須菩提！若菩
+<lb n="0554a12" ed="T"/>薩先世<note resp="Taisho" n="0554003" place="foot text" type="orig">（雖）＋聞【三】【聖】</note><note resp="CBETA" n="0554003" type="mod">聞【大】，雖聞【宋】【元】【明】【聖】</note><app n="0554003"><lem wit="【大】">聞</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">雖聞</rdg></app>羼提波羅蜜，不問中事；今世聞
+<lb n="0554a13" ed="T"/><app corresp="#0554002" type="star"><lem wit="【大】">般若</lem><rdg resp="Taisho" wit="【聖】">深般若</rdg></app>波羅蜜，不問故，續復疑悔。須菩提！
+<lb n="0554a14" ed="T"/>若菩薩先世雖聞尸羅波羅蜜，不問中事；今
+<lb n="0554a15" ed="T"/>世聞般若波羅蜜，不問故，續復疑悔。須菩提！
+<lb n="0554a16" ed="T"/>若菩薩先世雖聞檀波羅蜜，不問中事；今世
+<lb n="0554a17" ed="T"/>聞般若波羅蜜，不問故，續復疑悔。</p><p xml:id="pT25p0554a1714" cb:place="inline">「復次，須
+<lb n="0554a18" ed="T"/>菩提！菩薩摩訶薩先世雖聞內空、外空、內外
+<lb n="0554a19" ed="T"/>空乃至無<note resp="Taisho" n="0554004" place="foot text" type="orig">法＋（空）【三】【宮】</note><note resp="CBETA" n="0554004" type="mod">法【大】，法空【宋】【元】【明】【宮】</note><app n="0554004"><lem wit="【大】">法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">法空</rdg></app>有法空，不問中事；來生人中，
+<lb n="0554a20" ed="T"/>聞是深般若波羅蜜，不問故，續復疑悔，難悟。</p>
+<lb n="0554a21" ed="T"/><p xml:id="pT25p0554a2101">「復次，須菩提！菩薩摩訶薩先世雖聞四念處
+<lb n="0554a22" ed="T"/>乃至八聖道分、四禪、四無量心、四無色定、五神
+<lb n="0554a23" ed="T"/>通、佛十力乃至一切種智，不問中事；來生人
+<lb n="0554a24" ed="T"/>中，聞<note resp="Taisho" n="0554005" place="foot text" type="orig">〔是〕－【石】＊</note><note resp="CBETA" n="0554005" type="mod">是【大】＊，〔－〕【石】＊</note><app n="0554005"><lem wit="【大】">是</lem><rdg resp="Taisho" wit="【石】"><space quantity="0"/></rdg></app>深般若波羅蜜，不問故，續復疑悔，難
+<lb n="0554a25" ed="T"/>悟。</p><p xml:id="pT25p0554a2502" cb:place="inline">「復次，須菩提！菩薩摩訶薩先世聞深般若
+<lb n="0554a26" ed="T"/>波羅蜜，<note resp="Taisho" n="0554006" place="foot text" type="orig">〔不〕－【元】【明】【聖】【石】</note><note resp="CBETA" n="0554006" type="mod">不【大】，〔－〕【元】【明】【聖】【石】</note><app n="0554006"><lem wit="【大】">不</lem><rdg resp="Taisho" wit="【元】 【明】 【聖】 【石】"><space quantity="0"/></rdg></app>問中事而不行；捨身生時，聞是
+<lb n="0554a27" ed="T"/>深般若波羅蜜，若一日、二日、三日、四日、五<note resp="Taisho" n="0554007" place="foot text" type="orig">日＋（者）【三】【宮】</note><note resp="CBETA" n="0554007" type="mod">日【大】，日者【宋】【元】【明】【宮】</note><app n="0554007"><lem wit="【大】">日</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">日者</rdg></app>，
+<lb n="0554a28" ed="T"/>其心堅固無能壞者，若離所聞時便退失。
+<lb n="0554a29" ed="T"/>何以故？先世聞是深般若波羅蜜時，雖問中
+<pb n="0554b" ed="T" xml:id="T25.1509.0554b"/>
+<lb n="0554b01" ed="T"/>事，不如說行。是人或時欲聞、或時不欲聞，
+<lb n="0554b02" ed="T"/>心輕不固、志亂不定，譬如輕毛隨風東西。須
+<lb n="0554b03" ed="T"/>菩提！當知是菩薩發意不久，不與善知識相
+<lb n="0554b04" ed="T"/>隨，不多供養諸佛，先世不書是深般若波羅
+<lb n="0554b05" ed="T"/>蜜，不讀、不誦、不正憶念，不學般若波羅蜜、不
+<lb n="0554b06" ed="T"/>學禪波羅蜜、不學毘梨耶波羅蜜、不學羼提
+<lb n="0554b07" ed="T"/>波羅蜜、不學尸羅波羅蜜、不學檀波羅蜜，
+<lb n="0554b08" ed="T"/>不學內空乃至無法有法空，不學四念處乃
+<lb n="0554b09" ed="T"/>至八聖道分，不學四禪、四無量心、五神通、佛
+<lb n="0554b10" ed="T"/>十力，乃至不學一切種智。如是，須菩提！當
+<lb n="0554b11" ed="T"/>知是菩薩摩訶薩新發大乘意，少信、少樂故，
+<lb n="0554b12" ed="T"/>不能書是深般若波羅蜜，不能受持、讀、誦、說、
+<lb n="0554b13" ed="T"/>正憶念。須菩提！若求佛道善男子、善女人
+<lb n="0554b14" ed="T"/>不書是深般若波羅蜜，不受持讀誦、不說、不
+<lb n="0554b15" ed="T"/>正憶念，亦不為深般若波羅蜜所護，乃至不
+<lb n="0554b16" ed="T"/>為一切種智所護；是人亦不如說行深般若
+<lb n="0554b17" ed="T"/>波羅蜜，乃至不如說行一切種智，是人或墮
+<lb n="0554b18" ed="T"/>二地——若聲聞地、若辟支佛地。何以故？是善
+<lb n="0554b19" ed="T"/>男子、善女人不書是深般若波羅蜜，不讀、不
+<lb n="0554b20" ed="T"/>誦、不說、不正憶念，是人亦不為深般若波羅
+<lb n="0554b21" ed="T"/>蜜所護、亦不如說行。以是故，是善男子、善女
+<lb n="0554b22" ed="T"/>人於二地中當墮一地。」</p>
+<lb n="0554b23" ed="T"/><p xml:id="pT25p0554b2301"><note resp="Taisho" n="0554008" place="foot text" type="orig">〔論〕－【宋】【宮】【聖】＊</note><note resp="CBETA" n="0554008" type="mod">【論】【大】＊，〔－〕【宋】【宮】【聖】＊</note><app n="0554008"><lem wit="【大】">【論】</lem><rdg resp="Taisho" wit="【宋】 【宮】 【聖】"><space quantity="0"/></rdg></app></p><p xml:id="pT25p0554b2302" cb:place="inline">問曰：</p><p xml:id="pT25p0554b2304" style="margin-left:1em" cb:place="inline">上來數說是般若波羅蜜甚深因
+<lb n="0554b24" ed="T"/>緣，今何以復重說？</p><p xml:id="pT25p0554b2408" cb:place="inline">答曰：</p><p xml:id="pT25p0554b2410" style="margin-left:1em" cb:place="inline">處處說甚深，多有
+<lb n="0554b25" ed="T"/>所<note resp="Taisho" n="0554009" place="foot text" type="orig">（利）＋益【三】【宮】</note><note resp="CBETA" n="0554009" type="mod">益【大】，利益【宋】【元】【明】【宮】</note><app n="0554009"><lem wit="【大】">益</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">利益</rdg></app>；凡人不知，謂為重說。譬如大國王
+<lb n="0554b26" ed="T"/>未有嫡子，求禱神祇，積年無應。時王出行，
+<lb n="0554b27" ed="T"/>夫人產<note resp="Taisho" n="0554010" place="foot text" type="orig">子男＝男子【三】【宮】</note><note resp="CBETA" n="0554010" type="mod">子男【大】，男子【宋】【元】【明】【宮】</note><app n="0554010"><lem wit="【大】">子男</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">男子</rdg></app>，遣信告王：「大夫人產男。」王
+<lb n="0554b28" ed="T"/>聞喜而不答，乃至十反。使者白王：「向所白
+<lb n="0554b29" ed="T"/>者王不聞<note resp="Taisho" n="0554011" place="foot text" type="orig">耶＝也【三】【宮】</note><note resp="CBETA" n="0554011" type="mod">耶【大】，也【宋】【元】【明】【宮】</note><app n="0554011"><lem wit="【大】">耶</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">也</rdg></app>？」王曰：「我即聞之，久來願滿故，
+<pb n="0554c" ed="T" xml:id="T25.1509.0554c"/>
+<lb n="0554c01" ed="T"/>喜心內悅，樂聞不已耳！」即勅有司賜此人
+<lb n="0554c02" ed="T"/>百萬兩金，一語十萬兩。王聞使者言語，語中
+<lb n="0554c03" ed="T"/>有利益，非重<note resp="Taisho" n="0554012" place="foot text" type="orig">語＝說【三】【宮】【聖】</note><note resp="CBETA" n="0554012" type="mod">語【大】，說【宋】【元】【明】【宮】【聖】</note><app n="0554012"><lem wit="【大】">語</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】">說</rdg></app>，不知者謂為重。處處說
+<lb n="0554c04" ed="T"/>甚深亦如是，佛與菩薩、須菩提知大有利
+<lb n="0554c05" ed="T"/>益，須菩提聞佛說深般若不能得<anchor xml:id="fxT25p0554c01"/>底，轉
+<lb n="0554c06" ed="T"/>覺甚深。聽者處處聞甚深，得禪定、智慧利
+<lb n="0554c07" ed="T"/>益等；凡夫人謂為重說。</p><p xml:id="pT25p0554c0710" style="margin-left:1em" cb:place="inline">復次，深淺無定，隨
+<lb n="0554c08" ed="T"/>眾生，解者無深，不解者謂為深。般若波羅
+<lb n="0554c09" ed="T"/>蜜除佛無能遍知故，<note resp="Taisho" n="0554013" place="foot text" type="orig">常＝故【三】</note><note resp="CBETA" n="0554013" type="mod">常【大】，故【宋】【元】【明】</note><app n="0554013"><lem wit="【大】">常</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">故</rdg></app>言「甚深」。是故佛為
+<lb n="0554c10" ed="T"/>眾生故說「甚深」，無定甚深相；若定甚深，無
+<lb n="0554c11" ed="T"/>人能行。是故言：「菩薩謂般若甚深，為不行
+<lb n="0554c12" ed="T"/>般若波羅蜜。」</p><p xml:id="pT25p0554c1206" style="margin-left:1em" cb:place="inline">甚深因緣，所謂「為大事故起，
+<lb n="0554c13" ed="T"/>乃至無等等事故起。」大事等義如先說。</p><p xml:id="pT25p0554c1316" style="margin-left:1em" cb:place="inline">此
+<lb n="0554c14" ed="T"/>中佛自說大事等因緣，所謂「般若波羅蜜含
+<lb n="0554c15" ed="T"/>受五波羅蜜等諸法。」</p><p xml:id="pT25p0554c1509" cb:place="inline">問曰：</p><p xml:id="pT25p0554c1511" style="margin-left:1em" cb:place="inline">五波羅蜜等各
+<lb n="0554c16" ed="T"/>異相，云何言「般若波羅蜜中<note resp="Taisho" n="0554014" place="foot text" type="orig">含＝舍【明】</note><note resp="CBETA" n="0554014" type="mod">含【大】，舍【明】</note><app n="0554014"><lem wit="【大】">含</lem><rdg resp="Taisho" wit="【明】">舍</rdg></app>受」？</p><p xml:id="pT25p0554c1614" cb:place="inline">答曰：</p>
+<lb n="0554c17" ed="T"/><p xml:id="pT25p0554c1701" style="margin-left:1em">是中說<note resp="Taisho" n="0554015" place="foot text" type="orig">經＋（卷）【三】【宮】【聖】【石】</note><note resp="CBETA" n="0554015" type="mod">經【大】，經卷【宋】【元】【明】【宮】【聖】【石】</note><app n="0554015"><lem wit="【大】">經</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】 【石】">經卷</rdg></app>中含受。復次，五波羅蜜等諸法
+<lb n="0554c18" ed="T"/>與般若波羅蜜和合方便迴向<note resp="Taisho" n="0554016" place="foot text" type="orig">〔故五波羅蜜等諸法〕－【石】</note><note resp="CBETA" n="0554016" type="mod">故五波羅蜜等諸法【大】，〔－〕【石】</note><app n="0554016"><lem wit="【大】">故，五波羅
+<lb n="0554c19" ed="T"/>蜜等諸法</lem><rdg resp="Taisho" wit="【石】"><space quantity="0"/></rdg></app>得至佛道。灌頂王如佛，國事<app corresp="#0554005" type="star"><lem wit="【大】">是</lem><rdg resp="Taisho" wit="【石】"><space quantity="0"/></rdg></app>
+<lb n="0554c20" ed="T"/>種種度眾生法，大臣是般若波羅蜜。佛委
+<lb n="0554c21" ed="T"/><note resp="Taisho" n="0554017" place="foot text" type="orig">仗＝枝【聖】，杖【石】</note><note resp="CBETA" n="0554017" type="mod">仗【大】，枝【聖】，杖【石】</note><app n="0554017"><lem wit="【大】">仗</lem><rdg resp="Taisho" wit="【聖】">枝</rdg><rdg resp="Taisho" wit="【石】">杖</rdg></app>般若波羅蜜成辦種種法故，安處禪定，
+<lb n="0554c22" ed="T"/>快樂無事。又如欲除乾薪草木，以火投中，
+<lb n="0554c23" ed="T"/>則火力能燒令盡，人便無事。</p><p xml:id="pT25p0554c2312" style="margin-left:1em" cb:place="inline">復次，是般若波
+<lb n="0554c24" ed="T"/>羅蜜不取、不著色等諸法故名含受。初染
+<lb n="0554c25" ed="T"/>曰取，生愛曰著。</p><p xml:id="pT25p0554c2507" style="margin-left:1em" cb:place="inline">須菩提問：「云何般若為色
+<lb n="0554c26" ed="T"/>等諸法不取、不著故名含受？」</p><p xml:id="pT25p0554c2612" style="margin-left:1em" cb:place="inline">佛於四答中
+<lb n="0554c27" ed="T"/>以反問答：「於汝意云何？以智慧眼見是色
+<lb n="0554c28" ed="T"/>等法可取、可著不？」</p><p xml:id="pT25p0554c2808" style="margin-left:1em" cb:place="inline">須菩提意念：「若智慧眼
+<lb n="0554c29" ed="T"/>見空、無相、無作、無量、不可思議相，云何當
+<pb n="0555a" ed="T" xml:id="T25.1509.0555a"/>
+<lb n="0555a01" ed="T"/>答色等法定相可取、可著？」</p><p xml:id="pT25p0555a0111" style="margin-left:1em" cb:place="inline">佛可其所說：「汝未
+<lb n="0555a02" ed="T"/>得一切智，不見色等諸法；我一切智人亦
+<lb n="0555a03" ed="T"/>不見色等諸法。」是故<note resp="Taisho" n="0555001" place="foot text" type="orig">歎＝讚【聖】【石】</note><note resp="CBETA" n="0555001" type="mod">歎【大】，讚【聖】【石】</note><app n="0555001"><lem wit="【大】">歎</lem><rdg resp="Taisho" wit="【聖】 【石】">讚</rdg></app>言：「善哉！」</p><p xml:id="pT25p0555a0313" style="margin-left:1em" cb:place="inline">是時諸天
+<lb n="0555a04" ed="T"/>子讚歎般若波羅蜜及行般若波羅蜜者，作
+<lb n="0555a05" ed="T"/>是言：「若三千大千世界中眾生皆作信行、
+<lb n="0555a06" ed="T"/>法行乃至辟支佛，若智、若斷。智者，十智。斷
+<lb n="0555a07" ed="T"/>者，二種斷：有殘斷、無殘斷；學人有殘斷，無
+<lb n="0555a08" ed="T"/>學人無殘斷。不如是菩薩一日行深般若
+<lb n="0555a09" ed="T"/>波羅蜜。何以故？是諸賢聖智、斷，皆是菩薩無
+<lb n="0555a10" ed="T"/>生法忍。」</p><p xml:id="pT25p0555a1004" cb:place="inline">問曰：</p><p xml:id="pT25p0555a1006" style="margin-left:1em" cb:place="inline">若諸賢聖智、斷即是無生忍
+<lb n="0555a11" ed="T"/>者，何<note resp="Taisho" n="0555002" place="foot text" type="orig">以＋（故）【聖】【石】</note><note resp="CBETA" n="0555002" type="mod">以【大】，以故【聖】【石】</note><app n="0555002"><lem wit="【大】">以</lem><rdg resp="Taisho" wit="【聖】 【石】">以故</rdg></app>言不如？</p><p xml:id="pT25p0555a1107" cb:place="inline">答曰：</p><p xml:id="pT25p0555a1109" style="margin-left:1em" cb:place="inline">信行等人無大悲、
+<lb n="0555a12" ed="T"/>捨眾生故不如；無方便力，不能於涅槃
+<lb n="0555a13" ed="T"/>自反。譬如眾<note resp="Taisho" n="0555003" place="foot text" type="orig">水＝流【聖】【石】</note><note resp="CBETA" n="0555003" type="mod">水【大】，流【聖】【石】</note><app n="0555003"><lem wit="【大】">水</lem><rdg resp="Taisho" wit="【聖】 【石】">流</rdg></app>會恒河俱入大海，欲入
+<lb n="0555a14" ed="T"/>海時水勢湊急，眾生在中無能自反，<note resp="Taisho" n="0555004" place="foot text" type="orig">惟＝唯【三】【宮】【聖】【石】＊</note><note resp="CBETA" n="0555004" type="mod">惟【大】＊，唯【宋】【元】【明】【宮】【聖】【石】＊</note><app n="0555004"><lem wit="【大】">惟</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】 【石】">唯</rdg></app>有
+<lb n="0555a15" ed="T"/>大力者乃能自出。</p><p xml:id="pT25p0555a1508" style="margin-left:1em" cb:place="inline">復次，諸餘賢聖智、斷成就，
+<lb n="0555a16" ed="T"/>菩薩始得無生忍而力能過之，是故勝。智、斷
+<lb n="0555a17" ed="T"/>功德雖成就，不及菩薩初忍；譬如大臣功
+<lb n="0555a18" ed="T"/>業雖大，不及太子。</p><p xml:id="pT25p0555a1808" style="margin-left:1em" cb:place="inline">復次，煖、頂、忍法是小乘初
+<lb n="0555a19" ed="T"/>門，菩薩法忍是大乘初門；聲聞、辟支佛雖
+<lb n="0555a20" ed="T"/>終成，尚不及菩薩初入道門，何況成佛！</p><p xml:id="pT25p0555a2016" cb:place="inline">問
+<lb n="0555a21" ed="T"/>曰：</p><p xml:id="pT25p0555a2102" style="margin-left:1em" cb:place="inline">聲聞、辟支佛法是小乘，菩薩是大乘，云
+<lb n="0555a22" ed="T"/>何言「二乘智斷即是菩薩無生忍」？</p><p xml:id="pT25p0555a2214" cb:place="inline">答曰：</p><p xml:id="pT25p0555a2216" style="margin-left:1em" cb:place="inline">所緣
+<lb n="0555a23" ed="T"/>同，如、法性、<note resp="Taisho" n="0555005" place="foot text" type="orig">實＝真【石】</note><note resp="CBETA" n="0555005" type="mod">實【大】，真【石】</note><app n="0555005"><lem wit="【大】">實</lem><rdg resp="Taisho" wit="【石】">真</rdg></app>際亦同。利鈍智慧為異，又
+<lb n="0555a24" ed="T"/>有無量功德及大悲心守護故勝。</p><p xml:id="pT25p0555a2414" style="margin-left:1em" cb:place="inline">餘種種
+<lb n="0555a25" ed="T"/>說，是讚般若波羅蜜。</p><p xml:id="pT25p0555a2509" style="margin-left:1em" cb:place="inline">行般若<note resp="Taisho" n="0555006" place="foot text" type="orig">〔波羅蜜〕－【聖】【石】</note><note resp="CBETA" n="0555006" type="mod">波羅蜜【大】，〔－〕【聖】【石】</note><app n="0555006"><lem wit="【大】">波羅蜜</lem><rdg resp="Taisho" wit="【聖】 【石】"><space quantity="0"/></rdg></app>人有
+<lb n="0555a26" ed="T"/>上、中、下：下者，聞般若波羅蜜直信聽受，不
+<lb n="0555a27" ed="T"/>問中義；中者，既聞已，問義而不能行；上者，
+<lb n="0555a28" ed="T"/>聞、解、能行。下者，雖得人身，聞般若疑悔難
+<lb n="0555a29" ed="T"/>悟，根鈍、福薄故；中者，得人身，聞般若，一心
+<pb n="0555b" ed="T" xml:id="T25.1509.0555b"/>
+<lb n="0555b01" ed="T"/>信樂，能知義趣，從一日至四、五日，心能堅
+<lb n="0555b02" ed="T"/>固；過是<note resp="Taisho" n="0555007" place="foot text" type="orig">已＝以【聖】</note><note resp="CBETA" n="0555007" type="mod">已【大】，以【聖】</note><app n="0555007"><lem wit="【大】">已</lem><rdg resp="Taisho" wit="【聖】">以</rdg></app>往不能信樂，或欲聞、或不欲
+<lb n="0555b03" ed="T"/>聞，以其宿世雖解義<note resp="Taisho" n="0555008" place="foot text" type="orig">〔而〕－【三】【宮】</note><note resp="CBETA" n="0555008" type="mod">而【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0555008"><lem wit="【大】">而</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>不能行，根鈍、福
+<lb n="0555b04" ed="T"/>薄故；上者，得人身，聞般若，心即深解，信樂
+<lb n="0555b05" ed="T"/>不捨，常隨法師。</p><p xml:id="pT25p0555b0507" style="margin-left:1em" cb:place="inline">上二種菩薩不能得上地
+<lb n="0555b06" ed="T"/>故，當墮二乘，不為般若所守護故。為更
+<lb n="0555b07" ed="T"/>明了是事故，佛於後品中為作譬喻：「如大
+<lb n="0555b08" ed="T"/>海水中船破，若得所依則能<note resp="Taisho" n="0555009" place="foot text" type="orig">渡＝度【聖】【石】</note><note resp="CBETA" n="0555009" type="mod">渡【大】，度【聖】【石】</note><app n="0555009"><lem wit="【大】">渡</lem><rdg resp="Taisho" wit="【聖】 【石】">度</rdg></app>，不得所
+<lb n="0555b09" ed="T"/>依則不能<note resp="Taisho" n="0555010" place="foot text" type="orig">渡＝度【聖】【石】，渡＋（釋四十九品竟）【聖】【石】</note><note resp="CBETA" n="0555010" type="mod">渡【大】，度【聖】【石】，渡釋四十九品竟【聖】【石】</note><app n="0555010"><lem wit="【大】">渡</lem><rdg resp="Taisho" wit="【聖】 【石】">度釋四十九品竟</rdg></app>。」</p></cb:div>
+<lb n="0555b10" ed="T"/><cb:div type="pin"><cb:mulu n="51" level="1" type="品">51 譬喻品</cb:mulu><head><note resp="Taisho" n="0555011" place="foot text" type="orig">〔大智度論〕－【明】，（（大智…一））十二字＝（（摩訶般若波羅蜜譬喻品第五十））十三字【聖】，（（摩訶般若波羅蜜品第五十譬喻品））十四字【石】</note><note resp="CBETA" n="0555011" type="mod">大智度論釋譬喻品第五十一【大】，摩訶般若波羅蜜譬喻品第五十【聖】，摩訶般若波羅蜜品第五十譬喻品【石】，〔大智度論〕－【明】</note><app n="0555011"><lem wit="【大】"><title type="jing">大智度論釋</title>譬喻品第五十一</lem><rdg resp="Taisho" wit="【聖】">摩訶般若波羅蜜譬喻品第五十</rdg><rdg resp="Taisho" wit="【石】">摩訶般若波羅蜜品第五十譬喻品</rdg><rdg resp="Taisho" wit="【明】">釋譬喻品第五十一</rdg></app></head>
+<lb n="0555b11" ed="T"/><p xml:id="pT25p0555b1101"><note resp="Taisho" n="0555012" place="foot text" type="orig">〔經〕－【宋】【宮】【聖】＊</note><note resp="CBETA" n="0555012" type="mod">【經】【大】，〔－〕【宋】【宮】【聖】</note><app n="0555012"><lem wit="【大】">【經】</lem><rdg resp="Taisho" wit="【宋】 【宮】 【聖】"><space quantity="0"/></rdg></app></p><p xml:id="pT25p0555b1102" cb:place="inline">佛告須菩提：「譬如大海中船破壞，其中
+<lb n="0555b12" ed="T"/>人若不取木、不取器物、不取浮囊、不取死屍，
+<lb n="0555b13" ed="T"/>須菩提！當知是人不到彼<note resp="Taisho" n="0555013" place="foot text" type="orig">岸＝圻【聖】下同</note><note resp="CBETA" n="0555013" type="mod">岸【大】下同，圻【聖】下同</note><app n="0555013"><lem wit="【大】">岸</lem><rdg resp="Taisho" wit="【聖】">圻</rdg></app>，沒海中死。須
+<lb n="0555b14" ed="T"/>菩提！若船破時，其中人取木、取器物、浮囊、死
+<lb n="0555b15" ed="T"/>屍者，當知是人終不沒死，安隱無礙，得到彼
+<lb n="0555b16" ed="T"/>岸。須菩提！求佛道善男子、善女人亦復如
+<lb n="0555b17" ed="T"/>是，若但有信樂，不依深般若波羅蜜，不書、不
+<lb n="0555b18" ed="T"/>讀、不誦、不正憶念；不依禪波羅蜜、毘梨耶波
+<lb n="0555b19" ed="T"/>羅蜜、羼提波羅蜜、尸羅波羅蜜、檀波羅蜜，不
+<lb n="0555b20" ed="T"/>書、不讀、不誦、不正憶念；乃至不依一切種智，
+<lb n="0555b21" ed="T"/>不書、不讀、不誦、不正憶念。須菩提！當知是善
+<lb n="0555b22" ed="T"/>男子中道衰耗，是人未到一切種智，於聲聞、
+<lb n="0555b23" ed="T"/>辟支佛地取證。須菩提！若有求佛道善男
+<lb n="0555b24" ed="T"/>子、善女人為阿耨多羅三藐三菩提故，有信、
+<lb n="0555b25" ed="T"/>有忍、有淨心、有深心、有欲、有解、有捨、有精進，
+<lb n="0555b26" ed="T"/>是人依深般若波羅蜜，書、持、讀、誦、說、正憶念；
+<lb n="0555b27" ed="T"/>是善男子、善女人為阿耨多羅三藐三菩提
+<lb n="0555b28" ed="T"/>故，有諸信、忍、淨心、深心、欲、解、捨、精進，為深般
+<lb n="0555b29" ed="T"/>若波羅蜜所護乃至一切種智所<note resp="Taisho" n="0555014" place="foot text" type="orig">護＋（為深般若波羅蜜守護故乃至一切種智守護）【三】【聖】【石】</note><note resp="CBETA" n="0555014" type="mod">護【大】，護為深般若波羅蜜守護故乃至一切種智守護【宋】【元】【明】【聖】【石】</note><app n="0555014"><lem wit="【大】">護</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】 【石】">護為深般若波羅蜜守護故乃至一切種智守護</rdg></app>故，終不
+<pb n="0555c" ed="T" xml:id="T25.1509.0555c"/>
+<lb n="0555c01" ed="T"/>中道衰耗，過聲聞、辟支佛地，<note resp="Taisho" n="0555015" place="foot text" type="orig">〔能〕－【聖】</note><note resp="CBETA" n="0555015" type="mod">能【大】，〔－〕【聖】</note><app n="0555015"><lem wit="【大】">能</lem><rdg resp="Taisho" wit="【聖】"><space quantity="0"/></rdg></app>淨佛<note resp="Taisho" n="0555016" place="foot text" type="orig">世界＝國土【聖】【石】＊，聖本有傍註世界或本四字</note><note resp="CBETA" n="0555016" type="mod">世界【大】＊，國土【聖】【石】＊，聖本有傍註世界或本四字</note><app n="0555016"><lem wit="【大】">世界</lem><rdg resp="Taisho" wit="【聖】 【石】">國土</rdg></app><note n="0555016" place="foot" type="rest">聖本有傍註世界或本四字</note>、
+<lb n="0555c02" ed="T"/>成就眾生，當得阿耨多羅三藐三菩提。</p><p xml:id="pT25p0555c0216" cb:place="inline">「須菩
+<lb n="0555c03" ed="T"/>提！譬如男子、女人持坏瓶取水，當知是瓶不
+<lb n="0555c04" ed="T"/>久爛壞。何以故？是瓶未熟故，還歸於地。如
+<lb n="0555c05" ed="T"/>是，須菩提！善男子、善女人雖有為阿耨多
+<lb n="0555c06" ed="T"/>羅三藐三菩提心，有信、有忍、有淨心、有深心、
+<lb n="0555c07" ed="T"/>有欲、有解、有捨、有精進，不為般若波羅蜜、方
+<lb n="0555c08" ed="T"/>便力所守護，不為禪波羅蜜、毘梨耶波羅蜜、
+<lb n="0555c09" ed="T"/>羼提波羅蜜、尸羅波羅蜜、檀波羅蜜所守護，
+<lb n="0555c10" ed="T"/>不為內空乃至無法有法空、四念處乃至八聖
+<lb n="0555c11" ed="T"/>道分、佛十力乃至一切種智所守護。須菩提！
+<lb n="0555c12" ed="T"/>當知是人中道衰耗，墮聲聞、辟支佛地。</p><p xml:id="pT25p0555c1216" cb:place="inline">「須菩
+<lb n="0555c13" ed="T"/>提！譬如男子女人持熟瓶取水，若河、若井、若
+<lb n="0555c14" ed="T"/>池、若泉，當知是瓶持水安隱。何以故？是瓶
+<lb n="0555c15" ed="T"/>成熟故。如是，須菩提！善男子、善女人求阿
+<lb n="0555c16" ed="T"/>耨多羅三藐三菩提，有諸信、忍、淨心、深心、欲、
+<lb n="0555c17" ed="T"/>解、捨、精進，為般若波羅蜜、方便力所護，為禪
+<lb n="0555c18" ed="T"/>定、精進、忍、戒、施乃至一切種智所護故。須菩
+<lb n="0555c19" ed="T"/>提！當知是人不中道衰耗，過聲聞、辟支佛地，
+<lb n="0555c20" ed="T"/><note resp="Taisho" n="0555017" place="foot text" type="orig">能淨＝能淨佛【三】【宮】，淨佛【聖】【石】</note><note resp="CBETA" n="0555017" type="mod">能淨【大】，能淨佛【宋】【元】【明】【宮】，淨佛【聖】【石】</note><app n="0555017"><lem wit="【大】">能淨</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">能淨佛</rdg><rdg resp="Taisho" wit="【聖】 【石】">淨佛</rdg></app><app corresp="#0555016" type="star"><lem wit="【大】">世界</lem><rdg resp="Taisho" wit="【聖】 【石】">國土</rdg></app>、成就眾生，得阿耨多羅三藐三
+<lb n="0555c21" ed="T"/>菩提。」</p><p xml:id="pT25p0555c2103" cb:place="inline">「須菩提！譬如大海邊船未莊治，便持財
+<lb n="0555c22" ed="T"/>物著上，須菩提！當知是船中道壞沒，船與財
+<lb n="0555c23" ed="T"/>物各在一處；是<note resp="Taisho" n="0555018" place="foot text" type="orig">估＝賈【元】【明】</note><note resp="CBETA" n="0555018" type="mod">估【大】，賈【元】【明】</note><app n="0555018"><lem wit="【大】">估</lem><rdg resp="Taisho" wit="【元】 【明】">賈</rdg></app>客無方便力故，亡其重寶。
+<lb n="0555c24" ed="T"/>如是，須菩提！<note resp="Taisho" n="0555019" place="foot text" type="orig">是求＝求之【聖】</note><note resp="CBETA" n="0555019" type="mod">是求【大】，求之【聖】</note><app n="0555019"><lem wit="【大】">是求</lem><rdg resp="Taisho" wit="【聖】">求之</rdg></app>佛道善男子、善女人雖有
+<lb n="0555c25" ed="T"/>為阿耨多羅三藐三菩提心，有信、忍、淨心、深
+<lb n="0555c26" ed="T"/>心、欲、解、捨、精進，不為般若波羅蜜、方便力所
+<lb n="0555c27" ed="T"/>守護，乃至不為一切種智所守護故，當知是
+<lb n="0555c28" ed="T"/>人中道衰耗，失大珍寶。大珍寶者，所謂一切
+<lb n="0555c29" ed="T"/>種智。衰耗者，墮聲聞、辟支佛地。須菩提！譬如
+<pb n="0556a" ed="T" xml:id="T25.1509.0556a"/>
+<lb n="0556a01" ed="T"/><note resp="Taisho" n="0556001" place="foot text" type="orig">（有）＋人【三】【宮】</note><note resp="CBETA" n="0556001" type="mod">人【大】，有人【宋】【元】【明】【宮】</note><app n="0556001"><lem wit="【大】">人</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">有人</rdg></app>有智方便莊治海邊大船，然後推著水
+<lb n="0556a02" ed="T"/>中，持財物著上而去，當知是船不中道沒壞，
+<lb n="0556a03" ed="T"/>必得安隱到所至處。如是，須菩提！善男子、善
+<lb n="0556a04" ed="T"/>女人為阿耨多羅三藐三菩提，有信、忍、淨心、
+<lb n="0556a05" ed="T"/>深心、欲、解、捨、精進，為般若波羅蜜、方便力所
+<lb n="0556a06" ed="T"/>護，為禪、精進、<note resp="Taisho" n="0556002" place="foot text" type="orig">忍持＝忍辱【元】【明】【聖】，忍【石】</note><note resp="CBETA" n="0556002" type="mod">忍持【大】，忍辱【元】【明】【聖】，忍【石】</note><app n="0556002"><lem wit="【大】">忍、持</lem><rdg resp="Taisho" wit="【元】 【明】 【聖】">忍辱</rdg><rdg resp="Taisho" wit="【石】">忍</rdg></app>戒、施乃至一切種智所護
+<lb n="0556a07" ed="T"/>故，當知是菩薩得到阿耨多羅三藐三菩提，
+<lb n="0556a08" ed="T"/>不中道墮聲聞、辟支佛地。</p><p xml:id="pT25p0556a0811" cb:place="inline">「須菩提！譬如有人
+<lb n="0556a09" ed="T"/>年百二十歲，年耆根熟，又有<note resp="Taisho" n="0556003" place="foot text" type="orig">風冷＝冷風【聖】</note><note resp="CBETA" n="0556003" type="mod">風冷【大】，冷風【聖】</note><app n="0556003"><lem wit="【大】">風、冷</lem><rdg resp="Taisho" wit="【聖】">冷風</rdg></app>、熱病、若雜
+<lb n="0556a10" ed="T"/>病。須菩提！於汝意云何？是人能從床起不？」</p><p xml:id="pT25p0556a1017" cb:place="inline">須
+<lb n="0556a11" ed="T"/>菩提言：「不能。」</p><p xml:id="pT25p0556a1106" cb:place="inline">佛言：「是人<note resp="Taisho" n="0556004" place="foot text" type="orig">或＋（有）【三】【聖】</note><note resp="CBETA" n="0556004" type="mod">或【大】，或有【宋】【元】【明】【聖】</note><app n="0556004"><lem wit="【大】">或</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">或有</rdg></app>能起者，云何？」</p><p xml:id="pT25p0556a1116" cb:place="inline">須
+<lb n="0556a12" ed="T"/>菩提言：「是人雖能起，不能遠行若十里、若二
+<lb n="0556a13" ed="T"/>十里，以其老病故。」</p><p xml:id="pT25p0556a1308" cb:place="inline">「如是，須菩提！善男子、善
+<lb n="0556a14" ed="T"/>女人雖有為阿耨多羅三藐三菩提心，有信、
+<lb n="0556a15" ed="T"/>忍、淨心、深心、欲、解、捨、精進，不為般若波羅蜜、
+<lb n="0556a16" ed="T"/>方便力所守護，乃至不為一切種智所守護
+<lb n="0556a17" ed="T"/>故，當知是人中道墮聲聞、辟支佛地。何以故？
+<lb n="0556a18" ed="T"/>不為般若波羅蜜、方便力所守護故。須菩提！
+<lb n="0556a19" ed="T"/>如向老人百二十歲，年耆根熟，又有風、冷、熱
+<lb n="0556a20" ed="T"/>病、若雜病，是人欲起行，有兩健人各扶一腋，
+<lb n="0556a21" ed="T"/>語老人言：『莫有所難，隨所欲至，我等二人終
+<lb n="0556a22" ed="T"/>不相捨。』如是，須菩提！若善男子、善女人為阿
+<lb n="0556a23" ed="T"/>耨多羅三藐三菩提，有信、忍、淨心、深心、欲、解、
+<lb n="0556a24" ed="T"/>捨、精進，為般若波羅蜜、方便力所護，乃至為
+<lb n="0556a25" ed="T"/>一切種智所護，當知是人不中道墮聲聞、辟
+<lb n="0556a26" ed="T"/>支佛地，能到是處，所謂阿耨多羅三藐三菩
+<lb n="0556a27" ed="T"/><note resp="Taisho" n="0556005" place="foot text" type="orig">提＋（心）【三】【宮】</note><note resp="CBETA" n="0556005" type="mod">提【大】，提心【宋】【元】【明】【宮】</note><app n="0556005"><lem wit="【大】">提</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">提心</rdg></app>。」</p>
+<lb n="0556a28" ed="T"/><p xml:id="pT25p0556a2801"><app corresp="#0554008" type="star"><lem wit="【大】">【論】</lem><rdg resp="Taisho" wit="【宋】 【宮】 【聖】"><space quantity="0"/></rdg></app></p><p xml:id="pT25p0556a2802" cb:place="inline">釋曰：</p><p xml:id="pT25p0556a2804" style="margin-left:1em" cb:place="inline">菩薩有二種：一者、得諸法實相；二
+<lb n="0556a29" ed="T"/>者、雖未得實相，於佛道中有信、有忍、有
+<pb n="0556b" ed="T" xml:id="T25.1509.0556b"/>
+<lb n="0556b01" ed="T"/>淨心、有深心、有欲、有解、有捨、有精進。</p><p xml:id="pT25p0556b0115" style="margin-left:1em" cb:place="inline">「信」者，
+<lb n="0556b02" ed="T"/>信罪福業因緣果報，信行六波羅蜜得阿
+<lb n="0556b03" ed="T"/>耨多羅三藐三菩提。有人雖信佛道，思惟、
+<lb n="0556b04" ed="T"/>籌量，心不能忍，是故說「有忍」。有人雖忍，
+<lb n="0556b05" ed="T"/><note resp="Taisho" n="0556006" place="foot text" type="orig">邪＝耶【聖】＊</note><note resp="CBETA" n="0556006" type="mod">邪【大】＊，耶【聖】＊</note><app n="0556006"><lem wit="【大】">邪</lem><rdg resp="Taisho" wit="【聖】">耶</rdg></app>疑未斷故心濁不淨，是故說「有淨」。有人
+<lb n="0556b06" ed="T"/>雖信、忍、心淨，而有淺、有深，是故說「深心」。四
+<lb n="0556b07" ed="T"/>事因緣故，一心欲得無上道，不欲餘事，是
+<lb n="0556b08" ed="T"/>故說「有欲」。了了決定知無上道為大、世間
+<lb n="0556b09" ed="T"/>餘事為小，是故說「有解」。以欲、解定心故，
+<lb n="0556b10" ed="T"/>捨財及捨諸惡心、慳、恚等煩惱，是故說「捨」。
+<lb n="0556b11" ed="T"/>為捨故常能「精進」。有如是等諸功德。</p><p xml:id="pT25p0556b1115" style="margin-left:1em" cb:place="inline">若
+<lb n="0556b12" ed="T"/>不得般若波羅蜜，<note resp="Taisho" n="0556007" place="foot text" type="orig">若＋（人）【三】【宮】【聖】</note><note resp="CBETA" n="0556007" type="mod">若【大】，若人【宋】【元】【明】【宮】【聖】</note><app n="0556007"><lem wit="【大】">若</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】">若人</rdg></app>身壞命終時，若惡知
+<lb n="0556b13" ed="T"/>識<note resp="Taisho" n="0556008" place="foot text" type="orig">沮＝爼【宋】【宮】【聖】</note><note resp="CBETA" n="0556008" type="mod">沮【大】，爼【宋】【宮】【聖】</note><app n="0556008"><lem wit="【大】">沮</lem><rdg resp="Taisho" wit="【宋】 【宮】 【聖】">爼</rdg></app>壞，則失菩薩道；世間功德故受世間
+<lb n="0556b14" ed="T"/>果報，然後墮聲聞、辟支佛地，不能至無上
+<lb n="0556b15" ed="T"/>道。</p><p xml:id="pT25p0556b1502" style="margin-left:1em" cb:place="inline">此中佛<note resp="Taisho" n="0556009" place="foot text" type="orig">〔自〕－【三】【宮】</note><note resp="CBETA" n="0556009" type="mod">自【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0556009"><lem wit="【大】">自</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>說五譬喻：</p><p xml:id="pT25p0556b1510" style="margin-left:1em" cb:place="inline">「船」是行者身。「浮囊
+<lb n="0556b16" ed="T"/>等物」即是般若、方便。</p><p xml:id="pT25p0556b1609" style="margin-left:1em" cb:place="inline">「瓶」是菩薩道。般若、方便
+<lb n="0556b17" ed="T"/>是<note resp="Taisho" n="0556010" place="foot text" type="orig">火＝水【三】【宮】</note><note resp="CBETA" n="0556010" type="mod">火【大】，水【宋】【元】【明】【宮】</note><app n="0556010"><lem wit="【大】">火</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">水</rdg></app>。未與般若、方便和合故，不能受持
+<lb n="0556b18" ed="T"/>六波羅蜜功德水至無上道。</p><p xml:id="pT25p0556b1812" style="margin-left:1em" cb:place="inline">「不補治船」，是
+<lb n="0556b19" ed="T"/>菩薩無方便。信等功德寶物，是五波羅蜜等
+<lb n="0556b20" ed="T"/>諸善法<note resp="Taisho" n="0556011" place="foot text" type="orig">船＋（船）【三】【宮】</note><note resp="CBETA" n="0556011" type="mod">船【大】，船船【宋】【元】【明】【宮】</note><app n="0556011"><lem wit="【大】">船</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">船船</rdg></app>。寶異處者，與本願<note resp="Taisho" n="0556012" place="foot text" type="orig">乖＝永【聖】【石】</note><note resp="CBETA" n="0556012" type="mod">乖【大】，永【聖】【石】</note><app n="0556012"><lem wit="【大】">乖</lem><rdg resp="Taisho" wit="【聖】 【石】">永</rdg></app>異，或受
+<lb n="0556b21" ed="T"/>人天樂、或墮二乘。大利者，所謂一切智等佛
+<lb n="0556b22" ed="T"/>法寶。</p><p xml:id="pT25p0556b2203" style="margin-left:1em" cb:place="inline">「老病人」是有信等功德菩薩。不斷六
+<lb n="0556b23" ed="T"/>十二<app corresp="#0556006" type="star"><lem wit="【大】">邪</lem><rdg resp="Taisho" wit="【聖】">耶</rdg></app>見故名老；不斷百八等諸煩惱故
+<lb n="0556b24" ed="T"/>名病。從床起者，從三界床起，我當作佛。以
+<lb n="0556b25" ed="T"/><app corresp="#0556006" type="star"><lem wit="【大】">邪</lem><rdg resp="Taisho" wit="【聖】">耶</rdg></app>見煩惱因緣故不能成菩薩道。二人者，
+<lb n="0556b26" ed="T"/>般若及方便。般若波羅蜜能滅諸邪見、煩惱、
+<lb n="0556b27" ed="T"/>戲論，將至畢竟空中。方便將出畢竟空。</p>
+<lb n="0556b28" ed="T"/><p xml:id="pT25p0556b2801"><anchor xml:id="fxT25p0556b03"/>【經】</p><p xml:id="pT25p0556b2802" cb:place="inline">爾時，佛語須菩提言：「善哉！善哉！<note resp="Taisho" n="0556013" place="foot text" type="orig">〔須菩提〕－【三】【宮】</note><note resp="CBETA" n="0556013" type="mod">須菩提【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0556013"><lem wit="【大】">須菩提</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>！
+<lb n="0556b29" ed="T"/>汝為諸菩薩摩訶薩問佛是事。須菩提！若有
+<pb n="0556c" ed="T" xml:id="T25.1509.0556c"/>
+<lb n="0556c01" ed="T"/>求佛道善男子、善女人，從初發意已來，以我
+<lb n="0556c02" ed="T"/>我所心布施、持戒、忍辱、精進、禪定、智慧；是善
+<lb n="0556c03" ed="T"/>男子、善女人布施時作是念：『我是施主，我施是
+<lb n="0556c04" ed="T"/>人，<note resp="Taisho" n="0556014" place="foot text" type="orig">我施是物＝我以是物施【聖】，但有我施是物四字傍註</note><note resp="CBETA" n="0556014" type="mod">我施是物【大】，我以是物施【聖】，但有我施是物四字傍註</note><app n="0556014"><lem wit="【大】">我施是物</lem><rdg resp="Taisho" wit="【聖】">我以是物施</rdg></app><note n="0556014" place="foot" type="rest">但有我施是物四字傍註</note>。我持戒，我修忍，我精進，我入禪，
+<lb n="0556c05" ed="T"/>我修智慧。』是善男子、善女人念『有是施，是我
+<lb n="0556c06" ed="T"/>施』，乃至念『有是慧，是我慧』。何以故？檀波羅蜜
+<lb n="0556c07" ed="T"/>中無如是分別，遠離此彼岸是檀波羅蜜相；
+<lb n="0556c08" ed="T"/>尸羅波羅蜜、羼提波羅蜜、毘梨耶波羅蜜、禪波
+<lb n="0556c09" ed="T"/>羅蜜，般若波羅蜜中無如是分別。何以故？遠
+<lb n="0556c10" ed="T"/>離此彼岸是般若波羅蜜相。是人不知此岸、
+<lb n="0556c11" ed="T"/>不知彼岸，是人不為檀波羅蜜乃至不為一
+<lb n="0556c12" ed="T"/>切種智所護故，墮聲聞、辟支佛地，不能到薩
+<lb n="0556c13" ed="T"/>婆若。</p><p xml:id="pT25p0556c1303" cb:place="inline">「須菩提！云何求佛道人無方便？須菩提！
+<lb n="0556c14" ed="T"/>求佛道人從初發心已來無方便行布施、持
+<lb n="0556c15" ed="T"/>戒、忍辱、精進、禪定、修智慧。是人作如是念：『我
+<lb n="0556c16" ed="T"/>布施，施是人，以是物施；我持戒、修忍<note resp="Taisho" n="0556015" place="foot text" type="orig">〔辱〕－【三】【宮】</note><note resp="CBETA" n="0556015" type="mod">辱【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0556015"><lem wit="【大】">辱</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>、勤精
+<lb n="0556c17" ed="T"/>進、入禪定，修智慧、如是修智慧。』是人念有是
+<lb n="0556c18" ed="T"/>施、是我施，以是施自高；念有是戒、是我戒，以
+<lb n="0556c19" ed="T"/>是戒自高；念有是忍、是我忍，以是忍自高；念
+<lb n="0556c20" ed="T"/>有是精進、是我精進，以是精進自高；念有是
+<lb n="0556c21" ed="T"/>禪定、是我<note resp="Taisho" n="0556016" place="foot text" type="orig">禪＋（定）【聖】【石】</note><note resp="CBETA" n="0556016" type="mod">禪定【CB】【麗-CB】【聖】【石】，禪【大】</note><app n="0556016"><lem resp="CBETA.maha CBETA.say" wit="【CB】 【麗-CB】">禪定<note type="cf1">K14n0549_p1204a15</note></lem><rdg wit="【大】">禪</rdg><rdg resp="Taisho" wit="【聖】 【石】">禪定</rdg></app>，以是禪<note resp="Taisho" n="0556017" place="foot text" type="orig">〔定〕－【三】【宮】</note><note resp="CBETA" n="0556017" type="mod">定【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0556017"><lem wit="【大】">定</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>自高；念有是慧、是
+<lb n="0556c22" ed="T"/>我慧，以是慧自高。何以故？檀波羅蜜中無如
+<lb n="0556c23" ed="T"/>是分別，遠離此彼岸是檀波羅蜜相；遠離此
+<lb n="0556c24" ed="T"/>彼岸是尸<note resp="Taisho" n="0556018" place="foot text" type="orig">〔羅〕－【三】【宮】</note><note resp="CBETA" n="0556018" type="mod">羅【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0556018"><lem wit="【大】">羅</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>波羅蜜相；遠離此彼岸是羼
+<lb n="0556c25" ed="T"/>提波羅蜜相；遠離此彼岸是毘梨耶波羅蜜
+<lb n="0556c26" ed="T"/>相；遠離此彼岸是禪波羅蜜相；遠離此彼岸
+<lb n="0556c27" ed="T"/>是般若波羅蜜相。何以故？般若波羅蜜中無
+<lb n="0556c28" ed="T"/>如是憶念分別。是求佛道善男子、善女人不
+<lb n="0556c29" ed="T"/>知此岸、不知彼岸，是人不為檀波羅蜜所護，
+<pb n="0557a" ed="T" xml:id="T25.1509.0557a"/>
+<lb n="0557a01" ed="T"/>不為尸羅波羅蜜、羼提波羅蜜、毘梨耶波羅蜜、
+<lb n="0557a02" ed="T"/>禪波羅蜜、般若波羅蜜所護<note resp="Taisho" n="0557001" place="foot text" type="orig">〔故〕－【三】【宮】【聖】＊</note><note resp="CBETA" n="0557001" type="mod">故【大】＊，〔－〕【宋】【元】【明】【宮】【聖】＊</note><app n="0557001"><lem wit="【大】">故</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】"><space quantity="0"/></rdg></app>，乃至不為一
+<lb n="0557a03" ed="T"/>切種智所護故，或墮聲聞道中、或墮辟支佛
+<lb n="0557a04" ed="T"/>道中，不能得到薩婆若。如是，須菩提！菩薩
+<lb n="0557a05" ed="T"/>摩訶薩不為般若波羅蜜、方便力所守護故，
+<lb n="0557a06" ed="T"/>或墮聲聞地、或墮辟支佛道中。」</p><p xml:id="pT25p0557a0613" cb:place="inline">「須菩提！云何
+<lb n="0557a07" ed="T"/>菩薩摩訶薩為般若波羅蜜、方便力所<note resp="Taisho" n="0557002" place="foot text" type="orig">〔守〕－【三】【宮】</note><note resp="CBETA" n="0557002" type="mod">守【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0557002"><lem wit="【大】">守</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>護
+<lb n="0557a08" ed="T"/>故，不墮聲聞、辟支佛道中，疾得阿耨多羅三
+<lb n="0557a09" ed="T"/>藐三菩提？須菩提！菩薩從初已來，以方便力
+<lb n="0557a10" ed="T"/>布施，無我、我所心布施，乃至無我、我所心修
+<lb n="0557a11" ed="T"/>智慧；是人不作是念：『我有是施，是我施。』不
+<lb n="0557a12" ed="T"/>以是施自高；乃至般若波羅蜜亦如是。是菩
+<lb n="0557a13" ed="T"/>薩不念『我布施』，不念『我施是人，用是物<note resp="Taisho" n="0557003" place="foot text" type="orig">〔施〕－【三】【宮】</note><note resp="CBETA" n="0557003" type="mod">施【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0557003"><lem wit="【大】">施</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>』；
+<lb n="0557a14" ed="T"/>不念『我持戒，有是戒』；不念『我忍辱，有是忍辱』；
+<lb n="0557a15" ed="T"/>不念『我精進，有是精進』；不念『我禪定，有是禪
+<lb n="0557a16" ed="T"/>定』；不念『我修智慧，有是智慧。』何以故？是檀
+<lb n="0557a17" ed="T"/>波羅蜜中無如是分別，遠離此彼岸是檀
+<lb n="0557a18" ed="T"/>波羅蜜相；遠離此彼岸是尸羅波羅蜜相；遠
+<lb n="0557a19" ed="T"/>離此彼岸是羼提波羅蜜相；遠離此彼岸
+<lb n="0557a20" ed="T"/>是毘梨耶波羅蜜相；遠離此彼岸是禪波羅
+<lb n="0557a21" ed="T"/>蜜相；遠離此彼岸是般若波羅蜜相。何以
+<lb n="0557a22" ed="T"/>故？是般若波羅蜜中無如是<note resp="Taisho" n="0557004" place="foot text" type="orig">〔憶想〕－【三】【宮】</note><note resp="CBETA" n="0557004" type="mod">憶想【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0557004"><lem wit="【大】">憶想</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>分別。是
+<lb n="0557a23" ed="T"/>菩薩摩訶薩知此岸、知彼岸，是人為檀波羅
+<lb n="0557a24" ed="T"/>蜜所護、為尸羅波羅蜜所護、為羼提波羅蜜
+<lb n="0557a25" ed="T"/>所護、為毘梨耶波羅蜜所護、為禪波羅蜜所
+<lb n="0557a26" ed="T"/>護、為般若波羅蜜所護，乃至為一切種智所
+<lb n="0557a27" ed="T"/>護故，不墮聲聞、辟支佛地，得到薩<note resp="Taisho" n="0557005" place="foot text" type="orig">婆＝波【石】</note><note resp="CBETA" n="0557005" type="mod">婆【大】，波【石】</note><app n="0557005"><lem wit="【大】">婆</lem><rdg resp="Taisho" wit="【石】">波</rdg></app>若。
+<lb n="0557a28" ed="T"/>如是，須菩提！菩薩摩訶薩為般若波羅蜜、方
+<lb n="0557a29" ed="T"/>便力所護故，不墮聲聞、辟支佛地，疾得阿耨
+<pb n="0557b" ed="T" xml:id="T25.1509.0557b"/>
+<lb n="0557b01" ed="T"/>多羅三藐三菩提。」</p>
+<lb n="0557b02" ed="T"/><p xml:id="pT25p0557b0201"><app corresp="#0554008" type="star"><lem wit="【大】">【論】</lem><rdg resp="Taisho" wit="【宋】 【宮】 【聖】"><space quantity="0"/></rdg></app></p><p xml:id="pT25p0557b0202" cb:place="inline"><note resp="Taisho" n="0557006" place="foot text" type="orig">〔釋曰〕－【三】【宮】【聖】</note><note resp="CBETA" n="0557006" type="mod">釋曰【大】，〔－〕【宋】【元】【明】【宮】【聖】</note><app n="0557006"><lem wit="【大】">釋曰</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】"><space quantity="0"/></rdg></app>：</p><p xml:id="pT25p0557b0204" style="margin-left:1em" cb:place="inline">爾時，佛可須菩提意，更說失行因
+<lb n="0557b03" ed="T"/>緣：「菩薩雖行信等善法，亦不得無上道，所
+<lb n="0557b04" ed="T"/>謂以我、我所心行六波羅蜜故。」是中無分
+<lb n="0557b05" ed="T"/>別此岸、彼岸，以遠離相是般若波羅蜜；而分
+<lb n="0557b06" ed="T"/>別著行，是為失。</p><p xml:id="pT25p0557b0607" style="margin-left:1em" cb:place="inline">上佛雖說無方便義，不說
+<lb n="0557b07" ed="T"/>無方便名；欲令是事明了故，命須菩提：「云
+<lb n="0557b08" ed="T"/>何有方便、無方便？」</p><p xml:id="pT25p0557b0808" style="margin-left:1em" cb:place="inline">內無我、我所心，外觀一切
+<lb n="0557b09" ed="T"/>法空不取相，般若、方便乃至一切種智守
+<lb n="0557b10" ed="T"/>護菩薩故，名有方便。守護者，五波羅蜜邊得
+<lb n="0557b11" ed="T"/>功德力，般若波羅蜜邊得智慧力——以二因緣
+<lb n="0557b12" ed="T"/>故不失<note resp="Taisho" n="0557007" place="foot text" type="orig">道＋（釋第五十品竟）【聖】【石】</note><note resp="CBETA" n="0557007" type="mod">道【大】，道釋第五十品竟【聖】【石】</note><app n="0557007"><lem wit="【大】">道</lem><rdg resp="Taisho" wit="【聖】 【石】">道釋第五十品竟</rdg></app>。</p></cb:div>
+<lb n="0557b13" ed="T"/><cb:div type="pin"><cb:mulu n="52" level="1" type="品">52 善知識品</cb:mulu><head><note resp="Taisho" n="0557008" place="foot text" type="orig">〔大智度論〕－【明】，（（大智…二））十三字＝（（摩訶般若波羅蜜智識教發心品第五十一））十七字【聖】，（（摩訶般若波羅蜜品第五十一善智識教發心品））十九字【石】</note><note resp="CBETA" n="0557008" type="mod">大智度論釋善知識品第五十二【大】，摩訶般若波羅蜜智識教發心品第五十一【聖】，摩訶般若波羅蜜品第五十一善智識教發心品【石】，〔大智度論〕－【明】</note><app n="0557008"><lem wit="【大】"><title type="jing">大智<note resp="Taisho" n="0557009" place="foot text" type="orig">〔度〕－【宋】【宮】＊</note><note resp="CBETA" n="0557009" type="mod">度【大】＊，〔－〕【宋】【宮】＊</note><app n="0557009"><lem wit="【大】">度</lem><rdg resp="Taisho" wit="【宋】 【宮】"><space quantity="0"/></rdg></app>論釋</title><note resp="Taisho" n="0557010" place="foot text" type="orig">〔善〕－【三】【明】</note><note resp="CBETA" n="0557010" type="mod">善【大】，〔－〕【宋】【元】【明】【明】</note><app n="0557010"><lem wit="【大】">善</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【明】"><space quantity="0"/></rdg></app>知識品第五十<note resp="Taisho" n="0557011" place="foot text" type="orig">二＋（經作善智識品）細註【明】，二＋（品）【宮】</note><note resp="CBETA" n="0557011" type="mod">二【大】，二<note place="inline">經作善智識品</note>【明】，二品【宮】</note><app n="0557011"><lem wit="【大】">二</lem><rdg resp="Taisho" wit="【明】">二<note place="inline">經作善智識品</note></rdg><rdg resp="Taisho" wit="【宮】">二品</rdg></app></lem><rdg resp="Taisho" wit="【聖】">摩訶般若波羅蜜智識教發心品第五十一</rdg><rdg resp="Taisho" wit="【石】">摩訶般若波羅蜜品第五十一善智識教發心品</rdg><rdg resp="Taisho" wit="【明】">釋善知識品第五十二</rdg></app></head>
+<lb n="0557b14" ed="T"/><p xml:id="pT25p0557b1401"><anchor xml:id="fxT25p0557b02"/>【經】</p><p xml:id="pT25p0557b1402" cb:place="inline">爾時，須菩提白佛言：「世尊！新學菩薩摩
+<lb n="0557b15" ed="T"/>訶薩云何應學般若波羅蜜、禪波羅蜜、毘梨
+<lb n="0557b16" ed="T"/>耶波羅蜜、羼提波羅蜜、尸羅波羅蜜、檀波羅
+<lb n="0557b17" ed="T"/>蜜？」</p>
+<lb n="0557b18" ed="T"/><p xml:id="pT25p0557b1801">佛告須菩提：「新學菩薩摩訶薩若欲學般若
+<lb n="0557b19" ed="T"/>波羅蜜，禪、精進、忍、戒、檀波羅蜜，先當親近、供
+<lb n="0557b20" ed="T"/>養善知識能說是深般若波羅蜜者。是人作
+<lb n="0557b21" ed="T"/>是教：『汝善男<note n="0557b2101" resp="CBETA" type="add">子【CB】，于【大】</note><app n="0557b2101"><lem wit="【CB】" resp="CBETA">子</lem><rdg wit="【大】">于</rdg></app>！所有布施，一切迴向阿耨
+<lb n="0557b22" ed="T"/>多羅三藐三菩提；善男子！所有持戒、忍辱、精
+<lb n="0557b23" ed="T"/>進、禪定、智慧，一切迴向阿耨多羅三藐三菩
+<lb n="0557b24" ed="T"/>提。汝莫以色是阿耨多羅三藐三菩提，莫
+<lb n="0557b25" ed="T"/>以受、想、行、識是阿耨多羅三藐三菩提；莫以
+<lb n="0557b26" ed="T"/>檀波羅蜜是阿耨多羅三藐三菩提，莫以
+<lb n="0557b27" ed="T"/>尸羅波羅蜜、羼提波羅蜜、毘梨耶波羅蜜、
+<lb n="0557b28" ed="T"/>禪波羅蜜、般若波羅蜜是阿耨多羅三藐三
+<lb n="0557b29" ed="T"/>菩提；莫以內空乃至無法有法空是阿耨多
+<pb n="0557c" ed="T" xml:id="T25.1509.0557c"/>
+<lb n="0557c01" ed="T"/>羅三藐三菩提；莫以四念處、四正勤、四如意
+<lb n="0557c02" ed="T"/>足、五根、五力、七覺分、八聖道分是阿耨多羅
+<lb n="0557c03" ed="T"/>三藐三菩提；莫以四禪、四無量心、四無色定、
+<lb n="0557c04" ed="T"/>五神通是阿耨多羅三藐三菩提；莫以佛十
+<lb n="0557c05" ed="T"/>力乃至十八不共法是阿耨多羅三藐三菩
+<lb n="0557c06" ed="T"/>提。所以者何？不取色便得阿耨多羅三藐
+<lb n="0557c07" ed="T"/>三菩提，不取受、想、行、識便得阿耨多羅三藐
+<lb n="0557c08" ed="T"/>三菩提；不取檀波羅蜜乃至般若波羅蜜便
+<lb n="0557c09" ed="T"/>得阿耨多羅三藐三菩提；不取內空乃至無
+<lb n="0557c10" ed="T"/>法有法空；<note resp="Taisho" n="0557012" place="foot text" type="orig">〔不取〕－【三】【宮】，不取＝取不【聖】</note><note resp="CBETA" n="0557012" type="mod">不取【大】，〔－〕【宋】【元】【明】【宮】，取不【聖】</note><app n="0557012"><lem wit="【大】">不取</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg><rdg resp="Taisho" wit="【聖】">取不</rdg></app>四念處乃至十八不共法便
+<lb n="0557c11" ed="T"/>得阿耨多羅三藐三菩提。善男子！行是深般
+<lb n="0557c12" ed="T"/>若波羅蜜時莫貪色。何以故？善男子！是色
+<lb n="0557c13" ed="T"/>非可貪者。莫貪受、想、行、識。何以故？受、想、行、
+<lb n="0557c14" ed="T"/>識非可貪者。善男子！莫貪檀波羅蜜、尸羅波
+<lb n="0557c15" ed="T"/>羅蜜、羼提波羅蜜、毘梨耶波羅蜜、禪波羅蜜、般
+<lb n="0557c16" ed="T"/>若波羅蜜；莫貪內空乃至無法有法空，莫
+<lb n="0557c17" ed="T"/>貪四念處乃至八聖道分，莫貪四禪、四無量
+<lb n="0557c18" ed="T"/>心、四無色定、五神通，莫貪佛十力乃至一切
+<lb n="0557c19" ed="T"/>種智。何以故？一切種智非可貪者。善男子！
+<lb n="0557c20" ed="T"/>莫貪須陀洹<note resp="Taisho" n="0557013" place="foot text" type="orig">果＋（者）【三】【宮】</note><note resp="CBETA" n="0557013" type="mod">果【大】，果者【宋】【元】【明】【宮】</note><app n="0557013"><lem wit="【大】">果</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">果者</rdg></app>乃至阿羅漢果，莫貪辟支佛
+<lb n="0557c21" ed="T"/>道，莫貪菩薩法位，莫貪阿耨多羅三藐三菩
+<lb n="0557c22" ed="T"/>提。何以故？阿耨多羅三藐三菩提非可貪
+<lb n="0557c23" ed="T"/>者。所以者何？諸法<note resp="Taisho" n="0557014" place="foot text" type="orig">（自）＋性【三】【聖】【石】</note><note resp="CBETA" n="0557014" type="mod">性【大】，自性【宋】【元】【明】【聖】【石】</note><app n="0557014"><lem wit="【大】">性</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】 【石】">自性</rdg></app>空故。』」</p>
+<lb n="0557c24" ed="T"/><p xml:id="pT25p0557c2401"><app corresp="#0554008" type="star"><lem wit="【大】">【論】</lem><rdg resp="Taisho" wit="【宋】 【宮】 【聖】"><space quantity="0"/></rdg></app></p><p xml:id="pT25p0557c2402" cb:place="inline">問曰：</p><p xml:id="pT25p0557c2404" style="margin-left:1em" cb:place="inline">須菩提問新學所行，佛何以乃答
+<lb n="0557c25" ed="T"/>菩薩久行微妙事——所謂「不取一切法，一切
+<lb n="0557c26" ed="T"/>法性空故」？</p><p xml:id="pT25p0557c2605" cb:place="inline">答曰：</p><p xml:id="pT25p0557c2607" style="margin-left:1em" cb:place="inline">諸法性空有二種：一者、大菩
+<lb n="0557c27" ed="T"/>薩所得；二者、小菩薩所學柔順忍，以智慧
+<lb n="0557c28" ed="T"/>發心。此中但說小菩薩所學空。</p><p xml:id="pT25p0557c2813" style="margin-left:1em" cb:place="inline">復次，有<note resp="Taisho" n="0557015" place="foot text" type="orig">〔實〕－【三】【宮】</note><note resp="CBETA" n="0557015" type="mod">實【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0557015"><lem wit="【大】">實</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>
+<lb n="0557c29" ed="T"/>智慧氣分，佛數為菩薩；若無者，雖久行餘
+<pb n="0558a" ed="T" xml:id="T25.1509.0558a"/>
+<lb n="0558a01" ed="T"/>功<note resp="Taisho" n="0558001" place="foot text" type="orig">德＋（說）【元】【明】</note><note resp="CBETA" n="0558001" type="mod">德【大】，德說【元】【明】</note><app n="0558001"><lem wit="【大】">德</lem><rdg resp="Taisho" wit="【元】 【明】">德說</rdg></app>，不數為菩薩。譬如佛說聲聞法中頂
+<lb n="0558a02" ed="T"/>法相：於三寶中有少信是名頂法；是信過
+<lb n="0558a03" ed="T"/>煖法，修禪定生，以色界心得；於佛無礙解
+<lb n="0558a04" ed="T"/>脫是為小，於<note resp="Taisho" n="0558002" place="foot text" type="orig">凡夫＝凡人【三】【宮】，凡夫人【聖】</note><note resp="CBETA" n="0558002" type="mod">凡夫【大】，凡人【宋】【元】【明】【宮】，凡夫人【聖】</note><app n="0558002"><lem wit="【大】">凡夫</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">凡人</rdg><rdg resp="Taisho" wit="【聖】">凡夫人</rdg></app>為大。如是新發意菩
+<lb n="0558a05" ed="T"/>薩得般若波羅蜜氣味故能受化，名為新
+<lb n="0558a06" ed="T"/>學；過五波羅蜜功德；於凡夫為大，於佛為
+<lb n="0558a07" ed="T"/>小。</p><p xml:id="pT25p0558a0702" style="margin-left:1em" cb:place="inline">復次，佛不直說諸法性空，先教供養、親
+<lb n="0558a08" ed="T"/>近善知識；善知識為說五波羅蜜功德。善知
+<lb n="0558a09" ed="T"/>識雖種種教化，佛但稱其不壞法，所謂於
+<lb n="0558a10" ed="T"/>色等諸法不貪、不著、不取。譬如金翅鳥子
+<lb n="0558a11" ed="T"/>始生，從一須彌至一須彌；菩薩亦如是，初
+<lb n="0558a12" ed="T"/>學能生如是深智，何況久學！又如小火能
+<lb n="0558a13" ed="T"/>燒，何況大者！菩薩亦如是，新學時能以般
+<lb n="0558a14" ed="T"/>若轉世間法令畢竟空，燒諸煩惱，何況得
+<lb n="0558a15" ed="T"/>力具足！</p>
+<lb n="0558a16" ed="T"/><p xml:id="pT25p0558a1601"><anchor xml:id="fxT25p0558a01"/>【經】</p><p xml:id="pT25p0558a1602" cb:place="inline">須菩提白佛言：「世尊！諸菩薩摩訶薩能
+<lb n="0558a17" ed="T"/>為難事——於一切性空法中求阿耨多羅三藐
+<lb n="0558a18" ed="T"/>三菩提，欲得阿耨多羅三藐三菩提。」</p><p xml:id="pT25p0558a1815" cb:place="inline">佛言：
+<lb n="0558a19" ed="T"/>「如是！如是！須菩提！菩薩摩訶薩能為難事——
+<lb n="0558a20" ed="T"/>於一切性空法中求阿耨多羅三藐三菩提，
+<lb n="0558a21" ed="T"/>欲得阿耨多羅三藐三菩提。須菩提！諸菩薩
+<lb n="0558a22" ed="T"/>摩訶薩為安隱世間故，發阿耨多羅三藐三
+<lb n="0558a23" ed="T"/>菩提心；為安樂世間故、為救世間故、為世
+<lb n="0558a24" ed="T"/>間歸故、為世間依處故、為世間洲故、為世間
+<lb n="0558a25" ed="T"/>將導故、為世間究竟道<app corresp="#0557001" type="star"><lem wit="【大】">故</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】"><space quantity="0"/></rdg></app>、為世間趣故，
+<lb n="0558a26" ed="T"/>發阿耨多羅三藐三菩提心。</p><p xml:id="pT25p0558a2612" cb:place="inline">「須菩提！云何菩
+<lb n="0558a27" ed="T"/>薩摩訶薩為安隱世間故發阿耨多羅三藐三
+<lb n="0558a28" ed="T"/>菩提心？須菩提！菩薩摩訶薩得阿耨多羅三
+<lb n="0558a29" ed="T"/>藐三菩提時，拔出六道眾生，著無畏岸涅槃
+<pb n="0558b" ed="T" xml:id="T25.1509.0558b"/>
+<lb n="0558b01" ed="T"/>處。須菩提！是為菩薩摩訶薩為安隱世間故
+<lb n="0558b02" ed="T"/>發阿耨多羅三藐三菩提心。</p><p xml:id="pT25p0558b0212" cb:place="inline">「云何菩薩摩訶
+<lb n="0558b03" ed="T"/>薩為安樂世間故發阿耨多羅三藐三菩提
+<lb n="0558b04" ed="T"/>心？須菩提！菩薩摩訶薩得阿耨多羅三藐三
+<lb n="0558b05" ed="T"/>菩提時，拔出眾生種種憂苦愁惱，著無畏岸
+<lb n="0558b06" ed="T"/>涅槃處。須菩提！是為菩薩摩訶薩為<note resp="Taisho" n="0558003" place="foot text" type="orig">〔安〕－【聖】</note><note resp="CBETA" n="0558003" type="mod">安【大】，〔－〕【聖】</note><app n="0558003"><lem wit="【大】">安</lem><rdg resp="Taisho" wit="【聖】"><space quantity="0"/></rdg></app>樂世
+<lb n="0558b07" ed="T"/>間故發阿耨多羅三藐三菩提心。</p><p xml:id="pT25p0558b0714" cb:place="inline">「云何菩薩
+<lb n="0558b08" ed="T"/>摩訶薩為救世間故發阿耨多羅三藐三菩提
+<lb n="0558b09" ed="T"/>心？須菩提！菩薩摩訶薩得阿耨多羅三藐三
+<lb n="0558b10" ed="T"/>菩提時，救眾生生死中種種苦，亦為斷是苦
+<lb n="0558b11" ed="T"/>故而為說法；眾生聞法，漸以三乘而得度脫。
+<lb n="0558b12" ed="T"/>須菩提！是為菩薩摩訶薩為救世間故發阿
+<lb n="0558b13" ed="T"/>耨多羅三藐三菩提心。</p><p xml:id="pT25p0558b1310" cb:place="inline">「云何菩薩摩訶薩為
+<lb n="0558b14" ed="T"/>世間歸故發阿耨多羅三藐三菩提心？須菩
+<lb n="0558b15" ed="T"/>提！菩薩摩訶薩得阿耨多羅三藐三菩提時，
+<lb n="0558b16" ed="T"/>拔出眾生生老病死相、憂悲<note resp="Taisho" n="0558004" place="foot text" type="orig">愁＝苦【聖】【石】</note><note resp="CBETA" n="0558004" type="mod">愁【大】，苦【聖】【石】</note><app n="0558004"><lem wit="【大】">愁</lem><rdg resp="Taisho" wit="【聖】 【石】">苦</rdg></app>惱法，著無畏
+<lb n="0558b17" ed="T"/>岸涅槃處。須菩提！是為菩薩摩訶薩為世間
+<lb n="0558b18" ed="T"/>歸故發阿耨多羅三藐三菩提心。</p><p xml:id="pT25p0558b1814" cb:place="inline">「云何菩薩
+<lb n="0558b19" ed="T"/>摩訶薩為世間依處故發阿耨多羅三藐三菩
+<lb n="0558b20" ed="T"/>提心？須菩提！菩薩摩訶薩得阿耨多羅三藐
+<lb n="0558b21" ed="T"/>三菩提時，為眾生說一切法無依處。須菩
+<lb n="0558b22" ed="T"/>提！是為菩薩摩訶薩為世間依處故發阿耨
+<lb n="0558b23" ed="T"/>多羅三藐三菩提心。」</p><p xml:id="pT25p0558b2309" cb:place="inline">須菩提白佛言：「世尊！
+<lb n="0558b24" ed="T"/>云何一切法無依處？」</p><p xml:id="pT25p0558b2409" cb:place="inline">佛言：「色不相續即是色
+<lb n="0558b25" ed="T"/>無生，色無生即是色不滅，色不滅即是色
+<lb n="0558b26" ed="T"/>無依處；受、想、行、識乃至一切種智亦如是。須
+<lb n="0558b27" ed="T"/>菩提！是為菩薩摩訶薩為世間依處故發阿
+<lb n="0558b28" ed="T"/>耨多羅三藐三菩提心。云何菩薩摩訶薩為
+<lb n="0558b29" ed="T"/>世間究竟道故發阿耨多羅三藐三菩提心？
+<pb n="0558c" ed="T" xml:id="T25.1509.0558c"/>
+<lb n="0558c01" ed="T"/>須菩提！<note resp="Taisho" n="0558005" place="foot text" type="orig">〔若〕－【聖】【石】</note><note resp="CBETA" n="0558005" type="mod">若【大】，〔－〕【聖】【石】</note><app n="0558005"><lem wit="【大】">若</lem><rdg resp="Taisho" wit="【聖】 【石】"><space quantity="0"/></rdg></app>菩薩摩訶薩得阿耨多羅三藐三
+<lb n="0558c02" ed="T"/>菩提時，為眾生說如是法：色究竟相非是色，
+<lb n="0558c03" ed="T"/>受、想、行、識，乃至一切種智究竟相非是一切種
+<lb n="0558c04" ed="T"/>智。須菩提！<note resp="Taisho" n="0558006" place="foot text" type="orig">如＋（是）【聖】</note><note resp="CBETA" n="0558006" type="mod">如【大】，如是【聖】</note><app n="0558006"><lem wit="【大】">如</lem><rdg resp="Taisho" wit="【聖】">如是</rdg></app>究竟相，一切法相亦如是。」</p>
+<lb n="0558c05" ed="T"/><p xml:id="pT25p0558c0501">須菩提言：「世尊！若一切法如究竟相者，諸
+<lb n="0558c06" ed="T"/>菩薩摩訶薩皆應<note resp="Taisho" n="0558007" place="foot text" type="orig">得＝行【三】【宮】</note><note resp="CBETA" n="0558007" type="mod">得【大】，行【宋】【元】【明】【宮】</note><app n="0558007"><lem wit="【大】">得</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">行</rdg></app>阿耨多羅三藐三菩提。
+<lb n="0558c07" ed="T"/>何以故？世尊！色究竟相中無有分別，受、想、
+<lb n="0558c08" ed="T"/>行、識究竟相中無有分別，乃至一切種智究
+<lb n="0558c09" ed="T"/>竟相中無有分別——所謂是色，是受、想、行、識，乃
+<lb n="0558c10" ed="T"/>至是一切種智。」</p><p xml:id="pT25p0558c1007" cb:place="inline">佛告須菩提：「如是！如是！色
+<lb n="0558c11" ed="T"/>究竟相中無有分別，受、想、行、識乃至一切種
+<lb n="0558c12" ed="T"/>智究竟相中無有分別——所謂是色乃至是一
+<lb n="0558c13" ed="T"/>切種智。須菩提！是為菩薩摩訶薩難事。如是
+<lb n="0558c14" ed="T"/>觀諸法寂滅相而心不沒不<note resp="Taisho" n="0558008" place="foot text" type="orig">却＝怯【三】</note><note resp="CBETA" n="0558008" type="mod">却【大】，怯【宋】【元】【明】</note><app n="0558008"><lem wit="【大】">却</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">怯</rdg></app>。何以故？<app corresp="#0554005" type="star"><lem wit="【大】">是</lem><rdg resp="Taisho" wit="【石】"><space quantity="0"/></rdg></app>
+<lb n="0558c15" ed="T"/>菩薩摩訶薩作是念：『是諸深法，我應如是知，
+<lb n="0558c16" ed="T"/>得阿耨多羅三藐三菩提；如是寂滅微妙法，
+<lb n="0558c17" ed="T"/>當為眾生說。』是為菩薩摩訶薩為世間究竟
+<lb n="0558c18" ed="T"/>道故發阿耨多羅三藐三菩提心。</p><p xml:id="pT25p0558c1814" cb:place="inline">「云何菩薩
+<lb n="0558c19" ed="T"/>摩訶薩為世間洲故發阿耨多羅三藐三菩提
+<lb n="0558c20" ed="T"/>心？須菩提！若江河大海，四邊水斷，是<note resp="Taisho" n="0558009" place="foot text" type="orig">〔名〕－【三】【宮】</note><note resp="CBETA" n="0558009" type="mod">名【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0558009"><lem wit="【大】">名</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>為
+<lb n="0558c21" ed="T"/>洲。須菩提！色亦如是前後際斷，受、想、行、識
+<lb n="0558c22" ed="T"/>前後際斷，乃至一切種智前後際斷。以是前
+<lb n="0558c23" ed="T"/>後際斷故，一切法亦斷。須菩提！是一切法
+<lb n="0558c24" ed="T"/>前後際斷故，即是寂滅、即是妙<note resp="Taisho" n="0558010" place="foot text" type="orig">寶＝實【聖】</note><note resp="CBETA" n="0558010" type="mod">寶【大】，實【聖】</note><app n="0558010"><lem wit="【大】">寶</lem><rdg resp="Taisho" wit="【聖】">實</rdg></app>——所謂空、
+<lb n="0558c25" ed="T"/>無所得、愛盡無餘、離欲、涅槃。須菩提！菩薩
+<lb n="0558c26" ed="T"/>摩訶薩得阿耨多羅三藐三菩提時，以寂滅
+<lb n="0558c27" ed="T"/>微妙法為眾生說。須菩提！是為菩薩摩訶薩
+<lb n="0558c28" ed="T"/>為世間洲故發阿耨多羅三藐三菩提心。</p><p xml:id="pT25p0558c2817" cb:place="inline">「云
+<lb n="0558c29" ed="T"/>何菩薩摩訶薩為世間將<note resp="Taisho" n="0558011" place="foot text" type="orig">導＝道【聖】</note><note resp="CBETA" n="0558011" type="mod">導【大】，道【聖】</note><app n="0558011"><lem wit="【大】">導</lem><rdg resp="Taisho" wit="【聖】">道</rdg></app><note resp="Taisho" n="0558012" place="foot text" type="orig">〔故發…心〕十二字－【三】【宮】，〔故〕－【聖】</note><note resp="CBETA" n="0558012" type="mod">故發阿耨多羅三藐三菩提心【大】，〔－〕【宋】【元】【明】【宮】，發阿耨多羅三藐三菩提心【聖】</note><app n="0558012"><lem wit="【大】">故發阿耨多
+<pb n="0559a" ed="T" xml:id="T25.1509.0559a"/>
+<lb n="0559a01" ed="T"/>羅三藐三菩提心</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg><rdg resp="Taisho" wit="【聖】">發阿耨多羅三藐三菩提心</rdg></app>？須菩提！菩薩摩訶薩得阿
+<lb n="0559a02" ed="T"/>耨多羅三藐三菩提時，為眾生說色不生不
+<lb n="0559a03" ed="T"/>滅、不垢不淨，說受想行識不生不滅、不垢不
+<lb n="0559a04" ed="T"/>淨；說十二<note resp="Taisho" n="0559001" place="foot text" type="orig">處＝入【聖】＊</note><note resp="CBETA" n="0559001" type="mod">處【大】＊，入【聖】＊</note><app n="0559001"><lem wit="【大】">處</lem><rdg resp="Taisho" wit="【聖】">入</rdg></app>、十八界、四念處乃至八聖道分、
+<lb n="0559a05" ed="T"/>四禪、四無量心、四無色定、五神通不生不滅、不
+<lb n="0559a06" ed="T"/>垢不淨；說須陀洹果乃至阿羅漢果、辟支佛
+<lb n="0559a07" ed="T"/>道不生不滅、不垢不淨；說佛十力乃至一切
+<lb n="0559a08" ed="T"/>種智不生不滅、不垢不淨。須菩提！是為菩薩
+<lb n="0559a09" ed="T"/>摩訶薩為世間將導故發阿耨多羅三藐三菩
+<lb n="0559a10" ed="T"/>提心。」</p>
+<lb n="0559a11" ed="T"/><p xml:id="pT25p0559a1101"><app corresp="#0554008" type="star"><lem wit="【大】">【論】</lem><rdg resp="Taisho" wit="【宋】 【宮】 【聖】"><space quantity="0"/></rdg></app></p><p xml:id="pT25p0559a1102" cb:place="inline">釋曰：</p><p xml:id="pT25p0559a1104" style="margin-left:1em" cb:place="inline">須菩提發希有心白佛言：「諸菩薩
+<lb n="0559a12" ed="T"/>未斷煩惱、大悲未具、未得阿鞞跋致，知諸
+<lb n="0559a13" ed="T"/>法本性空而能發無上道心，是事甚難。」</p><p xml:id="pT25p0559a1316" style="margin-left:1em" cb:place="inline">佛
+<lb n="0559a14" ed="T"/>可其言：「如是！」</p><p xml:id="pT25p0559a1406" style="margin-left:1em" cb:place="inline">更讚菩薩希有因緣，所謂菩
+<lb n="0559a15" ed="T"/>薩安<note resp="Taisho" n="0559002" place="foot text" type="orig">穩＝隱【宮】下同</note><note resp="CBETA" n="0559002" type="mod">穩【大】下同，隱【宮】下同</note><app n="0559002"><lem wit="【大】">穩</lem><rdg resp="Taisho" wit="【宮】">隱</rdg></app>世間故發心。</p><p xml:id="pT25p0559a1509" style="margin-left:1em" cb:place="inline">「安穩」者，能破一切煩
+<lb n="0559a16" ed="T"/>惱，究竟不變失；譬如良藥能破病，不問甘
+<lb n="0559a17" ed="T"/>苦，以能究竟除病、安<anchor xml:id="fxT25p0559a02"/>穩故。佛能使眾生常
+<lb n="0559a18" ed="T"/>安<anchor xml:id="fxT25p0559a03"/>穩，不<note resp="Taisho" n="0559003" place="foot text" type="orig">期＝其【石】</note><note resp="CBETA" n="0559003" type="mod">期【大】，其【石】</note><app n="0559003"><lem wit="【大】">期</lem><rdg resp="Taisho" wit="【石】">其</rdg></app>一世、二世。世間樂者，有法雖
+<lb n="0559a19" ed="T"/>安穩而不樂，有法今世苦、後世樂。如服苦
+<lb n="0559a20" ed="T"/>藥，腹中安穩、口中不美。是故說：「佛能與今世、
+<lb n="0559a21" ed="T"/>後世樂。」六道無常相故非安穩，是故說出
+<lb n="0559a22" ed="T"/>六道名安穩。</p><p xml:id="pT25p0559a2206" style="margin-left:1em" cb:place="inline">世間樂著因緣故，久後必生
+<lb n="0559a23" ed="T"/>憂惱，不名為樂；涅槃樂，始終無變，故說離
+<lb n="0559a24" ed="T"/>憂苦為樂。</p><p xml:id="pT25p0559a2405" style="margin-left:1em" cb:place="inline">「救世間」者，如人為怨賊所逐，
+<lb n="0559a25" ed="T"/>若親戚、若官力能救；眾生亦如是，惡罪諸煩
+<lb n="0559a26" ed="T"/>惱因緣及魔民所逐，<app corresp="#0555004" type="star"><lem wit="【大】">惟</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】 【石】">唯</rdg></app>諸佛能說法救護。</p>
+<lb n="0559a27" ed="T"/><p xml:id="pT25p0559a2701" style="margin-left:1em">「世間歸」者，如人遇暴風疾雨，必歸房舍；世
+<lb n="0559a28" ed="T"/>間種種<app corresp="#0556006" type="star"><lem wit="【大】">邪</lem><rdg resp="Taisho" wit="【聖】">耶</rdg></app>見煩惱等、身心內外苦惱老病死
+<lb n="0559a29" ed="T"/>諸憂苦等，若<note resp="Taisho" n="0559004" place="foot text" type="orig">歸＋（依）【明】</note><note resp="CBETA" n="0559004" type="mod">歸【大】，歸依【明】</note><app n="0559004"><lem wit="【大】">歸</lem><rdg resp="Taisho" wit="【明】">歸依</rdg></app>佛，佛以種種因緣拔其憂
+<pb n="0559b" ed="T" xml:id="T25.1509.0559b"/>
+<lb n="0559b01" ed="T"/>悲苦惱。</p><p xml:id="pT25p0559b0104" style="margin-left:1em" cb:place="inline">「依處」者，一切有為法從和合因緣
+<lb n="0559b02" ed="T"/>生故，無<note resp="Taisho" n="0559005" place="foot text" type="orig">〔有〕－【三】【宮】</note><note resp="CBETA" n="0559005" type="mod">有【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0559005"><lem wit="【大】">有</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>自力、不可依止。眾生為苦所
+<lb n="0559b03" ed="T"/>逼來依止佛，佛為說無依止法。無依止法
+<lb n="0559b04" ed="T"/>者是真實，所謂無餘涅槃，色等五眾滅，更
+<lb n="0559b05" ed="T"/>不相續；不相續即是不生不滅，不生不滅即
+<lb n="0559b06" ed="T"/>是畢竟空，無依止處。</p><p xml:id="pT25p0559b0609" cb:place="inline">問曰：</p><p xml:id="pT25p0559b0611" style="margin-left:1em" cb:place="inline">若無依止處，何以
+<lb n="0559b07" ed="T"/>說依止？</p><p xml:id="pT25p0559b0704" cb:place="inline">答曰：</p><p xml:id="pT25p0559b0706" style="margin-left:1em" cb:place="inline">依止有二種：一者、以愛、見等
+<lb n="0559b08" ed="T"/>諸煩惱依止有為法，二者、清淨智慧說依
+<lb n="0559b09" ed="T"/>止涅槃。煩惱見故說無依止。</p><p xml:id="pT25p0559b0912" style="margin-left:1em" cb:place="inline">「究竟道」者，所謂
+<lb n="0559b10" ed="T"/>諸法實相、畢竟空。色等法，前際中無，後際中
+<lb n="0559b11" ed="T"/>亦無；現在中，<note resp="Taisho" n="0559006" place="foot text" type="orig">（亦無）＋凡【三】【宮】</note><note resp="CBETA" n="0559006" type="mod">凡【大】，亦無凡【宋】【元】【明】【宮】</note><app n="0559006"><lem wit="【大】">凡</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">亦無凡</rdg></app>夫人憶想分別，業果報諸
+<lb n="0559b12" ed="T"/>情力故有顛倒見；聖人以智慧眼觀之皆
+<lb n="0559b13" ed="T"/>虛誑不實。如前、後，中亦爾；若無先後，云何
+<lb n="0559b14" ed="T"/>有中？能如是為眾生說法，則安處眾生
+<lb n="0559b15" ed="T"/>於究竟第一道中。</p><p xml:id="pT25p0559b1508" style="margin-left:1em" cb:place="inline">「世間洲」者，如洲四邊無
+<lb n="0559b16" ed="T"/>地，色等法亦如是，前、後皆不可得；中間，如
+<lb n="0559b17" ed="T"/>究竟道中破。入前、後空故，中間亦空。「水」者，
+<lb n="0559b18" ed="T"/>三漏、<note resp="Taisho" n="0559007" place="foot text" type="orig">四流＋（等）【聖】【石】</note><note resp="CBETA" n="0559007" type="mod">四流【大】，四流等【聖】【石】</note><app n="0559007"><lem wit="【大】">四流</lem><rdg resp="Taisho" wit="【聖】 【石】">四流等</rdg></app>諸煩惱及業果報中一切法。畢竟
+<lb n="0559b19" ed="T"/>空、無所取，所謂涅槃，是為洲。</p><p xml:id="pT25p0559b1912" style="margin-left:1em" cb:place="inline">眾生沒在四
+<lb n="0559b20" ed="T"/>流水中，佛以八正道船引著涅槃洲上。如
+<lb n="0559b21" ed="T"/>是種種因緣接度眾生名為「將導」。<note resp="Taisho" n="0559008" place="foot text" type="orig">卷第七十一終，導＋（大智度經論卷第七十一）【石】</note><note resp="CBETA" n="0559008" type="mod">導【大】，導大智度經論卷第七十一【石】，卷第七十一終</note><anchor type="circle"/></p>
+<lb n="0559b22" ed="T"/><p xml:id="pT25p0559b2201"><anchor type="circle"/><note resp="Taisho" n="0559009" place="foot text" type="orig">卷第七十二首【石】，（摩訶般若波羅蜜品第五十一之余卷第七十二<g ref="#CB01633"/>知品大如品）＋經【石】</note><note resp="CBETA" n="0559009" type="mod">經【大】，摩訶般若波羅蜜品第五十一之余卷第七十二<g ref="#CB01633"/>知品大如品經【石】，卷第七十二首【石】</note><anchor xml:id="fxT25p0559b01"/>【經】</p><p xml:id="pT25p0559b2202" cb:place="inline">「云<note resp="Taisho" n="0559010" place="foot text" type="orig">〔何〕－【聖】</note><note resp="CBETA" n="0559010" type="mod">何【大】，〔－〕【聖】</note><app n="0559010"><lem wit="【大】">何</lem><rdg resp="Taisho" wit="【聖】"><space quantity="0"/></rdg></app>菩薩摩訶薩為世間趣故發阿耨
+<lb n="0559b23" ed="T"/>多羅三藐三菩提心？須菩提！菩薩摩訶薩得
+<lb n="0559b24" ed="T"/>阿耨多羅三藐三菩提時，為眾生說色趣空，
+<lb n="0559b25" ed="T"/>說受、想、行、識趣空，乃至說一切種智趣空。為
+<lb n="0559b26" ed="T"/>眾生說色非趣非不趣。何以故？是色空相，非
+<lb n="0559b27" ed="T"/>趣非不趣。說受、想、行、識非趣非不趣。何以故？
+<lb n="0559b28" ed="T"/>是受、想、行、識空<note resp="Taisho" n="0559011" place="foot text" type="orig">相＝想【聖】</note><note resp="CBETA" n="0559011" type="mod">相【大】，想【聖】</note><app n="0559011"><lem wit="【大】">相</lem><rdg resp="Taisho" wit="【聖】">想</rdg></app>，非趣非不趣。乃至一切種
+<lb n="0559b29" ed="T"/>智非趣非不趣。何以故？<note resp="Taisho" n="0559012" place="foot text" type="orig">〔是〕－【聖】</note><note resp="CBETA" n="0559012" type="mod">是【大】，〔－〕【聖】</note><app n="0559012"><lem wit="【大】">是</lem><rdg resp="Taisho" wit="【聖】"><space quantity="0"/></rdg></app>一切種智空相，
+<pb n="0559c" ed="T" xml:id="T25.1509.0559c"/>
+<lb n="0559c01" ed="T"/>非趣非不趣。如是，須菩提！菩薩摩訶薩為世
+<lb n="0559c02" ed="T"/>間趣故發阿耨多羅三藐三菩提心。何以故？
+<lb n="0559c03" ed="T"/>一切法趣空，是趣不過。何以故？空中，趣、<note resp="Taisho" n="0559013" place="foot text" type="orig">非＝不【三】【宮】</note><note resp="CBETA" n="0559013" type="mod">非【大】，不【宋】【元】【明】【宮】</note><app n="0559013"><lem wit="【大】">非</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">不</rdg></app>趣
+<lb n="0559c04" ed="T"/>不可得故。須菩提！一切法趣無相，是趣不過。
+<lb n="0559c05" ed="T"/>何以故？無相中，趣、非趣不可得故。須菩提！
+<lb n="0559c06" ed="T"/>一切法趣無作，是趣不過。何以故？無作中，
+<lb n="0559c07" ed="T"/>趣、非趣不可得故。須菩提！一切法趣無<note resp="Taisho" n="0559014" place="foot text" type="orig">起＝趣【三】【宮】，【聖】【石】＊</note><note resp="CBETA" n="0559014" type="mod">起【大】，趣【宋】【元】【明】【宮】，【聖】【石】＊</note><app n="0559014"><lem wit="【大】">起</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】 【石】">趣</rdg></app>，
+<lb n="0559c08" ed="T"/>是趣不過。何以故？無<app corresp="#0559014" type="star"><lem wit="【大】">起</lem><rdg resp="Taisho" wit="【聖】 【石】">趣</rdg></app>中，趣、非趣不可得
+<lb n="0559c09" ed="T"/>故。須菩提！一切法趣無所有、不生不滅、不
+<lb n="0559c10" ed="T"/>垢不淨，是趣不過。何以故？無所有、不生不滅、
+<lb n="0559c11" ed="T"/>不垢不淨中，趣、非趣不可得故。</p><p xml:id="pT25p0559c1113" cb:place="inline">「須菩提！一切
+<lb n="0559c12" ed="T"/>法趣<note resp="Taisho" n="0559015" place="foot text" type="orig">（如）＋夢【三】【宮】【聖】【石】</note><note resp="CBETA" n="0559015" type="mod">夢【大】，如夢【宋】【元】【明】【宮】【聖】【石】</note><app n="0559015"><lem wit="【大】">夢</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】 【石】">如夢</rdg></app>，是趣不過。何以故？夢中，趣、非趣不
+<lb n="0559c13" ed="T"/>可得故。須菩提！一切法趣幻、趣<note resp="Taisho" n="0559016" place="foot text" type="orig">嚮＝響【三】【宮】</note><note resp="CBETA" n="0559016" type="mod">嚮【大】，響【宋】【元】【明】【宮】</note><app n="0559016"><lem wit="【大】">嚮</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">響</rdg></app>、趣影、趣
+<lb n="0559c14" ed="T"/>化，<note resp="Taisho" n="0559017" place="foot text" type="orig">〔趣〕－【元】【明】【聖】【石】</note><note resp="CBETA" n="0559017" type="mod">趣【大】，〔－〕【元】【明】【聖】【石】</note><app n="0559017"><lem wit="【大】">趣</lem><rdg resp="Taisho" wit="【元】 【明】 【聖】 【石】"><space quantity="0"/></rdg></app>是趣不過。何以故？是化等中，趣、非趣
+<lb n="0559c15" ed="T"/>不可得故。</p><p xml:id="pT25p0559c1505" cb:place="inline">「須菩提！一切法趣無量、無邊，是趣
+<lb n="0559c16" ed="T"/>不過。何以故？無量、無邊中，趣、非趣不可得故。</p>
+<lb n="0559c17" ed="T"/><p xml:id="pT25p0559c1701">「須菩提！一切法趣不與不取，是趣不過。何以
+<lb n="0559c18" ed="T"/>故？不與不取中，趣、非趣不可得故。須菩提！
+<lb n="0559c19" ed="T"/>一切法趣不舉不下，是趣不過。何以故？<note resp="Taisho" n="0559018" place="foot text" type="orig">〔不舉…故〕三十字－【宮】</note><note resp="CBETA" n="0559018a" type="mod">（不舉…得故）十二字【大】，〔－〕【宮】</note><app n="0559018a" cb:word-count="12"><lem wit="【大】">不
+<lb n="0559c20" ed="T"/>舉不下中，趣、非趣不<note resp="Taisho" n="0559019" place="foot text" type="orig">〔可〕－【石】</note><note resp="CBETA" n="0559019" type="mod">可【大】，〔－〕【石】</note><app n="0559019"><lem wit="【大】">可</lem><rdg resp="Taisho" wit="【石】"><space quantity="0"/></rdg></app>得故。</lem><rdg resp="Taisho" wit="【宮】"><space quantity="0"/></rdg></app></p><p xml:id="pT25p0559c2012" cb:place="inline"><note resp="CBETA" n="0559018b" type="mod">（須菩提…故）十八字【大】，〔－〕【宮】</note><app n="0559018b" cb:word-count="18"><lem wit="【大】">須菩提！一切
+<lb n="0559c21" ed="T"/>法趣不增不減，是趣不過。何以故？</lem><rdg resp="Taisho" wit="【宮】"><space quantity="0"/></rdg></app>無增無減
+<lb n="0559c22" ed="T"/>中，趣、非趣不可得故。須菩提！一切法趣不來
+<lb n="0559c23" ed="T"/>不去，是趣不過。何以故？<note resp="Taisho" n="0559020" place="foot text" type="orig">〔不來不去中〕－【宮】【石】</note><note resp="CBETA" n="0559020" type="mod">不來不去中【大】，〔－〕【宮】【石】</note><app n="0559020"><lem wit="【大】">不來不去中</lem><rdg resp="Taisho" wit="【宮】 【石】"><space quantity="0"/></rdg></app>，趣、非
+<lb n="0559c24" ed="T"/>趣<note resp="Taisho" n="0559021" place="foot text" type="orig">不可得＝中無來無去【宮】【石】</note><note resp="CBETA" n="0559021" type="mod">不可得【大】，中無來無去【宮】【石】</note><app n="0559021"><lem wit="【大】">不可得</lem><rdg resp="Taisho" wit="【宮】 【石】">中無來無去</rdg></app>故。須菩提！一切法趣不入不出、
+<lb n="0559c25" ed="T"/>不合不散、不著不斷，是趣不過。何以故？不著
+<lb n="0559c26" ed="T"/>不斷中，趣、非趣不可得故。</p><p xml:id="pT25p0559c2611" cb:place="inline">「須菩提！一切法
+<lb n="0559c27" ed="T"/>趣我、眾生、壽命、人、起、使<note resp="Taisho" n="0559022" place="foot text" type="orig">起＋（者）【三】【宮】</note><note resp="CBETA" n="0559022" type="mod">起【大】，起者【宋】【元】【明】【宮】</note><app n="0559022"><lem wit="【大】">起</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">起者</rdg></app>、作、使<note resp="Taisho" n="0559023" place="foot text" type="orig">作＋（者）【三】【宮】【聖】【石】</note><note resp="CBETA" n="0559023" type="mod">作【大】，作者【宋】【元】【明】【宮】【聖】【石】</note><app n="0559023"><lem wit="【大】">作</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】 【石】">作者</rdg></app>、知者、見者，
+<lb n="0559c28" ed="T"/>是趣不過。何以故？我乃至知者、見者畢竟
+<lb n="0559c29" ed="T"/>不可得，何況<note resp="Taisho" n="0559024" place="foot text" type="orig">〔當〕－【三】【宮】</note><note resp="CBETA" n="0559024" type="mod">當【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0559024"><lem wit="【大】">當</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>有趣、非趣！</p><p xml:id="pT25p0559c2911" cb:place="inline">「須菩提！一切法
+<pb n="0560a" ed="T" xml:id="T25.1509.0560a"/>
+<lb n="0560a01" ed="T"/>趣<note resp="Taisho" n="0560001" place="foot text" type="orig">〔有〕－【明】【聖】</note><note resp="CBETA" n="0560001" type="mod">有【大】，〔－〕【明】【聖】</note><app n="0560001"><lem wit="【大】">有</lem><rdg resp="Taisho" wit="【明】 【聖】"><space quantity="0"/></rdg></app>常，是趣不過。何以故？<note resp="Taisho" n="0560002" place="foot text" type="orig">（有）＋常【石】</note><note resp="CBETA" n="0560002" type="mod">常【大】，有常【石】</note><app n="0560002"><lem wit="【大】">常</lem><rdg resp="Taisho" wit="【石】">有常</rdg></app>畢竟不可得，
+<lb n="0560a02" ed="T"/>云何當有趣、非趣？須菩提！一切法趣樂、淨、我，
+<lb n="0560a03" ed="T"/>是趣不過。何以故？樂、淨、我畢竟不可得，云何
+<lb n="0560a04" ed="T"/>當有趣、非趣？須菩提！一切法趣無常、苦、不淨、
+<lb n="0560a05" ed="T"/>無我，是趣不過。何以故？無常、苦、不淨、無我畢
+<lb n="0560a06" ed="T"/>竟不可得，云何當有趣、非趣？</p><p xml:id="pT25p0560a0612" cb:place="inline">「須菩提！一切
+<lb n="0560a07" ed="T"/>法趣欲事，是趣不過。何以故？欲事畢竟不可
+<lb n="0560a08" ed="T"/>得，何況當有趣、非趣？須菩提！一切法趣瞋
+<lb n="0560a09" ed="T"/>事、癡事、見事，是趣不過。何以故？瞋事、癡事、見
+<lb n="0560a10" ed="T"/>事畢竟不可得，何況當有趣、非趣？</p><p xml:id="pT25p0560a1014" cb:place="inline">「須菩提！
+<lb n="0560a11" ed="T"/>一切法趣如，是趣不過。何以故？如中無來無
+<lb n="0560a12" ed="T"/>去故。須菩提！一切法趣法性、實際、不可思議
+<lb n="0560a13" ed="T"/>性，是趣不過。何以故？法性、實際、不可思議性
+<lb n="0560a14" ed="T"/>中無來無去故。須菩提！一切法趣平等，是趣
+<lb n="0560a15" ed="T"/>不過。何以故？平等中，趣、非趣不可得故。須
+<lb n="0560a16" ed="T"/>菩提！一切法趣不動相，是趣不過。何以故？
+<lb n="0560a17" ed="T"/>不動相中，趣、非趣不可得故。</p><p xml:id="pT25p0560a1712" cb:place="inline">「須菩提！一切法
+<lb n="0560a18" ed="T"/>趣色，是趣不過。何以故？色畢竟不可<note resp="Taisho" n="0560003" place="foot text" type="orig">得＋（故）【三】【宮】【聖】</note><note resp="CBETA" n="0560003" type="mod">得【大】，得故【宋】【元】【明】【宮】【聖】</note><app n="0560003"><lem wit="【大】">得</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】">得故</rdg></app>，云
+<lb n="0560a19" ed="T"/>何當有趣、非趣？須菩提！一切法趣受、想、行、識，
+<lb n="0560a20" ed="T"/>是趣不過。何以故？受、想、行、識畢竟不可得，
+<lb n="0560a21" ed="T"/>云何當有趣、非趣？十二處、十八界亦如是。</p><p xml:id="pT25p0560a2117" cb:place="inline">「須
+<lb n="0560a22" ed="T"/>菩提！一切法趣檀波羅蜜，是趣不過。何以故？
+<lb n="0560a23" ed="T"/>檀畢竟不可得<note resp="Taisho" n="0560004" place="foot text" type="orig">〔故〕－【聖】【石】</note><note resp="CBETA" n="0560004" type="mod">故【大】，〔－〕【聖】【石】</note><app n="0560004"><lem wit="【大】">故</lem><rdg resp="Taisho" wit="【聖】 【石】"><space quantity="0"/></rdg></app>，云何當有趣、非趣？須菩
+<lb n="0560a24" ed="T"/>提！一切法趣尸羅波羅蜜，是趣不過。何以故？
+<lb n="0560a25" ed="T"/>尸羅畢竟不可得故，云何當有趣、非趣？須菩
+<lb n="0560a26" ed="T"/>提！一切法趣羼提波羅蜜，是趣不過。何以故？
+<lb n="0560a27" ed="T"/>羼提畢竟不可得故，云何當有趣、非趣？須菩
+<lb n="0560a28" ed="T"/>提！一切法趣毘梨耶波羅蜜，是趣不過。何以
+<lb n="0560a29" ed="T"/>故？毘梨耶畢竟不可得故，云何當有趣、非趣？
+<pb n="0560b" ed="T" xml:id="T25.1509.0560b"/>
+<lb n="0560b01" ed="T"/>須菩提！一切法趣禪波羅蜜，是趣不過。何以
+<lb n="0560b02" ed="T"/>故？禪畢竟不可得故，云何當有趣、非趣？須
+<lb n="0560b03" ed="T"/>菩提！一切法趣般若波羅蜜，是趣不過。何以
+<lb n="0560b04" ed="T"/>故？般若畢竟不可得故，云何當有趣、非趣？</p>
+<lb n="0560b05" ed="T"/><p xml:id="pT25p0560b0501">「須菩提！一切法趣內空，是趣不過。何以故？
+<lb n="0560b06" ed="T"/>內空畢竟不可得故，云何當有趣、非趣？須菩
+<lb n="0560b07" ed="T"/>提！一切法趣外空，是趣不過。何以故？外空畢
+<lb n="0560b08" ed="T"/>竟不可得故，云何當有趣、非趣？須菩提！一切
+<lb n="0560b09" ed="T"/>法趣內外空，是趣不過。何以故？內外空畢竟
+<lb n="0560b10" ed="T"/>不可得故，云何當有趣、非趣？乃至一切法趣
+<lb n="0560b11" ed="T"/>無法有法空，是趣不過。何以故？無法有法空
+<lb n="0560b12" ed="T"/>畢竟不可得故，云何當有趣、非趣？</p><p xml:id="pT25p0560b1214" cb:place="inline">「須菩提！
+<lb n="0560b13" ed="T"/>一切法趣四念處乃至八聖道分，是趣不過。
+<lb n="0560b14" ed="T"/>何以故？四念處乃至八聖道分畢竟不可得
+<lb n="0560b15" ed="T"/>故，云何當有趣、非趣？</p><p xml:id="pT25p0560b1509" cb:place="inline">「須菩提！一切法趣佛十
+<lb n="0560b16" ed="T"/>力乃至一切種智，是趣不過。何以故？一切種
+<lb n="0560b17" ed="T"/>智中，趣、非趣不可得故。</p><p xml:id="pT25p0560b1710" cb:place="inline">「須菩提！一切法趣須
+<lb n="0560b18" ed="T"/>陀洹果、斯陀含果、阿那含果、阿羅漢果、辟支佛
+<lb n="0560b19" ed="T"/>道，是趣不過。何以故？須陀洹果乃至辟支佛
+<lb n="0560b20" ed="T"/>道中，趣、非趣不可得故。須菩提！一切法趣阿
+<lb n="0560b21" ed="T"/>耨多羅三藐三菩提，是趣不過。何以故？阿耨
+<lb n="0560b22" ed="T"/>多羅三藐三菩提中，趣、非趣不可得故。須菩
+<lb n="0560b23" ed="T"/>提！一切法趣須陀洹乃至佛，是趣不過。何以
+<lb n="0560b24" ed="T"/>故？須陀洹乃至佛中，趣、非趣不可得故。」</p><p xml:id="pT25p0560b2416" cb:place="inline">須菩
+<lb n="0560b25" ed="T"/>提白佛言：「世尊！是深般若波羅蜜誰能信解
+<lb n="0560b26" ed="T"/>者？」</p><p xml:id="pT25p0560b2602" cb:place="inline">佛告須菩提：「有菩薩摩訶薩先於諸佛所
+<lb n="0560b27" ed="T"/>久行六波羅蜜、善根<note resp="Taisho" n="0560005" place="foot text" type="orig">純＝淳【聖】【石】</note><note resp="CBETA" n="0560005" type="mod">純【大】，淳【聖】【石】</note><app n="0560005"><lem wit="【大】">純</lem><rdg resp="Taisho" wit="【聖】 【石】">淳</rdg></app>熟、供養無數百千
+<lb n="0560b28" ed="T"/><note resp="Taisho" n="0560006" place="foot text" type="orig">〔萬〕－【宋】【宮】</note><note resp="CBETA" n="0560006" type="mod">萬【大】，〔－〕【宋】【宮】</note><app n="0560006"><lem wit="【大】">萬</lem><rdg resp="Taisho" wit="【宋】 【宮】"><space quantity="0"/></rdg></app>億諸佛、與善知識相隨，是輩人能信解深
+<lb n="0560b29" ed="T"/>般若波羅蜜。」</p><p xml:id="pT25p0560b2906" cb:place="inline">須菩提白佛言：「世尊！能信解是
+<pb n="0560c" ed="T" xml:id="T25.1509.0560c"/>
+<lb n="0560c01" ed="T"/>深般若波羅蜜者，有何等性、何等相、何等
+<lb n="0560c02" ed="T"/><note resp="Taisho" n="0560007" place="foot text" type="orig">貌＝<g ref="#CB01505"/>【聖】＊</note><note resp="CBETA" n="0560007" type="mod">貌【大】＊，<g ref="#CB01505"/>【聖】＊</note><app n="0560007"><lem wit="【大】">貌</lem><rdg resp="Taisho" wit="【聖】"><g ref="#CB01505"/></rdg></app>？」</p><p xml:id="pT25p0560c0202" cb:place="inline">佛言：「欲、<note resp="Taisho" n="0560008" place="foot text" type="orig">瞋＝恚【聖】</note><note resp="CBETA" n="0560008" type="mod">瞋【大】，恚【聖】</note><app n="0560008"><lem wit="【大】">瞋</lem><rdg resp="Taisho" wit="【聖】">恚</rdg></app>、癡斷離是性、相、<app corresp="#0560007" type="star"><lem wit="【大】">貌</lem><rdg resp="Taisho" wit="【聖】"><g ref="#CB01505"/></rdg></app>，是菩薩
+<lb n="0560c03" ed="T"/>摩訶薩則能信解深般若波羅蜜。」</p>
+<lb n="0560c04" ed="T"/><p xml:id="pT25p0560c0401"><app corresp="#0554008" type="star"><lem wit="【大】">【論】</lem><rdg resp="Taisho" wit="【宋】 【宮】 【聖】"><space quantity="0"/></rdg></app></p><p xml:id="pT25p0560c0402" cb:place="inline">問曰：</p><p xml:id="pT25p0560c0404" style="margin-left:1em" cb:place="inline">上諸事中略說，今「趣」中何以廣說？</p>
+<lb n="0560c05" ed="T"/><p xml:id="pT25p0560c0501">答曰：</p><p xml:id="pT25p0560c0503" style="margin-left:1em" cb:place="inline">「趣」<note resp="Taisho" n="0560009" place="foot text" type="orig">是＋（乃至品竟）【三】【宮】【聖】【石】</note><note resp="CBETA" n="0560009" type="mod">是【大】，是乃至品竟【宋】【元】【明】【宮】【聖】【石】</note><app n="0560009"><lem wit="【大】">是</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】 【石】">是乃至品竟</rdg></app>總上九事之會歸，是故多說。</p>
+<lb n="0560c06" ed="T"/><p xml:id="pT25p0560c0601" style="margin-left:1em">復次，安樂等及趣皆同一義，俱出眾生著
+<lb n="0560c07" ed="T"/>涅槃故。若事事廣說則不可盡，「趣」最在後
+<lb n="0560c08" ed="T"/>故廣說；當知餘者亦皆應廣說。</p><p xml:id="pT25p0560c0813" style="margin-left:1em" cb:place="inline">「色等法趣
+<lb n="0560c09" ed="T"/>空」者，如虛空但有名而無法；色等法亦
+<lb n="0560c10" ed="T"/>爾，終歸於空。諸法究竟相必空故，餘者皆虛
+<lb n="0560c11" ed="T"/>妄。如人初雖有善言，久久乃知情實；色
+<lb n="0560c12" ed="T"/>等諸法亦如是，入無餘涅槃時與虛空
+<lb n="0560c13" ed="T"/>無異，當知先亦如是，但凡夫顛倒果報故
+<lb n="0560c14" ed="T"/>見異。一切法無有過出空等諸相，如人欲
+<lb n="0560c15" ed="T"/>出過虛空不可得。</p><p xml:id="pT25p0560c1508" style="margin-left:1em" cb:place="inline">我等十六名，皆因五眾
+<lb n="0560c16" ed="T"/>和合假有此名，無有實法，云何當有趣、非
+<lb n="0560c17" ed="T"/>趣？</p><p xml:id="pT25p0560c1702" style="margin-left:1em" cb:place="inline">若常、淨、樂、我等四顛倒破四聖行。如常等
+<lb n="0560c18" ed="T"/>四法不可得，以顛倒故；色等諸法亦如是。
+<lb n="0560c19" ed="T"/>如常等不可得，無常等從常等出故亦不
+<lb n="0560c20" ed="T"/>可得。是故說：「一切法趣常等、趣無常等。」</p><p xml:id="pT25p0560c2016" style="margin-left:1em" cb:place="inline">須
+<lb n="0560c21" ed="T"/>菩提問佛：「是法甚深微細，誰當信解者？」</p><p xml:id="pT25p0560c2116" style="margin-left:1em" cb:place="inline">佛答
+<lb n="0560c22" ed="T"/>說：「久行等因緣能信。」</p><p xml:id="pT25p0560c2209" style="margin-left:1em" cb:place="inline">更問：「久行等人有何等
+<lb n="0560c23" ed="T"/>相？」</p><p xml:id="pT25p0560c2302" style="margin-left:1em" cb:place="inline">佛答：「是人離三毒心，亦不見是離，深入
+<lb n="0560c24" ed="T"/>諸法實相故。」</p><p xml:id="pT25p0560c2406" cb:place="inline">問曰：</p><p xml:id="pT25p0560c2408" style="margin-left:1em" cb:place="inline">是人未得無生忍法，云
+<lb n="0560c25" ed="T"/>何言「斷三毒」？</p><p xml:id="pT25p0560c2506" cb:place="inline">答曰：</p><p xml:id="pT25p0560c2508" style="margin-left:1em" cb:place="inline">斷有二種：一者、根本斷，
+<lb n="0560c26" ed="T"/>二者、薄少斷。此中說薄少斷。行者不分別
+<lb n="0560c27" ed="T"/>是斷、是煩惱。何以故？煩惱相顛倒不定故，煩
+<lb n="0560c28" ed="T"/>惱即是斷，是故言<note resp="Taisho" n="0560010" place="foot text" type="orig">離＋（釋五十一品竟）【聖】【石】</note><note resp="CBETA" n="0560010" type="mod">離【大】，離釋五十一品竟【聖】【石】</note><app n="0560010"><lem wit="【大】">離</lem><rdg resp="Taisho" wit="【聖】 【石】">離釋五十一品竟</rdg></app>。</p></cb:div>
+<lb n="0560c29" ed="T"/><cb:div type="pin"><cb:mulu n="53" level="1" type="品">53 趣一切智品</cb:mulu><head><note resp="Taisho" n="0560011" place="foot text" type="orig">〔大智度論〕－【明】，（（大智…三））十四字＝（（摩訶般若波羅蜜驗知品第五十二））十四字【聖】，（（摩訶般若波羅蜜經品第五十二驗知品趣一切智））二十字【石】</note><note resp="CBETA" n="0560011a" type="mod">大智度論釋趣一切智品第五十三【大】，摩訶般若波羅蜜驗知品第五十二【聖】，摩訶般若波羅蜜經品第五十二驗知品趣一切智【石】</note><app n="0560011a"><lem wit="【大】"><title type="jing"><note resp="CBETA" n="0560011b" type="mod">大智度論【大】，〔－〕【明】</note><app n="0560011b"><lem wit="【大】">大智<app corresp="#0557009" type="star"><lem wit="【大】">度</lem><rdg resp="Taisho" wit="【宋】 【宮】"><space quantity="0"/></rdg></app>論</lem><rdg resp="Taisho" wit="【明】"><space quantity="0"/></rdg></app>釋</title>趣<note resp="Taisho" n="0560012" place="foot text" type="orig">〔一切〕－【三】【宮】</note><note resp="CBETA" n="0560012" type="mod">一切【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0560012"><lem wit="【大】">一切</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>智品第五十<note resp="Taisho" n="0560013" place="foot text" type="orig">三＋（經作趣一切智品）夾註【宮】，三＋（品）【宮】</note><note resp="CBETA" n="0560013" type="mod">三【大】，三<note place="inline">經作趣一切智品</note>【明】，三品【宮】</note><app n="0560013"><lem wit="【大】">三</lem><rdg resp="Taisho" wit="【明】">三<note place="inline">經作趣一切智品</note></rdg><rdg resp="Taisho" wit="【宮】">三品</rdg></app></lem><rdg resp="Taisho" wit="【聖】">摩訶般若波羅蜜驗知品第五十二</rdg><rdg resp="Taisho" wit="【石】">摩訶般若波羅蜜經品第五十二驗知品趣一切智</rdg></app></head>
+<pb n="0561a" ed="T" xml:id="T25.1509.0561a"/>
+<lb n="0561a01" ed="T"/><p xml:id="pT25p0561a0101"><anchor xml:id="fxT25p0561a01"/>【經】</p><p xml:id="pT25p0561a0102" cb:place="inline">須菩提白佛言：「世尊！是諸菩薩摩訶薩
+<lb n="0561a02" ed="T"/><note resp="Taisho" n="0561001" place="foot text" type="orig">（能）＋解【元】【明】</note><note resp="CBETA" n="0561001" type="mod">解【大】，能解【元】【明】</note><app n="0561001"><lem wit="【大】">解</lem><rdg resp="Taisho" wit="【元】 【明】">能解</rdg></app>深般若波羅蜜者，當趣何所？」</p><p xml:id="pT25p0561a0213" cb:place="inline">佛告須菩
+<lb n="0561a03" ed="T"/>提：「是菩薩摩訶薩解深般若波羅蜜<note resp="Taisho" n="0561002" place="foot text" type="orig">〔者〕－【元】【明】【宮】</note><note resp="CBETA" n="0561002" type="mod">者【大】，〔－〕【元】【明】【宮】</note><app n="0561002"><lem wit="【大】">者</lem><rdg resp="Taisho" wit="【元】 【明】 【宮】"><space quantity="0"/></rdg></app>，當趣
+<lb n="0561a04" ed="T"/>一切種智。」</p><p xml:id="pT25p0561a0405" cb:place="inline">須菩提白佛言：「世尊！是菩薩摩
+<lb n="0561a05" ed="T"/>訶薩能趣一切種智者，<note resp="Taisho" n="0561003" place="foot text" type="orig">則＝是【三】，〔則〕－【宮】</note><note resp="CBETA" n="0561003" type="mod">則【大】，是【宋】【元】【明】，〔－〕【宮】</note><app n="0561003"><lem wit="【大】">則</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">是</rdg><rdg resp="Taisho" wit="【宮】"><space quantity="0"/></rdg></app>為一切眾生所歸
+<lb n="0561a06" ed="T"/>趣，修般若波羅蜜故。世尊！修般若波羅蜜
+<lb n="0561a07" ed="T"/>即<app corresp="#0554005" type="star"><lem wit="【大】">是</lem><rdg resp="Taisho" wit="【石】"><space quantity="0"/></rdg></app>修一切<note resp="Taisho" n="0561004" place="foot text" type="orig">〔諸〕－【聖】</note><note resp="CBETA" n="0561004" type="mod">諸【大】，〔－〕【聖】</note><app n="0561004"><lem wit="【大】">諸</lem><rdg resp="Taisho" wit="【聖】"><space quantity="0"/></rdg></app>法。世尊！無所修是修般
+<lb n="0561a08" ed="T"/>若波羅蜜，不受修、壞修是修般若波羅蜜。」</p><p xml:id="pT25p0561a0817" cb:place="inline">佛
+<lb n="0561a09" ed="T"/>告須菩提：「何等法壞故，<note resp="Taisho" n="0561005" place="foot text" type="orig">（修）＋般若【三】【宮】</note><note resp="CBETA" n="0561005" type="mod">般若【大】，修般若【宋】【元】【明】【宮】</note><app n="0561005"><lem wit="【大】">般若</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">修般若</rdg></app>波羅蜜為壞
+<lb n="0561a10" ed="T"/>修？」</p><p xml:id="pT25p0561a1002" cb:place="inline">「世尊！色壞故，般若波羅蜜為壞修；受、想、
+<lb n="0561a11" ed="T"/>行、識、十二<app corresp="#0559001" type="star"><lem wit="【大】">處</lem><rdg resp="Taisho" wit="【聖】">入</rdg></app>、十八界壞故，般若波羅蜜為壞
+<lb n="0561a12" ed="T"/>修；我乃至知者、見者壞故，般若波羅蜜為壞
+<lb n="0561a13" ed="T"/>修。世尊！檀波羅蜜壞故，般若波羅蜜為壞
+<lb n="0561a14" ed="T"/>修；乃至般若波羅蜜壞故，般若波羅蜜為壞
+<lb n="0561a15" ed="T"/>修；內空乃至無法有法空、四念處乃至十八
+<lb n="0561a16" ed="T"/>不共法、須陀洹果乃至一切種智壞故，般若
+<lb n="0561a17" ed="T"/>波羅蜜為壞修。」</p><p xml:id="pT25p0561a1707" cb:place="inline">佛言：「如是！如是！須菩提！色
+<lb n="0561a18" ed="T"/>壞故，般若波羅蜜為壞修；乃至一切種智壞
+<lb n="0561a19" ed="T"/>故，般若波羅蜜為壞修。」</p><p xml:id="pT25p0561a1910" cb:place="inline">爾時，佛告須菩提：
+<lb n="0561a20" ed="T"/>「是深般若波羅蜜中，阿鞞跋致菩薩摩訶薩
+<lb n="0561a21" ed="T"/><note resp="Taisho" n="0561006" place="foot text" type="orig">〔應〕－【聖】</note><note resp="CBETA" n="0561006" type="mod">應【大】，〔－〕【聖】</note><app n="0561006"><lem wit="【大】">應</lem><rdg resp="Taisho" wit="【聖】"><space quantity="0"/></rdg></app>當驗知！若菩薩摩訶薩是深般若波羅蜜
+<lb n="0561a22" ed="T"/>中不著，當知是阿鞞跋<note resp="Taisho" n="0561007" place="foot text" type="orig">致＋（相）【聖】【石】</note><note resp="CBETA" n="0561007" type="mod">致【大】，致相【聖】【石】</note><app n="0561007"><lem wit="【大】">致</lem><rdg resp="Taisho" wit="【聖】 【石】">致相</rdg></app>；禪波羅蜜乃至
+<lb n="0561a23" ed="T"/>檀波羅蜜中不著，四念處乃至一切種智中
+<lb n="0561a24" ed="T"/>不著，當知是阿鞞跋致。」</p>
+<lb n="0561a25" ed="T"/><p xml:id="pT25p0561a2501"><app corresp="#0554008" type="star"><lem wit="【大】">【論】</lem><rdg resp="Taisho" wit="【宋】 【宮】 【聖】"><space quantity="0"/></rdg></app></p><p xml:id="pT25p0561a2502" cb:place="inline">問曰：</p><p xml:id="pT25p0561a2504" style="margin-left:1em" cb:place="inline">般若波羅蜜非趣、非不趣，須菩提
+<lb n="0561a26" ed="T"/>何以故問「行般若者趣至何處」？又佛何以
+<lb n="0561a27" ed="T"/>答「趣薩婆若」？</p><p xml:id="pT25p0561a2706" cb:place="inline">答曰：</p><p xml:id="pT25p0561a2708" style="margin-left:1em" cb:place="inline">外道言：「諸法從因趣果、
+<lb n="0561a28" ed="T"/>從先世入今世、從今世趣後世。」破是常
+<lb n="0561a29" ed="T"/>顛倒故，言「無趣不趣」。</p><p xml:id="pT25p0561a2909" style="margin-left:1em" cb:place="inline">此中，須菩提以無著
+<pb n="0561b" ed="T" xml:id="T25.1509.0561b"/>
+<lb n="0561b01" ed="T"/>心問，佛以無著心答。般若波羅蜜畢竟空，
+<lb n="0561b02" ed="T"/>於諸法無障無礙；得無障無礙解脫故無
+<lb n="0561b03" ed="T"/>障無礙。因果相似故，<note resp="Taisho" n="0561008" place="foot text" type="orig">〔故〕－【三】</note><note resp="CBETA" n="0561008" type="mod">故【大】，〔－〕【宋】【元】【明】</note><app n="0561008"><lem wit="【大】">故</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>言：「解深<note resp="Taisho" n="0561009" place="foot text" type="orig">般若＋（波羅蜜）【聖】【石】</note><note resp="CBETA" n="0561009" type="mod">般若【大】，般若波羅蜜【聖】【石】</note><app n="0561009"><lem wit="【大】">般若</lem><rdg resp="Taisho" wit="【聖】 【石】">般若波羅蜜</rdg></app>者，
+<lb n="0561b04" ed="T"/>趣一切種智。」</p><p xml:id="pT25p0561b0406" style="margin-left:1em" cb:place="inline">須菩提言：「菩薩知般若波羅
+<lb n="0561b05" ed="T"/>蜜者為一切眾生所歸趣。」如子為苦惱所
+<lb n="0561b06" ed="T"/>逼，則趣父母。</p><p xml:id="pT25p0561b0606" cb:place="inline">問曰：</p><p xml:id="pT25p0561b0608" style="margin-left:1em" cb:place="inline">何以故但菩薩解<note resp="Taisho" n="0561010" place="foot text" type="orig">〔深〕－【宋】【宮】</note><note resp="CBETA" n="0561010" type="mod">深【大】，〔－〕【宋】【宮】</note><app n="0561010"><lem wit="【大】">深</lem><rdg resp="Taisho" wit="【宋】 【宮】"><space quantity="0"/></rdg></app>般
+<lb n="0561b07" ed="T"/>若波羅蜜為眾生所歸趣？</p><p xml:id="pT25p0561b0711" cb:place="inline">答曰：</p><p xml:id="pT25p0561b0713" style="margin-left:1em" cb:place="inline">菩薩於眾
+<lb n="0561b08" ed="T"/>生中大悲心故，常修習般若波羅蜜。以修
+<lb n="0561b09" ed="T"/>故，能解一切諸法皆入般若波羅蜜，是故
+<lb n="0561b10" ed="T"/>「修般若波羅蜜即修一切法」。</p><p xml:id="pT25p0561b1012" style="margin-left:1em" cb:place="inline">般若無定實
+<lb n="0561b11" ed="T"/>法可得，故經中說「無所修是修般若波羅
+<lb n="0561b12" ed="T"/>蜜」。般若波羅蜜中，一切諸觀有過故不受，是
+<lb n="0561b13" ed="T"/><note resp="Taisho" n="0561011" place="foot text" type="orig">名＝必【聖】</note><note resp="CBETA" n="0561011" type="mod">名【大】，必【聖】</note><app n="0561011"><lem wit="【大】">名</lem><rdg resp="Taisho" wit="【聖】">必</rdg></app>不受修。壞修者，一切法無常散壞，故名
+<lb n="0561b14" ed="T"/>壞修。可破壞法者，所謂色等乃至一切種
+<lb n="0561b15" ed="T"/>智。</p><p xml:id="pT25p0561b1502" style="margin-left:1em" cb:place="inline">佛可須菩提所說。</p><p xml:id="pT25p0561b1509" style="margin-left:1em" cb:place="inline">上品<note n="0561b1501" resp="CBETA" type="add">末【CB】，未【大】</note><app n="0561b1501"><lem wit="【CB】" resp="CBETA.maha">末</lem><rdg wit="【大】">未</rdg></app>說阿鞞跋致
+<lb n="0561b16" ed="T"/>菩薩性、相、<app corresp="#0560007" type="star"><lem wit="【大】">貌</lem><rdg resp="Taisho" wit="【聖】"><g ref="#CB01505"/></rdg></app>，今應驗試知。於深般若波羅
+<lb n="0561b17" ed="T"/>蜜中著不？若著，則非；若不著，則是其相。</p><p xml:id="pT25p0561b1716" style="margin-left:1em" cb:place="inline">行
+<lb n="0561b18" ed="T"/>般若波羅蜜菩薩有二種：一者、因般若波羅
+<lb n="0561b19" ed="T"/>蜜觀一切法畢竟空，般若亦自空；二者、不
+<lb n="0561b20" ed="T"/>能觀般若亦空。是故經中試知著不？</p>
+<lb n="0561b21" ed="T"/><p xml:id="pT25p0561b2101"><anchor xml:id="fxT25p0561b02"/>【經】</p><p xml:id="pT25p0561b2102" cb:place="inline">「<note resp="Taisho" n="0561012" place="foot text" type="orig">若＋（有）【三】【聖】【石】</note><note resp="CBETA" n="0561012" type="mod">若【大】，若有【宋】【元】【明】【聖】【石】</note><app n="0561012"><lem wit="【大】">若</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】 【石】">若有</rdg></app>阿鞞跋致菩薩摩訶薩行深般若波
+<lb n="0561b22" ed="T"/>羅蜜時，不以他人語為堅要，亦不隨他教行。
+<lb n="0561b23" ed="T"/>阿鞞跋致菩薩摩訶薩不為欲心、瞋心、癡心
+<lb n="0561b24" ed="T"/>所牽。若阿鞞跋致菩薩摩訶薩不遠離六波
+<lb n="0561b25" ed="T"/>羅蜜。若阿鞞跋致菩薩摩訶薩聞說深般若
+<lb n="0561b26" ed="T"/>波羅蜜時，心不驚、不沒、不怖、不畏、不悔，歡喜
+<lb n="0561b27" ed="T"/>樂聞，受持、讀、誦、正憶念、如說行。須菩提！當知
+<lb n="0561b28" ed="T"/>是菩薩先世已<note resp="Taisho" n="0561013" place="foot text" type="orig">問＝聞【三】【宮】【聖】</note><note resp="CBETA" n="0561013" type="mod">問【大】，聞【宋】【元】【明】【宮】【聖】</note><app n="0561013"><lem wit="【大】">問</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【聖】">聞</rdg></app>是深般若波羅蜜中事已，
+<lb n="0561b29" ed="T"/>受持、讀、誦、說、正憶念。何以故？是菩薩摩訶薩
+<pb n="0561c" ed="T" xml:id="T25.1509.0561c"/>
+<lb n="0561c01" ed="T"/>有大威德故，聞是深般若波羅蜜，心不驚、不
+<lb n="0561c02" ed="T"/>怖、不畏、不沒、不悔，歡喜樂聞，受持、讀、誦、正憶
+<lb n="0561c03" ed="T"/>念。」</p><p xml:id="pT25p0561c0302" cb:place="inline">須菩提白佛言：「世尊！若菩薩摩訶薩聞
+<lb n="0561c04" ed="T"/>深般若波羅蜜，不驚、不怖乃至正憶念，世尊！
+<lb n="0561c05" ed="T"/>是菩薩摩訶薩云何行般若波羅蜜？」</p><p xml:id="pT25p0561c0515" cb:place="inline">佛言：「隨
+<lb n="0561c06" ed="T"/>順一切種智心，是菩薩摩訶薩應如是行般
+<lb n="0561c07" ed="T"/>若波羅蜜。」</p><p xml:id="pT25p0561c0705" cb:place="inline">「世尊！云何名隨順一切種智心，
+<lb n="0561c08" ed="T"/>是菩薩摩訶薩應如是行般若波羅蜜？」</p><p xml:id="pT25p0561c0816" cb:place="inline">佛言：
+<lb n="0561c09" ed="T"/>「以空隨順，是為菩薩摩訶薩行深般若波羅
+<lb n="0561c10" ed="T"/>蜜；以無相、無作、無所有、不生不滅、不垢不淨
+<lb n="0561c11" ed="T"/>隨順，是菩薩摩訶薩應如是行般若波羅蜜；
+<lb n="0561c12" ed="T"/>以如夢、幻、炎、<note resp="Taisho" n="0561014" place="foot text" type="orig">嚮＝響【元】【明】</note><note resp="CBETA" n="0561014" type="mod">嚮【大】，響【元】【明】</note><app n="0561014"><lem wit="【大】">嚮</lem><rdg resp="Taisho" wit="【元】 【明】">響</rdg></app>、化隨順，是行般若波羅蜜。」</p>
+<lb n="0561c13" ed="T"/><p xml:id="pT25p0561c1301">須菩提白佛言：「佛說以空隨順乃至如夢如
+<lb n="0561c14" ed="T"/>幻隨順，是行般若波羅蜜。世尊！是菩薩摩
+<lb n="0561c15" ed="T"/>訶薩<note resp="Taisho" n="0561015" place="foot text" type="orig">行＝觀【聖】</note><note resp="CBETA" n="0561015" type="mod">行【大】，觀【聖】</note><app n="0561015"><lem wit="【大】">行</lem><rdg resp="Taisho" wit="【聖】">觀</rdg></app>何法——若色，若受、想、行、識，乃至一切種
+<lb n="0561c16" ed="T"/>智？」</p><p xml:id="pT25p0561c1602" cb:place="inline">佛告須菩提：「菩薩摩訶薩不行色，不行受、
+<lb n="0561c17" ed="T"/>想、行、識，乃至不行一切種智。何以故？是菩
+<lb n="0561c18" ed="T"/>薩<note resp="Taisho" n="0561016" place="foot text" type="orig">〔摩訶薩〕－【三】【宮】</note><note resp="CBETA" n="0561016" type="mod">摩訶薩【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0561016"><lem wit="【大】">摩訶薩</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app><note resp="Taisho" n="0561017" place="foot text" type="orig">（無）＋行【宋】【聖】【石】</note><note resp="CBETA" n="0561017" type="mod">行【大】，無行【宋】【聖】【石】</note><app n="0561017"><lem wit="【大】">行</lem><rdg resp="Taisho" wit="【宋】 【聖】 【石】">無行</rdg></app>處，無作法、無壞法、無所從來、
+<lb n="0561c19" ed="T"/>亦無所去、無住處，是<note resp="Taisho" n="0561018" place="foot text" type="orig">法＋（相）【聖】【石】</note><note resp="CBETA" n="0561018" type="mod">法【大】，法相【聖】【石】</note><app n="0561018"><lem wit="【大】">法</lem><rdg resp="Taisho" wit="【聖】 【石】">法相</rdg></app>不可數、無有量；若
+<lb n="0561c20" ed="T"/>無數、無量，是法不可得——不可以色得，乃至
+<lb n="0561c21" ed="T"/>不可以一切種智得。何以故？色即是薩婆
+<lb n="0561c22" ed="T"/><note resp="Taisho" n="0561019" place="foot text" type="orig">若＋（薩婆若即是色）【元】【明】</note><note resp="CBETA" n="0561019" type="mod">若【大】，若薩婆若即是色【元】【明】</note><app n="0561019"><lem wit="【大】">若</lem><rdg resp="Taisho" wit="【元】 【明】">若薩婆若即是色</rdg></app>，乃至一切種智即是薩婆<note resp="Taisho" n="0561020" place="foot text" type="orig">若＋（薩婆若即是一切種智）【元】【明】</note><note resp="CBETA" n="0561020" type="mod">若【大】，若薩婆若即是一切種智【元】【明】</note><app n="0561020"><lem wit="【大】">若</lem><rdg resp="Taisho" wit="【元】 【明】">若薩婆若即是一切種智</rdg></app>。色如相乃
+<lb n="0561c23" ed="T"/>至一切種智如相皆是一如，無二無別。」</p>
+<lb n="0561c24" ed="T"/><p xml:id="pT25p0561c2401"><app corresp="#0554008" type="star"><lem wit="【大】">【論】</lem><rdg resp="Taisho" wit="【宋】 【宮】 【聖】"><space quantity="0"/></rdg></app></p><p xml:id="pT25p0561c2402" cb:place="inline">釋曰：</p><p xml:id="pT25p0561c2404" style="margin-left:1em" cb:place="inline">阿鞞跋致菩薩所<note resp="Taisho" n="0561021" place="foot text" type="orig">說＝試【三】，誡【聖】【石】</note><note resp="CBETA" n="0561021" type="mod">說【大】，試【宋】【元】【明】，誡【聖】【石】</note><app n="0561021"><lem wit="【大】">說</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">試</rdg><rdg resp="Taisho" wit="【聖】 【石】">誡</rdg></app>事，於他語言
+<lb n="0561c25" ed="T"/>中不生念：「是中有實、不實。」何以故？他人有
+<lb n="0561c26" ed="T"/>二種：在家人，著五欲樂，虛誑不淨；出家外道，
+<lb n="0561c27" ed="T"/>著諸<app corresp="#0556006" type="star"><lem wit="【大】">邪</lem><rdg resp="Taisho" wit="【聖】">耶</rdg></app>見不實。此等所說皆無實事，是故
+<lb n="0561c28" ed="T"/>不信。自得諸法實相故，乃至佛身來說破
+<lb n="0561c29" ed="T"/>諸法實相者亦不信；得無為法故，心則安
+<pb n="0562a" ed="T" xml:id="T25.1509.0562a"/>
+<lb n="0562a01" ed="T"/>重，不復移轉。</p><p xml:id="pT25p0562a0106" style="margin-left:1em" cb:place="inline">是菩薩雖未得佛道，貪欲等
+<lb n="0562a02" ed="T"/>諸煩惱折薄故，不為所牽。</p><p xml:id="pT25p0562a0211" style="margin-left:1em" cb:place="inline">心常不離六波羅
+<lb n="0562a03" ed="T"/>蜜，知善法果報味故，心常愛樂，不離六波
+<lb n="0562a04" ed="T"/>羅蜜。</p><p xml:id="pT25p0562a0403" style="margin-left:1em" cb:place="inline">如是等種種因緣故，聞深般若不怖、
+<lb n="0562a05" ed="T"/>不畏，歡喜欲聞，讀、誦、問義、修習。如雷<note resp="Taisho" n="0562001" place="foot text" type="orig">霆＝電【聖】【石】</note><note resp="CBETA" n="0562001" type="mod">霆【大】，電【聖】【石】</note><app n="0562001"><lem wit="【大】">霆</lem><rdg resp="Taisho" wit="【聖】 【石】">電</rdg></app>，
+<lb n="0562a06" ed="T"/>小鳥則怖畏悶死；孔雀大鳥歡喜舞戲。般若
+<lb n="0562a07" ed="T"/>波羅蜜亦如是，<app corresp="#0556006" type="star"><lem wit="【大】">邪</lem><rdg resp="Taisho" wit="【聖】">耶</rdg></app>見凡夫聞則恐怖；阿鞞
+<lb n="0562a08" ed="T"/>跋致菩薩聞則歡喜，心無厭足，是故說「歡喜
+<lb n="0562a09" ed="T"/>樂聞」。</p><p xml:id="pT25p0562a0903" style="margin-left:1em" cb:place="inline">是中佛說因緣：「是菩薩於過去世已
+<lb n="0562a10" ed="T"/>聞深般若波羅蜜，多集諸<note resp="Taisho" n="0562002" place="foot text" type="orig">福德智慧＝智慧福德【聖】【石】</note><note resp="CBETA" n="0562002" type="mod">福德智慧【大】，智慧福德【聖】【石】</note><app n="0562002"><lem wit="【大】">福德、智慧</lem><rdg resp="Taisho" wit="【聖】 【石】">智慧福德</rdg></app>故
+<lb n="0562a11" ed="T"/>有大威德，有大威德故不怖畏。」</p><p xml:id="pT25p0562a1113" style="margin-left:1em" cb:place="inline">須菩提問：
+<lb n="0562a12" ed="T"/>「是菩薩聞深般若波羅蜜雖不怖畏，是般
+<lb n="0562a13" ed="T"/>若無定相，云何應行？」</p><p xml:id="pT25p0562a1309" style="margin-left:1em" cb:place="inline">佛言：「隨順一切種智
+<lb n="0562a14" ed="T"/>心。」</p><p xml:id="pT25p0562a1402" cb:place="inline">問曰：</p><p xml:id="pT25p0562a1404" style="margin-left:1em" cb:place="inline">是菩薩未得一切種智，云何能順？</p>
+<lb n="0562a15" ed="T"/><p xml:id="pT25p0562a1501">答曰：</p><p xml:id="pT25p0562a1503" style="margin-left:1em" cb:place="inline">是故說：「<note resp="Taisho" n="0562003" place="foot text" type="orig">〔隨〕－【三】【宮】</note><note resp="CBETA" n="0562003" type="mod">隨【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0562003"><lem wit="【大】">隨</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>順畢竟空心則順一切種
+<lb n="0562a16" ed="T"/>智<note resp="Taisho" n="0562004" place="foot text" type="orig">〔心〕－【聖】【石】</note><note resp="CBETA" n="0562004" type="mod">心【大】，〔－〕【聖】【石】</note><app n="0562004"><lem wit="【大】">心</lem><rdg resp="Taisho" wit="【聖】 【石】"><space quantity="0"/></rdg></app>。」一切種智是寂滅相，佛後品中說：「一切
+<lb n="0562a17" ed="T"/>寂滅相是一切種智。」是故言：「順畢竟空則
+<lb n="0562a18" ed="T"/>順一切種智。」無相、無作、虛空、無生無滅、無垢
+<lb n="0562a19" ed="T"/>無淨、如夢等亦如<note resp="Taisho" n="0562005" place="foot text" type="orig">是＝如【石】</note><note resp="CBETA" n="0562005" type="mod">是【大】，如【石】</note><app n="0562005"><lem wit="【大】">是</lem><rdg resp="Taisho" wit="【石】">如</rdg></app>。</p><p xml:id="pT25p0562a1909" style="margin-left:1em" cb:place="inline">爾時，須菩提問：「順畢
+<lb n="0562a20" ed="T"/>竟空心，觀何等法？」</p><p xml:id="pT25p0562a2008" style="margin-left:1em" cb:place="inline">佛答：「不觀色乃至一切
+<lb n="0562a21" ed="T"/>種智。」</p><p xml:id="pT25p0562a2103" style="margin-left:1em" cb:place="inline">何以故？智慧欲求實事，色等有為作法
+<lb n="0562a22" ed="T"/>皆虛妄，一切種智是實<note resp="Taisho" n="0562006" place="foot text" type="orig">〔法〕－【聖】</note><note resp="CBETA" n="0562006" type="mod">法【大】，〔－〕【聖】</note><app n="0562006"><lem wit="【大】">法</lem><rdg resp="Taisho" wit="【聖】"><space quantity="0"/></rdg></app>。實法故，過有為
+<lb n="0562a23" ed="T"/>法；過有為法故，說是法——「無作」，無作者。「無壞
+<lb n="0562a24" ed="T"/>法」，無壞者。是法不從六波羅蜜來，故言「無
+<lb n="0562a25" ed="T"/>所從來」。不入佛法中，故言「無所去」。有為，
+<lb n="0562a26" ed="T"/>虛誑故「不住」；無為法中，無憶想分別故亦
+<lb n="0562a27" ed="T"/>「不住」。五眾和合故有六道數，壞五眾相續
+<lb n="0562a28" ed="T"/>故則「無數、無量」。無數、無量故則語言道斷，
+<lb n="0562a29" ed="T"/>語言道斷故不可以行色等諸法得。</p><p xml:id="pT25p0562a2915" style="margin-left:1em" cb:place="inline">佛此
+<pb n="0562b" ed="T" xml:id="T25.1509.0562b"/>
+<lb n="0562b01" ed="T"/>中自說因緣：「色等諸法即是薩婆若，薩婆若
+<lb n="0562b02" ed="T"/>即是色等諸法。何以故？色等諸法如即是薩
+<lb n="0562b03" ed="T"/>婆若如，薩婆若如即是色等諸法如，以是故
+<lb n="0562b04" ed="T"/>說<note resp="Taisho" n="0562007" place="foot text" type="orig">〔如〕－【三】【聖】【石】</note><note resp="CBETA" n="0562007" type="mod">如【大】，〔－〕【宋】【元】【明】【聖】【石】</note><app n="0562007"><lem wit="【大】">如</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】 【石】"><space quantity="0"/></rdg></app>，是如無二無<note resp="Taisho" n="0562008" place="foot text" type="orig">別＋（釋第五十二品竟）夾註【聖】，別＋（釋五十二品竟）夾註【石】</note><note resp="CBETA" n="0562008" type="mod">別【大】，別<note place="inline">釋第五十二品竟</note>【聖】，別<note place="inline">釋五十二品竟</note>【石】</note><app n="0562008"><lem wit="【大】">別</lem><rdg resp="Taisho" wit="【聖】">別<note place="inline">釋第五十二品竟</note></rdg><rdg resp="Taisho" wit="【石】">別<note place="inline">釋五十二品竟</note></rdg></app>。」<note resp="Taisho" n="0562009" place="foot text" type="orig">不分卷【石】</note><note resp="CBETA" n="0562009" type="mod">不分卷【石】</note><anchor type="circle"/></p></cb:div>
+<lb n="0562b05" ed="T"/><cb:juan n="071" fun="close"><cb:jhead><note resp="Taisho" n="0562010" place="foot text" type="orig">（（大智…一））九字＝（（大智度論經卷第七十一））十字【聖】</note><note resp="CBETA" n="0562010" type="mod">（大智…一）九字【大】，大智度論經卷第七十一【聖】</note><app n="0562010" cb:word-count="9"><lem wit="【大】"><title>大智度論</title>卷第七十一</lem><rdg resp="Taisho" wit="【聖】">大智度論經卷第七十一</rdg></app></cb:jhead></cb:juan>
+</body></text></TEI>
