@@ -31,6 +31,39 @@ title: 百法交互表
     text-align: center;
   }
 
+  .title-cell-inner {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .title-cell-trigger {
+    background: transparent;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    letter-spacing: inherit;
+    line-height: 1.2;
+    padding: 0;
+  }
+
+  .title-cell-trigger:hover {
+    color: #6a4b2a;
+  }
+
+  .title-cell-trigger:focus-visible {
+    outline: 2px solid #6a4b2a;
+    outline-offset: 2px;
+  }
+
+  .title-cell-author {
+    font-size: 18px;
+    letter-spacing: 2px;
+    line-height: 1.2;
+  }
+
   .category {
     font-size: 20px;
     font-weight: 700;
@@ -518,7 +551,14 @@ title: 百法交互表
     </colgroup>
     <tbody>
       <tr>
-        <td class="title-cell" rowspan="12"><span class="vertical-fallback">大<br>乘<br>百<br>法<br>明<br>门<br>论<br>世<br>亲<br>菩<br>萨<br>著</span></td>
+        <td class="title-cell" rowspan="12">
+          <div class="title-cell-inner">
+            <button type="button" class="title-cell-trigger" id="baifa-main-title-trigger" data-item-id="1014" aria-label="查看《大乘百法明门论》解释">
+              <span class="vertical-fallback">大<br>乘<br>百<br>法<br>明<br>门<br>论</span>
+            </button>
+            <span class="vertical-fallback title-cell-author">世<br>亲<br>菩<br>萨<br>著</span>
+          </div>
+        </td>
         <td class="category heart" colspan="3" data-category="心法">心法(8)</td>
         <td class="items-cell alt">
           <div class="items items-heart">
@@ -834,6 +874,7 @@ title: 百法交互表
   const sourceSelectPlain = document.getElementById('baifa-source-select-plain');
   const modalCopy = document.getElementById('baifa-modal-copy');
   const modalClose = document.getElementById('baifa-modal-close');
+  const mainTitleTrigger = document.getElementById('baifa-main-title-trigger');
   const modalAnimationDuration = 290;
   let closeModalTimer = null;
   const buttons = Array.from(document.querySelectorAll('.item-btn'));
@@ -991,6 +1032,10 @@ title: 百法交互表
 
   function getItemName(text) {
     return text.replace(/^\d+/, '').trim();
+  }
+
+  function findItemById(items, id) {
+    return (Array.isArray(items) ? items : []).find((entry) => Number(entry && entry.id) === Number(id));
   }
 
   function createIdRangeSet(start, end) {
@@ -1416,7 +1461,7 @@ title: 百法交互表
       try {
         const data = await loadBaifaData();
         const items = Array.isArray(data) ? data : (data && data.items) || [];
-        const item = items.find((entry) => Number(entry.id) === id);
+        const item = findItemById(items, id);
         const titleText = item && item.name ? item.name : name;
         const title = `第${id}法：${titleText}`;
         const sources = item && item.sources ? item.sources : [];
@@ -1445,6 +1490,22 @@ title: 百法交互表
       }
     });
   });
+
+  if (mainTitleTrigger) {
+    mainTitleTrigger.addEventListener('click', async () => {
+      const itemId = Number(mainTitleTrigger.dataset.itemId) || 1014;
+      try {
+        const data = await loadBaifaData();
+        const items = Array.isArray(data) ? data : (data && data.items) || [];
+        const item = findItemById(items, itemId);
+        const title = item && item.name ? `《${item.name}》` : '《大乘百法明门论》';
+        const sources = item && item.sources ? item.sources : [];
+        openModal(title, sources, mainTitleTrigger);
+      } catch (error) {
+        openModal('《大乘百法明门论》', '解释加载失败，请稍后重试。', mainTitleTrigger);
+      }
+    });
+  }
 
   if (modalCopy) {
     modalCopy.addEventListener('click', copyModalText);
