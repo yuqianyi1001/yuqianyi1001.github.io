@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/cbeta-git/xml-p5a/master/schema/cbeta-p5a.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:cb="http://www.cbeta.org/ns/1.0" xml:id="T01n0001">
+<teiHeader>
+	<fileDesc>
+		<titleStmt>
+			<title>Taishō Tripiṭaka, Electronic version, No. 1 長阿含經</title>
+			<title xml:lang="zh-Hant">大正新脩大藏經數位版, No. 1 長阿含經</title>
+			<author>後秦 佛陀耶舍共竺佛念譯</author>
+			<respStmt>
+				<resp>Electronic Version by</resp>
+				<name>CBETA</name>
+			</respStmt>
+		</titleStmt>
+		<editionStmt>
+			<edition>單卷版 XML TEI P5b</edition>
+		</editionStmt>
+		<extent>22卷</extent>
+		<publicationStmt>
+			<idno type="CBETA">
+				<idno type="canon">T</idno>.<idno type="vol">1</idno>.<idno type="no">1</idno>
+			</idno>
+			<distributor>
+				<name>中華電子佛典協會 (CBETA)</name>
+				<address>
+					<addrLine><email>service@cbeta.org</email></addrLine>
+				</address>
+			</distributor>
+			<availability>
+				<p>Available for non-commercial use when distributed with this header intact.</p>
+			</availability>
+			<date>2023-10-03 21:24:04 +0800</date>
+		</publicationStmt>
+		<sourceDesc>
+			<bibl>
+				<title level="s">Taishō Tripiṭaka</title>
+				<title level="s" xml:lang="zh-Hant">大正新脩大藏經</title>
+				<title level="m" xml:lang="zh-Hant">長阿含經</title>
+			</bibl>
+		</sourceDesc>
+	</fileDesc>
+	<encodingDesc>
+		<projectDesc>
+			<p xml:lang="en" cb:type="ly">Text as provided by Mr. Hsiao Chen-Kuo, Text as provided by Mr. Chang Wen-Ming, Text as provided by Anonymous from USA, Punctuated text as provided by Dhammavassarama</p>
+			<p xml:lang="zh-Hant" cb:type="ly">蕭鎮國大德提供，張文明大德提供，北美某大德提供，法雨道場提供新式標點</p>
+		</projectDesc>
+		<editorialDecl>
+			<punctuation resp="CBETA"><p>新式標點</p></punctuation>
+		</editorialDecl>
+		<tagsDecl>
+			<namespace name="http://www.tei-c.org/ns/1.0">
+				<tagUsage gi="rdg">
+					<listWit>
+						<witness xml:id="wit.orig">【大】</witness>
+						<witness xml:id="wit.cbeta">【CB】</witness>
+					</listWit>
+				</tagUsage>
+			</namespace>
+		</tagsDecl>
+		<charDecl>
+			<char xml:id="CB00006">
+				<charName>CBETA CHARACTER CB00006</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[(王*巨)/木]</value>
+				</charProp>
+				<charProp>
+					<localName>normalized form</localName>
+					<value>璩</value>
+				</charProp>
+				<mapping type="unicode">U+249B2</mapping>
+				<mapping cb:dec="983046" type="PUA">U+F0006</mapping>
+			</char>
+			<char xml:id="CB00014">
+				<charName>CBETA CHARACTER CB00014</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[(殼-一)/牛]</value>
+				</charProp>
+				<mapping type="unicode">U+246D3</mapping>
+				<mapping cb:dec="983054" type="PUA">U+F000E</mapping>
+			</char>
+			<char xml:id="CB00063">
+				<charName>CBETA CHARACTER CB00063</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[口*束]</value>
+				</charProp>
+				<mapping type="unicode">U+20CBF</mapping>
+				<mapping cb:dec="983103" type="PUA">U+F003F</mapping>
+			</char>
+			<char xml:id="CB00166">
+				<charName>CBETA CHARACTER CB00166</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[月*庸]</value>
+				</charProp>
+				<charProp>
+					<localName>normalized form</localName>
+					<value>傭</value>
+				</charProp>
+				<mapping type="unicode">U+267DB</mapping>
+				<mapping cb:dec="983206" type="PUA">U+F00A6</mapping>
+			</char>
+			<char xml:id="CB00178">
+				<charName>CBETA CHARACTER CB00178</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[木*奈]</value>
+				</charProp>
+				<mapping type="unicode">U+3B88</mapping>
+				<mapping cb:dec="983218" type="PUA">U+F00B2</mapping>
+			</char>
+			<char xml:id="CB00186">
+				<charName>CBETA CHARACTER CB00186</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[木*翕]</value>
+				</charProp>
+				<mapping type="unicode">U+3BD3</mapping>
+				<mapping cb:dec="983226" type="PUA">U+F00BA</mapping>
+			</char>
+			<char xml:id="CB00589">
+				<charName>CBETA CHARACTER CB00589</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[澗-日+月]</value>
+				</charProp>
+				<charProp>
+					<localName>normalized form</localName>
+					<value>澗</value>
+				</charProp>
+				<mapping type="unicode">U+3D4E</mapping>
+				<mapping cb:dec="983629" type="PUA">U+F024D</mapping>
+			</char>
+			<char xml:id="CB00626">
+				<charName>CBETA CHARACTER CB00626</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[疊*毛]</value>
+				</charProp>
+				<mapping type="unicode">U+3CB2</mapping>
+				<mapping cb:dec="983666" type="PUA">U+F0272</mapping>
+			</char>
+			<char xml:id="CB01083">
+				<charName>CBETA CHARACTER CB01083</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[聲-耳+卵]</value>
+				</charProp>
+				<mapping type="unicode">U+23AD8</mapping>
+				<mapping cb:dec="984123" type="PUA">U+F043B</mapping>
+			</char>
+			<char xml:id="CB04786">
+				<charName>CBETA CHARACTER CB04786</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[制/牛]</value>
+				</charProp>
+				<mapping type="unicode">U+24672</mapping>
+				<mapping cb:dec="987826" type="PUA">U+F12B2</mapping>
+			</char>
+			<char xml:id="CB08016">
+				<charName>CBETA CHARACTER CB08016</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[穀-(一/禾)+卵]</value>
+				</charProp>
+				<mapping type="normal_unicode">U+3C89</mapping>
+				<mapping cb:dec="991056" type="PUA">U+F1F50</mapping>
+			</char>
+		</charDecl>
+	</encodingDesc>
+	<profileDesc>
+		<langUsage>
+			<language ident="pi">Pali</language>
+			<language ident="sa">Sanskrit</language>
+			<language ident="en">English</language>
+			<language ident="zh-Hant">Chinese (Traditional)</language>
+		</langUsage>
+	</profileDesc>
+	<revisionDesc>
+		<change when="2013-05-20">
+			<name>CW</name><name>Ray Chou 周邦信</name>P4 to P5 conversion by p4top5a.py, intended for publication
+		</change>
+		<change when="1999-08-10T22:31:27">
+			CW (ed.) Created initial TEI XML version with BASICX.BAT (99/8/10)
+		</change>
+	</revisionDesc>
+</teiHeader>
+<text><body>
+<cb:mulu level="1" type="分">3 分</cb:mulu><cb:mulu level="2" type="經">29 露遮經</cb:mulu>
+<milestone n="18" unit="juan"/>
+<lb n="0114b03" ed="T"/>
+<lb n="0114b04" ed="T"/><cb:juan n="018" fun="open"><cb:mulu n="018" type="卷"></cb:mulu><cb:jhead><title><note n="0114007" resp="Taisho" type="orig" place="foot text">〔佛說〕－【宋】【元】</note><note n="0114007" resp="CBETA" type="mod">佛說【大】，〔－〕【宋】【元】</note><app n="0114007"><lem wit="【大】">佛說</lem><rdg resp="Taisho" wit="【宋】 【元】"><space quantity="0"/></rdg></app>長阿含經</title>卷第十八</cb:jhead></cb:juan>
+<lb n="0114b05" ed="T"/>
+<lb n="0114b06" ed="T"/><byline cb:type="Translator"><note n="0114008" resp="Taisho" type="orig" place="foot text">後秦弘始年＝姚秦三藏法師【三】</note><note n="0114008" resp="CBETA" type="mod">後秦弘始年【大】，姚秦三藏法師【宋】【元】【明】</note><app n="0114008"><lem wit="【大】">後秦弘始年</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">姚秦三藏法師</rdg></app>佛陀耶舍共竺佛念譯</byline>
+<lb n="0114b07" ed="T"/><cb:div type="fen"><cb:mulu level="1" type="分">4 分</cb:mulu><cb:div type="jing"><cb:mulu level="2" type="經">30 世記經</cb:mulu><head>（三〇）<note n="0114009" resp="Taisho" type="orig" place="foot text">（長阿含）＋第【宋】【元】</note><note n="0114009" resp="CBETA" type="mod">第【大】，長阿含第【宋】【元】</note><app n="0114009"><lem wit="【大】">第</lem><rdg resp="Taisho" wit="【宋】 【元】">長阿含第</rdg></app>四分世記<note n="0114010" resp="Taisho" type="orig" place="foot text">經＋（第十一）【明】</note><note n="0114010" resp="CBETA" type="mod">經【大】，經第十一【明】</note><app n="0114010"><lem wit="【大】">經</lem><rdg resp="Taisho" wit="【明】">經第十一</rdg></app></head><cb:div type="pin"><cb:mulu level="3" type="品">1 閻浮提州品</cb:mulu><head>閻浮提<note n="0114011" resp="Taisho" type="orig" place="foot text">州＝洲【三】</note><note n="0114011" resp="CBETA" type="mod">州【大】，洲【宋】【元】【明】</note><app n="0114011"><lem wit="【大】">州</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">洲</rdg></app>品第一</head>
+<lb n="0114b08" ed="T"/><p xml:id="pT01p0114b0801">如是我聞：</p><p xml:id="pT01p0114b0805" cb:place="inline">一時，佛在舍衛國祇樹給孤獨園
+<lb n="0114b09" ed="T"/>俱利窟中，與大比丘眾千二百五十人俱。</p><p xml:id="pT01p0114b0917" cb:place="inline">時，
+<lb n="0114b10" ed="T"/>眾比丘於食後集講堂上議言：「諸賢！未曾
+<lb n="0114b11" ed="T"/>有也，今此天地何由而敗？何由而成？眾生所
+<lb n="0114b12" ed="T"/>居國土云何？」</p><p xml:id="pT01p0114b1206" cb:place="inline">爾時，世尊於閑靜處天耳徹聽，
+<lb n="0114b13" ed="T"/>聞諸比丘於食後集講堂上議如此言。
+<lb n="0114b14" ed="T"/>爾時世尊於靜窟起，詣講堂坐，知而故問，
+<lb n="0114b15" ed="T"/>問諸比丘：「向者所議，議何等事？」</p><p xml:id="pT01p0114b1513" cb:place="inline">諸比丘白
+<lb n="0114b16" ed="T"/>佛言：「我等<note n="0114012" resp="Taisho" type="orig" place="foot text">〔於〕－【三】</note><note n="0114012" resp="CBETA" type="mod">於【大】，〔－〕【宋】【元】【明】</note><app n="0114012"><lem wit="【大】">於</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>食後集法講堂議言：『諸賢！
+<lb n="0114b17" ed="T"/>未曾有也，今是天地何由而敗？何由而成？眾
+<lb n="0114b18" ed="T"/>生所居國土云何？』我等集堂議如是事。」</p><p xml:id="pT01p0114b1816" cb:place="inline">佛
+<lb n="0114b19" ed="T"/>告諸比丘言：「善哉！善哉！凡出家者應行二
+<lb n="0114b20" ed="T"/>法：一賢聖默然，二講論法語。汝等集在講堂，
+<lb n="0114b21" ed="T"/>亦應如此賢聖默然，講論法語。諸比丘！
+<lb n="0114b22" ed="T"/>汝等欲聞如來記天地成敗、眾生所居國邑
+<lb n="0114b23" ed="T"/>不耶？」</p><p xml:id="pT01p0114b2303" cb:place="inline">時，諸比丘白佛言：「唯然。世尊！今正是時，
+<lb n="0114b24" ed="T"/>願樂欲聞。世尊說已，當奉持之。」</p><p xml:id="pT01p0114b2413" cb:place="inline">佛言：「比丘！
+<lb n="0114b25" ed="T"/>諦聽，諦聽，善思念之，當為汝說。」</p><p xml:id="pT01p0114b2513" cb:place="inline">佛告諸比
+<lb n="0114b26" ed="T"/>丘：「如一日月周行四天下，光明所照，如是
+<lb n="0114b27" ed="T"/>千世界，千世界中有千日月、千須彌山王、四
+<lb n="0114b28" ed="T"/>千天下、四千大天下、四千海水、四千大海、四
+<lb n="0114b29" ed="T"/>千龍、四千大龍、四千金翅鳥、四千大金翅鳥、
+<pb n="0114c" ed="T" xml:id="T01.0001.0114c"/>
+<lb n="0114c01" ed="T"/>四千惡道、四千大惡道、四千王、四千大王、七
+<lb n="0114c02" ed="T"/>千大樹、八千大泥犁、十千大山、千閻羅王、千
+<lb n="0114c03" ed="T"/>四天王、千忉利<note n="0114013" resp="Taisho" type="orig" place="foot text">天＋（王）【三】</note><note n="0114013" resp="CBETA" type="mod">天【大】，天王【宋】【元】【明】</note><app n="0114013"><lem wit="【大】">天</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">天王</rdg></app>、千焰摩天、千兜率天、千化
+<lb n="0114c04" ed="T"/>自在天、千他化自在天、千梵天，是為小千世
+<lb n="0114c05" ed="T"/>界。如一小千世界，爾所小千千世界，是為中
+<lb n="0114c06" ed="T"/>千世界。如一中千世界，爾所中千千世界，是
+<lb n="0114c07" ed="T"/>為三千大千世界。如是世界周匝成敗，眾生
+<lb n="0114c08" ed="T"/>所居名一佛剎。」</p><p xml:id="pT01p0114c0807" cb:place="inline">佛告比丘：「今此大地深十六
+<lb n="0114c09" ed="T"/>萬八千由旬，其邊無際，地止於水，水深三千
+<lb n="0114c10" ed="T"/><note n="0114014" resp="Taisho" type="orig" place="foot text">三＝二【三】</note><note n="0114014" resp="CBETA" type="mod">三【大】，二【宋】【元】【明】</note><app n="0114014"><lem wit="【大】">三</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">二</rdg></app>十由旬，其邊無際，水止於風，風深六千
+<lb n="0114c11" ed="T"/>四<note n="0114015" resp="Taisho" type="orig" place="foot text">十＝千【元】</note><note n="0114015" resp="CBETA" type="mod">十【大】，千【元】</note><app n="0114015"><lem wit="【大】">十</lem><rdg resp="Taisho" wit="【元】">千</rdg></app>由旬，其邊無際。比丘！其大海水深八萬
+<lb n="0114c12" ed="T"/>四千由旬，其邊無際，須彌山王入海水中八
+<lb n="0114c13" ed="T"/>萬四千由旬，出海水上高八萬四千由旬，
+<lb n="0114c14" ed="T"/>下根連地，多固地分，其山<note n="0114016" resp="Taisho" type="orig" place="foot text">直＝真【元】</note><note n="0114016" resp="CBETA" type="mod">直【大】，真【元】</note><app n="0114016"><lem wit="【大】">直</lem><rdg resp="Taisho" wit="【元】">真</rdg></app>上，無有阿
+<lb n="0114c15" ed="T"/>曲，生種種樹，樹出眾香，香遍山林，多諸賢
+<lb n="0114c16" ed="T"/>聖，大神妙天之所居止。其山下基純有金
+<lb n="0114c17" ed="T"/>沙，其山四面有四埵出，高七百由旬，雜色間
+<lb n="0114c18" ed="T"/>廁，七寶所成，四埵<note n="0114017" resp="Taisho" type="orig" place="foot text">斜＝邪【三】</note><note n="0114017" resp="CBETA" type="mod">斜【大】，邪【宋】【元】【明】</note><app n="0114017"><lem wit="【大】">斜</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">邪</rdg></app><note n="0114018" resp="Taisho" type="orig" place="foot text">低＝俹【元】【明】</note><note n="0114018" resp="CBETA" type="mod">低【大】，俹【元】【明】</note><app n="0114018"><lem wit="【大】">低</lem><rdg resp="Taisho" wit="【元】 【明】">俹</rdg></app>，曲臨海上。</p><p xml:id="pT01p0114c1814" cb:place="inline">「須彌山
+<lb n="0114c19" ed="T"/>王有七寶階道，其下階道廣六十由旬，<note n="0114019" resp="Taisho" type="orig" place="foot text">挾＝俠【宋】，夾【元】【明】</note><note n="0114019" resp="CBETA" type="mod">挾【大】，俠【宋】，夾【元】【明】</note><app n="0114019"><lem wit="【大】">挾</lem><rdg resp="Taisho" wit="【宋】">俠</rdg><rdg resp="Taisho" wit="【元】 【明】">夾</rdg></app>
+<lb n="0114c20" ed="T"/>道兩邊有七重寶牆、七重欄楯、七重羅網、七
+<lb n="0114c21" ed="T"/>重行樹，金牆銀門，銀牆金門，水精牆琉璃
+<lb n="0114c22" ed="T"/>門，琉璃牆水精門，赤珠牆馬瑙門，馬瑙牆赤
+<lb n="0114c23" ed="T"/>珠門，車<g ref="#CB00006"/>牆眾寶門。其欄楯者，金欄銀桄，銀
+<lb n="0114c24" ed="T"/>欄金桄，水精欄琉璃桄，琉璃欄水精桄，赤珠
+<lb n="0114c25" ed="T"/>欄馬瑙桄，馬瑙欄赤珠桄，車<g ref="#CB00006"/>欄眾寶桄。
+<lb n="0114c26" ed="T"/>其欄楯上有寶羅網，其金羅網下懸銀鈴，其
+<lb n="0114c27" ed="T"/>銀羅網下懸金鈴，琉璃羅網懸水精鈴，水
+<lb n="0114c28" ed="T"/>精羅網懸琉璃鈴，赤珠羅網懸馬瑙鈴，馬瑙
+<lb n="0114c29" ed="T"/>羅網懸赤珠鈴，車<g ref="#CB00006"/>羅網懸眾寶鈴。其金樹
+<pb n="0115a" ed="T" xml:id="T01.0001.0115a"/>
+<lb n="0115a01" ed="T"/>者金根金枝銀葉華實，其銀樹者銀根銀枝
+<lb n="0115a02" ed="T"/>金葉華實，其水精樹水精根枝琉璃華葉，其
+<lb n="0115a03" ed="T"/>琉璃樹琉璃根枝水精華葉，其赤珠樹赤珠
+<lb n="0115a04" ed="T"/>根枝馬瑙華葉，其馬瑙樹者馬瑙根枝赤珠
+<lb n="0115a05" ed="T"/>華葉，車<g ref="#CB00006"/>樹者車<g ref="#CB00006"/>根<note n="0115a0501" resp="CBETA" type="add">枝【CB】【麗-CB】，桄【大】</note><app n="0115a0501"><lem resp="CBETA.maha" wit="【CB】 【麗-CB】">枝<note type="cf1">K17n0647_p0975a01</note><note type="cf2">T01n0001_p0115a03-04</note></lem><rdg wit="【大】">桄</rdg></app>眾寶華葉。</p><p xml:id="pT01p0115a0515" cb:place="inline">「其七重
+<lb n="0115a06" ed="T"/>牆，牆有四門，門有欄楯，七重牆上皆有樓
+<lb n="0115a07" ed="T"/>閣臺觀，周匝<note n="0115001" resp="Taisho" type="orig" place="foot text">圍＝繚【三】</note><note n="0115001" resp="CBETA" type="mod">圍【大】，繚【宋】【元】【明】</note><app n="0115001"><lem wit="【大】">圍</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">繚</rdg></app>遶有園觀浴池，生眾寶華
+<lb n="0115a08" ed="T"/><note n="0115002" resp="Taisho" type="orig" place="foot text">〔葉〕－【三】</note><note n="0115002" resp="CBETA" type="mod">葉【大】，〔－〕【宋】【元】【明】</note><app n="0115002"><lem wit="【大】">葉</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>，寶樹行<note n="0115003" resp="Taisho" type="orig" place="foot text">列＝烈【宋】</note><note n="0115003" resp="CBETA" type="mod">列【大】，烈【宋】</note><app n="0115003"><lem wit="【大】">列</lem><rdg resp="Taisho" wit="【宋】">烈</rdg></app>，花果繁茂，香風四起，悅可人
+<lb n="0115a09" ed="T"/>心，鳧鴈鴛鴦，異類奇鳥，無數千種，相和而鳴。</p>
+<lb n="0115a10" ed="T"/><p xml:id="pT01p0115a1001">「又須彌山王中級階道廣四十由旬，挾道兩
+<lb n="0115a11" ed="T"/>邊有七重寶牆、欄楯七重、羅網七重、行樹七
+<lb n="0115a12" ed="T"/>重，乃至無數眾鳥相和而鳴，亦如下<note n="0115004" resp="Taisho" type="orig" place="foot text">階＋（其）【三】</note><note n="0115004" resp="CBETA" type="mod">階【大】，階其【宋】【元】【明】</note><app n="0115004"><lem wit="【大】">階</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">階其</rdg></app>。上
+<lb n="0115a13" ed="T"/>級階道廣二十由旬，挾道兩邊有七重寶牆、
+<lb n="0115a14" ed="T"/>欄楯七重、羅網七重、行樹七重，乃至無數眾
+<lb n="0115a15" ed="T"/>鳥相和而鳴，亦如中階。」</p><p xml:id="pT01p0115a1510" cb:place="inline">佛告比丘：「其下階
+<lb n="0115a16" ed="T"/>道有鬼神住，名曰<note n="0115005" resp="Taisho" type="orig" place="foot text">伽＝迦【三】</note><note n="0115005" resp="CBETA" type="mod">伽【大】，迦【宋】【元】【明】</note><app n="0115005"><lem wit="【大】">伽</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">迦</rdg></app>樓羅足。其中階道有
+<lb n="0115a17" ed="T"/>鬼神住，名曰持鬘。其上階道有鬼神住，名
+<lb n="0115a18" ed="T"/>曰喜樂。其<note n="0115006" resp="Taisho" type="orig" place="foot text">四＋（出）【三】</note><note n="0115006" resp="CBETA" type="mod">四【大】，四出【宋】【元】【明】</note><app n="0115006"><lem wit="【大】">四</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">四出</rdg></app><note n="0115a1801" resp="CBETA" type="add">埵出【CB】，捶【大】</note><app n="0115a1801"><lem wit="【CB】" resp="CBETA.maha">埵出<note type="cf1">T01n0001_p0114c17</note><note type="cf2">T12n0377_p0909c29</note></lem><rdg wit="【大】">捶</rdg></app>高四萬二千由旬，四天大
+<lb n="0115a19" ed="T"/>王所居宮殿，有七重寶城、欄楯七重、羅網七
+<lb n="0115a20" ed="T"/>重、行樹七重，<note n="0115007" resp="Taisho" type="orig" place="foot text">諸寶鈴＝寶鈴七重【三】</note><note n="0115007" resp="CBETA" type="mod">諸寶鈴【大】，寶鈴七重【宋】【元】【明】</note><app n="0115007"><lem wit="【大】">諸寶鈴</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">寶鈴七重</rdg></app>乃至無數眾鳥相和而
+<lb n="0115a21" ed="T"/>鳴，亦復如是。須彌山頂有三十三天宮，寶
+<lb n="0115a22" ed="T"/>城七重、欄楯七重、羅網七重、行樹七重，乃至
+<lb n="0115a23" ed="T"/>無數眾鳥相和而鳴，<note n="0115a2301" resp="CBETA" type="add">亦【CB】【麗-CB】，又【大】</note><app n="0115a2301"><lem resp="CBETA.maha" wit="【CB】 【麗-CB】">亦<note type="cf1">K17n0647_p0975a22</note></lem><rdg wit="【大】">又</rdg></app>復如是。過三十三天
+<lb n="0115a24" ed="T"/>由旬一倍有焰摩天宮，過焰摩天宮由旬一
+<lb n="0115a25" ed="T"/>倍有兜率天宮，過兜率天宮由旬一倍有
+<lb n="0115a26" ed="T"/>化自在天宮，過化自在天宮由旬一倍有
+<lb n="0115a27" ed="T"/>他化自在天宮，過他化自在天宮由旬一倍
+<lb n="0115a28" ed="T"/>有梵<note n="0115008" resp="Taisho" type="orig" place="foot text">加＝迦【三】</note><note n="0115008" resp="CBETA" type="mod">加【大】，迦【宋】【元】【明】</note><app n="0115008"><lem wit="【大】">加</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">迦</rdg></app>夷天宮。</p><p xml:id="pT01p0115a2807" cb:place="inline">「於他化自在天、梵加夷天
+<lb n="0115a29" ed="T"/>中間，有摩天宮，縱廣六千由旬，宮牆七重、欄
+<pb n="0115b" ed="T" xml:id="T01.0001.0115b"/>
+<lb n="0115b01" ed="T"/>楯七重、羅網七重、行樹七重，乃至無數眾鳥
+<lb n="0115b02" ed="T"/>相和而鳴，亦復如是。過梵伽夷天宮由旬
+<lb n="0115b03" ed="T"/>一倍有光音天宮，過光音天由旬一倍有
+<lb n="0115b04" ed="T"/>遍淨天宮，過遍淨天由旬一倍有果實天
+<lb n="0115b05" ed="T"/>宮，過果實天由旬一倍有無想天宮，過無
+<lb n="0115b06" ed="T"/>想天由旬一倍有無造天宮，過無造天由
+<lb n="0115b07" ed="T"/>旬一倍有無熱天宮，過無熱天由旬一倍
+<lb n="0115b08" ed="T"/>有善見天宮，過善見天由旬一倍有大善
+<lb n="0115b09" ed="T"/>見天宮，過大善見天由旬一倍有色究竟
+<lb n="0115b10" ed="T"/>天宮，過色究竟天上有空處智天、識處智
+<lb n="0115b11" ed="T"/>天、無所有處智天、有想無想處智天，齊此
+<lb n="0115b12" ed="T"/>名眾生邊際、眾生世界，一切眾生生、老、病、死、
+<lb n="0115b13" ed="T"/>受陰、受有，齊此不過。」</p><p xml:id="pT01p0115b1309" cb:place="inline">佛告比丘：「須彌山北
+<lb n="0115b14" ed="T"/>有天下，名欝單<note n="0115009" resp="Taisho" type="orig" place="foot text">曰＝越【明】＊</note><note n="0115009" resp="CBETA" type="mod">曰【大】＊，越【明】＊</note><app n="0115009"><lem wit="【大】">曰</lem><rdg resp="Taisho" wit="【明】">越</rdg></app>，其土正方，縱廣一萬由
+<lb n="0115b15" ed="T"/>旬，人面亦方，像彼地形。須彌山東有天下，
+<lb n="0115b16" ed="T"/>名<note n="0115010" resp="Taisho" type="orig" place="foot text">明校譌曰。梵語弗于逮訛也。當作東毗提訶洲此云勝</note>弗于逮，其土正圓，縱廣九千由旬，人面
+<lb n="0115b17" ed="T"/>亦圓，像彼地形。須彌山西有天下，名俱耶
+<lb n="0115b18" ed="T"/>尼，其土形如半月，縱廣八千由旬，人面亦爾，
+<lb n="0115b19" ed="T"/>像彼地形。須彌山南有天下，名閻浮提，其
+<lb n="0115b20" ed="T"/>土南狹北廣，縱廣七千由旬，人面亦爾，像此
+<lb n="0115b21" ed="T"/>地形。須彌山北面天金所成，光照北方。須彌
+<lb n="0115b22" ed="T"/>山東面天銀所成，光照東方。須彌山西面天
+<lb n="0115b23" ed="T"/>水精所成，光照西方。須彌山南面天琉璃所
+<lb n="0115b24" ed="T"/>成，光照南方。</p><p xml:id="pT01p0115b2406" cb:place="inline">「欝單<app type="star" corresp="#0115009"><lem wit="【大】">曰</lem><rdg resp="Taisho" wit="【明】">越</rdg></app>有大樹王，名菴婆羅，
+<lb n="0115b25" ed="T"/>圍七由旬，高百由旬，枝葉四布五十由旬。弗
+<lb n="0115b26" ed="T"/>于逮有大樹王，名伽藍浮，圍七由旬，高百由
+<lb n="0115b27" ed="T"/>旬，枝葉四布五十由旬。俱耶尼有大樹王，名
+<lb n="0115b28" ed="T"/>曰斤提，圍七由旬，高百由旬，枝葉四布五十
+<lb n="0115b29" ed="T"/>由旬；又其樹<note n="0115011" resp="Taisho" type="orig" place="foot text">下＝上【三】</note><note n="0115011" resp="CBETA" type="mod">下【大】，上【宋】【元】【明】</note><app n="0115011"><lem wit="【大】">下</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">上</rdg></app>有石牛幢，高一由旬。閻浮提
+<pb n="0115c" ed="T" xml:id="T01.0001.0115c"/>
+<lb n="0115c01" ed="T"/>有大樹王，名曰閻浮<note n="0115012" resp="Taisho" type="orig" place="foot text">〔提〕－【三】</note><note n="0115012" resp="CBETA" type="mod">提【大】，〔－〕【宋】【元】【明】</note><app n="0115012"><lem wit="【大】">提</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>，圍七由旬，高百由
+<lb n="0115c02" ed="T"/>旬，枝葉四布五十由旬。金翅鳥王及龍王<note n="0115013" resp="Taisho" type="orig" place="foot text">樹＝其樹【元】【明】</note><note n="0115013" resp="CBETA" type="mod">樹【大】，其樹【元】【明】</note><app n="0115013"><lem wit="【大】">樹</lem><rdg resp="Taisho" wit="【元】 【明】">其樹</rdg></app>，
+<lb n="0115c03" ed="T"/>名俱利睒婆羅，圍七由旬，高百由旬，枝葉四
+<lb n="0115c04" ed="T"/>布五十由旬。阿<note n="0115014" resp="Taisho" type="orig" place="foot text">修＝脩【宋】</note><note n="0115014" resp="CBETA" type="mod">修【大】，脩【宋】</note><app n="0115014"><lem wit="【大】">修</lem><rdg resp="Taisho" wit="【宋】">脩</rdg></app>羅王有樹，名善<note n="0115015" resp="Taisho" type="orig" place="foot text">畫＝晝【三】</note><note n="0115015" resp="CBETA" type="mod">畫【大】，晝【宋】【元】【明】</note><app n="0115015"><lem wit="【大】">畫</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">晝</rdg></app>，圍七
+<lb n="0115c05" ed="T"/>由旬，高百由旬，枝葉四布五十由旬。忉利天
+<lb n="0115c06" ed="T"/>有樹，名曰晝度，圍七由旬，高百由旬，枝葉四
+<lb n="0115c07" ed="T"/>布五<note n="0115016" resp="Taisho" type="orig" place="foot text">十＝千【元】【明】</note><note n="0115016" resp="CBETA" type="mod">十【大】，千【元】【明】</note><app n="0115016"><lem wit="【大】">十</lem><rdg resp="Taisho" wit="【元】 【明】">千</rdg></app>由旬。</p><p xml:id="pT01p0115c0706" cb:place="inline">「須彌山邊有山，名伽<note n="0115017" resp="Taisho" type="orig" place="foot text">陀＝羅【三】</note><note n="0115017" resp="CBETA" type="mod">陀【大】，羅【宋】【元】【明】</note><app n="0115017"><lem wit="【大】">陀</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">羅</rdg></app>羅，高
+<lb n="0115c08" ed="T"/>四萬二千由旬，縱廣四萬二千由旬，其邊廣
+<lb n="0115c09" ed="T"/>遠，雜色間廁，七寶所成，其山去須彌山八萬
+<lb n="0115c10" ed="T"/>四千由旬，其間純生優鉢羅花、鉢頭摩花、俱
+<lb n="0115c11" ed="T"/>物頭花、<note n="0115018" resp="Taisho" type="orig" place="foot text">分＝芬【明】＊</note><note n="0115018" resp="CBETA" type="mod">分【大】＊，芬【明】＊</note><app n="0115018"><lem wit="【大】">分</lem><rdg resp="Taisho" wit="【明】">芬</rdg></app>陀利花，蘆葦、松、竹叢生其中，出
+<lb n="0115c12" ed="T"/>種種香，香<note n="0115019" resp="Taisho" type="orig" place="foot text">亦＝氣【三】</note><note n="0115019" resp="CBETA" type="mod">亦【大】，氣【宋】【元】【明】</note><app n="0115019"><lem wit="【大】">亦</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">氣</rdg></app>充遍。去佉<note n="0115020" resp="Taisho" type="orig" place="foot text">陀＝羅【宋】【元】</note><note n="0115020" resp="CBETA" type="mod">陀【大】，羅【宋】【元】</note><app n="0115020"><lem wit="【大】">陀</lem><rdg resp="Taisho" wit="【宋】 【元】">羅</rdg></app>羅山不遠有
+<lb n="0115c13" ed="T"/>山，名伊沙陀羅，高二萬一千由旬，縱廣二萬一
+<lb n="0115c14" ed="T"/>千由旬，其邊廣遠，雜色間廁，七寶所成，去佉
+<lb n="0115c15" ed="T"/>陀羅山四萬二千由旬，其間純生優鉢羅花、
+<lb n="0115c16" ed="T"/>鉢頭摩花、俱<note n="0115021" resp="Taisho" type="orig" place="foot text">勿＝物【三】</note><note n="0115021" resp="CBETA" type="mod">勿【大】，物【宋】【元】【明】</note><app n="0115021"><lem wit="【大】">勿</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">物</rdg></app>頭花、<app type="star" corresp="#0115018"><lem wit="【大】">分</lem><rdg resp="Taisho" wit="【明】">芬</rdg></app>陀利花，蘆葦、松、竹
+<lb n="0115c17" ed="T"/>叢生其中，出種種香，香氣充遍。去伊沙陀
+<lb n="0115c18" ed="T"/>羅山不遠有山，名樹<note n="0115022" resp="Taisho" type="orig" place="foot text">巨＝臣【三】＊</note><note n="0115022" resp="CBETA" type="mod">巨【大】＊，臣【宋】＊【元】＊【明】＊</note><app n="0115022"><lem wit="【大】">巨</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">臣</rdg></app>陀羅，高萬二千由
+<lb n="0115c19" ed="T"/>旬，縱廣萬二千由旬，其邊廣遠，雜色間廁，七
+<lb n="0115c20" ed="T"/>寶所成。去伊沙陀羅山二萬一千由旬，其間
+<lb n="0115c21" ed="T"/>純生四種雜花，蘆葦、松、竹叢生其中，出種
+<lb n="0115c22" ed="T"/>種香，香氣充遍。去樹<app type="star" corresp="#0115022"><lem wit="【大】">巨</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">臣</rdg></app>陀羅山不遠有山，
+<lb n="0115c23" ed="T"/>名善見，高六千由旬，縱廣六千由旬，其邊廣
+<lb n="0115c24" ed="T"/>遠，雜色間廁，七寶所成，去樹巨陀羅山萬二
+<lb n="0115c25" ed="T"/>千由旬，其間純生四種雜花，蘆葦、松、竹叢生
+<lb n="0115c26" ed="T"/>其中，出種種香，香氣充遍。</p><p xml:id="pT01p0115c2611" cb:place="inline">「去善見山不遠
+<lb n="0115c27" ed="T"/>有山，名馬食<note n="0115023" resp="Taisho" type="orig" place="foot text">上＝山【三】</note><note n="0115023" resp="CBETA" type="mod">山【CB】【宋】【元】【明】，上【大】</note><app n="0115023"><lem wit="【CB】" resp="CBETA.maha">山<note type="cf1">T01n0001_p0116a01</note></lem><rdg wit="【大】">上</rdg><rdg resp="Taisho" wit="【宋】 【元】 【明】">山</rdg></app>，高三千由旬，縱廣三千由
+<lb n="0115c28" ed="T"/>旬，其邊廣遠，雜色間廁，七寶所成，去善見山
+<lb n="0115c29" ed="T"/>六千由旬，其間純生四種雜花，蘆葦、松、竹叢
+<pb n="0116a" ed="T" xml:id="T01.0001.0116a"/>
+<lb n="0116a01" ed="T"/>生其中，出種種香，香氣充遍。去馬食山不
+<lb n="0116a02" ed="T"/>遠有山，名尼民陀羅，高千二百由旬，縱廣千
+<lb n="0116a03" ed="T"/>二百由旬，其邊廣遠，雜色間廁，七寶所成，去
+<lb n="0116a04" ed="T"/>馬食山三千由旬，其間純生四種雜花，蘆葦、
+<lb n="0116a05" ed="T"/>松、竹叢生其中，出種種香，香氣充遍。去尼
+<lb n="0116a06" ed="T"/>民陀羅山不遠有山，名調伏，高六百由旬，
+<lb n="0116a07" ed="T"/>縱廣六百由旬，其邊廣遠，雜色間廁，七寶所
+<lb n="0116a08" ed="T"/>成，去尼民陀羅山千二百由旬，其間純生
+<lb n="0116a09" ed="T"/>四種雜花，蘆葦、松、竹叢生其中，出種種香
+<lb n="0116a10" ed="T"/>香氣充遍。去調伏山不遠有山，名金剛圍，
+<lb n="0116a11" ed="T"/>高三百由旬，縱廣三百由旬，其邊廣遠，雜色
+<lb n="0116a12" ed="T"/>間廁，七寶所成，去調伏山六百由旬，其間純
+<lb n="0116a13" ed="T"/>生四種雜花，蘆葦、松、竹叢生其中，出種種
+<lb n="0116a14" ed="T"/>香，香氣充遍。</p><p xml:id="pT01p0116a1406" cb:place="inline">「去大金剛山不遠有大海水，
+<lb n="0116a15" ed="T"/>海水北岸有大樹王，名曰閻浮，圍七由旬，高
+<lb n="0116a16" ed="T"/>百由旬，枝葉四布五十由旬，其邊空地復有
+<lb n="0116a17" ed="T"/>叢林，名菴婆羅，縱廣五十由旬。復有叢林
+<lb n="0116a18" ed="T"/>名曰閻婆，縱廣五十由旬。復有叢林名曰
+<lb n="0116a19" ed="T"/>娑羅，縱廣五十由旬。復有叢林名曰多羅，
+<lb n="0116a20" ed="T"/>縱廣五十由旬。復有叢林名曰那多羅，縱
+<lb n="0116a21" ed="T"/>廣五十由旬。復有叢林名曰為男，縱廣五
+<lb n="0116a22" ed="T"/>十由旬。復有叢林名曰為女，縱廣五十由
+<lb n="0116a23" ed="T"/>旬。復有叢林名曰男女，縱廣五十由旬。復
+<lb n="0116a24" ed="T"/>有叢林名曰散那，縱廣五十由旬。復有叢
+<lb n="0116a25" ed="T"/>林名曰<note n="0116001" resp="Taisho" type="orig" place="foot text">栴＝旃【宋】【元】</note><note n="0116001" resp="CBETA" type="mod">栴【大】，旃【宋】【元】</note><app n="0116001"><lem wit="【大】">栴</lem><rdg resp="Taisho" wit="【宋】 【元】">旃</rdg></app>檀，縱廣五十由旬。復有叢林名
+<lb n="0116a26" ed="T"/>曰佉詶羅，縱廣五十由旬。復有叢林名曰
+<lb n="0116a27" ed="T"/>波<g ref="#CB00178"/>婆羅，縱廣五十由旬。復有叢林名曰
+<lb n="0116a28" ed="T"/>毗羅，縱廣五十由旬。復有叢林名曰香<g ref="#CB00178"/>，
+<lb n="0116a29" ed="T"/>縱廣五十由旬。復有叢林名曰為<note n="0116002" resp="Taisho" type="orig" place="foot text">梨＝<g ref="#CB00178"/>【三】</note><note n="0116002" resp="CBETA" type="mod">梨【大】，<g ref="#CB00178"/>【宋】【元】【明】</note><app n="0116002"><lem wit="【大】">梨</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><g ref="#CB00178"/></rdg></app>，縱
+<pb n="0116b" ed="T" xml:id="T01.0001.0116b"/>
+<lb n="0116b01" ed="T"/>廣五十由旬。復有叢林名曰安石<note n="0116003" resp="Taisho" type="orig" place="foot text">留＝榴【三】</note><note n="0116003" resp="CBETA" type="mod">留【大】，榴【宋】【元】【明】</note><app n="0116003"><lem wit="【大】">留</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">榴</rdg></app>，縱廣
+<lb n="0116b02" ed="T"/>五十由旬。復有叢林名曰為甘，縱廣五十
+<lb n="0116b03" ed="T"/>由旬。復有叢林名呵梨勒，縱廣五十由旬。
+<lb n="0116b04" ed="T"/>復有叢林名毗醯勒，縱廣五十由旬。復有
+<lb n="0116b05" ed="T"/>叢林名阿摩勒，縱廣五十由旬。復有叢林
+<lb n="0116b06" ed="T"/>名阿摩犁，縱廣五十由旬。復有叢林名<g ref="#CB00178"/>，
+<lb n="0116b07" ed="T"/>縱廣五十由旬。復有叢林名甘蔗，縱廣五
+<lb n="0116b08" ed="T"/>十由旬。復有叢林名葦，縱廣五十由旬。復
+<lb n="0116b09" ed="T"/>有叢林名竹，縱廣五十由旬。復有叢林名
+<lb n="0116b10" ed="T"/>舍羅，縱廣五十由旬。復有叢林名舍羅<note n="0116004" resp="Taisho" type="orig" place="foot text">業＝葉【三】</note><note n="0116004" resp="CBETA" type="mod">業【大】，葉【宋】【元】【明】</note><app n="0116004"><lem wit="【大】">業</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">葉</rdg></app>，
+<lb n="0116b11" ed="T"/>縱廣五十由旬。復有叢林名木瓜，縱廣五
+<lb n="0116b12" ed="T"/>十由旬。復有叢林名大木瓜，縱廣五十由
+<lb n="0116b13" ed="T"/>旬。復有叢林名解脫華，縱廣五十由旬。復
+<lb n="0116b14" ed="T"/>有叢林名瞻婆，縱廣五十由旬。復有叢林
+<lb n="0116b15" ed="T"/><note n="0116005" resp="Taisho" type="orig" place="foot text">名＋（波）【三】</note><note n="0116005" resp="CBETA" type="mod">名【大】，名波【宋】【元】【明】</note><app n="0116005"><lem wit="【大】">名</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">名波</rdg></app>婆羅羅，縱廣五十由旬。復有叢林名修
+<lb n="0116b16" ed="T"/>摩那，縱廣五十由旬。復有叢林名<note n="0116006" resp="Taisho" type="orig" place="foot text">婆＝波【三】</note><note n="0116006" resp="CBETA" type="mod">婆【大】，波【宋】【元】【明】</note><app n="0116006"><lem wit="【大】">婆</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">波</rdg></app>師，縱
+<lb n="0116b17" ed="T"/>廣五十由旬。復有叢林名多羅梨，縱廣五
+<lb n="0116b18" ed="T"/>十由旬。復有叢林名伽耶，縱廣五十由旬。
+<lb n="0116b19" ed="T"/>復有叢林名<note n="0116007" resp="Taisho" type="orig" place="foot text">葡萄＝蒲桃【宋】【元】，蒲萄【明】</note><note n="0116007" resp="CBETA" type="mod">葡萄【大】，蒲桃【宋】【元】，蒲萄【明】</note><app n="0116007"><lem wit="【大】">葡萄</lem><rdg resp="Taisho" wit="【宋】 【元】">蒲桃</rdg><rdg resp="Taisho" wit="【明】">蒲萄</rdg></app>，縱廣五十由旬。</p><p xml:id="pT01p0116b1914" cb:place="inline">「過是地
+<lb n="0116b20" ed="T"/>空，其空地中復有花池，縱廣五十由旬，復
+<lb n="0116b21" ed="T"/>有鉢頭摩池、俱物頭池、<app type="star" corresp="#0115018"><lem wit="【大】">分</lem><rdg resp="Taisho" wit="【明】">芬</rdg></app>陀利池，毒蛇滿
+<lb n="0116b22" ed="T"/>中，各縱廣五十由旬。過是地空，其空地中
+<lb n="0116b23" ed="T"/>有大海水，名欝禪那，此水下有轉輪聖王
+<lb n="0116b24" ed="T"/>道，廣十二由旬。<anchor xml:id="fxT01p0116b02"/>挾道兩邊有七重牆、七重
+<lb n="0116b25" ed="T"/>欄楯、七重羅網、七重行樹，周匝<note n="0116008" resp="Taisho" type="orig" place="foot text">校＝交【三】＊</note><note n="0116008" resp="CBETA" type="mod">校【大】＊，交【宋】＊【元】＊【明】＊</note><app n="0116008"><lem wit="【大】">校</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">交</rdg></app>飾，以七
+<lb n="0116b26" ed="T"/>寶成，閻浮提地轉輪聖王出于世時，水自
+<lb n="0116b27" ed="T"/>然去，其道平現。去海不遠有山，名欝禪，其
+<lb n="0116b28" ed="T"/>山端嚴，樹木繁茂，花果熾盛，眾香芬馥，異類
+<lb n="0116b29" ed="T"/>禽獸靡所不有。去欝禪山不遠有山，名
+<pb n="0116c" ed="T" xml:id="T01.0001.0116c"/>
+<lb n="0116c01" ed="T"/>金壁，中有八萬巖窟，八萬象王止此窟中，
+<lb n="0116c02" ed="T"/>其身純白，頭有雜色，口有六牙，齒間金填。
+<lb n="0116c03" ed="T"/>過金壁山已，有山名雪山，縱廣五百由旬，
+<lb n="0116c04" ed="T"/>深五百由旬，東西入海，雪山中間有寶山，高
+<lb n="0116c05" ed="T"/>二十由旬。</p><p xml:id="pT01p0116c0505" cb:place="inline">「雪山埵出高百由旬，其山頂上有
+<lb n="0116c06" ed="T"/>阿耨達池，縱廣五十由旬，其水清冷，澄<note n="0116009" resp="Taisho" type="orig" place="foot text">淨＝清【三】</note><note n="0116009" resp="CBETA" type="mod">淨【大】，清【宋】【元】【明】</note><app n="0116009"><lem wit="【大】">淨</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">清</rdg></app>
+<lb n="0116c07" ed="T"/>無穢，七寶砌壘、七重欄楯、七重羅網、七重行
+<lb n="0116c08" ed="T"/>樹，種種異色，七寶合成。其欄楯者，金欄銀桄，
+<lb n="0116c09" ed="T"/>銀欄金桄，琉璃欄水精桄，水精欄琉璃桄，赤
+<lb n="0116c10" ed="T"/>珠欄馬瑙桄，馬瑙欄赤珠桄，車<g ref="#CB00006"/>欄眾寶<note n="0116010" resp="Taisho" type="orig" place="foot text">所成＝為桄【三】</note><note n="0116010" resp="CBETA" type="mod">所成【大】，為桄【宋】【元】【明】</note><app n="0116010"><lem wit="【大】">所
+<lb n="0116c11" ed="T"/>成</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">為桄</rdg></app>。金網銀鈴，銀網金鈴，琉璃網水精鈴，水精
+<lb n="0116c12" ed="T"/>網琉璃鈴，車<g ref="#CB00006"/>網七寶<note n="0116011" resp="Taisho" type="orig" place="foot text">所成＝為鈴【三】</note><note n="0116011" resp="CBETA" type="mod">所成【大】，為鈴【宋】【元】【明】</note><app n="0116011"><lem wit="【大】">所成</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">為鈴</rdg></app>。金多羅樹金根
+<lb n="0116c13" ed="T"/>金枝銀葉銀果，銀多羅樹銀根銀枝金葉金
+<lb n="0116c14" ed="T"/>果，水精樹水精根枝琉璃花果，赤珠樹赤珠
+<lb n="0116c15" ed="T"/>根枝<note n="0116012" resp="Taisho" type="orig" place="foot text">〔馬瑙葉〕－【三】</note><note n="0116012" resp="CBETA" type="mod">馬瑙葉【大】，〔－〕【宋】【元】【明】</note><app n="0116012"><lem wit="【大】">馬瑙葉</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>馬瑙花果，車<g ref="#CB00006"/>樹車<g ref="#CB00006"/>根枝眾
+<lb n="0116c16" ed="T"/>寶花果。</p><p xml:id="pT01p0116c1604" cb:place="inline">「阿耨達池側皆有園觀浴池，眾花積
+<lb n="0116c17" ed="T"/>聚，種種樹葉，花果繁茂，種種香風，芬馥四布，
+<lb n="0116c18" ed="T"/>種種異類，諸鳥哀鳴相和。阿耨達池底，金沙
+<lb n="0116c19" ed="T"/>充滿。其池四邊皆有梯陛，金桄銀陛，銀桄金
+<lb n="0116c20" ed="T"/>陛，琉璃桄水精陛，水精桄琉璃陛，赤珠桄馬
+<lb n="0116c21" ed="T"/>瑙陛，馬瑙桄赤珠陛，車<g ref="#CB00006"/>桄眾寶陛。遶池周
+<lb n="0116c22" ed="T"/>匝皆有欄楯，生四種花，青、黃、赤、白，雜色參
+<lb n="0116c23" ed="T"/>間，華如車輪，根如車轂，花根出汁，色白如
+<lb n="0116c24" ed="T"/>乳，味甘如蜜。阿耨達池東有恒伽河，從牛
+<lb n="0116c25" ed="T"/>口出，從五百河入于東海。阿耨達池南有
+<lb n="0116c26" ed="T"/>新頭河，從師子口出，從五百河入于南海。
+<lb n="0116c27" ed="T"/>阿耨達池西有婆叉河，從馬口出，從五百
+<lb n="0116c28" ed="T"/>河入于西海。阿耨達池北有斯陀河，從象
+<lb n="0116c29" ed="T"/>口中出，從五百河入于北海。阿耨達宮中
+<pb n="0117a" ed="T" xml:id="T01.0001.0117a"/>
+<lb n="0117a01" ed="T"/>有五柱堂，阿耨達龍王恒於中止。」</p><p xml:id="pT01p0117a0114" cb:place="inline">佛言：
+<lb n="0117a02" ed="T"/>「何故名為阿耨達？阿耨達其義云何？此閻浮
+<lb n="0117a03" ed="T"/>提所有龍王盡有三患，唯阿耨達龍無有
+<lb n="0117a04" ed="T"/>三患。云何為三？一者舉閻浮提所有諸龍，
+<lb n="0117a05" ed="T"/>皆被熱風、熱沙著身，燒其皮肉，及燒骨髓
+<lb n="0117a06" ed="T"/>以為苦惱，唯阿耨達龍無有此患。二者舉
+<lb n="0117a07" ed="T"/>閻浮提所有龍宮，惡風暴起，吹其宮內，失
+<lb n="0117a08" ed="T"/>寶飾衣，龍身自現以為苦惱，唯阿耨達龍王
+<lb n="0117a09" ed="T"/>無如<note n="0117001" resp="Taisho" type="orig" place="foot text">是＝此【三】</note><note n="0117001" resp="CBETA" type="mod">是【大】，此【宋】【元】【明】</note><app n="0117001"><lem wit="【大】">是</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">此</rdg></app>患。三者舉閻浮提所有龍王，各
+<lb n="0117a10" ed="T"/>在宮中相娛樂時，金翅大鳥入宮<note n="0117002" resp="Taisho" type="orig" place="foot text">搏＝愽【宋】</note><note n="0117002" resp="CBETA" type="mod">搏【大】，愽【宋】</note><app n="0117002"><lem wit="【大】">搏</lem><rdg resp="Taisho" wit="【宋】">愽</rdg></app>撮
+<lb n="0117a11" ed="T"/>或始生方便，欲取龍食，諸龍怖懼，常懷熱
+<lb n="0117a12" ed="T"/>惱，唯阿耨達龍無如此患；若金翅鳥生念
+<lb n="0117a13" ed="T"/>欲<note n="0117a1301" resp="CBETA" type="add">往【CB】【麗-CB】，住【大】</note><app n="0117a1301"><lem resp="CBETA.maha" wit="【CB】 【麗-CB】">往<note type="cf1">K17n0647_p0978a02</note></lem><rdg wit="【大】">住</rdg></app>，即便命終，故名阿耨達<note n="0117003" resp="Taisho" type="orig" place="foot text">宋作本文。明無夾註。</note><note n="0117003" resp="CBETA" type="mod"><note place="inline">阿耨達秦言無惱熱</note>【大】，阿耨達秦言無惱熱【宋】，〔－〕【明】</note><app n="0117003"><lem wit="【大】"><note place="inline">阿耨達秦言無惱熱</note></lem><rdg resp="Taisho" wit="【宋】">阿耨達秦言無惱熱</rdg><rdg resp="Taisho" wit="【明】"><space quantity="0"/></rdg></app>。」</p>
+<lb n="0117a14" ed="T"/><p xml:id="pT01p0117a1401">佛告比丘：「雪山右面有城，名毗舍離，其城
+<lb n="0117a15" ed="T"/>北有七黑山，七黑山北有香山，其山常有
+<lb n="0117a16" ed="T"/>歌<note n="0117004" resp="Taisho" type="orig" place="foot text">唱伎樂＝舞唱妓（【宋】伎）【三】</note><note n="0117004" resp="CBETA" type="mod">唱伎樂【大】，舞唱妓【元】【明】，舞唱伎【宋】</note><app n="0117004"><lem wit="【大】">唱伎樂</lem><rdg resp="Taisho" wit="【元】 【明】">舞唱妓</rdg><rdg resp="Taisho" wit="【宋】">舞唱伎</rdg></app>音樂之聲。山有二窟，一名為
+<lb n="0117a17" ed="T"/>晝，二名善晝，天七寶成，柔<note n="0117005" resp="Taisho" type="orig" place="foot text">濡＝軟【宋】，輭【元】【明】＊</note><note n="0117005" resp="CBETA" type="mod">濡【大】＊，軟【宋】，輭【元】【明】＊</note><app n="0117005"><lem wit="【大】">濡</lem><rdg resp="Taisho" wit="【宋】">軟</rdg><rdg resp="Taisho" wit="【元】 【明】">輭</rdg></app>香潔，猶如天
+<lb n="0117a18" ed="T"/>衣，妙音乾<note n="0117006" resp="Taisho" type="orig" place="foot text">闥＝沓【三】</note><note n="0117006" resp="CBETA" type="mod">闥【大】，沓【宋】【元】【明】</note><app n="0117006"><lem wit="【大】">闥</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">沓</rdg></app>婆王從五百乾闥婆在其中
+<lb n="0117a19" ed="T"/>止。<note n="0117007" resp="Taisho" type="orig" place="foot text">〔畫〕－【三】</note><note n="0117007" resp="CBETA" type="mod">晝【大】，〔－〕【宋】【元】【明】</note><app n="0117007"><lem wit="【大】">晝</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>、善晝窟北有娑羅樹王，名曰善住，
+<lb n="0117a20" ed="T"/>有八千樹王圍遶四面。善住樹王下有象
+<lb n="0117a21" ed="T"/>王，亦名善住，止此樹下，身體純白，七處平
+<lb n="0117a22" ed="T"/>住，力能飛行，其頭赤色，雜色毛間，六牙纖<g ref="#CB00166"/>，
+<lb n="0117a23" ed="T"/>金為間填，有八千象圍遶隨從；其八千樹
+<lb n="0117a24" ed="T"/>王下八千象，亦復如是。</p><p xml:id="pT01p0117a2410" cb:place="inline">「善住樹王北有大浴
+<lb n="0117a25" ed="T"/>池，名摩陀延，縱廣五十由旬，有八千浴
+<lb n="0117a26" ed="T"/>池周匝圍遶，其水清涼，無有塵穢，以七寶
+<lb n="0117a27" ed="T"/>塹周匝砌壘，遶池有七重欄楯、七重羅網、
+<lb n="0117a28" ed="T"/>七重行樹，皆七寶成，金欄銀桄，銀欄金桄，
+<lb n="0117a29" ed="T"/>水精欄琉璃桄，琉璃欄水精桄，赤珠欄馬瑙
+<pb n="0117b" ed="T" xml:id="T01.0001.0117b"/>
+<lb n="0117b01" ed="T"/>桄，馬瑙欄赤珠桄，車<g ref="#CB00006"/>欄眾寶桄。其金羅網
+<lb n="0117b02" ed="T"/>下埀銀鈴，其銀羅網下埀金鈴，水精羅網
+<lb n="0117b03" ed="T"/>埀琉璃鈴，琉璃<note n="0117b0301" resp="CBETA" type="add">羅【CB】，桄【大】</note><app n="0117b0301"><lem wit="【CB】" resp="CBETA">羅</lem><rdg wit="【大】">桄</rdg></app>網埀水精鈴，赤珠羅網
+<lb n="0117b04" ed="T"/>垂馬瑙鈴，馬瑙羅網埀赤珠鈴，硨<g ref="#CB00006"/>羅網
+<lb n="0117b05" ed="T"/>埀眾寶鈴。其金樹者金根金枝銀葉花實，其
+<lb n="0117b06" ed="T"/>銀樹者銀根銀枝金葉花實，水精樹者水精
+<lb n="0117b07" ed="T"/>根枝琉璃花實，琉璃樹者琉璃根枝水精花
+<lb n="0117b08" ed="T"/>實，赤珠樹者赤珠根枝馬瑙花實，馬瑙樹者
+<lb n="0117b09" ed="T"/>馬瑙根枝赤珠花實，硨<g ref="#CB00006"/>樹者車<g ref="#CB00006"/>根枝眾
+<lb n="0117b10" ed="T"/>寶花實。</p><p xml:id="pT01p0117b1004" cb:place="inline">「又其池底金沙布散，遶池周匝有七
+<lb n="0117b11" ed="T"/>寶階道，金陛銀<note n="0117008" resp="Taisho" type="orig" place="foot text">蹬＝隥【元】【明】＊</note><note n="0117008" resp="CBETA" type="mod">蹬【大】＊，隥【元】【明】＊</note><app n="0117008"><lem wit="【大】">蹬</lem><rdg resp="Taisho" wit="【元】 【明】">隥</rdg></app>，銀陛金<app type="star" corresp="#0117008"><lem wit="【大】">蹬</lem><rdg resp="Taisho" wit="【元】 【明】">隥</rdg></app>，水精陛琉璃
+<lb n="0117b12" ed="T"/><app type="star" corresp="#0117008"><lem wit="【大】">蹬</lem><rdg resp="Taisho" wit="【元】 【明】">隥</rdg></app>，琉璃陛水精<app type="star" corresp="#0117008"><lem wit="【大】">蹬</lem><rdg resp="Taisho" wit="【元】 【明】">隥</rdg></app>，赤珠陛馬瑙<app type="star" corresp="#0117008"><lem wit="【大】">蹬</lem><rdg resp="Taisho" wit="【元】 【明】">隥</rdg></app>，馬瑙陛
+<lb n="0117b13" ed="T"/>赤珠<app type="star" corresp="#0117008"><lem wit="【大】">蹬</lem><rdg resp="Taisho" wit="【元】 【明】">隥</rdg></app>，車<g ref="#CB00006"/>陛眾寶<app type="star" corresp="#0117008"><lem wit="【大】">蹬</lem><rdg resp="Taisho" wit="【元】 【明】">隥</rdg></app>。挾陛兩邊有寶欄
+<lb n="0117b14" ed="T"/>楯。又其池中生四種華，青、黃、赤、白，眾色參間，
+<lb n="0117b15" ed="T"/>華如車輪，根如車轂，花根出汁，色白如乳，
+<lb n="0117b16" ed="T"/>味甘如蜜。遶池四面有眾園觀、叢林、浴池，
+<lb n="0117b17" ed="T"/>生種種花，樹木清涼，花果豐<note n="0117009" resp="Taisho" type="orig" place="foot text">盛＝茂【三】</note><note n="0117009" resp="CBETA" type="mod">盛【大】，茂【宋】【元】【明】</note><app n="0117009"><lem wit="【大】">盛</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">茂</rdg></app>，無數眾鳥
+<lb n="0117b18" ed="T"/>相和而鳴，亦復如是。善住象王念欲遊戲，入
+<lb n="0117b19" ed="T"/>池浴時，即念八千象王，時，八千象王復自
+<lb n="0117b20" ed="T"/>念言：『善住象王今以念我，我等宜往至象
+<lb n="0117b21" ed="T"/>王所。』於是，眾象即往前立。</p><p xml:id="pT01p0117b2111" cb:place="inline">「時，善住象王從
+<lb n="0117b22" ed="T"/>八千象至摩陀延池，其諸象中有為王持
+<lb n="0117b23" ed="T"/>蓋者，有執寶扇扇象王者，中有作倡伎
+<lb n="0117b24" ed="T"/>樂前導從者。時，善住象王入池洗浴，作倡伎
+<lb n="0117b25" ed="T"/>樂，共相娛樂，或有象為王洗鼻者，或有洗
+<lb n="0117b26" ed="T"/>口、洗頭、洗牙、洗耳、洗腹、洗背、洗尾、洗足者，
+<lb n="0117b27" ed="T"/>中有拔華根洗之與王食者，中有取四
+<lb n="0117b28" ed="T"/>種花散王上者。爾時，善住象王洗浴、飲食，
+<lb n="0117b29" ed="T"/><note n="0117010" resp="Taisho" type="orig" place="foot text">〔共〕－【三】</note><note n="0117010" resp="CBETA" type="mod">共【大】，〔－〕【宋】【元】【明】</note><app n="0117010"><lem wit="【大】">共</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>相娛樂已，即出岸上，向善住樹立。其八
+<pb n="0117c" ed="T" xml:id="T01.0001.0117c"/>
+<lb n="0117c01" ed="T"/>千象然後各自入池洗浴、飲食，共相娛樂。訖
+<lb n="0117c02" ed="T"/>已還出，至象王所。</p><p xml:id="pT01p0117c0208" cb:place="inline">「時，象王從八千象前後導
+<lb n="0117c03" ed="T"/>從，至善住樹王所，中有持葢覆象王者，
+<lb n="0117c04" ed="T"/>有執寶扇扇象王者，中有作倡伎樂在
+<lb n="0117c05" ed="T"/>前導者。時，善住象王詣樹王已，坐臥行步
+<lb n="0117c06" ed="T"/>隨意所遊，餘八千象各自在樹下，坐臥行步
+<lb n="0117c07" ed="T"/>隨意所遊。其樹林中有圍八尋者，有圍九
+<lb n="0117c08" ed="T"/>尋<note n="0117011" resp="Taisho" type="orig" place="foot text">〔至〕－【三】</note><note n="0117011" resp="CBETA" type="mod">至【大】，〔－〕【宋】【元】【明】</note><app n="0117011"><lem wit="【大】">至</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>十尋、<note n="0117012" resp="Taisho" type="orig" place="foot text">十＝至十【三】</note><note n="0117012" resp="CBETA" type="mod">十【大】，至十【宋】【元】【明】</note><app n="0117012"><lem wit="【大】">十</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">至十</rdg></app>五尋者，唯善住象王<note n="0117013" resp="Taisho" type="orig" place="foot text">婆＝娑【宋】【明】</note><note n="0117013" resp="CBETA" type="mod">婆【大】，娑【宋】【明】</note><app n="0117013"><lem wit="【大】">婆</lem><rdg resp="Taisho" wit="【宋】 【明】">娑</rdg></app>羅
+<lb n="0117c09" ed="T"/>樹王圍十六尋，其八千<note n="0117014" resp="Taisho" type="orig" place="foot text">婆＝娑【三】</note><note n="0117014" resp="CBETA" type="mod">婆【大】，娑【宋】【元】【明】</note><app n="0117014"><lem wit="【大】">婆</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">娑</rdg></app>羅樹枝葉墮落時，
+<lb n="0117c10" ed="T"/>清風遠吹置於林外，又八千象大小便時，諸
+<lb n="0117c11" ed="T"/>夜叉鬼除之林外。」</p><p xml:id="pT01p0117c1108" cb:place="inline">佛告比丘：「善住象王有
+<lb n="0117c12" ed="T"/>大神力，功德如是，雖為畜生，受福如是。」</p></cb:div>
+<lb n="0117c13" ed="T"/><cb:div type="pin"><cb:mulu level="3" type="品">2 鬱單曰品</cb:mulu><head><note n="0117015" resp="Taisho" type="orig" place="foot text">〔佛說長…世記經〕－【三】</note><note n="0117015" resp="CBETA" type="mod">佛說長…世記經【大】，〔－〕【宋】【元】【明】</note><app n="0117015" cb:word-count="11"><lem wit="【大】"><title>佛說長阿含</title>第四分世記經</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>欝單<note n="0117016" resp="Taisho" type="orig" place="foot text">曰＝越【明】＊</note><note n="0117016" resp="CBETA" type="mod">曰【大】＊，越【明】＊</note><app n="0117016"><lem wit="【大】">曰</lem><rdg resp="Taisho" wit="【明】">越</rdg></app>品第
+<lb n="0117c14" ed="T"/>二</head>
+<lb n="0117c15" ed="T"/><p xml:id="pT01p0117c1501">佛告比丘：「欝單<app type="star" corresp="#0117016"><lem wit="【大】">曰</lem><rdg resp="Taisho" wit="【明】">越</rdg></app>天下多有諸山，其彼山
+<lb n="0117c16" ed="T"/>側有諸園觀浴池，生眾雜花，樹木清涼，花果
+<lb n="0117c17" ed="T"/>豐茂，無數眾鳥相和而鳴。又其山中多眾流
+<lb n="0117c18" ed="T"/>水，其水洋順，無有卒暴，眾花覆上，汎汎徐
+<lb n="0117c19" ed="T"/>流。<note n="0117017" resp="Taisho" type="orig" place="foot text">挾＝夾【元】【明】</note><note n="0117017" resp="CBETA" type="mod">挾【大】＊，夾【元】【明】＊</note><app n="0117017"><lem wit="【大】">挾</lem><rdg resp="Taisho" wit="【元】 【明】">夾</rdg></app>岸兩邊多眾樹木，枝條柔弱，花果繁
+<lb n="0117c20" ed="T"/>熾，地生<app type="star" corresp="#0117005"><lem wit="【大】">濡</lem><rdg resp="Taisho" wit="【元】 【明】">輭</rdg></app>草，<note n="0117018" resp="Taisho" type="orig" place="foot text">槃＝盤【明】</note><note n="0117018" resp="CBETA" type="mod">槃【大】＊，盤【明】＊</note><app n="0117018"><lem wit="【大】">槃</lem><rdg resp="Taisho" wit="【明】">盤</rdg></app>縈右旋，色如孔翠，香如
+<lb n="0117c21" ed="T"/>婆師，濡若天衣，其地柔<app type="star" corresp="#0117005"><lem wit="【大】">濡</lem><rdg resp="Taisho" wit="【元】 【明】">輭</rdg></app>，以足<note n="0117c2101" resp="CBETA" type="add">蹈【CB】【麗-CB】，踏【大】</note><app n="0117c2101"><lem resp="CBETA.maha" wit="【CB】 【麗-CB】">蹈<note type="cf1">K17n0647_p0979a08</note><note type="cf2">T01n0001_p0118a01</note></lem><rdg wit="【大】">踏</rdg></app>地，地凹
+<lb n="0117c22" ed="T"/>四寸，舉足還復，地平如掌，無有高下。</p><p xml:id="pT01p0117c2215" cb:place="inline">「比
+<lb n="0117c23" ed="T"/>丘！彼欝單<app type="star" corresp="#0117016"><lem wit="【大】">曰</lem><rdg resp="Taisho" wit="【明】">越</rdg></app>土四面有四阿耨達池，各縱
+<lb n="0117c24" ed="T"/>廣百由旬，其水澄清，無有垢穢，以七寶塹
+<lb n="0117c25" ed="T"/>廁砌其邊，乃至無數眾鳥相和悲鳴，與摩陀
+<lb n="0117c26" ed="T"/>延池嚴飾無異。彼四大池各出四大河，廣
+<lb n="0117c27" ed="T"/>十由旬，其水洋順，無有卒暴，眾花覆上，汎
+<lb n="0117c28" ed="T"/>汎徐流。挾岸兩邊多眾樹木，枝條柔弱，花果
+<lb n="0117c29" ed="T"/>繁熾，地生<app type="star" corresp="#0117005"><lem wit="【大】">濡</lem><rdg resp="Taisho" wit="【元】 【明】">輭</rdg></app>草，槃縈右旋，色如孔翠，香
+<pb n="0118a" ed="T" xml:id="T01.0001.0118a"/>
+<lb n="0118a01" ed="T"/>猶婆師，<app type="star" corresp="#0117005"><lem wit="【大】">濡</lem><rdg resp="Taisho" wit="【元】 【明】">輭</rdg></app>若天衣，其地柔濡，以足蹈地，
+<lb n="0118a02" ed="T"/>地凹四寸，舉足還復，地平如掌，無有高下。
+<lb n="0118a03" ed="T"/>又彼土地無有溝澗、坑坎、荊棘、株杌，亦無蚊
+<lb n="0118a04" ed="T"/>虻、蚖蛇、蜂蝎、虎<note n="0118001" resp="Taisho" type="orig" place="foot text">豹＝狼【三】</note><note n="0118001" resp="CBETA" type="mod">豹【大】，狼【宋】【元】【明】</note><app n="0118001"><lem wit="【大】">豹</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">狼</rdg></app>、惡獸，地純眾寶，無有石
+<lb n="0118a05" ed="T"/>沙，陰陽調柔，四氣和順，不寒不熱，無眾惱患，
+<lb n="0118a06" ed="T"/>其地潤澤，塵穢不起，如油塗地，無有遊塵，
+<lb n="0118a07" ed="T"/>百草常生，無有冬夏，樹木繁茂，花果熾盛，地
+<lb n="0118a08" ed="T"/>生<app type="star" corresp="#0117005"><lem wit="【大】">濡</lem><rdg resp="Taisho" wit="【元】 【明】">輭</rdg></app>草，<app type="star" corresp="#0117018"><lem wit="【大】">槃</lem><rdg resp="Taisho" wit="【明】">盤</rdg></app>縈右旋，色如孔翠，香猶婆師，
+<lb n="0118a09" ed="T"/><app type="star" corresp="#0117005"><lem wit="【大】">濡</lem><rdg resp="Taisho" wit="【元】 【明】">輭</rdg></app>若天衣，其地柔<app type="star" corresp="#0117005"><lem wit="【大】">濡</lem><rdg resp="Taisho" wit="【元】 【明】">輭</rdg></app>，以足蹈地，地凹四寸，
+<lb n="0118a10" ed="T"/>舉足還復，地平如掌，無有高下。</p><p xml:id="pT01p0118a1013" cb:place="inline">「其土常有
+<lb n="0118a11" ed="T"/>自然粳米，不種自生，無有糠糩，如白<note n="0118002" resp="Taisho" type="orig" place="foot text">花聚＝華叢【三】</note><note n="0118002" resp="CBETA" type="mod">花聚【大】，華叢【宋】【元】【明】</note><app n="0118002"><lem wit="【大】">花
+<lb n="0118a12" ed="T"/>聚</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">華叢</rdg></app>，猶忉利天食，眾<note n="0118003" resp="Taisho" type="orig" place="foot text">味＝物【三】</note><note n="0118003" resp="CBETA" type="mod">味【大】，物【宋】【元】【明】</note><app n="0118003"><lem wit="【大】">味</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">物</rdg></app>具足。其土常有自然
+<lb n="0118a13" ed="T"/>釜<note n="0118004" resp="Taisho" type="orig" place="foot text">鍑＝鑊【三】＊</note><note n="0118004" resp="CBETA" type="mod">鍑【大】＊，鑊【宋】＊【元】＊【明】＊</note><app n="0118004"><lem wit="【大】">鍑</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">鑊</rdg></app>，有摩尼珠，名曰焰光，置於<app type="star" corresp="#0118004"><lem wit="【大】">鍑</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">鑊</rdg></app>下，飯熟光
+<lb n="0118a14" ed="T"/>滅，不假樵火，不勞人功。其土有樹，名
+<lb n="0118a15" ed="T"/>曰曲躬，葉葉相次，天雨不漏，彼諸男女止
+<lb n="0118a16" ed="T"/>宿其下。復有香樹，高七十里，花果繁茂，其果
+<lb n="0118a17" ed="T"/>熟時，皮<note n="0118005" resp="Taisho" type="orig" place="foot text">殼＝<g ref="#CB01083"/>【宋】【元】＊，<g ref="#CB08016"/>【明】＊</note><note n="0118005" resp="CBETA" type="mod">殼【大】＊，<g ref="#CB01083"/>【宋】【元】＊，<g ref="#CB08016"/>【明】＊</note><app n="0118005"><lem wit="【大】">殼</lem><rdg resp="Taisho" wit="【宋】 【元】"><g ref="#CB01083"/></rdg><rdg resp="Taisho" wit="【明】"><g ref="#CB08016"/></rdg></app>自裂，自然香出，其樹或高六十里，
+<lb n="0118a18" ed="T"/>或五十、四十，極小高五里，皆花果繁茂，其果
+<lb n="0118a19" ed="T"/>熟時，皮<app type="star" corresp="#0118005"><lem wit="【大】">殼</lem><rdg resp="Taisho" wit="【宋】 【元】"><g ref="#CB01083"/></rdg><rdg resp="Taisho" wit="【明】"><g ref="#CB08016"/></rdg></app>自裂，自然香出。</p><p xml:id="pT01p0118a1911" cb:place="inline">「復有衣樹，高七
+<lb n="0118a20" ed="T"/>十里，花果繁茂，其果熟時，皮<app type="star" corresp="#0118005"><lem wit="【大】">殼</lem><rdg resp="Taisho" wit="【宋】 【元】"><g ref="#CB01083"/></rdg><rdg resp="Taisho" wit="【明】"><g ref="#CB08016"/></rdg></app>自裂，出種種
+<lb n="0118a21" ed="T"/>衣，其樹或高六十里、五十、四十，極小高五里，
+<lb n="0118a22" ed="T"/>皆花果繁茂，出種種衣。復有莊嚴樹，高七十
+<lb n="0118a23" ed="T"/>里，花果繁茂，其果熟時，皮<app type="star" corresp="#0118005"><lem wit="【大】">殼</lem><rdg resp="Taisho" wit="【宋】 【元】"><g ref="#CB01083"/></rdg><rdg resp="Taisho" wit="【明】"><g ref="#CB08016"/></rdg></app>自裂，出種種
+<lb n="0118a24" ed="T"/>嚴身之具，其樹或高六十里、五十、四十里，極
+<lb n="0118a25" ed="T"/>小高五里，皆花果繁茂，出種種嚴身之具。復
+<lb n="0118a26" ed="T"/>有花鬘樹，高七十里，花果繁茂，其果熟時，皮
+<lb n="0118a27" ed="T"/><app type="star" corresp="#0118005"><lem wit="【大】">殼</lem><rdg resp="Taisho" wit="【宋】 【元】"><g ref="#CB01083"/></rdg><rdg resp="Taisho" wit="【明】"><g ref="#CB08016"/></rdg></app>自裂，出種種鬘，<note n="0118006" resp="Taisho" type="orig" place="foot text">樹＝其樹【元】【明】</note><note n="0118006" resp="CBETA" type="mod">樹【大】，其樹【元】【明】</note><app n="0118006"><lem wit="【大】">樹</lem><rdg resp="Taisho" wit="【元】 【明】">其樹</rdg></app>或高六十里、五十、
+<lb n="0118a28" ed="T"/>四十里，極小高五里，亦皆花果繁茂，出種
+<lb n="0118a29" ed="T"/>種鬘。復有器樹，高七十里，花果繁茂，其果熟
+<pb n="0118b" ed="T" xml:id="T01.0001.0118b"/>
+<lb n="0118b01" ed="T"/>時，皮<app type="star" corresp="#0118005"><lem wit="【大】">殼</lem><rdg resp="Taisho" wit="【宋】 【元】"><g ref="#CB01083"/></rdg><rdg resp="Taisho" wit="【明】"><g ref="#CB08016"/></rdg></app>自裂，出種種器，其樹或高六十里、五
+<lb n="0118b02" ed="T"/>十、四十，極小高五里，皆花果繁茂，出種種器。
+<lb n="0118b03" ed="T"/>復有果樹，高七十里，花果繁茂，其果熟時，皮
+<lb n="0118b04" ed="T"/><app type="star" corresp="#0118005"><lem wit="【大】">殼</lem><rdg resp="Taisho" wit="【宋】 【元】"><g ref="#CB01083"/></rdg><rdg resp="Taisho" wit="【明】"><g ref="#CB08016"/></rdg></app>自裂，出種種果，樹或高六十里、五十、四
+<lb n="0118b05" ed="T"/>十，極小高五里，皆花果繁茂，出種種果。復有
+<lb n="0118b06" ed="T"/>樂器樹，高七十里，花果繁茂，其果熟時，皮<app type="star" corresp="#0118005"><lem wit="【大】">殼</lem><rdg resp="Taisho" wit="【宋】 【元】"><g ref="#CB01083"/></rdg><rdg resp="Taisho" wit="【明】"><g ref="#CB08016"/></rdg></app>
+<lb n="0118b07" ed="T"/>自裂，出種種樂器，其樹或高六十里、五十、四
+<lb n="0118b08" ed="T"/>十，極小高五里，皆花果繁茂，出種種樂器。</p><p xml:id="pT01p0118b0817" cb:place="inline">「其
+<lb n="0118b09" ed="T"/>土有池，名曰善見，縱廣百由旬，其水清澄，
+<lb n="0118b10" ed="T"/>無有垢穢，以七寶塹廁砌其邊，遶池四
+<lb n="0118b11" ed="T"/>面有七重欄楯、七重羅網、七重行樹，乃至無
+<lb n="0118b12" ed="T"/>數眾鳥相和而鳴，亦復如是。其善見池北有
+<lb n="0118b13" ed="T"/>樹，名菴婆羅，周圍七里，上高百里，枝葉四布
+<lb n="0118b14" ed="T"/>遍五十里。其善見池東出善道河，廣一由旬，
+<lb n="0118b15" ed="T"/>其水徐流，無有洄澓，種種雜花覆蔽水上，
+<lb n="0118b16" ed="T"/><app type="star" corresp="#0117017"><lem wit="【大】">挾</lem><rdg resp="Taisho" wit="【元】 【明】">夾</rdg></app>岸兩邊樹木繁茂，枝條柔弱，花果熾盛，地
+<lb n="0118b17" ed="T"/>生<app type="star" corresp="#0117005"><lem wit="【大】">濡</lem><rdg resp="Taisho" wit="【元】 【明】">輭</rdg></app>草，<app type="star" corresp="#0117018"><lem wit="【大】">槃</lem><rdg resp="Taisho" wit="【明】">盤</rdg></app>縈右旋，色如孔翠，香如婆師，
+<lb n="0118b18" ed="T"/><app type="star" corresp="#0117005"><lem wit="【大】">濡</lem><rdg resp="Taisho" wit="【元】 【明】">輭</rdg></app>若天衣，其地柔<app type="star" corresp="#0117005"><lem wit="【大】">濡</lem><rdg resp="Taisho" wit="【元】 【明】">輭</rdg></app>，足<note n="0118b1801" resp="CBETA" type="add">蹈【CB】【麗-CB】，踏【大】</note><app n="0118b1801"><lem resp="CBETA.maha" wit="【CB】 【麗-CB】">蹈<note type="cf1">K17n0647_p0980a03</note><note type="cf2">T01n0001_p0118a01</note></lem><rdg wit="【大】">踏</rdg></app>地時，地凹四寸，
+<lb n="0118b19" ed="T"/>舉足還復，地平如掌，<note n="0118007" resp="Taisho" type="orig" place="foot text">無＝亦無【三】</note><note n="0118007" resp="CBETA" type="mod">無【大】，亦無【宋】【元】【明】</note><app n="0118007"><lem wit="【大】">無</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">亦無</rdg></app>有高下。</p><p xml:id="pT01p0118b1913" cb:place="inline">「又其河中
+<lb n="0118b20" ed="T"/>有眾寶<note n="0118008" resp="Taisho" type="orig" place="foot text">船＝舡【宋】</note><note n="0118008" resp="CBETA" type="mod">船【大】，舡【宋】</note><app n="0118008"><lem wit="【大】">船</lem><rdg resp="Taisho" wit="【宋】">舡</rdg></app>，彼方人民欲入中洗浴遊戲時，
+<lb n="0118b21" ed="T"/>脫衣岸上，乘船中流，遊戲娛樂訖已，<note n="0118009" resp="Taisho" type="orig" place="foot text">度＝渡【三】</note><note n="0118009" resp="CBETA" type="mod">度【大】，渡【宋】【元】【明】</note><app n="0118009"><lem wit="【大】">度</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">渡</rdg></app>水
+<lb n="0118b22" ed="T"/>遇衣便著，先出先著，後出後著，不求本衣。
+<lb n="0118b23" ed="T"/>次至香樹，樹為曲躬，其人手取種種雜香，
+<lb n="0118b24" ed="T"/>以自塗身。次到衣樹，樹為曲躬，其人手取
+<lb n="0118b25" ed="T"/>種種雜衣，隨意所著。次到莊嚴樹，樹為曲
+<lb n="0118b26" ed="T"/>躬，其人手取種種莊嚴，以自嚴飾。次到鬘
+<lb n="0118b27" ed="T"/>樹，樹為曲躬，其人手取種種雜鬘，以著頭
+<lb n="0118b28" ed="T"/>上。次到器樹，樹為曲躬，其人手取種種寶
+<lb n="0118b29" ed="T"/>器，取寶器已。次到果樹，樹為曲躬，其人手
+<pb n="0118c" ed="T" xml:id="T01.0001.0118c"/>
+<lb n="0118c01" ed="T"/>取種種美果，或噉食者，或口含者，或漉汁飲
+<lb n="0118c02" ed="T"/>者。次到樂器樹，樹為曲躬，其人手取種種
+<lb n="0118c03" ed="T"/>樂器，調<note n="0118010" resp="Taisho" type="orig" place="foot text">絃＝弦【三】＊</note><note n="0118010" resp="CBETA" type="mod">絃【大】＊，弦【宋】＊【元】＊【明】＊</note><app n="0118010"><lem wit="【大】">絃</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">弦</rdg></app>鼓之，並以妙聲和<app type="star" corresp="#0118010"><lem wit="【大】">絃</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">弦</rdg></app>，而行
+<lb n="0118c04" ed="T"/>詣於園林，隨意娛樂，或一日、二日至于七日，
+<lb n="0118c05" ed="T"/>然後復去，無有定處。</p><p xml:id="pT01p0118c0509" cb:place="inline">「善見池南出妙體河，
+<lb n="0118c06" ed="T"/>善見池西出妙味河，善見池北出光影河，
+<lb n="0118c07" ed="T"/>亦復如是。善見池東有園林名善見，縱廣
+<lb n="0118c08" ed="T"/>百由旬，遶園四邊有七重欄楯、七重羅網、七
+<lb n="0118c09" ed="T"/>重行樹，雜色間廁，七寶所成，其園四面有四
+<lb n="0118c10" ed="T"/>大門，周匝欄楯，皆七寶成。園內清淨，無有
+<lb n="0118c11" ed="T"/>荊棘，其地平正，無有溝<g ref="#CB00589"/>、坑坎、陵阜，亦無
+<lb n="0118c12" ed="T"/>蚊虻、蠅<note n="0118011" resp="Taisho" type="orig" place="foot text">〔蚤〕－【三】</note><note n="0118011" resp="CBETA" type="mod">蚤【大】，〔－〕【宋】【元】【明】</note><app n="0118011"><lem wit="【大】">蚤</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>虱、蚖蛇、蜂蝎、虎狼、惡獸，地純眾寶，
+<lb n="0118c13" ed="T"/>無有<note n="0118012" resp="Taisho" type="orig" place="foot text">石沙＝砂石【三】</note><note n="0118012" resp="CBETA" type="mod">石沙【大】，砂石【宋】【元】【明】</note><app n="0118012"><lem wit="【大】">石沙</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">砂石</rdg></app>，陰陽調柔，四氣和順，不寒不熱，
+<lb n="0118c14" ed="T"/>無眾惱患，其地潤澤，無有塵穢，如油塗
+<lb n="0118c15" ed="T"/>地，遊塵不起，百草常生，無有冬夏，樹木繁
+<lb n="0118c16" ed="T"/>茂，花果熾盛，地生<app type="star" corresp="#0117005"><lem wit="【大】">濡</lem><rdg resp="Taisho" wit="【元】 【明】">輭</rdg></app>草，<note n="0118013" resp="Taisho" type="orig" place="foot text">盤＝槃【宋】【元】</note><note n="0118013" resp="CBETA" type="mod">盤【大】，槃【宋】【元】</note><app n="0118013"><lem wit="【大】">盤</lem><rdg resp="Taisho" wit="【宋】 【元】">槃</rdg></app>縈右旋，色如
+<lb n="0118c17" ed="T"/>孔翠，香如婆師，<app type="star" corresp="#0117005"><lem wit="【大】">濡</lem><rdg resp="Taisho" wit="【元】 【明】">輭</rdg></app>若天衣，其地柔<app type="star" corresp="#0117005"><lem wit="【大】">濡</lem><rdg resp="Taisho" wit="【元】 【明】">輭</rdg></app>，足
+<lb n="0118c18" ed="T"/>蹈地時，地凹四寸，舉足還復。</p><p xml:id="pT01p0118c1812" cb:place="inline">「其園常生自
+<lb n="0118c19" ed="T"/>然粳米，無有糠糩，如白花聚，眾味具足，如
+<lb n="0118c20" ed="T"/>忉利天食。其園常有自然釜鍑，有摩尼珠，
+<lb n="0118c21" ed="T"/>名曰焰光，置於<app type="star" corresp="#0118004"><lem wit="【大】">鍑</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">鑊</rdg></app>下，飯熟光滅，不假樵
+<lb n="0118c22" ed="T"/>火，不勞人功。其園有樹，名曰曲躬，葉葉相
+<lb n="0118c23" ed="T"/>次，天雨不漏，<note n="0118014" resp="Taisho" type="orig" place="foot text">使＝彼【三】</note><note n="0118014" resp="CBETA" type="mod">使【大】，彼【宋】【元】【明】</note><app n="0118014"><lem wit="【大】">使</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">彼</rdg></app>諸男女止宿其下。復有香
+<lb n="0118c24" ed="T"/>樹，高七十里，花果繁茂，其果熟時，皮<app type="star" corresp="#0118005"><lem wit="【大】">殼</lem><rdg resp="Taisho" wit="【宋】 【元】"><g ref="#CB01083"/></rdg><rdg resp="Taisho" wit="【明】"><g ref="#CB08016"/></rdg></app>自裂，
+<lb n="0118c25" ed="T"/>出種種香，樹有高六十里、五十、四十，至高五
+<lb n="0118c26" ed="T"/>里，花果繁茂，出種種香，乃至樂器樹，亦復如
+<lb n="0118c27" ed="T"/>是。其土人民至彼園中游戲娛樂，一日、二日，
+<lb n="0118c28" ed="T"/>至于七日，其善見園無人守護，隨意游戲，
+<lb n="0118c29" ed="T"/>然後復去。</p><p xml:id="pT01p0118c2905" cb:place="inline">「善見池南有園林，名大善見。善
+<pb n="0119a" ed="T" xml:id="T01.0001.0119a"/>
+<lb n="0119a01" ed="T"/>見池西有園林，名曰娛樂。善見池北有園
+<lb n="0119a02" ed="T"/>林，名曰等花，亦復如是。其土中夜、後夜，阿
+<lb n="0119a03" ed="T"/>耨達龍王數數隨時起清淨雲，周遍世界
+<lb n="0119a04" ed="T"/>而降甘雨，如<note n="0119001" resp="Taisho" type="orig" place="foot text">搆＝<g ref="#CB04786"/>【宋】，<g ref="#CB00014"/>【元】【明】</note><note n="0119001" resp="CBETA" type="mod" cb:note_key="T01.0119a04.06">搆【大】，<g ref="#CB04786"/>【宋】，<g ref="#CB00014"/>【元】【明】</note><app n="0119001"><lem wit="【大】">搆</lem><rdg resp="Taisho" wit="【宋】"><g ref="#CB04786"/></rdg><rdg resp="Taisho" wit="【元】 【明】"><g ref="#CB00014"/></rdg></app>牛頃，以八味水潤澤普
+<lb n="0119a05" ed="T"/>洽，水不留停，地無泥淖，猶如鬘師以水灑
+<lb n="0119a06" ed="T"/>華，使不萎<note n="0119002" resp="Taisho" type="orig" place="foot text">枯＝茄【宋】</note><note n="0119002" resp="CBETA" type="mod">枯【大】，茄【宋】</note><app n="0119002"><lem wit="【大】">枯</lem><rdg resp="Taisho" wit="【宋】">茄</rdg></app>，潤澤鮮明。時，彼土於中夜
+<lb n="0119a07" ed="T"/>後無有雲翳，空中清明，海出凉風，清淨柔
+<lb n="0119a08" ed="T"/>和，微吹人身，舉體快樂。其土豐饒，人民熾盛，
+<lb n="0119a09" ed="T"/>設須食時，以自然粳米著於釜中，以焰光
+<lb n="0119a10" ed="T"/>珠置於釜下，飯自然熟，珠光自滅。諸有來
+<lb n="0119a11" ed="T"/>者，自恣食之，其主不起，飯終不盡；若其主
+<lb n="0119a12" ed="T"/>起，飯則盡<note n="0119003" resp="Taisho" type="orig" place="foot text">賜＝儩【三】</note><note n="0119003" resp="CBETA" type="mod">賜【大】，儩【宋】【元】【明】</note><app n="0119003"><lem wit="【大】">賜</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">儩</rdg></app>。其飯鮮潔，如白花<anchor xml:id="fxT01p0119a01"/>聚，其味具
+<lb n="0119a13" ed="T"/>足，如忉利天食，彼食此飯，無有眾病，氣力
+<lb n="0119a14" ed="T"/>充足，顏色和悅，無有衰耗。</p><p xml:id="pT01p0119a1411" cb:place="inline">「又其<note n="0119a1401" resp="CBETA" type="add">土【CB】【麗-CB】，上【大】</note><app n="0119a1401"><lem resp="CBETA.maha" wit="【CB】 【麗-CB】">土<note type="cf1">K17n0647_p0980c19</note><note type="cf2">T01n0001_p0119b01</note></lem><rdg wit="【大】">上</rdg></app>人身體相
+<lb n="0119a15" ed="T"/>類，<note n="0119004" resp="Taisho" type="orig" place="foot text">形＝顏【三】</note><note n="0119004" resp="CBETA" type="mod">形【大】，顏【宋】【元】【明】</note><app n="0119004"><lem wit="【大】">形</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">顏</rdg></app>貌同等，不可分別，其貌少壯，如閻浮
+<lb n="0119a16" ed="T"/>提二十許人，其人口齒平正潔白，密緻無間，
+<lb n="0119a17" ed="T"/>髮紺青色，無有<note n="0119005" resp="Taisho" type="orig" place="foot text">塵垢＝痿落【三】</note><note n="0119005" resp="CBETA" type="mod">塵垢【大】，痿落【宋】【元】【明】</note><app n="0119005"><lem wit="【大】">塵垢</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">痿落</rdg></app>，髮埀八指，齊<note n="0119006" resp="Taisho" type="orig" place="foot text">眉＝肩【三】</note><note n="0119006" resp="CBETA" type="mod">眉【大】，肩【宋】【元】【明】</note><app n="0119006"><lem wit="【大】">眉</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">肩</rdg></app>而
+<lb n="0119a18" ed="T"/>止，不長不短。若其土<note n="0119007" resp="Taisho" type="orig" place="foot text">人＝人民【三】</note><note n="0119007" resp="CBETA" type="mod">人【大】，人民【宋】【元】【明】</note><app n="0119007"><lem wit="【大】">人</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">人民</rdg></app>起欲心時，則熟
+<lb n="0119a19" ed="T"/>視女人而捨之去，彼女隨後往詣園林，若
+<lb n="0119a20" ed="T"/>彼女人是彼男子父親、母親骨肉中表不
+<lb n="0119a21" ed="T"/>應行欲者，樹不曲蔭，各自散去。若非父親、
+<lb n="0119a22" ed="T"/>母親骨肉中表應行欲者，樹則曲躬，迴蔭
+<lb n="0119a23" ed="T"/>其身，隨意娛樂，一日、二日，或至七日，爾乃散
+<lb n="0119a24" ed="T"/>去。彼人懷姙，七日、八日便產，隨生男女，置
+<lb n="0119a25" ed="T"/>於四衢大交道頭，捨之而去。諸有行人經過
+<lb n="0119a26" ed="T"/>其邊，出指令<note n="0119008" resp="Taisho" type="orig" place="foot text">嗽＝<g ref="#CB00063"/>【三】</note><note n="0119008" resp="CBETA" type="mod">嗽【大】，<g ref="#CB00063"/>【宋】【元】【明】</note><app n="0119008"><lem wit="【大】">嗽</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><g ref="#CB00063"/></rdg></app>，指出甘乳，充適兒身。過
+<lb n="0119a27" ed="T"/>七日已，其兒<note n="0119009" resp="Taisho" type="orig" place="foot text">長成＝成長【三】</note><note n="0119009" resp="CBETA" type="mod">長成【大】，成長【宋】【元】【明】</note><app n="0119009"><lem wit="【大】">長成</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">成長</rdg></app>與彼人等，男向男眾，
+<lb n="0119a28" ed="T"/>女向女眾。</p><p xml:id="pT01p0119a2805" cb:place="inline">「彼人命終，不相哭泣，莊嚴死屍，
+<lb n="0119a29" ed="T"/>置四衢道，捨之而去；有鳥名憂慰禪伽，接
+<pb n="0119b" ed="T" xml:id="T01.0001.0119b"/>
+<lb n="0119b01" ed="T"/>彼死屍置於他方。又其土人，大小便時，地即
+<lb n="0119b02" ed="T"/>為開，便利訖已，地還自合。其土人民無所繫
+<lb n="0119b03" ed="T"/>戀，亦無畜積，壽命常定，死盡生天。彼人何
+<lb n="0119b04" ed="T"/>故壽命常定？其人前世修十善行，身壞命終，
+<lb n="0119b05" ed="T"/>生欝單<app type="star" corresp="#0117016"><lem wit="【大】">曰</lem><rdg resp="Taisho" wit="【明】">越</rdg></app>，壽命千歲，不增不減。是故彼人
+<lb n="0119b06" ed="T"/>壽命正等。</p><p xml:id="pT01p0119b0605" cb:place="inline">「復次，殺生者墮惡趣，不殺者生善
+<lb n="0119b07" ed="T"/>趣，如是竊盜、邪婬、兩舌、惡口、妄言、綺語、貪取、
+<lb n="0119b08" ed="T"/>嫉妬、邪見者，墮惡趣中；不盜，不婬，不兩舌、
+<lb n="0119b09" ed="T"/>惡口、妄言、綺語，不貪取、嫉妬、邪見者，則生
+<lb n="0119b10" ed="T"/>善趣。若有不殺，不盜，不婬，不兩舌、惡口、妄
+<lb n="0119b11" ed="T"/>言、綺語，不貪取、嫉妬、邪見，身壞命終，生欝單
+<lb n="0119b12" ed="T"/>曰，壽命千歲，不增不減。是故彼人壽命正等。
+<lb n="0119b13" ed="T"/>復次，慳悋貪取，不能施惠，死墮惡道；開心
+<lb n="0119b14" ed="T"/>不悋，能為施惠者，則生善處。有人施沙門、
+<lb n="0119b15" ed="T"/>婆羅門，及施貧窮乞兒、瘡病、困苦者，給其衣
+<lb n="0119b16" ed="T"/>服、<note n="0119010" resp="Taisho" type="orig" place="foot text">飯＝飲【三】</note><note n="0119010" resp="CBETA" type="mod">飯【大】，飲【宋】【元】【明】</note><app n="0119010"><lem wit="【大】">飯</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">飲</rdg></app>食、乘輿、花鬘、塗香、牀<g ref="#CB00186"/>、房舍，又造立塔
+<lb n="0119b17" ed="T"/>廟，燈燭供養，其人身壞命終，生欝單曰，壽命
+<lb n="0119b18" ed="T"/>千歲，不增不減。是故彼人壽命正等。何故稱
+<lb n="0119b19" ed="T"/>欝單<app type="star" corresp="#0117016"><lem wit="【大】">曰</lem><rdg resp="Taisho" wit="【明】">越</rdg></app><note n="0119011" resp="Taisho" type="orig" place="foot text">為＝人為【三】</note><note n="0119011" resp="CBETA" type="mod">為【大】，人為【宋】【元】【明】</note><app n="0119011"><lem wit="【大】">為</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">人為</rdg></app>勝？其土人民不受十善，舉動
+<lb n="0119b20" ed="T"/>自然與十善合，身壞命終，生天善處，是故
+<lb n="0119b21" ed="T"/>彼人得稱為<note n="0119b2101" resp="CBETA" type="add">勝【CB】，稱【大】</note><app n="0119b2101"><lem wit="【CB】" resp="CBETA">勝</lem><rdg wit="【大】">稱</rdg></app>欝單<app type="star" corresp="#0117016"><lem wit="【大】">曰</lem><rdg resp="Taisho" wit="【明】">越</rdg></app>。欝單曰<anchor xml:id="fxT01p0119b04"/>者，其義云
+<lb n="0119b22" ed="T"/>何？於三天下，其土最上最勝，故名欝單<app type="star" corresp="#0117016"><lem wit="【大】">曰</lem><rdg resp="Taisho" wit="【明】">越</rdg></app>
+<lb n="0119b23" ed="T"/><note n="0119012" resp="Taisho" type="orig" place="foot text">〔欝單…上〕七字－【明】</note><note n="0119012" resp="CBETA" type="mod">（欝單…上）七字【大】，〔－〕【明】</note><app n="0119012" cb:word-count="7"><lem wit="【大】"><note place="inline">欝單曰秦言最上</note></lem><rdg resp="Taisho" wit="【明】"><space quantity="0"/></rdg></app>。」</p></cb:div>
+<lb n="0119b24" ed="T"/><cb:div type="pin"><cb:mulu level="3" type="品">3 轉輪聖王品</cb:mulu><head><note n="0119013" resp="Taisho" type="orig" place="foot text">〔佛說…世記經〕十一字－【明】</note><note n="0119013" resp="CBETA" type="mod">（佛說…世記經）十一字【大】，〔－〕【明】</note><app n="0119013" cb:word-count="11"><lem wit="【大】"><title>佛說長阿含</title>第四分世記經</lem><rdg resp="Taisho" wit="【明】"><space quantity="0"/></rdg></app>轉輪聖王品第
+<lb n="0119b25" ed="T"/>三</head>
+<lb n="0119b26" ed="T"/><p xml:id="pT01p0119b2601">佛告比丘：「世間有轉輪聖王，成就七寶，有
+<lb n="0119b27" ed="T"/>四神德。云何轉輪聖王成就七寶？一金輪寶，
+<lb n="0119b28" ed="T"/>二白象寶，三紺馬寶，四神珠寶，五玉女寶，六
+<lb n="0119b29" ed="T"/>居士寶，七主兵寶。云何轉輪聖王金輪寶成
+<pb n="0119c" ed="T" xml:id="T01.0001.0119c"/>
+<lb n="0119c01" ed="T"/>就？若轉輪聖王出閻浮提地，剎利水澆頭種，
+<lb n="0119c02" ed="T"/>以十五日月滿時，沐浴香湯，上高殿上，與
+<lb n="0119c03" ed="T"/>婇女眾共相娛樂，天金輪寶忽現在前，輪有
+<lb n="0119c04" ed="T"/>千輻，<note n="0119014" resp="Taisho" type="orig" place="foot text">〔其〕－【三】</note><note n="0119014" resp="CBETA" type="mod">其【大】，〔－〕【宋】【元】【明】</note><app n="0119014"><lem wit="【大】">其</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>光色具足，天金所成，天匠所造，非
+<lb n="0119c05" ed="T"/>世所有，輪徑丈四。轉輪聖王見已，默自念言：
+<lb n="0119c06" ed="T"/>『我曾從先宿諸舊聞如是語：「若剎利王水
+<lb n="0119c07" ed="T"/>澆頭種，以十五日月滿時，沐浴香湯，昇法
+<lb n="0119c08" ed="T"/>殿上，婇女圍遶，自然金輪忽現在前，輪有千
+<lb n="0119c09" ed="T"/>輻，光色具足，天匠所造，非世所有，輪徑丈四，
+<lb n="0119c10" ed="T"/>是則名為轉輪聖王。」今此輪現，將無是耶？今
+<lb n="0119c11" ed="T"/>我寧可試此輪寶。』</p><p xml:id="pT01p0119c1108" cb:place="inline">「時，轉輪王即召四兵，向
+<lb n="0119c12" ed="T"/>金輪寶，偏露右臂，右膝著地，以右手摩捫
+<lb n="0119c13" ed="T"/>金輪語言：『汝向東方，如法而轉，勿違常則。』
+<lb n="0119c14" ed="T"/>輪即東轉。時，轉輪王即將四兵隨其後行，
+<lb n="0119c15" ed="T"/>金輪寶前有四神導，輪所住處，王即止駕。爾
+<lb n="0119c16" ed="T"/>時，東方諸小國王見大王至，以金鉢盛銀
+<lb n="0119c17" ed="T"/>粟，銀鉢盛金粟，來詣王所，拜首白言：『善哉！
+<lb n="0119c18" ed="T"/>大王！今此東方土地豐樂，多諸珍寶，人民熾
+<lb n="0119c19" ed="T"/>盛，志性仁和，慈孝忠順，唯願聖王於此治政，
+<lb n="0119c20" ed="T"/>我等當給使左右承受<note n="0119015" resp="Taisho" type="orig" place="foot text">所＋（須）【元】【明】</note><note n="0119015" resp="CBETA" type="mod">所【大】，所須【元】【明】</note><app n="0119015"><lem wit="【大】">所</lem><rdg resp="Taisho" wit="【元】 【明】">所須</rdg></app>當。』時，轉輪王語
+<lb n="0119c21" ed="T"/>小王言：『止！止！諸賢！汝等則為供養我已，但
+<lb n="0119c22" ed="T"/>當以正法治化，勿使偏枉，無令國內有
+<lb n="0119c23" ed="T"/>非法行，<note n="0119016" resp="Taisho" type="orig" place="foot text">身＝自【三】</note><note n="0119016" resp="CBETA" type="mod">身【大】，自【宋】【元】【明】</note><app n="0119016"><lem wit="【大】">身</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">自</rdg></app>不殺生，教人不殺生、偷盜、邪婬、
+<lb n="0119c24" ed="T"/>兩舌、惡口、妄言、綺語、貪取、嫉妬、邪見之人，此
+<lb n="0119c25" ed="T"/>即名<note n="0119017" resp="Taisho" type="orig" place="foot text">為＝曰【三】</note><note n="0119017" resp="CBETA" type="mod">為【大】，曰【宋】【元】【明】</note><app n="0119017"><lem wit="【大】">為</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">曰</rdg></app>我之所治。』</p><p xml:id="pT01p0119c2508" cb:place="inline">「時，諸小王聞是教已，即
+<lb n="0119c26" ed="T"/>從大王巡行諸國，至東海表，次行南方、西
+<lb n="0119c27" ed="T"/>方、北方，隨輪所至，其諸國王各獻國土，亦
+<lb n="0119c28" ed="T"/>如東方諸小王比。此閻浮<note n="0119018" resp="Taisho" type="orig" place="foot text">提＝地【三】</note><note n="0119018" resp="CBETA" type="mod">提【大】，地【宋】【元】【明】</note><app n="0119018"><lem wit="【大】">提</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">地</rdg></app>所有名曰<note n="0119019" resp="Taisho" type="orig" place="foot text">土＝土地【三】</note><note n="0119019" resp="CBETA" type="mod">土【大】，土地【宋】【元】【明】</note><app n="0119019"><lem wit="【大】">土</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">土地</rdg></app>
+<lb n="0119c29" ed="T"/>沃野豐，多出珍寶，林水清淨，平<note n="0119020" resp="Taisho" type="orig" place="foot text">廣＝曠【三】</note><note n="0119020" resp="CBETA" type="mod">廣【大】，曠【宋】【元】【明】</note><app n="0119020"><lem wit="【大】">廣</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">曠</rdg></app>之處，輪
+<pb n="0120a" ed="T" xml:id="T01.0001.0120a"/>
+<lb n="0120a01" ed="T"/>則周行，封<note n="0120001" resp="Taisho" type="orig" place="foot text">盡＝畫【三】</note><note n="0120001" resp="CBETA" type="mod">盡【大】，畫【宋】【元】【明】</note><app n="0120001"><lem wit="【大】">盡</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">畫</rdg></app>圖度東西十二由旬，南北<note n="0120002" resp="Taisho" type="orig" place="foot text">十＝七【三】</note><note n="0120002" resp="CBETA" type="mod">十【大】，七【宋】【元】【明】</note><app n="0120002"><lem wit="【大】">十</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">七</rdg></app>
+<lb n="0120a02" ed="T"/>由旬，天神於中夜造城<note n="0120003" resp="Taisho" type="orig" place="foot text">墎＝郭【三】</note><note n="0120003" resp="CBETA" type="mod">墎【大】，郭【宋】【元】【明】</note><app n="0120003"><lem wit="【大】">墎</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">郭</rdg></app>，其城七重，七重
+<lb n="0120a03" ed="T"/>欄楯、七重羅網、七重行樹，周匝校飾，七寶所
+<lb n="0120a04" ed="T"/>成，乃至無數眾鳥相和而鳴。造此城<note n="0120004" resp="Taisho" type="orig" place="foot text">已＝邑【三】</note><note n="0120004" resp="CBETA" type="mod">已【大】，邑【宋】【元】【明】</note><app n="0120004"><lem wit="【大】">已</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">邑</rdg></app>，金
+<lb n="0120a05" ed="T"/>輪寶復於其城中，圖度封地東西四由旬，
+<lb n="0120a06" ed="T"/>南北二由旬，天神於中夜造宮殿，宮牆七
+<lb n="0120a07" ed="T"/>重，七寶所成，乃至無數眾鳥相和而鳴，亦復
+<lb n="0120a08" ed="T"/>如是。造宮殿已，時，金輪寶在宮殿上虛空
+<lb n="0120a09" ed="T"/>中住，完具而不動轉。轉輪聖王踊躍而言：
+<lb n="0120a10" ed="T"/>『此金輪寶真為我瑞，我今真為轉輪聖王。』是
+<lb n="0120a11" ed="T"/>為金輪寶成就。</p><p xml:id="pT01p0120a1107" cb:place="inline">「云何白象寶成就？轉輪聖王
+<lb n="0120a12" ed="T"/>清旦於正殿上坐，自然象寶忽現在前，其毛
+<lb n="0120a13" ed="T"/>純白，七處平住，力能飛行，其首雜色，六牙纖
+<lb n="0120a14" ed="T"/><g ref="#CB00166"/>，真金間填。時，王見已念言：『此象賢良，若善
+<lb n="0120a15" ed="T"/>調者可中御乘。』即試調習，諸能悉備。時，轉輪
+<lb n="0120a16" ed="T"/>王欲自試象，即乘其上，清旦出城，周行四
+<lb n="0120a17" ed="T"/>海，食時<note n="0120005" resp="Taisho" type="orig" place="foot text">以＝已【三】</note><note n="0120005" resp="CBETA" type="mod">以【大】，已【宋】【元】【明】</note><app n="0120005"><lem wit="【大】">以</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">已</rdg></app>還。時，轉輪王踊躍而言：『此白象
+<lb n="0120a18" ed="T"/>寶真為我瑞，我今真為轉輪聖王。』是為象
+<lb n="0120a19" ed="T"/>寶成就。</p><p xml:id="pT01p0120a1904" cb:place="inline">「云何轉輪聖王紺馬寶成就？時，轉輪
+<lb n="0120a20" ed="T"/>聖王清旦在正殿上坐，自然馬寶忽現在前，
+<lb n="0120a21" ed="T"/>紺青色，<note n="0120006" resp="Taisho" type="orig" place="foot text">朱騣＝珠毛【三】</note><note n="0120006" resp="CBETA" type="mod">朱騣【大】，珠毛【宋】【元】【明】</note><app n="0120006"><lem wit="【大】">朱騣</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">珠毛</rdg></app>尾，頭頸如象，力能飛行。時，王
+<lb n="0120a22" ed="T"/>見已念言：『此馬賢良，若善調者，可中御乘。』
+<lb n="0120a23" ed="T"/>即試調習，諸能悉備。時，轉輪聖王欲自試馬
+<lb n="0120a24" ed="T"/>寶，即乘其上，清旦出城，周行四海，食時已
+<lb n="0120a25" ed="T"/>還。時，轉輪王踊躍而言：『此紺馬寶真為我瑞，
+<lb n="0120a26" ed="T"/>我今真為轉輪聖王。』是為紺馬寶成就。</p><p xml:id="pT01p0120a2616" cb:place="inline">「云何
+<lb n="0120a27" ed="T"/>神珠寶成就？時，轉輪聖王於清旦在正殿
+<lb n="0120a28" ed="T"/>上坐，自然神珠忽現在前，<note n="0120007" resp="Taisho" type="orig" place="foot text">質＝其【元】【明】</note><note n="0120007" resp="CBETA" type="mod">質【大】，其【元】【明】</note><app n="0120007"><lem wit="【大】">質</lem><rdg resp="Taisho" wit="【元】 【明】">其</rdg></app>色清徹，無有
+<lb n="0120a29" ed="T"/>瑕穢。時，王見已言：『此珠妙好，若有光明，可
+<pb n="0120b" ed="T" xml:id="T01.0001.0120b"/>
+<lb n="0120b01" ed="T"/>照宮內。』時，轉輪王欲試此珠，即召四兵，以
+<lb n="0120b02" ed="T"/>此寶珠置高幢上，於夜冥中，齎<note n="0120b0201" resp="CBETA" type="add">幢【CB】，憧【大】</note><app n="0120b0201"><lem wit="【CB】" resp="CBETA">幢</lem><rdg wit="【大】">憧</rdg></app>出城。其
+<lb n="0120b03" ed="T"/>珠光明照一由旬，現城中人皆起作務，謂為
+<lb n="0120b04" ed="T"/>是晝。<note n="0120008" resp="Taisho" type="orig" place="foot text">〔時〕－【三】</note><note n="0120008" resp="CBETA" type="mod">時【大】，〔－〕【宋】【元】【明】</note><app n="0120008"><lem wit="【大】">時</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>，轉輪聖王踊躍而言：『今此神珠真
+<lb n="0120b05" ed="T"/>為我瑞，我今真為轉輪聖王。』是為神珠寶
+<lb n="0120b06" ed="T"/>成就。</p><p xml:id="pT01p0120b0603" cb:place="inline">「云何玉女寶成就？<note n="0120009" resp="Taisho" type="orig" place="foot text">時＋（王）【宋】</note><note n="0120009" resp="CBETA" type="mod">時【大】，時王【宋】</note><app n="0120009"><lem wit="【大】">時</lem><rdg resp="Taisho" wit="【宋】">時王</rdg></app>，玉女寶忽然出現，
+<lb n="0120b07" ed="T"/>顏色<note n="0120010" resp="Taisho" type="orig" place="foot text">溶溶＝從容【三】</note><note n="0120010" resp="CBETA" type="mod">溶溶【大】，從容【宋】【元】【明】</note><app n="0120010"><lem wit="【大】">溶溶</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">從容</rdg></app>，面貌端正，不長不短，不麤不細，
+<lb n="0120b08" ed="T"/>不白不黑，不剛不柔，冬則身溫，夏則身涼，舉
+<lb n="0120b09" ed="T"/>身毛孔出<note n="0120011" resp="Taisho" type="orig" place="foot text">栴＝旃【宋】【元】</note><note n="0120011" resp="CBETA" type="mod">栴【大】，旃【宋】【元】</note><app n="0120011"><lem wit="【大】">栴</lem><rdg resp="Taisho" wit="【宋】 【元】">旃</rdg></app>檀香，口出優鉢羅花香，言語
+<lb n="0120b10" ed="T"/>柔<app type="star" corresp="#0117005"><lem wit="【大】">濡</lem><rdg resp="Taisho" wit="【元】 【明】">輭</rdg></app>，舉動安詳，先起後坐，不失<note n="0120012" resp="Taisho" type="orig" place="foot text">明<space quantity="1" unit="chars"/>譌曰宜當作儀</note><note n="0120012" resp="CBETA" type="mod">明校譌曰宜當作儀</note>宜則。時，轉
+<lb n="0120b11" ed="T"/>輪聖王見已無著，心不暫念，況復親近？時，轉
+<lb n="0120b12" ed="T"/>輪聖王見已，踊躍而言：『此玉女寶真為我瑞，
+<lb n="0120b13" ed="T"/>我今真為轉輪聖王。』是為玉女寶成就。</p><p xml:id="pT01p0120b1316" cb:place="inline">「云何
+<lb n="0120b14" ed="T"/>居士寶成就？時，居士丈夫忽然自出，寶藏自
+<lb n="0120b15" ed="T"/>然財富無量，居士宿福，眼能徹視地中伏藏，
+<lb n="0120b16" ed="T"/>有主無主皆悉見知，其有主者能為擁護，其
+<lb n="0120b17" ed="T"/>無主者取給王用。時，居士寶往白王言：『大
+<lb n="0120b18" ed="T"/>王！有所給與，不足為憂，我自能辦。』<note n="0120013" resp="Taisho" type="orig" place="foot text">轉＝時轉【三】</note><note n="0120013" resp="CBETA" type="mod">轉【大】，時轉【宋】【元】【明】</note><app n="0120013"><lem wit="【大】">轉</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">時轉</rdg></app>輪
+<lb n="0120b19" ed="T"/>聖王欲試居士寶，即勅嚴<anchor xml:id="fxT01p0120b02"/>船於水遊戲，
+<lb n="0120b20" ed="T"/>告居士曰：『我須金寶，汝速與我。』居士報曰：
+<lb n="0120b21" ed="T"/>『大王小待，須至岸上。』王尋逼言：『我今須用，
+<lb n="0120b22" ed="T"/>正爾得來。』時，居士寶被王嚴勅，即於<anchor xml:id="fxT01p0120b03"/>船上
+<lb n="0120b23" ed="T"/>長跪，以右手內著水中，水中寶瓶隨手而
+<lb n="0120b24" ed="T"/>出，如虫<note n="0120014" resp="Taisho" type="orig" place="foot text">緣＝淞【宋】【元】，沿【明】＊</note><note n="0120014" resp="CBETA" type="mod">緣【大】＊，淞【宋】【元】，沿【明】＊</note><app n="0120014"><lem wit="【大】">緣</lem><rdg resp="Taisho" wit="【宋】 【元】">淞</rdg><rdg resp="Taisho" wit="【明】">沿</rdg></app>樹，彼居士寶亦復如是，內手水
+<lb n="0120b25" ed="T"/>中，寶<app type="star" corresp="#0120014"><lem wit="【大】">緣</lem><rdg resp="Taisho" wit="【明】">沿</rdg></app>手出，充滿<anchor xml:id="fxT01p0120b05"/>船上，而白王言：『向須
+<lb n="0120b26" ed="T"/>寶用，為須幾許？』時，轉輪聖<note n="0120015" resp="Taisho" type="orig" place="foot text">王＋（見）【三】</note><note n="0120015" resp="CBETA" type="mod">王【大】，王見【宋】【元】【明】</note><app n="0120015"><lem wit="【大】">王</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">王見</rdg></app>語居士言：
+<lb n="0120b27" ed="T"/>『止！止！吾無所須，向相試耳，汝今便為供養
+<lb n="0120b28" ed="T"/>我已。』時，居士聞王語已，尋以寶物還<note n="0120016" resp="Taisho" type="orig" place="foot text">沒＝投【三】</note><note n="0120016" resp="CBETA" type="mod">沒【大】，投【宋】【元】【明】</note><app n="0120016"><lem wit="【大】">沒</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">投</rdg></app>
+<lb n="0120b29" ed="T"/>水中。時，轉輪聖王踊躍而言：『此居士寶真為
+<pb n="0120c" ed="T" xml:id="T01.0001.0120c"/>
+<lb n="0120c01" ed="T"/>我瑞，我今真為轉輪聖王。』是為居士寶成
+<lb n="0120c02" ed="T"/>就。</p><p xml:id="pT01p0120c0202" cb:place="inline">「云何主兵寶成就？時，主兵寶忽然出現，智
+<lb n="0120c03" ed="T"/>謀雄猛，英略獨決，即詣王所白言：『大王！有
+<lb n="0120c04" ed="T"/>所討<note n="0120017" resp="Taisho" type="orig" place="foot text">罰＝伐【元】【明】</note><note n="0120017" resp="CBETA" type="mod">罰【大】，伐【元】【明】</note><app n="0120017"><lem wit="【大】">罰</lem><rdg resp="Taisho" wit="【元】 【明】">伐</rdg></app>，不足為憂，我自能辦。』時，轉輪聖
+<lb n="0120c05" ed="T"/>王欲試主兵寶，即集四兵而告之曰：『汝今
+<lb n="0120c06" ed="T"/>用兵，未集者集，<note n="0120018" resp="Taisho" type="orig" place="foot text">已＝以【宋】【元】</note><note n="0120018" resp="CBETA" type="mod">已【大】，以【宋】【元】</note><app n="0120018"><lem wit="【大】">已</lem><rdg resp="Taisho" wit="【宋】 【元】">以</rdg></app>集者放，未嚴者嚴，已嚴
+<lb n="0120c07" ed="T"/>者解，未去者去，已去者住。』時，主兵寶聞王語
+<lb n="0120c08" ed="T"/>已，即令四兵，未集者集，已集者放，未嚴者
+<lb n="0120c09" ed="T"/>嚴，已嚴者解，未去者去，已去者住。時，轉輪聖
+<lb n="0120c10" ed="T"/>王見已，踊躍而言：『此主兵寶真為我瑞，我今
+<lb n="0120c11" ed="T"/>真為轉輪聖王。』是為轉輪聖王七寶成就。</p><p xml:id="pT01p0120c1117" cb:place="inline">「<note n="0120019" resp="Taisho" type="orig" place="foot text">謂＝河謂【三】</note><note n="0120019" resp="CBETA" type="mod">謂【大】，河謂【宋】【元】【明】</note><app n="0120019"><lem wit="【大】">
+<lb n="0120c12" ed="T"/>謂</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">河謂</rdg></app>四神德，一者長壽不夭無能及者，二者身
+<lb n="0120c13" ed="T"/><note n="0120020" resp="Taisho" type="orig" place="foot text">強＝彊【宋】【元】，疆【明】</note><note n="0120020" resp="CBETA" type="mod">強【大】，彊【宋】【元】，疆【明】</note><app n="0120020"><lem wit="【大】">強</lem><rdg resp="Taisho" wit="【宋】 【元】">彊</rdg><rdg resp="Taisho" wit="【明】">疆</rdg></app>無患無能及者，三者顏貌端正無能及
+<lb n="0120c14" ed="T"/>者，四者寶藏盈溢無能及者，是為轉輪聖王
+<lb n="0120c15" ed="T"/>成就七寶及四功德。</p><p xml:id="pT01p0120c1509" cb:place="inline">「時，轉輪聖王久乃命駕
+<lb n="0120c16" ed="T"/>出遊後園，尋告御者：『汝當善御而行。所以
+<lb n="0120c17" ed="T"/>然者？吾欲諦觀國土人民安樂無患。』時，國
+<lb n="0120c18" ed="T"/>人民路次觀者，復語侍人：『汝且徐行，吾欲
+<lb n="0120c19" ed="T"/>諦觀聖王威顏。』時，轉輪聖王慈育民物如
+<lb n="0120c20" ed="T"/>父愛子，國民慕王如子仰父，所有珍<note n="0120021" resp="Taisho" type="orig" place="foot text">琦＝奇【三】</note><note n="0120021" resp="CBETA" type="mod">琦【大】，奇【宋】【元】【明】</note><app n="0120021"><lem wit="【大】">琦</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">奇</rdg></app>盡
+<lb n="0120c21" ed="T"/>以貢王，願埀納受，<note n="0120022" resp="Taisho" type="orig" place="foot text">在＝任【元】</note><note n="0120022" resp="CBETA" type="mod">在【大】，任【元】</note><app n="0120022"><lem wit="【大】">在</lem><rdg resp="Taisho" wit="【元】">任</rdg></app>意所與。時，王報曰：
+<lb n="0120c22" ed="T"/>『且止！諸人！吾自有寶，汝可自用。』</p><p xml:id="pT01p0120c2213" cb:place="inline">「轉輪聖王
+<lb n="0120c23" ed="T"/>治此閻浮提時，其地平正，無有荊棘、坑坎、
+<lb n="0120c24" ed="T"/><note n="0120023" resp="Taisho" type="orig" place="foot text">堆＝埠【三】</note><note n="0120023" resp="CBETA" type="mod">堆【大】，埠【宋】【元】【明】</note><app n="0120023"><lem wit="【大】">堆</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">埠</rdg></app>阜，亦無蚊虻、蜂蝎、蠅蚤、<note n="0120024" resp="Taisho" type="orig" place="foot text">蛇蚖＝蚖蛇【三】</note><note n="0120024" resp="CBETA" type="mod">蛇蚖【大】，蚖蛇【宋】【元】【明】</note><app n="0120024"><lem wit="【大】">蛇蚖</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">蚖蛇</rdg></app>、惡蟲，石沙、
+<lb n="0120c25" ed="T"/>瓦礫自然沈沒，金銀寶玉現於地上，四時和
+<lb n="0120c26" ed="T"/>調，不寒不熱，其地柔<app type="star" corresp="#0117005"><lem wit="【大】">濡</lem><rdg resp="Taisho" wit="【元】 【明】">輭</rdg></app>，無有塵穢，如油
+<lb n="0120c27" ed="T"/>塗地，潔淨光澤，無有塵穢。轉輪聖王治於
+<lb n="0120c28" ed="T"/>世時，地亦如是，地出流泉，清淨無竭，生
+<lb n="0120c29" ed="T"/>柔濡草，冬夏常青，樹木繁茂，花果熾盛，地生
+<pb n="0121a" ed="T" xml:id="T01.0001.0121a"/>
+<lb n="0121a01" ed="T"/><app type="star" corresp="#0117005"><lem wit="【大】">濡</lem><rdg resp="Taisho" wit="【元】 【明】">輭</rdg></app>草，色如孔翠，香若婆師，<app type="star" corresp="#0117005"><lem wit="【大】">濡</lem><rdg resp="Taisho" wit="【元】 【明】">輭</rdg></app>如天衣，足
+<lb n="0121a02" ed="T"/>蹈地時，地凹四寸，舉足還復，無空缺處，自
+<lb n="0121a03" ed="T"/>然粳米無有糠糩，眾味具足。時有香樹，花
+<lb n="0121a04" ed="T"/>果茂盛，其果熟時，果自然裂，出自然香，香氣
+<lb n="0121a05" ed="T"/>馥熏。復有衣樹，花果茂盛，其果熟時，皮<app type="star" corresp="#0118005"><lem wit="【大】">殼</lem><rdg resp="Taisho" wit="【宋】 【元】"><g ref="#CB01083"/></rdg><rdg resp="Taisho" wit="【明】"><g ref="#CB08016"/></rdg></app>
+<lb n="0121a06" ed="T"/>自裂，出種種衣。復有莊嚴樹，花果熾盛，其
+<lb n="0121a07" ed="T"/>果熟時，皮<app type="star" corresp="#0118005"><lem wit="【大】">殼</lem><rdg resp="Taisho" wit="【宋】 【元】"><g ref="#CB01083"/></rdg><rdg resp="Taisho" wit="【明】"><g ref="#CB08016"/></rdg></app>自裂，出種種莊嚴具。復有鬘
+<lb n="0121a08" ed="T"/>樹，花果茂盛，其果熟時，皮<app type="star" corresp="#0118005"><lem wit="【大】">殼</lem><rdg resp="Taisho" wit="【宋】 【元】"><g ref="#CB01083"/></rdg><rdg resp="Taisho" wit="【明】"><g ref="#CB08016"/></rdg></app>自裂，出種種
+<lb n="0121a09" ed="T"/>鬘。復有器樹，花果茂盛，其果熟時，皮殼自裂，
+<lb n="0121a10" ed="T"/>出種種器。復有果樹，花果茂盛，其果熟時，
+<lb n="0121a11" ed="T"/>皮<app type="star" corresp="#0118005"><lem wit="【大】">殼</lem><rdg resp="Taisho" wit="【宋】 【元】"><g ref="#CB01083"/></rdg><rdg resp="Taisho" wit="【明】"><g ref="#CB08016"/></rdg></app>自裂，出種種果。復有樂器樹，花果茂
+<lb n="0121a12" ed="T"/>盛，其果熟時，皮殼自裂，出眾樂器。</p><p xml:id="pT01p0121a1214" cb:place="inline">「轉輪聖王
+<lb n="0121a13" ed="T"/>治於世時，阿耨達龍王於中夜後起大密
+<lb n="0121a14" ed="T"/>雲，彌滿世界而降大雨，如<anchor xml:id="fxT01p0121a06"/>搆牛頃，雨八
+<lb n="0121a15" ed="T"/>味水，潤澤周普，地無停水，亦無泥<note n="0121a1501" resp="CBETA" type="add">淖【CB】【麗-CB】，洹【大】</note><app n="0121a1501"><lem resp="CBETA.maha" wit="【CB】 【麗-CB】">淖<note type="cf1">K17n0647_p0983c14</note><note type="cf2">T01n0001_p0119a05</note></lem><rdg wit="【大】">洹</rdg></app>，潤澤
+<lb n="0121a16" ed="T"/>沾洽，生長草木。猶如鬘師水灑花鬘，使花
+<lb n="0121a17" ed="T"/>鮮澤，令不萎枯，時雨潤澤，亦復如是。又時
+<lb n="0121a18" ed="T"/>於中夜後，空中清明，淨無雲<note n="0121001" resp="Taisho" type="orig" place="foot text">曀＝翳【三】</note><note n="0121001" resp="CBETA" type="mod">曀【大】，翳【宋】【元】【明】</note><app n="0121001"><lem wit="【大】">曀</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">翳</rdg></app>，海出涼風，
+<lb n="0121a19" ed="T"/>清淨調柔，觸身生樂。聖王治時，此閻浮提五
+<lb n="0121a20" ed="T"/>穀豐<note n="0121002" resp="Taisho" type="orig" place="foot text">明校譌曰賤當作穰</note><app n="0121002"><lem resp="Taisho" wit="【大】">賤</lem><rdg resp="Taisho" wit="【明】" type="correctionRemark">穰</rdg></app>，人民熾盛，財寶豐饒，無所匱乏。</p><p xml:id="pT01p0121a2016" cb:place="inline">「當
+<lb n="0121a21" ed="T"/>時，轉輪聖王以正治國，無有阿抂，修十善
+<lb n="0121a22" ed="T"/>行，爾時諸人民亦修正見，具十善行。其王
+<lb n="0121a23" ed="T"/>久久，身生重患，而取命終。時猶如樂人，食
+<lb n="0121a24" ed="T"/>如小過，身小不適，而便命終，生梵天上。時
+<lb n="0121a25" ed="T"/>玉女寶、居士寶、主兵寶及國<note n="0121a2501" resp="CBETA" type="add">士【CB】，土【大】</note><app n="0121a2501"><lem wit="【CB】" resp="CBETA.maha">士<note type="cf1">T01n0001_p0121a27</note><note type="cf2">T01n0001_p0028a27</note></lem><rdg wit="【大】">土</rdg></app>民作倡伎樂，
+<lb n="0121a26" ed="T"/>葬聖王身。其王<note n="0121003" resp="Taisho" type="orig" place="foot text">玉＝王【明】</note><note n="0121003" resp="CBETA" type="mod">玉【大】，王【明】</note><app n="0121003"><lem wit="【大】">玉</lem><rdg resp="Taisho" wit="【明】">王</rdg></app>女寶、居士寶、主兵寶、國
+<lb n="0121a27" ed="T"/>內士民，以香湯洗<note n="0121004" resp="Taisho" type="orig" place="foot text">浴＝沐【三】</note><note n="0121004" resp="CBETA" type="mod">浴【大】，沐【宋】【元】【明】</note><app n="0121004"><lem wit="【大】">浴</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">沐</rdg></app>王身，以劫貝纏五
+<lb n="0121a28" ed="T"/>百張<note n="0121005" resp="Taisho" type="orig" place="foot text">疊＝<g ref="#CB00626"/>【元】【明】</note><note n="0121005" resp="CBETA" type="mod">疊【大】，<g ref="#CB00626"/>【元】【明】</note><app n="0121005"><lem wit="【大】">疊</lem><rdg resp="Taisho" wit="【元】 【明】"><g ref="#CB00626"/></rdg></app>，次如纏之，<note n="0121006" resp="Taisho" type="orig" place="foot text">奉＝捧【三】</note><note n="0121006" resp="CBETA" type="mod">奉【大】，捧【宋】【元】【明】</note><app n="0121006"><lem wit="【大】">奉</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">捧</rdg></app>舉王身，置金棺裏，
+<lb n="0121a29" ed="T"/>以香油灌置鐵槨裏。復以木槨重衣其外，
+<pb n="0121b" ed="T" xml:id="T01.0001.0121b"/>
+<lb n="0121b01" ed="T"/>積眾香薪重衣其上，而<note n="0121007" resp="Taisho" type="orig" place="foot text">耶＝闍【三】</note><note n="0121007" resp="CBETA" type="mod">耶【大】，闍【宋】【元】【明】</note><app n="0121007"><lem wit="【大】">耶</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">闍</rdg></app>維之，於四衢
+<lb n="0121b02" ed="T"/>道頭起七寶塔，縱廣一由旬，雜色參間，以
+<lb n="0121b03" ed="T"/>七寶成。其塔四面各有一門，周匝欄楯，以
+<lb n="0121b04" ed="T"/>七寶成。其塔四面空地縱廣五由旬，園牆七
+<lb n="0121b05" ed="T"/>重、七重欄楯、七重羅網、七重行樹，金牆銀門，
+<lb n="0121b06" ed="T"/>銀牆金門，琉璃牆水精門，水精牆琉璃門，赤
+<lb n="0121b07" ed="T"/>珠牆馬瑙門，馬瑙牆赤珠門，車<g ref="#CB00006"/>牆眾寶門。
+<lb n="0121b08" ed="T"/>其欄楯者，金欄銀桄，銀欄金桄，水精欄琉璃
+<lb n="0121b09" ed="T"/>桄，琉璃欄水精桄，赤珠欄馬瑙桄，馬瑙欄赤
+<lb n="0121b10" ed="T"/>珠桄，車<g ref="#CB00006"/>欄眾寶桄。其金<note n="0121008" resp="Taisho" type="orig" place="foot text">羅＝為羅【三】</note><note n="0121008" resp="CBETA" type="mod">羅【大】，為羅【宋】【元】【明】</note><app n="0121008"><lem wit="【大】">羅</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">為羅</rdg></app>網下懸銀鈴，
+<lb n="0121b11" ed="T"/><note n="0121009" resp="Taisho" type="orig" place="foot text">〔其〕－【三】</note><note n="0121009" resp="CBETA" type="mod">其【大】，〔－〕【宋】【元】【明】</note><app n="0121009"><lem wit="【大】">其</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>銀羅網下懸金鈴，琉璃羅網懸水精鈴，
+<lb n="0121b12" ed="T"/>水精羅網懸琉璃鈴，赤珠羅網懸馬瑙鈴，
+<lb n="0121b13" ed="T"/>馬瑙羅網懸赤珠鈴，車<g ref="#CB00006"/>羅網懸眾寶鈴。其
+<lb n="0121b14" ed="T"/>金樹者銀葉花實，其銀樹者金葉花實，其琉
+<lb n="0121b15" ed="T"/>璃樹水精花葉，水精樹琉璃花葉，赤珠樹者
+<lb n="0121b16" ed="T"/>馬瑙花葉，馬瑙樹赤珠花葉，車<g ref="#CB00006"/>樹眾寶花
+<lb n="0121b17" ed="T"/>葉。其四園牆復有四門，周匝欄楯。又其牆
+<lb n="0121b18" ed="T"/>上皆有樓閣寶臺，其牆四面有樹木園林、流
+<lb n="0121b19" ed="T"/>泉浴池，生種種花，樹木繁茂，花果熾盛，眾香
+<lb n="0121b20" ed="T"/>芬馥，異鳥哀鳴。其塔成已，玉女寶、居士寶、典
+<lb n="0121b21" ed="T"/>兵寶、舉國士民皆來供養此塔，施諸窮乏，
+<lb n="0121b22" ed="T"/>須食與食，須衣與衣，象馬寶乘，給眾所須，
+<lb n="0121b23" ed="T"/>隨意所與。轉輪聖王威神功德，其事如是。」</p></cb:div>
+<lb n="0121b24" ed="T"/><cb:juan n="018" fun="close"><cb:jhead><title><note n="0121010" resp="Taisho" type="orig" place="foot text">〔佛說〕－【宋】【元】</note><note n="0121010" resp="CBETA" type="mod">佛說【大】，〔－〕【宋】【元】</note><app n="0121010"><lem wit="【大】">佛說</lem><rdg resp="Taisho" wit="【宋】 【元】"><space quantity="0"/></rdg></app>長阿含經</title>卷第十八</cb:jhead></cb:juan>
+</cb:div></cb:div></body></text></TEI>

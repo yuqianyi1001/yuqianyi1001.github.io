@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/cbeta-git/xml-p5a/master/schema/cbeta-p5a.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:cb="http://www.cbeta.org/ns/1.0" xml:id="T29n1558">
+<teiHeader>
+	<fileDesc>
+		<titleStmt>
+			<title>Taishō Tripiṭaka, Electronic version, No. 1558 阿毘達磨俱舍論</title>
+			<title xml:lang="zh-Hant">大正新脩大藏經數位版, No. 1558 阿毘達磨俱舍論</title>
+			<author>尊者世親造  唐 玄奘譯</author>
+			<respStmt>
+				<resp>Electronic Version by</resp>
+				<name>CBETA</name>
+			</respStmt>
+		</titleStmt>
+		<editionStmt>
+			<edition>單卷版 XML TEI P5b</edition>
+		</editionStmt>
+		<extent>30卷</extent>
+		<publicationStmt>
+			<idno type="CBETA">
+				<idno type="canon">T</idno>.<idno type="vol">29</idno>.<idno type="no">1558</idno>
+			</idno>
+			<distributor>
+				<name>中華電子佛典協會 (CBETA)</name>
+				<address>
+					<addrLine><email>service@cbeta.org</email></addrLine>
+				</address>
+			</distributor>
+			<availability>
+				<p>Available for non-commercial use when distributed with this header intact.</p>
+			</availability>
+			<date>2023-11-07 11:34:32 +0800</date>
+		</publicationStmt>
+		<sourceDesc>
+			<bibl>
+				<title level="s">Taishō Tripiṭaka</title>
+				<title level="s" xml:lang="zh-Hant">大正新脩大藏經</title>
+				<title level="m" xml:lang="zh-Hant">阿毘達磨俱舍論</title>
+			</bibl>
+		</sourceDesc>
+	</fileDesc>
+	<encodingDesc>
+		<projectDesc>
+			<p xml:lang="en" cb:type="ly">Text as provided by Mr. Hsiao Chen-Kuo, Tripitaka Koreana as provided by Mr. Christian Wittern, Text as provided by SAT, Japan, Text as provided by Anonymous from USA, Punctuated text as provided by Mr. Li Ming-Fang</p>
+			<p xml:lang="zh-Hant" cb:type="ly">蕭鎮國大德提供，維習安大德提供之高麗藏 CD 經文，日本 SAT 組織提供，北美某大德提供，李明芳大德提供新式標點</p>
+		</projectDesc>
+		<editorialDecl>
+			<punctuation resp="CBETA"><p>新式標點</p></punctuation>
+		</editorialDecl>
+		<tagsDecl>
+			<namespace name="http://www.tei-c.org/ns/1.0">
+				<tagUsage gi="rdg">
+					<listWit>
+						<witness xml:id="wit.orig">【大】</witness>
+						<witness xml:id="wit.cbeta">【CB】</witness>
+					</listWit>
+				</tagUsage>
+			</namespace>
+		</tagsDecl>
+		<charDecl>
+			<char xml:id="CB00045">
+				<charName>CBETA CHARACTER CB00045</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[口*(一/巾)]</value>
+				</charProp>
+				<charProp>
+					<localName>normalized form</localName>
+					<value>咂</value>
+				</charProp>
+				<mapping type="unicode">U+20BD7</mapping>
+				<mapping cb:dec="983085" type="PUA">U+F002D</mapping>
+			</char>
+			<char xml:id="CB00178">
+				<charName>CBETA CHARACTER CB00178</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[木*奈]</value>
+				</charProp>
+				<mapping type="unicode">U+3B88</mapping>
+				<mapping cb:dec="983218" type="PUA">U+F00B2</mapping>
+			</char>
+			<char xml:id="CB01040">
+				<charName>CBETA CHARACTER CB01040</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[此/束]</value>
+				</charProp>
+				<mapping type="unicode">U+2DABF</mapping>
+				<mapping cb:dec="984080" type="PUA">U+F0410</mapping>
+			</char>
+			<char xml:id="CB02205">
+				<charName>CBETA CHARACTER CB02205</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[齒*(虎-儿+且)]</value>
+				</charProp>
+				<mapping type="unicode">U+4DA5</mapping>
+				<mapping cb:dec="985245" type="PUA">U+F089D</mapping>
+			</char>
+			<char xml:id="CB13582">
+				<charName>CBETA CHARACTER CB13582</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[牛*包]</value>
+				</charProp>
+				<mapping type="unicode">U+2DDDD</mapping>
+				<mapping cb:dec="996622" type="PUA">U+F350E</mapping>
+			</char>
+			<char xml:id="CB21113">
+				<charName>CBETA CHARACTER CB21113</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[泳-永+(瓜-、)]</value>
+				</charProp>
+				<mapping type="unicode">U+23C96</mapping>
+				<mapping cb:dec="1004153" type="PUA">U+F5279</mapping>
+			</char>
+		</charDecl>
+	</encodingDesc>
+	<profileDesc>
+		<langUsage>
+			<language ident="sa">Sanskrit</language>
+			<language ident="en">English</language>
+			<language ident="zh-Hant">Chinese (Traditional)</language>
+		</langUsage>
+	</profileDesc>
+	<revisionDesc>
+		<change when="2013-05-20">
+			<name>CW</name><name>Ray Chou 周邦信</name>P4 to P5 conversion by p4top5a.py, intended for publication
+		</change>
+		<change when="1999-06-28T20:31:40">
+			CW (ed.) Created initial TEI XML version with BASICX.BAT (99/6/28)
+		</change>
+	</revisionDesc>
+</teiHeader>
+<text><body>
+<cb:mulu n="3" level="1" type="品">3 分別世品</cb:mulu><cb:mulu level="2">3</cb:mulu><cb:div type="pin">
+<milestone unit="juan" n="11"/>
+<pb n="0057a" ed="T" xml:id="T29.1558.0057a"/>
+<lb n="0057a01" ed="T"/>
+<lb n="0057a02" ed="T"/><cb:juan n="011" fun="open"><cb:mulu n="011" type="卷"></cb:mulu><cb:mulu level="2">4</cb:mulu><cb:jhead><title>阿毘達磨俱舍論</title>卷第十一</cb:jhead>
+<lb n="0057a03" ed="T"/>
+<lb n="0057a04" ed="T"/><byline cb:type="author">尊者世親造</byline>
+<lb n="0057a05" ed="T"/><byline cb:type="Translator"><anchor xml:id="fxT29p0057a01"/>三藏法師玄奘奉　詔譯</byline>
+<lb n="0057a06" ed="T"/><cb:jhead type="pin">分別世品第三之四</cb:jhead></cb:juan>
+<lb n="0057a07" ed="T"/><p xml:id="pT29p0057a0701">如是已說有情世間。器世間今當說。頌曰：</p>
+<lb n="0057a08" ed="T"/><lg type="regular" xml:id="lgT29p0057a0801"><l>安立器世間，<caesura/>風輪最居下，</l>
+<lb n="0057a09" ed="T"/><l>其量廣無數，<caesura/>厚十六<note resp="Taisho" n="0057001" place="foot text" type="orig">Lakṣa.</note><anchor xml:id="nkr_note_foreign_0057001" n="0057001"/>洛叉，</l>
+<lb n="0057a10" ed="T"/><l>次上水輪深，<caesura/>十一億二萬，</l>
+<lb n="0057a11" ed="T"/><l>下八洛叉水，<caesura/>餘凝結成金，</l>
+<lb n="0057a12" ed="T"/><l>此水金輪廣，<caesura/>徑十二洛叉，</l>
+<lb n="0057a13" ed="T"/><l>三千四百半，<caesura/>周圍此三倍。</l></lg>
+<lb n="0057a14" ed="T"/><p xml:id="pT29p0057a1401">論曰：許此三千大千世界如是安立形量
+<lb n="0057a15" ed="T"/>不同。謂諸有情業增上力，先於最下依止
+<lb n="0057a16" ed="T"/>虛空有風輪生，廣無數、厚十六億踰繕那。
+<lb n="0057a17" ed="T"/>如是風輪其體堅密，假設有一大諾健那，
+<lb n="0057a18" ed="T"/>以金剛輪奮威懸擊，金剛有碎風輪無損。
+<lb n="0057a19" ed="T"/>又諸有情業增上力，起大雲雨澍風輪上，
+<lb n="0057a20" ed="T"/>滴如車軸積水成輪。如是水輪於未凝結
+<lb n="0057a21" ed="T"/>位，深十一億二萬踰繕那。如何水輪不傍流
+<lb n="0057a22" ed="T"/>散？有餘師說：一切有情業力所持令不流
+<lb n="0057a23" ed="T"/>散。如所飲食未熟變時，終不流移墮於
+<lb n="0057a24" ed="T"/>熟藏。有餘部說：由風所持令不流散，如篅
+<lb n="0057a25" ed="T"/>持穀。有情業力感別風起，搏擊此水上結
+<lb n="0057a26" ed="T"/>成金，如熟乳停上凝成膜，故水輪減唯厚
+<lb n="0057a27" ed="T"/>八洛叉，餘轉成金，厚三億二萬。二輪廣量其
+<lb n="0057a28" ed="T"/>數是同，謂徑十二億三千四百半。周圍其邊
+<lb n="0057a29" ed="T"/>數成三倍，謂周圍量成三十六億一萬三百
+<pb n="0057b" ed="T" xml:id="T29.1558.0057b"/>
+<lb n="0057b01" ed="T"/>五十踰繕那。頌曰：</p>
+<lb n="0057b02" ed="T"/><lg type="regular" xml:id="lgT29p0057b0201"><l>蘇迷盧處中，<caesura/>次踰健達羅，</l>
+<lb n="0057b03" ed="T"/><l>伊沙馱羅山，<caesura/>朅地洛迦山，</l>
+<lb n="0057b04" ed="T"/><l>蘇達梨舍那，<caesura/>頞濕縛羯拏，</l>
+<lb n="0057b05" ed="T"/><l>毘那怛迦山，<caesura/>尼民達羅山，</l>
+<lb n="0057b06" ed="T"/><l>於大洲等外，<caesura/>有鐵輪圍山，</l>
+<lb n="0057b07" ed="T"/><l>前七金所成，<caesura/>蘇迷盧四寶，</l>
+<lb n="0057b08" ed="T"/><l>入水皆八萬，<caesura/>妙高出亦然，</l>
+<lb n="0057b09" ed="T"/><l>餘八<note resp="Taisho" n="0057002" place="foot text" type="orig">半＝八【宮】</note><note resp="CBETA" n="0057002" type="mod">半【大】，八【宮】</note><app n="0057002"><lem wit="【大】">半</lem><rdg resp="Taisho" wit="【宮】">八</rdg></app>半下，<caesura/>廣皆等高量。</l></lg>
+<lb n="0057b10" ed="T"/><p xml:id="pT29p0057b1001">論曰：於金輪上有九大山，妙高山王處中
+<lb n="0057b11" ed="T"/>而住，餘八周匝繞妙高山。於八山中前七
+<lb n="0057b12" ed="T"/>名內，第七山外有大洲等。此外復有鐵輪
+<lb n="0057b13" ed="T"/>圍山，周匝如輪圍一世界。持雙等七唯金
+<lb n="0057b14" ed="T"/>所成。妙高山王四寶為體，謂如次四面北、東、
+<lb n="0057b15" ed="T"/>南、西，金、銀、吠<note resp="Taisho" n="0057003" place="foot text" type="orig">琉璃＝瑠璃【明】下同</note><note resp="CBETA" n="0057003" type="mod">琉璃【大】下同，瑠璃【明】下同</note><app n="0057003"><lem wit="【大】">琉璃</lem><rdg resp="Taisho" wit="【明】">瑠璃</rdg></app>、頗胝迦寶。隨寶威德色
+<lb n="0057b16" ed="T"/>顯於空，故贍部洲空似吠琉璃色。如是寶
+<lb n="0057b17" ed="T"/>等從何而生？亦諸有情業增上力。復大雲起
+<lb n="0057b18" ed="T"/>雨金輪上滴如車軸，積水奔濤，其水即為
+<lb n="0057b19" ed="T"/>眾寶種藏。由具種種威德猛風鑽<note resp="Taisho" n="0057004" place="foot text" type="orig">擊＝繫【明】</note><note resp="CBETA" n="0057004" type="mod">擊【大】，繫【明】</note><app n="0057004"><lem wit="【大】">擊</lem><rdg resp="Taisho" wit="【明】">繫</rdg></app>變生
+<lb n="0057b20" ed="T"/>眾寶類等。如是變水生寶等時，因滅果生，
+<lb n="0057b21" ed="T"/>體不俱有，非如數論轉變所成。數論云何
+<lb n="0057b22" ed="T"/>執轉變義？謂執有法自性常存，有餘法生、
+<lb n="0057b23" ed="T"/>有餘法滅。如是轉變何理相違？謂必無容
+<lb n="0057b24" ed="T"/>有法常住，可執別有法滅法生。誰言法外
+<lb n="0057b25" ed="T"/>別有有法？唯即此法於轉變時異相所依
+<lb n="0057b26" ed="T"/>名為有法。此亦非理。非理者何？即是此物
+<lb n="0057b27" ed="T"/>而不如此，如是言義曾所未聞。如是變
+<lb n="0057b28" ed="T"/>生金寶等已，復由業力引起別風，簡別寶
+<lb n="0057b29" ed="T"/>等攝令聚集成山成洲，分水甘醎令別
+<pb n="0057c" ed="T" xml:id="T29.1558.0057c"/>
+<lb n="0057c01" ed="T"/>成立內海外海。如是九山住金輪上，入水
+<lb n="0057c02" ed="T"/>量皆等八萬踰繕那，蘇迷盧山出水亦爾。餘
+<lb n="0057c03" ed="T"/>八出水半半漸卑，謂初持雙出水四萬，乃至
+<lb n="0057c04" ed="T"/>最後鐵輪圍山出水三百一十二半。如是九
+<lb n="0057c05" ed="T"/>山一一廣量，各各與自出水量同。頌曰：</p>
+<lb n="0057c06" ed="T"/><lg type="regular" xml:id="lgT29p0057c0601"><l>山間有八海，<caesura/>前七名為內，</l>
+<lb n="0057c07" ed="T"/><l>最初廣八萬，<caesura/>四邊各三倍，</l>
+<lb n="0057c08" ed="T"/><l>餘六半半陿，<caesura/>第八名為外，</l>
+<lb n="0057c09" ed="T"/><l>三洛叉二萬，<caesura/><note resp="Taisho" n="0057005" place="foot text" type="orig">二＝一【元】【明】</note><note resp="CBETA" n="0057005" type="mod">二【大】，一【元】【明】</note><app n="0057005"><lem wit="【大】">二</lem><rdg resp="Taisho" wit="【元】 【明】">一</rdg></app>千踰繕那。</l></lg>
+<lb n="0057c10" ed="T"/><p xml:id="pT29p0057c1001">論曰：妙高為初、輪圍最後，中間八海，前七名
+<lb n="0057c11" ed="T"/>內。七中皆具八功德水：一甘、二冷、三軟、四
+<lb n="0057c12" ed="T"/>輕、五清淨、六不臭、七飲時不損喉、八飲已
+<lb n="0057c13" ed="T"/>不傷腹。如是七海初廣八萬，約持雙山內
+<lb n="0057c14" ed="T"/>邊周量，於其四面數各三倍，謂各成二億
+<lb n="0057c15" ed="T"/>四萬<note resp="Taisho" n="0057006" place="foot text" type="orig">Yojana.</note><anchor xml:id="nkr_note_foreign_0057006" n="0057006"/>踰繕那。其餘六海量半半陿，謂第二海
+<lb n="0057c16" ed="T"/>量廣四萬，乃至第七量廣一千二百五十。此
+<lb n="0057c17" ed="T"/>等不說周圍量者，以煩多故。第八名外，
+<lb n="0057c18" ed="T"/>醎水盈滿，量廣三億二萬二千。頌曰：</p>
+<lb n="0057c19" ed="T"/><lg type="regular" xml:id="lgT29p0057c1901"><l>於中大洲相，<caesura/>南贍部如車，</l>
+<lb n="0057c20" ed="T"/><l>三邊各二千，<caesura/>南邊有三半；</l>
+<lb n="0057c21" ed="T"/><l>東毘提訶洲，<caesura/>其相如半月，</l>
+<lb n="0057c22" ed="T"/><l>三邊如贍部，<caesura/>東邊三百半；</l>
+<lb n="0057c23" ed="T"/><l>西瞿陀尼洲，<caesura/>其相圓無缺，</l>
+<lb n="0057c24" ed="T"/><l>徑二千五百，<caesura/>周圍此三倍；</l>
+<lb n="0057c25" ed="T"/><l>北俱盧畟方，<caesura/>面各二千等，</l>
+<lb n="0057c26" ed="T"/><l>中洲復有八，<caesura/>四洲邊各二。</l></lg>
+<lb n="0057c27" ed="T"/><p xml:id="pT29p0057c2701">論曰：於外海中大洲有四，謂於四面對妙
+<lb n="0057c28" ed="T"/>高山。南贍部洲北廣南陿，三邊量等，其相如
+<lb n="0057c29" ed="T"/>車。南邊唯廣三踰繕那半，三邊各有二千踰
+<pb n="0058a" ed="T" xml:id="T29.1558.0058a"/>
+<lb n="0058a01" ed="T"/>繕那。唯此洲中有金剛座，上窮地際下據
+<lb n="0058a02" ed="T"/>金輪，一切菩薩將登正覺皆坐此座上起
+<lb n="0058a03" ed="T"/>金剛喻定，以無餘依及餘處所有堅固力
+<lb n="0058a04" ed="T"/>能持此故。東勝身洲東陿西廣，三邊量等，形
+<lb n="0058a05" ed="T"/>如半月。東三百五十，三邊各二千。西牛貨洲
+<lb n="0058a06" ed="T"/>圓如滿月，徑二千五百，周圍七千半。北俱盧
+<lb n="0058a07" ed="T"/>洲形如方座，四邊量等，面各二千。等言為
+<lb n="0058a08" ed="T"/>明無少增減。隨其洲相人面亦然。復有八
+<lb n="0058a09" ed="T"/>中洲，是大洲眷屬，謂四大洲側各有二中洲。
+<lb n="0058a10" ed="T"/>贍部洲邊二中洲者，一遮末羅洲、二<note resp="Taisho" n="0058001" place="foot text" type="orig">筏＝茂【宮】</note><note resp="CBETA" n="0058001" type="mod">筏【大】，茂【宮】</note><app n="0058001"><lem wit="【大】">筏</lem><rdg resp="Taisho" wit="【宮】">茂</rdg></app>羅遮
+<lb n="0058a11" ed="T"/>末羅洲。勝身洲邊<note resp="Taisho" n="0058002" place="foot text" type="orig">二＝一【宮】</note><note resp="CBETA" n="0058002" type="mod">二【大】，一【宮】</note><app n="0058002"><lem wit="【大】">二</lem><rdg resp="Taisho" wit="【宮】">一</rdg></app>中洲者，一提訶洲、二
+<lb n="0058a12" ed="T"/>毘提訶洲。牛貨洲邊二中洲者，一舍搋洲、二
+<lb n="0058a13" ed="T"/>嗢怛羅漫怛里拏洲。俱盧洲邊二中洲者，一
+<lb n="0058a14" ed="T"/>矩拉婆洲、二憍拉婆洲。此一切洲皆人所住。
+<lb n="0058a15" ed="T"/>有說：唯一<note resp="Taisho" n="0058003" place="foot text" type="orig">Rākṣasa.</note><anchor xml:id="nkr_note_foreign_0058003" n="0058003"/>邏剎娑居。頌曰：</p>
+<lb n="0058a16" ed="T"/><lg type="regular" xml:id="lgT29p0058a1601"><l>此北九黑山，<caesura/>雪香醉山內，</l>
+<lb n="0058a17" ed="T"/><l>無熱池縱廣，<caesura/>五十踰繕那。</l></lg>
+<lb n="0058a18" ed="T"/><p xml:id="pT29p0058a1801">論曰：此贍部洲從中向北，三處各有<note resp="Taisho" n="0058004" place="foot text" type="orig">三＝五【三】【宮】</note><note resp="CBETA" n="0058004" type="mod">三【大】，五【宋】【元】【明】【宮】</note><app n="0058004"><lem wit="【大】">三</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">五</rdg></app>重
+<lb n="0058a19" ed="T"/>黑山。有大雪山在黑山北，大雪山北有香
+<lb n="0058a20" ed="T"/>醉山。雪北香南有大池水，名無熱惱，出四
+<lb n="0058a21" ed="T"/>大河：一殑伽河、二信度河、三徙多河、四縛芻
+<lb n="0058a22" ed="T"/>河。無熱惱池縱廣正等，面各五十踰繕那量，
+<lb n="0058a23" ed="T"/>八功德水盈滿其中，非得通人無由能至。
+<lb n="0058a24" ed="T"/>於此池側有贍部林，樹形高大其果甘美，
+<lb n="0058a25" ed="T"/>依此林故名<note resp="Taisho" n="0058005" place="foot text" type="orig">Jambūdvīpa.</note><anchor xml:id="nkr_note_foreign_0058005" n="0058005"/>贍部洲，或依此果以立洲
+<lb n="0058a26" ed="T"/>號。復於何處置<g ref="#CB00178"/>落迦、大<g ref="#CB00178"/>落迦？何量有
+<lb n="0058a27" ed="T"/>幾？頌曰：</p>
+<lb n="0058a28" ed="T"/><lg type="regular" xml:id="lgT29p0058a2801"><l>此下過二萬，<caesura/>無間深廣同，</l>
+<lb n="0058a29" ed="T"/><l>上七<g ref="#CB00178"/>落迦，<caesura/>八增皆十六。</l>
+<pb n="0058b" ed="T" xml:id="T29.1558.0058b"/>
+<lb n="0058b01" ed="T"/><l>謂煻煨屍糞，<caesura/>鋒刃烈河增，</l>
+<lb n="0058b02" ed="T"/><l>各住彼四方，<caesura/>餘八寒地獄。</l></lg>
+<lb n="0058b03" ed="T"/><p xml:id="pT29p0058b0301">論曰：此贍部洲下過二萬，有阿鼻旨大<g ref="#CB00178"/>落
+<lb n="0058b04" ed="T"/>迦。深廣同前，謂各二萬故。彼底去此四萬
+<lb n="0058b05" ed="T"/>踰繕那。以於其中受苦無間，非如餘七
+<lb n="0058b06" ed="T"/>大<g ref="#CB00178"/>落迦受苦非恒，故名無間。且如等活
+<lb n="0058b07" ed="T"/><g ref="#CB00178"/>落迦中，諸有情身雖被種種斫刺磨擣，
+<lb n="0058b08" ed="T"/>而彼暫遇涼風所吹還活如本，由斯理故
+<lb n="0058b09" ed="T"/>立等活名。阿鼻旨中無如是事。有餘師說：
+<lb n="0058b10" ed="T"/>阿鼻旨中無樂間苦故名無間，餘地獄中
+<lb n="0058b11" ed="T"/>有樂間起，雖無異熟而有等流。七<g ref="#CB00178"/>落迦
+<lb n="0058b12" ed="T"/>在無間上重累而住。其七者何？一者極熱、
+<lb n="0058b13" ed="T"/>二者炎熱、三者大叫、四者號叫、五者眾合、六
+<lb n="0058b14" ed="T"/>者黑繩、七者等活。有說：此七在無間傍。八
+<lb n="0058b15" ed="T"/><g ref="#CB00178"/>落迦增各十六，故薄伽梵說此頌言：</p>
+<lb n="0058b16" ed="T"/><lg type="regular" xml:id="lgT29p0058b1601"><l>此八<g ref="#CB00178"/>落迦，<caesura/>我說甚難越，</l>
+<lb n="0058b17" ed="T"/><l>以熱鐵為地，<caesura/>周匝有鐵牆，</l>
+<lb n="0058b18" ed="T"/><l>四面有四門，<caesura/>關閉以鐵扇，</l>
+<lb n="0058b19" ed="T"/><l>巧安布分量，<caesura/>各有十六增，</l>
+<lb n="0058b20" ed="T"/><l>多百踰繕那，<caesura/>滿中造惡者，</l>
+<lb n="0058b21" ed="T"/><l>周遍焰交徹，<caesura/>猛火恒洞然。</l></lg>
+<lb n="0058b22" ed="T"/><p xml:id="pT29p0058b2201">十六增者，八<g ref="#CB00178"/>落迦四面門外各有四所：一
+<lb n="0058b23" ed="T"/>煻煨增，謂此增內煻煨沒膝，有情遊彼纔下
+<lb n="0058b24" ed="T"/>足時，皮肉與血俱燋爛墜，舉足還生平復
+<lb n="0058b25" ed="T"/>如本。二屍糞增，謂此增內屍糞泥滿，於中
+<lb n="0058b26" ed="T"/>多有娘矩吒蟲，<g ref="#CB01040"/>利如針身白頭黑，有情遊
+<lb n="0058b27" ed="T"/>彼皆為此蟲鑽皮破骨<g ref="#CB00045"/>食其髓。三鋒刃
+<lb n="0058b28" ed="T"/>增，謂此增內復有三種：一刀刃路，謂於此
+<lb n="0058b29" ed="T"/>中仰布刀刃以為大道，有情遊彼纔下足
+<pb n="0058c" ed="T" xml:id="T29.1558.0058c"/>
+<lb n="0058c01" ed="T"/>時，皮肉與血俱斷碎墜，舉足還生平復如
+<lb n="0058c02" ed="T"/>本。二劍葉林，謂此林上純以銛利劍刃為
+<lb n="0058c03" ed="T"/>葉，有情遊彼風吹葉墜，斬刺<note resp="Taisho" n="0058006" place="foot text" type="orig">肢＝支【宋】【宮】</note><note n="0058006" resp="CBETA" type="mod" cb:note_key="T29.0058c03.12">支【CB】【麗-CB】【宋】【宮】，肢【大】</note><app n="0058006"><lem resp="CBETA.maha" wit="【CB】 【麗-CB】">支<note type="cf1">K27n0955_p0535c18</note></lem><rdg wit="【大】">肢</rdg><rdg resp="Taisho" wit="【宋】 【宮】">支</rdg></app>體骨肉
+<lb n="0058c04" ed="T"/>零落，有烏駁狗<note resp="Taisho" n="0058007" place="foot text" type="orig">摣＝<g ref="#CB02205"/>【三】【宮】</note><note resp="CBETA" n="0058007" type="mod">摣【大】，<g ref="#CB02205"/>【宋】【元】【明】【宮】</note><app n="0058007"><lem wit="【大】">摣</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><g ref="#CB02205"/></rdg></app>掣食之。三鐵刺林，謂此
+<lb n="0058c05" ed="T"/>林上有利鐵刺長十六指，有情被逼上下
+<lb n="0058c06" ed="T"/>樹時，其刺銛鋒下上鑱刺，有鐵<g ref="#CB01040"/>鳥探啄
+<lb n="0058c07" ed="T"/>有情眼睛心肝爭競而食。刀刃路等三種雖
+<lb n="0058c08" ed="T"/>殊，而鐵<note resp="Taisho" n="0058008" place="foot text" type="orig">杖＝仗【三】【宮】</note><note resp="CBETA" n="0058008" type="mod">杖【大】，仗【宋】【元】【明】【宮】</note><app n="0058008"><lem wit="【大】">杖</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">仗</rdg></app>同故一增攝。四烈河增，謂此增
+<lb n="0058c09" ed="T"/>量廣，滿中熱醎水，有情入中或浮或沒，或逆
+<lb n="0058c10" ed="T"/>或順或橫或轉，被蒸被煮骨肉糜爛。如大
+<lb n="0058c11" ed="T"/>鑊中滿盛灰汁置麻米等，猛火下燃，麻等於
+<lb n="0058c12" ed="T"/>中上下迴轉舉體糜爛，有情亦<note n="0058c1201" resp="CBETA" type="add" cb:note_key="T29.0058c12.13">然【CB】【磧-CB】，燃【大】，燃【麗-CB】</note><app n="0058c1201"><lem wit="【CB】 【磧-CB】" resp="CBETA.maha" cb:provider="arbzn (2019-01-29)">然<note type="cf1">Q25_p0689b20</note></lem><rdg wit="【大】">燃</rdg><rdg resp="CBETA.maha" wit="【麗-CB】">燃<note type="cf1">K27n0955_p0536a04</note></rdg></app>。設欲逃亡，
+<lb n="0058c13" ed="T"/>於兩岸上有諸獄卒，手執刀<note n="0058c1301" resp="CBETA" type="add">槍【大】【磧-CB】，搶【麗-CB】</note><app n="0058c1301"><lem wit="【大】">槍</lem><rdg resp="CBETA.maha" wit="【磧-CB】">槍<note type="cf1">Q25_p0689b2</note></rdg><rdg resp="CBETA.maha" wit="【麗-CB】">搶<note type="cf1">K28n0958_p0536a06</note></rdg></app>禦捍令迴，
+<lb n="0058c14" ed="T"/>無由得出。此河如塹，前三似園，四面各四
+<lb n="0058c15" ed="T"/>增，故言皆十六。此是增上被刑害所，故說
+<lb n="0058c16" ed="T"/>名<note resp="Taisho" n="0058009" place="foot text" type="orig">Utsada.</note><anchor xml:id="nkr_note_foreign_0058009" n="0058009"/>增，本地獄中適被害已重遭害故。有說：
+<lb n="0058c17" ed="T"/>有情從地獄出更遭此苦，故說為增。今於
+<lb n="0058c18" ed="T"/>此中因論生論。諸地獄卒是有情不？有說：
+<lb n="0058c19" ed="T"/>非情。如何動作？有情業力，如成劫風。若爾，
+<lb n="0058c20" ed="T"/>云何通彼大德法善現說？如彼頌言：</p>
+<lb n="0058c21" ed="T"/><lg type="regular" xml:id="lgT29p0058c2101"><l>心常懷忿毒，<caesura/>好集諸惡業，</l>
+<lb n="0058c22" ed="T"/><l>見他苦欣悅，<caesura/>死作<note resp="Taisho" n="0058010" place="foot text" type="orig">Yama.</note><anchor xml:id="nkr_note_foreign_0058010" n="0058010"/>琰魔卒。</l></lg>
+<lb n="0058c23" ed="T"/><p xml:id="pT29p0058c2301">琰魔王使諸邏剎娑擲諸有情置地獄者
+<lb n="0058c24" ed="T"/>名琰魔卒。是實有情非地獄中害有情者，
+<lb n="0058c25" ed="T"/>故地獄卒非實有情。有說：有情。若爾，此惡業
+<lb n="0058c26" ed="T"/>何處受異熟？即地獄中，以地獄中尚容無
+<lb n="0058c27" ed="T"/>間所感異熟，此何理遮？若爾，何緣火不燒
+<lb n="0058c28" ed="T"/>彼？此定由業力所隔礙故，或感異大種故
+<lb n="0058c29" ed="T"/>不被燒。熱<g ref="#CB00178"/>落迦已說有八。復有餘八寒
+<pb n="0059a" ed="T" xml:id="T29.1558.0059a"/>
+<lb n="0059a01" ed="T"/><g ref="#CB00178"/>落迦。其八者何？一頞部陀、二尼剌部陀、三
+<lb n="0059a02" ed="T"/>頞唽吒、四臛臛婆、五虎虎婆、六嗢鉢羅、七鉢
+<lb n="0059a03" ed="T"/>特摩、八摩訶鉢特摩。此中有情嚴寒所逼，
+<lb n="0059a04" ed="T"/>隨身聲變以立其名。此八并居贍部洲下，
+<lb n="0059a05" ed="T"/>如前所說大地獄傍。此贍部洲其量無幾，
+<lb n="0059a06" ed="T"/>下寧容受無間等耶？洲如穀聚，上尖下闊，
+<lb n="0059a07" ed="T"/>是故大海漸陿漸深。如上所論十六地獄，
+<lb n="0059a08" ed="T"/>一切有情增上業感。餘孤地獄各別業招，或
+<lb n="0059a09" ed="T"/>多或二或一所止，差別多種、處所不定，或近
+<lb n="0059a10" ed="T"/>江河山邊曠野，或在地下空及餘處。諸地獄
+<lb n="0059a11" ed="T"/>器安布如是，本處在下、支<note n="0059a1101" resp="CBETA" type="add" cb:note_key="T29.0059a11.11"><g ref="#CB21113"/>【CB】【麗-CB】【磧-CB】，泒【大】</note><app n="0059a1101"><lem resp="CBETA.maha" wit="【CB】 【麗-CB】 【磧-CB】"><g ref="#CB21113"/><note type="cf1">K27n0955_p0536b14</note><note type="cf2">Q25_p0689c17</note></lem><rdg wit="【大】">泒</rdg></app>不定。傍生住
+<lb n="0059a12" ed="T"/>處謂水陸空，本處大海，後流餘處。諸鬼本
+<lb n="0059a13" ed="T"/>處琰魔王國，於此贍部洲下過五百踰繕
+<lb n="0059a14" ed="T"/>那有琰魔王國，縱廣量亦爾，從此展轉散
+<lb n="0059a15" ed="T"/>居餘處。或有端嚴具大威德，受諸富樂自
+<lb n="0059a16" ed="T"/>在如天，或有飢羸顏貌醜陋，如是等類廣
+<lb n="0059a17" ed="T"/>說如經。日月所居量等義者，頌曰：</p>
+<lb n="0059a18" ed="T"/><lg type="regular" xml:id="lgT29p0059a1801"><l>日月迷盧半，<caesura/>五十一五十，</l>
+<lb n="0059a19" ed="T"/><l>夜半日沒中，<caesura/>日出四洲等。</l>
+<lb n="0059a20" ed="T"/><l>雨際第二月，<caesura/>後九夜漸增，</l>
+<lb n="0059a21" ed="T"/><l>寒第四亦然，<caesura/>夜減晝翻此。</l>
+<lb n="0059a22" ed="T"/><l>晝夜增臘縛，<caesura/>行南北路時，</l>
+<lb n="0059a23" ed="T"/><l>近日自影覆，<caesura/>故見月輪缺。</l></lg>
+<lb n="0059a24" ed="T"/><p xml:id="pT29p0059a2401">論曰：日月眾星依何而住？依風而住。謂諸有
+<lb n="0059a25" ed="T"/>情業增上力共引風起，繞妙高山空中旋環，
+<lb n="0059a26" ed="T"/>運持日等令不停墜。彼所住去此幾踰繕
+<lb n="0059a27" ed="T"/>那？持雙山頂齊妙高山半。日月徑量幾踰繕
+<lb n="0059a28" ed="T"/>那？日五十一，月唯五十。星最小者唯一俱盧
+<lb n="0059a29" ed="T"/>舍，其最大者十六踰繕那。日輪下面頗胝迦
+<pb n="0059b" ed="T" xml:id="T29.1558.0059b"/>
+<lb n="0059b01" ed="T"/>寶火珠所成，能熱能照；月輪下面頗胝迦寶
+<lb n="0059b02" ed="T"/>水珠所成，能冷能照。隨有情業增上所生，
+<lb n="0059b03" ed="T"/>能於眼身果花稼穡藥草等物，如其所應為
+<lb n="0059b04" ed="T"/>益為損。唯一日月普於四洲作所作事、一
+<lb n="0059b05" ed="T"/>日所作事為四洲同時不？不爾。云何？北洲
+<lb n="0059b06" ed="T"/>夜半東洲日沒，南洲日中西洲日出。此四時
+<lb n="0059b07" ed="T"/>等，餘例應知。日行此洲路有差別，故令晝
+<lb n="0059b08" ed="T"/>夜有減有增。從雨際第二月後半第九日夜
+<lb n="0059b09" ed="T"/>漸增，從寒際第四月後半第九日夜漸減，晝
+<lb n="0059b10" ed="T"/>增減位與此相違。夜漸增時晝便漸減，夜若
+<lb n="0059b11" ed="T"/>漸減晝則漸增。晝夜增時一晝夜增幾？增一
+<lb n="0059b12" ed="T"/>臘縛。晝夜減亦然。日行此洲向南向北，如
+<lb n="0059b13" ed="T"/>其次第夜增晝增。何故月輪於黑半末白半
+<lb n="0059b14" ed="T"/>初位見有缺耶？世施設中作如是釋：以月
+<lb n="0059b15" ed="T"/>宮殿行近日輪，月被日輪光所侵照，餘邊
+<lb n="0059b16" ed="T"/>發影自覆月輪，令於爾時見不圓滿。先舊
+<lb n="0059b17" ed="T"/>師釋：由日月輪行度不同現有圓缺。日等
+<lb n="0059b18" ed="T"/>宮殿何有情居？四大天王所部天眾。是諸天
+<lb n="0059b19" ed="T"/>眾唯住此耶？若空居天唯住如是日等宮
+<lb n="0059b20" ed="T"/>殿，若地居天住妙高山諸層級等。有幾層
+<lb n="0059b21" ed="T"/>級？其量云何？何等諸天住何層級？頌曰：</p>
+<lb n="0059b22" ed="T"/><lg type="regular" xml:id="lgT29p0059b2201"><l>妙高層有四，<caesura/>相去各十千，</l>
+<lb n="0059b23" ed="T"/><l>傍出十六千，<caesura/>八四二千量。</l>
+<lb n="0059b24" ed="T"/><l>堅手及持鬘，<caesura/>恒憍大王眾，</l>
+<lb n="0059b25" ed="T"/><l>如次居<note resp="Taisho" n="0059001" place="foot text" type="orig">四＝由【宮】</note><note resp="CBETA" n="0059001" type="mod">四【大】，由【宮】</note><app n="0059001"><lem wit="【大】">四</lem><rdg resp="Taisho" wit="【宮】">由</rdg></app>級，<caesura/>亦住餘七山。</l></lg>
+<lb n="0059b26" ed="T"/><p xml:id="pT29p0059b2601">論曰：蘇迷盧山有四層級，始從水際盡第
+<lb n="0059b27" ed="T"/>一層相去十千踰繕那量，如是乃至從第
+<lb n="0059b28" ed="T"/>三層盡第四層亦十千量。此四層級從妙
+<lb n="0059b29" ed="T"/>高山傍出圍繞盡其下半，最初層級出十六
+<pb n="0059c" ed="T" xml:id="T29.1558.0059c"/>
+<lb n="0059c01" ed="T"/>千，第二、第三、第四層級，如其次第八、四、二
+<lb n="0059c02" ed="T"/>千。有藥叉神名為堅手住初層級，有名
+<lb n="0059c03" ed="T"/>持鬘住第二級，有名恒憍住第三級，此三
+<lb n="0059c04" ed="T"/>皆是四大天王所部天眾，第四層級四大天
+<lb n="0059c05" ed="T"/>王及諸眷屬共所居止故，經依此說四大
+<lb n="0059c06" ed="T"/>王眾天。如妙高山四外層級四大王眾及眷
+<lb n="0059c07" ed="T"/>屬居，如是持雙、持軸山等七金山上亦有天
+<lb n="0059c08" ed="T"/>居，是四大王所部封邑，是名依地住四大
+<lb n="0059c09" ed="T"/>王眾天。於欲天中此天最廣。三十三天住
+<lb n="0059c10" ed="T"/>在何處？頌曰：</p>
+<lb n="0059c11" ed="T"/><lg type="regular" xml:id="lgT29p0059c1101"><l>妙高頂八萬，<caesura/>三十三天居，</l>
+<lb n="0059c12" ed="T"/><l>四角有四峯，<caesura/>金剛手所住。</l>
+<lb n="0059c13" ed="T"/><l>中宮名善見，<caesura/>周萬踰繕那，</l>
+<lb n="0059c14" ed="T"/><l>高一半金城，<caesura/>雜飾地柔軟。</l>
+<lb n="0059c15" ed="T"/><l>中有殊勝殿，<caesura/>周千踰繕那，</l>
+<lb n="0059c16" ed="T"/><l>外四苑莊嚴，<caesura/>眾車麁雜喜。</l>
+<lb n="0059c17" ed="T"/><l><note resp="Taisho" n="0059002" place="foot text" type="orig">妙池＝妙地【三】【宮】</note><note resp="CBETA" n="0059002" type="mod">妙池【大】，妙地【宋】【元】【明】【宮】</note><app n="0059002"><lem wit="【大】">妙池</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">妙地</rdg></app>居四方，<caesura/>相去各二十，</l>
+<lb n="0059c18" ed="T"/><l>東北<note resp="Taisho" n="0059003" place="foot text" type="orig">圓生＝園生【元】【明】【宮】下同</note><note resp="CBETA" n="0059003" type="mod">圓生【大】下同，園生【元】【明】【宮】下同</note><app n="0059003"><lem wit="【大】">圓生</lem><rdg resp="Taisho" wit="【元】 【明】 【宮】">園生</rdg></app>樹，<caesura/>西南善法堂。</l></lg>
+<lb n="0059c19" ed="T"/><p xml:id="pT29p0059c1901">論曰：三十三天住迷盧頂，其頂四面各八十
+<lb n="0059c20" ed="T"/>千，與下四邊其量無別。有餘師說：周八十
+<lb n="0059c21" ed="T"/>千，別說四邊各唯二萬。山頂四角各有一
+<lb n="0059c22" ed="T"/>峯，其高廣量各有五百。有藥叉神名金剛
+<lb n="0059c23" ed="T"/>手，於中止住守護諸天。於山頂中有宮名
+<lb n="0059c24" ed="T"/>善見，面二千半，周萬踰繕那，金城量高一踰
+<lb n="0059c25" ed="T"/>繕那半，其地平坦亦真金所成，俱用百一雜
+<lb n="0059c26" ed="T"/>寶嚴飾，地觸柔軟如妬羅綿，於踐躡時隨
+<lb n="0059c27" ed="T"/>足高下，是天帝釋所都大城。於其城中有
+<lb n="0059c28" ed="T"/>殊勝殿，種種妙寶具足莊嚴，蔽餘天宮故
+<lb n="0059c29" ed="T"/>名殊勝，面二百五十，周千踰繕那。是謂城
+<pb n="0060a" ed="T" xml:id="T29.1558.0060a"/>
+<lb n="0060a01" ed="T"/>中諸可愛事。城外四面四苑莊嚴，是彼諸天
+<lb n="0060a02" ed="T"/>共遊戲處：一眾車苑、二麁惡苑、三雜林苑、四
+<lb n="0060a03" ed="T"/>喜林苑，此為外飾莊嚴大城。四苑四邊有
+<lb n="0060a04" ed="T"/>四妙<note resp="Taisho" n="0060001" place="foot text" type="orig">池＝地【明】【宮】</note><note resp="CBETA" n="0060001" type="mod">池【大】，地【明】【宮】</note><app n="0060001"><lem wit="【大】">池</lem><rdg resp="Taisho" wit="【明】 【宮】">地</rdg></app>，中間各去苑二十踰繕那，是彼諸
+<lb n="0060a05" ed="T"/>天勝遊戲處，諸天於彼<note resp="Taisho" n="0060002" place="foot text" type="orig">捔＝角【三】【宮】</note><note resp="CBETA" n="0060002" type="mod">捔【大】，角【宋】【元】【明】【宮】</note><app n="0060002"><lem wit="【大】">捔</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">角</rdg></app>勝歡娛。城外東
+<lb n="0060a06" ed="T"/>北有圓生樹，是三十三天受欲樂勝所。盤
+<lb n="0060a07" ed="T"/>根深廣五<note resp="Taisho" n="0060003" place="foot text" type="orig">〔十〕－【三】【宮】</note><note resp="CBETA" n="0060003" type="mod">十【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0060003"><lem wit="【大】">十</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>踰繕那，聳幹上昇枝條傍布，高
+<lb n="0060a08" ed="T"/>廣量等百踰繕那，挺葉開花妙香芬馥，順風
+<lb n="0060a09" ed="T"/>熏滿百踰繕那，若逆風時猶遍五十。順風可
+<lb n="0060a10" ed="T"/>爾，云何逆熏？有餘師言：香無逆熏義，依不
+<lb n="0060a11" ed="T"/>越樹界故說逆熏。理實圓生有如是德，所
+<lb n="0060a12" ed="T"/>流香氣能逆風熏，雖天和風力所擁遏。然能
+<lb n="0060a13" ed="T"/>相續流趣餘方，漸劣漸微近處便歇，非能遠
+<lb n="0060a14" ed="T"/>至如順風熏。如是花香，為依自地隨風相
+<lb n="0060a15" ed="T"/>續轉至餘方、為但熏風別生香氣？此義無
+<lb n="0060a16" ed="T"/>定，諸軌範師於此二門俱許無失。若爾，何
+<lb n="0060a17" ed="T"/>故薄伽梵言：</p>
+<lb n="0060a18" ed="T"/><lg type="regular" xml:id="lgT29p0060a1801"><l>花香不能逆風熏，<caesura/>根莖等香亦復爾；</l>
+<lb n="0060a19" ed="T"/><l>善士功德香芬馥，<caesura/>逆風流美遍諸方。</l></lg>
+<lb n="0060a20" ed="T"/><p xml:id="pT29p0060a2001">據人間香故作是說，以世共了無如是
+<lb n="0060a21" ed="T"/>能。化地部經說此香氣，順風熏滿百踰繕那，
+<lb n="0060a22" ed="T"/>若無風時唯遍五十。外西南角有善法堂，
+<lb n="0060a23" ed="T"/>三十三天時集於彼詳論如法不如法事。如
+<lb n="0060a24" ed="T"/>是已辯三十三天所居外器，餘有色天眾所
+<lb n="0060a25" ed="T"/>住器云何？頌曰：</p>
+<lb n="0060a26" ed="T"/><lg xml:id="lgT29p0060a2601"><l>此上有色天，<caesura/>住依空宮殿。</l></lg>
+<lb n="0060a27" ed="T"/><p xml:id="pT29p0060a2701">論曰：此前所說三十三天上有色諸天，住依
+<lb n="0060a28" ed="T"/>空宮殿。云何名上有色諸天？謂夜摩天、覩
+<lb n="0060a29" ed="T"/>史多天、樂變化天、他化自在天。及前所說梵
+<pb n="0060b" ed="T" xml:id="T29.1558.0060b"/>
+<lb n="0060b01" ed="T"/>眾天等有十六處，并前合有二十二天，皆
+<lb n="0060b02" ed="T"/>依外器。如是所說諸天眾中，頌曰：</p>
+<lb n="0060b03" ed="T"/><lg xml:id="lgT29p0060b0301"><l>六受欲交<note resp="Taisho" n="0060004" place="foot text" type="orig">抱＝<g ref="#CB13582"/>【宋】</note><note resp="CBETA" n="0060004" type="mod">抱【大】，<g ref="#CB13582"/>【宋】</note><app n="0060004"><lem wit="【大】">抱</lem><rdg resp="Taisho" wit="【宋】"><g ref="#CB13582"/></rdg></app>，<caesura/>執手笑視婬。</l></lg>
+<lb n="0060b04" ed="T"/><p xml:id="pT29p0060b0401">論曰：唯六欲天受妙欲境，於中初二依地
+<lb n="0060b05" ed="T"/>居天，形交成婬與人無別。然風氣泄熱惱
+<lb n="0060b06" ed="T"/>便除，非如人間有餘不淨。夜摩天眾纔抱
+<lb n="0060b07" ed="T"/>成婬，覩史多天但由執手，樂變化天唯相
+<lb n="0060b08" ed="T"/>向笑，他化自在相視成婬。毘婆沙師作如
+<lb n="0060b09" ed="T"/>是釋：六天皆以形交成婬。世施設中說相
+<lb n="0060b10" ed="T"/>抱等，但為顯彼時量差別。以上諸天欲境轉
+<lb n="0060b11" ed="T"/>妙、貪心轉捷故使之然。隨彼諸天男女膝上，
+<lb n="0060b12" ed="T"/>有童男童女欻爾化生，即說為彼天所生男
+<lb n="0060b13" ed="T"/>女。初生天眾身量云何？頌曰：</p>
+<lb n="0060b14" ed="T"/><lg xml:id="lgT29p0060b1401"><l>初如五至十，<caesura/>色圓滿有衣。</l></lg>
+<lb n="0060b15" ed="T"/><p xml:id="pT29p0060b1501">論曰：且六欲諸天初生，如次如五六七八九
+<lb n="0060b16" ed="T"/>十歲人，生已身形速得成滿。色界天眾於初
+<lb n="0060b17" ed="T"/>生時，身量周圓具妙衣服。一切天眾皆作聖
+<lb n="0060b18" ed="T"/>言，謂彼言詞同中印度。欲樂生別云何應
+<lb n="0060b19" ed="T"/>知？頌曰：</p>
+<lb n="0060b20" ed="T"/><lg xml:id="lgT29p0060b2001"><l>欲生三人天，<caesura/>樂生三九處。</l></lg>
+<lb n="0060b21" ed="T"/><p xml:id="pT29p0060b2101">論曰：欲生三者，有諸有情樂受現前諸妙欲
+<lb n="0060b22" ed="T"/>境，彼於如是現欲境中自在而轉，謂全人
+<lb n="0060b23" ed="T"/>趣及下四天。有諸有情樂受自化諸妙欲境，
+<lb n="0060b24" ed="T"/>彼於自化妙欲境中自在而轉，謂唯第五樂
+<lb n="0060b25" ed="T"/>變化天。有諸有情樂受他化諸妙欲境，彼
+<lb n="0060b26" ed="T"/>於他化妙欲境中自在而轉，謂第六他化自
+<lb n="0060b27" ed="T"/>在天。依受如生現前欲境故，依受如樂
+<lb n="0060b28" ed="T"/>自化欲境故，依受如樂他化欲境故，於欲
+<lb n="0060b29" ed="T"/>界中分別欲生差別三種。樂生三者，三靜慮
+<pb n="0060c" ed="T" xml:id="T29.1558.0060c"/>
+<lb n="0060c01" ed="T"/>中於九處生受三種樂，謂彼安住離<note resp="Taisho" n="0060005" place="foot text" type="orig">〔生〕－【三】【宮】</note><note resp="CBETA" n="0060005" type="mod">生【大】，〔－〕【宋】【元】【明】【宮】</note><app n="0060005"><lem wit="【大】">生</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】"><space quantity="0"/></rdg></app>喜
+<lb n="0060c02" ed="T"/>樂、定生喜樂，離喜樂故，長時安住、長時離
+<lb n="0060c03" ed="T"/>苦、長時受樂，故名樂生。生靜慮中間都無
+<lb n="0060c04" ed="T"/>喜樂應思，何故亦號樂生天？所說諸天二
+<lb n="0060c05" ed="T"/>十二處，上下相去其量云何？頌曰：</p>
+<lb n="0060c06" ed="T"/><lg xml:id="lgT29p0060c0601"><l>如彼去下量，<caesura/>去上數亦然。</l></lg>
+<lb n="0060c07" ed="T"/><p xml:id="pT29p0060c0701">論曰：一一中間踰繕那量，非易可數，但可
+<lb n="0060c08" ed="T"/>總舉彼去下量，去上例然。隨從何天去下
+<lb n="0060c09" ed="T"/>海量，彼上所至與去下同。謂妙高山從第
+<lb n="0060c10" ed="T"/>四層級去下大海四萬踰繕那，是四大王本
+<lb n="0060c11" ed="T"/>所住處，從彼上去三十三天，亦如彼天去
+<lb n="0060c12" ed="T"/>下海量。如三十三天去下大海，上去夜摩
+<lb n="0060c13" ed="T"/>天其量亦爾。如是乃至如善見天去下大
+<lb n="0060c14" ed="T"/>海踰繕那量，從彼上去色究竟天亦與彼
+<lb n="0060c15" ed="T"/>天去下海等。從此向上無復所居，此處最
+<lb n="0060c16" ed="T"/>高名色究竟。有餘師說：彼名礙究竟天。彼
+<lb n="0060c17" ed="T"/>謂礙名目積集色至彼礙盡，得究竟名。於
+<lb n="0060c18" ed="T"/>下處生昇見上不？頌曰：</p>
+<lb n="0060c19" ed="T"/><lg xml:id="lgT29p0060c1901"><l>離通力依他，<caesura/>下無昇見上。</l></lg>
+<lb n="0060c20" ed="T"/><p xml:id="pT29p0060c2001">論曰：三十三天由自通力，能從本處昇夜
+<lb n="0060c21" ed="T"/>摩天；或復依他，謂得通者及上天眾接往夜
+<lb n="0060c22" ed="T"/>摩。所餘諸天昇上例爾，若來若至下見上
+<lb n="0060c23" ed="T"/>天。然下眼不能覩上界上地，非其境界故。
+<lb n="0060c24" ed="T"/>如不覺彼觸，是故從上地來下地時非
+<lb n="0060c25" ed="T"/>自身來，要作下地化。有餘部說：彼下地天隨
+<lb n="0060c26" ed="T"/>樂亦能見上地色，如生此界下見上天。
+<lb n="0060c27" ed="T"/>夜摩等天宮依處量有幾？有餘師說：此上四
+<lb n="0060c28" ed="T"/>天依處，量同妙高山頂。有餘師說：上倍倍增。
+<lb n="0060c29" ed="T"/>有餘師言：初靜慮地宮殿依處等一四洲，第
+<pb n="0061a" ed="T" xml:id="T29.1558.0061a"/>
+<lb n="0061a01" ed="T"/>二靜慮等小千界，第三靜慮等中千界，第四
+<lb n="0061a02" ed="T"/>靜慮等大千界。有餘師言：下三靜慮如次量
+<lb n="0061a03" ed="T"/>等小中大千，第四靜慮量無邊際。齊何量
+<lb n="0061a04" ed="T"/>說小中大千？頌曰：</p>
+<lb n="0061a05" ed="T"/><lg type="regular" xml:id="lgT29p0061a0501"><l>四大洲日月，<caesura/>蘇迷盧欲天，</l>
+<lb n="0061a06" ed="T"/><l>梵世各一千，<caesura/>名一小千界；</l>
+<lb n="0061a07" ed="T"/><l>此小千千倍，<caesura/>說名一中千；</l>
+<lb n="0061a08" ed="T"/><l>此千倍大千，<caesura/>皆同一成壞。</l></lg>
+<lb n="0061a09" ed="T"/><p xml:id="pT29p0061a0901">論曰：千四大洲乃至梵世，如是總說為一小
+<lb n="0061a10" ed="T"/>千，千倍小千名一中千界，千中千界總名一
+<lb n="0061a11" ed="T"/>大千，如是大千同成同壞。同成壞相後當廣
+<lb n="0061a12" ed="T"/>辯。如外器量別，身量亦別耶？亦別。云何？頌
+<lb n="0061a13" ed="T"/>曰：</p>
+<lb n="0061a14" ed="T"/><lg type="regular" xml:id="lgT29p0061a1401"><l>贍部洲人量，<caesura/>三肘半四肘；</l>
+<lb n="0061a15" ed="T"/><l>東西北洲人，<caesura/>倍倍增如次。</l>
+<lb n="0061a16" ed="T"/><l>欲天<note resp="Taisho" n="0061001" place="foot text" type="orig">Krośa.</note><anchor xml:id="nkr_note_foreign_0061001" n="0061001"/>俱盧舍，<caesura/>四分一一增；</l>
+<lb n="0061a17" ed="T"/><l>色天踰繕那，<caesura/>初四增半半；</l>
+<lb n="0061a18" ed="T"/><l>此上增倍倍，<caesura/>唯無雲減三。</l></lg>
+<lb n="0061a19" ed="T"/><p xml:id="pT29p0061a1901">論曰：贍部洲人身多長三肘半，於中少分有
+<lb n="0061a20" ed="T"/>長四肘。東勝身人身長八肘，西牛貨人長十
+<lb n="0061a21" ed="T"/>六肘，北俱盧人三十二肘。欲界六天最下身
+<lb n="0061a22" ed="T"/>量一俱盧舍四分之一，如是後後一一分增，
+<lb n="0061a23" ed="T"/>至第六天身一俱盧舍半。色天身量初梵眾
+<lb n="0061a24" ed="T"/>天半踰繕那，梵輔全一，大梵一半，少光二全，
+<lb n="0061a25" ed="T"/>此上餘天皆增倍倍，唯無雲減三踰繕那，謂
+<lb n="0061a26" ed="T"/>無量光天倍增二至四，乃至色究竟增滿萬
+<lb n="0061a27" ed="T"/>六千。身量既殊，壽量別不？亦別。云何？頌曰：</p>
+<lb n="0061a28" ed="T"/><lg type="regular" xml:id="lgT29p0061a2801"><l>北洲定千<note resp="Taisho" n="0061002" place="foot text" type="orig">年＝歲【明】</note><note resp="CBETA" n="0061002" type="mod">年【大】，歲【明】</note><app n="0061002"><lem wit="【大】">年</lem><rdg resp="Taisho" wit="【明】">歲</rdg></app>，<caesura/>西東半半減，</l>
+<lb n="0061a29" ed="T"/><l>此洲壽不定，<caesura/>後十初叵量。</l>
+<pb n="0061b" ed="T" xml:id="T29.1558.0061b"/>
+<lb n="0061b01" ed="T"/><l>人間五十年，<caesura/>下天一晝夜，</l>
+<lb n="0061b02" ed="T"/><l>乘斯壽五百，<caesura/>上五倍倍增。</l>
+<lb n="0061b03" ed="T"/><l>色無晝夜殊，<caesura/>劫數等身量，</l>
+<lb n="0061b04" ed="T"/><l>無色初二萬，<caesura/>後後二二增，</l>
+<lb n="0061b05" ed="T"/><l>少光上下天，<caesura/>大全半為劫。</l></lg>
+<lb n="0061b06" ed="T"/><p xml:id="pT29p0061b0601">論曰：北俱盧人定壽千歲，西牛貨人壽五百
+<lb n="0061b07" ed="T"/>歲，東勝身人壽二百五十歲，南贍部人壽無
+<lb n="0061b08" ed="T"/>定限。劫減最後極壽十年，於劫初時人壽無
+<lb n="0061b09" ed="T"/>量，百千等數不能計量。已說人間壽量長
+<lb n="0061b10" ed="T"/>短。要先建立天上晝夜，方可算計天壽短
+<lb n="0061b11" ed="T"/>長。天上云何建立晝夜？人五十歲為六天中
+<lb n="0061b12" ed="T"/>最在下天一晝一夜，乘斯晝夜三十為月，
+<lb n="0061b13" ed="T"/>十二月為歲，彼壽五百年。上五欲天漸俱增
+<lb n="0061b14" ed="T"/>倍，謂人百歲為第二天一晝一夜，乘此晝夜
+<lb n="0061b15" ed="T"/>成月及年彼壽千歲。夜摩等四隨次如人，
+<lb n="0061b16" ed="T"/>二四八百千六百歲為一晝夜，乘此晝夜
+<lb n="0061b17" ed="T"/>成月及年，如次彼壽二四八千萬六千歲。持
+<lb n="0061b18" ed="T"/>雙以上日月並無，彼天云何建立晝夜及光
+<lb n="0061b19" ed="T"/>明事？依何得成？依花開合建立晝夜，如
+<lb n="0061b20" ed="T"/><note resp="Taisho" n="0061003" place="foot text" type="orig">Kumuda.</note><anchor xml:id="nkr_note_foreign_0061003" n="0061003"/>拘物陀、<note resp="Taisho" n="0061004" place="foot text" type="orig">Padma.</note><anchor xml:id="nkr_note_foreign_0061004" n="0061004"/>鉢特摩等。又依諸鳥鳴靜差別，或
+<lb n="0061b21" ed="T"/>依天眾寤寐不同，依自身光明成外光明
+<lb n="0061b22" ed="T"/>事。已說欲界天壽短長。色界天中無晝夜
+<lb n="0061b23" ed="T"/>別，但以劫數知壽短長。彼劫壽短長與身
+<lb n="0061b24" ed="T"/>量數等，謂若身量半踰繕那，壽量半劫；若彼
+<lb n="0061b25" ed="T"/>身量一踰繕那，壽量一劫；乃至身量長萬六
+<lb n="0061b26" ed="T"/>千，壽量亦同萬六千劫。已說色界天壽短長。
+<lb n="0061b27" ed="T"/>無色四天從下如次壽量二四六八萬劫。上
+<lb n="0061b28" ed="T"/>所說劫其量云何？為壞為成？為中為大？少
+<lb n="0061b29" ed="T"/>光<note resp="Taisho" n="0061005" place="foot text" type="orig">以＝已【三】【宮】</note><note resp="CBETA" n="0061005" type="mod">以【大】，已【宋】【元】【明】【宮】</note><app n="0061005"><lem wit="【大】">以</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">已</rdg></app>上大全為劫，自下諸天大半為劫。即
+<pb n="0061c" ed="T" xml:id="T29.1558.0061c"/>
+<lb n="0061c01" ed="T"/>由此故，說大梵王過梵輔天壽一劫半。謂
+<lb n="0061c02" ed="T"/>以成住壞各二十中劫，六十中劫為一劫半，
+<lb n="0061c03" ed="T"/>故以大半四十中劫為下三天所壽劫量。
+<lb n="0061c04" ed="T"/>已說善趣壽量短長。惡趣云何？頌曰：</p>
+<lb n="0061c05" ed="T"/><lg type="regular" xml:id="lgT29p0061c0501"><l>等活等上六，<caesura/>如次以欲天，</l>
+<lb n="0061c06" ed="T"/><l>壽為一晝夜，<caesura/>壽量亦同彼。</l>
+<lb n="0061c07" ed="T"/><l>極熱半中劫，<caesura/>無間中劫全，</l>
+<lb n="0061c08" ed="T"/><l>傍生極一中，<caesura/>鬼月日五百，</l>
+<lb n="0061c09" ed="T"/><l>頞部陀壽量，<caesura/>如一婆訶麻，</l>
+<lb n="0061c10" ed="T"/><l>百年除一盡，<caesura/>後後倍二十。</l></lg>
+<lb n="0061c11" ed="T"/><p xml:id="pT29p0061c1101">論曰：四大王等六欲天壽，如其次第為等
+<lb n="0061c12" ed="T"/>活等六<g ref="#CB00178"/>落迦一晝一夜，壽量如<note resp="Taisho" n="0061006" place="foot text" type="orig">次＋（第）【三】</note><note resp="CBETA" n="0061006" type="mod">次【大】，次第【宋】【元】【明】</note><app n="0061006"><lem wit="【大】">次</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">次第</rdg></app>亦同
+<lb n="0061c13" ed="T"/>彼天。謂四大王壽量五百，於等活地獄為
+<lb n="0061c14" ed="T"/>一晝一夜，乘此晝夜成月及年，以如是年
+<lb n="0061c15" ed="T"/>彼壽五百。乃至他化壽萬六千，於炎熱地獄
+<lb n="0061c16" ed="T"/>為一晝一夜，乘此晝夜成月及年，彼壽如
+<lb n="0061c17" ed="T"/>斯萬六千歲。極熱地獄壽半中劫，無間地獄
+<lb n="0061c18" ed="T"/>壽一中劫。傍生壽量多無定限，若壽極長亦
+<lb n="0061c19" ed="T"/>一中劫，謂難陀等諸大龍王。故世尊言：大龍
+<lb n="0061c20" ed="T"/>有八，皆住一劫能持大地。鬼以人間一月
+<lb n="0061c21" ed="T"/>為一日，乘此成月歲壽五百年。寒那落迦
+<lb n="0061c22" ed="T"/>云何壽量？世尊寄喻顯彼壽言：如此人間
+<lb n="0061c23" ed="T"/>佉梨二十成摩揭陀國一麻婆訶量，有置
+<lb n="0061c24" ed="T"/>巨勝平滿其中，設復有能百年除一。如是
+<lb n="0061c25" ed="T"/>巨勝易有盡期，生頞部陀壽量難盡。此二
+<lb n="0061c26" ed="T"/>十倍為第二壽，如是後後二十倍增，是謂
+<lb n="0061c27" ed="T"/>八寒地獄壽量。此諸壽量有中夭耶？頌曰：</p>
+<lb n="0061c28" ed="T"/><lg xml:id="lgT29p0061c2801"><l>諸處有中夭，<caesura/>除北俱盧洲。</l></lg>
+<lb n="0061c29" ed="T"/><p xml:id="pT29p0061c2901">論曰：諸處壽量皆有中夭，唯北俱盧定壽千
+<pb n="0062a" ed="T" xml:id="T29.1558.0062a"/>
+<lb n="0062a01" ed="T"/>歲。此約處說，非別有情，有別有情不中
+<lb n="0062a02" ed="T"/>夭故。謂住覩史多天<note resp="Taisho" n="0062001" place="foot text" type="orig">Eka-jātipratibaddha.</note><anchor xml:id="nkr_note_foreign_0062001" n="0062001"/>一生所繫菩薩，及
+<lb n="0062a03" ed="T"/><note resp="Taisho" n="0062002" place="foot text" type="orig">Carama-bhavika.</note><anchor xml:id="nkr_note_foreign_0062002" n="0062002"/>最後有佛記佛使隨信法行菩薩輪王，母懷
+<lb n="0062a04" ed="T"/>彼二胎時，此等如應皆無中夭。</p>
+<lb n="0062a05" ed="T"/><cb:juan n="011" fun="close"><cb:jhead><title><anchor xml:id="fxT29p0062a01"/>說一切有部俱舍論</title><anchor xml:id="fxT29p0062a02"/>卷第十一</cb:jhead></cb:juan>
+</cb:div></body></text></TEI>

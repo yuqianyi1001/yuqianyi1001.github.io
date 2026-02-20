@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/cbeta-git/xml-p5a/master/schema/cbeta-p5a.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:cb="http://www.cbeta.org/ns/1.0" xml:id="T29n1558">
+<teiHeader>
+	<fileDesc>
+		<titleStmt>
+			<title>Taishō Tripiṭaka, Electronic version, No. 1558 阿毘達磨俱舍論</title>
+			<title xml:lang="zh-Hant">大正新脩大藏經數位版, No. 1558 阿毘達磨俱舍論</title>
+			<author>尊者世親造  唐 玄奘譯</author>
+			<respStmt>
+				<resp>Electronic Version by</resp>
+				<name>CBETA</name>
+			</respStmt>
+		</titleStmt>
+		<editionStmt>
+			<edition>單卷版 XML TEI P5b</edition>
+		</editionStmt>
+		<extent>30卷</extent>
+		<publicationStmt>
+			<idno type="CBETA">
+				<idno type="canon">T</idno>.<idno type="vol">29</idno>.<idno type="no">1558</idno>
+			</idno>
+			<distributor>
+				<name>中華電子佛典協會 (CBETA)</name>
+				<address>
+					<addrLine><email>service@cbeta.org</email></addrLine>
+				</address>
+			</distributor>
+			<availability>
+				<p>Available for non-commercial use when distributed with this header intact.</p>
+			</availability>
+			<date>2023-11-07 11:34:32 +0800</date>
+		</publicationStmt>
+		<sourceDesc>
+			<bibl>
+				<title level="s">Taishō Tripiṭaka</title>
+				<title level="s" xml:lang="zh-Hant">大正新脩大藏經</title>
+				<title level="m" xml:lang="zh-Hant">阿毘達磨俱舍論</title>
+			</bibl>
+		</sourceDesc>
+	</fileDesc>
+	<encodingDesc>
+		<projectDesc>
+			<p xml:lang="en" cb:type="ly">Text as provided by Mr. Hsiao Chen-Kuo, Tripitaka Koreana as provided by Mr. Christian Wittern, Text as provided by SAT, Japan, Text as provided by Anonymous from USA, Punctuated text as provided by Mr. Li Ming-Fang</p>
+			<p xml:lang="zh-Hant" cb:type="ly">蕭鎮國大德提供，維習安大德提供之高麗藏 CD 經文，日本 SAT 組織提供，北美某大德提供，李明芳大德提供新式標點</p>
+		</projectDesc>
+		<editorialDecl>
+			<punctuation resp="CBETA"><p>新式標點</p></punctuation>
+		</editorialDecl>
+		<tagsDecl>
+			<namespace name="http://www.tei-c.org/ns/1.0">
+				<tagUsage gi="rdg">
+					<listWit>
+						<witness xml:id="wit.orig">【大】</witness>
+						<witness xml:id="wit.cbeta">【CB】</witness>
+					</listWit>
+				</tagUsage>
+			</namespace>
+		</tagsDecl>
+		<charDecl>
+			<char xml:id="CB01115">
+				<charName>CBETA CHARACTER CB01115</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[壴*桑]</value>
+				</charProp>
+				<mapping type="unicode">U+23799</mapping>
+				<mapping cb:dec="984155" type="PUA">U+F045B</mapping>
+			</char>
+			<char xml:id="CB02232">
+				<charName>CBETA CHARACTER CB02232</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[韋*沓]</value>
+				</charProp>
+				<mapping type="unicode">U+293BD</mapping>
+				<mapping cb:dec="985272" type="PUA">U+F08B8</mapping>
+			</char>
+		</charDecl>
+	</encodingDesc>
+	<profileDesc>
+		<langUsage>
+			<language ident="sa">Sanskrit</language>
+			<language ident="en">English</language>
+			<language ident="zh-Hant">Chinese (Traditional)</language>
+		</langUsage>
+	</profileDesc>
+	<revisionDesc>
+		<change when="2013-05-20">
+			<name>CW</name><name>Ray Chou 周邦信</name>P4 to P5 conversion by p4top5a.py, intended for publication
+		</change>
+		<change when="1999-06-28T20:31:40">
+			CW (ed.) Created initial TEI XML version with BASICX.BAT (99/6/28)
+		</change>
+	</revisionDesc>
+</teiHeader>
+<text><body>
+<cb:mulu n="1" level="1" type="品">1 分別界品</cb:mulu><cb:mulu level="2">1</cb:mulu><cb:div type="pin">
+<milestone unit="juan" n="2"/>
+<pb n="0007a" ed="T" xml:id="T29.1558.0007a"/>
+<lb n="0007a01" ed="T"/>
+<lb n="0007a02" ed="T"/><cb:juan n="002" fun="open"><cb:mulu n="002" type="卷"></cb:mulu><cb:mulu level="2">2</cb:mulu><cb:jhead><title>阿毘達磨俱舍論</title>卷第二</cb:jhead>
+<lb n="0007a03" ed="T"/>
+<lb n="0007a04" ed="T"/><byline cb:type="author">尊者世親造</byline>
+<lb n="0007a05" ed="T"/><byline cb:type="Translator"><anchor xml:id="fxT29p0007a01"/>三藏法師玄奘奉　詔譯</byline>
+<lb n="0007a06" ed="T"/><cb:jhead type="pin">分別界品第一之二</cb:jhead></cb:juan>
+<lb n="0007a07" ed="T"/><p xml:id="pT29p0007a0701">復次於前所說十八界中，幾有見、幾無見？幾
+<lb n="0007a08" ed="T"/>有對、幾無對？幾善、幾不善、幾無記？頌曰：</p>
+<lb n="0007a09" ed="T"/><lg type="regular" xml:id="lgT29p0007a0901"><l>一有見謂色，<caesura/>十有色有對，</l>
+<lb n="0007a10" ed="T"/><l>此除色聲八，<caesura/>無記餘三種。</l></lg>
+<lb n="0007a11" ed="T"/><p xml:id="pT29p0007a1101">論曰：十八界中色界<note resp="Taisho" n="0007001" place="foot text" type="orig">Sa-nidarśana.</note><anchor xml:id="nkr_note_foreign_0007001" n="0007001"/>有見，以可示現此彼
+<lb n="0007a12" ed="T"/>差別。由此義准，說餘<note resp="Taisho" n="0007002" place="foot text" type="orig">A-nidarśana.</note><anchor xml:id="nkr_note_foreign_0007002" n="0007002"/>無見。如是已說有見
+<lb n="0007a13" ed="T"/>無見。唯色蘊攝十界有對，對是礙義。此復三
+<lb n="0007a14" ed="T"/>種：障礙、境界、所緣異故。<note resp="Taisho" n="0007003" place="foot text" type="orig">Āvaraṇa-pratighāta.</note><anchor xml:id="nkr_note_foreign_0007003" n="0007003"/>障礙有對，謂十色
+<lb n="0007a15" ed="T"/>界。自於他處被礙不生，如手礙手或石礙
+<lb n="0007a16" ed="T"/>石或二相礙。<note resp="Taisho" n="0007004" place="foot text" type="orig">Viṣaya-pratighāta.</note><anchor xml:id="nkr_note_foreign_0007004" n="0007004"/>境界有對，謂十二界法界一
+<lb n="0007a17" ed="T"/>分諸有境法於色等境，故《施設論》作如是
+<lb n="0007a18" ed="T"/>言：有眼於水有礙非陸，如魚等眼。有眼於
+<lb n="0007a19" ed="T"/>陸有礙非水，從多分說，如人等眼。有眼
+<lb n="0007a20" ed="T"/>俱礙，如<note resp="Taisho" n="0007005" place="foot text" type="orig">Piśāca.</note><anchor xml:id="nkr_note_foreign_0007005" n="0007005"/>畢舍遮、<note resp="Taisho" n="0007006" place="foot text" type="orig">Siśumāra.</note><anchor xml:id="nkr_note_foreign_0007006" n="0007006"/>室獸摩羅及捕魚人、蝦蟇
+<lb n="0007a21" ed="T"/>等眼。有俱非礙，謂除前相。有眼於夜有礙
+<lb n="0007a22" ed="T"/>非晝，如諸蝙蝠鵂鶹等眼。有眼於晝有礙
+<lb n="0007a23" ed="T"/>非夜，從多分說，如人等眼。有眼俱礙，如
+<lb n="0007a24" ed="T"/>狗野干馬豹豺狼猫狸等眼。有俱非礙，謂除
+<lb n="0007a25" ed="T"/>前相。此等名為境界有對。<note resp="Taisho" n="0007007" place="foot text" type="orig">Ālambana-pratighāta.</note><anchor xml:id="nkr_note_foreign_0007007" n="0007007"/>所緣有對，謂心
+<lb n="0007a26" ed="T"/>心所於自所緣。境界、所緣復有何別？若於
+<lb n="0007a27" ed="T"/>彼法此有功能，即說彼為此法境界。心心
+<lb n="0007a28" ed="T"/>所法執彼而起，彼於心等名為所緣。云何
+<lb n="0007a29" ed="T"/>眼等於自境界所緣轉時說名有礙？越彼
+<pb n="0007b" ed="T" xml:id="T29.1558.0007b"/>
+<lb n="0007b01" ed="T"/>於餘此不轉故。或復礙者是和會義，謂眼
+<lb n="0007b02" ed="T"/>等法於自境界及自所緣和會轉故。應知此
+<lb n="0007b03" ed="T"/>中唯就障礙有對而說，故但言十有色有
+<lb n="0007b04" ed="T"/>對，更相障故。由此義准說餘無對。若法境
+<lb n="0007b05" ed="T"/>界有對，亦障礙有對耶？應作四句。謂七心
+<lb n="0007b06" ed="T"/>界法界一分諸相應法是第一句。色等五境
+<lb n="0007b07" ed="T"/>是第二句。眼等五根是第三句。法界一分非
+<lb n="0007b08" ed="T"/>相應法是第四句。若法境界有對，亦所緣有
+<lb n="0007b09" ed="T"/>對耶？應順後句，謂若所緣有對，定是境界
+<lb n="0007b10" ed="T"/>有對。有雖境界有對而非所緣有對，謂眼
+<lb n="0007b11" ed="T"/>等五根。此中大德鳩摩邏多作如是說：</p>
+<lb n="0007b12" ed="T"/><lg type="regular" xml:id="lgT29p0007b1201"><l>是處心欲生，<caesura/>他礙令不起，</l>
+<lb n="0007b13" ed="T"/><l>應知是有對，<caesura/>無對此相違。</l></lg>
+<lb n="0007b14" ed="T"/><p xml:id="pT29p0007b1401">此是所許。如是已說有對無對。於此所<note resp="Taisho" n="0007008" place="foot text" type="orig">說＝緣【三】</note><note resp="CBETA" n="0007008" type="mod">說【大】，緣【宋】【元】【明】</note><app n="0007008"><lem wit="【大】">說</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">緣</rdg></app>
+<lb n="0007b15" ed="T"/>十有對中，除色及聲餘八無記，謂五色根、
+<lb n="0007b16" ed="T"/>香、味、觸境，不可記為善不善性，故名無記。
+<lb n="0007b17" ed="T"/>有說：不能記異熟果故名無記。若爾，無漏
+<lb n="0007b18" ed="T"/>應唯無記。其餘十界通善等三，謂七心界
+<lb n="0007b19" ed="T"/>與無貪等相應名善，貪等相應名為不善，
+<lb n="0007b20" ed="T"/>餘名無記。法界若是無貪等性相應等起擇
+<lb n="0007b21" ed="T"/>滅名善，若貪等性相應等起名為不善，餘
+<lb n="0007b22" ed="T"/>名無記。色界聲界若善不善心力等起身語
+<lb n="0007b23" ed="T"/>表攝，是善不善，餘是無記。已說善等。十八
+<lb n="0007b24" ed="T"/>界中幾欲界繫、幾色界繫、幾無色界繫？頌
+<lb n="0007b25" ed="T"/>曰：</p>
+<lb n="0007b26" ed="T"/><lg type="regular" xml:id="lgT29p0007b2601"><l>欲界繫十八，<caesura/>色界繫十四，</l>
+<lb n="0007b27" ed="T"/><l>除香味二識，<caesura/>無色繫後三。</l></lg>
+<lb n="0007b28" ed="T"/><p xml:id="pT29p0007b2801">論曰：繫謂繫屬，即被縛義。欲界所繫具足
+<lb n="0007b29" ed="T"/><note resp="Taisho" n="0007009" place="foot text" type="orig">十＝下【宮】</note><note resp="CBETA" n="0007009" type="mod">十【大】，下【宮】</note><app n="0007009"><lem wit="【大】">十</lem><rdg resp="Taisho" wit="【宮】">下</rdg></app>八，色界所繫唯十四種，除香味境及鼻
+<pb n="0007c" ed="T" xml:id="T29.1558.0007c"/>
+<lb n="0007c01" ed="T"/>舌識。除香味者，<note resp="Taisho" n="0007010" place="foot text" type="orig">Kavaḍīkārāhāra.</note><anchor xml:id="nkr_note_foreign_0007010" n="0007010"/>段食性故，離段食欲方
+<lb n="0007c02" ed="T"/>得生彼。除鼻舌識，無所緣故。若爾，觸界於
+<lb n="0007c03" ed="T"/>彼應無，如香味境段食性故，彼所有觸非
+<lb n="0007c04" ed="T"/>段食性。若爾，香味類亦應然，香味離食無
+<lb n="0007c05" ed="T"/>別受用，觸有別用持根衣等，彼離食欲香
+<lb n="0007c06" ed="T"/>味無用，有根衣等故觸非無。有餘師說：住
+<lb n="0007c07" ed="T"/>此依彼靜慮等至見色聞聲，輕安俱起有
+<lb n="0007c08" ed="T"/>殊勝觸攝益於身，是故此三生彼靜慮猶
+<lb n="0007c09" ed="T"/>相隨逐，香味不爾，故在彼無。若爾，鼻舌彼
+<lb n="0007c10" ed="T"/>應非有，如香味境彼無用故。不爾，二根於
+<lb n="0007c11" ed="T"/>彼有用，謂起言說及莊嚴身。若為嚴身及
+<lb n="0007c12" ed="T"/>起說用，但須依處，何用二根？如無男根亦
+<lb n="0007c13" ed="T"/>無依處，二根無者依處亦無。於彼可無男
+<lb n="0007c14" ed="T"/>根依處，彼無用故。鼻舌依處彼有用故，離
+<lb n="0007c15" ed="T"/>根應有。有雖無用而有根生，如處胞胎
+<lb n="0007c16" ed="T"/>定當死者。有雖無用而非無因，彼從何
+<lb n="0007c17" ed="T"/>因得有根起？於根有愛發殊勝業。若離
+<lb n="0007c18" ed="T"/>境愛，於根定然，彼離境貪應無鼻舌。或應
+<lb n="0007c19" ed="T"/>許彼男根亦生，若謂不生由醜陋者，陰藏
+<lb n="0007c20" ed="T"/>隱密何容醜陋？又諸根生非由有用，若有
+<lb n="0007c21" ed="T"/>因力無用亦生。男根於彼雖為醜陋，設許
+<lb n="0007c22" ed="T"/>有因於彼應起，男根非有，鼻舌應無。若爾，
+<lb n="0007c23" ed="T"/>便違契經所說：彼無支缺，不減諸根。隨彼
+<lb n="0007c24" ed="T"/>諸根應可有者，說為不減。何所相違？若不
+<lb n="0007c25" ed="T"/>許然男根應有。如是說者，鼻舌二根於彼
+<lb n="0007c26" ed="T"/>非無，但無香味，以六根愛依內身生，非
+<lb n="0007c27" ed="T"/>依境界而得現起。其男根愛依婬觸生，婬
+<lb n="0007c28" ed="T"/>觸彼無，男根非有，故於色界十八界中，唯
+<lb n="0007c29" ed="T"/>十四種理得成立。無色界繫唯有後三，所謂
+<pb n="0008a" ed="T" xml:id="T29.1558.0008a"/>
+<lb n="0008a01" ed="T"/>意、法及意識界，要離色欲於彼得生，故無
+<lb n="0008a02" ed="T"/>色中無十色界。依緣無故五識亦無，故唯後
+<lb n="0008a03" ed="T"/>三無色界繫。已<note resp="Taisho" n="0008001" place="foot text" type="orig">說＝設【宮】</note><note resp="CBETA" n="0008001" type="mod">說【大】，設【宮】</note><app n="0008001"><lem wit="【大】">說</lem><rdg resp="Taisho" wit="【宮】">設</rdg></app>界繫，十八界中幾有漏、
+<lb n="0008a04" ed="T"/>幾無漏？頌曰：</p>
+<lb n="0008a05" ed="T"/><lg xml:id="lgT29p0008a0501"><l>意法意識通，<caesura/>所餘唯有漏。</l></lg>
+<lb n="0008a06" ed="T"/><p xml:id="pT29p0008a0601">論曰：意及意識道諦攝者，名為無漏，餘名
+<lb n="0008a07" ed="T"/>有漏。法界若是道諦無為，名為無漏，餘名
+<lb n="0008a08" ed="T"/>有漏。餘十五界唯名有漏。如是已說有漏
+<lb n="0008a09" ed="T"/>無漏。十八界中幾有尋有伺、幾無尋唯伺、幾
+<lb n="0008a10" ed="T"/>無尋無伺？頌曰：</p>
+<lb n="0008a11" ed="T"/><lg xml:id="lgT29p0008a1101"><l>五識<note resp="Taisho" n="0008002" place="foot text" type="orig">唯＝有【明】</note><note resp="CBETA" n="0008002" type="mod">唯【大】，有【明】</note><app n="0008002"><lem wit="【大】">唯</lem><rdg resp="Taisho" wit="【明】">有</rdg></app>尋伺，<caesura/>後三<note resp="Taisho" n="0008003" place="foot text" type="orig">三＝二【三】【宮】</note><note resp="CBETA" n="0008003" type="mod">三【大】，二【宋】【元】【明】【宮】</note><app n="0008003"><lem wit="【大】">三</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">二</rdg></app>餘無。</l></lg>
+<lb n="0008a12" ed="T"/><p xml:id="pT29p0008a1201">論曰：眼等五識有尋有伺，由與尋伺恒共
+<lb n="0008a13" ed="T"/>相應，以行相麁外門轉故、顯義決定，故說
+<lb n="0008a14" ed="T"/>唯言。後三謂是意、法、意識，根、境、識中各居後
+<lb n="0008a15" ed="T"/>故。此後三界皆通三品，意界、意識界及相應
+<lb n="0008a16" ed="T"/>法界，除尋與伺。若在欲界初靜慮中<note resp="Taisho" n="0008004" place="foot text" type="orig">Savitarka-savicāra.</note><anchor xml:id="nkr_note_foreign_0008004" n="0008004"/>有尋
+<lb n="0008a17" ed="T"/>有伺，靜慮中間<note resp="Taisho" n="0008005" place="foot text" type="orig">Avitarka-savicāra.</note><anchor xml:id="nkr_note_foreign_0008005" n="0008005"/>無尋唯伺，第二靜慮以上諸
+<lb n="0008a18" ed="T"/>地乃至有頂<note resp="Taisho" n="0008006" place="foot text" type="orig">Avitarkâvicāra.</note><anchor xml:id="nkr_note_foreign_0008006" n="0008006"/>無尋無伺。法界所攝非相應
+<lb n="0008a19" ed="T"/>法，靜慮中間伺亦如是。尋一切時無尋唯伺，
+<lb n="0008a20" ed="T"/>無第二尋故、但伺相應故。伺在欲界初靜
+<lb n="0008a21" ed="T"/>慮中三品不收，應名何等？此應名曰<note resp="Taisho" n="0008007" place="foot text" type="orig">Avicāro vitarka-mātra.</note><anchor xml:id="nkr_note_foreign_0008007" n="0008007"/>無
+<lb n="0008a22" ed="T"/>伺唯尋，無第二伺故、但尋相應故。由此故
+<lb n="0008a23" ed="T"/>言有尋伺<note resp="Taisho" n="0008008" place="foot text" type="orig">地＝他【宮】</note><note resp="CBETA" n="0008008" type="mod">地【大】，他【宮】</note><app n="0008008"><lem wit="【大】">地</lem><rdg resp="Taisho" wit="【宮】">他</rdg></app>有四品法：一有尋有伺，謂除
+<lb n="0008a24" ed="T"/>尋伺餘相應法。二無尋唯伺，謂即是尋。三無
+<lb n="0008a25" ed="T"/>尋無伺，謂即一切非相應法。四無伺唯尋，謂
+<lb n="0008a26" ed="T"/>即是伺。餘十色界尋伺俱無，常與尋伺不
+<lb n="0008a27" ed="T"/>相應故。若五識身有尋有伺，如何得說無
+<lb n="0008a28" ed="T"/>分別耶？頌曰：</p>
+<lb n="0008a29" ed="T"/><lg type="regular" xml:id="lgT29p0008a2901"><l>說五無分別，<caesura/>由計度隨念，</l>
+<pb n="0008b" ed="T" xml:id="T29.1558.0008b"/>
+<lb n="0008b01" ed="T"/><l>以意地散慧，<caesura/>意<note resp="Taisho" n="0008009" place="foot text" type="orig">諸＝識【三】【宮】</note><note resp="CBETA" n="0008009" type="mod">諸【大】，識【宋】【元】【明】【宮】</note><app n="0008009"><lem wit="【大】">諸</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">識</rdg></app>念為體。</l></lg>
+<lb n="0008b02" ed="T"/><p xml:id="pT29p0008b0201">論曰：傳說，分別略有三種：一<note resp="Taisho" n="0008010" place="foot text" type="orig">Svabhāva-vikalpa.</note><anchor xml:id="nkr_note_foreign_0008010" n="0008010"/>自性分別、二
+<lb n="0008b03" ed="T"/><note resp="Taisho" n="0008011" place="foot text" type="orig">Abhinirūpanā-vikalpa.</note><anchor xml:id="nkr_note_foreign_0008011" n="0008011"/>計度分別、三隨念分別。由五識身雖有自
+<lb n="0008b04" ed="T"/>性而無餘二，說無分別，如一足馬名為無
+<lb n="0008b05" ed="T"/>足。自性分別體唯是尋，後心所中自當辯釋。
+<lb n="0008b06" ed="T"/>餘二分別如其次第。意地散慧諸念為體，散
+<lb n="0008b07" ed="T"/>謂非定。意識相應散慧，名為計度分別。若
+<lb n="0008b08" ed="T"/>定若散意識相應諸念，名為隨念分別。如是
+<lb n="0008b09" ed="T"/>已說有尋伺等。十八界中幾有所緣、幾無所
+<lb n="0008b10" ed="T"/>緣？幾有執受、幾無執受？頌曰：</p>
+<lb n="0008b11" ed="T"/><lg type="regular" xml:id="lgT29p0008b1101"><l>七心法界半，<caesura/>有所緣餘無，</l>
+<lb n="0008b12" ed="T"/><l>前八界及聲，<caesura/>無執受餘二。</l></lg>
+<lb n="0008b13" ed="T"/><p xml:id="pT29p0008b1301">論曰：六識意界及法界攝諸心所法，名有所
+<lb n="0008b14" ed="T"/>緣，能取境故。餘十色界及法界攝不相應法，
+<lb n="0008b15" ed="T"/>名無所緣，義<note resp="Taisho" n="0008012" place="foot text" type="orig">准＝唯【元】【明】</note><note resp="CBETA" n="0008012" type="mod">准【大】，唯【元】【明】</note><app n="0008012"><lem wit="【大】">准</lem><rdg resp="Taisho" wit="【元】 【明】">唯</rdg></app>成故。如是已說有所緣等。
+<lb n="0008b16" ed="T"/>十八界中九無執受，前七心界及法界全，此
+<lb n="0008b17" ed="T"/>八及聲皆無執受。所餘九界各通二門，謂有
+<lb n="0008b18" ed="T"/>執受、無執受故。眼等五根住現在世名有執
+<lb n="0008b19" ed="T"/>受，過去未來名無執受。色香味觸住現在
+<lb n="0008b20" ed="T"/>世不離五根名有執受，若住現在非不
+<lb n="0008b21" ed="T"/>離根過去未來名無執受。如在身內除
+<lb n="0008b22" ed="T"/>與根合，髮毛爪齒大小便利洟唾血等，及在
+<lb n="0008b23" ed="T"/>身外地水等中色香味觸，雖在現世而無
+<lb n="0008b24" ed="T"/>執受。有執受者，此言何義？心心所法共所執
+<lb n="0008b25" ed="T"/>持攝為依處名有執受，損益展轉更相隨
+<lb n="0008b26" ed="T"/>故。即諸世間說有覺觸，眾緣所觸覺樂等
+<lb n="0008b27" ed="T"/>故。與此相違名無執受。如是已說有執受
+<lb n="0008b28" ed="T"/>等。十八界中幾大種性、幾所造性？幾可積集、
+<lb n="0008b29" ed="T"/>幾非積集？頌曰：</p>
+<pb n="0008c" ed="T" xml:id="T29.1558.0008c"/>
+<lb n="0008c01" ed="T"/><lg type="regular" xml:id="lgT29p0008c0101"><l>觸界中有二，<caesura/>餘九色所造，</l>
+<lb n="0008c02" ed="T"/><l>法一分亦然，<caesura/>十色可積集。</l></lg>
+<lb n="0008c03" ed="T"/><p xml:id="pT29p0008c0301">論曰：觸界通二，謂大種及所造。大種有四，
+<lb n="0008c04" ed="T"/>謂堅性等。所造有七，謂滑性等，依大種生
+<lb n="0008c05" ed="T"/>故名所造。餘九色界唯是所造，謂五色根、色
+<lb n="0008c06" ed="T"/>等四境。法界一分無表業色亦唯所造。餘七
+<lb n="0008c07" ed="T"/>心界法界一分，除無表色俱非二種。尊者
+<lb n="0008c08" ed="T"/>覺天作如是說：十種色處唯大種性。彼說不
+<lb n="0008c09" ed="T"/>然，契經唯說堅等四相為大種故。此四大
+<lb n="0008c10" ed="T"/>種唯觸攝故，非堅濕等眼等所取，非色聲等
+<lb n="0008c11" ed="T"/>身根所覺，是故彼說理定不然。又契經說：苾
+<lb n="0008c12" ed="T"/>芻當知，眼謂內處四大種所造淨色，有色無
+<lb n="0008c13" ed="T"/>見有對，乃至身處廣說亦爾。苾芻當知，色謂
+<lb n="0008c14" ed="T"/>外處四大種所造，有色有見有對。聲謂外處
+<lb n="0008c15" ed="T"/>四大種所造，有色無見有對。香味二處，廣說
+<lb n="0008c16" ed="T"/>亦爾。觸謂外處，是四大種及四大種所造，有
+<lb n="0008c17" ed="T"/>色無見有對。如是經中唯說觸處攝四大
+<lb n="0008c18" ed="T"/>種，分明顯示餘有色處皆非大種。若爾，何
+<lb n="0008c19" ed="T"/>故契經中言謂於眼肉團中若內各別堅
+<lb n="0008c20" ed="T"/>性堅類，乃至廣說。彼說不離眼根肉團有
+<lb n="0008c21" ed="T"/>堅性等，無相違過。《<note resp="Taisho" n="0008013" place="foot text" type="orig">Garbhāvakrānti-sūtra.</note><anchor xml:id="nkr_note_foreign_0008013" n="0008013"/>入胎經》中唯說六界
+<lb n="0008c22" ed="T"/>為士夫者，為顯能成士夫本事，非唯爾
+<lb n="0008c23" ed="T"/>所，彼經復說六觸處故。又諸心所應非有
+<lb n="0008c24" ed="T"/>故，亦不應執心所即心，以契經言想受等
+<lb n="0008c25" ed="T"/>心所法依止心故。又亦說有貪心等故。由
+<lb n="0008c26" ed="T"/>此如前所說諸界大種所造，差別義成。如
+<lb n="0008c27" ed="T"/>是已說大種性等。十八界中，五根、五境十有
+<lb n="0008c28" ed="T"/>色界是可積集，極微聚故。義<note resp="Taisho" n="0008014" place="foot text" type="orig">准＝唯【宮】</note><note resp="CBETA" n="0008014" type="mod">准【大】，唯【宮】</note><app n="0008014"><lem wit="【大】">准</lem><rdg resp="Taisho" wit="【宮】">唯</rdg></app>餘八非可
+<lb n="0008c29" ed="T"/>積集，非極微故。如是已說可積集等。十八
+<pb n="0009a" ed="T" xml:id="T29.1558.0009a"/>
+<lb n="0009a01" ed="T"/>界中，幾能斫、幾所斫？幾能燒、幾所燒？幾能稱、
+<lb n="0009a02" ed="T"/>幾所稱？頌曰：</p>
+<lb n="0009a03" ed="T"/><lg type="regular" xml:id="lgT29p0009a0301"><l>謂唯外四界，<caesura/>能斫及所斫，</l>
+<lb n="0009a04" ed="T"/><l>亦<note resp="Taisho" n="0009001" place="foot text" type="orig">Dahyate.</note><anchor xml:id="nkr_note_foreign_0009001" n="0009001"/>所燒<note resp="Taisho" n="0009002" place="foot text" type="orig">Tulayati.</note><anchor xml:id="nkr_note_foreign_0009002" n="0009002"/>能稱，<caesura/>能燒所稱諍。</l></lg>
+<lb n="0009a05" ed="T"/><p xml:id="pT29p0009a0501">論曰：色香味觸成斧薪等，此即名為<note resp="Taisho" n="0009003" place="foot text" type="orig">Chinatti.</note><anchor xml:id="nkr_note_foreign_0009003" n="0009003"/>能斫
+<lb n="0009a06" ed="T"/><note resp="Taisho" n="0009004" place="foot text" type="orig">Chidyate.</note><anchor xml:id="nkr_note_foreign_0009004" n="0009004"/>所斫。何法名斫？薪等色聚相逼續生，斧等
+<lb n="0009a07" ed="T"/>分隔令各續起，此法名斫。身等色根不名
+<lb n="0009a08" ed="T"/>所斫，非可全斷令成二故。非身根等可成
+<lb n="0009a09" ed="T"/>二分，支分離身則無根故。又身根等亦非
+<lb n="0009a10" ed="T"/>能斫，以淨妙故如珠寶光。如能斫所斫體
+<lb n="0009a11" ed="T"/>唯外四界，所燒能稱其體亦爾，謂唯外四界
+<lb n="0009a12" ed="T"/>名所燒能稱。身等色根亦非二事，以淨妙
+<lb n="0009a13" ed="T"/>故如珠寶光。聲界總非，不相續故。能燒所
+<lb n="0009a14" ed="T"/>稱有異諍論，謂或有說：<note resp="Taisho" n="0009005" place="foot text" type="orig">Dāhaka.</note><anchor xml:id="nkr_note_foreign_0009005" n="0009005"/>能燒<note resp="Taisho" n="0009006" place="foot text" type="orig">Tulya.</note><anchor xml:id="nkr_note_foreign_0009006" n="0009006"/>所稱體亦如
+<lb n="0009a15" ed="T"/>前，唯外四界。或復有說：唯有火界可名能
+<lb n="0009a16" ed="T"/>燒，所稱唯重。如是已說能所斫等。十八界
+<lb n="0009a17" ed="T"/>中幾異熟生、幾所長養、幾等流性、幾有實事、
+<lb n="0009a18" ed="T"/>幾一剎那？頌曰：</p>
+<lb n="0009a19" ed="T"/><lg type="regular" xml:id="lgT29p0009a1901"><l>內五有熟養，<caesura/>聲無異熟生，</l>
+<lb n="0009a20" ed="T"/><l>八無礙等流，<caesura/>亦異熟生性，</l>
+<lb n="0009a21" ed="T"/><l>餘三實唯法，<caesura/>剎那唯後三。</l></lg>
+<lb n="0009a22" ed="T"/><p xml:id="pT29p0009a2201">論曰：內五即是眼等五界。有<note resp="Taisho" n="0009007" place="foot text" type="orig">Vipāka-ja.</note><anchor xml:id="nkr_note_foreign_0009007" n="0009007"/>異熟生及<note resp="Taisho" n="0009008" place="foot text" type="orig">Aupacayika.</note><anchor xml:id="nkr_note_foreign_0009008" n="0009008"/>所
+<lb n="0009a23" ed="T"/>長養無<note resp="Taisho" n="0009009" place="foot text" type="orig">Naiṣyandika.</note><anchor xml:id="nkr_note_foreign_0009009" n="0009009"/>等流者，離異熟生及所長養，無
+<lb n="0009a24" ed="T"/>別性故。異熟因所生名異熟生，如牛所駕
+<lb n="0009a25" ed="T"/>車名曰牛車，略去中言故作是說。或所造
+<lb n="0009a26" ed="T"/>業至得果時變而能熟，故名異熟。果從彼
+<lb n="0009a27" ed="T"/>生，名異熟生。彼所得果與因別類，而是所熟，
+<lb n="0009a28" ed="T"/>故名異熟。或於因<note n="0009a2801" resp="CBETA" type="add">上【CB】【麗-CB】，土【大】</note><app n="0009a2801"><lem resp="CBETA.maha" wit="【CB】 【麗-CB】">上<note type="cf1">K27n0955_p0464b21</note></lem><rdg wit="【大】">土</rdg></app>假立果名，如於果
+<lb n="0009a29" ed="T"/>上假立因名。如契經說：今六觸處，應知即
+<pb n="0009b" ed="T" xml:id="T29.1558.0009b"/>
+<lb n="0009b01" ed="T"/>是昔所造業。飲食資助眠睡等持勝緣所益，
+<lb n="0009b02" ed="T"/>名所長養。有說：梵行亦能長養。此唯無損，
+<lb n="0009b03" ed="T"/>非別有益。長養<note resp="Taisho" n="0009010" place="foot text" type="orig">相＝有【明】</note><note resp="CBETA" n="0009010" type="mod">相【大】，有【明】</note><app n="0009010"><lem wit="【大】">相</lem><rdg resp="Taisho" wit="【明】">有</rdg></app>續常能護持異熟相續，
+<lb n="0009b04" ed="T"/>猶如外郭防援內城。聲有等流及所長養
+<lb n="0009b05" ed="T"/>無異熟生。所以者何？隨欲轉故。若爾，不應
+<lb n="0009b06" ed="T"/>《施設論》說善修遠離麁惡語故，感得大士
+<lb n="0009b07" ed="T"/>梵音聲相。有說：聲屬第三傳故，雖由彼生
+<lb n="0009b08" ed="T"/>而非異熟。謂從彼業生諸大種，從諸大種
+<lb n="0009b09" ed="T"/>緣擊發聲。有說：聲屬第五傳故，雖由彼生
+<lb n="0009b10" ed="T"/>而非異熟。謂彼業生異熟大種，從此傳生
+<lb n="0009b11" ed="T"/>長養大種，此復傳生等流大種此乃生聲。
+<lb n="0009b12" ed="T"/>若爾，身受從業所生大種生故，應非異熟。
+<lb n="0009b13" ed="T"/>若受如聲，便違正理。八無礙者，七心法界
+<lb n="0009b14" ed="T"/>此有等流異熟生性。同類遍行因所生者是
+<lb n="0009b15" ed="T"/>等流性，若異熟因所引生者名異熟生，諸
+<lb n="0009b16" ed="T"/>無礙法無積集故非所長養。餘謂餘四：色、
+<lb n="0009b17" ed="T"/>香、味、觸，皆通三種，有異熟生、有所長養、有
+<lb n="0009b18" ed="T"/>等流性。<note resp="Taisho" n="0009011" place="foot text" type="orig">Dravya.</note><anchor xml:id="nkr_note_foreign_0009011" n="0009011"/>實唯法者，實謂無為，以堅實故。此
+<lb n="0009b19" ed="T"/>法界攝故，唯法界獨名有實。意、法、意識名為
+<lb n="0009b20" ed="T"/>後三，於六三中最後說故。唯此三界有一
+<lb n="0009b21" ed="T"/>剎那，謂初無漏苦法忍品，非等流故名<note resp="Taisho" n="0009012" place="foot text" type="orig">Kṣaṇam ekam.</note><anchor xml:id="nkr_note_foreign_0009012" n="0009012"/>一
+<lb n="0009b22" ed="T"/>剎那。此說究竟非等流者，餘有為法無非
+<lb n="0009b23" ed="T"/>等流。苦法忍相應心名意界、意識界，餘俱起
+<lb n="0009b24" ed="T"/>法名為法界。如是已說異熟生等。今應思
+<lb n="0009b25" ed="T"/>擇，若有眼界先不成就今得成就亦眼識
+<lb n="0009b26" ed="T"/>耶？若眼識界先不成就今得成就亦眼界耶？
+<lb n="0009b27" ed="T"/>如是等問，今應略答。頌曰：</p>
+<lb n="0009b28" ed="T"/><lg xml:id="lgT29p0009b2801"><l>眼與眼識界，<caesura/>獨俱得非等。</l></lg>
+<lb n="0009b29" ed="T"/><p xml:id="pT29p0009b2901">論曰：獨得者，謂或有眼界先不成就今得
+<pb n="0009c" ed="T" xml:id="T29.1558.0009c"/>
+<lb n="0009c01" ed="T"/><note resp="Taisho" n="0009013" place="foot text" type="orig">Samanvāgama.</note><anchor xml:id="nkr_note_foreign_0009013" n="0009013"/>成就非眼識，謂生欲界漸得眼根，及無色
+<lb n="0009c02" ed="T"/>沒生二三四靜慮地時。或有眼識先不成
+<lb n="0009c03" ed="T"/>就今得成就非眼界，謂生二三四靜慮地
+<lb n="0009c04" ed="T"/>眼識現起，及從彼沒生下地時。俱得者，謂
+<lb n="0009c05" ed="T"/>或有二界先不成就今得成就，謂無色沒
+<lb n="0009c06" ed="T"/>生於欲界及梵世時。非者俱非，謂<note resp="Taisho" n="0009014" place="foot text" type="orig">除＝染【宮】</note><note resp="CBETA" n="0009014" type="mod">除【大】，染【宮】</note><app n="0009014"><lem wit="【大】">除</lem><rdg resp="Taisho" wit="【宮】">染</rdg></app>前相。
+<lb n="0009c07" ed="T"/>等謂若有成就眼界亦眼識耶？應作四句。
+<lb n="0009c08" ed="T"/>第一句者，謂生二三四靜慮地眼識不起。第
+<lb n="0009c09" ed="T"/>二句者，謂生欲界未得眼根及得已失。第
+<lb n="0009c10" ed="T"/>三句者，謂生欲界得眼不失，及生梵世若
+<lb n="0009c11" ed="T"/>生二三四靜慮地正見色時。第四句者，謂
+<lb n="0009c12" ed="T"/>除前相。如是眼界與色界。眼識與色界得
+<lb n="0009c13" ed="T"/>成就等如理應思，為攝如是所未說義，
+<lb n="0009c14" ed="T"/>是故頌中總復言等。如是已說得成就等。
+<lb n="0009c15" ed="T"/>十八界中幾內、幾外？頌曰：</p>
+<lb n="0009c16" ed="T"/><lg xml:id="lgT29p0009c1601"><l><note resp="Taisho" n="0009015" place="foot text" type="orig">內. Ādhyātmika.</note><note resp="CBETA" n="0009015" type="mod">內 Ādhyātmika.</note><cb:tt n="0009015" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">內</cb:t><cb:t resp="Taisho" place="foot" xml:lang="sa">Ādhyātmika.</cb:t></cb:tt>十二眼等，<caesura/>色等六為外。</l></lg>
+<lb n="0009c17" ed="T"/><p xml:id="pT29p0009c1701">論曰：六根、六識十二名內，外謂所餘色等六
+<lb n="0009c18" ed="T"/>境。我依名內，外謂此餘。我體既無，內外<note resp="Taisho" n="0009016" place="foot text" type="orig">何有＝根不【明】</note><note resp="CBETA" n="0009016" type="mod">何有【大】，根不【明】</note><app n="0009016"><lem wit="【大】">何
+<lb n="0009c19" ed="T"/>有</lem><rdg resp="Taisho" wit="【明】">根不</rdg></app>？我執依止故，假說心為<note resp="Taisho" n="0009017" place="foot text" type="orig">Ātman.</note><anchor xml:id="nkr_note_foreign_0009017" n="0009017"/>我。故契經說：</p>
+<lb n="0009c20" ed="T"/><lg xml:id="lgT29p0009c2001"><l>由善調伏我，<caesura/>智者得生天。</l></lg>
+<lb n="0009c21" ed="T"/><p xml:id="pT29p0009c2101">世尊餘處說調伏心，如契經言：</p>
+<lb n="0009c22" ed="T"/><lg xml:id="lgT29p0009c2201"><l>應善調伏心，<caesura/>心調能引樂。</l></lg>
+<lb n="0009c23" ed="T"/><p xml:id="pT29p0009c2301">故但於心假說為我。眼等為此所依親近，
+<lb n="0009c24" ed="T"/>故說名內。色等為此所緣踈遠，故說名
+<lb n="0009c25" ed="T"/><note resp="Taisho" n="0009018" place="foot text" type="orig">Bāhya.</note><anchor xml:id="nkr_note_foreign_0009018" n="0009018"/>外。若爾，六識應不名內，未至意位非心
+<lb n="0009c26" ed="T"/>依故。至意位時不失六識界，未至意位亦
+<lb n="0009c27" ed="T"/>非越意相。若異此者，意界唯應在過去世，
+<lb n="0009c28" ed="T"/>六識唯在現在未來，便違自宗許十八界皆
+<lb n="0009c29" ed="T"/>通三世。又若未來現在六識無意界相，過去
+<pb n="0010a" ed="T" xml:id="T29.1558.0010a"/>
+<lb n="0010a01" ed="T"/>意界亦應不立，相於三世無改易故。已
+<lb n="0010a02" ed="T"/>說內外。十八界中幾是同分、幾彼同分？頌
+<lb n="0010a03" ed="T"/>曰：</p>
+<lb n="0010a04" ed="T"/><lg xml:id="lgT29p0010a0401"><l>法同分餘二，<caesura/>作不作自業。</l></lg>
+<lb n="0010a05" ed="T"/><p xml:id="pT29p0010a0501">論曰：法同分者，謂一法界唯是同分。若境與
+<lb n="0010a06" ed="T"/>識定為所緣，識於其中已生生法，此所緣
+<lb n="0010a07" ed="T"/>境說名<note resp="Taisho" n="0010001" place="foot text" type="orig">Sabhāga.</note><anchor xml:id="nkr_note_foreign_0010001" n="0010001"/>同分。無一法界不於其中已正當
+<lb n="0010a08" ed="T"/>生無邊意識，由諸聖者決定生心，觀一切
+<lb n="0010a09" ed="T"/>法皆為無我。彼除自體及俱有法，餘一切法
+<lb n="0010a10" ed="T"/>皆為所緣。如是所除亦第二念心所緣境，此
+<lb n="0010a11" ed="T"/>二念心緣一切境無不周遍，是故法界恒
+<lb n="0010a12" ed="T"/>名同分。餘二者，謂餘十七界皆有同分及
+<lb n="0010a13" ed="T"/><note resp="Taisho" n="0010002" place="foot text" type="orig">Tat-sabhāga.</note><anchor xml:id="nkr_note_foreign_0010002" n="0010002"/>彼同分。何名同分、彼同分耶？謂作自業、不
+<lb n="0010a14" ed="T"/>作自業。若作自業名為同分，不作自業
+<lb n="0010a15" ed="T"/>名彼同分。此中眼界於有見色已正當見
+<lb n="0010a16" ed="T"/>名同分眼，如是廣說，乃至意界各於自境
+<lb n="0010a17" ed="T"/>應說自用。迦濕彌羅國毘婆沙師說：彼同
+<lb n="0010a18" ed="T"/>分眼但有四種，謂不見色已正當滅及不
+<lb n="0010a19" ed="T"/>生法。西方諸師說有五種：謂不生法復開為
+<lb n="0010a20" ed="T"/>二，一有識屬、二無識屬，乃至身界應知亦
+<lb n="0010a21" ed="T"/>然。意彼同分唯不生法。色界為眼已正當
+<lb n="0010a22" ed="T"/>見名同分色，彼同分色亦有四種，謂非眼
+<lb n="0010a23" ed="T"/>見已正當滅及不生法，廣說乃至觸界亦爾。
+<lb n="0010a24" ed="T"/>各對自根應說自用，應知同分及彼同分。
+<lb n="0010a25" ed="T"/>眼若於一是同分，於餘一切亦同分。彼同
+<lb n="0010a26" ed="T"/>分亦如是，廣說乃至意界亦爾。色即不然，
+<lb n="0010a27" ed="T"/>於見者是同分，於不見者是彼同分。所以
+<lb n="0010a28" ed="T"/>者何？色有是事，謂一所見亦多所見，如觀
+<lb n="0010a29" ed="T"/>月舞相撲等色。眼無是事，謂一眼根二能見
+<pb n="0010b" ed="T" xml:id="T29.1558.0010b"/>
+<lb n="0010b01" ed="T"/>色，眼不共故，依一相續建立同分及彼同
+<lb n="0010b02" ed="T"/>分。色是共故，依多相續建立同分及彼同
+<lb n="0010b03" ed="T"/>分。如說色界，聲香味觸應知亦爾。聲可如
+<lb n="0010b04" ed="T"/>色。香味觸三至根方取，是不共故，一取非
+<lb n="0010b05" ed="T"/>餘。理應如眼等，不應如色說。雖有是理
+<lb n="0010b06" ed="T"/>而容有共。所以者何？香等三界於一及餘，
+<lb n="0010b07" ed="T"/>皆有可生鼻等識義。眼等不然，故<note resp="Taisho" n="0010003" place="foot text" type="orig">知＝如【宮】</note><note n="0010003" resp="CBETA" type="mod" cb:note_key="T29.0010b07.14">如【CB】【麗-CB】【宮】，知【大】</note><app n="0010003"><lem resp="CBETA.maha" wit="【CB】 【麗-CB】">如<note type="cf1">K27n0955_p0466a15</note></lem><rdg wit="【大】">知</rdg><rdg resp="Taisho" wit="【宮】">如</rdg></app>色
+<lb n="0010b08" ed="T"/>說。眼等六識同分彼同分生不生法故，如意
+<lb n="0010b09" ed="T"/>界說。云何同分、彼同分義？根境識三更相交
+<lb n="0010b10" ed="T"/>涉故名為分，或復分者是<note n="0010b1001" resp="CBETA" type="add" cb:note_key="T29.0010b10.11">已【CB】，己【大】</note><app n="0010b1001"><lem wit="【CB】" resp="CBETA.ting" cb:provider="來函：庆流 (2023-09-10)">已<note type="cf1">T41n1823_p0830c09</note><note type="cf2">T41n1821_p0047b28</note></lem><rdg wit="【大】">己</rdg></app>作用，或復分者
+<lb n="0010b11" ed="T"/>是所生觸，同有此分故名同分。與此相違
+<lb n="0010b12" ed="T"/>名彼同分，由非同分與彼同分種類分同，
+<lb n="0010b13" ed="T"/>名彼同分。已說同分及彼同分。十八界中幾
+<lb n="0010b14" ed="T"/>見所斷、幾修所斷、幾非所斷？頌曰：</p>
+<lb n="0010b15" ed="T"/><lg type="regular" xml:id="lgT29p0010b1501"><l>十五唯修斷，<caesura/>後三界通三，</l>
+<lb n="0010b16" ed="T"/><l>不染非六生，<caesura/>色定非見斷。</l></lg>
+<lb n="0010b17" ed="T"/><p xml:id="pT29p0010b1701">論曰：十五界者，謂十色界及五識界。唯修斷
+<lb n="0010b18" ed="T"/>者，此十五界唯<note resp="Taisho" n="0010004" place="foot text" type="orig">Bhāvanā-heya.</note><anchor xml:id="nkr_note_foreign_0010004" n="0010004"/>修所斷。後三界者，意界、法
+<lb n="0010b19" ed="T"/>界及意識界。通三者，謂此後三界各通三種。
+<lb n="0010b20" ed="T"/>八十八隨眠及彼俱有法并隨行得，皆見所
+<lb n="0010b21" ed="T"/>斷，諸餘有漏皆修所斷，一切無漏皆非所斷。
+<lb n="0010b22" ed="T"/>豈不更有見所斷法，謂<note resp="Taisho" n="0010005" place="foot text" type="orig">Pṛthagjanatva.</note><anchor xml:id="nkr_note_foreign_0010005" n="0010005"/>異生性及招惡趣
+<lb n="0010b23" ed="T"/>身語業等，此與聖道極相違故。雖爾，此法
+<lb n="0010b24" ed="T"/>非見所斷，略說彼相，謂不染法非六生色，
+<lb n="0010b25" ed="T"/>定非<note resp="Taisho" n="0010006" place="foot text" type="orig">Darśana-heya.</note><anchor xml:id="nkr_note_foreign_0010006" n="0010006"/>見斷。其異生性是<note resp="Taisho" n="0010007" place="foot text" type="orig">Akliṣṭâvyākṛta.</note><anchor xml:id="nkr_note_foreign_0010007" n="0010007"/>不染污，無記性攝，
+<lb n="0010b26" ed="T"/><note resp="Taisho" n="0010008" place="foot text" type="orig">Vītarāga.</note><anchor xml:id="nkr_note_foreign_0010008" n="0010008"/>已離欲者<note resp="Taisho" n="0010009" place="foot text" type="orig">Samucchinna-kuśalamūla.</note><anchor xml:id="nkr_note_foreign_0010009" n="0010009"/>斷善根者猶成就故。此異生性
+<lb n="0010b27" ed="T"/>若見所斷，苦法忍位應是異生。六謂意處，異
+<lb n="0010b28" ed="T"/>此而生名非六生，是從眼等五根生義，即
+<lb n="0010b29" ed="T"/>五識等。色謂一切身語業等。前及此色，定
+<pb n="0010c" ed="T" xml:id="T29.1558.0010c"/>
+<lb n="0010c01" ed="T"/>非見斷。所以者何？非迷諦理親發起故。如
+<lb n="0010c02" ed="T"/>是已說見所斷等。十八界中幾是見、幾非見？
+<lb n="0010c03" ed="T"/>頌曰：</p>
+<lb n="0010c04" ed="T"/><lg type="regular" xml:id="lgT29p0010c0401"><l>眼法界一分，<caesura/>八種說名<note resp="Taisho" n="0010010" place="foot text" type="orig">Dṛṣti.</note><anchor xml:id="nkr_note_foreign_0010010" n="0010010"/>見，</l>
+<lb n="0010c05" ed="T"/><l>五識俱生慧，<caesura/>非見不度故。</l>
+<lb n="0010c06" ed="T"/><l>眼見色同分，<caesura/>非彼能依識，</l>
+<lb n="0010c07" ed="T"/><l>傳說不能觀，<caesura/><note resp="Taisho" n="0010011" place="foot text" type="orig">彼＝被【三】【宮】＊</note><note resp="CBETA" n="0010011" type="mod">彼【大】＊，被【宋】【元】【明】【宮】＊</note><app n="0010011"><lem wit="【大】">彼</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">被</rdg></app>障諸色故。</l></lg>
+<lb n="0010c08" ed="T"/><p xml:id="pT29p0010c0801">論曰：眼全是見，法界一分八種是見，餘皆非
+<lb n="0010c09" ed="T"/>見。何等為八？謂<note resp="Taisho" n="0010012" place="foot text" type="orig">Sat-kāya-dṛṣti.</note><anchor xml:id="nkr_note_foreign_0010012" n="0010012"/>身見等五染污見、世間正
+<lb n="0010c10" ed="T"/>見、有學正見、無學正見。於法界中此八是
+<lb n="0010c11" ed="T"/>見，所餘非見。身見等五，隨眠品中時至當說。
+<lb n="0010c12" ed="T"/>世間正見，謂意識相應善有漏慧。有學正見，
+<lb n="0010c13" ed="T"/>謂<note resp="Taisho" n="0010013" place="foot text" type="orig">Śaikṣa.</note><anchor xml:id="nkr_note_foreign_0010013" n="0010013"/>有學身中諸無漏見。無學正見，謂<note resp="Taisho" n="0010014" place="foot text" type="orig">Aśaikṣa.</note><anchor xml:id="nkr_note_foreign_0010014" n="0010014"/>無學
+<lb n="0010c14" ed="T"/>身中諸無漏見。譬如夜分晝分有雲無雲，覩
+<lb n="0010c15" ed="T"/>眾色像明昧有異，如是世間諸見有染無
+<lb n="0010c16" ed="T"/>染。學無學見，觀察法相明昧不同。何故？
+<lb n="0010c17" ed="T"/>世間正見唯意識相應，以五識俱生慧不
+<lb n="0010c18" ed="T"/>能決度故，審慮為先決度名見。五識俱慧
+<lb n="0010c19" ed="T"/>無如是能，以無分別是故非見。准此，所餘
+<lb n="0010c20" ed="T"/>染無染慧及諸餘法非見應知。若爾，眼根不
+<lb n="0010c21" ed="T"/>能決度，云何名見？以能明利觀照諸色故
+<lb n="0010c22" ed="T"/>亦名見。若眼見者，餘識行時亦應名見。非
+<lb n="0010c23" ed="T"/>一切眼皆能現見。誰能現見？謂同分眼與識
+<lb n="0010c24" ed="T"/>合位能見非餘。若爾，則應彼能依識見色非
+<lb n="0010c25" ed="T"/>眼。不爾，眼識定非能見。所以者何？傳說，不
+<lb n="0010c26" ed="T"/>能觀障色故，現見壁等所障諸色則不能
+<lb n="0010c27" ed="T"/>觀。若識見者，識無對故，壁等不礙應見障
+<lb n="0010c28" ed="T"/>色。於被障色眼識不生，識既不生如何當
+<lb n="0010c29" ed="T"/>見？眼識於彼何故不生？許眼見者眼有對
+<pb n="0011a" ed="T" xml:id="T29.1558.0011a"/>
+<lb n="0011a01" ed="T"/>故，於<app corresp="#0010011" type="star"><lem wit="【大】">彼</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">被</rdg></app>障色無見功能。識與所依一境
+<lb n="0011a02" ed="T"/>轉故，可言於彼眼識不生。許識見者何緣
+<lb n="0011a03" ed="T"/>不起？眼豈如身根境合方取而言有對故
+<lb n="0011a04" ed="T"/>不見彼耶？又<note resp="Taisho" n="0011001" place="foot text" type="orig">Sphaṭika.</note><anchor xml:id="nkr_note_foreign_0011001" n="0011001"/>頗胝迦、<note resp="Taisho" n="0011002" place="foot text" type="orig">梵. Abhra-paṭala.</note>瑠璃、雲母、水等所障
+<lb n="0011a05" ed="T"/>云何得見？是故不由眼有對故，於<note resp="Taisho" n="0011003" place="foot text" type="orig">彼＝被【宋】【元】【宮】</note><note resp="CBETA" n="0011003" type="mod">彼【大】，被【宋】【元】【宮】</note><app n="0011003"><lem wit="【大】">彼</lem><rdg resp="Taisho" wit="【宋】 【元】 【宮】">被</rdg></app>障
+<lb n="0011a06" ed="T"/>色無見功能。若爾，所執眼識云何？若於是
+<lb n="0011a07" ed="T"/>處光明無隔，於<app corresp="#0010011" type="star"><lem wit="【大】">彼</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">被</rdg></app>障色眼識亦生。若於
+<lb n="0011a08" ed="T"/>是處光明有隔，於<app corresp="#0010011" type="star"><lem wit="【大】">彼</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">被</rdg></app>障色眼識不生。識
+<lb n="0011a09" ed="T"/>既不生，故不能見。然經說眼能見色者，
+<lb n="0011a10" ed="T"/>是見所依，故說能見。如彼經言：意能識法。
+<lb n="0011a11" ed="T"/>非意能識，以過去故。何者能識？謂是意識。
+<lb n="0011a12" ed="T"/>意是識依，故說能識。或就所依說能依業，
+<lb n="0011a13" ed="T"/>如世間說床座言聲。又如經言：眼所識色
+<lb n="0011a14" ed="T"/>可愛可樂。然實非此可愛樂色是眼所識。又
+<lb n="0011a15" ed="T"/>如經說：梵志當知，以眼為門唯為見色。
+<lb n="0011a16" ed="T"/>故知眼識依眼門見。亦不應言門即是見，
+<lb n="0011a17" ed="T"/>豈容經說以眼為見唯為見色？若識能見
+<lb n="0011a18" ed="T"/>誰復了別？見與了別二用何異？以即見色
+<lb n="0011a19" ed="T"/>名了色故，譬如少分慧名能見亦能<note resp="Taisho" n="0011004" place="foot text" type="orig">簡＝揀【三】【宮】</note><note resp="CBETA" n="0011004" type="mod">簡【大】，揀【宋】【元】【明】【宮】</note><app n="0011004"><lem wit="【大】">簡</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">揀</rdg></app>
+<lb n="0011a20" ed="T"/>擇。如是少分識名能見亦能了別。有餘難
+<lb n="0011a21" ed="T"/>言：若眼能見，眼是見者，誰是見用？此言非難，
+<lb n="0011a22" ed="T"/>如共許識是能了別，然無了者。了用不同，見
+<lb n="0011a23" ed="T"/>亦應爾。有餘復言：眼識能見，是見所依故，
+<lb n="0011a24" ed="T"/>眼亦名能見。如鳴所依故，亦<note resp="Taisho" n="0011005" place="foot text" type="orig">說＝識【三】【宮】</note><note resp="CBETA" n="0011005" type="mod">說【大】，識【宋】【元】【明】【宮】</note><app n="0011005"><lem wit="【大】">說</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">識</rdg></app>鍾能鳴。若
+<lb n="0011a25" ed="T"/>爾，眼根識所依，故應名能識。無如是失。
+<lb n="0011a26" ed="T"/>世間同許眼識是見，由彼生時說能見色，
+<lb n="0011a27" ed="T"/>不言識色。<note resp="Taisho" n="0011006" place="foot text" type="orig">Vibhāṣā.</note><anchor xml:id="nkr_note_foreign_0011006" n="0011006"/>毘婆沙中亦作是說：若眼
+<lb n="0011a28" ed="T"/>所得、眼識所<note resp="Taisho" n="0011007" place="foot text" type="orig">受＝了【元】【明】【宮】</note><note resp="CBETA" n="0011007" type="mod">受【大】，了【元】【明】【宮】</note><app n="0011007"><lem wit="【大】">受</lem><rdg resp="Taisho" wit="【元】 【明】 【宮】">了</rdg></app>說名所見。是故但說眼
+<lb n="0011a29" ed="T"/>名能見，不名能識。唯識現前說能識色，譬
+<pb n="0011b" ed="T" xml:id="T29.1558.0011b"/>
+<lb n="0011b01" ed="T"/>如說日名能作晝。經部諸師有作是說：如
+<lb n="0011b02" ed="T"/>何共聚<note resp="Taisho" n="0011008" place="foot text" type="orig">楂＝摣【明】，植【宮】</note><note resp="CBETA" n="0011008" type="mod">楂【大】，摣【明】，植【宮】</note><app n="0011008"><lem wit="【大】">楂</lem><rdg resp="Taisho" wit="【明】">摣</rdg><rdg resp="Taisho" wit="【宮】">植</rdg></app>掣虛空眼色等緣生於眼識？此
+<lb n="0011b03" ed="T"/>等於見孰為能所？唯法<note resp="Taisho" n="0011009" place="foot text" type="orig">因＝內【元】【明】</note><note resp="CBETA" n="0011009" type="mod">因【大】，內【元】【明】</note><app n="0011009"><lem wit="【大】">因</lem><rdg resp="Taisho" wit="【元】 【明】">內</rdg></app>果實無作用，為
+<lb n="0011b04" ed="T"/>順世情假興言說，眼名能見、識名能了，
+<lb n="0011b05" ed="T"/>智者於中不應封著。如世尊說：方域言詞
+<lb n="0011b06" ed="T"/>不應堅執，世俗名想不應固求。然迦濕彌
+<lb n="0011b07" ed="T"/>羅國毘婆沙宗，說眼能見、耳能聞、鼻能嗅、舌
+<lb n="0011b08" ed="T"/>能嘗、身能覺、意能了。於見色時，為一眼見、
+<lb n="0011b09" ed="T"/>為二眼見？此無定准。頌曰：</p>
+<lb n="0011b10" ed="T"/><lg xml:id="lgT29p0011b1001"><l>或二眼俱時，<caesura/>見色分明故。</l></lg>
+<lb n="0011b11" ed="T"/><p xml:id="pT29p0011b1101">論曰：阿毘達磨諸大論師咸言：或時<note resp="Taisho" n="0011010" place="foot text" type="orig">二＝一【三】</note><note resp="CBETA" n="0011010" type="mod">二【大】，一【宋】【元】【明】</note><app n="0011010"><lem wit="【大】">二</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">一</rdg></app>眼俱
+<lb n="0011b12" ed="T"/>見，以開二眼見色分明，開一眼時不分
+<lb n="0011b13" ed="T"/>明故。又開一眼觸一眼時，便於現前見
+<lb n="0011b14" ed="T"/>二月等，閉一觸一此事則無，是故或時二眼
+<lb n="0011b15" ed="T"/>俱見。非所依別識成二分，住無方故不同
+<lb n="0011b16" ed="T"/>礙色。若此宗說眼見耳聞乃至意了，彼所取
+<lb n="0011b17" ed="T"/>境根正取時，為至不至？頌曰：</p>
+<lb n="0011b18" ed="T"/><lg xml:id="lgT29p0011b1801"><l>眼耳意根境，<caesura/>不至三相違。</l></lg>
+<lb n="0011b19" ed="T"/><p xml:id="pT29p0011b1901">論曰：眼耳意根取非至境，謂眼能見遠處諸
+<lb n="0011b20" ed="T"/>色，眼中藥等則不能觀。耳亦能聞遠處聲
+<lb n="0011b21" ed="T"/>響，逼耳根者則不能聞。若眼耳根唯取至
+<lb n="0011b22" ed="T"/>境，則修定者應不修生天眼、耳根，如鼻根
+<lb n="0011b23" ed="T"/>等。若眼能見不至色者，何故不能普見一
+<lb n="0011b24" ed="T"/>切遠有障等不至諸色？如何磁石吸不至鐵，
+<lb n="0011b25" ed="T"/>非吸一切不至鐵耶？執見至境亦同此
+<lb n="0011b26" ed="T"/>難。何故不能普見一切眼藥籌等至眼諸
+<lb n="0011b27" ed="T"/>色？又如鼻等能取至境，然不能取一切與
+<lb n="0011b28" ed="T"/>根俱有香等。如是眼根雖見不至而非一
+<lb n="0011b29" ed="T"/>切，耳根亦爾。意無色故，非能有至。有執：耳
+<pb n="0011c" ed="T" xml:id="T29.1558.0011c"/>
+<lb n="0011c01" ed="T"/>根通取至境及不至境，自耳中聲亦能聞故。
+<lb n="0011c02" ed="T"/>所餘鼻等三有色根，與上相違唯取至境。如
+<lb n="0011c03" ed="T"/>何知鼻唯取至香？由斷息時不嗅香故。云
+<lb n="0011c04" ed="T"/>何名至？謂無間生。又諸極微為相觸不？迦
+<lb n="0011c05" ed="T"/>濕彌羅國毘婆沙師說不相觸。所以者何？若
+<lb n="0011c06" ed="T"/>諸極微遍體相觸，即有實物體相雜過。若觸
+<lb n="0011c07" ed="T"/>一分，成有分<note resp="Taisho" n="0011011" place="foot text" type="orig">失＝夫【宮】</note><note resp="CBETA" n="0011011" type="mod">失【大】，夫【宮】</note><app n="0011011"><lem wit="【大】">失</lem><rdg resp="Taisho" wit="【宮】">夫</rdg></app>，然諸極微更無細分。若爾，
+<lb n="0011c08" ed="T"/>何故相擊發聲？但由極微無間生故。若許
+<lb n="0011c09" ed="T"/>相觸，擊石拊手體應相糅。不相觸者，聚色
+<lb n="0011c10" ed="T"/>相擊云何不散？風界攝持故令不散。或有
+<lb n="0011c11" ed="T"/>風界能有壞散，如劫壞時。或有風界能有
+<lb n="0011c12" ed="T"/>成攝，如劫成時。云何三根由無間<note resp="Taisho" n="0011012" place="foot text" type="orig">生＝至【三】【宮】</note><note resp="CBETA" n="0011012" type="mod">生【大】，至【宋】【元】【明】【宮】</note><app n="0011012"><lem wit="【大】">生</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">至</rdg></app>名
+<lb n="0011c13" ed="T"/>取至境？即由無間名取至境，謂於中間
+<lb n="0011c14" ed="T"/>都無片物。又和合色許有分故，相觸無失。
+<lb n="0011c15" ed="T"/>由許此理，毘婆沙文義善成立。故彼問言：
+<lb n="0011c16" ed="T"/>諸是觸物為是觸為因故生？為非觸為因
+<lb n="0011c17" ed="T"/>故生？諸非觸物為問亦爾。彼就此理為不
+<lb n="0011c18" ed="T"/>定答，有時是觸為因生於非觸，謂和合物正
+<lb n="0011c19" ed="T"/>離散時。有時非觸為因生於是觸，謂離散物
+<lb n="0011c20" ed="T"/>正和合時。有時是觸為因生於是觸，謂和合
+<lb n="0011c21" ed="T"/>物復和合時。有時非觸為因生於非觸，謂向
+<lb n="0011c22" ed="T"/>遊塵同類相續。尊者世友說：諸極微相觸即
+<lb n="0011c23" ed="T"/>應住至後念。然<note resp="Taisho" n="0011013" place="foot text" type="orig">Bhadanta.</note><anchor xml:id="nkr_note_foreign_0011013" n="0011013"/>大德說：一切極微實不相
+<lb n="0011c24" ed="T"/>觸，但由無間假立觸名。此大德意應可愛
+<lb n="0011c25" ed="T"/>樂。若異此者，是諸極微應有間隙。中間既
+<lb n="0011c26" ed="T"/>空，誰障其行許為有對？又離極微無和合
+<lb n="0011c27" ed="T"/>色，和合相觸即觸極微。如可變礙，此亦應
+<lb n="0011c28" ed="T"/>爾。又許極微若有方分，觸與不觸皆應
+<lb n="0011c29" ed="T"/>有分。若無方分，設許相觸亦無斯過。又
+<pb n="0012a" ed="T" xml:id="T29.1558.0012a"/>
+<lb n="0012a01" ed="T"/>眼等根，為於自境唯取等量，速疾轉故，如
+<lb n="0012a02" ed="T"/>旋火輪見大山等？為於自境通取等量不
+<lb n="0012a03" ed="T"/>等量耶？頌曰：</p>
+<lb n="0012a04" ed="T"/><lg xml:id="lgT29p0012a0401"><l>應知鼻等三，<caesura/>唯取等量境。</l></lg>
+<lb n="0012a05" ed="T"/><p xml:id="pT29p0012a0501">論曰：前說至境鼻等三根，應知唯能取等量
+<lb n="0012a06" ed="T"/>境。如根微量，境微亦然，相稱合生鼻等識
+<lb n="0012a07" ed="T"/>故。眼耳不定，謂眼於色有時取小如見毛
+<lb n="0012a08" ed="T"/>端，有時取大如暫開目見大山等，有時取
+<lb n="0012a09" ed="T"/>等如見蒲<note resp="Taisho" n="0012001" place="foot text" type="orig">桃＝萄【明】</note><note resp="CBETA" n="0012001" type="mod">桃【大】，萄【明】</note><app n="0012001"><lem wit="【大】">桃</lem><rdg resp="Taisho" wit="【明】">萄</rdg></app>。如是耳根，聽蚊雷等所發
+<lb n="0012a10" ed="T"/>種種小大音聲，隨其所應小大等量。意無
+<lb n="0012a11" ed="T"/>質礙，不可辯其形量差別。云何眼等諸根
+<lb n="0012a12" ed="T"/>極微安布差別？眼根極微在眼星上傍布而
+<lb n="0012a13" ed="T"/>住，如<note resp="Taisho" n="0012002" place="foot text" type="orig">Ajājī-pauṣpa(Cuminum cyminum)</note><note resp="CBETA" n="0012002" type="mod">Ajājī-pauṣpa(Cuminum cyminum)</note>香荾花清<note resp="Taisho" n="0012003" place="foot text" type="orig">澈＝徹【三】【宮】＊</note><note resp="CBETA" n="0012003" type="mod">澈【大】＊，徹【宋】【元】【明】【宮】＊</note><app n="0012003"><lem wit="【大】">澈</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">徹</rdg></app><note resp="Taisho" n="0012004" place="foot text" type="orig">映＝膜【三】【宮】</note><note resp="CBETA" n="0012004" type="mod">映【大】，膜【宋】【元】【明】【宮】</note><app n="0012004"><lem wit="【大】">映</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">膜</rdg></app>覆令無分散。有
+<lb n="0012a14" ed="T"/>說：重累如丸而住，體清<app corresp="#0012003" type="star"><lem wit="【大】">澈</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">徹</rdg></app>故，如頗胝迦
+<lb n="0012a15" ed="T"/>不相障礙。耳根極微居耳穴內旋環而住，
+<lb n="0012a16" ed="T"/>如卷樺皮。鼻根極微居鼻頞內背上面下，
+<lb n="0012a17" ed="T"/>如雙爪甲。此初三根橫作行度處無高下，
+<lb n="0012a18" ed="T"/>如冠花鬘。舌根極微布在舌上，形如半月。
+<lb n="0012a19" ed="T"/>傳說：舌中如毛端量，非為舌根極微所遍。
+<lb n="0012a20" ed="T"/>身根極微遍住身分，如身形量。女根極微形
+<lb n="0012a21" ed="T"/>如鼓<g ref="#CB01115"/>，男根極微形如指<g ref="#CB02232"/>。眼根極微有時
+<lb n="0012a22" ed="T"/>一切皆是同分，有時一切皆彼同分，有時一
+<lb n="0012a23" ed="T"/>分是彼同分餘是同分。乃至舌根極微亦爾。
+<lb n="0012a24" ed="T"/>身根極微定無一切皆是同分，乃至極熱捺
+<lb n="0012a25" ed="T"/>落迦中猛焰纏身，猶有無量身根極微是彼
+<lb n="0012a26" ed="T"/>同分。傳說：身根設遍發識身應散壞，以無
+<lb n="0012a27" ed="T"/>根境各一極微為所依緣能發身識。五識決
+<lb n="0012a28" ed="T"/>定積集多微，方成所依所緣性故。即由此
+<lb n="0012a29" ed="T"/>理亦說極微名無見體，不可見故。如前所
+<pb n="0012b" ed="T" xml:id="T29.1558.0012b"/>
+<lb n="0012b01" ed="T"/>說識有六種，謂眼識界乃至意識，為如五
+<lb n="0012b02" ed="T"/>識唯緣現在意識通緣三世非世，如是諸
+<lb n="0012b03" ed="T"/>識依亦爾耶？不爾，云何？頌曰：</p>
+<lb n="0012b04" ed="T"/><lg xml:id="lgT29p0012b0401"><l>後依唯過去，<caesura/>五識依或俱。</l></lg>
+<lb n="0012b05" ed="T"/><p xml:id="pT29p0012b0501">論曰：意識唯依無間滅意，眼等五識所依或
+<lb n="0012b06" ed="T"/>俱，或言表此亦依過去。眼是眼識俱生所依，
+<lb n="0012b07" ed="T"/>如是乃至身是身識俱生所依，同現世故。無
+<lb n="0012b08" ed="T"/>間滅意是過去依。此五識身所依各二，謂眼
+<lb n="0012b09" ed="T"/>等五是別所依，意根為五通所依性，故如是
+<lb n="0012b10" ed="T"/>說。若是眼識所依性者，即是眼識等無間緣
+<lb n="0012b11" ed="T"/>耶？設是眼識等無間緣者，復是眼識所依性
+<lb n="0012b12" ed="T"/>耶？應作四句。第一句，謂俱生眼根。第二句，
+<lb n="0012b13" ed="T"/>謂<note resp="Taisho" n="0012005" place="foot text" type="orig">Samanantarâtīta.</note><anchor xml:id="nkr_note_foreign_0012005" n="0012005"/>無間滅<note resp="Taisho" n="0012006" place="foot text" type="orig">Caitasika.</note><anchor xml:id="nkr_note_foreign_0012006" n="0012006"/>心所法界。第三句，謂過去意根。
+<lb n="0012b14" ed="T"/>第四句，謂除所說法。乃至身識亦爾，各各應
+<lb n="0012b15" ed="T"/>說自根。意識應作順前句答，謂是意識所
+<lb n="0012b16" ed="T"/>依性者，定是意識<note resp="Taisho" n="0012007" place="foot text" type="orig">Samanantarapr atyaya.</note><note resp="CBETA" n="0012007" type="mod">Samanantarapratyaya.</note><anchor xml:id="nkr_note_foreign_0012007" n="0012007"/>等無間緣。有是意識等
+<lb n="0012b17" ed="T"/>無間緣，非與意識為所依性，謂無間滅心
+<lb n="0012b18" ed="T"/>所法界。何因識起俱託二緣，得所依名在
+<lb n="0012b19" ed="T"/>根非境？頌曰：</p>
+<lb n="0012b20" ed="T"/><lg xml:id="lgT29p0012b2001"><l>隨根變識異，<caesura/>故眼等名依。</l></lg>
+<lb n="0012b21" ed="T"/><p xml:id="pT29p0012b2101">論曰：眼等即是眼等六界，由眼等根有轉
+<lb n="0012b22" ed="T"/>變故。諸識轉異，隨根增損識明昧故。非色
+<lb n="0012b23" ed="T"/>等變令識有異，以識隨根不隨境故。依名
+<lb n="0012b24" ed="T"/>唯在眼等非餘。何緣色等正是所識而名
+<lb n="0012b25" ed="T"/>眼識，乃至意識不名色識乃至法識？頌曰：</p>
+<lb n="0012b26" ed="T"/><lg xml:id="lgT29p0012b2601"><l>彼及不共因，<caesura/>故隨根說識。</l></lg>
+<lb n="0012b27" ed="T"/><p xml:id="pT29p0012b2701">論曰：彼謂前說眼等名依，根是依故隨根
+<lb n="0012b28" ed="T"/>說識。及不共者，謂眼唯自眼識所依，色亦通
+<lb n="0012b29" ed="T"/>為他身眼識及通自他意識所取，乃至身觸
+<pb n="0012c" ed="T" xml:id="T29.1558.0012c"/>
+<lb n="0012c01" ed="T"/>應知亦爾，由所依勝及不共因故識得名。
+<lb n="0012c02" ed="T"/>隨根非境，如名鼓聲及麥<note resp="Taisho" n="0012008" place="foot text" type="orig">牙＝芽【三】【宮】</note><note resp="CBETA" n="0012008" type="mod">牙【大】，芽【宋】【元】【明】【宮】</note><app n="0012008"><lem wit="【大】">牙</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">芽</rdg></app>等。隨身所
+<lb n="0012c03" ed="T"/>住眼見色時，身眼色識地為同不？應言此
+<lb n="0012c04" ed="T"/>四或異或同，謂生欲界，若以自地眼見自
+<lb n="0012c05" ed="T"/>地色，四皆自地。若以初靜慮眼見欲界色，
+<lb n="0012c06" ed="T"/>身色欲界、眼識初定。見初定色，身屬欲界、
+<lb n="0012c07" ed="T"/>三屬初定。若以二靜慮眼見欲界色，身色
+<lb n="0012c08" ed="T"/>欲界、眼屬二定、識屬初定。見初定色，身屬
+<lb n="0012c09" ed="T"/>欲界、眼屬二定、色識初定。見二定色，身屬
+<lb n="0012c10" ed="T"/>欲界、眼色二定、識屬初定。如是若以三四
+<lb n="0012c11" ed="T"/>靜慮地眼見下地色或自地色，如理應思。
+<lb n="0012c12" ed="T"/>生初靜慮，若以自地眼見自地色，四皆同
+<lb n="0012c13" ed="T"/>地見欲界色，三屬初定、色屬欲界。若以二
+<lb n="0012c14" ed="T"/>靜慮眼見初定色，三屬初定、眼屬二定。見
+<lb n="0012c15" ed="T"/>欲界色，身識初定、色屬欲界、眼屬二定。見
+<lb n="0012c16" ed="T"/>二定色，身識初定、眼色二定。如是若以三四
+<lb n="0012c17" ed="T"/>靜慮地眼見自地色或下上色，如理應思。
+<lb n="0012c18" ed="T"/>如是生<note resp="Taisho" n="0012009" place="foot text" type="orig">二＝一【宮】</note><note resp="CBETA" n="0012009" type="mod">二【大】，一【宮】</note><app n="0012009"><lem wit="【大】">二</lem><rdg resp="Taisho" wit="【宮】">一</rdg></app>三四靜慮，以自他地眼見自他
+<lb n="0012c19" ed="T"/>地色，如理應思。餘界亦應如是分別。今當
+<lb n="0012c20" ed="T"/>略辯此決定相。頌曰：</p>
+<lb n="0012c21" ed="T"/><lg type="regular" xml:id="lgT29p0012c2101"><l>眼不下於身，<caesura/>色識非上眼，</l>
+<lb n="0012c22" ed="T"/><l>色於識一切，<caesura/>二於身亦然。</l>
+<lb n="0012c23" ed="T"/><l>如眼耳亦然，<caesura/>次<note resp="Taisho" n="0012010" place="foot text" type="orig">三＝二【宮】</note><note resp="CBETA" n="0012010" type="mod">三【大】，二【宮】</note><app n="0012010"><lem wit="【大】">三</lem><rdg resp="Taisho" wit="【宮】">二</rdg></app>皆自地，</l>
+<lb n="0012c24" ed="T"/><l>身識自下地，<caesura/>意不定應知。</l></lg>
+<lb n="0012c25" ed="T"/><p xml:id="pT29p0012c2501">論曰：身眼色三皆通五地，謂在欲界四靜慮
+<lb n="0012c26" ed="T"/>中，眼識唯在欲界初定。此中眼根望身生地，
+<lb n="0012c27" ed="T"/>或等或上終不居下。色識望眼等下非上，
+<lb n="0012c28" ed="T"/>下眼不能見上色故、上識不依下地眼
+<lb n="0012c29" ed="T"/>故。色望於識通等上下，色識於身如色於
+<pb n="0013a" ed="T" xml:id="T29.1558.0013a"/>
+<lb n="0013a01" ed="T"/>識。廣說耳界應知如眼，謂耳不下於身，
+<lb n="0013a02" ed="T"/>聲識非上耳，聲於識一切。二於身亦然，隨
+<lb n="0013a03" ed="T"/>其所應廣如眼釋。鼻舌身三總皆自地，於
+<lb n="0013a04" ed="T"/>中別者，謂身與觸其地必同。識望觸身或
+<lb n="0013a05" ed="T"/>自或下，自謂若生欲界初定，生上三定謂
+<lb n="0013a06" ed="T"/>之為下。應知意界四事不定，謂意有時與
+<lb n="0013a07" ed="T"/>身識法四皆同地，有時上下。身唯五地，三
+<lb n="0013a08" ed="T"/>通一切。於遊<note resp="Taisho" n="0013001" place="foot text" type="orig">Samāpatti.</note><anchor xml:id="nkr_note_foreign_0013001" n="0013001"/>等至及受生時，隨其所應
+<lb n="0013a09" ed="T"/>或同或異，如後定品當廣分別。為捨繁文
+<lb n="0013a10" ed="T"/>故今未辯，前後再述用少功多。傍論已周，應
+<lb n="0013a11" ed="T"/>辯正論。今當思擇，十八界中誰六識內幾
+<lb n="0013a12" ed="T"/>識所識？幾常、幾無常？幾根、幾非根？頌曰。</p>
+<lb n="0013a13" ed="T"/><lg type="regular" xml:id="lgT29p0013a1301"><l>五外二所識，<caesura/>常法界無為，</l>
+<lb n="0013a14" ed="T"/><l>法一分是根，<caesura/>并內界十二。</l></lg>
+<lb n="0013a15" ed="T"/><p xml:id="pT29p0013a1501">論曰：十八界中色等五界，如其次第眼等五
+<lb n="0013a16" ed="T"/>識各一所識，又總皆是意識所識。如是五界
+<lb n="0013a17" ed="T"/>各六識中二識所識。由此准知，餘十三界一
+<lb n="0013a18" ed="T"/>切唯是意識所識，非五識身所緣境故。十八
+<lb n="0013a19" ed="T"/>界中無有一界全是常者，唯法一分無為是
+<lb n="0013a20" ed="T"/>常，義准無常法餘餘界。又經中說二十二根，
+<lb n="0013a21" ed="T"/>謂眼根、耳根、鼻根、舌根、身根、意根、女根、男根、命
+<lb n="0013a22" ed="T"/>根、樂根、苦根、喜根、憂根、捨根、信根、勤根、念根、定
+<lb n="0013a23" ed="T"/>根、慧根、未知當知根、已知根、具知根。阿毘達磨
+<lb n="0013a24" ed="T"/>諸大論師，皆越經中六處次第，於命根後
+<lb n="0013a25" ed="T"/>方說意根，有所緣故。如是所說二十二根，
+<lb n="0013a26" ed="T"/>十八界中內十二界法一分攝。法一分者，命
+<lb n="0013a27" ed="T"/>等十一、後三一分，法界攝故。內十二者，眼等
+<lb n="0013a28" ed="T"/>五根如自名攝，意根通是七心界攝，後三
+<lb n="0013a29" ed="T"/>一分意意識攝，女根、男根即是身界一分所
+<pb n="0013b" ed="T" xml:id="T29.1558.0013b"/>
+<lb n="0013b01" ed="T"/>攝。如後當辯。義准所餘，色等五界法界一
+<lb n="0013b02" ed="T"/>分皆體非根。</p></cb:div>
+<lb n="0013b03" ed="T"/><cb:juan n="002" fun="close"><cb:jhead><title><anchor xml:id="fxT29p0013b01"/>說一切有部俱舍論</title><anchor xml:id="fxT29p0013b02"/>卷第二</cb:jhead></cb:juan>
+</body></text></TEI>

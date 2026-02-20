@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/cbeta-git/xml-p5a/master/schema/cbeta-p5a.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:cb="http://www.cbeta.org/ns/1.0" xml:id="T01n0001">
+<teiHeader>
+	<fileDesc>
+		<titleStmt>
+			<title>Taishō Tripiṭaka, Electronic version, No. 1 長阿含經</title>
+			<title xml:lang="zh-Hant">大正新脩大藏經數位版, No. 1 長阿含經</title>
+			<author>後秦 佛陀耶舍共竺佛念譯</author>
+			<respStmt>
+				<resp>Electronic Version by</resp>
+				<name>CBETA</name>
+			</respStmt>
+		</titleStmt>
+		<editionStmt>
+			<edition>單卷版 XML TEI P5b</edition>
+		</editionStmt>
+		<extent>22卷</extent>
+		<publicationStmt>
+			<idno type="CBETA">
+				<idno type="canon">T</idno>.<idno type="vol">1</idno>.<idno type="no">1</idno>
+			</idno>
+			<distributor>
+				<name>中華電子佛典協會 (CBETA)</name>
+				<address>
+					<addrLine><email>service@cbeta.org</email></addrLine>
+				</address>
+			</distributor>
+			<availability>
+				<p>Available for non-commercial use when distributed with this header intact.</p>
+			</availability>
+			<date>2023-10-03 21:24:04 +0800</date>
+		</publicationStmt>
+		<sourceDesc>
+			<bibl>
+				<title level="s">Taishō Tripiṭaka</title>
+				<title level="s" xml:lang="zh-Hant">大正新脩大藏經</title>
+				<title level="m" xml:lang="zh-Hant">長阿含經</title>
+			</bibl>
+		</sourceDesc>
+	</fileDesc>
+	<encodingDesc>
+		<projectDesc>
+			<p xml:lang="en" cb:type="ly">Text as provided by Mr. Hsiao Chen-Kuo, Text as provided by Mr. Chang Wen-Ming, Text as provided by Anonymous from USA, Punctuated text as provided by Dhammavassarama</p>
+			<p xml:lang="zh-Hant" cb:type="ly">蕭鎮國大德提供，張文明大德提供，北美某大德提供，法雨道場提供新式標點</p>
+		</projectDesc>
+		<editorialDecl>
+			<punctuation resp="CBETA"><p>新式標點</p></punctuation>
+		</editorialDecl>
+		<tagsDecl>
+			<namespace name="http://www.tei-c.org/ns/1.0">
+				<tagUsage gi="rdg">
+					<listWit>
+						<witness xml:id="wit.orig">【大】</witness>
+						<witness xml:id="wit.cbeta">【CB】</witness>
+					</listWit>
+				</tagUsage>
+			</namespace>
+		</tagsDecl>
+		<charDecl>
+			<char xml:id="CB00036">
+				<charName>CBETA CHARACTER CB00036</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[卄/積]</value>
+				</charProp>
+				<mapping type="unicode">U+27090</mapping>
+				<mapping cb:dec="983076" type="PUA">U+F0024</mapping>
+			</char>
+			<char xml:id="CB00145">
+				<charName>CBETA CHARACTER CB00145</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[少/兔]</value>
+				</charProp>
+				<mapping type="unicode">U+3779</mapping>
+				<mapping cb:dec="983185" type="PUA">U+F0091</mapping>
+			</char>
+			<char xml:id="CB02494">
+				<charName>CBETA CHARACTER CB02494</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[跳-兆+(乏-之+友)]</value>
+				</charProp>
+				<charProp>
+					<localName>normalized form</localName>
+					<value>跋</value>
+				</charProp>
+				<mapping type="unicode">U+47E6</mapping>
+				<mapping cb:dec="985534" type="PUA">U+F09BE</mapping>
+			</char>
+		</charDecl>
+	</encodingDesc>
+	<profileDesc>
+		<langUsage>
+			<language ident="pi">Pali</language>
+			<language ident="sa">Sanskrit</language>
+			<language ident="en">English</language>
+			<language ident="zh-Hant">Chinese (Traditional)</language>
+		</langUsage>
+	</profileDesc>
+	<revisionDesc>
+		<change when="2013-05-20">
+			<name>CW</name><name>Ray Chou 周邦信</name>P4 to P5 conversion by p4top5a.py, intended for publication
+		</change>
+		<change when="1999-08-10T22:31:27">
+			CW (ed.) Created initial TEI XML version with BASICX.BAT (99/8/10)
+		</change>
+	</revisionDesc>
+</teiHeader>
+<text><body>
+<cb:mulu level="1" type="分">1 分</cb:mulu><cb:mulu level="2" type="經">2 遊行經</cb:mulu><cb:mulu level="3">3</cb:mulu><cb:div type="fen">
+<milestone n="5" unit="juan"/>
+<lb n="0030b06" ed="T"/>
+<lb n="0030b07" ed="T"/><cb:juan n="005" fun="open"><cb:mulu n="005" type="卷"></cb:mulu><cb:jhead><title>佛說長阿含經</title>卷第五</cb:jhead></cb:juan>
+<lb n="0030b08" ed="T"/>
+<lb n="0030b09" ed="T"/><byline cb:type="Translator"><note n="0030011" resp="Taisho" type="orig" place="foot text">後秦弘始年＝姚秦三藏法師【三】，〔後秦…譯〕十七字－【聖】</note><note n="0030011" resp="CBETA" type="mod">後秦弘始年佛陀耶舍共竺佛念譯【大】，姚秦三藏法師佛陀耶舍共竺佛念譯【宋】【元】【明】，〔－〕【聖】</note><app n="0030011"><lem wit="【大】">後秦弘始年佛陀耶舍共竺佛念譯</lem><rdg resp="Taisho" wit="【聖】"><space quantity="0"/></rdg><rdg resp="Taisho" wit="【宋】 【元】 【明】">姚秦三藏法師佛陀耶舍共竺佛念譯</rdg></app></byline>
+<lb n="0030b10" ed="T"/><cb:div type="jing"><cb:mulu level="2" type="經">3 典尊經</cb:mulu><head>（三）第一分<note n="0030012" resp="Taisho" type="orig" place="foot text">Mahāgovindīya(Mahāvastu)～D. 19. Mahāgovinda suttanta. [No. 8]</note><note n="0030012" resp="CBETA" type="mod">Mahāgovindīya(Mahāvastu)～D. 19. Mahāgovinda suttanta.，[No. 8]</note><note n="0030012" place="foot" type="equivalent">Mahāgovindīya(Mahāvastu)～D. 19. Mahāgovinda suttanta.</note><note n="0030012" place="foot" type="cf.">[No. 8]</note>典尊經第三</head>
+<lb n="0030b11" ed="T"/><p xml:id="pT01p0030b1101">如是我聞：</p><p xml:id="pT01p0030b1105" cb:place="inline">一時，佛在<note n="0030013" resp="Taisho" type="orig" place="foot text">羅閱祇～Rājagaha.</note><note n="0030013" resp="CBETA" type="mod">羅閱祇【大】，～Rājagaha.</note><cb:tt n="0030013" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">羅閱祇</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Rājagaha.</cb:t></cb:tt><note n="0030014" resp="Taisho" type="orig" place="foot text">～Gijjhakūṭa.</note><note n="0030014" resp="CBETA" type="mod">耆闍崛【大】，～Gijjhakūṭa.</note><cb:tt n="0030014" type="app"><cb:t resp="CBETA" xml:lang="zh-Hant">耆闍崛</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Gijjhakūṭa.</cb:t></cb:tt>山，與
+<lb n="0030b12" ed="T"/>大比丘眾千二百五十人俱。</p><p xml:id="pT01p0030b1212" cb:place="inline">爾時，<note n="0030015" resp="Taisho" type="orig" place="foot text">執樂天般遮翼子～Pañcasikha Gandhabba-putta.</note><note n="0030015" resp="CBETA" type="mod">執樂天般遮翼子【大】，～Pañcasikha Gandhabba-putta.</note><cb:tt n="0030015" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">執樂天
+<lb n="0030b13" ed="T"/>般遮翼子</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Pañcasikha Gandhabba-putta.</cb:t></cb:tt>，於夜靜寂無人之時，放大光<note n="0030016" resp="Taisho" type="orig" place="foot text">〔明〕－【聖】</note><note n="0030016" resp="CBETA" type="mod">明【大】，〔－〕【聖】</note><app n="0030016"><lem wit="【大】">明</lem><rdg resp="Taisho" wit="【聖】"><space quantity="0"/></rdg></app>，
+<lb n="0030b14" ed="T"/>照耆闍崛山來至佛所，頭面禮佛足已，在
+<lb n="0030b15" ed="T"/>一面立。時，般遮翼白世尊言：「<note n="0030017" resp="Taisho" type="orig" place="foot text">昨＝近【三】</note><note n="0030017" resp="CBETA" type="mod">昨【大】，近【宋】【元】【明】</note><app n="0030017"><lem wit="【大】">昨</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">近</rdg></app>梵天王
+<lb n="0030b16" ed="T"/>至<note n="0030018" resp="Taisho" type="orig" place="foot text">忉利～Tāvatiṁsa.</note><note n="0030018" resp="CBETA" type="mod">忉利【大】，～Tāvatiṁsa.</note><cb:tt n="0030018" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">忉利</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Tāvatiṁsa.</cb:t></cb:tt>天，與帝釋共議。我親從彼聞，今
+<lb n="0030b17" ed="T"/>者寧可向世尊說不？」</p><p xml:id="pT01p0030b1709" cb:place="inline">佛言：「汝欲說者，便可
+<lb n="0030b18" ed="T"/>說之。」</p><p xml:id="pT01p0030b1803" cb:place="inline">般遮翼言：「一時，忉利諸天集法講堂，
+<lb n="0030b19" ed="T"/>有所講論。時，四天王隨其方面，各當位坐，
+<lb n="0030b20" ed="T"/><note n="0030019" resp="Taisho" type="orig" place="foot text">提帝賴吒＝提頭賴吒【明】～Dhataraṭṭha.</note><note n="0030019" resp="CBETA" type="mod">提帝賴吒【大】，提頭賴吒【明】，～Dhataraṭṭha.</note><cb:tt n="0030019" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant"><app n="0030019"><lem wit="【大】">提帝賴吒</lem><rdg resp="Taisho" wit="【明】">提頭賴吒</rdg></app></cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Dhataraṭṭha.</cb:t></cb:tt>天王在東方坐，其面西向，帝釋
+<lb n="0030b21" ed="T"/>在前；<note n="0030020" resp="Taisho" type="orig" place="foot text">毘樓勒～Virūḷhaka.</note><note n="0030020" resp="CBETA" type="mod">毘樓勒【大】，～Virūḷhaka.</note><cb:tt n="0030020" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">毘樓勒</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Virūḷhaka.</cb:t></cb:tt>天王在南方坐，其面北向，帝
+<lb n="0030b22" ed="T"/>釋在前；<note n="0030021" resp="Taisho" type="orig" place="foot text">毘樓博叉～Virūpakkha.</note><note n="0030021" resp="CBETA" type="mod">毘樓博叉【大】，～Virūpakkha.</note><cb:tt n="0030021" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">毘樓博叉</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Virūpakkha.</cb:t></cb:tt>天王在西方坐，其面東
+<lb n="0030b23" ed="T"/>向，帝釋在前；<note n="0030022" resp="Taisho" type="orig" place="foot text">毘沙門～Vessavaṇa.</note><note n="0030022" resp="CBETA" type="mod">毘沙門【大】，～Vessavaṇa.</note><cb:tt n="0030022" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">毘沙門</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Vessavaṇa.</cb:t></cb:tt>天王在北方坐，其面
+<lb n="0030b24" ed="T"/>南向，帝釋在前。時，四天王皆先坐已，然後我
+<lb n="0030b25" ed="T"/>坐，復有餘大神天，皆先於佛所，淨修梵行，
+<lb n="0030b26" ed="T"/>於此命終，生忉利天，使彼諸天，增益五福：
+<lb n="0030b27" ed="T"/>一者天壽，二者天色，三者天名稱，四者天樂，
+<lb n="0030b28" ed="T"/>五者天威德。時，諸忉利天皆踊躍歡喜言：『增
+<lb n="0030b29" ed="T"/>益諸天眾，減損阿須倫眾。』爾時，<note n="0030023" resp="Taisho" type="orig" place="foot text">釋提桓因～Sakka devānam Inda.</note><note n="0030023" resp="CBETA" type="mod">釋提桓因【大】，～Sakka devānam Inda.</note><cb:tt n="0030023" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">釋<note n="0030b2901" resp="CBETA" type="add" cb:note_key="T01.0030b29.14">提桓【CB】【麗-CB】，桓提【大】</note><app n="0030b2901"><lem wit="【CB】 【麗-CB】" resp="CBETA.shin" cb:provider="來函：DL (2022-04-09)">提桓<note type="cf1">K17n0647_p0853c03</note></lem><rdg wit="【大】">桓提</rdg><rdg wit="【麗-CB】" resp="CBETA.shin" cb:provider="來函：DL (2022-04-09)">提桓<note type="cf1">K17n0647_p0853c03</note></rdg></app>因</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Sakka devānam Inda.</cb:t></cb:tt>
+<pb n="0030c" ed="T" xml:id="T01.0001.0030c"/>
+<lb n="0030c01" ed="T"/>知諸天人有歡喜心，即為忉利諸天而作
+<lb n="0030c02" ed="T"/>頌曰：</p>
+<lb n="0030c03" ed="T"/><lg type="regular" xml:id="lgT01p0030c0301" style="margin-left:2em;text-indent:-2em"><l>「『忉利諸天人，<caesura/>帝釋相娛樂；</l>
+<lb n="0030c04" ed="T"/><l>禮敬於如來，<caesura/>最上法之<note n="0030024" resp="Taisho" type="orig" place="foot text">王＝法【聖】＊</note><note n="0030024" resp="CBETA" type="mod">王【大】＊，法【聖】＊</note><app n="0030024"><lem wit="【大】">王</lem><rdg resp="Taisho" wit="【聖】">法</rdg></app>。</l>
+<lb n="0030c05" ed="T"/><l>諸天受影福，<caesura/>壽、色、名、樂、威；</l>
+<lb n="0030c06" ed="T"/><l>於佛修梵行，<caesura/>故來生此間。</l>
+<lb n="0030c07" ed="T"/><l>復有諸天人，<caesura/>光色甚巍巍；</l>
+<lb n="0030c08" ed="T"/><l>佛智慧弟子，<caesura/>生此復殊勝。</l>
+<lb n="0030c09" ed="T"/><l>忉利及因提，<caesura/>思惟此自樂；</l>
+<lb n="0030c10" ed="T"/><l>禮敬於如來，<caesura/>最上法之<app type="star" corresp="#0030024"><lem wit="【大】">王</lem><rdg resp="Taisho" wit="【聖】">法</rdg></app>。』</l></lg>
+<lb n="0030c11" ed="T"/><p xml:id="pT01p0030c1101">「爾時，忉利諸天聞此偈已，倍復歡喜，不能
+<lb n="0030c12" ed="T"/>自勝，增益諸天眾，減損阿須倫眾。釋提桓
+<lb n="0030c13" ed="T"/>因見忉利天歡喜悅豫，即告之曰：『諸賢！汝
+<lb n="0030c14" ed="T"/>等頗欲聞如來八無等法不？』時，忉利諸天
+<lb n="0030c15" ed="T"/>言：『願樂欲聞！』</p><p xml:id="pT01p0030c1506" cb:place="inline">「帝釋報言：『諦聽！諦聽！善思念
+<lb n="0030c16" ed="T"/>之。諸賢！如來、至真、等正覺，十號具足，不見
+<lb n="0030c17" ed="T"/>過去、未來、現在有如<note n="0030025" resp="Taisho" type="orig" place="foot text">來＝是【三】</note><note n="0030025" resp="CBETA" type="mod">來【大】，是【宋】【元】【明】</note><app n="0030025"><lem wit="【大】">來</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">是</rdg></app>、至真，十號具足，如
+<lb n="0030c18" ed="T"/>佛者也。佛法微妙，善可講說，智者所行，
+<lb n="0030c19" ed="T"/>不見過去、未來、現在有微妙法，如佛者也。
+<lb n="0030c20" ed="T"/>佛由此法，而自覺悟，通達無礙，以自娛樂，
+<lb n="0030c21" ed="T"/>不見過去、未來、現在能於此法而自覺悟，
+<lb n="0030c22" ed="T"/>通達無礙，以自娛樂，如佛者也。諸賢！佛以
+<lb n="0030c23" ed="T"/>此法自覺悟已，亦能開示涅槃徑路，親近漸
+<lb n="0030c24" ed="T"/>至，入於寂滅。譬如恒河水、炎摩水，二水竝流，
+<lb n="0030c25" ed="T"/>入<note n="0030026" resp="Taisho" type="orig" place="foot text">於＝于【三】【聖】</note><note n="0030026" resp="CBETA" type="mod">於【大】，于【宋】【元】【明】【聖】</note><app n="0030026"><lem wit="【大】">於</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">于</rdg></app>大海。佛亦如是，善能開示涅槃徑路，
+<lb n="0030c26" ed="T"/>親近漸至，入于寂滅，不見過去、未來、現在
+<lb n="0030c27" ed="T"/>有能開示涅槃徑路，如佛者也。諸賢！如來
+<lb n="0030c28" ed="T"/>眷屬成就，剎利、婆羅門、居士、沙門、有智慧者，
+<lb n="0030c29" ed="T"/>皆是如來成就眷屬，不見過去、未來、現在
+<pb n="0031a" ed="T" xml:id="T01.0001.0031a"/>
+<lb n="0031a01" ed="T"/>眷屬成就，如佛者也。諸賢！如來大眾成就，
+<lb n="0031a02" ed="T"/>所謂比丘、比丘尼、優婆塞、優婆夷，不見過去、
+<lb n="0031a03" ed="T"/>未來、現在大眾成就，如佛者也。諸賢！如來
+<lb n="0031a04" ed="T"/>言行相應，所言如行，所行如言，如是則為
+<lb n="0031a05" ed="T"/>法法成就，不見過去、未來、現在言行相應，法
+<lb n="0031a06" ed="T"/>法成就，如佛者也。諸賢！如來多所饒益，多
+<lb n="0031a07" ed="T"/>所安樂，以慈愍心利益天人，不見過去、未
+<lb n="0031a08" ed="T"/>來、現在多所饒益，多所安樂，如佛者也。
+<lb n="0031a09" ed="T"/>諸賢！是為如來八無等法。』</p><p xml:id="pT01p0031a0911" cb:place="inline">「時，忉利天作是
+<lb n="0031a10" ed="T"/>說言：『若使世間有八佛出者，當大增益諸
+<lb n="0031a11" ed="T"/>天眾，減損阿須倫眾。』時，忉利天言：『且置八
+<lb n="0031a12" ed="T"/>佛，正使七佛、六佛，乃至二佛出世者，亦大增
+<lb n="0031a13" ed="T"/>益諸天眾，減損阿須倫眾，何況八佛？』時，釋提
+<lb n="0031a14" ed="T"/>桓因告忉利天言：『<note n="0031001" resp="Taisho" type="orig" place="foot text">我＋（親）【三】</note><note n="0031001" resp="CBETA" type="mod">我【大】，我親【宋】【元】【明】</note><app n="0031001"><lem wit="【大】">我</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">我親</rdg></app>從佛聞，親從佛受，
+<lb n="0031a15" ed="T"/>欲使一時二佛出世，無有是處。但使如來
+<lb n="0031a16" ed="T"/>久存於世，多所慈愍，多所饒益，天人獲
+<lb n="0031a17" ed="T"/>安，則大增益諸<note n="0031002" resp="Taisho" type="orig" place="foot text">天＋（眾）【三】</note><note n="0031002" resp="CBETA" type="mod">天【大】，天眾【宋】【元】【明】</note><app n="0031002"><lem wit="【大】">天</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">天眾</rdg></app>，減損阿須倫眾。』」</p><p xml:id="pT01p0031a1714" cb:place="inline">時，般
+<lb n="0031a18" ed="T"/>遮翼白佛言：「世尊！忉利諸天所以集法講
+<lb n="0031a19" ed="T"/>堂上者，共議思惟，稱量觀察，有所教令，然
+<lb n="0031a20" ed="T"/>後為四天王<note n="0031003" resp="Taisho" type="orig" place="foot text">四天＝說四【三】</note><note n="0031003" resp="CBETA" type="mod" cb:note_key="T01.0031a20.06">說四【CB】【磧乙-CB】【嘉興乙-CB】【宋】【元】【明】，四天【大】</note><app n="0031003"><lem wit="【CB】 【磧乙-CB】 【嘉興乙-CB】" resp="CBETA.shin" cb:provider="來函：DL (2022-04-09)">說。四<note type="cf1">QC054n0665_p0034b11</note><note type="cf2">《嘉興藏》（日本東京大學綜合圖書館藏正編第78帙第6冊第5圖右欄第7行）</note></lem><rdg wit="【大】">四天</rdg><rdg resp="Taisho" wit="【宋】 【元】 【明】">說四</rdg></app>王受教已，各當位而坐，
+<lb n="0031a21" ed="T"/>其坐未久，有大異光照于四方。時，忉利天
+<lb n="0031a22" ed="T"/>見此光已，皆大驚愕：『今此異光，將有何怪？』
+<lb n="0031a23" ed="T"/>諸大神天有威德者，亦皆驚怖：『今此異光，將
+<lb n="0031a24" ed="T"/>有何怪？』時，大梵王即化為童子，頭五角<note n="0031004" resp="Taisho" type="orig" place="foot text">髻＝結【聖】</note><note n="0031004" resp="CBETA" type="mod">髻【大】＊，結【聖】＊</note><app n="0031004"><lem wit="【大】">髻</lem><rdg resp="Taisho" wit="【聖】">結</rdg></app>，
+<lb n="0031a25" ed="T"/>在<note n="0031005" resp="Taisho" type="orig" place="foot text">大＝天【三】</note><note n="0031005" resp="CBETA" type="mod">大【大】，天【宋】【元】【明】</note><app n="0031005"><lem wit="【大】">大</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">天</rdg></app>眾上虛空中立，顏貌端正，與眾超絕，
+<lb n="0031a26" ed="T"/>身紫金色，蔽諸天光。時，忉利天亦不起迎，
+<lb n="0031a27" ed="T"/>亦不恭敬，又不請坐。時，梵童子隨所詣坐，
+<lb n="0031a28" ed="T"/>坐<note n="0031006" resp="Taisho" type="orig" place="foot text">生＝主【三】【聖】</note><note n="0031006" resp="CBETA" type="mod">生【大】，主【宋】【元】【明】【聖】</note><app n="0031006"><lem wit="【大】">生</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">主</rdg></app>欣悅，譬如剎利水澆頭種，登王位時，
+<lb n="0031a29" ed="T"/>踊躍歡喜。<note n="0031007" resp="Taisho" type="orig" place="foot text">來＝其【三】</note><note n="0031007" resp="CBETA" type="mod">來【大】，其【宋】【元】【明】</note><app n="0031007"><lem wit="【大】">來</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">其</rdg></app>坐未久，復自變身，作童子像，
+<pb n="0031b" ed="T" xml:id="T01.0001.0031b"/>
+<lb n="0031b01" ed="T"/>頭五角<app type="star" corresp="#0031004"><lem wit="【大】">髻</lem><rdg resp="Taisho" wit="【聖】">結</rdg></app>，在大眾上虛空中坐，譬如力士
+<lb n="0031b02" ed="T"/>坐於安座，嶷然不動。而作頌曰：</p>
+<lb n="0031b03" ed="T"/><lg type="regular" xml:id="lgT01p0031b0301" style="margin-left:2em;text-indent:-2em"><l>「『忉利諸天人，<caesura/>帝釋相娛樂；</l>
+<lb n="0031b04" ed="T"/><l>禮敬於如來，<caesura/>最上法之<note n="0031008" resp="Taisho" type="orig" place="foot text">王＝法【聖】</note><note n="0031008" resp="CBETA" type="mod">王【大】，法【聖】</note><app n="0031008"><lem wit="【大】">王</lem><rdg resp="Taisho" wit="【聖】">法</rdg></app>。</l>
+<lb n="0031b05" ed="T"/><l>諸天受影福，<caesura/>壽、色、名、樂、威；</l>
+<lb n="0031b06" ed="T"/><l>於佛修梵行，<caesura/>故來生此間。</l>
+<lb n="0031b07" ed="T"/><l>復有諸天人，<caesura/>光色甚巍巍；</l>
+<lb n="0031b08" ed="T"/><l>佛智慧弟子，<caesura/>生此復殊勝。</l>
+<lb n="0031b09" ed="T"/><l>忉利及因提，<caesura/>思惟此自樂；</l>
+<lb n="0031b10" ed="T"/><l>禮敬於如來，<caesura/>最上法之<app type="star" corresp="#0030024"><lem wit="【大】">王</lem><rdg resp="Taisho" wit="【聖】">法</rdg></app>。』</l></lg>
+<lb n="0031b11" ed="T"/><p xml:id="pT01p0031b1101">「時，諸忉利天語童子曰：『吾等聞天帝釋稱
+<lb n="0031b12" ed="T"/>說如來八無等法，歡喜踊躍，不能自勝。』時，梵
+<lb n="0031b13" ed="T"/>童子語忉利天言：『何等如來八無等法？吾亦
+<lb n="0031b14" ed="T"/>樂聞。』時，天帝釋即為童子說如來八無等
+<lb n="0031b15" ed="T"/>法，忉利諸天、<note n="0031009" resp="Taisho" type="orig" place="foot text">童子＝重【三】</note><note n="0031009" resp="CBETA" type="mod">童子【大】，重【宋】【元】【明】</note><app n="0031009"><lem wit="【大】">童子</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">重</rdg></app>聞說已，倍復歡喜，不能
+<lb n="0031b16" ed="T"/>自勝，增益諸天眾，減損阿須倫眾。是時，童
+<lb n="0031b17" ed="T"/>子見天歡喜，復增欣<note n="0031010" resp="Taisho" type="orig" place="foot text">躍＝踊【三】【聖】</note><note n="0031010" resp="CBETA" type="mod">躍【大】，踊【宋】【元】【明】【聖】</note><app n="0031010"><lem wit="【大】">躍</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">踊</rdg></app>，即告忉利天曰：『汝
+<lb n="0031b18" ed="T"/>等欲聞一無等法不？』天曰：『善哉！願樂欲聞。』</p>
+<lb n="0031b19" ed="T"/><p xml:id="pT01p0031b1901">「童子告曰：『汝樂聞者，諦聽！諦受！當為汝說。』
+<lb n="0031b20" ed="T"/>告諸天曰：『如來往昔為菩薩時，在所生處
+<lb n="0031b21" ed="T"/>聰明多智。諸賢！當知過去久遠時，世有王
+<lb n="0031b22" ed="T"/>名曰<note n="0031011" resp="Taisho" type="orig" place="foot text">地主～Disampati.</note><note n="0031011" resp="CBETA" type="mod">地主【大】，～Disampati.</note><cb:tt n="0031011" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">地主</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Disampati.</cb:t></cb:tt>，第一太子名曰<note n="0031012" resp="Taisho" type="orig" place="foot text">慈悲～Reṇu.</note><note n="0031012" resp="CBETA" type="mod">慈悲【大】，～Reṇu.</note><cb:tt n="0031012" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">慈悲</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Reṇu.</cb:t></cb:tt>。王有大
+<lb n="0031b23" ed="T"/>臣名曰<note n="0031013" resp="Taisho" type="orig" place="foot text">典尊～Govinda.</note><note n="0031013" resp="CBETA" type="mod">典尊【大】，～Govinda.</note><cb:tt n="0031013" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">典尊</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Govinda.</cb:t></cb:tt>，大臣有子名曰<note n="0031014" resp="Taisho" type="orig" place="foot text">焰鬘～Jotipāla.</note><note n="0031014" resp="CBETA" type="mod">焰鬘【大】，～Jotipāla.</note><cb:tt n="0031014" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">焰鬘</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Jotipāla.</cb:t></cb:tt>。太子
+<lb n="0031b24" ed="T"/>慈悲有朋友，其朋亦與六剎利大臣而為
+<lb n="0031b25" ed="T"/>朋友。地主大王欲入深宮遊戲娛樂時，<note n="0031015" resp="Taisho" type="orig" place="foot text">即＝則【三】【聖】</note><note n="0031015" resp="CBETA" type="mod">即【大】，則【宋】【元】【明】【聖】</note><app n="0031015"><lem wit="【大】">即</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">則</rdg></app>
+<lb n="0031b26" ed="T"/>以國事委付典尊大臣，然後入宮作倡伎
+<lb n="0031b27" ed="T"/>樂，五欲自娛。時，典尊大臣欲理國事，先問
+<lb n="0031b28" ed="T"/>其子，然後決斷；有所處分，亦<note n="0031016" resp="Taisho" type="orig" place="foot text">問＝聞【明】</note><note n="0031016" resp="CBETA" type="mod">問【大】，聞【明】</note><app n="0031016"><lem wit="【大】">問</lem><rdg resp="Taisho" wit="【明】">聞</rdg></app>其子。』</p><p xml:id="pT01p0031b2815" cb:place="inline">「其
+<lb n="0031b29" ed="T"/>後典尊忽然命終，時地主王聞其命終，愍念
+<pb n="0031c" ed="T" xml:id="T01.0001.0031c"/>
+<lb n="0031c01" ed="T"/>哀傷，撫膺而曰：『咄哉！何辜失國良<note n="0031017" resp="Taisho" type="orig" place="foot text">幹＝輔【三】</note><note n="0031017" resp="CBETA" type="mod">幹【大】，輔【宋】【元】【明】</note><app n="0031017"><lem wit="【大】">幹</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">輔</rdg></app>？』太子
+<lb n="0031c02" ed="T"/>慈悲默自念<note n="0031018" resp="Taisho" type="orig" place="foot text">宮＝言【三】</note><note n="0031018" resp="CBETA" type="mod">言【CB】【宋】【元】【明】，宮【大】</note><app n="0031018"><lem resp="CBETA.maha" wit="【CB】">言</lem><rdg wit="【大】">宮</rdg><rdg resp="Taisho" wit="【宋】 【元】 【明】">言</rdg></app>：『王失典尊以為憂苦，今我
+<lb n="0031c03" ed="T"/>宜往諫於大王，無以彼喪而生憂苦。所
+<lb n="0031c04" ed="T"/>以然者？典尊有子名曰焰鬘，聰明多智乃
+<lb n="0031c05" ed="T"/>過其父，今可徵召以理國事。』時，慈悲太子
+<lb n="0031c06" ed="T"/>即詣王所，具以上事白其父<note n="0031019" resp="Taisho" type="orig" place="foot text">王＋（王）【三】</note><note n="0031019" resp="CBETA" type="mod">王【大】，王王【宋】【元】【明】</note><app n="0031019"><lem wit="【大】">王</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">王王</rdg></app>，聞太子
+<lb n="0031c07" ed="T"/>語已，即召焰鬘而告之曰：『吾今以汝補卿
+<lb n="0031c08" ed="T"/>父處，授汝相印。』彼時焰鬘受相印已，王欲
+<lb n="0031c09" ed="T"/>入宮，復付後事。</p><p xml:id="pT01p0031c0907" cb:place="inline">「時，相焰鬘明於治理，父先
+<lb n="0031c10" ed="T"/>所為焰鬘亦知，父所不及焰鬘亦知，其後
+<lb n="0031c11" ed="T"/>名稱流聞海內，天下咸稱為<note n="0031020" resp="Taisho" type="orig" place="foot text">大典尊～Mahā-Govinda.</note><note n="0031020" resp="CBETA" type="mod">大典尊【大】，～Mahā-Govinda.</note><cb:tt n="0031020" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">大典尊</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Mahā-Govinda.</cb:t></cb:tt>。時，大
+<lb n="0031c12" ed="T"/>典尊<note n="0031021" resp="Taisho" type="orig" place="foot text">後＝復【明】</note><note n="0031021" resp="CBETA" type="mod">後【大】，復【明】</note><app n="0031021"><lem wit="【大】">後</lem><rdg resp="Taisho" wit="【明】">復</rdg></app>作是念：『今王地主年已朽邁，餘壽未
+<lb n="0031c13" ed="T"/>幾，若以太子紹王位者，未為難也，我今
+<lb n="0031c14" ed="T"/>寧可先往語彼六剎利大臣，今王地主年已
+<lb n="0031c15" ed="T"/>朽邁，餘壽未幾，若以太子紹王位者，未為
+<lb n="0031c16" ed="T"/>難也。君等亦當別封王土，居位之日，勿相
+<lb n="0031c17" ed="T"/>忘也。』</p><p xml:id="pT01p0031c1703" cb:place="inline">「時，大典尊即往詣六剎利大臣，而告
+<lb n="0031c18" ed="T"/>之曰：『諸君！當知今王地主年已朽邁，餘壽
+<lb n="0031c19" ed="T"/>未幾，若以太子紹王位者，未為難也。汝
+<lb n="0031c20" ed="T"/>等可往白太子此意，我等與尊生小知舊，
+<lb n="0031c21" ed="T"/>尊苦我苦，尊樂我樂。今王衰老，年已朽邁，餘
+<lb n="0031c22" ed="T"/>壽未幾，今者太子紹王位者，未為難也，尊
+<lb n="0031c23" ed="T"/>設登位，當與我封。』時，六剎利大臣聞其語
+<lb n="0031c24" ed="T"/>已，即詣太子，說如上事。太子報言：『設吾登
+<lb n="0031c25" ed="T"/>位，列土封國，當更與誰？』</p><p xml:id="pT01p0031c2510" cb:place="inline">「時，王未久忽然而
+<lb n="0031c26" ed="T"/>崩，國中大臣尋拜太子補王正位。王居位
+<lb n="0031c27" ed="T"/>已，默自思念：『今立宰相，宜准先王。』<note n="0031022" resp="Taisho" type="orig" place="foot text">復＝覆【三】【聖】</note><note n="0031022" resp="CBETA" type="mod">復【大】，覆【宋】【元】【明】【聖】</note><app n="0031022"><lem wit="【大】">復</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">覆</rdg></app>自思
+<lb n="0031c28" ed="T"/>念：『誰堪此舉？正當即任大典尊<note n="0031023" resp="Taisho" type="orig" place="foot text">位＝耳【三】【聖】</note><note n="0031023" resp="CBETA" type="mod">位【大】，耳【宋】【元】【明】【聖】</note><app n="0031023"><lem wit="【大】">位</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">耳</rdg></app>。』時，王慈
+<lb n="0031c29" ed="T"/>悲<note n="0031c2901" resp="CBETA" type="add" cb:note_key="T01.0031c29.02">即【CB】【麗-CB】，聞【大】</note><app n="0031c2901"><lem wit="【CB】 【麗-CB】" resp="CBETA.shin" cb:provider="來函：DL (2022-04-09)">即<note type="cf1">K17n0647_p0855b13</note></lem><rdg wit="【大】">聞</rdg><rdg wit="【麗-CB】" resp="CBETA.shin" cb:provider="來函：DL (2022-04-09)">即<note type="cf1">K17n0647_p0855b13</note></rdg></app>告大典尊：『我今使汝即於相位，授以
+<pb n="0032a" ed="T" xml:id="T01.0001.0032a"/>
+<lb n="0032a01" ed="T"/>印信，汝當勤憂，綜理國事。』時，大典尊聞王
+<lb n="0032a02" ed="T"/>教已，即受印信，王每入宮，輙以後事付大
+<lb n="0032a03" ed="T"/>典尊。</p><p xml:id="pT01p0032a0303" cb:place="inline">「大典尊復自念言：『吾今宜往六剎利
+<lb n="0032a04" ed="T"/>所，問其寧憶昔所言不？』即尋往詣語剎利
+<lb n="0032a05" ed="T"/>曰：『汝今寧憶昔所言不？今者太子以登王
+<lb n="0032a06" ed="T"/>位，隱處深宮，五欲自娛，汝等今者可往問
+<lb n="0032a07" ed="T"/>王，王居天位，五欲自娛，寧復能憶昔所言
+<lb n="0032a08" ed="T"/>不？』時，六剎利聞是語已，即詣王所，白大王
+<lb n="0032a09" ed="T"/>言：『王居<note n="0032001" resp="Taisho" type="orig" place="foot text">天＝大【元】【明】</note><note n="0032001" resp="CBETA" type="mod">天【大】，大【元】【明】</note><app n="0032001"><lem wit="【大】">天</lem><rdg resp="Taisho" wit="【元】 【明】">大</rdg></app>位，五欲自娛，寧復能憶昔所言
+<lb n="0032a10" ed="T"/>不？列土封邑，誰應居之？』王曰：『不忘昔言，
+<lb n="0032a11" ed="T"/>列土封邑，非卿而誰？』王復自念：『此閻浮提地，
+<lb n="0032a12" ed="T"/>內廣外狹，誰能分此以為七分？』復自念言：
+<lb n="0032a13" ed="T"/>『唯有大典尊乃能分<note n="0032002" resp="Taisho" type="orig" place="foot text">爾＝耳【三】【聖】＊</note><note n="0032002" resp="CBETA" type="mod">爾【大】＊，耳【宋】【元】【明】【聖】＊</note><app n="0032002"><lem wit="【大】">爾</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">耳</rdg></app>。』即告之曰：『汝可
+<lb n="0032a14" ed="T"/>分此閻浮提地，使作七分。』</p><p xml:id="pT01p0032a1411" cb:place="inline">「時，大典尊即尋
+<lb n="0032a15" ed="T"/>分之，王所治城，村邑郡國，皆悉部分，六剎利
+<lb n="0032a16" ed="T"/>國亦與分部。王自慶言：『我願已果！』時，六剎利
+<lb n="0032a17" ed="T"/>復自慶幸：『我願已果，得成此業，大典尊力
+<lb n="0032a18" ed="T"/>也。』六剎利王復自思念：『吾國初建，當須宰
+<lb n="0032a19" ed="T"/>輔，誰能堪任？如大典尊，即當使之，通領國
+<lb n="0032a20" ed="T"/>事。』<app type="star" corresp="#0032002"><lem wit="【大】">爾</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">耳</rdg></app>時，六剎利王即<note n="0032003" resp="Taisho" type="orig" place="foot text">命＝令【聖】</note><note n="0032003" resp="CBETA" type="mod">命【大】，令【聖】</note><app n="0032003"><lem wit="【大】">命</lem><rdg resp="Taisho" wit="【聖】">令</rdg></app>典尊，而告之曰：
+<lb n="0032a21" ed="T"/>『吾國須相，卿當為吾通領國事。』於是，六國
+<lb n="0032a22" ed="T"/>各授相印。</p><p xml:id="pT01p0032a2205" cb:place="inline">「時，大典尊受相印已，六王入宮
+<lb n="0032a23" ed="T"/>遊觀娛樂，時，皆以國事付大典尊，大典尊
+<lb n="0032a24" ed="T"/>理七國事，無不成<note n="0032a2401" resp="CBETA" type="add" cb:note_key="T01.0032a24.08">辦【CB】【麗-CB】，辨【大】</note><app n="0032a2401"><lem wit="【CB】 【麗-CB】 【磧乙-CB】" resp="CBETA.shin" cb:provider="來函：DL (2022-04-09)">辦<note type="cf1">K17n0647_p0855c18</note><note type="cf2">QC054n0665_p0037a06</note></lem><rdg wit="【大】">辨</rdg><rdg wit="【麗-CB】 【磧乙-CB】" resp="CBETA.shin" cb:provider="來函：DL (2022-04-09)">辦<note type="cf1">K17n0647_p0855c18</note><note type="cf2">QC054n0665_p0037a06</note></rdg></app>。時，國內有七大居士，
+<lb n="0032a25" ed="T"/>典尊亦為處分家事，又能教授七百梵志
+<lb n="0032a26" ed="T"/>諷誦經典，七王敬視大典尊相，猶如神明，
+<lb n="0032a27" ed="T"/>國七居士視如大王，七百梵志視如梵天。
+<lb n="0032a28" ed="T"/>時，七國王、七大居士、七百梵志皆自念言：『大
+<lb n="0032a29" ed="T"/>典尊相，常與梵天相見，言語坐起親善。』</p><p xml:id="pT01p0032a2916" cb:place="inline">「時，大
+<pb n="0032b" ed="T" xml:id="T01.0001.0032b"/>
+<lb n="0032b01" ed="T"/>典尊默識七王、居士、梵志意，謂：『我常與梵天
+<lb n="0032b02" ed="T"/>相見，言語坐起；然我實不見梵天，不與言
+<lb n="0032b03" ed="T"/>語，不可<note n="0032004" resp="Taisho" type="orig" place="foot text">餐＝養【三】</note><note n="0032004" resp="CBETA" type="mod">餐【大】，養【宋】【元】【明】</note><app n="0032004"><lem wit="【大】">餐</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">養</rdg></app>默，虛受此稱。我亦曾聞諸先宿
+<lb n="0032b04" ed="T"/>言：「於夏四月閑居靜處，修四無量者，梵天
+<lb n="0032b05" ed="T"/>則下，與共相見。」今我寧可修四無量，使梵
+<lb n="0032b06" ed="T"/>天下，共相見不？』於是，典尊至七王所而白
+<lb n="0032b07" ed="T"/>王言：『唯願大王顧臨國事，我欲於夏四月
+<lb n="0032b08" ed="T"/>修四無量。』七王告曰：『宜知是時。』大典尊相
+<lb n="0032b09" ed="T"/>又告七居士：『汝等各勤己務，吾欲<note n="0032005" resp="Taisho" type="orig" place="foot text">〔夏〕－【三】</note><note n="0032005" resp="CBETA" type="mod">夏【大】，〔－〕【宋】【元】【明】</note><app n="0032005"><lem wit="【大】">夏</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>四月
+<lb n="0032b10" ed="T"/>修四無量。』居士曰：『諾！宜知是時。』又告七百
+<lb n="0032b11" ed="T"/>梵志：『卿等當勤諷誦，轉相教授，我欲於夏
+<lb n="0032b12" ed="T"/>四月修四無量。』梵志曰：『諾！今者大師宜知
+<lb n="0032b13" ed="T"/>是時。』</p><p xml:id="pT01p0032b1303" cb:place="inline">「時，大典尊於彼城東造閑靜室，於夏
+<lb n="0032b14" ed="T"/>四月，即於彼止，修四無量，然彼梵天猶不
+<lb n="0032b15" ed="T"/>來下，典尊自念：『我聞先宿<note n="0032006" resp="Taisho" type="orig" place="foot text">〔舊〕－【三】【聖】</note><note n="0032006" resp="CBETA" type="mod">舊【大】，〔－〕【宋】【元】【明】【聖】</note><app n="0032006"><lem wit="【大】">舊</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】"><space quantity="0"/></rdg></app>言，於夏四月，
+<lb n="0032b16" ed="T"/>修四無量，梵天下現。今者寂然，聊無髣髴。』
+<lb n="0032b17" ed="T"/>時，大典尊以十五日月滿時，出其靜室，於
+<lb n="0032b18" ed="T"/>露地坐，坐未久頃，有大光現，典尊默念：『今
+<lb n="0032b19" ed="T"/>此異光，將無是梵欲下瑞耶？』</p><p xml:id="pT01p0032b1912" cb:place="inline">「時，梵天王即
+<lb n="0032b20" ed="T"/>化為童子，<note n="0032b2001" resp="CBETA" type="add">頭【CB】【麗-CB】，［－］【大】</note><app n="0032b2001"><lem resp="CBETA.maha" wit="【CB】 【麗-CB】">頭<note type="cf1">K17n0647_p0856a23</note><note type="cf2">T01n0001_p0031b01</note></lem><rdg wit="【大】"><space quantity="0"/></rdg></app>五角<app type="star" corresp="#0031004"><lem wit="【大】">髻</lem><rdg resp="Taisho" wit="【聖】">結</rdg></app>，在典尊上虛空中坐，典
+<lb n="0032b21" ed="T"/>尊見已，即說頌曰：</p>
+<lb n="0032b22" ed="T"/><lg type="regular" xml:id="lgT01p0032b2201" style="margin-left:2em;text-indent:-2em"><l>「『此是何天像？<caesura/>在於虛空中，</l>
+<lb n="0032b23" ed="T"/><l>光照於四方，<caesura/>如大火<g ref="#CB00036"/>燃』。</l></lg>
+<lb n="0032b24" ed="T"/><p xml:id="pT01p0032b2401">「時，梵童子以偈報曰：</p>
+<lb n="0032b25" ed="T"/><lg type="regular" xml:id="lgT01p0032b2501" style="margin-left:2em;text-indent:-2em"><l>「『唯梵世諸天，<caesura/>知我梵童子，</l>
+<lb n="0032b26" ed="T"/><l>其餘人謂我，<caesura/>祀祠於<note n="0032007" resp="Taisho" type="orig" place="foot text">大＝火【三】</note><note n="0032007" resp="CBETA" type="mod">大【大】，火【宋】【元】【明】</note><app n="0032007"><lem wit="【大】">大</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">火</rdg></app>神。』</l></lg>
+<lb n="0032b27" ed="T"/><p xml:id="pT01p0032b2701">「時，大典尊以偈報曰：</p>
+<lb n="0032b28" ed="T"/><lg type="regular" xml:id="lgT01p0032b2801" style="margin-left:2em;text-indent:-2em"><l>「『今我當諮承，<caesura/>奉誨致恭敬，</l>
+<lb n="0032b29" ed="T"/><l>設種種上味，<caesura/>願天知我心。』</l></lg>
+<pb n="0032c" ed="T" xml:id="T01.0001.0032c"/>
+<lb n="0032c01" ed="T"/><p xml:id="pT01p0032c0101">「時，梵童子<note n="0032008" resp="Taisho" type="orig" place="foot text">（復）＋以【聖】</note><note n="0032008" resp="CBETA" type="mod" cb:note_key="T01.0032c01.05">復以【CB】【麗-CB】【磧乙-CB】，以【大】，復以【聖】</note><app n="0032008"><lem wit="【CB】 【麗-CB】 【磧乙-CB】" resp="CBETA.shin" cb:provider="來函：DL (2022-04-09)">復以<note type="cf1">K17n0647_p0856b10</note><note type="cf2">QC054n0665_p0038a03</note></lem><rdg wit="【大】">以</rdg><rdg resp="Taisho" wit="【聖】">復以</rdg></app>偈報曰：</p>
+<lb n="0032c02" ed="T"/><lg type="regular" xml:id="lgT01p0032c0201" style="margin-left:2em;text-indent:-2em"><l>「『典尊汝所修，<caesura/>為欲何志求？</l>
+<lb n="0032c03" ed="T"/><l>今設此供養，<caesura/>當為汝受之。』</l></lg>
+<lb n="0032c04" ed="T"/><p xml:id="pT01p0032c0401">「又告大典尊：『汝若有所問，自恣問之，當為
+<lb n="0032c05" ed="T"/>汝說。』時，大典尊即自念言：『我今當問現在
+<lb n="0032c06" ed="T"/>事耶？<note n="0032009" resp="Taisho" type="orig" place="foot text">〔問〕－【三】</note><note n="0032009" resp="CBETA" type="mod">問【大】，〔－〕【宋】【元】【明】</note><app n="0032009"><lem wit="【大】">問</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>未然事耶？』復自念言：『今世現事，
+<lb n="0032c07" ed="T"/>用復問為？當問未然幽冥之事。』即向梵童
+<lb n="0032c08" ed="T"/><note n="0032010" resp="Taisho" type="orig" place="foot text">〔子〕－【三】【聖】</note><note n="0032010" resp="CBETA" type="mod">子【大】＊，〔－〕【宋】【元】【明】【聖】＊</note><app n="0032010"><lem wit="【大】">子</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】"><space quantity="0"/></rdg></app>以偈問曰：</p>
+<lb n="0032c09" ed="T"/><lg type="regular" xml:id="lgT01p0032c0901" style="margin-left:2em;text-indent:-2em"><l>「『今我問梵童，<caesura/>能決疑無疑，</l>
+<lb n="0032c10" ed="T"/><l>學何住何法，<caesura/>得生於梵天？』</l></lg>
+<lb n="0032c11" ed="T"/><p xml:id="pT01p0032c1101">「時，梵童子以偈報曰：</p>
+<lb n="0032c12" ed="T"/><lg type="regular" xml:id="lgT01p0032c1201" style="margin-left:2em;text-indent:-2em"><l>「『當捨我人想，<caesura/>獨處修慈心，</l>
+<lb n="0032c13" ed="T"/><l>除欲無臭穢，<caesura/>乃得生梵天。』</l></lg>
+<lb n="0032c14" ed="T"/><p xml:id="pT01p0032c1401">「時，大典尊聞是偈已，即自念言：『梵童<app type="star" corresp="#0032010"><lem wit="【大】">子</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】"><space quantity="0"/></rdg></app>說
+<lb n="0032c15" ed="T"/>偈，宜除臭穢，我不解此，今宜更問。』時，大典
+<lb n="0032c16" ed="T"/>尊即以偈問曰：</p>
+<lb n="0032c17" ed="T"/><lg type="regular" xml:id="lgT01p0032c1701" style="margin-left:2em;text-indent:-2em"><l>「『梵偈言臭穢，<caesura/>願今為我說，</l>
+<lb n="0032c18" ed="T"/><l>誰<note n="0032011" resp="Taisho" type="orig" place="foot text">開＝閉【三】</note><note n="0032011" resp="CBETA" type="mod">開【大】，閉【宋】【元】【明】</note><app n="0032011"><lem wit="【大】">開</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">閉</rdg></app>世間門，<caesura/>墮惡不生天？』</l></lg>
+<lb n="0032c19" ed="T"/><p xml:id="pT01p0032c1901">「時，梵童子以偈報曰：</p>
+<lb n="0032c20" ed="T"/><lg type="regular" xml:id="lgT01p0032c2001" style="margin-left:2em;text-indent:-2em"><l>「『欺妄懷嫉妬，<caesura/>習慢增上慢，</l>
+<lb n="0032c21" ed="T"/><l>貪欲瞋恚癡，<caesura/>自恣藏於心。</l>
+<lb n="0032c22" ed="T"/><l>此世間臭穢，<caesura/>今說令汝知，</l>
+<lb n="0032c23" ed="T"/><l>此開世間門，<caesura/>墮惡不生天。』</l></lg>
+<lb n="0032c24" ed="T"/><p xml:id="pT01p0032c2401">「時，大典尊聞此偈已，復自念言：『梵童<app type="star" corresp="#0032010"><lem wit="【大】">子</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】"><space quantity="0"/></rdg></app>所
+<lb n="0032c25" ed="T"/>說臭穢之義我今已解，但在家者無由得
+<lb n="0032c26" ed="T"/>除，今我寧可捨世出家，剃除鬚髮，法服修
+<lb n="0032c27" ed="T"/>道耶！』</p><p xml:id="pT01p0032c2703" cb:place="inline">「時，梵童子知其志念，以偈告曰：</p>
+<lb n="0032c28" ed="T"/><lg type="regular" xml:id="lgT01p0032c2801" style="margin-left:2em;text-indent:-2em"><l>「『汝能有勇猛，<caesura/>此志為勝妙；</l>
+<lb n="0032c29" ed="T"/><l>智者之所為，<caesura/>死必生梵天。』</l></lg>
+<pb n="0033a" ed="T" xml:id="T01.0001.0033a"/>
+<lb n="0033a01" ed="T"/><p xml:id="pT01p0033a0101">「於是，梵童子忽然不現。</p><p xml:id="pT01p0033a0110" cb:place="inline">「時，大典尊還詣七
+<lb n="0033a02" ed="T"/>王白言：『大王！唯願垂神善理國事，今我意
+<lb n="0033a03" ed="T"/>欲出家離世，法服修道。所以者何？我親於
+<lb n="0033a04" ed="T"/>梵童<app type="star" corresp="#0032010"><lem wit="【大】">子</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】"><space quantity="0"/></rdg></app>聞說臭穢，心甚惡之。若在家者，
+<lb n="0033a05" ed="T"/>無由得除。』彼時，七王即自念言：『凡婆羅門
+<lb n="0033a06" ed="T"/>多貪財寶，我今寧可大開庫藏，恣其所須，
+<lb n="0033a07" ed="T"/>使不出家。』時，七國王即命典尊，而告之曰：
+<lb n="0033a08" ed="T"/>『設有所須，吾盡相與，不足出家。』時，大典尊
+<lb n="0033a09" ed="T"/>尋白王曰：『我今以為蒙王賜已，我亦大有
+<lb n="0033a10" ed="T"/>財寶，今者盡留以上大王，願聽出家，遂我
+<lb n="0033a11" ed="T"/>志願。』</p><p xml:id="pT01p0033a1103" cb:place="inline">「時，七國王復作是念：『凡婆羅門多貪美
+<lb n="0033a12" ed="T"/>色，今我寧可出宮婇女，以滿其意，使不出
+<lb n="0033a13" ed="T"/>家。』王即命典尊而告之曰：『若須婇女，吾盡
+<lb n="0033a14" ed="T"/>與汝，不足出家。』典尊報曰：『我今已為蒙王
+<lb n="0033a15" ed="T"/>賜已，家內自有婇女眾多，今盡放遣，求離
+<lb n="0033a16" ed="T"/>恩愛，出家修道。所以然者？我親從梵童
+<lb n="0033a17" ed="T"/><app type="star" corresp="#0032010"><lem wit="【大】">子</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】"><space quantity="0"/></rdg></app>聞說臭穢，心甚惡之。若在家者，無由
+<lb n="0033a18" ed="T"/>得除。』</p><p xml:id="pT01p0033a1803" cb:place="inline">「時，大典尊向慈悲王，以偈頌曰：</p>
+<lb n="0033a19" ed="T"/><lg type="regular" xml:id="lgT01p0033a1901" style="margin-left:2em;text-indent:-2em"><l>「『王當聽我言，<caesura/>王為人中尊，</l>
+<lb n="0033a20" ed="T"/><l>賜財寶婇女，<caesura/>此<note n="0033001" resp="Taisho" type="orig" place="foot text">寶＝實【三】</note><note n="0033001" resp="CBETA" type="mod">寶【大】，實【宋】【元】【明】</note><app n="0033001"><lem wit="【大】">寶</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">實</rdg></app>非所樂。』</l></lg>
+<lb n="0033a21" ed="T"/><p xml:id="pT01p0033a2101">「時，慈悲王以偈報曰：</p>
+<lb n="0033a22" ed="T"/><lg type="regular" xml:id="lgT01p0033a2201" style="margin-left:2em;text-indent:-2em"><l>「『<note n="0033002" resp="Taisho" type="orig" place="foot text">檀特～Dantapura.</note><note n="0033002" resp="CBETA" type="mod">檀特【大】，～Dantapura.</note><cb:tt n="0033002" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">檀特</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Dantapura.</cb:t></cb:tt><note n="0033003" resp="Taisho" type="orig" place="foot text">伽陵～Kaliṅga.</note><note n="0033003" resp="CBETA" type="mod">伽陵【大】，～Kaliṅga.</note><cb:tt n="0033003" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">伽陵</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Kaliṅga.</cb:t></cb:tt>城，<caesura/><note n="0033004" resp="Taisho" type="orig" place="foot text">阿婆＝阿波【三】＊～Assaka.</note><note n="0033004" resp="CBETA" type="mod">阿婆【大】＊，阿波【宋】＊【元】＊【明】＊，～Assaka.</note><cb:tt n="0033004" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant"><app n="0033004"><lem wit="【大】">阿婆</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">阿波</rdg></app></cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Assaka.</cb:t></cb:tt><note n="0033005" resp="Taisho" type="orig" place="foot text">布和～Potana.</note><note n="0033005" resp="CBETA" type="mod">布和【大】，～Potana.</note><cb:tt n="0033005" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">布和</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Potana.</cb:t></cb:tt>城，</l>
+<lb n="0033a23" ed="T"/><l><note n="0033006" resp="Taisho" type="orig" place="foot text">阿槃＝可槃【明】～Avantī.</note><note n="0033006" resp="CBETA" type="mod">阿槃【大】，可槃【明】，～Avantī.</note><cb:tt n="0033006" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant"><app n="0033006"><lem wit="【大】">阿槃</lem><rdg resp="Taisho" wit="【明】">可槃</rdg></app></cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Avantī.</cb:t></cb:tt><note n="0033007" resp="Taisho" type="orig" place="foot text">大天～Mahīssatī.</note><note n="0033007" resp="CBETA" type="mod">大天【大】，～Mahīssatī.</note><cb:tt n="0033007" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">大天</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Mahīssatī.</cb:t></cb:tt>城，<caesura/><note n="0033008" resp="Taisho" type="orig" place="foot text">鴦伽～Aṅga.</note><note n="0033008" resp="CBETA" type="mod">鴦伽【大】，～Aṅga.</note><cb:tt n="0033008" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">鴦伽</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Aṅga.</cb:t></cb:tt><note n="0033009" resp="Taisho" type="orig" place="foot text">瞻波～Campā.</note><note n="0033009" resp="CBETA" type="mod">瞻婆【大】，～Campā.</note><cb:tt n="0033009" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">瞻婆</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Campā.</cb:t></cb:tt>城，</l>
+<lb n="0033a24" ed="T"/><l><note n="0033010" resp="Taisho" type="orig" place="foot text">數＝藪【聖】</note><note n="0033010" resp="CBETA" type="mod">數【大】，藪【聖】</note><app n="0033010"><lem wit="【大】">數</lem><rdg resp="Taisho" wit="【聖】">藪</rdg></app>彌薩羅城，<caesura/>西陀<note n="0033011" resp="Taisho" type="orig" place="foot text">路樓～Roruka.</note><note n="0033011" resp="CBETA" type="mod">路樓【大】，～Roruka.</note><cb:tt n="0033011" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">路樓</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Roruka.</cb:t></cb:tt>城，</l>
+<lb n="0033a25" ed="T"/><l><note n="0033012" resp="Taisho" type="orig" place="foot text">婆羅～Bārāṇasī.</note><note n="0033012" resp="CBETA" type="mod">婆羅【大】，～Bārāṇasī.</note><cb:tt n="0033012" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">婆羅</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Bārāṇasī.</cb:t></cb:tt><note n="0033013" resp="Taisho" type="orig" place="foot text">伽尸～Kāsī.</note><note n="0033013" resp="CBETA" type="mod">伽尸【大】，～Kāsī.</note><cb:tt n="0033013" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">伽尸</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Kāsī.</cb:t></cb:tt>城，<caesura/>盡汝典尊造，</l>
+<lb n="0033a26" ed="T"/><l>五欲有所少，<caesura/>吾盡當相與；</l>
+<lb n="0033a27" ed="T"/><l>宜共理國事，<caesura/>不足出家去。』</l></lg>
+<lb n="0033a28" ed="T"/><p xml:id="pT01p0033a2801">「時，大典尊以偈報曰：</p>
+<lb n="0033a29" ed="T"/><lg type="regular" xml:id="lgT01p0033a2901" style="margin-left:2em;text-indent:-2em"><l>「『我五欲不少，<caesura/>自不樂世間；</l>
+<pb n="0033b" ed="T" xml:id="T01.0001.0033b"/>
+<lb n="0033b01" ed="T"/><l>已聞天所語，<caesura/>無心復在家。』</l></lg>
+<lb n="0033b02" ed="T"/><p xml:id="pT01p0033b0201">「時，慈悲王以偈報曰：</p>
+<lb n="0033b03" ed="T"/><lg type="regular" xml:id="lgT01p0033b0301" style="margin-left:2em;text-indent:-2em"><l>「『大典尊所言，<caesura/>為從何天聞，</l>
+<lb n="0033b04" ed="T"/><l>捨離於五欲，<caesura/>今問當答我。』</l></lg>
+<lb n="0033b05" ed="T"/><p xml:id="pT01p0033b0501">「時，大典尊以偈答曰：</p>
+<lb n="0033b06" ed="T"/><lg type="regular" xml:id="lgT01p0033b0601" style="margin-left:2em;text-indent:-2em"><l>「『昔我於靜處，<caesura/>獨坐自思惟；</l>
+<lb n="0033b07" ed="T"/><l>時梵天王來，<caesura/>普放大光明；</l>
+<lb n="0033b08" ed="T"/><l>我從彼聞已，<caesura/>不樂於世間。』</l></lg>
+<lb n="0033b09" ed="T"/><p xml:id="pT01p0033b0901">「時，慈悲王以偈告曰：</p>
+<lb n="0033b10" ed="T"/><lg type="regular" xml:id="lgT01p0033b1001" style="margin-left:2em;text-indent:-2em"><l>「『小住大典尊，<caesura/>共弘善法化；</l>
+<lb n="0033b11" ed="T"/><l>然後俱出家，<caesura/>汝即為我師。</l>
+<lb n="0033b12" ed="T"/><l>譬如虛空中，<caesura/>清淨琉璃滿；</l>
+<lb n="0033b13" ed="T"/><l>今我清淨信，<caesura/>充徧佛法中。』</l></lg>
+<lb n="0033b14" ed="T"/><p xml:id="pT01p0033b1401">「時，大典尊復作頌曰：</p>
+<lb n="0033b15" ed="T"/><lg type="regular" xml:id="lgT01p0033b1501" style="margin-left:2em;text-indent:-2em"><l>「『諸天及世人，<caesura/>皆應捨五欲，</l>
+<lb n="0033b16" ed="T"/><l>蠲除諸穢污，<caesura/>淨修於梵行。』</l></lg>
+<lb n="0033b17" ed="T"/><p xml:id="pT01p0033b1701">「爾時，七國王語大典尊曰：『汝可留住七歲之
+<lb n="0033b18" ed="T"/>中，極世五欲，共相娛樂，然後捨國，各付子
+<lb n="0033b19" ed="T"/>弟，俱共出家，不亦善耶？如汝所獲，我亦當
+<lb n="0033b20" ed="T"/>同。』時，大典尊報七王曰：『世間無常，人命逝
+<lb n="0033b21" ed="T"/>速，喘息之間，猶亦難保，乃至七歲，不亦遠
+<lb n="0033b22" ed="T"/>耶？』七王又言：『七歲遠者，六歲、五歲，乃至一歲，
+<lb n="0033b23" ed="T"/>留住靜宮，極世五欲，共相娛樂，然後捨國，
+<lb n="0033b24" ed="T"/>各付子弟，俱共出家，不亦善耶？如汝所得，
+<lb n="0033b25" ed="T"/>我亦宜同。』時，大典尊復報王曰：『<note n="0033014" resp="Taisho" type="orig" place="foot text">〔此〕－【三】</note><note n="0033014" resp="CBETA" type="mod">此【大】，〔－〕【宋】【元】【明】</note><app n="0033014"><lem wit="【大】">此</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>世間無
+<lb n="0033b26" ed="T"/>常，人命逝速，喘息之間，猶亦難保，乃至一歲
+<lb n="0033b27" ed="T"/>尚亦久<app type="star" corresp="#0032002"><lem wit="【大】">爾</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">耳</rdg></app>，如是七月，至于一月，猶復不可。』
+<lb n="0033b28" ed="T"/>王又語言：『可至七日，留住深宮，極世五欲，
+<lb n="0033b29" ed="T"/>共相娛樂，然後捨國，各付子弟，俱共出家，
+<pb n="0033c" ed="T" xml:id="T01.0001.0033c"/>
+<lb n="0033c01" ed="T"/>不亦善耶？』大典尊答曰：『七日不遠，自可留
+<lb n="0033c02" ed="T"/><app type="star" corresp="#0032002"><lem wit="【大】">爾</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">耳</rdg></app>，唯願大王勿違信誓，過七日已，王若不
+<lb n="0033c03" ed="T"/>去，我自出家。』</p><p xml:id="pT01p0033c0306" cb:place="inline">「時，大典尊又至七居士所語言：
+<lb n="0033c04" ed="T"/>『汝等各理己務，吾欲出家，修無為道。所以
+<lb n="0033c05" ed="T"/>然者？我親從梵天聞說臭穢，心甚惡之。
+<lb n="0033c06" ed="T"/>若在家者，無由得除。』時，七居士報典尊曰：
+<lb n="0033c07" ed="T"/>『善哉！斯志！宜知是時，我等亦欲俱共出家，
+<lb n="0033c08" ed="T"/>如汝所得，我亦宜同。』</p><p xml:id="pT01p0033c0809" cb:place="inline">「時，大典尊復詣七百
+<lb n="0033c09" ed="T"/>梵志所，而告之曰：『卿等當勤諷誦，廣<note n="0033015" resp="Taisho" type="orig" place="foot text">探＝採【三】，深【聖】</note><note n="0033015" resp="CBETA" type="mod">探【大】，採【宋】【元】【明】，深【聖】</note><app n="0033015"><lem wit="【大】">探</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">採</rdg><rdg resp="Taisho" wit="【聖】">深</rdg></app>道
+<lb n="0033c10" ed="T"/>義，轉相教授，吾欲出家修無為道。所以然
+<lb n="0033c11" ed="T"/>者？我親從梵天聞說臭穢，心甚惡之，若在
+<lb n="0033c12" ed="T"/>家者，無由得除。』時，七百梵志白典尊曰：『大
+<lb n="0033c13" ed="T"/>師！勿出家也。夫在家安樂，五欲自娛，多人
+<lb n="0033c14" ed="T"/>侍從，心無憂苦。出家之人獨在空<note n="0033016" resp="Taisho" type="orig" place="foot text">野＝閑【三】</note><note n="0033016" resp="CBETA" type="mod">野【大】，閑【宋】【元】【明】</note><app n="0033016"><lem wit="【大】">野</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">閑</rdg></app>，所欲
+<lb n="0033c15" ed="T"/>悉無，無可貪取。』典尊報曰：『吾若以在家為
+<lb n="0033c16" ed="T"/>樂，出家為苦，終不出家；吾以在家為苦，
+<lb n="0033c17" ed="T"/>出家為樂，故出家<app type="star" corresp="#0032002"><lem wit="【大】">爾</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">耳</rdg></app>。』梵志答曰：『大師出家，
+<lb n="0033c18" ed="T"/>我亦出家；大師所行，我亦盡<note n="0033017" resp="Taisho" type="orig" place="foot text">〔當〕－【三】</note><note n="0033017" resp="CBETA" type="mod">當【大】，〔－〕【宋】【元】【明】</note><app n="0033017"><lem wit="【大】">當</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>行。』</p><p xml:id="pT01p0033c1814" cb:place="inline">「時，大典
+<lb n="0033c19" ed="T"/>尊至諸妻所，而告之曰：『卿等隨宜欲住者
+<lb n="0033c20" ed="T"/>住，欲歸者歸，吾欲出家，求無為道，具論上
+<lb n="0033c21" ed="T"/>事，明出家意。』時，諸婦答曰：『大典尊在，一如
+<lb n="0033c22" ed="T"/>我夫，一如我父，設今出家，亦當隨從，典尊
+<lb n="0033c23" ed="T"/>所行，我亦宜行。』</p><p xml:id="pT01p0033c2307" cb:place="inline">「過七日已，時，大典尊即剃
+<lb n="0033c24" ed="T"/>除鬚髮，服三法衣，捨家而去。時，七國王、七
+<lb n="0033c25" ed="T"/>大居士、七百梵志及四十夫人，如是展轉，有
+<lb n="0033c26" ed="T"/>八萬四千人同時出家，從大典尊。時，大典尊
+<lb n="0033c27" ed="T"/>與諸大眾遊行諸國，廣弘道化，多所饒
+<lb n="0033c28" ed="T"/>益。</p><p xml:id="pT01p0033c2802" cb:place="inline">「爾時，梵王告諸天眾曰：『時，典尊大臣豈異
+<lb n="0033c29" ed="T"/>人乎？莫造斯觀，今釋迦文佛即其身也。世
+<pb n="0034a" ed="T" xml:id="T01.0001.0034a"/>
+<lb n="0034a01" ed="T"/>尊爾時過七日已，出家修道，將諸大眾，遊
+<lb n="0034a02" ed="T"/>行諸國，廣弘道化，多所饒益。汝等若於我
+<lb n="0034a03" ed="T"/>言有餘疑者，世尊今在耆闍崛山，可往
+<lb n="0034a04" ed="T"/>問也，如佛所言，當受持之。』」</p><p xml:id="pT01p0034a0411" cb:place="inline">般遮翼言：「我
+<lb n="0034a05" ed="T"/>以是緣，故來詣此。唯然，世尊！彼大典尊即
+<lb n="0034a06" ed="T"/>世尊是耶？世尊爾時過七日已，出家修道，
+<lb n="0034a07" ed="T"/>與七國王乃至八萬四千人同時出家，遊行
+<lb n="0034a08" ed="T"/>諸國，廣弘道化，多所饒益耶？」</p><p xml:id="pT01p0034a0812" cb:place="inline">佛告般遮
+<lb n="0034a09" ed="T"/>翼曰：「爾時大典尊豈異人乎？莫造斯觀，即
+<lb n="0034a10" ed="T"/>我身是也。爾時，舉國男女行來舉動，有所破
+<lb n="0034a11" ed="T"/>損，<note n="0034001" resp="Taisho" type="orig" place="foot text">皆尋＝尋皆【三】</note><note n="0034001" resp="CBETA" type="mod">皆尋【大】，尋皆【宋】【元】【明】</note><app n="0034001"><lem wit="【大】">皆尋</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">尋皆</rdg></app>舉聲曰：『南無大典尊七王大相！南
+<lb n="0034a12" ed="T"/>無大典尊七王大相！』如是至三。般遮翼！時，
+<lb n="0034a13" ed="T"/>大典尊有大德力，然不能為弟子說究竟
+<lb n="0034a14" ed="T"/>道，不能使得究竟梵行，不能使至安隱
+<lb n="0034a15" ed="T"/>之處。其所說法，弟子受行，身壞命終，得生梵
+<lb n="0034a16" ed="T"/>天；其次，行淺者生他化自在天；次生化自
+<lb n="0034a17" ed="T"/>在天、兜率陀天、焰天、忉利天、四天王、剎利、婆
+<lb n="0034a18" ed="T"/>羅門、居士大家，所欲自在。</p><p xml:id="pT01p0034a1811" cb:place="inline">「般遮翼！彼大典尊
+<lb n="0034a19" ed="T"/>弟子，皆無<note n="0034002" resp="Taisho" type="orig" place="foot text">疑＝癡【三】【聖】＊</note><note n="0034002" resp="CBETA" type="mod">疑【大】＊，癡【宋】【元】【明】【聖】＊</note><app n="0034002"><lem wit="【大】">疑</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">癡</rdg></app>出家，有果報，有教<note n="0034003" resp="Taisho" type="orig" place="foot text">誡＝戒【三】【聖】＊</note><note n="0034003" resp="CBETA" type="mod">誡【大】＊，戒【宋】【元】【明】【聖】＊</note><app n="0034003"><lem wit="【大】">誡</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">戒</rdg></app>，然非
+<lb n="0034a20" ed="T"/>究竟道，不能使得究竟梵行，不能使至
+<lb n="0034a21" ed="T"/>安隱之處。其道勝者，極至梵天<app type="star" corresp="#0032002"><lem wit="【大】">爾</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">耳</rdg></app>。今我為
+<lb n="0034a22" ed="T"/>弟子說法，則能使其得究竟道、究竟梵行、
+<lb n="0034a23" ed="T"/>究竟安隱，終歸涅槃。我所說法弟子受行者，
+<lb n="0034a24" ed="T"/>捨有漏成無漏，心解脫、慧解脫。於現法中，
+<lb n="0034a25" ed="T"/>自身作證：生死已盡，梵行已立，所作已辦，更
+<lb n="0034a26" ed="T"/>不受有。其次，行淺者斷五下結，即於天上
+<lb n="0034a27" ed="T"/>而般涅槃，不復還此。其次，三結盡，薄婬、怒、
+<lb n="0034a28" ed="T"/>癡，一來世間而般涅槃；其次，斷三結，得須
+<lb n="0034a29" ed="T"/>陀洹，不墮惡道，極七往返，必得涅槃。般遮
+<pb n="0034b" ed="T" xml:id="T01.0001.0034b"/>
+<lb n="0034b01" ed="T"/>翼！我諸弟子不<app type="star" corresp="#0034002"><lem wit="【大】">疑</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">癡</rdg></app>出家，有果報，有教<app type="star" corresp="#0034003"><lem wit="【大】">誡</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">戒</rdg></app>，
+<lb n="0034b02" ed="T"/>究竟道法，究竟梵行，究竟安隱，終歸滅度。」</p>
+<lb n="0034b03" ed="T"/><p xml:id="pT01p0034b0301">爾時，般遮翼聞佛所說，歡喜奉行。</p></cb:div>
+<lb n="0034b04" ed="T"/><cb:div type="jing"><cb:mulu level="2" type="經">4 闍尼沙經</cb:mulu><head>（四）<title><note n="0034004" resp="Taisho" type="orig" place="foot text">佛說長阿含＋（經）【宋】【元】，〔佛說〕－【聖】，〔佛說長阿含〕－【明】</note><note n="0034004" resp="CBETA" type="mod">佛說長阿含【大】，佛說長阿含經【宋】【元】，長阿含【聖】，〔－〕【明】</note><app n="0034004"><lem wit="【大】">佛說長阿含</lem><rdg resp="Taisho" wit="【宋】 【元】">佛說長阿含經</rdg><rdg resp="Taisho" wit="【聖】">長阿含</rdg><rdg resp="Taisho" wit="【明】"><space quantity="0"/></rdg></app></title>第一分<note n="0034005" resp="Taisho" type="orig" place="foot text">～D. 18 Janavasabha suttanta. [No. 9]</note><note n="0034005" resp="CBETA" type="mod">～D. 18 Janavasabha suttanta.，[No. 9]</note><note n="0034005" place="foot" type="equivalent">～D. 18 Janavasabha suttanta.</note><note n="0034005" place="foot" type="cf.">[No. 9]</note>闍尼沙經第四</head>
+<lb n="0034b05" ed="T"/><p xml:id="pT01p0034b0501">如是我聞：</p><p xml:id="pT01p0034b0505" cb:place="inline">一時，佛遊<note n="0034006" resp="Taisho" type="orig" place="foot text">那提～Nādika.</note><note n="0034006" resp="CBETA" type="mod">那提【大】，～Nādika.</note><cb:tt n="0034006" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">那提</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Nādika.</cb:t></cb:tt><note n="0034007" resp="Taisho" type="orig" place="foot text">揵稚住處＝揵椎住處【三】＊～Giñjakâvasatha.</note><note n="0034007" resp="CBETA" type="mod">揵稚住處【大】＊，揵椎住處【宋】＊【元】＊【明】＊，～Giñjakâvasatha.</note><cb:tt n="0034007" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant"><app n="0034007"><lem wit="【大】">揵稚住處</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">揵椎住處</rdg></app></cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Giñjakâvasatha.</cb:t></cb:tt>，與
+<lb n="0034b06" ed="T"/>大比丘眾千二百五十人俱。</p><p xml:id="pT01p0034b0612" cb:place="inline">爾時，尊者阿難
+<lb n="0034b07" ed="T"/>在靜室坐，默<note n="0034008" resp="Taisho" type="orig" place="foot text">自＝然【三】</note><note n="0034008" resp="CBETA" type="mod">自【大】，然【宋】【元】【明】</note><app n="0034008"><lem wit="【大】">自</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">然</rdg></app>思念：「甚奇！甚<note n="0034009" resp="Taisho" type="orig" place="foot text">特＝時【元】</note><note n="0034009" resp="CBETA" type="mod">特【大】，時【元】</note><app n="0034009"><lem wit="【大】">特</lem><rdg resp="Taisho" wit="【元】">時</rdg></app>！如來授
+<lb n="0034b08" ed="T"/>人記<note n="0034010" resp="Taisho" type="orig" place="foot text">別＝莂【明】【聖】</note><note n="0034010" resp="CBETA" type="mod">別【大】，莂【明】【聖】</note><app n="0034010"><lem wit="【大】">別</lem><rdg resp="Taisho" wit="【明】 【聖】">莂</rdg></app>，多所饒益。彼伽伽羅大臣命終，如
+<lb n="0034b09" ed="T"/>來記之，此人命終，斷五下結，即於天上而
+<lb n="0034b10" ed="T"/>取滅度，不來此世。<note n="0034011" resp="Taisho" type="orig" place="foot text">第二迦＝二迦【三】</note><note n="0034011" resp="CBETA" type="mod">第二迦【大】，二迦【宋】【元】【明】</note><app n="0034011"><lem wit="【大】">第二迦</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">二迦</rdg></app>陵伽，三毘伽
+<lb n="0034b11" ed="T"/>陀，四伽<note n="0034012" resp="Taisho" type="orig" place="foot text">利＝梨【三】</note><note n="0034012" resp="CBETA" type="mod">利【大】，梨【宋】【元】【明】</note><app n="0034012"><lem wit="【大】">利</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">梨</rdg></app>輸，五遮樓，六婆耶樓，七婆頭樓，
+<lb n="0034b12" ed="T"/>八藪婆頭，九他梨舍<g ref="#CB00145"/>，十藪達梨舍<g ref="#CB00145"/>，十一
+<lb n="0034b13" ed="T"/>耶輸，十二耶輸多樓，諸大臣等命終，佛亦記
+<lb n="0034b14" ed="T"/>之，斷五下結，即於天上而取滅度，不來
+<lb n="0034b15" ed="T"/>生此。復有餘五十人命終，佛亦記之，斷三
+<lb n="0034b16" ed="T"/>結，婬、怒、癡薄，得斯陀含，一來此世便盡苦
+<lb n="0034b17" ed="T"/>際。復有五百人命終，佛亦記之，三結盡，得
+<lb n="0034b18" ed="T"/>須陀洹，不墮惡趣，極七往返必盡苦際。有
+<lb n="0034b19" ed="T"/>佛弟子處處命終，佛皆記之，某生某處、某生
+<lb n="0034b20" ed="T"/>某處。鴦伽國、摩竭國、<note n="0034013" resp="Taisho" type="orig" place="foot text">迦尸～Kāsī.</note><note n="0034013" resp="CBETA" type="mod">迦尸【大】，～Kāsī.</note><cb:tt n="0034013" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">迦尸</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Kāsī.</cb:t></cb:tt>國、<note n="0034014" resp="Taisho" type="orig" place="foot text">居薩羅～Kosalā.</note><note n="0034014" resp="CBETA" type="mod">居薩羅【大】，～Kosalā.</note><cb:tt n="0034014" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">居薩羅</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Kosalā.</cb:t></cb:tt>國、<note n="0034015" resp="Taisho" type="orig" place="foot text">拔祇～Vajjī.</note><note n="0034015" resp="CBETA" type="mod">拔祇【大】，～Vajjī.</note><cb:tt n="0034015" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">拔
+<lb n="0034b21" ed="T"/>祇</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Vajjī.</cb:t></cb:tt>國、<note n="0034016" resp="Taisho" type="orig" place="foot text">末羅～Mallā.</note><note n="0034016" resp="CBETA" type="mod">末羅【大】，～Mallā.</note><cb:tt n="0034016" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">末羅</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Mallā.</cb:t></cb:tt>國、<note n="0034017" resp="Taisho" type="orig" place="foot text">支提～Cetī.</note><note n="0034017" resp="CBETA" type="mod">支提【大】，～Cetī.</note><cb:tt n="0034017" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">支提</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Cetī.</cb:t></cb:tt>國、<note n="0034018" resp="Taisho" type="orig" place="foot text">拔沙＝<g ref="#CB02494"/>沙～Vaṅsā.</note><note n="0034018" resp="CBETA" type="mod">拔沙【大】，<g ref="#CB02494"/>沙【？】，跋沙【磧乙-CB】，～Vaṅsā.</note><cb:tt n="0034018" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant"><app n="0034018"><lem wit="【大】">拔沙</lem><rdg wit="【磧乙-CB】" resp="CBETA.shin" cb:provider="來函：DL (2022-04-09)">瞌<note type="cf1">QC054n0665_p0042a12</note></rdg><rdg resp="Taisho" wit="【？】"><g ref="#CB02494"/>沙</rdg></app></cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Vaṅsā.</cb:t></cb:tt>國、<note n="0034019" resp="Taisho" type="orig" place="foot text">居樓～Kurū.</note><note n="0034019" resp="CBETA" type="mod">居樓【大】，～Kurū.</note><cb:tt n="0034019" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">居樓</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Kurū.</cb:t></cb:tt>國、<note n="0034020" resp="Taisho" type="orig" place="foot text">般遮羅～Pañcālā.</note><note n="0034020" resp="CBETA" type="mod">般闍羅【大】，～Pañcālā.</note><cb:tt n="0034020" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">般
+<lb n="0034b22" ed="T"/>闍羅</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Pañcālā.</cb:t></cb:tt>國、<note n="0034021" resp="Taisho" type="orig" place="foot text">頗漯＝阿濕【三】</note><note n="0034021" resp="CBETA" type="mod" cb:note_key="T01.0034b22.04">阿濕【CB】【磧乙-CB】【宋】【元】【明】，頗漯【大】</note><app n="0034021"><lem wit="【CB】 【磧乙-CB】" resp="CBETA.ting" cb:provider="韓小荊（2009） (2009-10-31)">阿濕<note type="cf1">QC054n0665_p0042a13</note></lem><rdg wit="【大】">頗漯</rdg><rdg resp="Taisho" wit="【宋】 【元】 【明】">阿濕</rdg></app>波國、阿<note n="0034022" resp="Taisho" type="orig" place="foot text">般＝槃【聖】</note><note n="0034022" resp="CBETA" type="mod">般【大】，槃【聖】</note><app n="0034022"><lem wit="【大】">般</lem><rdg resp="Taisho" wit="【聖】">槃</rdg></app>提國、婆蹉國、蘇羅<note n="0034023" resp="Taisho" type="orig" place="foot text">婆＝娑【聖】</note><note n="0034023" resp="CBETA" type="mod">婆【大】，娑【聖】</note><app n="0034023"><lem wit="【大】">
+<lb n="0034b23" ed="T"/>婆</lem><rdg resp="Taisho" wit="【聖】">娑</rdg></app>國、乾陀羅國、劍<note n="0034024" resp="Taisho" type="orig" place="foot text">洴＝浮【三】【聖】</note><note n="0034024" resp="CBETA" type="mod">洴【大】，浮【宋】【元】【明】【聖】</note><app n="0034024"><lem wit="【大】">洴</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">浮</rdg></app>沙國，彼十六大國有命
+<lb n="0034b24" ed="T"/>終者，佛悉記之，<note n="0034025" resp="Taisho" type="orig" place="foot text">摩竭～Māgadhā.</note><note n="0034025" resp="CBETA" type="mod">摩竭【大】，～Māgadhā.</note><cb:tt n="0034025" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">摩竭</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Māgadhā.</cb:t></cb:tt>國人皆是王種王所
+<lb n="0034b25" ed="T"/>親任，有命終者，佛不記之。」</p><p xml:id="pT01p0034b2511" cb:place="inline">爾時，阿難於靜
+<lb n="0034b26" ed="T"/>室起，至世尊所，頭面禮足，在一面坐，而白
+<lb n="0034b27" ed="T"/>佛言：「我向於靜室默自思念：『甚奇！甚特！佛
+<lb n="0034b28" ed="T"/><note n="0034026" resp="Taisho" type="orig" place="foot text">授＝受【宋】</note><note n="0034026" resp="CBETA" type="mod">授【大】，受【宋】</note><app n="0034026"><lem wit="【大】">授</lem><rdg resp="Taisho" wit="【宋】">受</rdg></app>人記，多所饒益，十六大國有命終者，
+<lb n="0034b29" ed="T"/>佛悉記之，唯摩竭國人，王所親任，有命終
+<pb n="0034c" ed="T" xml:id="T01.0001.0034c"/>
+<lb n="0034c01" ed="T"/>者，獨不蒙記。唯願世尊當為記之！唯願世
+<lb n="0034c02" ed="T"/>尊當為記之！饒益一切，天人得安。又佛於
+<lb n="0034c03" ed="T"/>摩竭國得道，其國人命終，獨不與記。唯願
+<lb n="0034c04" ed="T"/>世尊當為記之！唯願世尊當為記之！又摩
+<lb n="0034c05" ed="T"/>竭國<note n="0034027" resp="Taisho" type="orig" place="foot text">缾沙～Bimbisāra.</note><note n="0034027" resp="CBETA" type="mod">缾沙【大】，～Bimbisāra.</note><cb:tt n="0034027" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">缾沙</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Bimbisāra.</cb:t></cb:tt>王為優婆塞，篤信於佛，多設供
+<lb n="0034c06" ed="T"/>養，然後命終，由此王故，多人信解，供養三
+<lb n="0034c07" ed="T"/>寶，而今如來不為授記。唯願世尊當與記
+<lb n="0034c08" ed="T"/>之！饒益眾生，使天人得安。』」爾時，阿難為摩
+<lb n="0034c09" ed="T"/>竭<note n="0034028" resp="Taisho" type="orig" place="foot text">（國）＋人【三】</note><note n="0034028" resp="CBETA" type="mod">人【大】，國人【宋】【元】【明】</note><app n="0034028"><lem wit="【大】">人</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">國人</rdg></app>勸請世尊，即從座起，禮佛而去。</p><p xml:id="pT01p0034c0915" cb:place="inline">爾時，
+<lb n="0034c10" ed="T"/>世尊著衣持鉢，入<note n="0034029" resp="Taisho" type="orig" place="foot text">那伽～Nādika.</note><note n="0034029" resp="CBETA" type="mod">那伽【大】，～Nādika.</note><cb:tt n="0034029" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">那伽</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Nādika.</cb:t></cb:tt>城乞食已，至大林
+<lb n="0034c11" ed="T"/>處坐一樹下，思惟摩竭國人命終生處。時，
+<lb n="0034c12" ed="T"/>去佛不遠，有一鬼神，自稱己名，白世尊
+<lb n="0034c13" ed="T"/>曰：「我是闍尼沙！我是闍尼沙！」</p><p xml:id="pT01p0034c1312" cb:place="inline">佛言：「汝因何
+<lb n="0034c14" ed="T"/>事，自稱己名為<note n="0034030" resp="Taisho" type="orig" place="foot text">闍尼沙～Janavasabha.</note><note n="0034030" resp="CBETA" type="mod">闍尼沙【大】，～Janavasabha.</note><cb:tt n="0034030" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">闍尼沙</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Janavasabha.</cb:t></cb:tt>？<note n="0034031" resp="Taisho" type="orig" place="foot text">〔闍…使〕八字－【明】</note><note n="0034031" resp="CBETA" type="mod">（闍…使）八字【大】，〔－〕【明】</note><app n="0034031" cb:word-count="8"><lem wit="【大】"><note place="inline">闍尼沙秦言勝結使</note></lem><rdg resp="Taisho" wit="【明】"><space quantity="0"/></rdg></app>。汝
+<lb n="0034c15" ed="T"/>因何法，自以妙言稱見道迹？」</p><p xml:id="pT01p0034c1512" cb:place="inline">闍尼沙言：
+<lb n="0034c16" ed="T"/>「非餘處也。我本為人王，於如來法中為優
+<lb n="0034c17" ed="T"/>婆塞，一心念佛而取命終，故得生為<note n="0034032" resp="Taisho" type="orig" place="foot text">～Vessavaṇa.</note><note n="0034032" resp="CBETA" type="mod">毘沙門【大】，～Vessavaṇa.</note><cb:tt n="0034032" type="app"><cb:t resp="CBETA" xml:lang="zh-Hant">毘沙
+<lb n="0034c18" ed="T"/>門</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Vessavaṇa.</cb:t></cb:tt>天王太子。自從是來，常照明諸法，得須
+<lb n="0034c19" ed="T"/>陀洹，不墮惡道，於七生中常名闍尼沙。」</p><p xml:id="pT01p0034c1916" cb:place="inline">時，
+<lb n="0034c20" ed="T"/>世尊於大林處隨宜住已，<note n="0034033" resp="Taisho" type="orig" place="foot text">詣＝諸【元】【明】</note><note n="0034033" resp="CBETA" type="mod">詣【大】，諸【元】【明】</note><app n="0034033"><lem wit="【大】">詣</lem><rdg resp="Taisho" wit="【元】 【明】">諸</rdg></app>那陀揵稚處，
+<lb n="0034c21" ed="T"/>就座而坐，告一比丘：「汝持我聲，喚阿難來。」</p>
+<lb n="0034c22" ed="T"/><p xml:id="pT01p0034c2201">對曰：「唯然！」即承佛教，往喚阿難。</p><p xml:id="pT01p0034c2213" cb:place="inline">阿難尋來，
+<lb n="0034c23" ed="T"/>至世尊所，頭面禮足，在一面住，而白佛言：
+<lb n="0034c24" ed="T"/>「今觀如來顏色勝常，諸根寂定。住何思惟，
+<lb n="0034c25" ed="T"/>容色乃爾？」</p><p xml:id="pT01p0034c2505" cb:place="inline">爾時，世尊告阿難曰：「汝向因摩
+<lb n="0034c26" ed="T"/>竭國人來至我所，請記而去，我尋於後，著
+<lb n="0034c27" ed="T"/>衣持鉢，入那羅城乞食，乞食訖已，詣彼大
+<lb n="0034c28" ed="T"/>林，坐一樹下，思惟摩竭國人命終生處。時，
+<lb n="0034c29" ed="T"/>去我不遠，有一鬼神，自稱己名，而白我言：
+<pb n="0035a" ed="T" xml:id="T01.0001.0035a"/>
+<lb n="0035a01" ed="T"/>『我是闍尼沙！我是闍尼沙！』阿難！汝曾聞彼闍
+<lb n="0035a02" ed="T"/>尼沙名不？」</p><p xml:id="pT01p0035a0205" cb:place="inline">阿難白佛言：「未曾聞也。今聞
+<lb n="0035a03" ed="T"/>其名，乃<note n="0035001" resp="Taisho" type="orig" place="foot text">〔至〕－【三】</note><note n="0035001" resp="CBETA" type="mod">至【大】，〔－〕【宋】【元】【明】</note><app n="0035001"><lem wit="【大】">至</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>生怖畏，衣毛為竪。世尊！此鬼神
+<lb n="0035a04" ed="T"/>必有大威德，故名闍尼沙<app type="star" corresp="#0032002"><lem wit="【大】">爾</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">耳</rdg></app>。」</p><p xml:id="pT01p0035a0412" cb:place="inline">佛言：「我先
+<lb n="0035a05" ed="T"/>問彼：『汝因何法，自以妙言稱見道迹？』闍
+<lb n="0035a06" ed="T"/>尼沙言：『我不於餘處，不在餘法。我昔為
+<lb n="0035a07" ed="T"/>人王，為世尊弟子，以篤信心為優婆塞，一
+<lb n="0035a08" ed="T"/>心念佛，然後命終，為毘沙門天王作子，得
+<lb n="0035a09" ed="T"/>須陀洹，不墮惡趣，極七往返，乃盡苦際，於
+<lb n="0035a10" ed="T"/>七生<note n="0035002" resp="Taisho" type="orig" place="foot text">〔名〕－【三】</note><note n="0035002" resp="CBETA" type="mod">名【大】，〔－〕【宋】【元】【明】</note><app n="0035002"><lem wit="【大】">名</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>中，常名闍尼沙。一時，世尊在大林
+<lb n="0035a11" ed="T"/>中一樹下坐，我時乘天千輻寶車，以少因
+<lb n="0035a12" ed="T"/>緣，欲詣<note n="0035003" resp="Taisho" type="orig" place="foot text">毘樓勒～Virūḷhaka.</note><note n="0035003" resp="CBETA" type="mod">毘樓勒【大】，～Virūḷhaka.</note><cb:tt n="0035003" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">毘樓勒</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Virūḷhaka.</cb:t></cb:tt>天王，遙見世尊在一樹
+<lb n="0035a13" ed="T"/>下，顏貌端<anchor xml:id="fxT01p0035a02"/>正，諸根寂定，譬如深淵澄<note n="0035004" resp="Taisho" type="orig" place="foot text">靜＝淨【三】</note><note n="0035004" resp="CBETA" type="mod">靜【大】，淨【宋】【元】【明】</note><app n="0035004"><lem wit="【大】">靜</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">淨</rdg></app>清
+<lb n="0035a14" ed="T"/>明，見已念言，我今寧可往問世尊，摩竭國
+<lb n="0035a15" ed="T"/>人有命終者，當生何所？又復一時，毘沙門
+<lb n="0035a16" ed="T"/>王自於眾中，而說偈言：</p>
+<lb n="0035a17" ed="T"/><lg type="regular" xml:id="lgT01p0035a1701" style="margin-left:2em;text-indent:-2em"><l>「『我等不自憶，<caesura/>過去所更事；</l>
+<lb n="0035a18" ed="T"/><l>今遭<note n="0035005" resp="Taisho" type="orig" place="foot text">遇＝值【三】</note><note n="0035005" resp="CBETA" type="mod">遇【大】，值【宋】【元】【明】</note><app n="0035005"><lem wit="【大】">遇</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">值</rdg></app>世尊，<caesura/>壽命得增益。』</l></lg>
+<lb n="0035a19" ed="T"/><p xml:id="pT01p0035a1901">「又復一時，<note n="0035006" resp="Taisho" type="orig" place="foot text">忉利諸天～Tāvatiṁsā.</note><note n="0035006" resp="CBETA" type="mod">忉利諸天【大】，～Tāvatiṁsā.</note><cb:tt n="0035006" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">忉利諸天</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Tāvatiṁsā.</cb:t></cb:tt>以少因緣，集在一處。
+<lb n="0035a20" ed="T"/>時，四天王各當位坐，<note n="0035007" resp="Taisho" type="orig" place="foot text">提頭賴吒＝提帝賴吒【聖】～Dhataraṭṭha.</note><note n="0035007" resp="CBETA" type="mod">提頭賴吒【大】，提帝賴吒【聖】，～Dhataraṭṭha.</note><cb:tt n="0035007" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant"><app n="0035007"><lem wit="【大】">提頭賴吒</lem><rdg resp="Taisho" wit="【聖】">提帝賴吒</rdg></app></cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Dhataraṭṭha.</cb:t></cb:tt>在東方坐，
+<lb n="0035a21" ed="T"/>其面西向，帝釋在前；毘樓勒<note n="0035008" resp="Taisho" type="orig" place="foot text">〔叉〕－【三】</note><note n="0035008" resp="CBETA" type="mod">叉【大】，〔－〕【宋】【元】【明】</note><app n="0035008"><lem wit="【大】">叉</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>天在南方
+<lb n="0035a22" ed="T"/>坐，其面北向，帝釋在前；<note n="0035009" resp="Taisho" type="orig" place="foot text">毘樓博叉＝毘樓波叉【聖】～Virūpakkha.</note><note n="0035009" resp="CBETA" type="mod">毘樓博叉【大】，毘樓波叉【聖】，～Virūpakkha.</note><cb:tt n="0035009" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant"><app n="0035009"><lem wit="【大】">毘樓博叉</lem><rdg resp="Taisho" wit="【聖】">毘樓波叉</rdg></app></cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Virūpakkha.</cb:t></cb:tt>天王在
+<lb n="0035a23" ed="T"/>西方坐，其面東向，帝釋在前；毘沙門天王
+<lb n="0035a24" ed="T"/>在北方坐，其面南向，帝釋在前。時，四天王
+<lb n="0035a25" ed="T"/>皆先坐已，然後我坐。復有餘諸大神天，皆先
+<lb n="0035a26" ed="T"/>於佛所，淨修梵行，於此命終，生忉利天，增
+<lb n="0035a27" ed="T"/>益諸天，受天五福：一者天壽，二者天色，三
+<lb n="0035a28" ed="T"/>者天名稱，四者天樂，五者天威德。時，諸忉利
+<lb n="0035a29" ed="T"/>天皆踊躍歡喜言：『增益諸天眾，減損<note n="0035010" resp="Taisho" type="orig" place="foot text">阿修倫眾～Asura-kāyā.</note><note n="0035010" resp="CBETA" type="mod">阿修倫眾【大】，～Asura-kāyā.</note>阿須
+<pb n="0035b" ed="T" xml:id="T01.0001.0035b"/>
+<lb n="0035b01" ed="T"/>倫眾。』爾時，<note n="0035011" resp="Taisho" type="orig" place="foot text">釋提桓因～Sakka devānam Inda.</note><note n="0035011" resp="CBETA" type="mod">釋提桓因【大】，～Sakka devānam Inda.</note><cb:tt n="0035011" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">釋提桓因</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Sakka devānam Inda.</cb:t></cb:tt>知忉利諸天有歡喜
+<lb n="0035b02" ed="T"/>心，即作頌曰：</p>
+<lb n="0035b03" ed="T"/><lg type="regular" xml:id="lgT01p0035b0301" style="margin-left:2em;text-indent:-2em"><l>「『忉利諸天人，<caesura/>帝釋相娛樂；</l>
+<lb n="0035b04" ed="T"/><l>禮敬於如來，<caesura/>最上法之<note n="0035012" resp="Taisho" type="orig" place="foot text">法＝王【三】</note><note n="0035012" resp="CBETA" type="mod">法【大】，王【宋】【元】【明】</note><app n="0035012"><lem wit="【大】">法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">王</rdg></app>。</l>
+<lb n="0035b05" ed="T"/><l>諸天受影福，<caesura/>壽、色、名、樂威；</l>
+<lb n="0035b06" ed="T"/><l>於佛修梵行，<caesura/>故來生此間。</l>
+<lb n="0035b07" ed="T"/><l>復有諸天人，<caesura/>光色甚巍巍；</l>
+<lb n="0035b08" ed="T"/><l>佛智慧弟子，<caesura/>生此復殊勝。</l>
+<lb n="0035b09" ed="T"/><l>忉利及因提，<caesura/>思惟此自樂；</l>
+<lb n="0035b10" ed="T"/><l>禮敬於如來，<caesura/>最上法之法。』</l></lg>
+<lb n="0035b11" ed="T"/><p xml:id="pT01p0035b1101">「闍尼沙神復言：『所以忉利諸天集<note n="0035013" resp="Taisho" type="orig" place="foot text">法堂～Sudhammā Sabhā.</note><note n="0035013" resp="CBETA" type="mod">法堂【大】，～Sudhammā Sabhā.</note><cb:tt n="0035013" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">法堂</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Sudhammā Sabhā.</cb:t></cb:tt>者，
+<lb n="0035b12" ed="T"/>共議思惟，觀察稱量，有所教令，然後勅四天
+<lb n="0035b13" ed="T"/>王，四王受教已，各當位而坐。其坐未久，有
+<lb n="0035b14" ed="T"/>大異光照于四方，時，忉利天見此異光，皆
+<lb n="0035b15" ed="T"/>大驚愕，今此異光將有何怪？餘大神天有
+<lb n="0035b16" ed="T"/>威德者，皆亦驚<note n="0035014" resp="Taisho" type="orig" place="foot text">恠＝怖【三】</note><note n="0035014" resp="CBETA" type="mod">恠【大】，怖【宋】【元】【明】</note><app n="0035014"><lem wit="【大】">恠</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">怖</rdg></app>，今此異光將有何怪？時，
+<lb n="0035b17" ed="T"/>大梵王即化作童子，頭五角髻，在天眾上虛
+<lb n="0035b18" ed="T"/>空中立，顏貌端<anchor xml:id="fxT01p0035b01"/>正，與眾超絕，身紫金色，蔽
+<lb n="0035b19" ed="T"/>諸天光。時，忉利天亦不起迎，亦不恭敬，又
+<lb n="0035b20" ed="T"/>不請坐。時，<note n="0035015" resp="Taisho" type="orig" place="foot text">梵童子～Brahmā Sanaṁkumāra.</note><note n="0035015" resp="CBETA" type="mod">梵童子【大】，～Brahmā Sanaṁkumāra.</note><cb:tt n="0035015" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">梵童子</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Brahmā Sanaṁkumāra.</cb:t></cb:tt>隨所詣<note n="0035016" resp="Taisho" type="orig" place="foot text">座＝坐【三】【聖】</note><note n="0035016" resp="CBETA" type="mod">座【大】，坐【宋】【元】【明】【聖】</note><app n="0035016"><lem wit="【大】">座</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">坐</rdg></app>，座<note n="0035017" resp="Taisho" type="orig" place="foot text">生＝主【三】【聖】</note><note n="0035017" resp="CBETA" type="mod">生【大】，主【宋】【元】【明】【聖】</note><app n="0035017"><lem wit="【大】">生</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">主</rdg></app>欣悅，
+<lb n="0035b21" ed="T"/>譬如剎利水澆頭種，登王位時，踊躍歡喜。
+<lb n="0035b22" ed="T"/>其<note n="0035018" resp="Taisho" type="orig" place="foot text">坐＝座【三】</note><note n="0035018" resp="CBETA" type="mod">坐【大】，座【宋】【元】【明】</note><app n="0035018"><lem wit="【大】">坐</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">座</rdg></app>未久，復自變身，作童子像，頭五角
+<lb n="0035b23" ed="T"/><app type="star" corresp="#0031004"><lem wit="【大】">髻</lem><rdg resp="Taisho" wit="【聖】">結</rdg></app>，在大眾上虛空中坐。譬如力士坐於安
+<lb n="0035b24" ed="T"/>座，嶷然不動，而作頌曰：</p>
+<lb n="0035b25" ed="T"/><lg type="regular" xml:id="lgT01p0035b2501" style="margin-left:2em;text-indent:-2em"><l>「『調伏無上尊，<caesura/>教世生明處；</l>
+<lb n="0035b26" ed="T"/><l>大明演明法，<caesura/>梵行無等侶，</l>
+<lb n="0035b27" ed="T"/><l>使清淨眾生，<caesura/>生於淨妙天。』</l></lg>
+<lb n="0035b28" ed="T"/><p xml:id="pT01p0035b2801">「時，梵童子說此偈已，告忉利天曰：『其有音
+<lb n="0035b29" ed="T"/>聲，五種清淨，乃名梵聲。何等五？一者其音正
+<pb n="0035c" ed="T" xml:id="T01.0001.0035c"/>
+<lb n="0035c01" ed="T"/>直，二者其音和雅，三者其音清徹，四者其音
+<lb n="0035c02" ed="T"/>深滿，五者周遍遠聞，具此五者，乃名梵音。
+<lb n="0035c03" ed="T"/>我今更說，汝等善聽！如來弟子摩竭優婆塞，
+<lb n="0035c04" ed="T"/>命終有得阿那含，有得斯陀含，有得須陀
+<lb n="0035c05" ed="T"/>洹者，有生他化自在天者，有生化自<note n="0035019" resp="Taisho" type="orig" place="foot text">在＋（天）【三】</note><note n="0035019" resp="CBETA" type="mod">在【大】，在天【宋】【元】【明】</note><app n="0035019"><lem wit="【大】">在</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">在天</rdg></app>、
+<lb n="0035c06" ed="T"/>兜率天、焰天、忉利天、四天王者，有生剎利、婆
+<lb n="0035c07" ed="T"/>羅門、居士大家，五欲自然者。』時，梵童子以偈
+<lb n="0035c08" ed="T"/>頌曰：</p>
+<lb n="0035c09" ed="T"/><lg type="regular" xml:id="lgT01p0035c0901" style="margin-left:2em;text-indent:-2em"><l>「『摩竭優婆塞，<caesura/>諸有命終者，</l>
+<lb n="0035c10" ed="T"/><l>八萬四千人，<caesura/>吾聞俱得道。</l>
+<lb n="0035c11" ed="T"/><l>成就須陀洹，<caesura/>不復墮惡趣，</l>
+<lb n="0035c12" ed="T"/><l>俱乘平正路，<caesura/>得道能救濟。</l>
+<lb n="0035c13" ed="T"/><l>此等群生類，<caesura/>功德所扶持，</l>
+<lb n="0035c14" ed="T"/><l>智慧捨恩愛，<caesura/>慚愧離欺妄。</l>
+<lb n="0035c15" ed="T"/><l>於彼諸天眾，<caesura/>梵童記如是；</l>
+<lb n="0035c16" ed="T"/><l>言得須陀洹，<caesura/>諸天皆歡喜。』</l></lg>
+<lb n="0035c17" ed="T"/><p xml:id="pT01p0035c1701">「時，毗沙門王聞此偈已，歡喜而言：『世尊出世
+<lb n="0035c18" ed="T"/>說真實法，甚奇！甚特！未曾有也。我本不知如
+<lb n="0035c19" ed="T"/>來出世，說如是法。<note n="0035020" resp="Taisho" type="orig" place="foot text">〔於未來…如是法〕十二字－【宋】</note><note n="0035020" resp="CBETA" type="mod">（於未來…如是法）十二字【大】，〔－〕【宋】</note><app n="0035020" cb:word-count="12"><lem wit="【大】">於未來世，當復有佛
+<lb n="0035c20" ed="T"/>說如是法</lem><rdg resp="Taisho" wit="【宋】"><space quantity="0"/></rdg></app>，能使忉利諸天發歡喜心。』</p><p xml:id="pT01p0035c2015" cb:place="inline">「時，梵
+<lb n="0035c21" ed="T"/>童子告毗沙門王曰：『汝何故作此言？如來
+<lb n="0035c22" ed="T"/>出世說如是法，為甚奇！<note n="0035021" resp="Taisho" type="orig" place="foot text">〔甚〕－【三】</note><note n="0035021" resp="CBETA" type="mod">甚【大】，〔－〕【宋】【元】【明】</note><app n="0035021"><lem wit="【大】">甚</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>特！未曾有<note n="0035022" resp="Taisho" type="orig" place="foot text">也＝耶【三】</note><note n="0035022" resp="CBETA" type="mod">也【大】，耶【宋】【元】【明】</note><app n="0035022"><lem wit="【大】">也</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">耶</rdg></app>。
+<lb n="0035c23" ed="T"/>如來以方便力說善不善，具足說法而無
+<lb n="0035c24" ed="T"/>所得，說空淨法而有所得，此法微妙，猶如
+<lb n="0035c25" ed="T"/><note n="0035023" resp="Taisho" type="orig" place="foot text">醍醐＝提湖【聖】</note><note n="0035023" resp="CBETA" type="mod">醍醐【大】，提湖【聖】</note><app n="0035023"><lem wit="【大】">醍醐</lem><rdg resp="Taisho" wit="【聖】">提湖</rdg></app>。』</p><p xml:id="pT01p0035c2503" cb:place="inline">「時，梵童子又告忉利天曰：『汝等諦聽！
+<lb n="0035c26" ed="T"/>善思念之，當更為汝說。如來、至真善能分
+<lb n="0035c27" ed="T"/>別說四念處。何<note n="0035024" resp="Taisho" type="orig" place="foot text">謂＝等【三】</note><note n="0035024" resp="CBETA" type="mod">謂【大】，等【宋】【元】【明】</note><app n="0035024"><lem wit="【大】">謂</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">等</rdg></app>為四？一者內<note n="0035025" resp="Taisho" type="orig" place="foot text">身＋（身）【三】＊</note><note n="0035025" resp="CBETA" type="mod">身【大】＊，身身【宋】＊【元】＊【明】＊</note><app n="0035025"><lem wit="【大】">身</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">身身</rdg></app>觀，精勤
+<lb n="0035c28" ed="T"/>不懈，專念不忘，除世貪憂。外<app type="star" corresp="#0035025"><lem wit="【大】">身</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">身身</rdg></app>觀，精勤不
+<lb n="0035c29" ed="T"/>懈，專念不忘，除世貪<note n="0035026" resp="Taisho" type="orig" place="foot text">憂＋（內外身觀精勤不懈專念不忘除世貪憂）十六字【三】【聖】</note><note n="0035026" resp="CBETA" type="mod">憂【大】，憂內外身觀精勤不懈專念不忘除世貪憂【宋】【元】【明】【聖】</note><app n="0035026"><lem wit="【大】">憂</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">憂內外身觀精勤不懈專念不忘除世貪憂</rdg></app>。受意法觀，亦復如
+<pb n="0036a" ed="T" xml:id="T01.0001.0036a"/>
+<lb n="0036a01" ed="T"/>是，精勤不懈，專念不忘，除世貪憂。內身觀
+<lb n="0036a02" ed="T"/>已，生他身智；內觀受已，生他受智；內觀意已，
+<lb n="0036a03" ed="T"/>生他意智；內觀法已，生他法智，是為如來
+<lb n="0036a04" ed="T"/>善能分別說四念處。復次，諸天！汝等善聽！吾
+<lb n="0036a05" ed="T"/>當更說，如來善能分別說七定具。何<note n="0036001" resp="Taisho" type="orig" place="foot text">等為＝謂【三】</note><note n="0036001" resp="CBETA" type="mod">等為【大】，謂【宋】【元】【明】</note><app n="0036001"><lem wit="【大】">等為</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">謂</rdg></app>
+<lb n="0036a06" ed="T"/>七？正見、正志、正語、正業、正命、正方便、正念，是
+<lb n="0036a07" ed="T"/>為如來善能分別說七定具。復次，諸天！如來
+<lb n="0036a08" ed="T"/>善能分別說四神足，何<note n="0036002" resp="Taisho" type="orig" place="foot text">〔等〕－【三】</note><note n="0036002" resp="CBETA" type="mod">等【大】，〔－〕【宋】【元】【明】</note><app n="0036002"><lem wit="【大】">等</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>謂四？一者欲定
+<lb n="0036a09" ed="T"/>滅行成就修習神足。二者精進定滅行成就
+<lb n="0036a10" ed="T"/>修習神足。三者意定滅行成就修習神足。四
+<lb n="0036a11" ed="T"/>者思惟定滅行成就修習神足，是為如來善
+<lb n="0036a12" ed="T"/>能分別說四神足。』</p><p xml:id="pT01p0036a1208" cb:place="inline">「又告諸天：『過去諸沙門、婆
+<lb n="0036a13" ed="T"/>羅門以無數方便，現無量神足，皆由四神
+<lb n="0036a14" ed="T"/>足起；正使當來沙門、婆羅門無<note n="0036003" resp="Taisho" type="orig" place="foot text">數＝量【三】</note><note n="0036003" resp="CBETA" type="mod">數【大】，量【宋】【元】【明】</note><app n="0036003"><lem wit="【大】">數</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">量</rdg></app>方便，現
+<lb n="0036a15" ed="T"/>無量神足，亦皆由是四神足起；如今現在沙
+<lb n="0036a16" ed="T"/>門、婆羅門無數方便，現無量神足者，亦皆由
+<lb n="0036a17" ed="T"/>是四神足起。』時，梵童子即自變化形為三
+<lb n="0036a18" ed="T"/>十三身，與三十三天一一同坐，而告之曰：『汝
+<lb n="0036a19" ed="T"/>今見我神變力不？』答曰：『唯然已見。』梵童子
+<lb n="0036a20" ed="T"/>曰：『我亦修四神足故，能如是無數變化。』</p><p xml:id="pT01p0036a2016" cb:place="inline">「時，
+<lb n="0036a21" ed="T"/>三十三天各作是念：『今梵童子獨於我坐而
+<lb n="0036a22" ed="T"/>說是語，而彼梵童一化身語，餘化亦語；一化
+<lb n="0036a23" ed="T"/>身默，餘化亦默。』時，彼梵童還攝神足，處帝釋
+<lb n="0036a24" ed="T"/>坐，告忉利天曰：『我今當說，汝等善聽！如來、
+<lb n="0036a25" ed="T"/>至真自以己力開三徑路，自致正覺。何謂
+<lb n="0036a26" ed="T"/>為三？或有眾生親近貪欲，習不善行，彼人
+<lb n="0036a27" ed="T"/>於後近善知識，得聞法言，法法成就，於是
+<lb n="0036a28" ed="T"/>離欲捨不善行，得歡喜心，<note n="0036004" resp="Taisho" type="orig" place="foot text">恬＝淡【三】＊，沾【聖】＊</note><note n="0036004" resp="CBETA" type="mod">恬【大】＊，淡【宋】＊【元】＊【明】＊，沾【聖】＊</note><app n="0036004"><lem wit="【大】">恬</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">淡</rdg><rdg resp="Taisho" wit="【聖】">沾</rdg></app>然快樂，又於
+<lb n="0036a29" ed="T"/>樂中，復生大喜；如人捨於麤食，食百味飯，
+<pb n="0036b" ed="T" xml:id="T01.0001.0036b"/>
+<lb n="0036b01" ed="T"/>食已充足，復求勝者。行者如是，離不善法，
+<lb n="0036b02" ed="T"/>得歡喜樂，又於樂中，復生大喜，是為如來
+<lb n="0036b03" ed="T"/>自以己力開初徑路，成最正覺。又有眾生
+<lb n="0036b04" ed="T"/>多於瞋恚，不捨身、口、意惡業，其人於後遇
+<lb n="0036b05" ed="T"/>善知識，得聞法言，法法成就，離身惡行、口、
+<lb n="0036b06" ed="T"/>意惡行，生歡喜心，<app type="star" corresp="#0036004"><lem wit="【大】">恬</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">淡</rdg><rdg resp="Taisho" wit="【聖】">沾</rdg></app>然快樂，又於樂中，復
+<lb n="0036b07" ed="T"/>生大喜；如人捨於麤食，食百味飯，食已充
+<lb n="0036b08" ed="T"/>足，復求勝者。行者如是，離不善法，得歡喜
+<lb n="0036b09" ed="T"/>樂，又於樂中，復生大喜，是為如來開第二
+<lb n="0036b10" ed="T"/>徑路。又有眾生愚冥無<note n="0036005" resp="Taisho" type="orig" place="foot text">智＝知【三】</note><note n="0036005" resp="CBETA" type="mod">智【大】，知【宋】【元】【明】</note><app n="0036005"><lem wit="【大】">智</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">知</rdg></app>，不識善惡，不
+<lb n="0036b11" ed="T"/>能如實知苦、<note n="0036006" resp="Taisho" type="orig" place="foot text">習＝集【元】【明】＊</note><note n="0036006" resp="CBETA" type="mod">習【大】＊，集【元】【明】＊</note><app n="0036006"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、盡、道，其人於後遇善知識，
+<lb n="0036b12" ed="T"/>得聞法言，法法成就，識善不善，能如實知
+<lb n="0036b13" ed="T"/>苦、<app type="star" corresp="#0036006"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、盡、道，捨不善行，生歡喜心，<app type="star" corresp="#0036004"><lem wit="【大】">恬</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">淡</rdg><rdg resp="Taisho" wit="【聖】">沾</rdg></app>然快
+<lb n="0036b14" ed="T"/>樂，又於樂中，復生大喜；如人捨於麤食，
+<lb n="0036b15" ed="T"/>食百味飯，食已充足，復求勝者。行者如是，
+<lb n="0036b16" ed="T"/>離不善法，得歡喜樂，又於樂中，復生大喜，
+<lb n="0036b17" ed="T"/>是為如來開第三徑路。』</p><p xml:id="pT01p0036b1710" cb:place="inline">「時，梵童子於忉利天
+<lb n="0036b18" ed="T"/>上說此正法，毗沙門天王復為眷屬說此
+<lb n="0036b19" ed="T"/>正法，闍尼沙神復於佛前說是正法，世尊
+<lb n="0036b20" ed="T"/>復為阿難說此正法，阿難復為比丘、比丘
+<lb n="0036b21" ed="T"/>尼、優婆塞、優婆夷說是正法。」</p><p xml:id="pT01p0036b2112" cb:place="inline">是時，阿難聞佛
+<lb n="0036b22" ed="T"/>所說，歡喜奉行。</p></cb:div></cb:div>
+<lb n="0036b23" ed="T"/><cb:juan n="005" fun="close"><cb:jhead><title><note n="0036007" resp="Taisho" type="orig" place="foot text">〔佛說〕－【宋】【元】【聖】</note><note n="0036007" resp="CBETA" type="mod">佛說【大】，〔－〕【宋】【元】【聖】</note><app n="0036007"><lem wit="【大】">佛說</lem><rdg resp="Taisho" wit="【宋】 【元】 【聖】"><space quantity="0"/></rdg></app>長阿含經</title>卷第五<note n="0036008" resp="Taisho" type="orig" place="foot text">＋（光明皇后願文）【聖】</note><note n="0036008" resp="CBETA" type="mod">〔－〕【大】，光明皇后願文【聖】</note></cb:jhead></cb:juan>
+</body></text></TEI>

@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/cbeta-git/xml-p5a/master/schema/cbeta-p5a.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:cb="http://www.cbeta.org/ns/1.0" xml:id="T01n0026">
+<teiHeader>
+	<fileDesc>
+		<titleStmt>
+			<title>Taishō Tripiṭaka, Electronic version, No. 26 中阿含經</title>
+			<title xml:lang="zh-Hant">大正新脩大藏經數位版, No. 26 中阿含經</title>
+			<author>東晉 瞿曇僧伽提婆譯</author>
+			<respStmt>
+				<resp>Electronic Version by</resp>
+				<name>CBETA</name>
+			</respStmt>
+		</titleStmt>
+		<editionStmt>
+			<edition>單卷版 XML TEI P5b</edition>
+		</editionStmt>
+		<extent>60卷</extent>
+		<publicationStmt>
+			<idno type="CBETA">
+				<idno type="canon">T</idno>.<idno type="vol">1</idno>.<idno type="no">26</idno>
+			</idno>
+			<distributor>
+				<name>中華電子佛典協會 (CBETA)</name>
+				<address>
+					<addrLine><email>service@cbeta.org</email></addrLine>
+				</address>
+			</distributor>
+			<availability>
+				<p>Available for non-commercial use when distributed with this header intact.</p>
+			</availability>
+			<date>2023-07-14 21:19:33 +0800</date>
+		</publicationStmt>
+		<sourceDesc>
+			<bibl>
+				<title level="s">Taishō Tripiṭaka</title>
+				<title level="s" xml:lang="zh-Hant">大正新脩大藏經</title>
+				<title level="m" xml:lang="zh-Hant">中阿含經</title>
+			</bibl>
+		</sourceDesc>
+	</fileDesc>
+	<encodingDesc>
+		<projectDesc>
+			<p xml:lang="en" cb:type="ly">Text as provided by Mr. Hsiao Chen-Kuo, Text as provided by Mr. Chang Wen-Ming, Text as provided by Anonymous from USA, Punctuated text as provided by Dhammavassarama</p>
+			<p xml:lang="zh-Hant" cb:type="ly">蕭鎮國大德提供，張文明大德提供，北美某大德提供，法雨道場提供新式標點</p>
+		</projectDesc>
+		<editorialDecl>
+			<punctuation resp="CBETA"><p>新式標點</p></punctuation>
+		</editorialDecl>
+		<tagsDecl>
+			<namespace name="http://www.tei-c.org/ns/1.0">
+				<tagUsage gi="rdg">
+					<listWit>
+						<witness xml:id="wit.orig">【大】</witness>
+						<witness xml:id="wit.cbeta">【CB】</witness>
+					</listWit>
+				</tagUsage>
+			</namespace>
+		</tagsDecl>
+		<charDecl>
+			<char xml:id="CB00787">
+				<charName>CBETA CHARACTER CB00787</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[月*胃]</value>
+				</charProp>
+				<charProp>
+					<localName>normalized form</localName>
+					<value>胃</value>
+				</charProp>
+				<mapping type="unicode">U+26769</mapping>
+				<mapping cb:dec="983827" type="PUA">U+F0313</mapping>
+			</char>
+			<char xml:id="CB02652">
+				<charName>CBETA CHARACTER CB02652</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[病-丙+匿]</value>
+				</charProp>
+				<mapping type="unicode">U+2DF1F</mapping>
+				<mapping cb:dec="985692" type="PUA">U+F0A5C</mapping>
+			</char>
+			<char xml:id="CB02666">
+				<charName>CBETA CHARACTER CB02666</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[齒*虐]</value>
+				</charProp>
+				<charProp>
+					<localName>normalized form</localName>
+					<value>齶</value>
+				</charProp>
+				<mapping type="unicode">U+2A63D</mapping>
+				<mapping cb:dec="985706" type="PUA">U+F0A6A</mapping>
+			</char>
+			<char xml:id="CB04787">
+				<charName>CBETA CHARACTER CB04787</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[叔/足]</value>
+				</charProp>
+				<mapping type="unicode">U+2E6E3</mapping>
+				<mapping cb:dec="987827" type="PUA">U+F12B3</mapping>
+			</char>
+			<char xml:id="CB04789">
+				<charName>CBETA CHARACTER CB04789</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[尉/足]</value>
+				</charProp>
+				<mapping type="unicode">U+2812F</mapping>
+				<mapping cb:dec="987829" type="PUA">U+F12B5</mapping>
+			</char>
+			<char xml:id="CB04798">
+				<charName>CBETA CHARACTER CB04798</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[序-予+利]</value>
+				</charProp>
+				<mapping type="unicode">U+22231</mapping>
+				<mapping cb:dec="987838" type="PUA">U+F12BE</mapping>
+			</char>
+		</charDecl>
+	</encodingDesc>
+	<profileDesc>
+		<langUsage>
+			<language ident="pi">Pali</language>
+			<language ident="en">English</language>
+			<language ident="zh-Hant">Chinese (Traditional)</language>
+		</langUsage>
+	</profileDesc>
+	<revisionDesc>
+		<change when="2013-05-20">
+			<name>CW</name><name>Ray Chou 周邦信</name>P4 to P5 conversion by p4top5a.py, intended for publication
+		</change>
+		<change when="1999-08-10T22:31:53">
+			CW (ed.) Created initial TEI XML version with BASICX.BAT (99/8/10)
+		</change>
+	</revisionDesc>
+</teiHeader>
+<text><body>
+<cb:mulu level="1" type="其他">初誦</cb:mulu><cb:mulu level="2" type="品">3 舍梨子相應品</cb:mulu><cb:mulu level="3" type="經">28 教化病經</cb:mulu><cb:div type="other"><cb:div type="pin">
+<milestone n="7" unit="juan"/>
+<lb n="0461b17" ed="T"/>
+<lb n="0461b18" ed="T"/>
+<lb n="0461b19" ed="T"/><cb:juan n="007" fun="open"><cb:mulu n="007" type="卷"></cb:mulu><cb:jhead><title>中阿含經</title>卷第七</cb:jhead></cb:juan>
+<lb n="0461b20" ed="T"/>
+<lb n="0461b21" ed="T"/><byline cb:type="Translator">東晉罽賓三藏瞿曇僧伽提婆譯</byline>
+<lb n="0461b22" ed="T"/><cb:div type="jing"><cb:mulu level="3" type="經">29 大拘絺羅經</cb:mulu><head>（二九）<title>舍梨子相應品</title><note n="0461008" resp="Taisho" type="orig" place="foot text">～A. IX. 13, A. IV. 174.其他。</note><note n="0461008" place="foot" type="equivalent">～A. IX. 13, A. IV. 174.其他。</note>大拘絺羅經第九<note n="0461009" resp="Taisho" type="orig" place="foot text">〔初一日誦〕－【明】</note><note n="0461009" resp="CBETA" type="mod">初一日誦【大】，〔－〕【明】</note><app n="0461009"><lem wit="【大】"><note place="inline">初一
+<lb n="0461b23" ed="T"/>日誦</note></lem><rdg resp="Taisho" wit="【明】"><space quantity="0"/></rdg></app></head>
+<lb n="0461b24" ed="T"/><p xml:id="pT01p0461b2401">我聞如是：</p><p xml:id="pT01p0461b2405" cb:place="inline">一時，佛遊王舍城，在竹林<note n="0461010" resp="Taisho" type="orig" place="foot text">加＝迦【三】</note><note n="0461010" resp="CBETA" type="mod">加【大】，迦【宋】【元】【明】</note><app n="0461010"><lem wit="【大】">加</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">迦</rdg></app>蘭
+<lb n="0461b25" ed="T"/><note n="0461011" resp="Taisho" type="orig" place="foot text">哆＝多【明】</note><note n="0461011" resp="CBETA" type="mod">哆【大】，多【明】</note><app n="0461011"><lem wit="【大】">哆</lem><rdg resp="Taisho" wit="【明】">多</rdg></app>園。</p><p xml:id="pT01p0461b2503" cb:place="inline">爾時，尊者舍梨子則於晡時從<note n="0461012" resp="Taisho" type="orig" place="foot text">燕＝宴【三】</note><note n="0461012" resp="CBETA" type="mod">燕【大】，宴【宋】【元】【明】</note><app n="0461012"><lem wit="【大】">燕</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">宴</rdg></app>
+<lb n="0461b26" ed="T"/>坐起，至尊者<note n="0461013" resp="Taisho" type="orig" place="foot text">～Mahā-koṭṭhita.</note><note n="0461013" resp="CBETA" type="mod">大拘絺羅【大】，～Mahā-koṭṭhita.</note><cb:tt n="0461013" type="app"><cb:t resp="CBETA" xml:lang="zh-Hant">大拘絺羅</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Mahā-koṭṭhita.</cb:t></cb:tt>所，共相問訊，却坐
+<lb n="0461b27" ed="T"/>一面。</p><p xml:id="pT01p0461b2703" cb:place="inline">尊者舍梨子語尊者大拘絺羅：「我欲
+<lb n="0461b28" ed="T"/>有所問，聽我問耶？」</p><p xml:id="pT01p0461b2808" cb:place="inline">尊者大拘絺羅答曰：「尊
+<lb n="0461b29" ed="T"/>者舍梨子！欲問便問，我聞已當思。」</p><p xml:id="pT01p0461b2914" cb:place="inline">尊者舍
+<pb n="0461c" ed="T" xml:id="T01.0026.0461c"/>
+<lb n="0461c01" ed="T"/>梨子問曰：「賢者大拘絺羅！頗有事因此事，
+<lb n="0461c02" ed="T"/>比丘成就見，得正見，於法得不壞淨，入正
+<lb n="0461c03" ed="T"/>法耶？」</p><p xml:id="pT01p0461c0303" cb:place="inline">答曰：「有也。尊者舍梨子！謂有比丘知
+<lb n="0461c04" ed="T"/>不善、知不善根。云何知不善？謂身惡行不
+<lb n="0461c05" ed="T"/>善，口、意惡行不善，是謂知不善。云何知不
+<lb n="0461c06" ed="T"/>善根？謂貪不善根，恚、癡不善根，是謂知不善
+<lb n="0461c07" ed="T"/>根。尊者舍梨子！若有比丘如是知不善及
+<lb n="0461c08" ed="T"/>不善根者，是謂比丘成就見，得正見，於法
+<lb n="0461c09" ed="T"/>得不壞淨，入正法中。」</p><p xml:id="pT01p0461c0909" cb:place="inline">尊者舍梨子聞已，歎
+<lb n="0461c10" ed="T"/>曰：「善哉！善哉！賢者大拘絺羅！」尊者舍梨子歎
+<lb n="0461c11" ed="T"/>已，歡喜奉行。</p><p xml:id="pT01p0461c1106" cb:place="inline">尊者舍梨子復問曰：「賢者大拘
+<lb n="0461c12" ed="T"/>絺羅！頗更有事因此事，比丘成就見，得正
+<lb n="0461c13" ed="T"/>見，於法得不壞淨，入正法耶？」</p><p xml:id="pT01p0461c1312" cb:place="inline">答曰：「有也。
+<lb n="0461c14" ed="T"/>尊者舍梨子！謂有比丘知善、知善根。云何
+<lb n="0461c15" ed="T"/>知善？謂身妙行善，口、意妙行善，是謂知善。
+<lb n="0461c16" ed="T"/>云何知善根？謂無貪善根，無恚、無癡善根，是
+<lb n="0461c17" ed="T"/>謂知善根。尊者舍梨子！若有比丘如是知
+<lb n="0461c18" ed="T"/>善，知善根者，是謂比丘成就見，得正見，
+<lb n="0461c19" ed="T"/>於法得不壞淨，入正法中。」</p><p xml:id="pT01p0461c1911" cb:place="inline">尊者舍梨子聞
+<lb n="0461c20" ed="T"/>已，歎曰：「善哉！善哉！賢者大拘絺羅！」尊者舍梨
+<lb n="0461c21" ed="T"/>子歎已，歡喜奉行。</p><p xml:id="pT01p0461c2108" cb:place="inline">尊者舍梨子復問曰：「賢者
+<lb n="0461c22" ed="T"/>大拘絺羅！頗更有事因此事，比丘成就見，
+<lb n="0461c23" ed="T"/>得正見，於法得不壞淨，入正法耶？」</p><p xml:id="pT01p0461c2314" cb:place="inline">答曰：
+<lb n="0461c24" ed="T"/>「有也。尊者舍梨子！謂有比丘知食如真，知
+<lb n="0461c25" ed="T"/>食<note n="0461014" resp="Taisho" type="orig" place="foot text">習＝集【元】【明】＊</note><note n="0461014" resp="CBETA" type="mod">習【大】＊，集【元】【明】＊</note><app n="0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、知食滅、知食滅道如真。云何知食如
+<lb n="0461c26" ed="T"/>真？謂有四食，一者<note n="0461c2601" resp="CBETA" type="add">摶【CB】，搏【大】</note><app n="0461c2601"><lem wit="【CB】" resp="CBETA">摶</lem><rdg wit="【大】">搏</rdg></app>食麤、細，二者更樂食，
+<lb n="0461c27" ed="T"/>三者意思食，四者識食，是謂知食如真。云
+<lb n="0461c28" ed="T"/>何知食<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>如真？謂因愛便有食，是謂知食
+<lb n="0461c29" ed="T"/><app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>如真。云何知食滅如真？謂愛滅食便滅，
+<pb n="0462a" ed="T" xml:id="T01.0026.0462a"/>
+<lb n="0462a01" ed="T"/>是謂知食滅如真。云何知食滅道如真？謂
+<lb n="0462a02" ed="T"/>八支聖道，正見乃至正定為八，是謂知食滅
+<lb n="0462a03" ed="T"/>道如真。尊者舍梨子！若有比丘如是知食
+<lb n="0462a04" ed="T"/>如真，知食習、知食滅、知食滅道如真者，是
+<lb n="0462a05" ed="T"/>謂比丘成就見，得正見，於法得不壞淨，
+<lb n="0462a06" ed="T"/>入正法中。」</p><p xml:id="pT01p0462a0605" cb:place="inline">尊者舍梨子聞已，歎曰：「善哉！善哉！
+<lb n="0462a07" ed="T"/>賢者大拘絺羅！」尊者舍梨子歎已，歡喜奉行。</p>
+<lb n="0462a08" ed="T"/><p xml:id="pT01p0462a0801">尊者舍梨子復問曰：「賢者大拘絺羅！頗更有
+<lb n="0462a09" ed="T"/>事因此事，比丘成就見，得正見，於法得
+<lb n="0462a10" ed="T"/>不壞淨，入正法耶？」</p><p xml:id="pT01p0462a1008" cb:place="inline">答曰：「有也。尊者舍梨子！
+<lb n="0462a11" ed="T"/>謂有比丘知漏如真，知漏<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、知漏滅、知
+<lb n="0462a12" ed="T"/>漏滅道如真。云何知漏如真？謂有三漏：欲
+<lb n="0462a13" ed="T"/>漏、有漏、無明漏，是謂知漏如真。云何知漏
+<lb n="0462a14" ed="T"/><app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>如真？謂因無明便有漏，是謂知漏習
+<lb n="0462a15" ed="T"/>如真。云何知漏滅如真？謂無明滅漏便滅，是
+<lb n="0462a16" ed="T"/>謂知漏滅如真。云何知漏滅道如真？謂八
+<lb n="0462a17" ed="T"/>支聖道，正見乃至正定為八，是謂知漏滅
+<lb n="0462a18" ed="T"/>道如真。尊者舍梨子！若有比丘如是知漏
+<lb n="0462a19" ed="T"/>如真，知漏習、知漏滅、知漏滅道如真者，是
+<lb n="0462a20" ed="T"/>謂比丘成就見，得正見，於法得不壞淨，
+<lb n="0462a21" ed="T"/>入正法中。」</p><p xml:id="pT01p0462a2105" cb:place="inline">尊者舍梨子聞已，歎曰：「善哉！善哉！
+<lb n="0462a22" ed="T"/>賢者大拘絺羅！」尊者舍梨子歎已，歡喜奉行。</p>
+<lb n="0462a23" ed="T"/><p xml:id="pT01p0462a2301">尊者舍梨子復問曰：「賢者大拘絺羅！頗更有
+<lb n="0462a24" ed="T"/>事因此事，比丘成就見，得正見，於法得不
+<lb n="0462a25" ed="T"/>壞淨，入正法耶？」</p><p xml:id="pT01p0462a2507" cb:place="inline">答曰：「有也。尊者舍梨子！謂
+<lb n="0462a26" ed="T"/>有比丘知苦如真，知苦習、知苦滅、知苦
+<lb n="0462a27" ed="T"/>滅道如真。云何知苦如真？謂生苦、老苦、病苦、
+<lb n="0462a28" ed="T"/>死苦、怨憎會苦、愛別離苦、所求不得苦、略五
+<lb n="0462a29" ed="T"/>盛陰苦，是謂知苦如真。云何知苦<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>如真？
+<pb n="0462b" ed="T" xml:id="T01.0026.0462b"/>
+<lb n="0462b01" ed="T"/>謂因老死便有苦，是謂知苦<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>如真。云
+<lb n="0462b02" ed="T"/>何知苦滅如真？謂老死滅苦便滅，是謂知
+<lb n="0462b03" ed="T"/>苦滅如真。云何知苦滅道如真？謂八支聖道，
+<lb n="0462b04" ed="T"/>正見乃至正定為八，是謂知苦滅道如真。
+<lb n="0462b05" ed="T"/>尊者舍梨子！若有比丘如是知苦如真，知
+<lb n="0462b06" ed="T"/>苦<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、知苦滅、知苦滅道如真者，是謂比
+<lb n="0462b07" ed="T"/>丘成就見，得正見，於法得不壞淨，入正法
+<lb n="0462b08" ed="T"/>中。」</p><p xml:id="pT01p0462b0802" cb:place="inline">尊者舍梨子聞已，歎曰：「善哉！善哉！賢者大
+<lb n="0462b09" ed="T"/>拘絺羅！」尊者舍梨子歎已，歡喜奉行。</p><p xml:id="pT01p0462b0915" cb:place="inline">尊者舍
+<lb n="0462b10" ed="T"/>梨子復問曰：「賢者大拘絺羅！頗更有事因此
+<lb n="0462b11" ed="T"/>事，比丘成就見，得正見，於法得不壞淨，入
+<lb n="0462b12" ed="T"/>正法耶？」</p><p xml:id="pT01p0462b1204" cb:place="inline">答曰：「有也。尊者舍梨子！謂有比丘
+<lb n="0462b13" ed="T"/><note n="0462b1301" resp="CBETA" type="add">［－］【CB】【麗-CB】，死【大】</note><app n="0462b1301"><lem resp="CBETA.maha CBETA.say" wit="【CB】 【麗-CB】"><space quantity="0"/><note type="cf1">K17n0648_p1084b24</note><note type="cf2">T01n0026_p0462b25</note></lem><rdg wit="【大】">死</rdg></app>知老死如真，知老死<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、知老死滅、知老
+<lb n="0462b14" ed="T"/>死滅道如真。云何知老？謂彼老耄，頭白齒落，
+<lb n="0462b15" ed="T"/>盛壯日衰，身曲脚戾，體重氣上，<note n="0462001" resp="Taisho" type="orig" place="foot text">柱＝拄【宋】【明】</note><note n="0462001" resp="CBETA" type="mod">柱【大】，拄【宋】【明】</note><app n="0462001"><lem wit="【大】">柱</lem><rdg resp="Taisho" wit="【宋】 【明】">拄</rdg></app>杖而行，肌
+<lb n="0462b16" ed="T"/>縮皮緩，皺如麻子，諸根毀熟，顏色醜惡，是名
+<lb n="0462b17" ed="T"/>老也。云何知死？謂彼眾生、彼彼眾生種類，命
+<lb n="0462b18" ed="T"/>終無常，死喪散滅，壽盡破壞，命根閉塞，是名
+<lb n="0462b19" ed="T"/>死也。此說死，前說老，是名老死，是謂知
+<lb n="0462b20" ed="T"/>老死如真。云何知老死<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>如真？謂因生便
+<lb n="0462b21" ed="T"/>有老死，是謂知老死<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>如真。云何知老死
+<lb n="0462b22" ed="T"/>滅如真？謂生滅老死便滅，是謂知老死滅如
+<lb n="0462b23" ed="T"/>真。云何知老死滅道如真？謂八支聖道，正見
+<lb n="0462b24" ed="T"/>乃至正定為八，是謂知老死滅道如真。尊者
+<lb n="0462b25" ed="T"/>舍梨子！若有比丘如是知老死如真，知老
+<lb n="0462b26" ed="T"/>死習、知老死滅、知老死滅道如真者，是謂
+<lb n="0462b27" ed="T"/>比丘成就見，得正見，於法得不壞淨，入正
+<lb n="0462b28" ed="T"/>法中。」</p><p xml:id="pT01p0462b2803" cb:place="inline">尊者舍梨子聞已，歎曰：「善哉！善哉！賢者
+<lb n="0462b29" ed="T"/>大拘絺羅！」尊者舍梨子歎已，歡喜奉行。</p><p xml:id="pT01p0462b2916" cb:place="inline">尊者
+<pb n="0462c" ed="T" xml:id="T01.0026.0462c"/>
+<lb n="0462c01" ed="T"/>舍梨子復問曰：「賢者大拘絺羅！頗更有事因
+<lb n="0462c02" ed="T"/>此事，比丘成就見，得正見，於法得不壞淨，
+<lb n="0462c03" ed="T"/>入正法耶。」</p><p xml:id="pT01p0462c0305" cb:place="inline">答曰：「有也。尊者舍梨子！謂有比
+<lb n="0462c04" ed="T"/>丘知生如真，知生<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、知生滅、知生滅道
+<lb n="0462c05" ed="T"/>如真。云何知生如真？謂彼眾生、彼彼眾生種
+<lb n="0462c06" ed="T"/>類，生則生，出則出，成則成，興<note n="0462002" resp="Taisho" type="orig" place="foot text">起＝報【三】</note><note n="0462002" resp="CBETA" type="mod">起【大】，報【宋】【元】【明】</note><app n="0462002"><lem wit="【大】">起</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">報</rdg></app>五陰，已得
+<lb n="0462c07" ed="T"/>命根，是謂知生如真。云何知生<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>如真？
+<lb n="0462c08" ed="T"/>謂因有便有生，是謂知生<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>如真。云何
+<lb n="0462c09" ed="T"/>知生滅如真？謂有滅生便滅，是謂知生滅
+<lb n="0462c10" ed="T"/>如真。云何知生滅道如真？謂八支聖道，正見
+<lb n="0462c11" ed="T"/>乃至正定為八，是謂知生滅道如真。尊者舍
+<lb n="0462c12" ed="T"/>梨子！若有比丘如是知生如真，知生<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、
+<lb n="0462c13" ed="T"/>知生滅、知生滅道如真者，是謂比丘成就
+<lb n="0462c14" ed="T"/>見，得正見，於法得不壞淨，入正法中。」</p><p xml:id="pT01p0462c1415" cb:place="inline">尊者
+<lb n="0462c15" ed="T"/>舍梨子聞已，歎曰：「善哉！善哉！賢者大拘絺羅！」
+<lb n="0462c16" ed="T"/>尊者舍梨子歎已，歡喜奉行。</p><p xml:id="pT01p0462c1612" cb:place="inline">尊者舍梨子復
+<lb n="0462c17" ed="T"/>問曰：「賢者大拘絺羅！頗更有事因此事，比丘
+<lb n="0462c18" ed="T"/>成就見，得正見，於法得不壞淨，入正法耶？」</p>
+<lb n="0462c19" ed="T"/><p xml:id="pT01p0462c1901">答曰：「有也。尊者舍梨子！謂有比丘知有如
+<lb n="0462c20" ed="T"/>真，知有<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、知有滅、知有滅道如真。云何
+<lb n="0462c21" ed="T"/>知有如真？謂有三有：欲有、色有、無色有，是謂
+<lb n="0462c22" ed="T"/>知有如真。云何知有<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>如真？謂因受便有
+<lb n="0462c23" ed="T"/>有，是謂知有<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>如真。云何知有滅如真？謂
+<lb n="0462c24" ed="T"/>受滅有便滅，是謂知有滅如真。云何知有
+<lb n="0462c25" ed="T"/>滅道如真？謂八支聖道，正見乃至正定為八，是
+<lb n="0462c26" ed="T"/>謂知有滅道如真。尊者舍梨子！若有比丘
+<lb n="0462c27" ed="T"/>如是知有如真，知有<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、知有滅、知有滅
+<lb n="0462c28" ed="T"/>道如真者，是謂比丘成就見，得正見，於法
+<lb n="0462c29" ed="T"/>得不壞淨，入正法中。」</p><p xml:id="pT01p0462c2909" cb:place="inline">尊者舍梨子聞已，歎
+<pb n="0463a" ed="T" xml:id="T01.0026.0463a"/>
+<lb n="0463a01" ed="T"/>曰：「善哉！善哉！賢者大拘絺羅！」尊者舍梨子歎
+<lb n="0463a02" ed="T"/>已，歡喜奉行。</p><p xml:id="pT01p0463a0206" cb:place="inline">尊者舍梨子復問曰：「賢者大拘
+<lb n="0463a03" ed="T"/>絺羅！頗更有事因此事，比丘成就見，得正
+<lb n="0463a04" ed="T"/>見，於法得不壞淨，入正法耶？」</p><p xml:id="pT01p0463a0412" cb:place="inline">答曰：「有也。
+<lb n="0463a05" ed="T"/>尊者舍梨子！謂有比丘知受如真，知受
+<lb n="0463a06" ed="T"/><app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、知受滅、知受滅道如真。云何知受如真？
+<lb n="0463a07" ed="T"/>謂有四受：欲受、戒受、見受、我受，是謂知受
+<lb n="0463a08" ed="T"/>如真。云何知受<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>如真？謂因愛便有受，是
+<lb n="0463a09" ed="T"/>謂知受<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>如真。云何知受滅如真？謂愛滅
+<lb n="0463a10" ed="T"/>受便滅，是謂知受滅如真。云何知受滅道
+<lb n="0463a11" ed="T"/>如真？謂八支聖道，正見乃至正定為八，是謂
+<lb n="0463a12" ed="T"/>知受滅道如真。尊者舍梨子！若有比丘如
+<lb n="0463a13" ed="T"/>是知受如真，知受習、知受滅、知受滅道如
+<lb n="0463a14" ed="T"/>真者，是謂比丘成就見，得正見，於法得
+<lb n="0463a15" ed="T"/>不壞淨，入正法中。」</p><p xml:id="pT01p0463a1508" cb:place="inline">尊者舍梨子聞已，歎曰：「善
+<lb n="0463a16" ed="T"/>哉！善哉！賢者大拘絺羅。」尊者舍梨子歎已，歡
+<lb n="0463a17" ed="T"/>喜奉行。</p><p xml:id="pT01p0463a1704" cb:place="inline">尊者舍梨子復問曰：「賢者大拘絺羅！
+<lb n="0463a18" ed="T"/>頗更有事因此事，比丘成就見，得正見，於
+<lb n="0463a19" ed="T"/>法得不壞淨，入正法耶？」</p><p xml:id="pT01p0463a1910" cb:place="inline">答曰：「有也。尊者
+<lb n="0463a20" ed="T"/>舍梨子！謂有比丘知愛如真，知愛<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、知
+<lb n="0463a21" ed="T"/>愛滅、知愛滅道如真。云何知愛如真？謂有
+<lb n="0463a22" ed="T"/>三愛：欲愛、色愛、無色愛，是謂知愛如真。云何
+<lb n="0463a23" ed="T"/>知愛<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>如真？謂因覺便有愛，是謂知愛
+<lb n="0463a24" ed="T"/>習如真。云何知愛滅如真？謂覺滅愛便滅，是
+<lb n="0463a25" ed="T"/>謂知愛滅如真。云何知愛滅道如真？謂八支
+<lb n="0463a26" ed="T"/>聖道，正見乃至正定為八，是謂知愛滅道如
+<lb n="0463a27" ed="T"/>真。尊者舍梨子！若有比丘如是知愛如真，
+<lb n="0463a28" ed="T"/>知愛<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、知愛滅、知愛滅道如真者，是謂
+<lb n="0463a29" ed="T"/>比丘成就見，得正見，於法得不壞淨，入正
+<pb n="0463b" ed="T" xml:id="T01.0026.0463b"/>
+<lb n="0463b01" ed="T"/>法中。」</p><p xml:id="pT01p0463b0103" cb:place="inline">尊者舍梨子聞已，歎曰：「善哉！善哉！賢者
+<lb n="0463b02" ed="T"/>大拘絺羅！」尊者舍梨子歎已，歡喜奉行。</p><p xml:id="pT01p0463b0216" cb:place="inline">尊者
+<lb n="0463b03" ed="T"/>舍梨子復問曰：「賢者大拘絺羅！頗更有事因
+<lb n="0463b04" ed="T"/>此事，比丘成就見，得正見，於法得不壞
+<lb n="0463b05" ed="T"/>淨，入正法耶？」</p><p xml:id="pT01p0463b0506" cb:place="inline">答曰：「有也。尊者舍梨子！謂有
+<lb n="0463b06" ed="T"/>比丘知覺如真，知覺<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、知覺滅、知覺滅
+<lb n="0463b07" ed="T"/>道如真。云何知覺如真？謂有三覺：樂覺、苦
+<lb n="0463b08" ed="T"/>覺、不苦不樂覺，是謂知覺如真。云何知覺
+<lb n="0463b09" ed="T"/>習如真？謂因更樂便有覺，是謂知覺<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>
+<lb n="0463b10" ed="T"/>如真。云何知覺滅如真？謂更樂滅覺便滅，是
+<lb n="0463b11" ed="T"/>謂知覺滅如真。云何知覺滅道如真？謂八
+<lb n="0463b12" ed="T"/>支聖道，正見乃至正定為八，是謂知覺滅道
+<lb n="0463b13" ed="T"/>如真。尊者舍梨子！若有比丘如是知覺如
+<lb n="0463b14" ed="T"/>真，知覺<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、知覺滅、知覺滅道如真者，是
+<lb n="0463b15" ed="T"/>謂比丘成就見，得正見，於法得不壞淨，
+<lb n="0463b16" ed="T"/>入正法中。」</p><p xml:id="pT01p0463b1605" cb:place="inline">尊者舍梨子聞已，歎曰：「善哉！善哉！
+<lb n="0463b17" ed="T"/>賢者大拘絺羅！」尊者舍梨子歎已，歡喜奉行。</p>
+<lb n="0463b18" ed="T"/><p xml:id="pT01p0463b1801">尊者舍梨子復問曰：「賢者大拘絺羅，頗更有
+<lb n="0463b19" ed="T"/>事因此事，比丘成就見，得正見，於法得不
+<lb n="0463b20" ed="T"/>壞淨，入正法耶？」</p><p xml:id="pT01p0463b2007" cb:place="inline">答曰：「有也。尊者舍梨子！謂
+<lb n="0463b21" ed="T"/>有比丘知更樂如真，知更樂<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、知更樂
+<lb n="0463b22" ed="T"/>滅、知更樂滅道如真。云何知更樂如真？謂
+<lb n="0463b23" ed="T"/>有三更樂：樂更樂、苦更樂、不苦不樂更樂，是
+<lb n="0463b24" ed="T"/>謂知更樂如真。云何知更樂<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>如真？謂因
+<lb n="0463b25" ed="T"/>六處便有更樂，是謂知更樂<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>如真。云何
+<lb n="0463b26" ed="T"/>知更樂滅如真？謂六處滅更樂便滅，是謂知
+<lb n="0463b27" ed="T"/>更樂滅如真。云何知更樂滅道如真？謂八支
+<lb n="0463b28" ed="T"/>聖道，正見乃至正定為八，是謂知更樂滅道
+<lb n="0463b29" ed="T"/>如真。尊者舍梨子！若有比丘如是知更樂
+<pb n="0463c" ed="T" xml:id="T01.0026.0463c"/>
+<lb n="0463c01" ed="T"/>如真，知更樂<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、知更樂滅、知更樂滅道如
+<lb n="0463c02" ed="T"/>真者，是謂比丘成就見，得正見，於法得
+<lb n="0463c03" ed="T"/>不壞淨，入正法中。」</p><p xml:id="pT01p0463c0308" cb:place="inline">尊者舍梨子聞已，歎曰：「善
+<lb n="0463c04" ed="T"/>哉！善哉！賢者大拘絺羅！」尊者舍梨子歎已，歡
+<lb n="0463c05" ed="T"/>喜奉行。</p><p xml:id="pT01p0463c0504" cb:place="inline">尊者舍梨子復問曰：「賢者大拘絺羅！
+<lb n="0463c06" ed="T"/>頗更有事因此事，比丘成就見，得正見，於
+<lb n="0463c07" ed="T"/>法得不壞淨，入正法耶？」</p><p xml:id="pT01p0463c0710" cb:place="inline">答曰：「有也。尊者舍
+<lb n="0463c08" ed="T"/>梨子！謂有比丘知六處如真，知六處<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、知
+<lb n="0463c09" ed="T"/>六處滅、知六處滅道如真。云何知六處如真？
+<lb n="0463c10" ed="T"/>謂眼處，耳、鼻、舌、身、意處，是謂知六處如真。云
+<lb n="0463c11" ed="T"/>何知六處<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>如真？謂因名色便有六處，是
+<lb n="0463c12" ed="T"/>謂知六處<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>如真。云何知六處滅如真？謂
+<lb n="0463c13" ed="T"/>名色滅六處便滅，是謂知六處滅如真。云何
+<lb n="0463c14" ed="T"/>知六處滅道如真？謂八支聖道，正見乃至正
+<lb n="0463c15" ed="T"/>定為八，是謂知六處滅道如真。尊者舍梨
+<lb n="0463c16" ed="T"/>子！若有比丘如是知六處如真，知六處
+<lb n="0463c17" ed="T"/><app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、知六處滅、知六處滅道如真者，是謂比
+<lb n="0463c18" ed="T"/>丘成就見，得正見，於法得不壞淨，入正法
+<lb n="0463c19" ed="T"/>中。」</p><p xml:id="pT01p0463c1902" cb:place="inline">尊者舍梨子聞已，歎曰：「善哉！善哉！賢者大
+<lb n="0463c20" ed="T"/>拘絺羅！」尊者舍梨子歎已，歡喜奉行。</p><p xml:id="pT01p0463c2015" cb:place="inline">尊者舍
+<lb n="0463c21" ed="T"/>梨子復問曰：「賢者大拘絺羅！頗更有事因此
+<lb n="0463c22" ed="T"/>事，比丘成就見，得正見，於法得不壞淨，
+<lb n="0463c23" ed="T"/>入正法耶？」</p><p xml:id="pT01p0463c2305" cb:place="inline">答曰：「有也。尊者舍梨子！謂有比
+<lb n="0463c24" ed="T"/>丘知名色如真，知名色<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、知名色滅、知
+<lb n="0463c25" ed="T"/>名色滅道如真。云何知名？謂四非色陰為
+<lb n="0463c26" ed="T"/>名。云何知色？謂四大及四大造為色。此說
+<lb n="0463c27" ed="T"/>色，前說名，是為名色，是謂知名色如真。云
+<lb n="0463c28" ed="T"/>何知名色<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>如真？謂因識便有名色，是謂
+<lb n="0463c29" ed="T"/>知名色<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>如真。云何知名色滅如真？謂識
+<pb n="0464a" ed="T" xml:id="T01.0026.0464a"/>
+<lb n="0464a01" ed="T"/>滅名色便滅，是謂知名色滅如真。云何知
+<lb n="0464a02" ed="T"/>名色滅道如真？謂八支聖道，正見乃至正定
+<lb n="0464a03" ed="T"/>為八，是謂知名色滅道如真。尊者舍梨子！
+<lb n="0464a04" ed="T"/>若有比丘如是知名色如真，知名色<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、
+<lb n="0464a05" ed="T"/>知名色滅、知名色滅道如真者，是謂比丘
+<lb n="0464a06" ed="T"/>成就見，得正見，於法得不壞淨，入正法
+<lb n="0464a07" ed="T"/>中。」</p><p xml:id="pT01p0464a0702" cb:place="inline">尊者舍梨子聞已，歎曰：「善哉！善哉！賢者大
+<lb n="0464a08" ed="T"/>拘絺羅！」尊者舍梨子歎已，歡喜奉行。</p><p xml:id="pT01p0464a0815" cb:place="inline">尊者舍
+<lb n="0464a09" ed="T"/>梨子復問曰：「賢者大拘絺羅！頗更有事因此
+<lb n="0464a10" ed="T"/>事，比丘成就見，得正見，於法得不壞淨，
+<lb n="0464a11" ed="T"/>入正法耶？」</p><p xml:id="pT01p0464a1105" cb:place="inline">答曰：「有也。尊者舍梨子！謂有比
+<lb n="0464a12" ed="T"/>丘知識如真，知識<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、知識滅、知識滅道
+<lb n="0464a13" ed="T"/>如真。云何知識如真？謂有六識：眼識，耳、鼻、
+<lb n="0464a14" ed="T"/>舌、身、意識，是謂知識如真。云何知識<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>如
+<lb n="0464a15" ed="T"/>真？謂因行便有識，是謂知識<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>如真。云
+<lb n="0464a16" ed="T"/>何知識滅如真？謂行滅識便滅，是謂知識
+<lb n="0464a17" ed="T"/>滅如真。云何知識滅道如真？謂八支聖道，正
+<lb n="0464a18" ed="T"/>見乃至正定為八，是謂知識滅道如真。尊
+<lb n="0464a19" ed="T"/>者舍梨子！若有比丘如是知識如真，知識
+<lb n="0464a20" ed="T"/><app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、知識滅、知識滅道如真者，是謂比丘
+<lb n="0464a21" ed="T"/>成就見，得正見，於法得不壞淨，入正法
+<lb n="0464a22" ed="T"/>中。」</p><p xml:id="pT01p0464a2202" cb:place="inline">尊者舍梨子聞已，歎曰：「善哉！善哉！賢者大
+<lb n="0464a23" ed="T"/>拘絺羅！」尊者舍梨子歎已，歡喜奉行。</p><p xml:id="pT01p0464a2315" cb:place="inline">尊者舍
+<lb n="0464a24" ed="T"/>梨子復問曰：「賢者大拘絺羅！頗更有事因此
+<lb n="0464a25" ed="T"/>事，比丘成就見，得正見，於法得不壞淨，
+<lb n="0464a26" ed="T"/>入正法耶？」</p><p xml:id="pT01p0464a2605" cb:place="inline">答曰：「有也。尊者舍梨子！謂有比
+<lb n="0464a27" ed="T"/>丘知行如真，知行<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、知行滅、知行滅道
+<lb n="0464a28" ed="T"/>如真。云何知行如真？謂有三行：身行、口行、
+<lb n="0464a29" ed="T"/>意行，是謂知行如真。云何知行<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>如真？謂
+<pb n="0464b" ed="T" xml:id="T01.0026.0464b"/>
+<lb n="0464b01" ed="T"/>因無明便有行，是謂知行<app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>如真。云何
+<lb n="0464b02" ed="T"/>知行滅如真？謂無明滅行便滅，是謂知行
+<lb n="0464b03" ed="T"/>滅如真。云何知行滅道如真？謂八支聖道，正
+<lb n="0464b04" ed="T"/>見乃至正定為八，是謂知行滅道如真。尊
+<lb n="0464b05" ed="T"/>者舍梨子！若有比丘如是知行如真，知行
+<lb n="0464b06" ed="T"/><app type="star" corresp="#0461014"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、知行滅、知行滅道如真者，是謂比丘
+<lb n="0464b07" ed="T"/>成就見，得正見，於法得不壞淨，入正法
+<lb n="0464b08" ed="T"/>中。」</p><p xml:id="pT01p0464b0802" cb:place="inline">尊者舍梨子聞已，歎曰：「善哉！善哉！賢者大
+<lb n="0464b09" ed="T"/>拘絺羅！」尊者舍梨子歎已，歡喜奉行。</p><p xml:id="pT01p0464b0915" cb:place="inline">尊者舍
+<lb n="0464b10" ed="T"/>梨子復問曰：「賢者大拘絺羅！若有比丘無明
+<lb n="0464b11" ed="T"/>已盡，明已生，復作何等？」</p><p xml:id="pT01p0464b1110" cb:place="inline">尊者大拘絺羅答
+<lb n="0464b12" ed="T"/>曰：「尊者舍梨子！若有比丘無明已盡，明已
+<lb n="0464b13" ed="T"/>生，無所復作。」</p><p xml:id="pT01p0464b1306" cb:place="inline">尊者舍梨子聞已，歎曰：「善哉！
+<lb n="0464b14" ed="T"/>善哉！賢者大拘絺羅！」</p><p xml:id="pT01p0464b1409" cb:place="inline">如是，彼二尊更互說
+<lb n="0464b15" ed="T"/>義，各歡喜奉行，從<note n="0464001" resp="Taisho" type="orig" place="foot text">坐＝座【三】</note><note n="0464001" resp="CBETA" type="mod">坐【大】，座【宋】【元】【明】</note><app n="0464001"><lem wit="【大】">坐</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">座</rdg></app>起去。</p>
+<lb n="0464b16" ed="T"/><p xml:id="pT01p0464b1601"><note n="0464002" resp="Taisho" type="orig" place="foot text">〔大拘…竟〕八字－【明】</note><note n="0464002" resp="CBETA" type="mod">（大拘…竟）八字【大】，〔－〕【明】</note><app n="0464002" cb:word-count="8"><lem wit="【大】">大拘絺羅經第九竟</lem><rdg resp="Taisho" wit="【明】"><space quantity="0"/></rdg></app><note n="0464003" resp="Taisho" type="orig" place="foot text">〔四千…字〕六字－【三】</note><note n="0464003" resp="CBETA" type="mod">（四千…字）六字【大】，〔－〕【宋】【元】【明】</note><app n="0464003" cb:word-count="6"><lem wit="【大】"><note place="inline">四千七十七字</note></lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app></p></cb:div>
+<lb n="0464b17" ed="T"/><cb:div type="jing"><cb:mulu level="3" type="經">30 象跡喻經</cb:mulu><head>（三〇）<title><note n="0464004" resp="Taisho" type="orig" place="foot text">〔中阿含〕－【明】</note><note n="0464004" resp="CBETA" type="mod">中阿含【大】，〔－〕【明】</note><app n="0464004"><lem wit="【大】">中阿含</lem><rdg resp="Taisho" wit="【明】"><space quantity="0"/></rdg></app>舍梨子相應品</title><note n="0464005" resp="Taisho" type="orig" place="foot text">～M. 28. Mahā-Hatthipadopama Sutta.</note><note n="0464005" place="foot" type="equivalent">～M. 28. Mahā-Hatthipadopama Sutta.</note>象跡喻經第十
+<lb n="0464b18" ed="T"/><note n="0464006" resp="Taisho" type="orig" place="foot text">〔初一日誦〕－【明】</note><note n="0464006" resp="CBETA" type="mod">初一日誦【大】，〔－〕【明】</note><app n="0464006"><lem wit="【大】"><note place="inline">初一日誦</note></lem><rdg resp="Taisho" wit="【明】"><space quantity="0"/></rdg></app></head>
+<lb n="0464b19" ed="T"/><p xml:id="pT01p0464b1901">我聞如是：</p><p xml:id="pT01p0464b1905" cb:place="inline">一時，佛遊舍衛國，在勝林給孤
+<lb n="0464b20" ed="T"/>獨園。</p><p xml:id="pT01p0464b2003" cb:place="inline">爾時，尊者舍梨子告諸比丘：「諸賢！若
+<lb n="0464b21" ed="T"/>有無量善法，彼一切法皆四聖諦所攝，來
+<lb n="0464b22" ed="T"/>入四聖諦中，謂四聖諦於一切法最為第
+<lb n="0464b23" ed="T"/>一。所以者何？攝受一切眾善法故。諸賢！猶
+<lb n="0464b24" ed="T"/>如諸畜之跡，象跡為第一。所以者何？彼象
+<lb n="0464b25" ed="T"/>跡者最廣大故。如是，諸賢！無量善法，彼一切
+<lb n="0464b26" ed="T"/>法皆四聖諦所攝，來入四聖諦中，謂四聖
+<lb n="0464b27" ed="T"/>諦於一切法最為第一。云何為四？謂苦聖
+<lb n="0464b28" ed="T"/>諦，苦<note n="0464007" resp="Taisho" type="orig" place="foot text">習＝集【元】【明】</note><note n="0464007" resp="CBETA" type="mod">習【大】，集【元】【明】</note><app n="0464007"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、苦滅、苦滅道聖諦。諸賢！云何苦聖
+<lb n="0464b29" ed="T"/>諦？謂生苦、老苦、病苦、死苦、怨憎會苦、愛別
+<pb n="0464c" ed="T" xml:id="T01.0026.0464c"/>
+<lb n="0464c01" ed="T"/>離苦、所求不得苦、略<note n="0464008" resp="Taisho" type="orig" place="foot text">五盛陰～Pañca upādānakkhandā.</note><note n="0464008" resp="CBETA" type="mod">五盛陰【大】，～Pañca upādānakkhandā.</note><cb:tt n="0464008" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">五盛陰</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Pañca upādānakkhandā.</cb:t></cb:tt>苦。</p><p xml:id="pT01p0464c0113" cb:place="inline">「諸賢！云
+<lb n="0464c02" ed="T"/>何五盛陰<note n="0464c0201" resp="CBETA" type="add">［－］【CB】【麗-CB】，苦【大】</note><app n="0464c0201"><lem resp="CBETA.say" wit="【CB】 【麗-CB】"><space quantity="0"/><note type="cf1">K17n0648_p1087c12</note></lem><rdg wit="【大】">苦</rdg></app>？謂色盛陰，覺、想、行、識盛陰。諸
+<lb n="0464c03" ed="T"/>賢！云何色盛陰？謂有色，彼一切<note n="0464009" resp="Taisho" type="orig" place="foot text">～Cattāri mahābhūtāni.</note><note n="0464009" resp="CBETA" type="mod">四大【大】，～Cattāri mahābhūtāni.</note><cb:tt n="0464009" type="app"><cb:t resp="CBETA" xml:lang="zh-Hant">四大</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Cattāri mahābhūtāni.</cb:t></cb:tt>及
+<lb n="0464c04" ed="T"/>四大造。諸賢！云何四大？謂<note n="0464010" resp="Taisho" type="orig" place="foot text">地界～Paṭhavīdhātu, 水界 āpodh, 火界 tejodh, 風界 vāyodh.</note><note n="0464010" resp="CBETA" type="mod">地界～Paṭhavīdhātu，水界 āpodh，火界 tejodh，風界 vāyodh.</note>地界，水、火、風界。
+<lb n="0464c05" ed="T"/>諸賢！云何地界？諸賢！謂地界有二，有<note n="0464011" resp="Taisho" type="orig" place="foot text">內外～Ajjhattikā, bāhirā.</note><note n="0464011" resp="CBETA" type="mod">內外【大】，～Ajjhattikā, bāhirā.</note>內
+<lb n="0464c06" ed="T"/>地界，有外地界。諸賢！云何內地界？謂內身
+<lb n="0464c07" ed="T"/>中在，內所攝堅，<note n="0464012" resp="Taisho" type="orig" place="foot text">堅＝竪【三】</note><note n="0464012" resp="CBETA" type="mod">堅【大】，竪【宋】【元】【明】</note><app n="0464012"><lem wit="【大】">堅</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">竪</rdg></app>性住，內之所受。此為云
+<lb n="0464c08" ed="T"/>何？謂髮、毛、<note n="0464013" resp="Taisho" type="orig" place="foot text">爪＝脾【宋】【元】</note><note n="0464013" resp="CBETA" type="mod">爪【大】，脾【宋】【元】</note><app n="0464013"><lem wit="【大】">爪</lem><rdg resp="Taisho" wit="【宋】 【元】">脾</rdg></app>、齒、麤細皮膚、肌肉、筋、骨、心、腎、肝、
+<lb n="0464c09" ed="T"/><note n="0464014" resp="Taisho" type="orig" place="foot text">肺脾＝脾肺【三】</note><note n="0464014" resp="CBETA" type="mod">肺脾【大】，脾肺【宋】【元】【明】</note><app n="0464014"><lem wit="【大】">肺、脾</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">脾肺</rdg></app>、腸、<note n="0464015" resp="Taisho" type="orig" place="foot text"><g ref="#CB00787"/>＝胃【三】</note><note n="0464015" resp="CBETA" type="mod"><g ref="#CB00787"/>【大】，胃【宋】【元】【明】</note><app n="0464015"><lem wit="【大】"><g ref="#CB00787"/></lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">胃</rdg></app>、糞，如是比此身中餘在，內所
+<lb n="0464c10" ed="T"/>攝，<note n="0464016" resp="Taisho" type="orig" place="foot text">堅＋（竪）【三】</note><note n="0464016" resp="CBETA" type="mod">堅【大】，堅竪【宋】【元】【明】</note><app n="0464016"><lem wit="【大】">堅</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">堅竪</rdg></app>性住，內之所受，諸賢！是謂內地界。
+<lb n="0464c11" ed="T"/>諸賢！外地界者，謂大是，淨是，不憎惡是。諸賢！
+<lb n="0464c12" ed="T"/>有時水災，是時滅外地界。</p><p xml:id="pT01p0464c1211" cb:place="inline">「諸賢！此外地界
+<lb n="0464c13" ed="T"/>極大，極淨，極不憎惡，是無常法、盡法、衰法、變
+<lb n="0464c14" ed="T"/>易之法，況復此身暫住，為愛所受？謂不多聞
+<lb n="0464c15" ed="T"/>愚癡凡夫而作此念：『是我，是我所，我是彼所。』
+<lb n="0464c16" ed="T"/>多聞聖弟子不作此念：『是我，是我所，我是彼
+<lb n="0464c17" ed="T"/>所。』彼云何作是念？若有他人罵詈、捶打、瞋
+<lb n="0464c18" ed="T"/>恚責數者，彼作是念：『我生此苦，從因緣生，
+<lb n="0464c19" ed="T"/>非無因緣。云何為緣？緣苦更樂。』彼觀此
+<lb n="0464c20" ed="T"/>更樂無常，觀覺、想、行、識無常，彼心緣界住，
+<lb n="0464c21" ed="T"/>止合一心，定不移動。彼於後時他人來語
+<lb n="0464c22" ed="T"/>柔辭軟言者，彼作是念：『我生此樂，從因緣
+<lb n="0464c23" ed="T"/>生，非無因緣。云何為緣？緣樂更樂。』彼觀此
+<lb n="0464c24" ed="T"/>更樂無常，觀覺、想、行、識、無常，彼心緣界住，
+<lb n="0464c25" ed="T"/>止合一心，定不移動。彼於後時，若幼少、中年、
+<lb n="0464c26" ed="T"/>長老來行不可事，或以拳扠，或以石擲，或
+<lb n="0464c27" ed="T"/>刀杖加，彼作是念：『我受此身，色法麤質，四
+<lb n="0464c28" ed="T"/>大之種，從父母生，飲食長養，常衣被覆，坐臥
+<lb n="0464c29" ed="T"/>按摩，澡浴強忍，是破壞法，是滅盡法，離散之
+<pb n="0465a" ed="T" xml:id="T01.0026.0465a"/>
+<lb n="0465a01" ed="T"/>法，我因此身致拳扠、石擲及刀杖加。』由是
+<lb n="0465a02" ed="T"/>之故，彼極精勤而不懈怠，正身正念，不<note n="0465001" resp="Taisho" type="orig" place="foot text">忘＝恚【元】【明】＊</note><note n="0465001" resp="CBETA" type="mod">忘【大】＊，恚【元】【明】＊</note><app n="0465001"><lem wit="【大】">忘</lem><rdg resp="Taisho" wit="【元】 【明】">恚</rdg></app>
+<lb n="0465a03" ed="T"/>不癡，安定一心，彼作是念：『我極精勤而不
+<lb n="0465a04" ed="T"/>懈怠，正身正念，不<app type="star" corresp="#0465001"><lem wit="【大】">忘</lem><rdg resp="Taisho" wit="【元】 【明】">恚</rdg></app>不癡，安定一心，我受
+<lb n="0465a05" ed="T"/>此身，應致拳扠、石擲及刀杖加，但當精勤
+<lb n="0465a06" ed="T"/>學世尊法。』</p><p xml:id="pT01p0465a0605" cb:place="inline">「諸賢！世尊亦如是說：『若有賊來，
+<lb n="0465a07" ed="T"/>以利刀鋸，節節解身。若汝為賊以利刀鋸
+<lb n="0465a08" ed="T"/>節節解身時，或心變易，或惡語言者，汝則衰
+<lb n="0465a09" ed="T"/>退。汝當作是念：「若有賊來，以利刀鋸節
+<lb n="0465a10" ed="T"/>節解我身者，因此令我心不變易，不惡語
+<lb n="0465a11" ed="T"/>言，當為彼節節解我身者起哀愍心，為
+<lb n="0465a12" ed="T"/>彼人故，心與慈俱，遍滿一方成就遊，如是
+<lb n="0465a13" ed="T"/>二三四方、四維上下，普周一切，心與慈俱，無
+<lb n="0465a14" ed="T"/>結無怨，無恚無諍，極廣甚大，無量善修，遍滿
+<lb n="0465a15" ed="T"/>一切世間成就遊。」』</p><p xml:id="pT01p0465a1508" cb:place="inline">「諸賢！彼比丘若因佛、法、
+<lb n="0465a16" ed="T"/>眾，不住善相應捨者，諸賢！彼比丘應慙愧
+<lb n="0465a17" ed="T"/>羞厭，我於利無利，於德無德，謂我因佛、法、
+<lb n="0465a18" ed="T"/>眾，不住善相應捨。諸賢！猶如初迎新婦，
+<lb n="0465a19" ed="T"/>見其姑嫜，若見夫主，則慙愧羞厭。諸賢！當
+<lb n="0465a20" ed="T"/>知比丘亦復如是，應慙愧羞厭，我於利無
+<lb n="0465a21" ed="T"/>利，於德無德，謂我因佛、法、眾，不住善相應
+<lb n="0465a22" ed="T"/>捨，彼因慙愧羞厭故，便住善相應捨，是妙
+<lb n="0465a23" ed="T"/>息寂，謂捨一切有，離<note n="0465002" resp="Taisho" type="orig" place="foot text">愛＝受【三】</note><note n="0465002" resp="CBETA" type="mod">愛【大】，受【宋】【元】【明】</note><app n="0465002"><lem wit="【大】">愛</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">受</rdg></app>、無欲、滅盡無餘。諸
+<lb n="0465a24" ed="T"/>賢！是謂比丘一切大學。</p><p xml:id="pT01p0465a2410" cb:place="inline">「諸賢！云何水界？諸
+<lb n="0465a25" ed="T"/>賢！謂水界有二，有內水界，有外水界。諸賢！
+<lb n="0465a26" ed="T"/>云何內水界？謂內身中在，內所攝水，水性潤，
+<lb n="0465a27" ed="T"/>內之所受。此為云何？謂腦、<note n="0465003" resp="Taisho" type="orig" place="foot text">腦根＝脂眼【元】【明】</note><note n="0465003" resp="CBETA" type="mod">腦根【大】，脂眼【元】【明】</note><app n="0465003"><lem wit="【大】">腦根</lem><rdg resp="Taisho" wit="【元】 【明】">脂眼</rdg></app>，淚、汗、涕、唾、
+<lb n="0465a28" ed="T"/>膿、血、肪、髓、涎、膽、小便，如是比此身中餘在，內
+<lb n="0465a29" ed="T"/>所攝水，水性潤，內之所受，諸賢！是謂內水
+<pb n="0465b" ed="T" xml:id="T01.0026.0465b"/>
+<lb n="0465b01" ed="T"/>界。諸賢！外水界者，謂大是，淨是，不憎惡<note n="0465004" resp="Taisho" type="orig" place="foot text">是＋（謂）【三】</note><note n="0465004" resp="CBETA" type="mod">是【大】，是謂【宋】【元】【明】</note><app n="0465004"><lem wit="【大】">是</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">是謂</rdg></app>，
+<lb n="0465b02" ed="T"/>諸賢！有時火災，是時滅外水界。</p><p xml:id="pT01p0465b0213" cb:place="inline">「諸賢！此外
+<lb n="0465b03" ed="T"/>水界極大，極淨，極不憎惡，是無常法、盡法、衰
+<lb n="0465b04" ed="T"/>法、變易之法，況復此身暫住，為愛所受？謂不
+<lb n="0465b05" ed="T"/>多聞愚癡凡夫而作此念：『是我，是我所，我是
+<lb n="0465b06" ed="T"/>彼所。』多聞聖弟子不作此念：『是我，是我所，我
+<lb n="0465b07" ed="T"/>是彼所。』彼云何作是念？若有他人罵詈、捶打、
+<lb n="0465b08" ed="T"/>瞋恚責數者，便作是念：『我生此苦，從因緣
+<lb n="0465b09" ed="T"/>生，非無因緣。云何為緣？緣苦更樂。』彼觀此
+<lb n="0465b10" ed="T"/>更樂無常，觀覺、想、行、識無常，彼心緣界住，
+<lb n="0465b11" ed="T"/>止合一心，定不移動。彼於後時，他人來語
+<lb n="0465b12" ed="T"/>柔辭軟言者，彼作是念：『我生此樂，從因緣
+<lb n="0465b13" ed="T"/>生，非無因緣。云何為緣？緣樂更樂。』彼觀此
+<lb n="0465b14" ed="T"/>更樂無常，觀覺、想、行、識無常，彼心緣界住，
+<lb n="0465b15" ed="T"/>止合一心，定不移動。彼於後時，若幼<note n="0465005" resp="Taisho" type="orig" place="foot text">少中＝中少【明】</note><note n="0465005" resp="CBETA" type="mod">少中【大】，中少【明】</note><app n="0465005"><lem wit="【大】">少、中</lem><rdg resp="Taisho" wit="【明】">中少</rdg></app>
+<lb n="0465b16" ed="T"/>年、長老來行不可事，或以拳扠，或以石擲，
+<lb n="0465b17" ed="T"/>或刀杖加，彼作是念：『我受此身，色法麤質，
+<lb n="0465b18" ed="T"/>四大之種，從父母生，飲食長養，常衣被覆，坐
+<lb n="0465b19" ed="T"/>臥按摩，澡浴強忍，是破壞法，是滅盡法，離散
+<lb n="0465b20" ed="T"/>之法，我因此身致拳扠、石擲及刀杖加。』由
+<lb n="0465b21" ed="T"/>是之故，彼極精勤而不懈怠，正身正念，不
+<lb n="0465b22" ed="T"/><app type="star" corresp="#0465001"><lem wit="【大】">忘</lem><rdg resp="Taisho" wit="【元】 【明】">恚</rdg></app>不癡，安定一心，彼作是念：『我極精勤而不
+<lb n="0465b23" ed="T"/>懈怠，正身正念，不<app type="star" corresp="#0465001"><lem wit="【大】">忘</lem><rdg resp="Taisho" wit="【元】 【明】">恚</rdg></app>不癡，安定一心，我受
+<lb n="0465b24" ed="T"/>此身應致拳扠、石擲及刀杖加，但當精勤
+<lb n="0465b25" ed="T"/>學世尊法。』</p><p xml:id="pT01p0465b2505" cb:place="inline">「諸賢！世尊亦如是說：『若有賊來，
+<lb n="0465b26" ed="T"/>以利刀鋸，節節解身。若汝為賊以利刀鋸
+<lb n="0465b27" ed="T"/>節節解身時，或心變易，或惡語言者，汝則衰
+<lb n="0465b28" ed="T"/>退。汝當作是念：「若有賊來，以利刀鋸節節
+<lb n="0465b29" ed="T"/>解我身者，因此令我心不變易，不惡語言，
+<pb n="0465c" ed="T" xml:id="T01.0026.0465c"/>
+<lb n="0465c01" ed="T"/>當為彼節節解我身者起哀愍心，為彼
+<lb n="0465c02" ed="T"/>人故，心與慈俱，遍滿一方成就遊，如是二
+<lb n="0465c03" ed="T"/>三四方、四維上下，普周一切，心與慈俱，無結
+<lb n="0465c04" ed="T"/>無怨，無恚無諍，極廣甚大，無量善修，遍滿一
+<lb n="0465c05" ed="T"/>切世間成就遊。」』</p><p xml:id="pT01p0465c0507" cb:place="inline">「諸賢！彼比丘若因佛、法、眾，
+<lb n="0465c06" ed="T"/>不住善相應捨者，諸賢！彼比丘應慙愧羞
+<lb n="0465c07" ed="T"/>厭，我於利無利，於德無德，謂我因佛、法、眾，
+<lb n="0465c08" ed="T"/>不住善相應捨。諸賢！猶如初迎新婦，見其
+<lb n="0465c09" ed="T"/>姑嫜，若見夫主，則慙愧羞厭。諸賢！當知比
+<lb n="0465c10" ed="T"/>丘亦復如是，應慙愧羞厭，我於利無利，於
+<lb n="0465c11" ed="T"/>德無德，謂我因佛、法、眾，不住善相應捨，彼
+<lb n="0465c12" ed="T"/>因慙愧羞厭故，便住善相應捨，是妙息寂，
+<lb n="0465c13" ed="T"/>謂捨一切有，離愛、無欲，滅盡無餘。諸賢！是
+<lb n="0465c14" ed="T"/>謂比丘一切大學。</p><p xml:id="pT01p0465c1408" cb:place="inline">「諸賢！云何火界？諸賢！謂
+<lb n="0465c15" ed="T"/>火界有二，有內火界，有外火界。諸賢！云何
+<lb n="0465c16" ed="T"/>內火界？謂內身中在，內所攝火，火性熱，內
+<lb n="0465c17" ed="T"/>之所受。此為云何？謂暖身、熱身、煩悶、溫壯、
+<lb n="0465c18" ed="T"/>消化飲食，如是比此身中餘在，內所攝火，
+<lb n="0465c19" ed="T"/>火性熱，內之所受，諸賢！是謂內火界。諸賢！
+<lb n="0465c20" ed="T"/>外火界者，謂大是，淨是，不憎惡是。諸賢！有時
+<lb n="0465c21" ed="T"/>外火界起，起已燒村邑、城郭、山林、曠野，燒彼
+<lb n="0465c22" ed="T"/>已，或至道、至水，無受而滅。諸賢！外火界滅
+<lb n="0465c23" ed="T"/>後，人民求火，或鑽木截竹，或以珠燧。</p><p xml:id="pT01p0465c2315" cb:place="inline">「諸賢！
+<lb n="0465c24" ed="T"/>此外火界極大，極淨，極不憎惡，是無常法、盡
+<lb n="0465c25" ed="T"/>法、衰法、變易之法，況復此身暫住，為愛所受？
+<lb n="0465c26" ed="T"/>謂不多聞愚癡凡夫而作此念：『是我，是我所，
+<lb n="0465c27" ed="T"/>我是彼所。』多聞聖弟子不作此念：『是我，是我
+<lb n="0465c28" ed="T"/>所，我是彼所。』彼云何作是念？若有他人
+<lb n="0465c29" ed="T"/>罵詈、捶打、瞋恚責數者，便作是念：『我生此
+<pb n="0466a" ed="T" xml:id="T01.0026.0466a"/>
+<lb n="0466a01" ed="T"/>苦，從因緣生，非無因緣。云何為緣？緣苦
+<lb n="0466a02" ed="T"/>更樂。』彼觀此更樂無常，觀覺、想、行、識無常，
+<lb n="0466a03" ed="T"/>彼心緣界住，止合一心，定不移動。彼於後
+<lb n="0466a04" ed="T"/>時，他人來語柔辭軟言者，彼作是念：『我生
+<lb n="0466a05" ed="T"/>此樂，從因緣生，非無因緣。云何為緣？緣樂
+<lb n="0466a06" ed="T"/>更樂。』彼觀此更樂無常，觀覺、想、行、識無常，
+<lb n="0466a07" ed="T"/>彼心緣界住，止合一心，定不移動。彼於後
+<lb n="0466a08" ed="T"/>時，若幼少、中年、長老來行不可事，或以拳扠，
+<lb n="0466a09" ed="T"/>或以石擲，或刀杖加，彼作是念：『我受此身，
+<lb n="0466a10" ed="T"/>色法麤質，四大之種，從父母生，飲食長養，
+<lb n="0466a11" ed="T"/>常衣被覆，坐臥按摩，澡浴強忍，是破壞法，是
+<lb n="0466a12" ed="T"/>滅盡法，離散之法，我因此身致拳扠、石擲及
+<lb n="0466a13" ed="T"/>刀杖加。』由是之故，彼極精勤而不懈怠，正
+<lb n="0466a14" ed="T"/>身正念，不<app type="star" corresp="#0465001"><lem wit="【大】">忘</lem><rdg resp="Taisho" wit="【元】 【明】">恚</rdg></app>不癡，安定一心，彼作是念：『我
+<lb n="0466a15" ed="T"/>極精勤而不懈怠，正身正念，不<app type="star" corresp="#0465001"><lem wit="【大】">忘</lem><rdg resp="Taisho" wit="【元】 【明】">恚</rdg></app>不癡，安
+<lb n="0466a16" ed="T"/>定一心，我受此身應致拳扠、石擲及刀杖
+<lb n="0466a17" ed="T"/>加，但當精勤學世尊法。』</p><p xml:id="pT01p0466a1710" cb:place="inline">「諸賢！世尊亦如是
+<lb n="0466a18" ed="T"/>說：『若有賊來，以利刀鋸，節節解身。若汝為
+<lb n="0466a19" ed="T"/>賊以利刀鋸節節解身時，或心變易，或惡語
+<lb n="0466a20" ed="T"/>言者，汝則衰退。汝當作是念：「若有賊來，以
+<lb n="0466a21" ed="T"/>利刀鋸節節解我身者，因此令我心不變
+<lb n="0466a22" ed="T"/>易，不惡語言，當為彼節節解我身者起
+<lb n="0466a23" ed="T"/>哀愍心，為彼人故，心與慈俱，遍滿一方成
+<lb n="0466a24" ed="T"/>就遊，如是二三四方、四維上下，普周一切，心
+<lb n="0466a25" ed="T"/>與慈俱，無結無怨，無恚無諍，極廣甚大，無量
+<lb n="0466a26" ed="T"/>善修，遍滿一切世間成就遊。」』</p><p xml:id="pT01p0466a2612" cb:place="inline">「諸賢！彼比丘
+<lb n="0466a27" ed="T"/>若因佛、法、眾，不住善相應捨者，諸賢！彼比
+<lb n="0466a28" ed="T"/>丘應慙愧羞厭，我於利無利，於德無德，謂
+<lb n="0466a29" ed="T"/>我因佛、法、眾，不住善相應捨。諸賢！猶如初
+<pb n="0466b" ed="T" xml:id="T01.0026.0466b"/>
+<lb n="0466b01" ed="T"/>迎新婦，見其姑嫜，若見夫主，則慙愧羞厭。
+<lb n="0466b02" ed="T"/>諸賢！當知比丘亦復如是，應慙愧羞厭，我
+<lb n="0466b03" ed="T"/>於利無利，於德無德，謂我因佛、法、眾，不
+<lb n="0466b04" ed="T"/>住善相應捨，彼因慙愧羞厭故，便住善相
+<lb n="0466b05" ed="T"/>應捨，是妙息寂，謂捨一切有，離愛、無欲，滅
+<lb n="0466b06" ed="T"/>盡無餘。諸賢！是謂比丘一切大學。</p><p xml:id="pT01p0466b0614" cb:place="inline">「諸賢！云
+<lb n="0466b07" ed="T"/>何風界？諸賢！謂風界有二，有內風界，有外
+<lb n="0466b08" ed="T"/>風界。諸賢！云何內風界？謂內身中在，內所攝
+<lb n="0466b09" ed="T"/>風，風性動，內之所受。此為云何？謂上風、下
+<lb n="0466b10" ed="T"/>風、腹風、行風、掣縮風、刀風、<note n="0466001" resp="Taisho" type="orig" place="foot text">躋＝<g ref="#CB04787"/>【宋】，<g ref="#CB04789"/>【元】【明】</note><note n="0466001" resp="CBETA" type="mod">躋【大】，<g ref="#CB04787"/>【宋】，<g ref="#CB04789"/>【元】【明】</note><app n="0466001"><lem wit="【大】">躋</lem><rdg resp="Taisho" wit="【宋】"><g ref="#CB04787"/></rdg><rdg resp="Taisho" wit="【元】 【明】"><g ref="#CB04789"/></rdg></app>風、非道風、節節
+<lb n="0466b11" ed="T"/>行風、息出風、息入風，如是比此身中餘在，內
+<lb n="0466b12" ed="T"/>所攝風，風性動，內之所受，諸賢！是謂內風
+<lb n="0466b13" ed="T"/>界。諸賢！外風界者，謂大是，淨是，不憎惡是。
+<lb n="0466b14" ed="T"/>諸賢！有時外風界起，風界起時<note n="0466002" resp="Taisho" type="orig" place="foot text">撥＝發【三】＊</note><note n="0466002" resp="CBETA" type="mod">撥【大】＊，發【宋】＊【元】＊【明】＊</note><app n="0466002"><lem wit="【大】">撥</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">發</rdg></app>，屋拔樹，
+<lb n="0466b15" ed="T"/>崩山，山巖<app type="star" corresp="#0466002"><lem wit="【大】">撥</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">發</rdg></app>已便止，纖毫不動。諸賢！外風
+<lb n="0466b16" ed="T"/>界止後，人民求風，或以其扇，或以<note n="0466003" resp="Taisho" type="orig" place="foot text">哆邏＝多羅【宋】</note><note n="0466003" resp="CBETA" type="mod">哆邏【大】，多羅【宋】</note><app n="0466003"><lem wit="【大】">哆邏</lem><rdg resp="Taisho" wit="【宋】">多羅</rdg></app>葉，
+<lb n="0466b17" ed="T"/>或以衣求風。</p><p xml:id="pT01p0466b1706" cb:place="inline">「諸賢！此風界極大，極淨，極不憎
+<lb n="0466b18" ed="T"/>惡，是無常法、盡法、衰法、變易之法，況復此身
+<lb n="0466b19" ed="T"/>暫住，為愛所受？謂不多聞愚癡凡夫而作此
+<lb n="0466b20" ed="T"/>念：『是我，是我所，我是彼所。』多聞聖弟子不作
+<lb n="0466b21" ed="T"/>此念：『是我，是我所，我是彼所。』彼云何作是念？
+<lb n="0466b22" ed="T"/>若有他人罵詈、捶打、瞋恚責數者，便作是
+<lb n="0466b23" ed="T"/>念：『我生此苦，從因緣生，非無因緣。云何
+<lb n="0466b24" ed="T"/>為緣？緣苦更樂。』彼觀此更樂無常，觀覺、想、
+<lb n="0466b25" ed="T"/>行、識無常，彼心緣界住，止合一心，定不移
+<lb n="0466b26" ed="T"/>動。彼於後時，他人來語柔辭軟言者，彼作
+<lb n="0466b27" ed="T"/>是念：『我生此樂，從因緣生，非無因緣。云何
+<lb n="0466b28" ed="T"/>為緣？緣樂更樂。』彼觀此更樂無常，觀覺、想、
+<lb n="0466b29" ed="T"/>行、識無常，彼心緣界住，止合一心，定不移
+<pb n="0466c" ed="T" xml:id="T01.0026.0466c"/>
+<lb n="0466c01" ed="T"/>動；彼於後時，若幼少、中年、長老來行不可
+<lb n="0466c02" ed="T"/>事，或以拳扠，或以石擲，或刀杖加，彼作是
+<lb n="0466c03" ed="T"/>念：『我受此身，色法麤質，四大之種，從父母
+<lb n="0466c04" ed="T"/>生，飲食長養，常衣被覆，坐臥按摩，澡浴強忍，
+<lb n="0466c05" ed="T"/>是破壞法，是滅盡法，離散之法，我因此身致
+<lb n="0466c06" ed="T"/>拳扠、石擲及刀杖加。』由是之故，彼極精勤而
+<lb n="0466c07" ed="T"/>不懈怠，正身正念，不<app type="star" corresp="#0465001"><lem wit="【大】">忘</lem><rdg resp="Taisho" wit="【元】 【明】">恚</rdg></app>不癡，安定一心，彼
+<lb n="0466c08" ed="T"/>作是念：『我極精勤而不懈怠，正身正念，不
+<lb n="0466c09" ed="T"/><app type="star" corresp="#0465001"><lem wit="【大】">忘</lem><rdg resp="Taisho" wit="【元】 【明】">恚</rdg></app>不癡，安定一心，我受此身應致拳扠、石
+<lb n="0466c10" ed="T"/>擲及刀杖加，但當精勤學世尊法。』</p><p xml:id="pT01p0466c1014" cb:place="inline">「諸賢！世
+<lb n="0466c11" ed="T"/>尊亦如是說：『若有賊來，以利刀鋸，節節解
+<lb n="0466c12" ed="T"/>身。若汝為賊以利刀鋸節節解身時，或心
+<lb n="0466c13" ed="T"/>變易，或惡語言者，汝則衰退。汝當作是念：「若
+<lb n="0466c14" ed="T"/>有賊來，以利刀鋸節節解我身者，因此令
+<lb n="0466c15" ed="T"/>我心不變易，不惡語言，當為彼節節解我
+<lb n="0466c16" ed="T"/>身者起哀愍心，為彼人故，心與慈俱，遍
+<lb n="0466c17" ed="T"/>滿一方成就遊，如是二三四方、四維上下，普
+<lb n="0466c18" ed="T"/>周一切，心與慈俱，無結無怨，無恚無諍，極廣
+<lb n="0466c19" ed="T"/>甚大，無量善修，遍滿一切世間成就遊。」』</p><p xml:id="pT01p0466c1916" cb:place="inline">「諸賢！
+<lb n="0466c20" ed="T"/>彼比丘若因佛、法、眾，不住善相應捨者，諸
+<lb n="0466c21" ed="T"/>賢！彼比丘應慙愧羞厭，我於利無利，於德
+<lb n="0466c22" ed="T"/>無德，謂我因佛、法、眾，不住善相應捨。諸賢！
+<lb n="0466c23" ed="T"/>猶如初迎新婦，見其姑嫜，若見夫主，則慙
+<lb n="0466c24" ed="T"/>愧羞厭。諸賢！當知比丘亦復如是，應慙
+<lb n="0466c25" ed="T"/>愧羞厭，我於利無利，於德無德，謂我因佛、法、
+<lb n="0466c26" ed="T"/>眾，不住善相應捨，彼因慙愧羞厭故，便住
+<lb n="0466c27" ed="T"/>善相應捨，是妙息寂，謂捨一切有，離愛、無欲，
+<lb n="0466c28" ed="T"/>滅盡無餘。諸賢！是謂比丘一切大學。</p><p xml:id="pT01p0466c2815" cb:place="inline">「諸賢！
+<lb n="0466c29" ed="T"/>猶如因材木，因泥土，因水草，覆裹於空，
+<pb n="0467a" ed="T" xml:id="T01.0026.0467a"/>
+<lb n="0467a01" ed="T"/>便生屋名。諸賢！當知此身亦復如是，因筋
+<lb n="0467a02" ed="T"/>骨，因皮膚，因肉血，纏裹於空，便生身名。諸
+<lb n="0467a03" ed="T"/>賢！若內眼處壞者，外色便不為光明所照，
+<lb n="0467a04" ed="T"/>則無有念，眼識不得生。諸賢！若內眼處不
+<lb n="0467a05" ed="T"/>壞者，外色便為光明所照，而便有念，眼識
+<lb n="0467a06" ed="T"/>得生。諸賢！內眼處及色，眼識知外色，是屬
+<lb n="0467a07" ed="T"/>色陰。若有覺是覺陰，若有想是想陰，若有
+<lb n="0467a08" ed="T"/>思是思陰，若有識是識陰，如是觀陰合會。</p>
+<lb n="0467a09" ed="T"/><p xml:id="pT01p0467a0901">「諸賢！世尊亦如是說：『若見緣起便見法，若
+<lb n="0467a10" ed="T"/>見法便見緣起。』所以者何？諸賢！世尊說五
+<lb n="0467a11" ed="T"/>盛陰從因緣生，色盛陰，覺、想、行、識盛陰。諸
+<lb n="0467a12" ed="T"/>賢！若內耳、鼻、舌、身、意處壞者，外法便不為光
+<lb n="0467a13" ed="T"/>明所照，則無有念，意識不得生。諸賢！若
+<lb n="0467a14" ed="T"/>內意處不壞者，外法便為光明所照而便有
+<lb n="0467a15" ed="T"/>念，意識得生。諸賢！內意處及法，意識知外
+<lb n="0467a16" ed="T"/>色法，是屬色陰。若有覺是覺陰，若有想是
+<lb n="0467a17" ed="T"/>想陰，若有思是思陰，若有識是識陰，如是
+<lb n="0467a18" ed="T"/>觀陰合會。諸賢！世尊亦如是說：『若見緣起
+<lb n="0467a19" ed="T"/>便見法，若見法便見緣起。』所以者何？諸賢！
+<lb n="0467a20" ed="T"/>世尊說五盛陰從因緣生，色盛陰，覺、想、行、
+<lb n="0467a21" ed="T"/>識盛陰，彼厭此過去、未來、現在五盛陰，厭已
+<lb n="0467a22" ed="T"/>便無欲，無欲已便解脫，解脫已便知解脫，
+<lb n="0467a23" ed="T"/>生已盡，梵行已立，所作已辦，不更受有，知
+<lb n="0467a24" ed="T"/>如真。諸賢！是謂比丘一切大學。」</p><p xml:id="pT01p0467a2413" cb:place="inline">尊者舍梨子
+<lb n="0467a25" ed="T"/>所說如是。彼諸比丘聞尊者舍梨子所說，歡
+<lb n="0467a26" ed="T"/>喜奉行。</p>
+<lb n="0467a27" ed="T"/><p xml:id="pT01p0467a2701"><note n="0467001" resp="Taisho" type="orig" place="foot text">〔象跡…竟〕七字－【明】</note><note n="0467001" resp="CBETA" type="mod">（象跡…竟）七字【大】，〔－〕【明】</note><app n="0467001" cb:word-count="7"><lem wit="【大】">象跡喻經第十竟</lem><rdg resp="Taisho" wit="【明】"><space quantity="0"/></rdg></app><note n="0467002" resp="Taisho" type="orig" place="foot text">〔三千…字〕八字－【三】</note><note n="0467002" resp="CBETA" type="mod">（三千…字）八字【大】，〔－〕【宋】【元】【明】</note><app n="0467002" cb:word-count="8"><lem wit="【大】"><note place="inline">三千八百六十七字</note></lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app></p></cb:div>
+<lb n="0467a28" ed="T"/><cb:div type="jing"><cb:mulu level="3" type="經">31 分別聖諦經</cb:mulu><head>（三一）<title><note n="0467003" resp="Taisho" type="orig" place="foot text">〔中阿含〕－【明】</note><note n="0467003" resp="CBETA" type="mod">中阿含【大】，〔－〕【明】</note><app n="0467003"><lem wit="【大】">中阿含</lem><rdg resp="Taisho" wit="【明】"><space quantity="0"/></rdg></app>舍梨子相應品</title><note n="0467004" resp="Taisho" type="orig" place="foot text">～M. 141. Saccavibhaṅgasutta [No. 32, 125(27.1)]</note><note n="0467004" resp="CBETA" type="mod">～M. 141. Saccavibhaṅgasutta，[No. 32, 125(27.1)]</note><note n="0467004" place="foot" type="equivalent">～M. 141. Saccavibhaṅgasutta</note><note n="0467004" place="foot" type="cf.">[No. 32, 125(27.1)]</note>分別聖諦經第
+<lb n="0467a29" ed="T"/>十一<note n="0467005" resp="Taisho" type="orig" place="foot text">〔初一日誦〕－【明】</note><note n="0467005" resp="CBETA" type="mod">初一日誦【大】，〔－〕【明】</note><app n="0467005"><lem wit="【大】"><note place="inline">初一日誦</note></lem><rdg resp="Taisho" wit="【明】"><space quantity="0"/></rdg></app></head>
+<pb n="0467b" ed="T" xml:id="T01.0026.0467b"/>
+<lb n="0467b01" ed="T"/><p xml:id="pT01p0467b0101">我聞如是：</p><p xml:id="pT01p0467b0105" cb:place="inline">一時，佛遊舍衛國，在勝林給孤
+<lb n="0467b02" ed="T"/>獨園。</p><p xml:id="pT01p0467b0203" cb:place="inline">爾時，世尊告諸比丘：「此是正行說法，謂
+<lb n="0467b03" ed="T"/>四聖諦廣攝、廣觀、分別、發露、開仰、施設、顯示、
+<lb n="0467b04" ed="T"/>趣向。過去諸如來、無所著、等正覺，彼亦有此
+<lb n="0467b05" ed="T"/>正行說法，謂四聖諦廣攝、廣觀、分別、發露、開
+<lb n="0467b06" ed="T"/>仰、施設、顯示、趣向。未來諸如來、無所著、等正
+<lb n="0467b07" ed="T"/>覺，彼亦有此正行說法，謂四聖諦廣攝、廣觀、
+<lb n="0467b08" ed="T"/>分別、發露、開仰、施設、顯示、趣向。我今現如來、
+<lb n="0467b09" ed="T"/>無所著、等正覺，亦有此正行說法，謂四聖諦
+<lb n="0467b10" ed="T"/>廣攝、廣觀、分別、發露、開仰、施設、顯示、趣向。</p><p xml:id="pT01p0467b1017" cb:place="inline">「舍
+<lb n="0467b11" ed="T"/>梨子比丘聰慧、速慧、捷慧、利慧、廣慧、深慧、出要
+<lb n="0467b12" ed="T"/>慧、明達慧、辯才慧，舍梨子比丘成就實慧。所
+<lb n="0467b13" ed="T"/>以者何？謂我略說此四聖諦，舍梨子比丘則
+<lb n="0467b14" ed="T"/>能為他廣教、廣觀、分別、發露、開仰、施設、顯現、
+<lb n="0467b15" ed="T"/>趣向。舍梨子比丘廣教、廣示此四聖諦，分別、
+<lb n="0467b16" ed="T"/>發露、開仰、施設、顯現、趣向時，令無量人而得
+<lb n="0467b17" ed="T"/>於觀，舍梨子比丘能以正見為導御也。目
+<lb n="0467b18" ed="T"/><note n="0467006" resp="Taisho" type="orig" place="foot text">乾＝揵【三】＊</note><note n="0467006" resp="CBETA" type="mod">乾【大】＊，揵【宋】＊【元】＊【明】＊</note><app n="0467006"><lem wit="【大】">乾</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">揵</rdg></app>連比丘能令立於最上真際，謂究竟漏
+<lb n="0467b19" ed="T"/>盡。舍梨子比丘生諸梵行，猶如生母，目連
+<lb n="0467b20" ed="T"/>比丘長養諸梵行，猶如養母，是以諸梵行
+<lb n="0467b21" ed="T"/>者，應奉事供養恭敬禮拜舍梨子、目<app type="star" corresp="#0467006"><lem wit="【大】">乾</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">揵</rdg></app>
+<lb n="0467b22" ed="T"/>連比丘。所以者何？舍梨子、目乾連比丘為諸
+<lb n="0467b23" ed="T"/>梵行者求義及饒益，求安隱快樂。」爾時，世
+<lb n="0467b24" ed="T"/>尊說如是已，即從<note n="0467007" resp="Taisho" type="orig" place="foot text">坐＝座【三】</note><note n="0467007" resp="CBETA" type="mod">坐【大】，座【宋】【元】【明】</note><app n="0467007"><lem wit="【大】">坐</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">座</rdg></app>起，入室<note n="0467008" resp="Taisho" type="orig" place="foot text">燕＝宴【三】</note><note n="0467008" resp="CBETA" type="mod">燕【大】，宴【宋】【元】【明】</note><app n="0467008"><lem wit="【大】">燕</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">宴</rdg></app>坐。</p><p xml:id="pT01p0467b2414" cb:place="inline">於是，
+<lb n="0467b25" ed="T"/>尊者舍梨子告諸比丘：「諸賢！世尊為我等
+<lb n="0467b26" ed="T"/>出世，謂為他廣教、廣示此四聖諦，分別、發
+<lb n="0467b27" ed="T"/>露、開仰、施設、顯現、趣向。云何為四？謂苦聖諦，
+<lb n="0467b28" ed="T"/>苦<note n="0467009" resp="Taisho" type="orig" place="foot text">習＝集【元】，寂【明】</note><note n="0467009" resp="CBETA" type="mod">習【大】，集【元】，寂【明】</note><app n="0467009"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】">集</rdg><rdg resp="Taisho" wit="【明】">寂</rdg></app>、苦滅、苦滅道聖諦。諸賢！云何苦聖諦？
+<lb n="0467b29" ed="T"/>謂生苦、老苦、病苦、死苦、怨憎會苦、愛別離苦、
+<pb n="0467c" ed="T" xml:id="T01.0026.0467c"/>
+<lb n="0467c01" ed="T"/>所求不得苦、略五盛陰苦。諸賢！說生苦者，
+<lb n="0467c02" ed="T"/>此說何因？諸賢！生者，謂彼眾生、彼彼眾生種
+<lb n="0467c03" ed="T"/>類，生則生，出則出，成則成，興起五陰，已得
+<lb n="0467c04" ed="T"/>命根，是名為生。諸賢！生苦者，謂眾生生時，
+<lb n="0467c05" ed="T"/>身受苦受、遍受、覺、遍覺，心受苦受、遍受、覺、遍
+<lb n="0467c06" ed="T"/>覺，身心受苦受、遍受，覺、遍覺，身熱受、遍受、覺、
+<lb n="0467c07" ed="T"/>遍覺，心熱受、遍受、覺、遍覺，身心熱受、遍受、覺、
+<lb n="0467c08" ed="T"/>遍覺，身壯熱煩惱憂慼受、遍受，覺、遍覺，心壯
+<lb n="0467c09" ed="T"/>熱煩惱憂慼受、遍受、覺、遍覺，身心壯熱煩惱
+<lb n="0467c10" ed="T"/>憂慼受、遍受、覺、遍覺。諸賢！說生苦者，因此故
+<lb n="0467c11" ed="T"/>說。</p><p xml:id="pT01p0467c1102" cb:place="inline">「諸賢！說老苦者，此說何因？諸賢！老者，謂
+<lb n="0467c12" ed="T"/>彼眾生、彼彼眾生種類，彼為老耄，頭白齒落，
+<lb n="0467c13" ed="T"/>盛壯日衰，身曲脚戾，體重氣上，拄杖而行，肌
+<lb n="0467c14" ed="T"/>縮皮緩，皺如麻子，諸根毀熟，顏色醜惡，是名
+<lb n="0467c15" ed="T"/>為老。諸賢！老苦者，謂眾生老時，身受苦受、
+<lb n="0467c16" ed="T"/>遍受、覺、遍覺，心受苦受、遍受、覺、遍覺，身心受
+<lb n="0467c17" ed="T"/>苦受、遍受、覺、遍覺，身熱受、遍受、覺、遍覺，心熱
+<lb n="0467c18" ed="T"/>受、遍受、覺、遍覺，身心熱受、<note n="0467010" resp="Taisho" type="orig" place="foot text">遍受＝通受【宋】，受偏【元】</note><note n="0467010" resp="CBETA" type="mod">遍受【大】，通受【宋】，受偏【元】</note><app n="0467010"><lem wit="【大】">遍受</lem><rdg resp="Taisho" wit="【宋】">通受</rdg><rdg resp="Taisho" wit="【元】">受偏</rdg></app>、覺、遍覺，身壯
+<lb n="0467c19" ed="T"/>熱煩惱憂慼受、遍受、覺、遍覺，心壯熱煩惱憂慼
+<lb n="0467c20" ed="T"/>受、遍受、覺、遍覺，身心壯熱煩惱憂慼受、遍受、覺、
+<lb n="0467c21" ed="T"/>遍覺。諸賢！說老苦者，因此故說。</p><p xml:id="pT01p0467c2113" cb:place="inline">「諸賢！說病
+<lb n="0467c22" ed="T"/>苦者，此說何因？諸賢！病者，謂頭痛、眼痛、耳
+<lb n="0467c23" ed="T"/>痛、鼻痛、面痛、脣痛、齒痛、舌痛、<note n="0467011" resp="Taisho" type="orig" place="foot text"><g ref="#CB02666"/>＝齶【三】</note><note n="0467011" resp="CBETA" type="mod"><g ref="#CB02666"/>【大】，齶【宋】【元】【明】</note><app n="0467011"><lem wit="【大】"><g ref="#CB02666"/></lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">齶</rdg></app>痛、咽痛、風喘、
+<lb n="0467c24" ed="T"/><note n="0467012" resp="Taisho" type="orig" place="foot text">咳＝欬【三】</note><note n="0467012" resp="CBETA" type="mod">咳【大】，欬【宋】【元】【明】</note><app n="0467012"><lem wit="【大】">咳</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">欬</rdg></app>嗽、<note n="0467013" resp="Taisho" type="orig" place="foot text">喝＝噫【元】【明】</note><note n="0467013" resp="CBETA" type="mod">喝【大】，噫【元】【明】</note><app n="0467013"><lem wit="【大】">喝</lem><rdg resp="Taisho" wit="【元】 【明】">噫</rdg></app>吐、喉<note n="0467014" resp="Taisho" type="orig" place="foot text">啤＝痺【三】</note><note n="0467014" resp="CBETA" type="mod">啤【大】，痺【宋】【元】【明】</note><app n="0467014"><lem wit="【大】">啤</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">痺</rdg></app>、癲癎、癕癭、經溢、赤<note n="0467015" resp="Taisho" type="orig" place="foot text">膽＝痰【元】【明】</note><note n="0467015" resp="CBETA" type="mod">膽【大】，痰【元】【明】</note><app n="0467015"><lem wit="【大】">膽</lem><rdg resp="Taisho" wit="【元】 【明】">痰</rdg></app>、壯
+<lb n="0467c25" ed="T"/>熱、枯槁、痔<note n="0467016" resp="Taisho" type="orig" place="foot text"><g ref="#CB02652"/>＝瘻【元】【明】</note><note n="0467016" resp="CBETA" type="mod"><g ref="#CB02652"/>【大】，瘻【元】【明】</note><app n="0467016"><lem wit="【大】"><g ref="#CB02652"/></lem><rdg resp="Taisho" wit="【元】 【明】">瘻</rdg></app>、下<note n="0467017" resp="Taisho" type="orig" place="foot text">利＝<g ref="#CB04798"/>【三】</note><note n="0467017" resp="CBETA" type="mod">利【大】，<g ref="#CB04798"/>【宋】【元】【明】</note><app n="0467017"><lem wit="【大】">利</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><g ref="#CB04798"/></rdg></app>，若有如是比餘種種病，
+<lb n="0467c26" ed="T"/>從更樂觸生，不離心，立在身中，是名為病。
+<lb n="0467c27" ed="T"/>諸賢！病苦者，謂眾生病時，身受苦受、遍受、覺、
+<lb n="0467c28" ed="T"/>遍覺，心受苦受、遍受、覺、遍覺，身心受苦受、遍
+<lb n="0467c29" ed="T"/>受、覺、遍覺，身熱受、遍受、覺、遍覺，心熱受、遍受、
+<pb n="0468a" ed="T" xml:id="T01.0026.0468a"/>
+<lb n="0468a01" ed="T"/>覺、遍覺，身心熱受、遍受、覺、遍覺，身壯熱煩惱
+<lb n="0468a02" ed="T"/>憂慼受、遍受、覺、遍覺，心壯熱煩惱憂慼受、遍受、
+<lb n="0468a03" ed="T"/>覺、遍覺，身心壯熱煩惱憂慼受、遍受、覺、遍覺。
+<lb n="0468a04" ed="T"/>諸賢！說病苦者，因此故說。</p><p xml:id="pT01p0468a0411" cb:place="inline">「諸賢！說死苦者，
+<lb n="0468a05" ed="T"/>此說何因？諸賢！死者，謂彼眾生、彼彼眾生種
+<lb n="0468a06" ed="T"/>類，命終無常，死喪散滅，壽盡破壞，命根閉塞，
+<lb n="0468a07" ed="T"/>是名為死。諸賢！死苦者，謂眾生死時，身受
+<lb n="0468a08" ed="T"/>苦受、遍受、覺、遍覺，心受苦受、遍受、覺、遍覺，身
+<lb n="0468a09" ed="T"/>心受苦受、遍受、覺、遍覺，身熱受、遍受、覺、遍覺，
+<lb n="0468a10" ed="T"/>心熱受、遍受、覺、遍覺，身心熱受、遍受、覺、遍覺，
+<lb n="0468a11" ed="T"/>身壯熱煩惱憂慼受、遍受、覺、遍覺，心壯熱煩
+<lb n="0468a12" ed="T"/>惱憂慼受、遍受、覺、遍覺，身心壯熱煩惱憂慼
+<lb n="0468a13" ed="T"/>受、遍受、覺、遍覺。諸賢！說死苦者，因此故說。</p>
+<lb n="0468a14" ed="T"/><p xml:id="pT01p0468a1401">「諸賢！說怨憎會苦者，此說何因？諸賢！怨憎
+<lb n="0468a15" ed="T"/>會者，謂眾生實有內六處，不愛眼處，耳、鼻、舌、
+<lb n="0468a16" ed="T"/>身、意處，彼同會一，有攝、和、<note n="0468001" resp="Taisho" type="orig" place="foot text">習＝集【元】【明】＊</note><note n="0468001" resp="CBETA" type="mod">習【大】＊，集【元】【明】＊</note><app n="0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>，共合為苦，如
+<lb n="0468a17" ed="T"/>是外處，更樂、覺、想、思、愛、亦復如是。諸賢！眾生
+<lb n="0468a18" ed="T"/>實有六界，不愛地界，水、火、風、空、識界，彼同會
+<lb n="0468a19" ed="T"/>一，有攝、和、<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>，共合為苦，是名怨憎會。諸賢！
+<lb n="0468a20" ed="T"/>怨憎會苦者，謂眾生怨憎會時，身受苦受、遍
+<lb n="0468a21" ed="T"/>受、覺、遍覺，心受苦受、遍受、覺、遍覺，身心受苦
+<lb n="0468a22" ed="T"/>受、遍受、覺、遍覺。諸賢！說怨憎會苦者，因此
+<lb n="0468a23" ed="T"/>故說。</p><p xml:id="pT01p0468a2303" cb:place="inline">「諸賢！說愛別離苦者，此說何因？諸賢！
+<lb n="0468a24" ed="T"/>愛別離苦者，謂眾生實有內六處，愛眼處，耳、
+<lb n="0468a25" ed="T"/>鼻、舌、身、意處，彼異分散，不得相應，別離不
+<lb n="0468a26" ed="T"/>會，不攝、不<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、不和合為苦，如是外處，更樂、
+<lb n="0468a27" ed="T"/>覺、想、思、愛，亦復如是。諸賢！眾生實有六界，
+<lb n="0468a28" ed="T"/>愛地界，水、火、風、空、識界，彼異分散，不得相應，
+<lb n="0468a29" ed="T"/>別離不會，不攝、不<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、不和合為苦，是名
+<pb n="0468b" ed="T" xml:id="T01.0026.0468b"/>
+<lb n="0468b01" ed="T"/>愛別離。諸賢！愛別離苦者，謂眾生別離時，身
+<lb n="0468b02" ed="T"/>受苦受、遍受、覺、遍覺，心受苦受、遍受、覺、遍覺，
+<lb n="0468b03" ed="T"/>身心受苦受、遍受、覺、遍覺。諸賢！說愛別離苦
+<lb n="0468b04" ed="T"/>者，因此故說。</p><p xml:id="pT01p0468b0406" cb:place="inline">「諸賢！說所求不得苦者，此說
+<lb n="0468b05" ed="T"/>何因？諸賢！謂眾生生法，不離生法，欲得
+<lb n="0468b06" ed="T"/>令我而不生者，此實不可以欲而得，老法、
+<lb n="0468b07" ed="T"/>死法、愁憂慼法，不離憂慼法，欲得令我不
+<lb n="0468b08" ed="T"/>憂慼者，此亦不可以欲而得。諸賢！眾生實
+<lb n="0468b09" ed="T"/>生苦而不可樂、不可愛念，彼作是念：『若我
+<lb n="0468b10" ed="T"/>生苦而不可樂、不可愛念者，欲得轉是，
+<lb n="0468b11" ed="T"/>令可愛念。』此亦不可以欲而得。諸賢！眾
+<lb n="0468b12" ed="T"/>生實生樂而可愛念，彼作是念：『若我生樂
+<lb n="0468b13" ed="T"/>可愛念者，欲得令是常恒久住不變易法。』
+<lb n="0468b14" ed="T"/>此亦不可以欲而得。諸賢！眾生實生思想
+<lb n="0468b15" ed="T"/>而不可樂、不可愛念，彼作是念：『若我生思
+<lb n="0468b16" ed="T"/>想而不可樂、不可愛念者，欲得轉是，令
+<lb n="0468b17" ed="T"/>可愛念。』此亦不可以欲而得。諸賢！眾生
+<lb n="0468b18" ed="T"/>實生思想而可愛念，彼作是念：『若我生思
+<lb n="0468b19" ed="T"/>想可愛念者，欲得令是常恒久住不變易
+<lb n="0468b20" ed="T"/>法。』此亦不可以欲而得。諸賢！說所求不得
+<lb n="0468b21" ed="T"/>苦者，因此故說。</p><p xml:id="pT01p0468b2107" cb:place="inline">「諸賢！說略五盛陰苦者，此
+<lb n="0468b22" ed="T"/>說何因？謂色盛陰，覺、想、行、識盛陰。諸賢！說
+<lb n="0468b23" ed="T"/>略五盛陰苦者，因此故說。</p><p xml:id="pT01p0468b2311" cb:place="inline">「諸賢！過去時是
+<lb n="0468b24" ed="T"/>苦聖諦，未來、現在時是苦聖諦，真諦不虛，不
+<lb n="0468b25" ed="T"/>離於如，亦非顛倒，真諦審實，合如是諦，
+<lb n="0468b26" ed="T"/>聖所有，聖所知，聖所見，聖所了，聖所得，聖
+<lb n="0468b27" ed="T"/>所等正覺，是故說苦聖諦。</p><p xml:id="pT01p0468b2711" cb:place="inline">「諸賢！云何愛<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>
+<lb n="0468b28" ed="T"/>苦<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>聖諦？謂眾生實有愛內六處，眼處，耳、鼻、
+<lb n="0468b29" ed="T"/>舌、身、意處，於中若有愛、有膩、有染、有著者，
+<pb n="0468c" ed="T" xml:id="T01.0026.0468c"/>
+<lb n="0468c01" ed="T"/>是名為<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>。諸賢！多聞聖弟子知我如是知
+<lb n="0468c02" ed="T"/>此法，如是見，如是了，如是視，如是覺，是謂
+<lb n="0468c03" ed="T"/>愛<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>苦<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>聖諦，如是知之。云何知耶？若
+<lb n="0468c04" ed="T"/>有愛妻、子、奴婢、給使、眷屬、田地、屋宅、店肆、出
+<lb n="0468c05" ed="T"/>息財物，為所作業，有愛、有膩、有染、有著者，
+<lb n="0468c06" ed="T"/>是名為<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>；彼知此愛<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>，苦<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>聖諦，如是
+<lb n="0468c07" ed="T"/>外處，更樂、覺、想、思、愛，亦復如是。諸賢！眾生實
+<lb n="0468c08" ed="T"/>有愛六界，地界，水、火、風、空、識界，於中若有愛、
+<lb n="0468c09" ed="T"/>有膩、有染、有著者，是名為<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>。諸賢！多聞聖
+<lb n="0468c10" ed="T"/>弟子知我如是知此法，如是見，如是了，如
+<lb n="0468c11" ed="T"/>是視，如是覺，是謂愛<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>苦<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>聖諦，如是
+<lb n="0468c12" ed="T"/>知之。云何知耶？若有愛妻、子、奴婢、給使、眷屬、
+<lb n="0468c13" ed="T"/>田地、屋宅、店肆、出息財物，為所作業，有愛、有
+<lb n="0468c14" ed="T"/>膩、有染、有著者，是名為<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>，彼知是愛<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>苦
+<lb n="0468c15" ed="T"/>習聖諦。諸賢！過去時是愛<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>苦<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>聖諦，未
+<lb n="0468c16" ed="T"/>來、現在時是愛<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>苦<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>聖諦，真諦不虛，不
+<lb n="0468c17" ed="T"/>離於如，亦非顛倒，真諦審實，合如是諦，聖
+<lb n="0468c18" ed="T"/>所有，聖所知，聖所見，聖所了，聖所得，聖所
+<lb n="0468c19" ed="T"/>等正覺，是故說愛<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>苦<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>聖諦。</p><p xml:id="pT01p0468c1913" cb:place="inline">「諸賢！云何
+<lb n="0468c20" ed="T"/>愛滅苦滅聖諦？謂眾生實有愛內六處，眼處、
+<lb n="0468c21" ed="T"/>耳、鼻、舌、身、意處，彼若解脫，不染不著、斷捨吐
+<lb n="0468c22" ed="T"/>盡、無欲、滅、止沒者，是名苦滅。諸賢！多聞聖弟
+<lb n="0468c23" ed="T"/>子知我如是知此法，如是見，如是了，如是
+<lb n="0468c24" ed="T"/>視，如是覺，是謂愛滅苦滅聖諦，如是知之。
+<lb n="0468c25" ed="T"/>云何知耶？若有不愛妻、子、奴婢、給使、眷屬、田
+<lb n="0468c26" ed="T"/>地、屋宅、店肆、出息財物，不為所作業，彼若解
+<lb n="0468c27" ed="T"/>脫，不染不著、斷捨吐盡、無欲、滅、止沒者，是名
+<lb n="0468c28" ed="T"/>苦滅，彼知是愛滅苦滅聖諦，如是外處，更
+<lb n="0468c29" ed="T"/>樂、覺、想、思、愛亦復如是。諸賢！眾生實有愛
+<pb n="0469a" ed="T" xml:id="T01.0026.0469a"/>
+<lb n="0469a01" ed="T"/>六界，地界，水、火、風、空、識界，彼若解脫，不染不
+<lb n="0469a02" ed="T"/>著、斷捨吐盡、無欲、滅、止沒者，是名苦滅。諸賢！
+<lb n="0469a03" ed="T"/>多聞聖弟子知我如是知此法，如是見，如
+<lb n="0469a04" ed="T"/>是了，如是視，如是覺，是謂愛滅苦滅聖諦，如
+<lb n="0469a05" ed="T"/>是知之。云何知耶？若有不愛妻、子、奴婢、給
+<lb n="0469a06" ed="T"/>使、眷屬、田地、屋宅、店肆、出息財物，不為所作
+<lb n="0469a07" ed="T"/>業，彼若解脫，不染不著，斷捨吐盡、無欲、滅、止
+<lb n="0469a08" ed="T"/>沒者，是名苦滅，彼知是愛滅苦滅聖諦。諸
+<lb n="0469a09" ed="T"/>賢！過去時是愛滅苦滅聖諦，未來、現在時是
+<lb n="0469a10" ed="T"/>愛滅苦滅聖諦，真諦不虛，不離於如，亦非
+<lb n="0469a11" ed="T"/>顛倒，真諦審實，合如是諦，聖所有，聖所知，
+<lb n="0469a12" ed="T"/>聖所見，聖所了，聖所得，聖所等正覺，是故
+<lb n="0469a13" ed="T"/>說愛滅苦滅聖諦。</p><p xml:id="pT01p0469a1308" cb:place="inline">「諸賢！云何苦滅道聖諦？謂
+<lb n="0469a14" ed="T"/>正見、正志、正語、正業、正命、正方便、正念、正定。
+<lb n="0469a15" ed="T"/>諸賢！云何正見？謂聖弟子念苦是苦時，<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>
+<lb n="0469a16" ed="T"/>是<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、滅是滅，念道是道時，或觀本所作，或
+<lb n="0469a17" ed="T"/>學念諸行，或見諸行災患，或見涅槃止息，
+<lb n="0469a18" ed="T"/>或無著念觀善心解脫時，於中擇、遍擇、<note n="0469001" resp="Taisho" type="orig" place="foot text">次＝決【三】</note><note n="0469001" resp="CBETA" type="mod">次【大】，決【宋】【元】【明】</note><app n="0469001"><lem wit="【大】">次</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">決</rdg></app>擇，
+<lb n="0469a19" ed="T"/>擇法、視、遍視，觀察明達，是名正見。</p><p xml:id="pT01p0469a1914" cb:place="inline">「諸賢！云何
+<lb n="0469a20" ed="T"/>正志？謂聖弟子念苦是苦時，<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>是<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、滅是
+<lb n="0469a21" ed="T"/>滅，念道是道時，或觀本所作，或學念諸行，
+<lb n="0469a22" ed="T"/>或見諸行災患，或見涅槃止息，或無著念
+<lb n="0469a23" ed="T"/>觀善心解脫時，於中心伺、遍伺、隨順<note n="0469002" resp="Taisho" type="orig" place="foot text">（何）＋伺【元】【明】</note><note n="0469002" resp="CBETA" type="mod">伺【大】，何伺【元】【明】</note><app n="0469002"><lem wit="【大】">伺</lem><rdg resp="Taisho" wit="【元】 【明】">何伺</rdg></app>，可
+<lb n="0469a24" ed="T"/>念則念，可望則望，是名正志。</p><p xml:id="pT01p0469a2412" cb:place="inline">「諸賢！云何正
+<lb n="0469a25" ed="T"/>語？謂聖弟子念苦是苦時，習是習、滅是滅，
+<lb n="0469a26" ed="T"/>念道是道時，或觀本所作，或學念諸行，或
+<lb n="0469a27" ed="T"/>見諸行災患，或見涅槃止息，或無著念觀
+<lb n="0469a28" ed="T"/>善心解脫時，於中除口四妙行，諸餘口惡行
+<lb n="0469a29" ed="T"/>遠離除斷，不行不作，不合不會，是名正語。</p>
+<pb n="0469b" ed="T" xml:id="T01.0026.0469b"/>
+<lb n="0469b01" ed="T"/><p xml:id="pT01p0469b0101">「諸賢！云何正業？謂聖弟子念苦是苦時，<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>
+<lb n="0469b02" ed="T"/>是<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、滅是滅，念道是道時，或觀本所作，
+<lb n="0469b03" ed="T"/>或學念諸行，或見諸行災患，或見涅槃止
+<lb n="0469b04" ed="T"/>息，或無著念觀善心解脫時，於中除身三
+<lb n="0469b05" ed="T"/>妙行，諸餘身惡行遠離除斷，不行不作，不
+<lb n="0469b06" ed="T"/>合不會，是名正業。</p><p xml:id="pT01p0469b0608" cb:place="inline">「諸賢！云何正命？謂聖弟
+<lb n="0469b07" ed="T"/>子念苦是苦時，<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>是<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、滅是滅，念道是
+<lb n="0469b08" ed="T"/>道時，或觀本所作，或學念諸行，或見諸行
+<lb n="0469b09" ed="T"/>災患，或見涅槃止息，或無著念觀善心解
+<lb n="0469b10" ed="T"/>脫時，於中非無理求，不以多欲無厭足，不
+<lb n="0469b11" ed="T"/>為種種<note n="0469003" resp="Taisho" type="orig" place="foot text">伎＝技【三】</note><note n="0469003" resp="CBETA" type="mod">伎【大】，技【宋】【元】【明】</note><app n="0469003"><lem wit="【大】">伎</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">技</rdg></app>術呪說邪命活，但以法求衣，不
+<lb n="0469b12" ed="T"/>以非法，亦以法求食、床座，不以非法，是
+<lb n="0469b13" ed="T"/>名正命。</p><p xml:id="pT01p0469b1304" cb:place="inline">「諸賢！云何正方便？謂聖弟子念苦
+<lb n="0469b14" ed="T"/>是苦時，<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>是<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、滅是滅，念道是道時，或
+<lb n="0469b15" ed="T"/>觀本所作，或學念諸行，或見諸行災患，或
+<lb n="0469b16" ed="T"/>見涅槃止息，或無著念觀善心解脫時，於
+<lb n="0469b17" ed="T"/>中若有精進方便，一向精勤求，有力趣向，專
+<lb n="0469b18" ed="T"/>著不捨，亦不衰退，正伏其心，是名正方便。</p>
+<lb n="0469b19" ed="T"/><p xml:id="pT01p0469b1901">「諸賢！云何正念？謂聖弟子念苦是苦時，<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>
+<lb n="0469b20" ed="T"/>是<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、滅是滅，念道是道時，或觀本所作，
+<lb n="0469b21" ed="T"/>或學念諸行，或見諸行災患，或見涅槃止
+<lb n="0469b22" ed="T"/>息，或無著念觀善心解脫時，於中若<note n="0469004" resp="Taisho" type="orig" place="foot text">心＝念【三】</note><note n="0469004" resp="CBETA" type="mod">心【大】，念【宋】【元】【明】</note><app n="0469004"><lem wit="【大】">心</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">念</rdg></app>順
+<lb n="0469b23" ed="T"/>念、背不向念、念遍、念憶、復憶、心<note n="0469005" resp="Taisho" type="orig" place="foot text">心＝正【三】</note><note n="0469005" resp="CBETA" type="mod">心【大】，正【宋】【元】【明】</note><app n="0469005"><lem wit="【大】">心</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">正</rdg></app>、不忘心之
+<lb n="0469b24" ed="T"/>所應，是名正念。</p><p xml:id="pT01p0469b2407" cb:place="inline">「諸賢！云何正定？謂聖弟子
+<lb n="0469b25" ed="T"/>念苦是苦時，<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>是<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>、滅是滅，念道是道
+<lb n="0469b26" ed="T"/>時，或觀本所作，或學念諸行，或見諸行
+<lb n="0469b27" ed="T"/>災患，或見涅槃止息，或無著念觀善心解脫
+<lb n="0469b28" ed="T"/>時，於中若心住、禪住、順住，不亂不散，攝止
+<lb n="0469b29" ed="T"/><note n="0469006" resp="Taisho" type="orig" place="foot text">正＝止【宋】【元】</note><note n="0469006" resp="CBETA" type="mod">正【大】，止【宋】【元】</note><app n="0469006"><lem wit="【大】">正</lem><rdg resp="Taisho" wit="【宋】 【元】">止</rdg></app>定，是名正定。</p><p xml:id="pT01p0469b2907" cb:place="inline">「諸賢！過去時是苦滅道聖
+<pb n="0469c" ed="T" xml:id="T01.0026.0469c"/>
+<lb n="0469c01" ed="T"/>諦，未來、現在時是苦滅道聖諦，<note n="0469007" resp="Taisho" type="orig" place="foot text">真＋（如）【三】</note><note n="0469007" resp="CBETA" type="mod">真【大】，真如【宋】【元】【明】</note><app n="0469007"><lem wit="【大】">真</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">真如</rdg></app>諦不虛，
+<lb n="0469c02" ed="T"/>不離於如，亦非顛倒，真諦審實，合如是諦，
+<lb n="0469c03" ed="T"/>聖所有，聖所知，聖所見，聖所了，聖所得，聖
+<lb n="0469c04" ed="T"/>所等正覺，是故說苦滅道聖諦。」</p><p xml:id="pT01p0469c0413" cb:place="inline">於是頌曰：</p>
+<lb n="0469c05" ed="T"/><lg type="regular" xml:id="lgT01p0469c0501" style="margin-left:1em;text-indent:-1em"><l>「佛明達諸法，<caesura/>見無量善德，</l>
+<lb n="0469c06" ed="T"/><l>苦<app type="star" corresp="#0468001"><lem wit="【大】">習</lem><rdg resp="Taisho" wit="【元】 【明】">集</rdg></app>滅道諦，<caesura/>善顯現分別。」</l></lg>
+<lb n="0469c07" ed="T"/><p xml:id="pT01p0469c0701">尊者舍梨子所說如是。彼諸比丘聞尊者舍
+<lb n="0469c08" ed="T"/>梨子所說，歡喜奉行。</p>
+<lb n="0469c09" ed="T"/><p xml:id="pT01p0469c0901"><note n="0469008" resp="Taisho" type="orig" place="foot text">〔分別…竟〕九字－【明】</note><note n="0469008" resp="CBETA" type="mod">（分別…竟）九字【大】，〔－〕【明】</note><app n="0469008" cb:word-count="9"><lem wit="【大】">分別聖諦經第十一竟</lem><rdg resp="Taisho" wit="【明】"><space quantity="0"/></rdg></app><note n="0469009" resp="Taisho" type="orig" place="foot text">〔三千…字〕八字－【三】</note><note n="0469009" resp="CBETA" type="mod">（三千…字）八字【大】，〔－〕【宋】【元】【明】</note><app n="0469009" cb:word-count="8"><lem wit="【大】"><note place="inline">三千四百二十五字</note></lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app></p>
+<lb n="0469c10" ed="T"/><cb:juan n="007" fun="close"><cb:jhead><title><note n="0469010" resp="Taisho" type="orig" place="foot text">卷末題在品末題次行【宋】【元】</note>中阿含經</title>卷第七<note n="0469011" resp="Taisho" type="orig" place="foot text">〔一萬…字〕十字－【三】</note><note n="0469011" resp="CBETA" type="mod">（一萬…字）十字【大】，〔－〕【宋】【元】【明】</note><app n="0469011" cb:word-count="10"><lem wit="【大】"><note place="inline">一萬一千三百六十九字</note></lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app></cb:jhead></cb:juan>
+<lb n="0469c11" ed="T"/><trailer><note n="0469012" resp="Taisho" type="orig" place="foot text">〔中阿含〕－【明】</note><note n="0469012" resp="CBETA" type="mod">中阿含【大】，〔－〕【明】</note><app n="0469012"><lem wit="【大】">中阿含</lem><rdg resp="Taisho" wit="【明】"><space quantity="0"/></rdg></app>舍梨子相應品第三竟<note n="0469013" resp="Taisho" type="orig" place="foot text">〔二萬…字〕十字－【三】</note><note n="0469013" resp="CBETA" type="mod">（二萬…字）十字【大】，〔－〕【宋】【元】【明】</note><app n="0469013" cb:word-count="10"><lem wit="【大】"><note place="inline">二萬七千五百一十二字</note></lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>
+<lb n="0469c12" ed="T"/><note n="0469014" resp="Taisho" type="orig" place="foot text">〔初一日誦〕－【明】</note><note n="0469014" resp="CBETA" type="mod">初一日誦【大】，〔－〕【明】</note><app n="0469014"><lem wit="【大】"><note place="inline">初一日誦</note></lem><rdg resp="Taisho" wit="【明】"><space quantity="0"/></rdg></app></trailer></cb:div></cb:div>
+</cb:div></body></text></TEI>

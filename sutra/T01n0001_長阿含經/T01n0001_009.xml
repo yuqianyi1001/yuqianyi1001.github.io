@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/cbeta-git/xml-p5a/master/schema/cbeta-p5a.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:cb="http://www.cbeta.org/ns/1.0" xml:id="T01n0001">
+<teiHeader>
+	<fileDesc>
+		<titleStmt>
+			<title>Taishō Tripiṭaka, Electronic version, No. 1 長阿含經</title>
+			<title xml:lang="zh-Hant">大正新脩大藏經數位版, No. 1 長阿含經</title>
+			<author>後秦 佛陀耶舍共竺佛念譯</author>
+			<respStmt>
+				<resp>Electronic Version by</resp>
+				<name>CBETA</name>
+			</respStmt>
+		</titleStmt>
+		<editionStmt>
+			<edition>單卷版 XML TEI P5b</edition>
+		</editionStmt>
+		<extent>22卷</extent>
+		<publicationStmt>
+			<idno type="CBETA">
+				<idno type="canon">T</idno>.<idno type="vol">1</idno>.<idno type="no">1</idno>
+			</idno>
+			<distributor>
+				<name>中華電子佛典協會 (CBETA)</name>
+				<address>
+					<addrLine><email>service@cbeta.org</email></addrLine>
+				</address>
+			</distributor>
+			<availability>
+				<p>Available for non-commercial use when distributed with this header intact.</p>
+			</availability>
+			<date>2023-10-03 21:24:04 +0800</date>
+		</publicationStmt>
+		<sourceDesc>
+			<bibl>
+				<title level="s">Taishō Tripiṭaka</title>
+				<title level="s" xml:lang="zh-Hant">大正新脩大藏經</title>
+				<title level="m" xml:lang="zh-Hant">長阿含經</title>
+			</bibl>
+		</sourceDesc>
+	</fileDesc>
+	<encodingDesc>
+		<projectDesc>
+			<p xml:lang="en" cb:type="ly">Text as provided by Mr. Hsiao Chen-Kuo, Text as provided by Mr. Chang Wen-Ming, Text as provided by Anonymous from USA, Punctuated text as provided by Dhammavassarama</p>
+			<p xml:lang="zh-Hant" cb:type="ly">蕭鎮國大德提供，張文明大德提供，北美某大德提供，法雨道場提供新式標點</p>
+		</projectDesc>
+		<editorialDecl>
+			<punctuation resp="CBETA"><p>新式標點</p></punctuation>
+		</editorialDecl>
+		<tagsDecl>
+			<namespace name="http://www.tei-c.org/ns/1.0">
+				<tagUsage gi="rdg">
+					<listWit>
+						<witness xml:id="wit.orig">【大】</witness>
+						<witness xml:id="wit.cbeta">【CB】</witness>
+					</listWit>
+				</tagUsage>
+			</namespace>
+		</tagsDecl>
+		<charDecl>
+			<char xml:id="CB00178">
+				<charName>CBETA CHARACTER CB00178</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[木*奈]</value>
+				</charProp>
+				<mapping type="unicode">U+3B88</mapping>
+				<mapping cb:dec="983218" type="PUA">U+F00B2</mapping>
+			</char>
+		</charDecl>
+	</encodingDesc>
+	<profileDesc>
+		<langUsage>
+			<language ident="pi">Pali</language>
+			<language ident="sa">Sanskrit</language>
+			<language ident="en">English</language>
+			<language ident="zh-Hant">Chinese (Traditional)</language>
+		</langUsage>
+	</profileDesc>
+	<revisionDesc>
+		<change when="2013-05-20">
+			<name>CW</name><name>Ray Chou 周邦信</name>P4 to P5 conversion by p4top5a.py, intended for publication
+		</change>
+		<change when="1999-08-10T22:31:27">
+			CW (ed.) Created initial TEI XML version with BASICX.BAT (99/8/10)
+		</change>
+	</revisionDesc>
+</teiHeader>
+<text><body>
+<cb:mulu level="1" type="分">2 分</cb:mulu><cb:mulu level="2" type="經">9 眾集經</cb:mulu><cb:div type="fen">
+<milestone n="9" unit="juan"/>
+<lb n="0052c13" ed="T"/>
+<lb n="0052c14" ed="T"/><cb:juan n="009" fun="open"><cb:mulu n="009" type="卷"></cb:mulu><cb:jhead><title>佛說長阿含經</title>卷第九</cb:jhead></cb:juan>
+<lb n="0052c15" ed="T"/>
+<lb n="0052c16" ed="T"/><byline cb:type="Translator"><note n="0052011" resp="Taisho" type="orig" place="foot text">後秦弘始年＝姚秦三藏法師【三】，〔後秦…譯〕－【聖】</note><note n="0052011" resp="CBETA" type="mod">後秦弘始年佛陀耶舍共竺佛念譯【大】，〔－〕【聖】，姚秦三藏法師佛陀耶舍共竺佛念譯【宋】【元】【明】</note><app n="0052011"><lem wit="【大】">後秦弘始年佛陀耶舍共竺佛念譯</lem><rdg resp="Taisho" wit="【聖】"><space quantity="0"/></rdg><rdg resp="Taisho" wit="【宋】 【元】 【明】">姚秦三藏法師佛陀耶舍共竺佛念譯</rdg></app></byline>
+<lb n="0052c17" ed="T"/><cb:div type="jing"><cb:mulu level="2" type="經">10 十上經</cb:mulu><head>（一〇）第二分<note n="0052012" resp="Taisho" type="orig" place="foot text">～D. 34. Dasuttara-suttanta. [No. 13].</note><note n="0052012" resp="CBETA" type="mod">～D. 34. Dasuttara-suttanta.，[No. 13].</note><note n="0052012" place="foot" type="equivalent">～D. 34. Dasuttara-suttanta.</note><note n="0052012" place="foot" type="cf.">[No. 13].</note>十上經第六</head>
+<lb n="0052c18" ed="T"/><p xml:id="pT01p0052c1801">如是我聞：</p><p xml:id="pT01p0052c1805" cb:place="inline">一時，佛遊鴦伽國，與大比丘眾
+<lb n="0052c19" ed="T"/>千二百五十人俱。詣<note n="0052013" resp="Taisho" type="orig" place="foot text">瞻婆～Campā.</note><note n="0052013" resp="CBETA" type="mod">瞻婆【大】，～Campā.</note><cb:tt n="0052013" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">瞻婆</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Campā.</cb:t></cb:tt>城，止宿<note n="0052014" resp="Taisho" type="orig" place="foot text">伽伽～Gaggarā.</note><note n="0052014" resp="CBETA" type="mod">伽伽【大】，～Gaggarā.</note><cb:tt n="0052014" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">伽伽</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Gaggarā.</cb:t></cb:tt>
+<lb n="0052c20" ed="T"/>池側。</p><p xml:id="pT01p0052c2003" cb:place="inline">以十五日月滿時，世尊在露地坐，大
+<lb n="0052c21" ed="T"/>眾圍遶，竟夜說法，告<note n="0052015" resp="Taisho" type="orig" place="foot text">舍利弗～Sāriputta.</note><note n="0052015" resp="CBETA" type="mod">舍利弗【大】，～Sāriputta.</note><cb:tt n="0052015" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">舍利弗</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Sāriputta.</cb:t></cb:tt>：「今者四方諸
+<lb n="0052c22" ed="T"/>比丘集，皆各精勤，<note n="0052016" resp="Taisho" type="orig" place="foot text">捐＝損【聖】</note><note n="0052016" resp="CBETA" type="mod">捐【大】，損【聖】</note><app n="0052016"><lem wit="【大】">捐</lem><rdg resp="Taisho" wit="【聖】">損</rdg></app>除<note n="0052017" resp="Taisho" type="orig" place="foot text">眠睡＝睡眠【三】【聖】＊</note><note n="0052017" resp="CBETA" type="mod">眠睡【大】＊，睡眠【宋】【元】【明】【聖】＊</note><app n="0052017"><lem wit="【大】">眠睡</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">睡眠</rdg></app>，欲聞說法，
+<lb n="0052c23" ed="T"/>吾患背痛，欲<note n="0052c2301" resp="CBETA" type="add">小【CB】【麗-CB】，少【大】</note><app n="0052c2301"><lem resp="CBETA.maha" wit="【CB】 【麗-CB】">小<note type="cf1">K17n0647_p0885c09</note><note type="cf2">T02n0125_p0639a22</note></lem><rdg wit="【大】">少</rdg></app>止息，卿今可為諸比丘說
+<lb n="0052c24" ed="T"/>法。」</p><p xml:id="pT01p0052c2402" cb:place="inline">時，舍利弗受佛教已，爾時世尊即四<note n="0052018" resp="Taisho" type="orig" place="foot text">牒＝褺【元】【明】</note><note n="0052018" resp="CBETA" type="mod">牒【大】，褺【元】【明】</note><app n="0052018"><lem wit="【大】">牒</lem><rdg resp="Taisho" wit="【元】 【明】">褺</rdg></app>
+<lb n="0052c25" ed="T"/>僧伽梨，偃右脅臥如師子，累足而臥。</p><p xml:id="pT01p0052c2515" cb:place="inline">爾時，
+<lb n="0052c26" ed="T"/>耆年舍利弗告諸比丘：「今我說法，上中下言，
+<lb n="0052c27" ed="T"/>皆悉真正，義味具足，梵行清淨，汝等諦聽！善
+<lb n="0052c28" ed="T"/>思念之，當為汝說。」</p><p xml:id="pT01p0052c2808" cb:place="inline">時，諸比丘受教而聽。舍
+<lb n="0052c29" ed="T"/>利弗告諸比丘：「有十上法，除眾結縛，得至
+<pb n="0053a" ed="T" xml:id="T01.0001.0053a"/>
+<lb n="0053a01" ed="T"/><note n="0053001" resp="Taisho" type="orig" place="foot text">泥洹～Nibbāna.</note><note n="0053001" resp="CBETA" type="mod">泥洹【大】，～Nibbāna.</note><cb:tt n="0053001" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">泥洹</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Nibbāna.</cb:t></cb:tt>，盡於苦際，又能具足五百五十法，今
+<lb n="0053a02" ed="T"/>當分別，汝等善聽。諸比丘！有一<note n="0053002" resp="Taisho" type="orig" place="foot text">成法＝多成法【三】＊</note><note n="0053002" resp="CBETA" type="mod">成法【大】＊，多成法【宋】＊【元】＊【明】＊</note><app n="0053002"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>、一修
+<lb n="0053a03" ed="T"/>法、一覺法、一滅法、一退法、一增法、一難解
+<lb n="0053a04" ed="T"/>法、一生法、一知法、一證法。云何一<app type="star" corresp="#0053002"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>？謂
+<lb n="0053a05" ed="T"/>於諸善法能不放逸。云何一修法？謂常自
+<lb n="0053a06" ed="T"/>念身。云何一覺法？謂有漏觸。云何一滅法？
+<lb n="0053a07" ed="T"/>謂是我慢。云何一退法？謂<note n="0053003" resp="Taisho" type="orig" place="foot text">〔不〕－【三】</note><note n="0053003" resp="CBETA" type="mod">不【大】，〔－〕【宋】【元】【明】</note><app n="0053003"><lem wit="【大】">不</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>惡露觀。云何
+<lb n="0053a08" ed="T"/>一增法？<note n="0053004" resp="Taisho" type="orig" place="foot text">謂＋（不）【三】</note><note n="0053004" resp="CBETA" type="mod">謂【大】，謂不【宋】【元】【明】</note><app n="0053004"><lem wit="【大】">謂</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">謂不</rdg></app>惡露觀。云何一難解法？謂無間
+<lb n="0053a09" ed="T"/>定。云何一生法？謂有漏解脫。云何一知法？謂
+<lb n="0053a10" ed="T"/>諸眾生皆仰食存。云何一證法？謂無礙心解
+<lb n="0053a11" ed="T"/>脫。</p><p xml:id="pT01p0053a1102" cb:place="inline">「又有二成法、二修法、二覺法、二滅法、二
+<lb n="0053a12" ed="T"/>退法、二增法、二難解法、二生法、二知法、二
+<lb n="0053a13" ed="T"/>證法。云何二<app type="star" corresp="#0053002"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>？謂知慙、知愧。云何二修
+<lb n="0053a14" ed="T"/>法？謂止與觀。云何二覺法？謂名與色。云何
+<lb n="0053a15" ed="T"/>二滅法？謂無明、愛。云何二退法？謂毀戒、破見。
+<lb n="0053a16" ed="T"/>云何二增法？戒具、見具。云何二難解法？有因
+<lb n="0053a17" ed="T"/>有緣，眾生生垢；有因有緣，眾生得淨。云何
+<lb n="0053a18" ed="T"/>二生法？盡智、無生智。云何二知法？謂是處、非
+<lb n="0053a19" ed="T"/>處。云何二證法？謂明與解脫。</p><p xml:id="pT01p0053a1912" cb:place="inline">「又有三成法、
+<lb n="0053a20" ed="T"/>三修法、三覺法、三滅法、三退法、三增法、三
+<lb n="0053a21" ed="T"/>難解法、三生法、三知法、三證法。云何三成
+<lb n="0053a22" ed="T"/>法？一者親近善友，二者耳聞法音，三者<note n="0053005" resp="Taisho" type="orig" place="foot text">法法成就＝非惡露觀【三】</note><note n="0053005" resp="CBETA" type="mod">法法成就【大】，非惡露觀【宋】【元】【明】</note><app n="0053005"><lem wit="【大】">法
+<lb n="0053a23" ed="T"/>法成就</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">非惡露觀</rdg></app>。云何三修法？謂三<note n="0053006" resp="Taisho" type="orig" place="foot text">三昧～Samādhi.</note><note n="0053006" resp="CBETA" type="mod">三昧【大】，～Samādhi.</note><cb:tt n="0053006" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant">三昧</cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Samādhi.</cb:t></cb:tt>：<note n="0053007" resp="Taisho" type="orig" place="foot text">空三昧…無作＝有覺有觀三昧無覺有觀三昧無覺無觀【三】</note><note n="0053007" resp="CBETA" type="mod">空三昧…無作【大】，有覺有觀三昧無覺有觀三昧無覺無觀【宋】【元】【明】</note><app n="0053007" cb:word-count="9"><lem wit="【大】">空三昧、無
+<lb n="0053a24" ed="T"/>相三昧、無作</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">有覺有觀三昧無覺有觀三昧無覺無觀</rdg></app>三昧。云何三覺法？謂三受：<note n="0053008" resp="Taisho" type="orig" place="foot text">苦受…樂受＝生處欲處色處無色處【三】</note><note n="0053008" resp="CBETA" type="mod">苦受…樂受【大】，生處欲處色處無色處【宋】【元】【明】</note><app n="0053008" cb:word-count="9"><lem wit="【大】">苦
+<lb n="0053a25" ed="T"/>受、樂受、不苦不樂受</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">生處欲處色處無色處</rdg></app>。云何三滅法？謂三愛：欲
+<lb n="0053a26" ed="T"/>愛、有愛、無有愛。云何三退法？謂三不善根：貪
+<lb n="0053a27" ed="T"/>不善根、恚不善根、癡不善根。云何三增法？謂
+<lb n="0053a28" ed="T"/>三善根：無貪善根、無恚善根、無癡善根。云何
+<lb n="0053a29" ed="T"/>三難解法？謂三難解：<note n="0053009" resp="Taisho" type="orig" place="foot text">賢聖…如來＝三摩提相難解三摩提住相難解三摩提起相【三】</note><note n="0053009" resp="CBETA" type="mod">賢聖…如來【大】，三摩提相難解三摩提住相難解三摩提起相【宋】【元】【明】</note><app n="0053009" cb:word-count="10"><lem wit="【大】">賢聖難解、聞法難解、如
+<pb n="0053b" ed="T" xml:id="T01.0001.0053b"/>
+<lb n="0053b01" ed="T"/>來</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">三摩提相難解三摩提住相難解三摩提起相</rdg></app>難解。云何三生法？謂<note n="0053010" resp="Taisho" type="orig" place="foot text">三相…離相＝空無相無作【三】</note><note n="0053010" resp="CBETA" type="mod">三相…離相【大】，空無相無作【宋】【元】【明】</note><app n="0053010" cb:word-count="11"><lem wit="【大】">三相：息止相、精進
+<lb n="0053b02" ed="T"/>相、捨離相</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">空無相無作</rdg></app>。云何三知法？謂三<note n="0053011" resp="Taisho" type="orig" place="foot text">出要…彼名為盡＝受苦受樂受不苦不樂受【三】</note><note n="0053011" resp="CBETA" type="mod">出要…彼名為盡【大】，受苦受樂受不苦不樂受【宋】【元】【明】</note><app n="0053011" cb:word-count="29"><lem wit="【大】">出要界：欲出
+<lb n="0053b03" ed="T"/>要至色界，色界出要至無色界；捨離一切
+<lb n="0053b04" ed="T"/>諸有為法，彼名為盡</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">受苦受樂受不苦不樂受</rdg></app>。云何三證法？謂三明：
+<lb n="0053b05" ed="T"/>宿命智、天眼智、漏盡智。諸比丘！是為三十法，
+<lb n="0053b06" ed="T"/>如實無虛，如來知已，平等說法。</p><p xml:id="pT01p0053b0613" cb:place="inline">「復有四成
+<lb n="0053b07" ed="T"/>法、四修法、四覺法、四滅法、四退法、四增法、
+<lb n="0053b08" ed="T"/>四難解法、四生法、四知法、四證法。云何四
+<lb n="0053b09" ed="T"/>成法？謂<note n="0053012" resp="Taisho" type="orig" place="foot text">四＋（天人）【三】</note><note n="0053012" resp="CBETA" type="mod">四【大】，四天人【宋】【元】【明】</note><app n="0053012"><lem wit="【大】">四</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">四天人</rdg></app><note n="0053013" resp="Taisho" type="orig" place="foot text">輪＋（備悉具有天人四輪迴轉生長莊嚴（【宋】【元】滿）於諸善）【三】</note><note n="0053013" resp="CBETA" type="mod">輪【大】，輪備悉具有天人四輪迴轉生長莊滿於諸善【宋】【元】，輪備悉具有天人四輪迴轉生長莊嚴於諸善【明】</note><app n="0053013"><lem wit="【大】">輪</lem><rdg resp="Taisho" wit="【宋】 【元】">輪備悉具有天人四輪迴轉生長莊滿於諸善</rdg><rdg resp="Taisho" wit="【明】">輪備悉具有天人四輪迴轉生長莊嚴於諸善</rdg></app>法：一者住中國，二者近善
+<lb n="0053b10" ed="T"/>友，三者<note n="0053014" resp="Taisho" type="orig" place="foot text">自謹慎＝宿曾發精願【三】</note><note n="0053014" resp="CBETA" type="mod">自謹慎【大】，宿曾發精願【宋】【元】【明】</note><app n="0053014"><lem wit="【大】">自謹慎</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">宿曾發精願</rdg></app>，四者宿植善本。云何四修
+<lb n="0053b11" ed="T"/>法？謂四念處：比丘內身身觀，精勤不懈，憶念
+<lb n="0053b12" ed="T"/>不忘，捨世貪憂；外身身觀，精勤不懈，憶念
+<lb n="0053b13" ed="T"/>不忘，捨世貪憂；內外身身觀，精勤不懈，憶
+<lb n="0053b14" ed="T"/>念不忘，捨世貪憂。受、意、法觀，亦復如是。云
+<lb n="0053b15" ed="T"/>何四覺法？謂四食：摶食、觸食、念食、識食。云何
+<lb n="0053b16" ed="T"/>四滅法？謂四受：欲受、<note n="0053015" resp="Taisho" type="orig" place="foot text">我＝見【三】</note><note n="0053015" resp="CBETA" type="mod">我【大】，見【宋】【元】【明】</note><app n="0053015"><lem wit="【大】">我</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">見</rdg></app>受、戒受、<note n="0053016" resp="Taisho" type="orig" place="foot text">見＝我【三】</note><note n="0053016" resp="CBETA" type="mod">見【大】，我【宋】【元】【明】</note><app n="0053016"><lem wit="【大】">見</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">我</rdg></app>受。</p><p xml:id="pT01p0053b1615" cb:place="inline">「云何
+<lb n="0053b17" ed="T"/>四退法？謂四<note n="0053017" resp="Taisho" type="orig" place="foot text">扼＝枙【三】＊</note><note n="0053017" resp="CBETA" type="mod">扼【大】＊，枙【宋】＊【元】＊【明】＊</note><app n="0053017"><lem wit="【大】">扼</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">枙</rdg></app>：欲<app type="star" corresp="#0053017"><lem wit="【大】">扼</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">枙</rdg></app>、有<app type="star" corresp="#0053017"><lem wit="【大】">扼</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">枙</rdg></app>、見<app type="star" corresp="#0053017"><lem wit="【大】">扼</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">枙</rdg></app>、無明
+<lb n="0053b18" ed="T"/><app type="star" corresp="#0053017"><lem wit="【大】">扼</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">枙</rdg></app>。云何四增法？謂四無<app type="star" corresp="#0053017"><lem wit="【大】">扼</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">枙</rdg></app>：無欲<app type="star" corresp="#0053017"><lem wit="【大】">扼</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">枙</rdg></app>、無有
+<lb n="0053b19" ed="T"/><app type="star" corresp="#0053017"><lem wit="【大】">扼</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">枙</rdg></app>、無見<app type="star" corresp="#0053017"><lem wit="【大】">扼</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">枙</rdg></app>、無無明<app type="star" corresp="#0053017"><lem wit="【大】">扼</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">枙</rdg></app>。云何四難解法？謂有
+<lb n="0053b20" ed="T"/>四聖諦：苦諦、<note n="0053018" resp="Taisho" type="orig" place="foot text">集＝習【宋】</note><note n="0053018" resp="CBETA" type="mod">集【大】，習【宋】</note><app n="0053018"><lem wit="【大】">集</lem><rdg resp="Taisho" wit="【宋】">習</rdg></app>諦、滅諦、道諦。云何四生法？
+<lb n="0053b21" ed="T"/>謂四智：<note n="0053019" resp="Taisho" type="orig" place="foot text">法智…他心智＝苦智集（【宋】習）智滅智道智【三】</note><note n="0053019" resp="CBETA" type="mod">法智未知智等智知他心智【大】，苦智集智滅智道智【元】【明】，苦智習智滅智道智【宋】</note><app n="0053019"><lem wit="【大】">法智、未知智、等智、知他心智</lem><rdg resp="Taisho" wit="【元】 【明】">苦智集智滅智道智</rdg><rdg resp="Taisho" wit="【宋】">苦智習智滅智道智</rdg></app>。云何
+<lb n="0053b22" ed="T"/>四知法？謂<note n="0053020" resp="Taisho" type="orig" place="foot text">四辯…應辯＝知小知大知無量知無邊法【三】</note><note n="0053020" resp="CBETA" type="mod">四辯…應辯【大】，知小知大知無量知無邊法【宋】【元】【明】</note><app n="0053020" cb:word-count="11"><lem wit="【大】">四辯才：法辯、義辯、辭辯、應辯</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">知小知大知無量知無邊法</rdg></app>。云
+<lb n="0053b23" ed="T"/>何四證法？謂<note n="0053021" resp="Taisho" type="orig" place="foot text">四沙門…羅漢果＝有法須身證有法須念證有法須眼證有法須慧證</note><note n="0053021" resp="CBETA" type="mod" cb:note_key="T01.0053b23.06">四沙門…羅漢果【大】【房山-CB】，有法須身證有法須念證有法須眼證有法須慧證【磧乙-CB】【嘉興乙-CB】【？】</note><app n="0053021" cb:word-count="20"><lem wit="【大】">四沙門果：須陀洹果、斯陀含果、
+<lb n="0053b24" ed="T"/>阿那含果、阿羅漢果</lem><rdg wit="【房山-CB】" resp="CBETA.shin" cb:provider="來函：DL (2022-05-25)">四沙門果須陀洹果斯陀含果阿那含果阿羅漢果<note type="cf1">F20n0738_p0350a06-07</note></rdg><rdg wit="【磧乙-CB】 【嘉興乙-CB】" resp="CBETA.shin" cb:provider="來函：DL (2022-05-25)">有法須身證有法須念證有法須眼證有法須慧證<note type="cf1">QC054n0665_p0087a06-07</note><note type="cf2">《嘉興藏》（日本東京大學綜合圖書館藏正編第78帙第6冊第87圖右欄第5至6行）</note></rdg><rdg resp="Taisho" wit="【？】">有法須身證有法須念證有法須眼證有法須慧證</rdg></app>。諸比丘！是為四十法，如
+<lb n="0053b25" ed="T"/>實無<note n="0053022" resp="Taisho" type="orig" place="foot text">空＝虛【宋】【明】【聖】</note><note n="0053022" resp="CBETA" type="mod">虛【CB】【麗-CB】【宋】【明】【聖】，空【大】</note><app n="0053022"><lem resp="CBETA.maha" wit="【CB】 【麗-CB】">虛<note type="cf1">K17n0647_p0886c11</note><note type="cf2">T01n0001_p0054a06</note></lem><rdg wit="【大】">空</rdg><rdg resp="Taisho" wit="【宋】 【明】 【聖】">虛</rdg></app>，如來知已，平等說法。</p><p xml:id="pT01p0053b2512" cb:place="inline">「復有五<app type="star" corresp="#0053002"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>、
+<lb n="0053b26" ed="T"/>五修法、五覺法、五滅法、五退法、五增法、
+<lb n="0053b27" ed="T"/>五難解法、五生法、五知法、五證法。云何五
+<lb n="0053b28" ed="T"/><app type="star" corresp="#0053002"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>？謂五滅盡<note n="0053023" resp="Taisho" type="orig" place="foot text">〔枝〕－【宋】</note><note n="0053023" resp="CBETA" type="mod">枝【大】，〔－〕【宋】</note><app n="0053023"><lem wit="【大】">枝</lem><rdg resp="Taisho" wit="【宋】"><space quantity="0"/></rdg></app>：一者信佛、如來、至真，十
+<lb n="0053b29" ed="T"/>號具足；二者無病，身常安隱；三者質直無有
+<pb n="0053c" ed="T" xml:id="T01.0001.0053c"/>
+<lb n="0053c01" ed="T"/>諛諂，直趣如來涅槃<note n="0053024" resp="Taisho" type="orig" place="foot text">〔徑路〕－【宋】</note><note n="0053024" resp="CBETA" type="mod">徑路【大】，〔－〕【宋】</note><app n="0053024"><lem wit="【大】">徑路</lem><rdg resp="Taisho" wit="【宋】"><space quantity="0"/></rdg></app>；四者專心不亂，
+<lb n="0053c02" ed="T"/>諷誦不忘；五者善於觀察法之起滅，以賢
+<lb n="0053c03" ed="T"/>聖行盡於苦本。云何五修法？謂五根：信根、
+<lb n="0053c04" ed="T"/>精進根、念根、定根、慧根。云何五覺法？謂五受
+<lb n="0053c05" ed="T"/>陰：色受陰，受、想、行、識受陰。</p><p xml:id="pT01p0053c0511" cb:place="inline">「云何五滅法？謂五
+<lb n="0053c06" ed="T"/>蓋：貪欲蓋、瞋恚蓋、<app type="star" corresp="#0052017"><lem wit="【大】">眠睡</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">睡眠</rdg></app>蓋、<note n="0053025" resp="Taisho" type="orig" place="foot text">掉＝調【三】</note><note n="0053025" resp="CBETA" type="mod">掉【大】，調【宋】【元】【明】</note><app n="0053025"><lem wit="【大】">掉</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">調</rdg></app>戲蓋、疑蓋。云
+<lb n="0053c07" ed="T"/>何五退法？謂五心礙結：一者比丘疑佛，疑
+<lb n="0053c08" ed="T"/>佛已，則不親近，不親近已，則不恭敬，是為
+<lb n="0053c09" ed="T"/>初心礙結；又比丘於法、於眾、於戒，有穿漏
+<lb n="0053c10" ed="T"/>行、不真正行、為汙染行，不親近戒，亦不
+<lb n="0053c11" ed="T"/>恭敬，是為四心礙結；又復比丘於梵行人
+<lb n="0053c12" ed="T"/>生惡<note n="0053026" resp="Taisho" type="orig" place="foot text">向＝害【三】【聖】</note><note n="0053026" resp="CBETA" type="mod">向【大】，害【宋】【元】【明】【聖】</note><app n="0053026"><lem wit="【大】">向</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">害</rdg></app>心，心不喜樂，以麁惡言而毀罵
+<lb n="0053c13" ed="T"/>之，是為五心礙結。云何五增法？謂五喜本：
+<lb n="0053c14" ed="T"/>一悅、二念、三<note n="0053027" resp="Taisho" type="orig" place="foot text">猗＝倚【宋】＊</note><note n="0053027" resp="CBETA" type="mod">猗【大】＊，倚【宋】＊</note><app n="0053027"><lem wit="【大】">猗</lem><rdg resp="Taisho" wit="【宋】">倚</rdg></app>、四樂、五定。</p><p xml:id="pT01p0053c1411" cb:place="inline">「云何五難解法？謂
+<lb n="0053c15" ed="T"/>五解脫入：若比丘精勤不懈，樂閑靜處，專
+<lb n="0053c16" ed="T"/>念一心，未解得解，未盡得盡，未安得安。
+<lb n="0053c17" ed="T"/>何謂五？若比丘聞佛說法，或聞梵行者說，
+<lb n="0053c18" ed="T"/>或聞師長說，思惟觀察，分別法義，心得歡
+<lb n="0053c19" ed="T"/>喜，得歡喜已，便得法愛，得法愛已，身心安
+<lb n="0053c20" ed="T"/>隱，身心安隱已，則得禪定，得禪定已，得如
+<lb n="0053c21" ed="T"/>實智，是為初解脫入。於是，比丘聞法歡<note n="0053028" resp="Taisho" type="orig" place="foot text">喜＋（已）【三】</note><note n="0053028" resp="CBETA" type="mod">喜【大】，喜已【宋】【元】【明】</note><app n="0053028"><lem wit="【大】">喜</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">喜已</rdg></app>，
+<lb n="0053c22" ed="T"/>受持諷誦，亦復歡喜，為他人說，亦復歡喜，思
+<lb n="0053c23" ed="T"/>惟分別，亦復歡喜，於法得定，亦復如是。</p><p xml:id="pT01p0053c2316" cb:place="inline">「云
+<lb n="0053c24" ed="T"/>何五生法？謂賢聖五智定：一者修三昧現樂
+<lb n="0053c25" ed="T"/>後樂，生內外智。二者賢聖無愛，生內外智。
+<lb n="0053c26" ed="T"/>三者諸佛賢聖之所修行，生內外智。四者<app type="star" corresp="#0053027"><lem wit="【大】">猗</lem><rdg resp="Taisho" wit="【宋】">倚</rdg></app>
+<lb n="0053c27" ed="T"/>寂滅相，獨而無侶，而生內外智。五者於三
+<lb n="0053c28" ed="T"/>昧一心入、一心起，生內外智。云何五知法？謂
+<lb n="0053c29" ed="T"/>五出要界：一者比丘於欲不樂、不念，亦不親
+<pb n="0054a" ed="T" xml:id="T01.0001.0054a"/>
+<lb n="0054a01" ed="T"/>近，但念出要，樂於遠離，親近不怠，其心調
+<lb n="0054a02" ed="T"/>柔，出要離欲，因欲起漏亦盡捨滅，而得解脫，
+<lb n="0054a03" ed="T"/>是為欲出要，瞋恚出要、嫉妬出要、色出要、
+<lb n="0054a04" ed="T"/>身見出要，亦復如是。云何五證法？謂五無學
+<lb n="0054a05" ed="T"/>聚：無學戒聚、定聚、慧聚、解脫聚、解脫知見聚，
+<lb n="0054a06" ed="T"/>是為五十法。如實無虛，如來知已，平等說
+<lb n="0054a07" ed="T"/>法。</p><p xml:id="pT01p0054a0702" cb:place="inline">「復有六<app type="star" corresp="#0053002"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>、六修法、六覺法、六滅法、
+<lb n="0054a08" ed="T"/>六退法、六增法、六難解法、六生法、六知法、
+<lb n="0054a09" ed="T"/>六證法。云何六<app type="star" corresp="#0053002"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>？謂六重法：若有比丘
+<lb n="0054a10" ed="T"/>修六重法，可敬可重，和合於眾，無有諍
+<lb n="0054a11" ed="T"/>訟，獨行無雜。云何六？於是，比丘身常行慈，
+<lb n="0054a12" ed="T"/>敬梵行者，住仁愛心，名曰重法，可敬可重，
+<lb n="0054a13" ed="T"/>和合於眾，無有諍訟，獨行無雜。復次，比丘
+<lb n="0054a14" ed="T"/>口慈、意慈，以法得養及鉢中餘，與人共之，
+<lb n="0054a15" ed="T"/>不懷彼此。復次，比丘聖所行戒，不犯不毀，
+<lb n="0054a16" ed="T"/>無有染汙，智者所稱，善具足持，成就定意。
+<lb n="0054a17" ed="T"/>復次，比丘成就賢聖出要，平等盡苦，正見及
+<lb n="0054a18" ed="T"/>諸梵行，是名重法，可敬可重，和合於眾，無
+<lb n="0054a19" ed="T"/>有諍訟，獨行不雜。</p><p xml:id="pT01p0054a1908" cb:place="inline">「云何六修法？謂六念：<note n="0054001" resp="Taisho" type="orig" place="foot text">〔念〕－【三】【聖】</note><note n="0054001" resp="CBETA" type="mod">念【大】，〔－〕【宋】【元】【明】【聖】</note><app n="0054001"><lem wit="【大】">念</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】"><space quantity="0"/></rdg></app>
+<lb n="0054a20" ed="T"/>佛、念法、念僧、念戒、念施、念<note n="0054002" resp="Taisho" type="orig" place="foot text">天＋（念）【三】【聖】</note><note n="0054002" resp="CBETA" type="mod">天【大】，天念【宋】【元】【明】【聖】</note><app n="0054002"><lem wit="【大】">天</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">天念</rdg></app>。云何六覺法？謂
+<lb n="0054a21" ed="T"/>六內入，眼入、耳入、鼻入、舌入、身入、意入。云何
+<lb n="0054a22" ed="T"/>六滅法？謂六愛：色愛、聲愛、<note n="0054003" resp="Taisho" type="orig" place="foot text">香＋（愛）【三】</note><note n="0054003" resp="CBETA" type="mod">香【大】，香愛【宋】【元】【明】</note><app n="0054003"><lem wit="【大】">香</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">香愛</rdg></app><note n="0054a2201" resp="CBETA" type="add">［－］【CB】【麗-CB】，愛【大】</note><app n="0054a2201"><lem resp="CBETA.maha" wit="【CB】 【麗-CB】"><space quantity="0"/><note type="cf1">K17n0647_p0887c06</note><note type="cf2">T01n0001_p0058a23</note></lem><rdg wit="【大】">愛</rdg></app>、味、觸、法愛。
+<lb n="0054a23" ed="T"/>云何六退法？謂六不敬法：不敬佛、不敬法、
+<lb n="0054a24" ed="T"/>不敬僧、不敬戒、不敬定、不敬父母。云
+<lb n="0054a25" ed="T"/>何六增法？謂六敬法：敬佛、敬法、敬僧、<note n="0054a2501" resp="CBETA" type="add">敬【CB】【麗-CB】，法【大】</note><app n="0054a2501"><lem resp="CBETA.maha" wit="【CB】 【麗-CB】">敬<note type="cf1">K17n0647_p0887c09</note><note type="cf2">T01n0001_p0059c20</note></lem><rdg wit="【大】">法</rdg></app>戒、
+<lb n="0054a26" ed="T"/>敬定、敬父母。云何六難解法？謂六無上：見無
+<lb n="0054a27" ed="T"/>上、聞無上、利養無上、戒無上、恭敬無上、念
+<lb n="0054a28" ed="T"/>無上。云何六生法？謂六等法：於是，比丘眼
+<lb n="0054a29" ed="T"/>見色無憂無喜，住捨專念，耳聲、鼻香、舌味、身
+<pb n="0054b" ed="T" xml:id="T01.0001.0054b"/>
+<lb n="0054b01" ed="T"/>觸、意法，不喜不憂，住捨專念。</p><p xml:id="pT01p0054b0112" cb:place="inline">「云何六知法？謂
+<lb n="0054b02" ed="T"/>六出要界：若比丘作是言：『我修慈心，更生
+<lb n="0054b03" ed="T"/>瞋恚。』餘比丘言：『汝勿作此言，勿謗如來，
+<lb n="0054b04" ed="T"/>如來不作是說，欲使修慈解脫更生瞋
+<lb n="0054b05" ed="T"/>恚者，無有是處。佛言：除瞋恚已，然後得
+<lb n="0054b06" ed="T"/>慈。』若比丘言：『我行悲解脫，生憎嫉心；行喜
+<lb n="0054b07" ed="T"/>解脫，生憂惱心；行捨解脫，生憎愛心；行無
+<lb n="0054b08" ed="T"/>我行，生狐疑心；行無想行，生眾亂想。』亦復
+<lb n="0054b09" ed="T"/>如是。云何六證法？謂六神通：一者神足通證，
+<lb n="0054b10" ed="T"/>二者天耳通證，三者知他心通證，四者宿命
+<lb n="0054b11" ed="T"/>通證，五者天眼通證，六者漏盡通證。是為
+<lb n="0054b12" ed="T"/>六十法。諸比丘！如實無虛，如來知已，平等說
+<lb n="0054b13" ed="T"/>法。</p><p xml:id="pT01p0054b1302" cb:place="inline">「復有七<app type="star" corresp="#0053002"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>、七修法、七覺法、七滅法、七
+<lb n="0054b14" ed="T"/>退法、七增法、七難解法、七生法、七知法、七
+<lb n="0054b15" ed="T"/>證法。云何七<app type="star" corresp="#0053002"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>？謂七財：信財、戒財、慙財、
+<lb n="0054b16" ed="T"/>愧財、聞財、施財、慧<note n="0054004" resp="Taisho" type="orig" place="foot text">財＋（是）【三】</note><note n="0054004" resp="CBETA" type="mod">財【大】，財是【宋】【元】【明】</note><app n="0054004"><lem wit="【大】">財</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">財是</rdg></app>，為七財。云何七修法？
+<lb n="0054b17" ed="T"/>謂七覺意。於是，比丘修念覺意，依無欲、依
+<lb n="0054b18" ed="T"/>寂滅、依遠離；修法、修精進、修喜、修猗、修
+<lb n="0054b19" ed="T"/>定、修捨，依無欲、依寂滅、依遠離。</p><p xml:id="pT01p0054b1913" cb:place="inline">「云何七覺
+<lb n="0054b20" ed="T"/>法？謂七識住處：若有眾生，若干種身，若干種
+<lb n="0054b21" ed="T"/>想，天及人是，<note n="0054005" resp="Taisho" type="orig" place="foot text">〔是〕－【三】【聖】</note><note n="0054005" resp="CBETA" type="mod">是【大】，〔－〕【宋】【元】【明】【聖】</note><app n="0054005"><lem wit="【大】">是</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】"><space quantity="0"/></rdg></app>初識住。復有眾生，若干種
+<lb n="0054b22" ed="T"/>身而一想者，梵光音天最初生時是，是二識
+<lb n="0054b23" ed="T"/>住。復有眾生，一身若干種想，光音天是，是
+<lb n="0054b24" ed="T"/>三識住。復有眾生，一身一想，徧淨天是，是四
+<lb n="0054b25" ed="T"/>識住。或有眾生，空處住，是五識住，或識處
+<lb n="0054b26" ed="T"/>住，是六識住。或不用處住，是七識住。云何七
+<lb n="0054b27" ed="T"/>滅法？謂七使法：欲愛使、有愛使、見使、慢使、瞋
+<lb n="0054b28" ed="T"/>恚使、無明使、疑使。</p><p xml:id="pT01p0054b2808" cb:place="inline">「云何七退<note n="0054006" resp="Taisho" type="orig" place="foot text">〔法〕－【三】【聖】</note><note n="0054006" resp="CBETA" type="mod">法【大】，〔－〕【宋】【元】【明】【聖】</note><app n="0054006"><lem wit="【大】">法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】"><space quantity="0"/></rdg></app>？謂七非法：
+<lb n="0054b29" ed="T"/><note n="0054007" resp="Taisho" type="orig" place="foot text">是＝謂【三】</note><note n="0054007" resp="CBETA" type="mod">是【大】，謂【宋】【元】【明】</note><app n="0054007"><lem wit="【大】">是</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">謂</rdg></app>比丘無信、無慙、無愧、少聞、懈墮、多忘、無智。
+<pb n="0054c" ed="T" xml:id="T01.0001.0054c"/>
+<lb n="0054c01" ed="T"/>云何七增法？謂七正法：於是，比丘有信、有
+<lb n="0054c02" ed="T"/>慚、有愧、多聞、不懈墮、強記、有智。云何七難解
+<lb n="0054c03" ed="T"/>法？謂七正善法：於是，比丘好義、好法、好知時、
+<lb n="0054c04" ed="T"/>好知足、好自攝、好集眾、好分別人。云何七生
+<lb n="0054c05" ed="T"/>法？謂七想：不淨想、食不淨想、一切世間不可
+<lb n="0054c06" ed="T"/>樂想、死想、無常想、無常苦想、苦無我想。</p><p xml:id="pT01p0054c0616" cb:place="inline">「云
+<lb n="0054c07" ed="T"/>何七知法？謂七勤：勤於戒行、勤滅貪欲、勤
+<lb n="0054c08" ed="T"/>破邪見、勤於多聞、勤於精進、勤於正念、勤
+<lb n="0054c09" ed="T"/>於禪定。云何七證法？謂七漏盡力：於是，漏
+<lb n="0054c10" ed="T"/>盡比丘於一切諸苦、集、滅、味、過、出要，如實知
+<lb n="0054c11" ed="T"/>見。觀欲如火坑，亦如刀劍，知欲見欲，不
+<lb n="0054c12" ed="T"/>貪於欲，心不住欲。漏盡比丘逆順觀察，如
+<lb n="0054c13" ed="T"/>實覺知，如實見已，世間貪嫉、惡不善法不漏
+<lb n="0054c14" ed="T"/>不起，修四念處，多修多行，五根、五力、七覺意、
+<lb n="0054c15" ed="T"/>賢聖八道，多修多行。諸比丘！是為七十法，
+<lb n="0054c16" ed="T"/>如實不虛，如來知已，平等說法。</p><p xml:id="pT01p0054c1613" cb:place="inline">「復有八<app type="star" corresp="#0053002"><lem wit="【大】">成
+<lb n="0054c17" ed="T"/>法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>、八修法、八覺法、八滅法、八退法、八增法、
+<lb n="0054c18" ed="T"/>八難解法、八生法、八知法、八證法。云何八
+<lb n="0054c19" ed="T"/><app type="star" corresp="#0053002"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>？謂八因緣：不得梵行而得智，得梵
+<lb n="0054c20" ed="T"/>行已智增多。云何為八？於是，比丘依世尊
+<lb n="0054c21" ed="T"/>住，或依師長，或依智慧梵行者住，生慙愧
+<lb n="0054c22" ed="T"/>心，有愛有敬，是謂初因緣，未得梵行而得
+<lb n="0054c23" ed="T"/>智，得梵行已智增多。復次，依世尊住，隨時
+<lb n="0054c24" ed="T"/>請問，此法云<note n="0054c2401" resp="CBETA" type="add" cb:note_key="T01.0054c24.06">何【CB】【麗-CB】【磧乙-CB】，所【大】</note><app n="0054c2401"><lem wit="【CB】 【麗-CB】 【磧乙-CB】" resp="CBETA CBETA.shin" cb:provider="來函：DL (2022-05-25)">何<note type="cf1">K17n0647_p0888c05</note><note type="cf2">QC054n0665_p0090a10</note></lem><rdg wit="【大】">所</rdg></app>？義何所趣？時，諸尊長即為開
+<lb n="0054c25" ed="T"/>演甚深義理，是為二因緣。既聞法已，身心樂
+<lb n="0054c26" ed="T"/>靜，是為三因緣。既樂靜已，不為遮道無益雜
+<lb n="0054c27" ed="T"/>論，彼到眾中，或自說法，或請他說，猶復不
+<lb n="0054c28" ed="T"/>捨賢聖默然，是為四因緣。多聞廣博，守持
+<lb n="0054c29" ed="T"/>不忘，諸<note n="0054008" resp="Taisho" type="orig" place="foot text">法深奧＝深奧法【三】</note><note n="0054008" resp="CBETA" type="mod">法深奧【大】，深奧法【宋】【元】【明】</note><app n="0054008"><lem wit="【大】">法深奧</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">深奧法</rdg></app>，上中下善，義味<note n="0054009" resp="Taisho" type="orig" place="foot text">諦誠＝誠諦【三】</note><note n="0054009" resp="CBETA" type="mod">諦誠【大】，誠諦【宋】【元】【明】</note><app n="0054009"><lem wit="【大】">諦誠</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">誠諦</rdg></app>，梵行
+<pb n="0055a" ed="T" xml:id="T01.0001.0055a"/>
+<lb n="0055a01" ed="T"/>具足，聞已入心，見不流動，是為五因緣。修
+<lb n="0055a02" ed="T"/>習精勤，滅惡<note n="0055a0201" resp="CBETA" type="add" cb:note_key="T01.0055a02.06">增【CB】【磧乙-CB】，僧【大】，増【麗-CB】</note><app n="0055a0201"><lem wit="【CB】 【磧乙-CB】" resp="CBETA CBETA.shin" cb:provider="來函：DL (2022-05-25)">增<note type="cf1">QC054n0665_p0090a17</note></lem><rdg wit="【大】">僧</rdg><rdg wit="【麗-CB】" resp="CBETA.shin" cb:provider="來函：DL (2022-05-25)">増<note type="cf1">K17n0647_p0888c13</note></rdg></app>善，勉力堪任，不捨斯法，是
+<lb n="0055a03" ed="T"/>為六因緣。有以智慧知起滅法，賢聖所趣，
+<lb n="0055a04" ed="T"/>能盡苦際，是為七因緣。觀五受陰，生相、滅
+<lb n="0055a05" ed="T"/>相，此色、色集、色滅，此受、想、行、<note n="0055001" resp="Taisho" type="orig" place="foot text">識＋（此識）【三】＊</note><note n="0055001" resp="CBETA" type="mod">識【大】＊，識此識【宋】＊【元】＊【明】＊</note><app n="0055001"><lem wit="【大】">識</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">識此識</rdg></app>，識集、識滅，
+<lb n="0055a06" ed="T"/>是為八因緣。未得梵行而有智，得梵行已
+<lb n="0055a07" ed="T"/>智增多。</p><p xml:id="pT01p0055a0704" cb:place="inline">「云何八修法？謂賢聖八道：正見、正志、
+<lb n="0055a08" ed="T"/>正語、正業、正命、正方便、正念、正定。云何八覺
+<lb n="0055a09" ed="T"/>法？謂世八法：利、衰、毀、譽、稱、譏、苦、樂。云何八滅
+<lb n="0055a10" ed="T"/>法？謂八邪：邪見、邪<note n="0055002" resp="Taisho" type="orig" place="foot text">思＝志【三】【聖】</note><note n="0055002" resp="CBETA" type="mod" cb:note_key="T01.0055a10.08">思【大】【房山-CB】＊，志【磧乙-CB】【宋】【元】【明】【聖】＊</note><app n="0055002"><lem wit="【大】">思</lem><rdg wit="【房山-CB】" resp="CBETA.shin" cb:provider="來函：DL (2022-05-25)">思<note type="cf1">F20n0738_p0352a21</note></rdg><rdg wit="【磧乙-CB】" resp="CBETA.shin" cb:provider="來函：DL (2022-05-25)">志<note type="cf1">QC054n0665_p0090b07</note></rdg><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">志</rdg></app>、邪語、邪業、邪命、邪方便、
+<lb n="0055a11" ed="T"/>邪念、邪定。云何八退法？謂八懈怠法，何謂八
+<lb n="0055a12" ed="T"/>懈怠？比丘乞食不得<note n="0055003" resp="Taisho" type="orig" place="foot text">〔食〕－【三】【聖】</note><note n="0055003" resp="CBETA" type="mod">食【大】，〔－〕【宋】【元】【明】【聖】</note><app n="0055003"><lem wit="【大】">食</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】"><space quantity="0"/></rdg></app>，便作是念：『我於
+<lb n="0055a13" ed="T"/>今日下村乞食不得，身體疲極，不能堪任
+<lb n="0055a14" ed="T"/>坐禪、經行，今宜臥息。』懈怠比丘即便臥息，
+<lb n="0055a15" ed="T"/>不肯精勤未得欲得、未獲欲獲、未證欲證，
+<lb n="0055a16" ed="T"/>是為初懈怠。懈怠比丘得食既足，復作是
+<lb n="0055a17" ed="T"/>念：『我朝入村乞食，得食過足，身體沈重，不
+<lb n="0055a18" ed="T"/>能堪任坐禪、經行，今宜寢息。』懈怠比丘即
+<lb n="0055a19" ed="T"/>便寢息，不能精勤未得欲得、未獲欲獲、未
+<lb n="0055a20" ed="T"/>證欲證。懈怠比丘設少執事，便作是念：『我今
+<lb n="0055a21" ed="T"/>日執事，身體疲極，不能堪任坐禪、經行，今
+<lb n="0055a22" ed="T"/>宜寢息。』懈怠比丘即便寢息。懈怠比丘設欲
+<lb n="0055a23" ed="T"/>執事，便作是念：『明當執事，必有疲極，今者
+<lb n="0055a24" ed="T"/>不得坐禪、經行，當豫臥息。』懈怠比丘即便
+<lb n="0055a25" ed="T"/>臥息。懈怠比丘設少行來，便作是念：『我朝行
+<lb n="0055a26" ed="T"/>來，身體疲極，不能堪任坐禪、經行，我今宜
+<lb n="0055a27" ed="T"/>當臥息。』懈怠比丘即便臥息。懈怠比丘設欲
+<lb n="0055a28" ed="T"/>少行，便作是念：『我明當行，必有疲極，今者
+<lb n="0055a29" ed="T"/>不得坐禪、經行，當豫寢息。』懈怠比丘即<note n="0055004" resp="Taisho" type="orig" place="foot text">〔尋〕－【聖】</note><note n="0055004" resp="CBETA" type="mod">尋【大】，〔－〕【聖】</note><app n="0055004"><lem wit="【大】">尋</lem><rdg resp="Taisho" wit="【聖】"><space quantity="0"/></rdg></app>
+<pb n="0055b" ed="T" xml:id="T01.0001.0055b"/>
+<lb n="0055b01" ed="T"/>寢息，不能精勤未得欲得、未獲欲獲、未證
+<lb n="0055b02" ed="T"/>欲證，是為六懈怠比丘。設遇小患，便作
+<lb n="0055b03" ed="T"/>是念：『我得重病，困篤羸瘦，不能堪任坐禪、
+<lb n="0055b04" ed="T"/>經行，當須寢息。』懈怠比丘即尋寢息，不能
+<lb n="0055b05" ed="T"/>精勤未得欲得、未獲欲獲、未證欲證。懈怠比
+<lb n="0055b06" ed="T"/>丘所患已<note n="0055005" resp="Taisho" type="orig" place="foot text">差＝瘥【三】＊</note><note n="0055005" resp="CBETA" type="mod">差【大】＊，瘥【宋】＊【元】＊【明】＊</note><app n="0055005"><lem wit="【大】">差</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">瘥</rdg></app>，復作是念：『我病<app type="star" corresp="#0055005"><lem wit="【大】">差</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">瘥</rdg></app>未久，身體
+<lb n="0055b07" ed="T"/>羸瘦，不<note n="0055006" resp="Taisho" type="orig" place="foot text">〔能〕－【三】</note><note n="0055006" resp="CBETA" type="mod">能【大】，〔－〕【宋】【元】【明】</note><app n="0055006"><lem wit="【大】">能</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>堪任坐禪、經行，宜自寢息。』懈
+<lb n="0055b08" ed="T"/>怠比丘即尋寢息，不能精勤未得欲得、未獲
+<lb n="0055b09" ed="T"/>欲獲、未證欲證。云何八增法？謂八不怠。</p><p xml:id="pT01p0055b0916" cb:place="inline">「云
+<lb n="0055b10" ed="T"/>何八精進？比丘入村乞食，不得食還，即作
+<lb n="0055b11" ed="T"/>是念：『我身體輕便，少於睡<note n="0055007" resp="Taisho" type="orig" place="foot text">眠＝臥【聖】</note><note n="0055007" resp="CBETA" type="mod">眠【大】，臥【聖】</note><app n="0055007"><lem wit="【大】">眠</lem><rdg resp="Taisho" wit="【聖】">臥</rdg></app>，宜可精進坐
+<lb n="0055b12" ed="T"/>禪、經行。』未得者得，未獲者獲，未證者證，於
+<lb n="0055b13" ed="T"/>是，比丘即便精進，是為初精進比丘。乞食得
+<lb n="0055b14" ed="T"/>足，便作是念：『我今入村，乞食飽滿，氣力充足，
+<lb n="0055b15" ed="T"/>宜勤精進坐禪、經行。』未得者得，未獲者獲，未
+<lb n="0055b16" ed="T"/>證者證，於是，比丘即尋精進。精進比丘設有
+<lb n="0055b17" ed="T"/>執事，便作是念：『我向執事，廢我行道，今宜
+<lb n="0055b18" ed="T"/>精進坐禪、經行。』未得者得，未獲者獲，未證者
+<lb n="0055b19" ed="T"/>證，於是，比丘即尋精進。精進比丘設<note n="0055008" resp="Taisho" type="orig" place="foot text">欲＝應【三】</note><note n="0055008" resp="CBETA" type="mod">欲【大】，應【宋】【元】【明】</note><app n="0055008"><lem wit="【大】">欲</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">應</rdg></app>執
+<lb n="0055b20" ed="T"/>事，便作是念：『明當執事，廢我行道，今宜精
+<lb n="0055b21" ed="T"/>進坐禪、經行。』未得者得，未獲者獲，未證者證，
+<lb n="0055b22" ed="T"/>於是，比丘即便精進。精進比丘設有行來，便
+<lb n="0055b23" ed="T"/>作是念：『我朝行來，廢我行道，今宜精進坐
+<lb n="0055b24" ed="T"/>禪、經行。』未得者得，未獲者獲，未證者證，於是，
+<lb n="0055b25" ed="T"/>比丘即尋精進。精進比丘設欲行來，便作是
+<lb n="0055b26" ed="T"/>念：『我<note n="0055009" resp="Taisho" type="orig" place="foot text">明＝朝【三】</note><note n="0055009" resp="CBETA" type="mod">明【大】，朝【宋】【元】【明】</note><app n="0055009"><lem wit="【大】">明</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">朝</rdg></app>當行，廢我行道，今宜精進坐禪、經
+<lb n="0055b27" ed="T"/>行。』未得者得，未獲者獲，未證者證，於是比丘
+<lb n="0055b28" ed="T"/>即便精進。精進比丘設遇患時，便<note n="0055010" resp="Taisho" type="orig" place="foot text">作＝生【聖】</note><note n="0055010" resp="CBETA" type="mod">作【大】，生【聖】</note><app n="0055010"><lem wit="【大】">作</lem><rdg resp="Taisho" wit="【聖】">生</rdg></app>是念：
+<lb n="0055b29" ed="T"/>『我得重病或能命終，今宜精進。』未得者得，未
+<pb n="0055c" ed="T" xml:id="T01.0001.0055c"/>
+<lb n="0055c01" ed="T"/>獲者獲，未證者證，於是比丘即便精進。精進
+<lb n="0055c02" ed="T"/>比丘患得小<app type="star" corresp="#0055005"><lem wit="【大】">差</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">瘥</rdg></app>，復作是念：『我病初<app type="star" corresp="#0055005"><lem wit="【大】">差</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">瘥</rdg></app>，或更
+<lb n="0055c03" ed="T"/>增動，廢我行道，今宜精進坐禪、經行。』未得者
+<lb n="0055c04" ed="T"/>得，未獲者獲，未證者證，於是，比丘即便精進
+<lb n="0055c05" ed="T"/>坐禪、經行，是為八。</p><p xml:id="pT01p0055c0508" cb:place="inline">「云何八難解法？謂八不閑
+<lb n="0055c06" ed="T"/>妨修梵行。云何八？如來、至真出現於世，說
+<lb n="0055c07" ed="T"/>微妙法，寂滅無為，向菩提道，有人生地獄
+<lb n="0055c08" ed="T"/>中，是為不閑處，不得修梵行。如來、至真出現
+<lb n="0055c09" ed="T"/>於世，說微妙法，寂滅無為，向菩提道，而有
+<lb n="0055c10" ed="T"/>眾生在畜生中、餓鬼中、長壽天中、邊地無識、
+<lb n="0055c11" ed="T"/>無佛法處，是為不閑處，不得修梵行。如來、至
+<lb n="0055c12" ed="T"/>真、等正覺出現於世，說微妙法，寂滅無為，
+<lb n="0055c13" ed="T"/>向菩提道，或有眾生生於中國，而有邪見，
+<lb n="0055c14" ed="T"/>懷顛倒心，惡行成<note n="0055011" resp="Taisho" type="orig" place="foot text">就＝熟【聖】</note><note n="0055011" resp="CBETA" type="mod">就【大】，熟【聖】</note><app n="0055011"><lem wit="【大】">就</lem><rdg resp="Taisho" wit="【聖】">熟</rdg></app>，必入地獄，是為不閑
+<lb n="0055c15" ed="T"/>處，不得修梵行。如來、至真、等正覺出現於世，
+<lb n="0055c16" ed="T"/>說微妙法，寂滅無為，向菩提道，或有眾生
+<lb n="0055c17" ed="T"/>生於中國，聾、盲、瘖瘂，不得聞法、<note n="0055012" resp="Taisho" type="orig" place="foot text">〔修行梵行〕－【三】</note><note n="0055012" resp="CBETA" type="mod">修行梵行【大】，〔－〕【宋】【元】【明】</note><app n="0055012"><lem wit="【大】">修行梵行</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>，
+<lb n="0055c18" ed="T"/>是為<note n="0055013" resp="Taisho" type="orig" place="foot text">不閑＋（處不得修行梵行）【三】，－【聖】</note><note n="0055013" resp="CBETA" type="mod">不閑【大】，不閑處不得修行梵行【宋】【元】【明】，〔－〕【聖】</note><app n="0055013"><lem wit="【大】">不閑</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">不閑處不得修行梵行</rdg><rdg resp="Taisho" wit="【聖】"><space quantity="0"/></rdg></app>。如來、至真、等正覺不出世間，無
+<lb n="0055c19" ed="T"/>有能說微妙法，寂滅無為，向菩提道，而有
+<lb n="0055c20" ed="T"/>眾生生於中國，<note n="0055014" resp="Taisho" type="orig" place="foot text">〔彼〕－【三】</note><note n="0055014" resp="CBETA" type="mod">彼【大】，〔－〕【宋】【元】【明】</note><app n="0055014"><lem wit="【大】">彼</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>諸根具足，堪受聖教，而
+<lb n="0055c21" ed="T"/>不值佛，不得修行梵行，是為八不閑。</p><p xml:id="pT01p0055c2115" cb:place="inline">「云何
+<lb n="0055c22" ed="T"/>八生法？謂八大人覺：道當少欲，多欲非道；道
+<lb n="0055c23" ed="T"/>當知足，無厭非道；道當閑靜，樂眾非道；道
+<lb n="0055c24" ed="T"/>當自守，戱笑非道；道當精進，懈怠非道；道
+<lb n="0055c25" ed="T"/>當專念，多忘非道；道當定意，亂意非道；道
+<lb n="0055c26" ed="T"/>當智慧，愚癡非道。云何八知法？謂八除入：
+<lb n="0055c27" ed="T"/>內有色想，觀外色少，若好若醜，常觀常念，是
+<lb n="0055c28" ed="T"/>為初除入。內有色想，觀外色無量，若好若醜，
+<lb n="0055c29" ed="T"/>常觀常念，是為二除入。內無色想，外觀色少，
+<pb n="0056a" ed="T" xml:id="T01.0001.0056a"/>
+<lb n="0056a01" ed="T"/>若好若醜，常觀常念，是為三除入。內無色想，
+<lb n="0056a02" ed="T"/>外觀色無量，若好若醜，常觀常念，是為四除
+<lb n="0056a03" ed="T"/>入。內無色想，外觀色青，青色、青光、青見，譬
+<lb n="0056a04" ed="T"/>如青蓮華，亦如青<note n="0056001" resp="Taisho" type="orig" place="foot text">波羅<g ref="#CB00178"/>＝波羅奈【三】＊～Bārāna.</note><note n="0056001" resp="CBETA" type="mod">波羅<g ref="#CB00178"/>【大】＊，波羅奈【宋】＊【元】＊【明】＊，～Bārāna.</note><cb:tt n="0056001" type="app"><cb:t resp="Taisho" xml:lang="zh-Hant"><app n="0056001"><lem wit="【大】">波羅<g ref="#CB00178"/></lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">波羅奈</rdg></app></cb:t><cb:t resp="Taisho" xml:lang="pi" place="foot">Bārāna.</cb:t></cb:tt>衣，純一青色、
+<lb n="0056a05" ed="T"/>青光、青見，作如是想，常觀常念，是為五除
+<lb n="0056a06" ed="T"/>入。內無色想，外觀色黃，黃色、黃光、黃見，譬
+<lb n="0056a07" ed="T"/>如黃華、黃<app type="star" corresp="#0056001"><lem wit="【大】">波羅<g ref="#CB00178"/></lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">波羅奈</rdg></app>衣，黃色、黃光、黃見，常念常
+<lb n="0056a08" ed="T"/>觀，作如是想，是為六除入。內無色想，觀外
+<lb n="0056a09" ed="T"/>色赤，赤色、赤光、赤見，譬如赤華、赤<app type="star" corresp="#0056001"><lem wit="【大】">波羅<g ref="#CB00178"/></lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">波羅奈</rdg></app>
+<lb n="0056a10" ed="T"/>衣，純一赤色、赤光、赤見，常觀常念，作如是想，
+<lb n="0056a11" ed="T"/>是為七除入。內無色想，<note n="0056002" resp="Taisho" type="orig" place="foot text">外觀＝觀外【三】</note><note n="0056002" resp="CBETA" type="mod">外觀【大】，觀外【宋】【元】【明】</note><app n="0056002"><lem wit="【大】">外觀</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">觀外</rdg></app>色白，白色、白
+<lb n="0056a12" ed="T"/>光、白見，譬如白華、白<app type="star" corresp="#0056001"><lem wit="【大】">波羅<g ref="#CB00178"/></lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">波羅奈</rdg></app>衣，純一白色、白
+<lb n="0056a13" ed="T"/>光、白見，常觀常念，作如是想，是為八除入。</p>
+<lb n="0056a14" ed="T"/><p xml:id="pT01p0056a1401">「云何八證法？謂八解脫：<note n="0056003" resp="Taisho" type="orig" place="foot text">色觀＝內有色想觀外【三】</note><note n="0056003" resp="CBETA" type="mod">色觀【大】，內有色想觀外【宋】【元】【明】</note><app n="0056003"><lem wit="【大】">色觀</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">內有色想觀外</rdg></app>色，一解脫。內
+<lb n="0056a15" ed="T"/><note n="0056004" resp="Taisho" type="orig" place="foot text">有＝無【三】</note><note n="0056004" resp="CBETA" type="mod">無【CB】【宋】【元】【明】，有【大】</note><app n="0056004"><lem resp="CBETA.maha CBETA.say" wit="【CB】">無<note type="cf1">T01n0001_p0052b13</note><note type="cf2">T01n0026_p0582a18</note></lem><rdg wit="【大】">有</rdg><rdg resp="Taisho" wit="【宋】 【元】 【明】">無</rdg></app>色想，觀外色，二解脫。淨解脫，三解脫。度
+<lb n="0056a16" ed="T"/>色想，滅瞋恚想，住空處，四解脫。度空處，
+<lb n="0056a17" ed="T"/>住識處，五解脫。度識處，住不用處，六解脫。
+<lb n="0056a18" ed="T"/>度不用處，住有想無想處，七解脫。度有想
+<lb n="0056a19" ed="T"/>無想處，住想知滅，八解脫。諸比丘！是為八
+<lb n="0056a20" ed="T"/>十法，如實無虛，如來知已，平等說法。</p><p xml:id="pT01p0056a2015" cb:place="inline">「復有九
+<lb n="0056a21" ed="T"/><app type="star" corresp="#0053002"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>、九修法、九覺法、九滅法、九退法、九增
+<lb n="0056a22" ed="T"/>法、九難解法、九生法、九知法、九證法。云何
+<lb n="0056a23" ed="T"/>九<app type="star" corresp="#0053002"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>？謂九淨滅<note n="0056005" resp="Taisho" type="orig" place="foot text">枝＝支【元】【明】</note><note n="0056005" resp="CBETA" type="mod">枝【大】＊，支【元】【明】＊</note><app n="0056005"><lem wit="【大】">枝</lem><rdg resp="Taisho" wit="【元】 【明】">支</rdg></app>法：戒淨滅<app type="star" corresp="#0056005"><lem wit="【大】">枝</lem><rdg resp="Taisho" wit="【元】 【明】">支</rdg></app>、心淨滅
+<lb n="0056a24" ed="T"/><app type="star" corresp="#0056005"><lem wit="【大】">枝</lem><rdg resp="Taisho" wit="【元】 【明】">支</rdg></app>、見淨滅<app type="star" corresp="#0056005"><lem wit="【大】">枝</lem><rdg resp="Taisho" wit="【元】 【明】">支</rdg></app>、度疑淨滅<app type="star" corresp="#0056005"><lem wit="【大】">枝</lem><rdg resp="Taisho" wit="【元】 【明】">支</rdg></app>、分別淨滅<app type="star" corresp="#0056005"><lem wit="【大】">枝</lem><rdg resp="Taisho" wit="【元】 【明】">支</rdg></app>、
+<lb n="0056a25" ed="T"/>道淨滅<app type="star" corresp="#0056005"><lem wit="【大】">枝</lem><rdg resp="Taisho" wit="【元】 【明】">支</rdg></app>、除淨滅<app type="star" corresp="#0056005"><lem wit="【大】">枝</lem><rdg resp="Taisho" wit="【元】 【明】">支</rdg></app>、無欲淨滅<app type="star" corresp="#0056005"><lem wit="【大】">枝</lem><rdg resp="Taisho" wit="【元】 【明】">支</rdg></app>、解脫
+<lb n="0056a26" ed="T"/>淨滅<app type="star" corresp="#0056005"><lem wit="【大】">枝</lem><rdg resp="Taisho" wit="【元】 【明】">支</rdg></app>。云何九修法？謂九喜本：一喜，二愛，三
+<lb n="0056a27" ed="T"/>悅，四樂，五定，六如實知，七除捨，八無欲，九解
+<lb n="0056a28" ed="T"/>脫。</p><p xml:id="pT01p0056a2802" cb:place="inline">「云何九覺法？謂九眾生居：或有眾生，若
+<lb n="0056a29" ed="T"/>干種身若干種想，天及人是，是初眾生居。或
+<pb n="0056b" ed="T" xml:id="T01.0001.0056b"/>
+<lb n="0056b01" ed="T"/>有眾生，若干種身而一想者，梵光音天最初
+<lb n="0056b02" ed="T"/>生時是，是二眾生居。或有眾生，一身若<note n="0056006" resp="Taisho" type="orig" place="foot text">〔干〕－【元】</note><note n="0056006" resp="CBETA" type="mod">干【大】，〔－〕【元】</note><app n="0056006"><lem wit="【大】">干</lem><rdg resp="Taisho" wit="【元】"><space quantity="0"/></rdg></app>
+<lb n="0056b03" ed="T"/>種想，光音天是，是三眾生居。或有眾生，一身
+<lb n="0056b04" ed="T"/>一想，遍淨天是，是四眾生居。或有眾生，無
+<lb n="0056b05" ed="T"/>想無所覺知，無想天是，是五眾生居。復有眾
+<lb n="0056b06" ed="T"/>生，空處住，是六眾生居。復有眾生，識處住，
+<lb n="0056b07" ed="T"/>是七眾生居。復有眾生，不用處住，是八眾生
+<lb n="0056b08" ed="T"/>居。復有眾生，住有想無想處，是九眾生居。</p><p xml:id="pT01p0056b0817" cb:place="inline">「云
+<lb n="0056b09" ed="T"/>何九滅法？謂九愛本：因愛有求，因求有利，
+<lb n="0056b10" ed="T"/>因利有用，因用有欲，因欲有著，因著有
+<lb n="0056b11" ed="T"/>嫉，因嫉有守，因守有護。云何九退法？謂九
+<lb n="0056b12" ed="T"/>惱法：有人已侵惱我，今侵惱我，當侵惱
+<lb n="0056b13" ed="T"/>我；我所愛者，已侵惱，今侵惱，當侵惱；我所<note n="0056007" resp="Taisho" type="orig" place="foot text">憎＝增【宋】【元】</note><note n="0056007" resp="CBETA" type="mod">憎【大】，增【宋】【元】</note><app n="0056007"><lem wit="【大】">
+<lb n="0056b14" ed="T"/>憎</lem><rdg resp="Taisho" wit="【宋】 【元】">增</rdg></app>者，已愛敬，今愛敬，當愛敬。云何九增法？<note n="0056008" resp="Taisho" type="orig" place="foot text">謂＋（九）【三】</note><note n="0056008" resp="CBETA" type="mod">謂【大】，謂九【宋】【元】【明】</note><app n="0056008"><lem wit="【大】">謂</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">謂九</rdg></app>
+<lb n="0056b15" ed="T"/>無惱：彼已侵我，我惱何益？已不生惱，今不
+<lb n="0056b16" ed="T"/>生惱，當不生惱；我所愛者，彼已侵惱，我惱
+<lb n="0056b17" ed="T"/>何益？已不生惱，今不生惱，當不生惱；我
+<lb n="0056b18" ed="T"/>所憎者，彼已愛敬，我惱何益？已不生惱，今
+<lb n="0056b19" ed="T"/>不生惱，當不生惱。</p><p xml:id="pT01p0056b1908" cb:place="inline">「云何九難解法？謂九梵
+<lb n="0056b20" ed="T"/>行：若比丘有信而不持戒，則梵行不具；
+<lb n="0056b21" ed="T"/>比丘有信、有戒、則梵行具足。若比丘有信、有
+<lb n="0056b22" ed="T"/>戒而不多聞，則梵行不具；比丘有信、有戒、
+<lb n="0056b23" ed="T"/>有多聞，則梵行具足。若比丘有信、有戒、有
+<lb n="0056b24" ed="T"/>多聞，不能說法，則梵行不具；比丘有信、有
+<lb n="0056b25" ed="T"/>戒、有多聞，能說法，則梵行具足。若比丘有信、
+<lb n="0056b26" ed="T"/>有戒、有多聞，能說法，不能養眾，則梵行不
+<lb n="0056b27" ed="T"/>具；若比丘有信、有戒、有多聞，能說法、能養
+<lb n="0056b28" ed="T"/>眾，則梵行具足。若比丘有信、有戒、有多聞，能
+<lb n="0056b29" ed="T"/>說法、能養眾，不能於大眾中廣演法言，則
+<pb n="0056c" ed="T" xml:id="T01.0001.0056c"/>
+<lb n="0056c01" ed="T"/>梵行不具；若比丘有信、有戒、有多聞，能說法、
+<lb n="0056c02" ed="T"/>能養眾，能於大眾廣演法言，則梵行具足。
+<lb n="0056c03" ed="T"/>若比丘有信、有戒、有多聞，能說法、能養眾，能
+<lb n="0056c04" ed="T"/>在大眾廣演法言，而不得四禪，則梵行不
+<lb n="0056c05" ed="T"/>具；<note n="0056009" resp="Taisho" type="orig" place="foot text">〔若〕－【三】</note><note n="0056009" resp="CBETA" type="mod">若【大】，〔－〕【宋】【元】【明】</note><app n="0056009"><lem wit="【大】">若</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>比丘有信、有戒、<note n="0056010" resp="Taisho" type="orig" place="foot text">〔有〕－【三】</note><note n="0056010" resp="CBETA" type="mod">有【大】，〔－〕【宋】【元】【明】</note><app n="0056010"><lem wit="【大】">有</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>多聞，能說法、能養
+<lb n="0056c06" ed="T"/>眾，能於大眾廣演法言，又得四禪，則梵行
+<lb n="0056c07" ed="T"/>具足。若比丘有信、有戒、<note n="0056011" resp="Taisho" type="orig" place="foot text">多聞＝有多聞【三】</note><note n="0056011" resp="CBETA" type="mod">多聞【大】，有多聞【宋】【元】【明】</note><app n="0056011"><lem wit="【大】">多聞</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">有多聞</rdg></app>，能說法、能養
+<lb n="0056c08" ed="T"/>眾，在大眾中廣演法言，又得四禪，不於
+<lb n="0056c09" ed="T"/>八解脫逆順遊行，則梵行不具；<note n="0056012" resp="Taisho" type="orig" place="foot text">有＝若【三】</note><note n="0056012" resp="CBETA" type="mod">有【大】，若【宋】【元】【明】</note><app n="0056012"><lem wit="【大】">有</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">若</rdg></app>比丘有
+<lb n="0056c10" ed="T"/>信、有戒、有多聞，能說法、能養眾，於大眾中
+<lb n="0056c11" ed="T"/>廣演法言，具足四禪，於八解脫逆順遊行，
+<lb n="0056c12" ed="T"/>則梵行具足。若比丘有信、有戒、有多聞，能說
+<lb n="0056c13" ed="T"/>法、能養眾，在大眾中廣演法言，得四禪，
+<lb n="0056c14" ed="T"/>於八解脫逆順遊行，然不能盡有漏成無
+<lb n="0056c15" ed="T"/>漏，心解脫、智慧解脫，於現法中自身作證，
+<lb n="0056c16" ed="T"/>生死已盡，梵行已立，所作已辦，更不受有，則
+<lb n="0056c17" ed="T"/>梵行不具；若比丘有信、有戒、有多聞，能說法、
+<lb n="0056c18" ed="T"/>能養眾，能在大眾廣演法言，成就四禪，
+<lb n="0056c19" ed="T"/>於八解脫逆順遊行，捨有漏成無漏，心解
+<lb n="0056c20" ed="T"/>脫、智慧解脫，於現法中自身作證，生死已盡，
+<lb n="0056c21" ed="T"/>梵行已立，所作已辦，更不受有，則梵行具
+<lb n="0056c22" ed="T"/>足。</p><p xml:id="pT01p0056c2202" cb:place="inline">「云何九生法？謂九想：不淨想、觀<note n="0056013" resp="Taisho" type="orig" place="foot text">食＋（不淨）【三】</note><note n="0056013" resp="CBETA" type="mod">食【大】，食不淨【宋】【元】【明】</note><app n="0056013"><lem wit="【大】">食</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">食不淨</rdg></app>想、一
+<lb n="0056c23" ed="T"/>切世間不可樂想、死想、無常想、無常苦想、苦
+<lb n="0056c24" ed="T"/>無我想、盡想、無欲想。云何九知法？謂九異
+<lb n="0056c25" ed="T"/>法：<note n="0056014" resp="Taisho" type="orig" place="foot text">生果異因果＝因界【三】</note><note n="0056014" resp="CBETA" type="mod">生果異因果【大】，因界【宋】【元】【明】</note><app n="0056014"><lem wit="【大】">生果異、因果</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">因界</rdg></app>異。生觸異、因觸異。生受異、
+<lb n="0056c26" ed="T"/>因受異。生想異、因想異。生集異、因集異。生欲
+<lb n="0056c27" ed="T"/>異、因欲異。生利異、因利異。生求異、因求異。生
+<lb n="0056c28" ed="T"/>煩惱異、<note n="0056015" resp="Taisho" type="orig" place="foot text">〔因煩惱異〕－【三】</note><note n="0056015" resp="CBETA" type="mod">因煩惱異【大】，〔－〕【宋】【元】【明】</note><app n="0056015"><lem wit="【大】">因煩惱異</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>。云何九證法？謂九盡：
+<lb n="0056c29" ed="T"/>若入初禪，則聲<note n="0056c2901" resp="CBETA" type="add">刺【CB】，剌【大】</note><app n="0056c2901"><lem wit="【CB】" resp="CBETA">刺</lem><rdg wit="【大】">剌</rdg></app>滅。入第二禪，則覺觀<note n="0056c2902" resp="CBETA" type="add">刺【CB】，剌【大】</note><app n="0056c2902"><lem wit="【CB】" resp="CBETA">刺</lem><rdg wit="【大】">剌</rdg></app>
+<pb n="0057a" ed="T" xml:id="T01.0001.0057a"/>
+<lb n="0057a01" ed="T"/>滅。入第三禪，則喜刺滅。入第四禪，則出入
+<lb n="0057a02" ed="T"/>息刺滅。入空處，則色想刺滅。入識處，則空
+<lb n="0057a03" ed="T"/>想刺滅。入不用處，則識想刺滅。入有想無
+<lb n="0057a04" ed="T"/>想處，則不用想刺滅。入滅盡定，則想受刺
+<lb n="0057a05" ed="T"/>滅。諸比丘！是為九十法，如實不虛，如
+<lb n="0057a06" ed="T"/>來知已，平等說法。</p><p xml:id="pT01p0057a0608" cb:place="inline">「復有十<app type="star" corresp="#0053002"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>、十修法、十
+<lb n="0057a07" ed="T"/>覺法、十滅法、十退法、十增法、十難解法、十
+<lb n="0057a08" ed="T"/>生法、十知法、十證法。云何十<app type="star" corresp="#0053002"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>？謂十
+<lb n="0057a09" ed="T"/>救法：一者比丘二百五十戒具，威儀亦具，
+<lb n="0057a10" ed="T"/>見有小罪，生大怖畏，平等學戒，心無傾
+<lb n="0057a11" ed="T"/><note n="0057001" resp="Taisho" type="orig" place="foot text">邪＝斜【三】</note><note n="0057001" resp="CBETA" type="mod">邪【大】，斜【宋】【元】【明】</note><app n="0057001"><lem wit="【大】">邪</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">斜</rdg></app>。二者得善知識。三者言語中正，多所
+<lb n="0057a12" ed="T"/><note n="0057002" resp="Taisho" type="orig" place="foot text">含＝合【三】</note><note n="0057002" resp="CBETA" type="mod">含【大】，合【宋】【元】【明】</note><app n="0057002"><lem wit="【大】">含</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">合</rdg></app>受。四者好求善法，分布不恡。五者諸梵
+<lb n="0057a13" ed="T"/>行人有所施設，輙往佐助，不以為勞，難
+<lb n="0057a14" ed="T"/>為能為，亦教人為。六者多聞，聞便能持，未
+<lb n="0057a15" ed="T"/>曾有忘。七者精<note n="0057003" resp="Taisho" type="orig" place="foot text">進＝勤【三】</note><note n="0057003" resp="CBETA" type="mod">進【大】，勤【宋】【元】【明】</note><app n="0057003"><lem wit="【大】">進</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">勤</rdg></app>，滅不善法，增長善法。
+<lb n="0057a16" ed="T"/>八者常自專念，無有他想，憶本善行，若
+<lb n="0057a17" ed="T"/>在目前。九者智慧成就，觀法生滅，以賢聖
+<lb n="0057a18" ed="T"/>律而斷苦本。十者樂於閑居，專念思惟，於
+<lb n="0057a19" ed="T"/>禪中間無有調戲。</p><p xml:id="pT01p0057a1908" cb:place="inline">「云何十修法？謂十正
+<lb n="0057a20" ed="T"/>行：正見、正<app type="star" corresp="#0055002"><lem wit="【大】">思</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">志</rdg></app>、正語、正業、正命、正方便、正念、正
+<lb n="0057a21" ed="T"/>定、正解脫、正<note n="0057004" resp="Taisho" type="orig" place="foot text">知＝智【三】【聖】</note><note n="0057004" resp="CBETA" type="mod">知【大】，智【宋】【元】【明】【聖】</note><app n="0057004"><lem wit="【大】">知</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">智</rdg></app>。云何十覺法？謂十色入：眼
+<lb n="0057a22" ed="T"/>入、耳入、鼻入、舌入、身入、色入、聲入、香入、味入、觸
+<lb n="0057a23" ed="T"/>入。云何十滅法？謂十邪行：邪見、邪思、邪語、邪
+<lb n="0057a24" ed="T"/>業、邪命、邪方便、邪念、邪定、邪解脫、邪智。云何
+<lb n="0057a25" ed="T"/>十退法？謂十不善行迹：身殺、盜、婬，口兩舌、惡
+<lb n="0057a26" ed="T"/>罵、妄言、綺語，意貪取、嫉妬、邪見。云何十增法？
+<lb n="0057a27" ed="T"/>謂十善行：身不殺、盜、婬，口不兩舌、惡罵、妄
+<lb n="0057a28" ed="T"/>言、綺語，意不貪取、嫉妬、邪見。云何十難解法？
+<lb n="0057a29" ed="T"/>謂十賢聖居：一者比丘除滅五枝，二者成就
+<pb n="0057b" ed="T" xml:id="T01.0001.0057b"/>
+<lb n="0057b01" ed="T"/>六枝，三者捨一，四者依四，五者滅異諦，六者
+<lb n="0057b02" ed="T"/>勝妙求，七者無<note n="0057005" resp="Taisho" type="orig" place="foot text">濁＝漏【明】</note><note n="0057005" resp="CBETA" type="mod">濁【大】，漏【明】</note><app n="0057005"><lem wit="【大】">濁</lem><rdg resp="Taisho" wit="【明】">漏</rdg></app>想，八者身行已立，九者
+<lb n="0057b03" ed="T"/>心解脫，十者慧解脫。</p><p xml:id="pT01p0057b0309" cb:place="inline">「云何十生法？謂十稱譽
+<lb n="0057b04" ed="T"/>處：若比丘自得信已，為他人說，亦復稱歎
+<lb n="0057b05" ed="T"/>諸得信者。自持戒已，為他人說，亦復稱歎
+<lb n="0057b06" ed="T"/>諸持戒者。自少欲已，為他人說，亦復稱歎
+<lb n="0057b07" ed="T"/>諸少欲者。自知足已，為他人說，亦復稱歎
+<lb n="0057b08" ed="T"/>諸知足者。自樂閑靜，為他人說，亦復稱歎
+<lb n="0057b09" ed="T"/>樂閑靜者。自多聞已，為他人說，亦復稱歎
+<lb n="0057b10" ed="T"/>諸多聞者。自精進已，為他人說，亦復稱歎
+<lb n="0057b11" ed="T"/>諸精進者。自專念已，為他人說，亦復稱歎
+<lb n="0057b12" ed="T"/>諸專念者。自得禪定，為他人說，亦復稱歎
+<lb n="0057b13" ed="T"/>得禪定者。自得智慧，為他人說，亦復稱歎
+<lb n="0057b14" ed="T"/>得智慧者。</p><p xml:id="pT01p0057b1405" cb:place="inline">「云何十知法？謂十滅法：正見之人
+<lb n="0057b15" ed="T"/>能滅邪見，諸緣邪見，起無數惡，亦盡除滅。
+<lb n="0057b16" ed="T"/>諸因正見，生無數善，盡得成就正<app type="star" corresp="#0055002"><lem wit="【大】">思</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】">志</rdg></app>、正語、
+<lb n="0057b17" ed="T"/>正業、正命、正方便、正念、正定、正解脫、正智。正
+<lb n="0057b18" ed="T"/>智之人能滅邪智，諸因邪智，起無數惡，<note n="0057006" resp="Taisho" type="orig" place="foot text">悉皆＝皆悉【三】</note><note n="0057006" resp="CBETA" type="mod">悉皆【大】，皆悉【宋】【元】【明】</note><app n="0057006"><lem wit="【大】">悉
+<lb n="0057b19" ed="T"/>皆</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">皆悉</rdg></app>除滅；諸因正智，起無數善法，盡得成就。
+<lb n="0057b20" ed="T"/>云何十證法？謂十無學法：無學正見、正思、正
+<lb n="0057b21" ed="T"/>語、正業、正命、正方便、正念、正定、正解脫、正智。
+<lb n="0057b22" ed="T"/>諸比丘！是為百法，如實無虛，如來知已，平
+<lb n="0057b23" ed="T"/>等說法。」</p><p xml:id="pT01p0057b2304" cb:place="inline">爾時，舍利弗佛所印可，諸比丘聞
+<lb n="0057b24" ed="T"/>舍利弗所說，歡喜奉行。<note n="0057007" resp="Taisho" type="orig" place="foot text">三本以歡喜奉行為卷第九終。第二分以下為卷第十。譯號如前。</note><note n="0057007" resp="CBETA" type="mod">三本以歡喜奉行為卷第九終第二分以下為卷第十。譯號如前。</note></p></cb:div>
+<lb n="0057b25" ed="T"/><cb:div type="jing"><cb:mulu level="2" type="經">11 增一經</cb:mulu><head>（一一）<title><note n="0057008" resp="Taisho" type="orig" place="foot text">〔佛說長阿含〕－【三】</note><note n="0057008" resp="CBETA" type="mod">佛說長阿含【大】，〔－〕【宋】【元】【明】</note><app n="0057008"><lem wit="【大】">佛說長阿含</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app></title>第二分增<note n="0057009" resp="Taisho" type="orig" place="foot text">一＝益【宋】</note><note n="0057009" resp="CBETA" type="mod">一【大】，益【宋】</note><app n="0057009"><lem wit="【大】">一</lem><rdg resp="Taisho" wit="【宋】">益</rdg></app>經第七</head>
+<lb n="0057b26" ed="T"/><p xml:id="pT01p0057b2601">如是我聞：</p><p xml:id="pT01p0057b2605" cb:place="inline">一時，佛在舍衛國祇樹給孤獨園，
+<lb n="0057b27" ed="T"/>與大比丘眾千二百五十人俱。</p><p xml:id="pT01p0057b2713" cb:place="inline">爾時，世尊告
+<lb n="0057b28" ed="T"/>諸比丘：「我與汝等說微妙法，上中下言，皆
+<lb n="0057b29" ed="T"/>悉<note n="0057010" resp="Taisho" type="orig" place="foot text">真＝直【聖】</note><note n="0057010" resp="CBETA" type="mod">真【大】，直【聖】</note><app n="0057010"><lem wit="【大】">真</lem><rdg resp="Taisho" wit="【聖】">直</rdg></app>正，義味清淨，梵行具足，謂一增法也。汝
+<pb n="0057c" ed="T" xml:id="T01.0001.0057c"/>
+<lb n="0057c01" ed="T"/>等諦聽！善思念之！當為汝說。」</p><p xml:id="pT01p0057c0112" cb:place="inline">時，諸比丘受
+<lb n="0057c02" ed="T"/>教而聽。佛告比丘：「一增法者，謂一<note n="0057011" resp="Taisho" type="orig" place="foot text">成法＝多成法【三】＊</note><note n="0057011" resp="CBETA" type="mod">成法【大】＊，多成法【宋】＊【元】＊【明】＊</note><app n="0057011"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>、一
+<lb n="0057c03" ed="T"/>修法、一覺法、一滅法、一證法。云何一<app type="star" corresp="#0057011"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>？
+<lb n="0057c04" ed="T"/>謂不捨善法。云何一修法？謂常自念身。云
+<lb n="0057c05" ed="T"/>何一覺法？謂有漏觸。云何一滅法？謂有我慢。
+<lb n="0057c06" ed="T"/>云何一證法？謂無礙心解脫。</p><p xml:id="pT01p0057c0612" cb:place="inline">「又有二<app type="star" corresp="#0057011"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>、
+<lb n="0057c07" ed="T"/>二修法、二覺法、二滅法、二證法。云何二成
+<lb n="0057c08" ed="T"/>法？謂知慚、知愧。云何二修法？謂止與觀。云
+<lb n="0057c09" ed="T"/>何二覺法？謂名與色。云何二滅法？謂無明、有
+<lb n="0057c10" ed="T"/>愛。云何二證法？謂明與解脫。</p><p xml:id="pT01p0057c1012" cb:place="inline">「又有三<app type="star" corresp="#0057011"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>、
+<lb n="0057c11" ed="T"/>三修法、三覺法、三滅法、三證法。云何三<app type="star" corresp="#0057011"><lem wit="【大】">成
+<lb n="0057c12" ed="T"/>法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>？一者親近善友，二者耳聞法音，<note n="0057012" resp="Taisho" type="orig" place="foot text">三＋（者）【三】</note><note n="0057012" resp="CBETA" type="mod">三【大】，三者【宋】【元】【明】</note><app n="0057012"><lem wit="【大】">三</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">三者</rdg></app>法法
+<lb n="0057c13" ed="T"/>成就。云何三修法？謂三三昧：空三昧、無<note n="0057013" resp="Taisho" type="orig" place="foot text">想＝相【三】＊</note><note n="0057013" resp="CBETA" type="mod">想【大】＊，相【宋】＊【元】＊【明】＊</note><app n="0057013"><lem wit="【大】">想</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">相</rdg></app>
+<lb n="0057c14" ed="T"/>三昧、無作三昧。云何三覺法？謂三受：苦受、樂
+<lb n="0057c15" ed="T"/>受、不苦不樂受。云何三滅法？謂三愛：欲愛、有
+<lb n="0057c16" ed="T"/>愛、無有愛。云何三證法？謂三明：宿命智、天眼
+<lb n="0057c17" ed="T"/>智、漏盡智。</p><p xml:id="pT01p0057c1705" cb:place="inline">「又有四<app type="star" corresp="#0057011"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>、四修法、四覺法、四
+<lb n="0057c18" ed="T"/>滅法、四證法。云何四<app type="star" corresp="#0057011"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>？一者住中國，二
+<lb n="0057c19" ed="T"/>者近善友，三者自謹慎，四者宿<note n="0057014" resp="Taisho" type="orig" place="foot text">殖＝植【三】</note><note n="0057014" resp="CBETA" type="mod">殖【大】，植【宋】【元】【明】</note><app n="0057014"><lem wit="【大】">殖</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">植</rdg></app>善本。云
+<lb n="0057c20" ed="T"/>何四修法？住四念處：比丘內身身觀，精勤
+<lb n="0057c21" ed="T"/>不懈，憶念不忘，捨世貪憂；外身身觀，精勤
+<lb n="0057c22" ed="T"/>不懈，憶念不忘，捨世貪憂；內外身身觀，精
+<lb n="0057c23" ed="T"/>勤不懈，憶念不忘，捨世貪憂。受、意、法觀，亦
+<lb n="0057c24" ed="T"/>復如是。云何四覺法？謂四食：<note n="0057015" resp="Taisho" type="orig" place="foot text">摶＝揣【宋】【元】</note><note n="0057015" resp="CBETA" type="mod">摶【大】，揣【宋】【元】</note><app n="0057015"><lem wit="【大】">摶</lem><rdg resp="Taisho" wit="【宋】 【元】">揣</rdg></app>食、觸食、念食、
+<lb n="0057c25" ed="T"/>識食。云何四滅法？謂四受：欲受、我受、戒受、見
+<lb n="0057c26" ed="T"/>受。云何四證法？謂四沙門果：須陀洹果、斯陀
+<lb n="0057c27" ed="T"/>含果、阿那含果、阿羅漢果。</p><p xml:id="pT01p0057c2711" cb:place="inline">「又有五<app type="star" corresp="#0057011"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>、五
+<lb n="0057c28" ed="T"/>修法、五覺法、五滅法、五證法。云何五<app type="star" corresp="#0057011"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>？
+<lb n="0057c29" ed="T"/>謂五滅盡<note n="0057016" resp="Taisho" type="orig" place="foot text">支＝枝【三】</note><note n="0057016" resp="CBETA" type="mod">支【大】，枝【宋】【元】【明】</note><app n="0057016"><lem wit="【大】">支</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">枝</rdg></app>：一者信佛、如來、至真，十號具
+<pb n="0058a" ed="T" xml:id="T01.0001.0058a"/>
+<lb n="0058a01" ed="T"/>足。二者無病，身常安隱。三者質直無有<note n="0058001" resp="Taisho" type="orig" place="foot text">諛＝偷【聖】</note><note n="0058001" resp="CBETA" type="mod">諛【大】，偷【聖】</note><app n="0058001"><lem wit="【大】">諛</lem><rdg resp="Taisho" wit="【聖】">偷</rdg></app>
+<lb n="0058a02" ed="T"/>諂，<note n="0058002" resp="Taisho" type="orig" place="foot text">真＝直【三】</note><note n="0058002" resp="CBETA" type="mod">真【大】，直【宋】【元】【明】</note><app n="0058002"><lem wit="【大】">真</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">直</rdg></app>趣如來涅槃徑路。四者專心不亂，諷
+<lb n="0058a03" ed="T"/>誦不忘。五者善於觀察法之起滅，以賢聖
+<lb n="0058a04" ed="T"/>行盡於苦本。云何五修法？謂五根：信根、精
+<lb n="0058a05" ed="T"/>進根、念根、定根、慧根。云何五覺法？謂五受陰：
+<lb n="0058a06" ed="T"/>色受陰，受、想、行、識受陰。云何五滅法？謂五蓋：
+<lb n="0058a07" ed="T"/>貪欲蓋、瞋恚蓋、睡眠蓋、<note n="0058003" resp="Taisho" type="orig" place="foot text">掉＝調【宋】</note><note n="0058003" resp="CBETA" type="mod">掉【大】，調【宋】</note><app n="0058003"><lem wit="【大】">掉</lem><rdg resp="Taisho" wit="【宋】">調</rdg></app>戱蓋、疑蓋。云何五
+<lb n="0058a08" ed="T"/>證法？謂五無學聚：無學戒聚、無學定聚、慧聚、
+<lb n="0058a09" ed="T"/>解脫聚、解脫知見聚。</p><p xml:id="pT01p0058a0909" cb:place="inline">「復有六<app type="star" corresp="#0057011"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>、六修法、
+<lb n="0058a10" ed="T"/>六覺法、六滅法、六證法。云何六<app type="star" corresp="#0057011"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>？謂六
+<lb n="0058a11" ed="T"/>重法。若有比丘修六重法，可敬可重，和
+<lb n="0058a12" ed="T"/>合於眾，無有諍訟，獨行無雜。云何六？於是，
+<lb n="0058a13" ed="T"/>比丘身常行慈及修梵行，住仁愛心，名曰
+<lb n="0058a14" ed="T"/>重法，可敬可重，和合於眾，無有諍訟，獨行
+<lb n="0058a15" ed="T"/>無雜。復次，比丘口慈、意慈，以己供養及鉢中
+<lb n="0058a16" ed="T"/>餘，與人共之，不懷彼此。復次，比丘聖所行
+<lb n="0058a17" ed="T"/>戒，不犯不毀，無有染汙，智者所稱，善具足
+<lb n="0058a18" ed="T"/>持<note n="0058004" resp="Taisho" type="orig" place="foot text">〔戒〕－【三】【聖】</note><note n="0058004" resp="CBETA" type="mod">戒【大】，〔－〕【宋】【元】【明】【聖】</note><app n="0058004"><lem wit="【大】">戒</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【聖】"><space quantity="0"/></rdg></app>，成就賢聖出要，平等盡苦，正見及諸
+<lb n="0058a19" ed="T"/>梵行，是名重法，可敬可重，和合於眾，無
+<lb n="0058a20" ed="T"/>有諍訟，獨行不雜。</p><p xml:id="pT01p0058a2008" cb:place="inline">「云何六修法？謂六念：佛念、
+<lb n="0058a21" ed="T"/>法念、僧念、戒念、施念、天念。云何六覺法？謂六內
+<lb n="0058a22" ed="T"/>入：眼入、耳入、鼻入、舌入、身入、意入。云何六滅
+<lb n="0058a23" ed="T"/>法？謂六愛：色愛、聲愛，香、味、觸、法愛。云何六證
+<lb n="0058a24" ed="T"/>法？謂六神通：一者神足通證，二者天耳通證，
+<lb n="0058a25" ed="T"/>三者知他心通證，四者宿命通證，五者天眼
+<lb n="0058a26" ed="T"/>通證，六者漏盡通證。</p><p xml:id="pT01p0058a2609" cb:place="inline">「復有七<app type="star" corresp="#0057011"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>、七修法、
+<lb n="0058a27" ed="T"/>七覺法、七滅法、七證法。云何七<app type="star" corresp="#0057011"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>？謂七
+<lb n="0058a28" ed="T"/>財：信財、戒財、慙財、愧財、聞財、施財、<note n="0058005" resp="Taisho" type="orig" place="foot text">惠＝慧【三】</note><note n="0058005" resp="CBETA" type="mod">慧【CB】【宋】【元】【明】，惠【大】</note><app n="0058005"><lem resp="CBETA.maha" wit="【CB】">慧</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">慧</rdg><rdg wit="【大】">惠</rdg></app>財，<note n="0058006" resp="Taisho" type="orig" place="foot text">〔是〕－【聖】</note><note n="0058006" resp="CBETA" type="mod">是【大】，〔－〕【聖】</note><app n="0058006"><lem wit="【大】">是</lem><rdg resp="Taisho" wit="【聖】"><space quantity="0"/></rdg></app>
+<lb n="0058a29" ed="T"/>為七財。云何七修法？謂七覺意。於是，比丘
+<pb n="0058b" ed="T" xml:id="T01.0001.0058b"/>
+<lb n="0058b01" ed="T"/>修念覺意，依無欲、依寂滅、依遠離，修法、
+<lb n="0058b02" ed="T"/>修精進、修<note n="0058007" resp="Taisho" type="orig" place="foot text">喜＝智【三】</note><note n="0058007" resp="CBETA" type="mod">喜【大】，智【宋】【元】【明】</note><app n="0058007"><lem wit="【大】">喜</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">智</rdg></app>、修<note n="0058008" resp="Taisho" type="orig" place="foot text">〔猗修〕－【三】</note><note n="0058008" resp="CBETA" type="mod">猗修【大】，〔－〕【宋】【元】【明】</note><app n="0058008"><lem wit="【大】">猗、修</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>定、修捨，依無欲、
+<lb n="0058b03" ed="T"/>依寂滅、依遠離。</p><p xml:id="pT01p0058b0307" cb:place="inline">「云何七覺法？謂七識住處：
+<lb n="0058b04" ed="T"/>若有眾生，若干種身若干種想，天及人，此是
+<lb n="0058b05" ed="T"/>初識住。復有眾生，若干種身而一想者，梵光
+<lb n="0058b06" ed="T"/>音天最初生時是，是二識住。復有眾生，一身
+<lb n="0058b07" ed="T"/>若干種想，光音天是，是三識住。復有眾生，
+<lb n="0058b08" ed="T"/>一身一想，徧淨天是，是四識住處。復有眾
+<lb n="0058b09" ed="T"/>生，空處住，是五識住。或識處住，是六識住。
+<lb n="0058b10" ed="T"/>或不用處，是七識住。</p><p xml:id="pT01p0058b1009" cb:place="inline">「云何七滅法？謂七使法：
+<lb n="0058b11" ed="T"/>欲愛使、有愛使、見使、慢使、瞋恚使、無明使、疑
+<lb n="0058b12" ed="T"/>使。云何七證法？為七漏盡力。於是，漏盡
+<lb n="0058b13" ed="T"/>比丘於一切諸苦、集、滅、<note n="0058b1301" resp="CBETA" type="add" cb:note_key="T01.0058b13.10">味【CB】【麗-CB】【磧乙-CB】，昧【大】</note><app n="0058b1301"><lem wit="【CB】 【麗-CB】 【磧乙-CB】" resp="CBETA CBETA.shin" cb:provider="來函：DL (2022-05-25)">味<note type="cf1">K17n0647_p0893c15</note><note type="cf2">QC054n0665_p0098b11</note></lem><rdg wit="【大】">昧</rdg></app>、過、出要，如實知
+<lb n="0058b14" ed="T"/>見，觀欲如火坑，亦如刀劍，知欲見欲，不
+<lb n="0058b15" ed="T"/>貪於欲，心不住欲；於中復善觀察，如實得
+<lb n="0058b16" ed="T"/>知，如實見已，世間貪婬、惡不善法不起不<note n="0058009" resp="Taisho" type="orig" place="foot text">漏＝滅【三】</note><note n="0058009" resp="CBETA" type="mod">漏【大】，滅【宋】【元】【明】</note><app n="0058009"><lem wit="【大】">
+<lb n="0058b17" ed="T"/>漏</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">滅</rdg></app>，修四念處，多修多行，五根、五力、七覺意、賢
+<lb n="0058b18" ed="T"/>聖八道，多修多行。</p><p xml:id="pT01p0058b1808" cb:place="inline">「復有八<app type="star" corresp="#0057011"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>、八修法、八
+<lb n="0058b19" ed="T"/>覺法、八滅法、八證法。云何八<app type="star" corresp="#0057011"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>？謂八因
+<lb n="0058b20" ed="T"/>緣。未得梵行而得智，得梵行已智增多。
+<lb n="0058b21" ed="T"/>云何為八？如是比丘依世尊住，或依師長，
+<lb n="0058b22" ed="T"/>或依智慧梵行者住，生慚愧心，有愛有敬，
+<lb n="0058b23" ed="T"/>是為初因緣。未得梵行而得智，得梵行
+<lb n="0058b24" ed="T"/>已智增多。復次，依世尊住，隨時請問：『此法云
+<lb n="0058b25" ed="T"/>何義，何所趣？』<note n="0058010" resp="Taisho" type="orig" place="foot text">尊長＝世尊【宋】</note><note n="0058010" resp="CBETA" type="mod">尊長【大】，世尊【宋】</note><app n="0058010"><lem wit="【大】">尊長</lem><rdg resp="Taisho" wit="【宋】">世尊</rdg></app>即為開演深義，是為二
+<lb n="0058b26" ed="T"/>因緣。既聞法已，身心樂靜，是為三因緣。不
+<lb n="0058b27" ed="T"/>為遮道無益雜論，彼到眾中，或自說法，或<note n="0058011" resp="Taisho" type="orig" place="foot text">請＝倩【宋】【元】【聖】</note><note n="0058011" resp="CBETA" type="mod">請【大】，倩【宋】【元】【聖】</note><app n="0058011"><lem wit="【大】">
+<lb n="0058b28" ed="T"/>請</lem><rdg resp="Taisho" wit="【宋】 【元】 【聖】">倩</rdg></app>他說，猶復不捨賢聖默然，是為四<note n="0058012" resp="Taisho" type="orig" place="foot text">〔因緣〕－【聖】</note><note n="0058012" resp="CBETA" type="mod">因緣【大】，〔－〕【聖】</note><app n="0058012"><lem wit="【大】">因緣</lem><rdg resp="Taisho" wit="【聖】"><space quantity="0"/></rdg></app>。
+<lb n="0058b29" ed="T"/><note n="0058013" resp="Taisho" type="orig" place="foot text">多＝名【明】</note><note n="0058013" resp="CBETA" type="mod">多【大】，名【明】</note><app n="0058013"><lem wit="【大】">多</lem><rdg resp="Taisho" wit="【明】">名</rdg></app>聞廣博，守持不忘，諸法深奧，上中下善，
+<pb n="0058c" ed="T" xml:id="T01.0001.0058c"/>
+<lb n="0058c01" ed="T"/>義味誠諦，梵行具足，聞已入心，見不流動，是
+<lb n="0058c02" ed="T"/>為五因緣。修習精勤，滅不善行，善行日增，勉
+<lb n="0058c03" ed="T"/>力堪任，不捨斯法，是為六因緣。又以智慧
+<lb n="0058c04" ed="T"/>知起滅法，<note n="0058c0401" resp="CBETA" type="add" cb:note_key="T01.0058c04.05">賢聖【CB】【麗-CB】【磧乙-CB】，聖賢【大】</note><app n="0058c0401"><lem resp="CBETA.maha CBETA.shin" cb:provider="來函：DL (2022-05-25)" wit="【CB】 【麗-CB】 【磧乙-CB】">賢聖<note type="cf1">K17n0647_p0894a14-15</note><note type="cf2">QC054n0665_p0099a12</note><note type="cf3">T01n0001_p0058c08</note></lem><rdg wit="【大】">聖賢</rdg></app>所<note n="0058014" resp="Taisho" type="orig" place="foot text">趣＝起【三】</note><note n="0058014" resp="CBETA" type="mod">趣【大】，起【宋】【元】【明】</note><app n="0058014"><lem wit="【大】">趣</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">起</rdg></app>能盡苦際，是為七因
+<lb n="0058c05" ed="T"/>緣。又觀五受陰，生<app type="star" corresp="#0057013"><lem wit="【大】">想</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">相</rdg></app>、滅<app type="star" corresp="#0057013"><lem wit="【大】">想</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">相</rdg></app>，此色，色集、色滅，
+<lb n="0058c06" ed="T"/>此受、想、行、識，識集、識滅，是為八因緣。未得梵
+<lb n="0058c07" ed="T"/>行而有智，已得梵行智增多。</p><p xml:id="pT01p0058c0712" cb:place="inline">「云何八修法？
+<lb n="0058c08" ed="T"/>謂賢聖八道：正見、正志、正語、正業、正命、正方便、
+<lb n="0058c09" ed="T"/>正念、正定。云何八覺法？謂世八法：利、衰、毀、譽、
+<lb n="0058c10" ed="T"/>稱、譏、苦、樂。云何八滅法？謂八邪：邪見、邪<note n="0058015" resp="Taisho" type="orig" place="foot text">志＝思【三】</note><note n="0058015" resp="CBETA" type="mod">志【大】＊，思【宋】【元】【明】＊</note><app n="0058015"><lem wit="【大】">志</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">思</rdg></app>、邪
+<lb n="0058c11" ed="T"/>語、邪業、邪命、邪方便、邪念、邪定。云何八證法？謂
+<lb n="0058c12" ed="T"/>八解脫：色觀色，<note n="0058016" resp="Taisho" type="orig" place="foot text">一＋（時）【聖】</note><note n="0058016" resp="CBETA" type="mod">一【大】，一時【聖】</note><app n="0058016"><lem wit="【大】">一</lem><rdg resp="Taisho" wit="【聖】">一時</rdg></app>解脫。內<note n="0058c1201" resp="CBETA" type="add" cb:note_key="T01.0058c12.11">無【CB】，有【大】（CBETA 按：「有」，房山石經（F20n0738_p0358a01）、麗本（K17n0647_p0894b02）、金藏乙本（AC6119_009_0028a02）、磧砂乙本（QC054n0665_p0099b03）、洪武南藏（U090n0585_p0024a09）、永樂北藏（P059n0541_p0810a03）、《嘉興藏》（日本東京大學綜合圖書館藏正編第78帙第6冊第106圖左欄第7行）、《福州藏》（日本宮內庁書陵部藏大藏經第2774帖第7圖第5行）皆作「有」；今依文義以「無」為正確。）</note><app n="0058c1201"><lem wit="【CB】" resp="CBETA.maha CBETA.say">無<note type="cf1">T01n0001_p0052b13</note><note type="cf2">T01n0026_p0582a18</note></lem><rdg wit="【大】">有</rdg></app>色想，外觀色，
+<lb n="0058c13" ed="T"/>二解脫。淨解脫，三解脫。度色想，滅瞋恚想，住
+<lb n="0058c14" ed="T"/>空處，四解脫。度空處，住識處，五解脫。度識
+<lb n="0058c15" ed="T"/>處，住不用處，六解脫。度不用處，住有想無
+<lb n="0058c16" ed="T"/>想處，七解脫。度有想無想處，住想知滅，八解
+<lb n="0058c17" ed="T"/>脫。</p><p xml:id="pT01p0058c1702" cb:place="inline">「復有九<app type="star" corresp="#0057011"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>、九修法、九覺法、九滅法、九
+<lb n="0058c18" ed="T"/>證法。云何九<app type="star" corresp="#0057011"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>？謂九淨滅<app type="star" corresp="#0056005"><lem wit="【大】">枝</lem><rdg resp="Taisho" wit="【元】 【明】">支</rdg></app>法：戒淨滅
+<lb n="0058c19" ed="T"/><app type="star" corresp="#0056005"><lem wit="【大】">枝</lem><rdg resp="Taisho" wit="【元】 【明】">支</rdg></app>、心淨滅<app type="star" corresp="#0056005"><lem wit="【大】">枝</lem><rdg resp="Taisho" wit="【元】 【明】">支</rdg></app>、見淨滅<app type="star" corresp="#0056005"><lem wit="【大】">枝</lem><rdg resp="Taisho" wit="【元】 【明】">支</rdg></app>、度疑淨滅<app type="star" corresp="#0056005"><lem wit="【大】">枝</lem><rdg resp="Taisho" wit="【元】 【明】">支</rdg></app>、分
+<lb n="0058c20" ed="T"/>別淨滅<app type="star" corresp="#0056005"><lem wit="【大】">枝</lem><rdg resp="Taisho" wit="【元】 【明】">支</rdg></app>、道淨滅<app type="star" corresp="#0056005"><lem wit="【大】">枝</lem><rdg resp="Taisho" wit="【元】 【明】">支</rdg></app>、除淨滅<app type="star" corresp="#0056005"><lem wit="【大】">枝</lem><rdg resp="Taisho" wit="【元】 【明】">支</rdg></app>、無欲淨
+<lb n="0058c21" ed="T"/>滅<app type="star" corresp="#0056005"><lem wit="【大】">枝</lem><rdg resp="Taisho" wit="【元】 【明】">支</rdg></app>、解脫淨滅<app type="star" corresp="#0056005"><lem wit="【大】">枝</lem><rdg resp="Taisho" wit="【元】 【明】">支</rdg></app>。云何九修法？謂九喜本：
+<lb n="0058c22" ed="T"/>一喜，二愛，三悅，四樂，五定，六如實知，七除捨，八
+<lb n="0058c23" ed="T"/>無欲，九解脫。云何九覺法？謂九眾生居：或有
+<lb n="0058c24" ed="T"/>眾生，若干種身若干種想，天及人是，<note n="0058017" resp="Taisho" type="orig" place="foot text">〔是〕－【三】</note><note n="0058017" resp="CBETA" type="mod">是【大】，〔－〕【宋】【元】【明】</note><app n="0058017"><lem wit="【大】">是</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>初
+<lb n="0058c25" ed="T"/>眾生居。或有眾生，若干種身而一想者，梵光
+<lb n="0058c26" ed="T"/>音天最初生時是，是二眾生居。或有眾生，一
+<lb n="0058c27" ed="T"/>身若干種想，光音天是，是三眾生居。或有眾
+<lb n="0058c28" ed="T"/>生，一身一想，遍淨天是，是四眾生<note n="0058018" resp="Taisho" type="orig" place="foot text">居＋（或有眾生）【三】</note><note n="0058018" resp="CBETA" type="mod">居【大】，居或有眾生【宋】【元】【明】</note><app n="0058018"><lem wit="【大】">居</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">居或有眾生</rdg></app>。無想
+<lb n="0058c29" ed="T"/>無所覺知，無想天是，是五眾生居。復有眾
+<pb n="0059a" ed="T" xml:id="T01.0001.0059a"/>
+<lb n="0059a01" ed="T"/>生，空處住，是六眾生居。復有眾生，識處住，
+<lb n="0059a02" ed="T"/>是七眾生居。復有眾生，不用處住，是八眾生
+<lb n="0059a03" ed="T"/>居。復有眾生，住有想無想處，是九眾生居。</p>
+<lb n="0059a04" ed="T"/><p xml:id="pT01p0059a0401">「云何九滅法？謂九愛本：因愛有求，因求有
+<lb n="0059a05" ed="T"/>利，因利有用，因用有欲，因欲有著，因著
+<lb n="0059a06" ed="T"/>有嫉，因嫉有守，因守有護。云何九證法？
+<lb n="0059a07" ed="T"/>謂九盡：若入初禪，則聲刺滅。入第二禪，則
+<lb n="0059a08" ed="T"/>覺觀刺滅。入第三禪，則喜刺滅。入第四
+<lb n="0059a09" ed="T"/>禪，則出入息刺滅。入空處，則色想刺滅。入
+<lb n="0059a10" ed="T"/>識處，則空想刺滅。入不用處，則識想<note n="0059a1001" resp="CBETA" type="add">刺【CB】，剌【大】</note><app n="0059a1001"><lem wit="【CB】" resp="CBETA">刺</lem><rdg wit="【大】">剌</rdg></app>滅。
+<lb n="0059a11" ed="T"/>入有想無想處，則不用想<note n="0059a1101" resp="CBETA" type="add">刺【CB】，剌【大】</note><app n="0059a1101"><lem wit="【CB】" resp="CBETA">刺</lem><rdg wit="【大】">剌</rdg></app>滅。入滅盡定，
+<lb n="0059a12" ed="T"/>則想受<note n="0059a1201" resp="CBETA" type="add">刺【CB】，剌【大】</note><app n="0059a1201"><lem wit="【CB】" resp="CBETA">刺</lem><rdg wit="【大】">剌</rdg></app>滅。</p><p xml:id="pT01p0059a1206" cb:place="inline">「復有十<app type="star" corresp="#0057011"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>、十修法、十覺
+<lb n="0059a13" ed="T"/>法、十滅法、十證法。云何十<app type="star" corresp="#0057011"><lem wit="【大】">成法</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多成法</rdg></app>？謂十救法：
+<lb n="0059a14" ed="T"/>一者比丘二百五十戒具，威儀亦具，見有小
+<lb n="0059a15" ed="T"/>罪，生大怖畏，平等學戒，心無傾邪。二者得
+<lb n="0059a16" ed="T"/>善知識。三者言語中正，多所堪忍。四者好
+<lb n="0059a17" ed="T"/>求善法，分布不恡。五者諸梵行人有所施
+<lb n="0059a18" ed="T"/>設，輙往佐助，不以為勞，難為能為，亦教人
+<lb n="0059a19" ed="T"/>為。六者多聞，聞便能持，未曾有忘。七者精
+<lb n="0059a20" ed="T"/>勤，滅不善法，增長善法。八者常自專念，無
+<lb n="0059a21" ed="T"/>有他想，憶本善行，如在目前。九者智慧成
+<lb n="0059a22" ed="T"/>就，觀法生滅，以賢聖律斷於苦本。十者樂
+<lb n="0059a23" ed="T"/>於閑居，專念思惟，於禪中間無有<note n="0059001" resp="Taisho" type="orig" place="foot text">調＝掉【元】</note><note n="0059001" resp="CBETA" type="mod">調【大】，掉【元】</note><app n="0059001"><lem wit="【大】">調</lem><rdg resp="Taisho" wit="【元】">掉</rdg></app>戲。</p>
+<lb n="0059a24" ed="T"/><p xml:id="pT01p0059a2401">「云何十修法？謂十正行：正見、正<app type="star" corresp="#0058015"><lem wit="【大】">志</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">思</rdg></app>、正語、正業、
+<lb n="0059a25" ed="T"/>正命、正方便、正念、正定、正解脫、正智。云何十
+<lb n="0059a26" ed="T"/>覺法？謂十色入：眼入、耳入、鼻入、舌入、身入、色
+<lb n="0059a27" ed="T"/>入、聲入、香入、味入、觸入。云何十滅法？謂十邪
+<lb n="0059a28" ed="T"/>行：邪見、邪志、邪語、邪業、邪命、邪方便、邪念、邪定、
+<lb n="0059a29" ed="T"/>邪解脫、邪智。云何十證法？謂十無學法：無
+<pb n="0059b" ed="T" xml:id="T01.0001.0059b"/>
+<lb n="0059b01" ed="T"/>學正見、正<app type="star" corresp="#0058015"><lem wit="【大】">志</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">思</rdg></app>、正語、正業、正命、正方便、正念、正
+<lb n="0059b02" ed="T"/>定、正解脫、正智。諸比丘！此名一增法，我今
+<lb n="0059b03" ed="T"/>為汝等說如是法，吾為如來、為諸弟子
+<lb n="0059b04" ed="T"/>所應作者，皆已備悉，慈愍慇懃，訓誨汝等，
+<lb n="0059b05" ed="T"/>汝等亦宜勤奉行之。諸比丘！當在閑居樹
+<lb n="0059b06" ed="T"/>下空處，精勤坐禪，勿自放恣，今不勉力，後
+<lb n="0059b07" ed="T"/>悔何益？此是我教，勤受持之。」</p><p xml:id="pT01p0059b0712" cb:place="inline">爾時，諸比丘
+<lb n="0059b08" ed="T"/>聞佛所說，歡喜奉行。</p></cb:div>
+<lb n="0059b09" ed="T"/><cb:juan n="009" fun="close"><cb:jhead><title><note n="0059002" resp="Taisho" type="orig" place="foot text">〔佛說〕－【聖】</note><note n="0059002" resp="CBETA" type="mod">佛說【大】，〔－〕【聖】</note><app n="0059002"><lem wit="【大】">佛說</lem><rdg resp="Taisho" wit="【聖】"><space quantity="0"/></rdg></app>長阿含經</title>卷第九<note n="0059003" resp="Taisho" type="orig" place="foot text">＋（光明皇后願文）【聖】</note><note n="0059003" resp="CBETA" type="mod">〔－〕【大】，光明皇后願文【聖】</note></cb:jhead></cb:juan>
+</cb:div></body></text></TEI>

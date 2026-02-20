@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/cbeta-git/xml-p5a/master/schema/cbeta-p5a.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:cb="http://www.cbeta.org/ns/1.0" xml:id="T01n0001">
+<teiHeader>
+	<fileDesc>
+		<titleStmt>
+			<title>Taishō Tripiṭaka, Electronic version, No. 1 長阿含經</title>
+			<title xml:lang="zh-Hant">大正新脩大藏經數位版, No. 1 長阿含經</title>
+			<author>後秦 佛陀耶舍共竺佛念譯</author>
+			<respStmt>
+				<resp>Electronic Version by</resp>
+				<name>CBETA</name>
+			</respStmt>
+		</titleStmt>
+		<editionStmt>
+			<edition>單卷版 XML TEI P5b</edition>
+		</editionStmt>
+		<extent>22卷</extent>
+		<publicationStmt>
+			<idno type="CBETA">
+				<idno type="canon">T</idno>.<idno type="vol">1</idno>.<idno type="no">1</idno>
+			</idno>
+			<distributor>
+				<name>中華電子佛典協會 (CBETA)</name>
+				<address>
+					<addrLine><email>service@cbeta.org</email></addrLine>
+				</address>
+			</distributor>
+			<availability>
+				<p>Available for non-commercial use when distributed with this header intact.</p>
+			</availability>
+			<date>2023-10-03 21:24:04 +0800</date>
+		</publicationStmt>
+		<sourceDesc>
+			<bibl>
+				<title level="s">Taishō Tripiṭaka</title>
+				<title level="s" xml:lang="zh-Hant">大正新脩大藏經</title>
+				<title level="m" xml:lang="zh-Hant">長阿含經</title>
+			</bibl>
+		</sourceDesc>
+	</fileDesc>
+	<encodingDesc>
+		<projectDesc>
+			<p xml:lang="en" cb:type="ly">Text as provided by Mr. Hsiao Chen-Kuo, Text as provided by Mr. Chang Wen-Ming, Text as provided by Anonymous from USA, Punctuated text as provided by Dhammavassarama</p>
+			<p xml:lang="zh-Hant" cb:type="ly">蕭鎮國大德提供，張文明大德提供，北美某大德提供，法雨道場提供新式標點</p>
+		</projectDesc>
+		<editorialDecl>
+			<punctuation resp="CBETA"><p>新式標點</p></punctuation>
+		</editorialDecl>
+		<tagsDecl>
+			<namespace name="http://www.tei-c.org/ns/1.0">
+				<tagUsage gi="rdg">
+					<listWit>
+						<witness xml:id="wit.orig">【大】</witness>
+						<witness xml:id="wit.cbeta">【CB】</witness>
+					</listWit>
+				</tagUsage>
+			</namespace>
+		</tagsDecl>
+		<charDecl>
+			<char xml:id="CB00550">
+				<charName>CBETA CHARACTER CB00550</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[登*斤]</value>
+				</charProp>
+				<charProp>
+					<localName>normalized form</localName>
+					<value>斲</value>
+				</charProp>
+				<mapping type="unicode">U+230C6</mapping>
+				<mapping cb:dec="983590" type="PUA">U+F0226</mapping>
+			</char>
+			<char xml:id="CB00567">
+				<charName>CBETA CHARACTER CB00567</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[跳-兆+專]</value>
+				</charProp>
+				<mapping type="normal_unicode">U+28114</mapping>
+				<mapping cb:dec="983607" type="PUA">U+F0237</mapping>
+			</char>
+			<char xml:id="CB00571">
+				<charName>CBETA CHARACTER CB00571</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[跳-兆+尃]</value>
+				</charProp>
+				<mapping type="unicode">U+2C9C5</mapping>
+				<mapping cb:dec="983611" type="PUA">U+F023B</mapping>
+			</char>
+			<char xml:id="CB01174">
+				<charName>CBETA CHARACTER CB01174</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[馬*奔]</value>
+				</charProp>
+				<mapping type="unicode">U+298FA</mapping>
+				<mapping cb:dec="984214" type="PUA">U+F0496</mapping>
+			</char>
+			<char xml:id="CB04767">
+				<charName>CBETA CHARACTER CB04767</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[山*岸]</value>
+				</charProp>
+				<charProp>
+					<localName>normalized form</localName>
+					<value>岸</value>
+				</charProp>
+				<mapping cb:dec="987807" type="PUA">U+F129F</mapping>
+			</char>
+			<char xml:id="CB04788">
+				<charName>CBETA CHARACTER CB04788</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[金*午]</value>
+				</charProp>
+				<mapping type="unicode">U+2B48D</mapping>
+				<mapping cb:dec="987828" type="PUA">U+F12B4</mapping>
+			</char>
+		</charDecl>
+	</encodingDesc>
+	<profileDesc>
+		<langUsage>
+			<language ident="pi">Pali</language>
+			<language ident="sa">Sanskrit</language>
+			<language ident="en">English</language>
+			<language ident="zh-Hant">Chinese (Traditional)</language>
+		</langUsage>
+	</profileDesc>
+	<revisionDesc>
+		<change when="2013-05-20">
+			<name>CW</name><name>Ray Chou 周邦信</name>P4 to P5 conversion by p4top5a.py, intended for publication
+		</change>
+		<change when="1999-08-10T22:31:27">
+			CW (ed.) Created initial TEI XML version with BASICX.BAT (99/8/10)
+		</change>
+	</revisionDesc>
+</teiHeader>
+<text><body>
+<cb:mulu level="1" type="分">4 分</cb:mulu><cb:mulu level="2" type="經">30 世記經</cb:mulu><cb:mulu level="3" type="品">8 忉利天品</cb:mulu><cb:div type="fen"><cb:div type="jing">
+<milestone n="21" unit="juan"/>
+<lb n="0137a25" ed="T"/>
+<lb n="0137a26" ed="T"/>
+<lb n="0137a27" ed="T"/><cb:juan n="021" fun="open"><cb:mulu n="021" type="卷"></cb:mulu><cb:jhead><title><note n="0137009" resp="Taisho" type="orig" place="foot text">〔佛說〕－【宋】【元】</note><note n="0137009" resp="CBETA" type="mod">佛說【大】，〔－〕【宋】【元】</note><app n="0137009"><lem wit="【大】">佛說</lem><rdg resp="Taisho" wit="【宋】 【元】"><space quantity="0"/></rdg></app>長阿含經</title>卷第二十一</cb:jhead></cb:juan>
+<lb n="0137a28" ed="T"/>
+<lb n="0137a29" ed="T"/><byline cb:type="Translator"><note n="0137010" resp="Taisho" type="orig" place="foot text">後秦弘始年＝姚秦三藏法師【三】</note><note n="0137010" resp="CBETA" type="mod">後秦弘始年【大】，姚秦三藏法師【宋】【元】【明】</note><app n="0137010"><lem wit="【大】">後秦弘始年</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">姚秦三藏法師</rdg></app>佛陀耶舍共竺佛念譯</byline>
+<pb n="0137b" ed="T" xml:id="T01.0001.0137b"/>
+<lb n="0137b01" ed="T"/><cb:div type="pin"><cb:mulu level="3" type="品">9 三災品</cb:mulu><head><note n="0137b0101" resp="CBETA" type="add">［－］【CB】，（三〇）【大】</note><app n="0137b0101"><lem wit="【CB】" resp="CBETA.maha"><space quantity="0"/></lem><rdg wit="【大】">（三〇）</rdg></app><note n="0137011" resp="Taisho" type="orig" place="foot text">（長阿含）＋第【宋】【元】，〔第四分世記經〕－【明】</note><note n="0137011" resp="CBETA" type="mod">第四分世記經【大】，〔－〕【明】，長阿含第四分世記經【宋】【元】</note><app n="0137011"><lem wit="【大】">第四分世記經</lem><rdg resp="Taisho" wit="【明】"><space quantity="0"/></rdg><rdg resp="Taisho" wit="【宋】 【元】">長阿含第四分世記經</rdg></app>三災品第九</head>
+<lb n="0137b02" ed="T"/><p xml:id="pT01p0137b0201">佛告比丘：「有四事長久，無量無限，不可以
+<lb n="0137b03" ed="T"/>日月歲數而稱計也。云何為四？一者世間
+<lb n="0137b04" ed="T"/>災漸起，壞此世時，中間長久，無量無限，不
+<lb n="0137b05" ed="T"/>可以日月歲數而稱計也。二者此世間壞
+<lb n="0137b06" ed="T"/>已，中間空曠，無有世間，長久逈遠，不可以
+<lb n="0137b07" ed="T"/>日月歲數而稱計也。三者天地初起，向欲
+<lb n="0137b08" ed="T"/>成時，中間長久，不可以日月歲數而稱計
+<lb n="0137b09" ed="T"/>也。四者天地成已，久住不壞，不可以日月
+<lb n="0137b10" ed="T"/>歲數而稱計也。是為四事長久，無量無限，
+<lb n="0137b11" ed="T"/>不可以日月歲數而計量也。」</p><p xml:id="pT01p0137b1112" cb:place="inline">佛告比丘：「世
+<lb n="0137b12" ed="T"/>有三災。云何為三？一者火災，二者水災，三
+<lb n="0137b13" ed="T"/>者風災。有三災上際。云何為三？一者光音天，
+<lb n="0137b14" ed="T"/>二者遍淨天，三者果實天。若火災起時，至光
+<lb n="0137b15" ed="T"/>音天，光音天為際。若水災起時，至遍淨天，
+<lb n="0137b16" ed="T"/>遍淨天為際。若風災起時，至果實天，果實
+<lb n="0137b17" ed="T"/>天為際。云何為火災？火災始欲起時，此世
+<lb n="0137b18" ed="T"/>間人皆行正法，正見不倒，修十善行，行此
+<lb n="0137b19" ed="T"/>法時，有人得第二禪者，即踊身上昇於虛
+<lb n="0137b20" ed="T"/>空中，住聖人道、天道、梵道，高聲唱言：『諸賢！
+<lb n="0137b21" ed="T"/>當知無覺、無觀第二禪樂，第二禪樂。』時，世間
+<lb n="0137b22" ed="T"/>人聞此聲已，仰語彼言：『善哉！善哉！唯願為
+<lb n="0137b23" ed="T"/>我說無覺、無觀第二禪道。』時，空中<note n="0137012" resp="Taisho" type="orig" place="foot text">〔人〕－【三】</note><note n="0137012" resp="CBETA" type="mod">人【大】，〔－〕【宋】【元】【明】</note><app n="0137012"><lem wit="【大】">人</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>聞其
+<lb n="0137b24" ed="T"/>語已，即為說無覺、無觀第二禪道。此世間人
+<lb n="0137b25" ed="T"/>聞彼說已，即修無覺無觀第二禪道，身壞
+<lb n="0137b26" ed="T"/>命終，生光音天。</p><p xml:id="pT01p0137b2607" cb:place="inline">「是時，地獄眾生罪畢命終，來
+<lb n="0137b27" ed="T"/>生人間，復修無覺、無觀第二禪，身壞命終，生
+<lb n="0137b28" ed="T"/>光音天；畜生、餓鬼、阿須倫、四天王、忉利天、炎
+<lb n="0137b29" ed="T"/>天、兜率天、化自在天、他化自在天、梵天眾生命
+<pb n="0137c" ed="T" xml:id="T01.0001.0137c"/>
+<lb n="0137c01" ed="T"/>終，來生人間，修無覺、無觀第二禪，身壞命終，
+<lb n="0137c02" ed="T"/>生光音天。由此因緣地獄道盡，畜生、餓鬼、
+<lb n="0137c03" ed="T"/>阿須倫乃至梵天皆盡。當於爾時，先地獄盡，
+<lb n="0137c04" ed="T"/>然後畜生盡；畜生盡已，餓鬼盡；餓鬼盡已，阿
+<lb n="0137c05" ed="T"/>須倫盡；阿須倫盡已，四天王盡；四天王盡已，
+<lb n="0137c06" ed="T"/>忉利天<note n="0137013" resp="Taisho" type="orig" place="foot text">〔王〕－【三】＊</note><note n="0137013" resp="CBETA" type="mod">王【大】＊，〔－〕【宋】＊【元】＊【明】＊</note><app n="0137013"><lem wit="【大】">王</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>盡；忉利天<app type="star" corresp="#0137013"><lem wit="【大】">王</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>盡已，炎摩天盡；炎
+<lb n="0137c07" ed="T"/>摩天盡已，兜率天盡；兜率天盡已，化自在天
+<lb n="0137c08" ed="T"/>盡；化自在天盡已，他化自在天盡；他化自在
+<lb n="0137c09" ed="T"/>天盡已，梵天盡；梵天盡已，然後人盡，無有遺
+<lb n="0137c10" ed="T"/>餘。人盡無餘已，此世敗壞，乃成為災，其後
+<lb n="0137c11" ed="T"/>天不降雨，百穀草木自然枯死。」</p>
+<lb n="0137c12" ed="T"/><p xml:id="pT01p0137c1201">佛告比丘：「以是當知，一切行無常，變易朽
+<lb n="0137c13" ed="T"/>壞，不可恃怙，有為諸法，甚可厭患，當求度
+<lb n="0137c14" ed="T"/>世解脫之道。其後久久，有大黑風暴起，吹大
+<lb n="0137c15" ed="T"/>海水，海水深八萬四千由旬，吹使兩披，取日
+<lb n="0137c16" ed="T"/>宮殿，置於須彌山半，去地四萬二千由旬，
+<lb n="0137c17" ed="T"/>安日道中，緣此世間有二日出。二日出已，
+<lb n="0137c18" ed="T"/>令此世間所有小河、汱澮、渠流皆悉乾竭。」</p><p xml:id="pT01p0137c1817" cb:place="inline">佛
+<lb n="0137c19" ed="T"/>告比丘：「以是當知，一切行無常，變易朽壞，
+<lb n="0137c20" ed="T"/>不可恃怙，凡諸有為甚可厭患，當求度世
+<lb n="0137c21" ed="T"/>解脫之道。其後久久，有大黑風暴起，海水
+<lb n="0137c22" ed="T"/>深八萬四千由旬，吹使兩披，取日宮殿，置
+<lb n="0137c23" ed="T"/>於須彌山半，去地四萬二千由旬，安日道
+<lb n="0137c24" ed="T"/>中，緣此世間有三日出。三日出已，此諸大
+<lb n="0137c25" ed="T"/>水，恒河、耶婆那河、婆羅河、阿夷羅婆提河、阿摩
+<lb n="0137c26" ed="T"/>怯河、辛陀河、故舍河皆悉乾竭，無有遺餘。</p>
+<lb n="0137c27" ed="T"/><p xml:id="pT01p0137c2701">「以是當知，一切行無常，變易朽壞，不可恃
+<lb n="0137c28" ed="T"/>怙，凡諸有為甚可厭患，當求度世解脫之
+<lb n="0137c29" ed="T"/>道。其後久久，有大黑風暴起，海水深八萬四
+<pb n="0138a" ed="T" xml:id="T01.0001.0138a"/>
+<lb n="0138a01" ed="T"/>千由旬，吹使兩披，取日宮殿，置於須彌山
+<lb n="0138a02" ed="T"/>半，安日道中，緣此世間有四日出。四日出
+<lb n="0138a03" ed="T"/>已，此諸世間所有<note n="0138001" resp="Taisho" type="orig" place="foot text">泉＝眾【三】</note><note n="0138001" resp="CBETA" type="mod">泉【大】，眾【宋】【元】【明】</note><app n="0138001"><lem wit="【大】">泉</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">眾</rdg></app>源、淵池，善見大池、阿<note n="0138002" resp="Taisho" type="orig" place="foot text">耨＋（達）【三】</note><note n="0138002" resp="CBETA" type="mod">耨【大】，耨達【宋】【元】【明】</note><app n="0138002"><lem wit="【大】">
+<lb n="0138a04" ed="T"/>耨</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">耨達</rdg></app>大池、四方陀延池、<note n="0138003" resp="Taisho" type="orig" place="foot text">優＝憂【宋】【元】</note><note n="0138003" resp="CBETA" type="mod">優【大】，憂【宋】【元】</note><app n="0138003"><lem wit="【大】">優</lem><rdg resp="Taisho" wit="【宋】 【元】">憂</rdg></app>鉢羅池、拘物頭池、分
+<lb n="0138a05" ed="T"/>陀利池、<note n="0138004" resp="Taisho" type="orig" place="foot text">〔離池〕－【三】</note><note n="0138004" resp="CBETA" type="mod">離池【大】，〔－〕【宋】【元】【明】</note><app n="0138004"><lem wit="【大】">離池</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>，縱廣五十由旬皆盡乾竭。</p><p xml:id="pT01p0138a0516" cb:place="inline">「以
+<lb n="0138a06" ed="T"/>是故知，一<note n="0138005" resp="Taisho" type="orig" place="foot text">切＋（行）【三】</note><note n="0138005" resp="CBETA" type="mod">切【大】，切行【宋】【元】【明】</note><app n="0138005"><lem wit="【大】">切</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">切行</rdg></app>無常，變易朽壞，不可恃怙，凡
+<lb n="0138a07" ed="T"/>諸有為甚可厭患，當求度世解脫之道。其
+<lb n="0138a08" ed="T"/>後久久，有大黑風暴起，吹大海水，使令兩
+<lb n="0138a09" ed="T"/>披，取日宮殿，置於須彌山半，安日道中，緣
+<lb n="0138a10" ed="T"/>此世間有五日出。五日出已，大海水稍減
+<lb n="0138a11" ed="T"/>百由旬，至七百由旬。以是可知，一切行無
+<lb n="0138a12" ed="T"/>常，變易朽壞，不可恃怙，凡諸有為甚可厭
+<lb n="0138a13" ed="T"/>患，當求度世解脫之道。是時，大海稍盡，餘
+<lb n="0138a14" ed="T"/>有七百由旬、六百由旬、五百由旬、四百由旬
+<lb n="0138a15" ed="T"/>乃至百由旬在。以是可知，一切行無常，變易
+<lb n="0138a16" ed="T"/>朽壞，不可恃怙，凡諸有為甚可厭患，當求
+<lb n="0138a17" ed="T"/>度世解脫之道。時，大海水稍稍減盡，至七
+<lb n="0138a18" ed="T"/>由旬、六由旬、五由旬，乃至一由旬在。」</p><p xml:id="pT01p0138a1815" cb:place="inline">佛告比
+<lb n="0138a19" ed="T"/>丘：「以是當知，一切行無常，變易朽壞，不可
+<lb n="0138a20" ed="T"/>恃怙，凡諸有為甚可厭患，當求度世解脫
+<lb n="0138a21" ed="T"/>之道。其後海水稍盡，至七多羅樹、六多羅樹，
+<lb n="0138a22" ed="T"/>乃至一多羅樹。」</p><p xml:id="pT01p0138a2207" cb:place="inline">佛告比丘：「以是當知，一切
+<lb n="0138a23" ed="T"/>行無常，變易朽壞，不可恃怙，凡諸有為甚
+<lb n="0138a24" ed="T"/>可厭患，當求度世解脫之道。其後海水轉
+<lb n="0138a25" ed="T"/><note n="0138006" resp="Taisho" type="orig" place="foot text">淺＝深【宋】</note><note n="0138006" resp="CBETA" type="mod">淺【大】，深【宋】</note><app n="0138006"><lem wit="【大】">淺</lem><rdg resp="Taisho" wit="【宋】">深</rdg></app>，七人、六人、五人、四人、三人、二人、一人，至腰、
+<lb n="0138a26" ed="T"/>至膝，至于<note n="0138007" resp="Taisho" type="orig" place="foot text"><g ref="#CB00571"/>＝<g ref="#CB00567"/>【三】</note><note n="0138007" resp="CBETA" type="mod"><g ref="#CB00567"/>【CB】【宋】【元】【明】，<g ref="#CB00571"/>【大】</note><app n="0138007"><lem resp="CBETA.maha" wit="【CB】"><g ref="#CB00567"/></lem><rdg wit="【大】"><g ref="#CB00571"/></rdg><rdg resp="Taisho" wit="【宋】 【元】 【明】"><g ref="#CB00567"/></rdg></app>、踝。」</p><p xml:id="pT01p0138a2607" cb:place="inline">佛告比丘：「以是當知，一
+<lb n="0138a27" ed="T"/>切行無常，變易朽壞，不可恃怙，凡諸有為甚
+<lb n="0138a28" ed="T"/>可厭患，當求度世解脫之道。其後海水猶
+<lb n="0138a29" ed="T"/>如春雨後，亦如牛跡中水，遂至涸盡，不漬
+<pb n="0138b" ed="T" xml:id="T01.0001.0138b"/>
+<lb n="0138b01" ed="T"/>人指。」</p><p xml:id="pT01p0138b0103" cb:place="inline">佛告比丘：「以是當知，一切行無常，變
+<lb n="0138b02" ed="T"/>易朽壞，不可恃怙，凡諸有為甚可厭患，當
+<lb n="0138b03" ed="T"/>求度世解脫之道。其後久久，有大黑風暴
+<lb n="0138b04" ed="T"/>起，吹海底沙，深八萬四千由旬，令著兩<note n="0138008" resp="Taisho" type="orig" place="foot text">岸＝<g ref="#CB04767"/>【宋】【元】【三】</note><note n="0138008" resp="CBETA" type="mod">岸【大】，<g ref="#CB04767"/>【宋】【元】【明】</note><app n="0138008"><lem wit="【大】">
+<lb n="0138b05" ed="T"/>岸</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><g ref="#CB04767"/></rdg></app>飃，取日宮殿，置於須彌山半，安日道中，
+<lb n="0138b06" ed="T"/>緣此世間有六日出。六日出已，其四天下及
+<lb n="0138b07" ed="T"/>八萬天下諸山、大山、須彌山王皆烟起燋燃，
+<lb n="0138b08" ed="T"/>猶如陶家初然陶時，六日出時亦復如是。」</p>
+<lb n="0138b09" ed="T"/><p xml:id="pT01p0138b0901">佛告比丘：「以是當知，一切行無常，變易朽壞，
+<lb n="0138b10" ed="T"/>不可恃怙，凡諸有為甚可厭患，當求度世
+<lb n="0138b11" ed="T"/>解脫之道。其後久久，有大黑風暴起，吹海
+<lb n="0138b12" ed="T"/>底沙，八萬四千由旬，令著兩<anchor xml:id="fxT01p0138b01"/>岸飄，取日宮
+<lb n="0138b13" ed="T"/>殿，置於須彌山半，安日道中，緣此世間有
+<lb n="0138b14" ed="T"/>七日出。七日出已，此四天下及八萬天下諸
+<lb n="0138b15" ed="T"/>山、大山、須彌山王皆悉洞然，猶如陶家然竈
+<lb n="0138b16" ed="T"/>焰起，七日出時亦復如是。」</p><p xml:id="pT01p0138b1611" cb:place="inline">佛告比丘：「以此
+<lb n="0138b17" ed="T"/>當知，一切行無常，變易朽壞，不可恃怙，凡諸
+<lb n="0138b18" ed="T"/>有為甚可厭患，當求度世解脫之道。此四
+<lb n="0138b19" ed="T"/>天下及八萬天下諸山、須彌山皆悉洞然；一
+<lb n="0138b20" ed="T"/>時，四天王宮、忉利天宮、炎摩天<note n="0138009" resp="Taisho" type="orig" place="foot text">〔宮〕－【三】</note><note n="0138009" resp="CBETA" type="mod">宮【大】，〔－〕【宋】【元】【明】</note><app n="0138009"><lem wit="【大】">宮</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>、兜率天、
+<lb n="0138b21" ed="T"/>化自在天、他化自在天、梵天宮亦皆洞然。」</p><p xml:id="pT01p0138b2117" cb:place="inline">佛
+<lb n="0138b22" ed="T"/>告比丘：「是故當知，一切行無常，變易朽壞，
+<lb n="0138b23" ed="T"/>不可恃怙，凡諸有為法甚可厭患，當求
+<lb n="0138b24" ed="T"/>度世解脫之道。此四天下，乃至梵<note n="0138b2401" resp="CBETA" type="add">天【CB】，大【大】</note><app n="0138b2401"><lem wit="【CB】" resp="CBETA">天</lem><rdg wit="【大】">大</rdg></app>火洞然
+<lb n="0138b25" ed="T"/>已，風吹火焰至光音天，<note n="0138010" resp="Taisho" type="orig" place="foot text">〔其〕－【三】</note><note n="0138010" resp="CBETA" type="mod">其【大】，〔－〕【宋】【元】【明】</note><app n="0138010"><lem wit="【大】">其</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>彼初生天子
+<lb n="0138b26" ed="T"/>見此火焰，皆生怖畏言：『咄！此何物？』先生諸
+<lb n="0138b27" ed="T"/>天語後生天言：『勿怖畏也，彼火曾來，齊
+<lb n="0138b28" ed="T"/>此而止。』以念前火光，故名光<note n="0138011" resp="Taisho" type="orig" place="foot text">念＝音【三】</note><note n="0138011" resp="CBETA" type="mod">念【大】，音【宋】【元】【明】</note><app n="0138011"><lem wit="【大】">念</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">音</rdg></app>天。此
+<lb n="0138b29" ed="T"/>四天下，乃至梵天火洞然已，須彌山王漸漸
+<pb n="0138c" ed="T" xml:id="T01.0001.0138c"/>
+<lb n="0138c01" ed="T"/>頹落，百由旬、二百由旬，至七百由旬。」</p><p xml:id="pT01p0138c0115" cb:place="inline">佛告
+<lb n="0138c02" ed="T"/>比丘：「以是當知，一切行無常，變易朽壞，不
+<lb n="0138c03" ed="T"/>可恃怙，凡諸有為甚可厭患，當求度世解
+<lb n="0138c04" ed="T"/>脫之道。此四天下乃至梵天火洞然已，其後
+<lb n="0138c05" ed="T"/>大地及須彌山盡無灰燼。是故當知，一切行
+<lb n="0138c06" ed="T"/>無常，變易朽壞，不可恃怙，凡諸有為甚可
+<lb n="0138c07" ed="T"/>厭患，當求度世解脫之道。其此大地火燒盡
+<lb n="0138c08" ed="T"/>已，地下水盡，水下風盡。是故當知，一切行無
+<lb n="0138c09" ed="T"/>常，變易朽壞，不可恃怙，凡諸有為甚可厭
+<lb n="0138c10" ed="T"/>患，當求度世解脫之道。」</p><p xml:id="pT01p0138c1010" cb:place="inline">佛告比丘：「火<note n="0138012" resp="Taisho" type="orig" place="foot text">災＝炎【宋】</note><note n="0138012" resp="CBETA" type="mod">災【大】，炎【宋】</note><app n="0138012"><lem wit="【大】">災</lem><rdg resp="Taisho" wit="【宋】">炎</rdg></app>起
+<lb n="0138c11" ed="T"/>時，天不復雨，百穀草木自然枯死。誰當信
+<lb n="0138c12" ed="T"/>者？獨有見者，自當知<note n="0138013" resp="Taisho" type="orig" place="foot text">耶＝耳【三】＊</note><note n="0138013" resp="CBETA" type="mod">耶【大】＊，耳【宋】＊【元】＊【明】＊</note><app n="0138013"><lem wit="【大】">耶</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">耳</rdg></app>？如是乃至地下
+<lb n="0138c13" ed="T"/>水盡，水下風盡。誰當信者？獨有見者，自當
+<lb n="0138c14" ed="T"/>知<app type="star" corresp="#0138013"><lem wit="【大】">耶</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">耳</rdg></app>？是為火災。</p><p xml:id="pT01p0138c1407" cb:place="inline">「云何火劫還復？其後久久，
+<lb n="0138c15" ed="T"/>有大黑雲在虛空中，至光音天，周遍降雨，
+<lb n="0138c16" ed="T"/><note n="0138014" resp="Taisho" type="orig" place="foot text">渧＝滴【三】＊</note><note n="0138014" resp="CBETA" type="mod">渧【大】＊，滴【宋】＊【元】＊【明】＊</note><app n="0138014"><lem wit="【大】">渧</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">滴</rdg></app>如車輪，如是無數百千歲雨，其水漸長，
+<lb n="0138c17" ed="T"/>高無數百千由旬，乃至光音天。」</p><p xml:id="pT01p0138c1713" cb:place="inline">「時，有四大風
+<lb n="0138c18" ed="T"/>起，持此水住。何等為四？一名住風，二名
+<lb n="0138c19" ed="T"/>持風，三名不動，四名堅固。其後此水稍減
+<lb n="0138c20" ed="T"/>百千由旬，無數百千萬由旬，其水四面有大
+<lb n="0138c21" ed="T"/>風起，名曰僧伽，吹水令動，鼓蕩濤波，起沫
+<lb n="0138c22" ed="T"/>積聚，風吹離水，在於空中自然堅固，變成
+<lb n="0138c23" ed="T"/>天宮，七寶<note n="0138015" resp="Taisho" type="orig" place="foot text">校＝交【宋】＊</note><note n="0138015" resp="CBETA" type="mod">校【大】＊，交【宋】＊</note><app n="0138015"><lem wit="【大】">校</lem><rdg resp="Taisho" wit="【宋】">交</rdg></app>飾，由此因緣有梵迦夷天宮。
+<lb n="0138c24" ed="T"/>其水轉減至無數百千萬由旬，其水四面有
+<lb n="0138c25" ed="T"/>大風起，名曰僧伽，吹水令動，鼓蕩濤波，起
+<lb n="0138c26" ed="T"/>沫積聚，風吹<note n="0138016" resp="Taisho" type="orig" place="foot text">〔波〕－【三】</note><note n="0138016" resp="CBETA" type="mod">波【大】，〔－〕【宋】【元】【明】</note><app n="0138016"><lem wit="【大】">波</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>離水，在於空中自然堅固，
+<lb n="0138c27" ed="T"/>變成天宮，七寶校飾，由此因緣有他化自
+<lb n="0138c28" ed="T"/>在天宮。</p><p xml:id="pT01p0138c2804" cb:place="inline">「其水轉減至無數千萬由旬，其水四
+<lb n="0138c29" ed="T"/>面有大風起，名曰僧伽，吹水令動，鼓蕩濤
+<pb n="0139a" ed="T" xml:id="T01.0001.0139a"/>
+<lb n="0139a01" ed="T"/>波，起沫積聚，風吹離水，在虛空中自然堅
+<lb n="0139a02" ed="T"/>固，變成天宮，七寶<app type="star" corresp="#0138015"><lem wit="【大】">校</lem><rdg resp="Taisho" wit="【宋】">交</rdg></app>飾，由此因緣有化自
+<lb n="0139a03" ed="T"/>在天宮。其水轉減至無數百千由旬，有僧
+<lb n="0139a04" ed="T"/>伽風，吹水令動，鼓蕩濤波，起沫積聚，風吹
+<lb n="0139a05" ed="T"/>離水，在虛空中自然堅固，變成天宮，七寶
+<lb n="0139a06" ed="T"/><app type="star" corresp="#0138015"><lem wit="【大】">校</lem><rdg resp="Taisho" wit="【宋】">交</rdg></app>飾，由此因緣有兜率天宮。其水轉減至
+<lb n="0139a07" ed="T"/>無數百千由旬，有僧伽風，吹水令動，鼓蕩
+<lb n="0139a08" ed="T"/>濤波，起沫積聚，風吹離水，在虛空中自然堅
+<lb n="0139a09" ed="T"/>固，變成天宮，由此因緣有炎摩天宮。其水
+<lb n="0139a10" ed="T"/>轉減至無數百千由旬，水上有沫，深六十萬
+<lb n="0139a11" ed="T"/>八千由旬，其邊無際，譬如此間，<note n="0139001" resp="Taisho" type="orig" place="foot text">穴泉＝泉源【三】</note><note n="0139001" resp="CBETA" type="mod">穴泉【大】，泉源【宋】【元】【明】</note><app n="0139001"><lem wit="【大】">穴泉</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">泉源</rdg></app>流水，
+<lb n="0139a12" ed="T"/>水上有沫，彼亦如是。</p><p xml:id="pT01p0139a1209" cb:place="inline">「以何因緣有須彌山？
+<lb n="0139a13" ed="T"/>有亂風起，吹此水沫造須彌山，高<note n="0139002" resp="Taisho" type="orig" place="foot text">六十＝十六【三】</note><note n="0139002" resp="CBETA" type="mod">六十【大】，十六【宋】【元】【明】</note><app n="0139002"><lem wit="【大】">六十</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">十六</rdg></app>萬
+<lb n="0139a14" ed="T"/>八千由旬，<note n="0139003" resp="Taisho" type="orig" place="foot text">〔縱〕－【三】</note><note n="0139003" resp="CBETA" type="mod">縱【大】，〔－〕【宋】【元】【明】</note><app n="0139003"><lem wit="【大】">縱</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>廣八萬四千由旬，四寶所成，金、
+<lb n="0139a15" ed="T"/>銀、水精、琉璃。以何因緣有四阿須倫宮殿？其
+<lb n="0139a16" ed="T"/>後亂風吹大<note n="0139004" resp="Taisho" type="orig" place="foot text">〔海水吹大〕－【三】</note><note n="0139004" resp="CBETA" type="mod">海水吹大【大】，〔－〕【宋】【元】【明】</note><app n="0139004"><lem wit="【大】">海水吹大</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>水沫，於須彌山四
+<lb n="0139a17" ed="T"/>面起大宮殿，縱廣各八萬由旬，自然變成七
+<lb n="0139a18" ed="T"/>寶宮殿。復何因緣有四天王宮殿？其後亂風
+<lb n="0139a19" ed="T"/>吹大<note n="0139005" resp="Taisho" type="orig" place="foot text">〔海〕－【三】</note><note n="0139005" resp="CBETA" type="mod">海【大】，〔－〕【宋】【元】【明】</note><app n="0139005"><lem wit="【大】">海</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>水沫，於須彌山半四萬二千由旬，
+<lb n="0139a20" ed="T"/>自然變成七寶宮殿，以是故名為四天王宮<note n="0139006" resp="Taisho" type="orig" place="foot text">〔殿〕－【三】＊</note><note n="0139006" resp="CBETA" type="mod">殿【大】＊，〔－〕【宋】＊【元】＊【明】＊</note><app n="0139006"><lem wit="【大】">
+<lb n="0139a21" ed="T"/>殿</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>。以何因緣有忉利天宮<app type="star" corresp="#0139006"><lem wit="【大】">殿</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>？其後亂風吹
+<lb n="0139a22" ed="T"/>大水沫，於須彌山上自然變成七寶宮<app type="star" corresp="#0139006"><lem wit="【大】">殿</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>。</p>
+<lb n="0139a23" ed="T"/><p xml:id="pT01p0139a2301">「復以何緣有伽陀羅山？其後亂<note n="0139007" resp="Taisho" type="orig" place="foot text">風＋（起）【三】</note><note n="0139007" resp="CBETA" type="mod">風【大】，風起【宋】【元】【明】</note><app n="0139007"><lem wit="【大】">風</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">風起</rdg></app>吹大水
+<lb n="0139a24" ed="T"/>沫，去須彌山不遠，自然化成寶山，下根入
+<lb n="0139a25" ed="T"/>地四萬二千由旬，縱廣四萬二千由旬，其邊
+<lb n="0139a26" ed="T"/>無際，雜色間廁，七寶所成，以是緣故有伽
+<lb n="0139a27" ed="T"/>陀羅山。復以何緣有伊沙山？其後亂風吹
+<lb n="0139a28" ed="T"/>大水沫，去伽陀羅山不遠，自然變成伊沙
+<lb n="0139a29" ed="T"/>山，高二萬一千由旬，縱廣二萬一千由旬，其邊
+<pb n="0139b" ed="T" xml:id="T01.0001.0139b"/>
+<lb n="0139b01" ed="T"/>無際，雜色參間，七寶所成，以是緣故有伊
+<lb n="0139b02" ed="T"/>沙山。其後亂風吹大水沫，去伊沙山不遠，
+<lb n="0139b03" ed="T"/>自然變成樹辰陀羅山，高萬二千由旬，縱廣
+<lb n="0139b04" ed="T"/>萬二千由旬，其邊無際，雜色參間，七寶所成，
+<lb n="0139b05" ed="T"/>以是因緣有樹辰陀羅山。其後亂風吹大
+<lb n="0139b06" ed="T"/>水沫，去樹辰陀羅山不遠，自然變成阿般<note n="0139008" resp="Taisho" type="orig" place="foot text">泥＝尼【三】</note><note n="0139008" resp="CBETA" type="mod">泥【大】，尼【宋】【元】【明】</note><app n="0139008"><lem wit="【大】">
+<lb n="0139b07" ed="T"/>泥</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">尼</rdg></app>樓山，高六千由旬，縱廣六千由旬，其邊無
+<lb n="0139b08" ed="T"/>際，雜色參間，七寶所成，以<note n="0139009" resp="Taisho" type="orig" place="foot text">是＋（因）【三】</note><note n="0139009" resp="CBETA" type="mod">是【大】，是因【宋】【元】【明】</note><app n="0139009"><lem wit="【大】">是</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">是因</rdg></app>緣故有阿般
+<lb n="0139b09" ed="T"/>尼樓山。</p><p xml:id="pT01p0139b0904" cb:place="inline">「其後亂風吹大水沫，去阿般尼樓
+<lb n="0139b10" ed="T"/>山不遠，自然變成<note n="0139010" resp="Taisho" type="orig" place="foot text">彌＝尼【三】</note><note n="0139010" resp="CBETA" type="mod">彌【大】，尼【宋】【元】【明】</note><app n="0139010"><lem wit="【大】">彌</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">尼</rdg></app>隣陀羅山，高三千由
+<lb n="0139b11" ed="T"/>旬，縱廣三千由旬，其邊無際，雜色參間，七寶
+<lb n="0139b12" ed="T"/>所成，以是因緣有尼隣陀羅山。其後亂風
+<lb n="0139b13" ed="T"/>吹大水沫，去尼隣陀羅山不遠，自然變成
+<lb n="0139b14" ed="T"/>比尼陀山，高千二百由旬，縱廣千二百由旬，
+<lb n="0139b15" ed="T"/>其邊無際，雜色參間，七寶所成，以是<note n="0139011" resp="Taisho" type="orig" place="foot text">緣故＝因緣【三】</note><note n="0139011" resp="CBETA" type="mod">緣故【大】，因緣【宋】【元】【明】</note><app n="0139011"><lem wit="【大】">緣故</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">因緣</rdg></app>
+<lb n="0139b16" ed="T"/>有比尼陀山。其後亂風吹大水沫，去比尼
+<lb n="0139b17" ed="T"/>陀山不遠，自然變成金剛輪山，高三百由
+<lb n="0139b18" ed="T"/>旬，縱廣三百由旬，其邊無際，雜色參間，七寶
+<lb n="0139b19" ed="T"/>所成，以是因緣有金剛輪山。</p><p xml:id="pT01p0139b1912" cb:place="inline">「何故<note n="0139012" resp="Taisho" type="orig" place="foot text">有＋（一）【三】</note><note n="0139012" resp="CBETA" type="mod">有【大】，有一【宋】【元】【明】</note><app n="0139012"><lem wit="【大】">有</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">有一</rdg></app>月、
+<lb n="0139b20" ed="T"/>有七日宮殿？其後亂風吹大水沫，自然變
+<lb n="0139b21" ed="T"/>成一月宮殿、七日宮殿，雜色參間，七寶所成，
+<lb n="0139b22" ed="T"/>為黑風所吹還到本處，以是因緣有日、月
+<lb n="0139b23" ed="T"/>宮殿。</p><p xml:id="pT01p0139b2303" cb:place="inline">「其後亂風吹大水沫，自然變成四天下
+<lb n="0139b24" ed="T"/>及八萬天下，以是因緣有四天下及八萬天
+<lb n="0139b25" ed="T"/>下。其後亂風吹大水沫，在四天下及八萬天
+<lb n="0139b26" ed="T"/><note n="0139013" resp="Taisho" type="orig" place="foot text">下＋（表）【三】</note><note n="0139013" resp="CBETA" type="mod">下【大】，下表【宋】【元】【明】</note><app n="0139013"><lem wit="【大】">下</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">下表</rdg></app>，自然變成大金剛輪山，高十六萬八千
+<lb n="0139b27" ed="T"/>由旬，縱廣十六萬八千由旬，其邊無限，金剛
+<lb n="0139b28" ed="T"/>堅固，不可毀壞，以是因緣有大金剛輪山。
+<lb n="0139b29" ed="T"/>其後久久，有自然雲遍滿空中，周遍大雨，
+<pb n="0139c" ed="T" xml:id="T01.0001.0139c"/>
+<lb n="0139c01" ed="T"/><app type="star" corresp="#0138014"><lem wit="【大】">渧</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">滴</rdg></app>如車輪，其水<note n="0139014" resp="Taisho" type="orig" place="foot text">彌＝瀰【三】</note><note n="0139014" resp="CBETA" type="mod">彌【大】，瀰【宋】【元】【明】</note><app n="0139014"><lem wit="【大】">彌</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">瀰</rdg></app>漫，沒四天下，與須彌
+<lb n="0139c02" ed="T"/>山等，其後亂風吹地為大坑，澗水盡入中，
+<lb n="0139c03" ed="T"/>因此為海，以是因緣有四大海水。海水鹹
+<lb n="0139c04" ed="T"/>苦有三因緣。何等為三？一者有自然雲遍
+<lb n="0139c05" ed="T"/>滿虛空，至光音天，周遍降雨，洗濯天宮，滌
+<lb n="0139c06" ed="T"/>蕩天下，從梵迦夷天宮、他化自在天宮，下至
+<lb n="0139c07" ed="T"/>炎摩天宮、四天下、八萬天下、諸山、大山、須彌山
+<lb n="0139c08" ed="T"/>王皆洗濯滌蕩，其中諸處有穢惡鹹苦諸
+<lb n="0139c09" ed="T"/>不淨汁，下流入海，合為一味，故海水鹹。二
+<lb n="0139c10" ed="T"/>者昔有大仙人禁呪海水，長使鹹苦，人不
+<lb n="0139c11" ed="T"/>得飲，是故鹹苦。三者彼大海水雜眾生居，
+<lb n="0139c12" ed="T"/>其身長大，或百由旬、二百由旬，至七百由旬，
+<lb n="0139c13" ed="T"/>呼<note n="0139015" resp="Taisho" type="orig" place="foot text">哈＝噏【三】</note><note n="0139015" resp="CBETA" type="mod">哈【大】，噏【宋】【元】【明】</note><app n="0139015"><lem wit="【大】">哈</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">噏</rdg></app>吐納，大小便中，故海水鹹。是為火
+<lb n="0139c14" ed="T"/>災。」</p>
+<lb n="0139c15" ed="T"/><p xml:id="pT01p0139c1501">佛告比丘：「云何為水災？水災起時，此世
+<lb n="0139c16" ed="T"/>間人皆奉正法，正見，不邪見，修十善業，
+<lb n="0139c17" ed="T"/>修善行已。時，有人得無喜第三禪者，
+<lb n="0139c18" ed="T"/>踊身上昇於虛空中，住聖人道、天道、梵
+<lb n="0139c19" ed="T"/>道，高聲唱言：『諸賢！當知無喜第三禪樂，
+<lb n="0139c20" ed="T"/>無喜第三禪樂。』時，世間人聞此聲已，仰
+<lb n="0139c21" ed="T"/>語彼言：『善哉！善哉！願為我說是無喜第
+<lb n="0139c22" ed="T"/>三禪道。』時，空中人聞此語已，即為演說
+<lb n="0139c23" ed="T"/>無喜第三禪道，此世間人聞其說已，即修
+<lb n="0139c24" ed="T"/>第三禪道，身壞命終，生遍淨天。</p><p xml:id="pT01p0139c2413" cb:place="inline">「爾時，地獄
+<lb n="0139c25" ed="T"/>眾生罪畢命終，來生人間，復修第三禪道，
+<lb n="0139c26" ed="T"/>身壞命終，生遍淨天；畜生、餓鬼、阿須<note n="0139016" resp="Taisho" type="orig" place="foot text">輪＝倫【三】</note><note n="0139016" resp="CBETA" type="mod">輪【大】，倫【宋】【元】【明】</note><app n="0139016"><lem wit="【大】">輪</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">倫</rdg></app>、四
+<lb n="0139c27" ed="T"/>天王、忉利天、炎摩天、兜率天、化自在天、他化
+<lb n="0139c28" ed="T"/>自在天、梵天、光音天眾生命終，來生人間，修
+<lb n="0139c29" ed="T"/>第三禪道，身壞命終，生遍淨天。由此因緣，
+<pb n="0140a" ed="T" xml:id="T01.0001.0140a"/>
+<lb n="0140a01" ed="T"/>地獄道盡，畜生、餓鬼、阿須倫、四天王，乃至光
+<lb n="0140a02" ed="T"/>音天趣皆盡。當於爾時，先地獄盡，然後畜生
+<lb n="0140a03" ed="T"/>盡；畜生盡已，餓鬼盡；餓鬼盡已，阿須倫盡；阿
+<lb n="0140a04" ed="T"/>須倫盡已，四天王盡；四天王盡已，忉利天盡；
+<lb n="0140a05" ed="T"/>忉利天盡已，炎摩天盡；炎摩天盡已，兜率天
+<lb n="0140a06" ed="T"/>盡；兜率天盡已，化自在天盡；化自在天盡已，
+<lb n="0140a07" ed="T"/>他化自在天盡；他化自在天盡已，梵天盡；梵
+<lb n="0140a08" ed="T"/>天盡已，光音天盡；光音天盡已，然後人盡無
+<lb n="0140a09" ed="T"/>餘。人盡無餘已，此世間敗壞，乃成為災。</p><p xml:id="pT01p0140a0916" cb:place="inline">「其後
+<lb n="0140a10" ed="T"/>久久，有大黑雲暴起，上至遍淨天，周遍大
+<lb n="0140a11" ed="T"/>雨，純雨熱<note n="0140001" resp="Taisho" type="orig" place="foot text">水＝灰【三】</note><note n="0140001" resp="CBETA" type="mod">水【大】，灰【宋】【元】【明】</note><app n="0140001"><lem wit="【大】">水</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">灰</rdg></app>，其水沸湧，煎熬天上，諸天宮
+<lb n="0140a12" ed="T"/>殿皆悉消盡，無有遺餘。猶如<note n="0140002" resp="Taisho" type="orig" place="foot text">酥＝蘇【三】＊</note><note n="0140002" resp="CBETA" type="mod">酥【大】＊，蘇【宋】＊【元】＊【明】＊</note><app n="0140002"><lem wit="【大】">酥</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">蘇</rdg></app>油置於火
+<lb n="0140a13" ed="T"/>中，煎熬消盡，無有遺餘，光音天宮亦復如
+<lb n="0140a14" ed="T"/>是。以此可知，一切行無常，為變易法，不可
+<lb n="0140a15" ed="T"/>恃怙，有為諸法，甚可厭患，當求度世解脫
+<lb n="0140a16" ed="T"/>之道。</p><p xml:id="pT01p0140a1603" cb:place="inline">「其後此雨復浸梵迦夷天宮，煎熬消盡，
+<lb n="0140a17" ed="T"/>無有遺餘。猶如<app type="star" corresp="#0140002"><lem wit="【大】">酥</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">蘇</rdg></app>油置於火中，無有遺
+<lb n="0140a18" ed="T"/>餘，梵迦夷宮亦復如是。其後此雨復浸他
+<lb n="0140a19" ed="T"/>化自在天、化自在天、兜率天、炎摩天宮，煎熬
+<lb n="0140a20" ed="T"/>消盡，無有遺餘。猶如<app type="star" corresp="#0140002"><lem wit="【大】">酥</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">蘇</rdg></app>油置於火中，無
+<lb n="0140a21" ed="T"/>有遺餘，彼諸天宮亦復如是。其後此雨復浸
+<lb n="0140a22" ed="T"/>四天下及八萬天下諸山、大山、須彌山王，煎熬
+<lb n="0140a23" ed="T"/>消盡，無有遺餘。猶如酥油置於火中，煎熬
+<lb n="0140a24" ed="T"/>消盡，無有遺餘，彼亦如是。是故當知，一切行
+<lb n="0140a25" ed="T"/>無常，為變易法，不可恃怙，凡諸有為甚可
+<lb n="0140a26" ed="T"/>厭患，當求度世解脫之道。其後此水煎熬
+<lb n="0140a27" ed="T"/>大地，盡無餘已，地下水盡，水下風盡。是故當
+<lb n="0140a28" ed="T"/>知，一切行無常，為變易法，不可恃怙，凡諸
+<lb n="0140a29" ed="T"/>有為甚可厭患，當求度世解脫之道。」</p><p xml:id="pT01p0140a2915" cb:place="inline">佛告
+<pb n="0140b" ed="T" xml:id="T01.0001.0140b"/>
+<lb n="0140b01" ed="T"/>比丘：「<note n="0140003" resp="Taisho" type="orig" place="foot text">遍＝齊遍【三】</note><note n="0140003" resp="CBETA" type="mod">遍【大】，齊遍【宋】【元】【明】</note><app n="0140003"><lem wit="【大】">遍</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">齊遍</rdg></app>淨天宮煎熬消盡。誰當信者？獨有
+<lb n="0140b02" ed="T"/>見者，乃能知耳。梵迦夷宮煎熬消盡，乃至地
+<lb n="0140b03" ed="T"/>下水盡，水下風盡。誰當信者？獨有見者，乃
+<lb n="0140b04" ed="T"/>當知耳。是為水災。</p><p xml:id="pT01p0140b0408" cb:place="inline">「云何水災還復？其後久
+<lb n="0140b05" ed="T"/>久，有大黑雲充滿虛空，至遍淨天，周遍降
+<lb n="0140b06" ed="T"/>雨，<app type="star" corresp="#0138014"><lem wit="【大】">渧</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">滴</rdg></app>如車<note n="0140004" resp="Taisho" type="orig" place="foot text">輪＝軸【三】＊</note><note n="0140004" resp="CBETA" type="mod">輪【大】＊，軸【宋】＊【元】＊【明】＊</note><app n="0140004"><lem wit="【大】">輪</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">軸</rdg></app>，如是無數百千萬歲，其水漸
+<lb n="0140b07" ed="T"/>長，至遍淨天。有四大風，持此水住。何等為
+<lb n="0140b08" ed="T"/>四？一名住風，二名持風，三名不動，四名堅
+<lb n="0140b09" ed="T"/>固。其後此水稍減無數百千由旬，四面有大
+<lb n="0140b10" ed="T"/>風起，名曰僧伽，吹水令動，鼓蕩濤波，起沫
+<lb n="0140b11" ed="T"/>積聚，風吹離水，在虛空中，自然變成光音
+<lb n="0140b12" ed="T"/>天宮，七寶<app type="star" corresp="#0138015"><lem wit="【大】">校</lem><rdg resp="Taisho" wit="【宋】">交</rdg></app>飾，由此因緣有光音天宮。其
+<lb n="0140b13" ed="T"/>水轉減無數百千由旬，彼僧伽風吹水令動，
+<lb n="0140b14" ed="T"/>鼓蕩濤波，起沫積聚，風吹離水，在虛空中，
+<lb n="0140b15" ed="T"/>自然變成梵迦夷天宮，七寶<app type="star" corresp="#0138015"><lem wit="【大】">校</lem><rdg resp="Taisho" wit="【宋】">交</rdg></app>飾；如是乃至
+<lb n="0140b16" ed="T"/>海水一味鹹苦，亦如火災復時。是為水災。」</p><p xml:id="pT01p0140b1617" cb:place="inline">佛
+<lb n="0140b17" ed="T"/>告比丘：「云何為風災？風災起時，此世間人皆
+<lb n="0140b18" ed="T"/>奉正法，正見，不邪見，修十善業，修善行時，
+<lb n="0140b19" ed="T"/><note n="0140005" resp="Taisho" type="orig" place="foot text">〔時〕－【三】</note><note n="0140005" resp="CBETA" type="mod">時【大】，〔－〕【宋】【元】【明】</note><app n="0140005"><lem wit="【大】">時</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>，有人得清淨護念第四禪，於虛空中住
+<lb n="0140b20" ed="T"/>聖人道、天道、梵道，高聲唱言：『諸賢！護念清淨
+<lb n="0140b21" ed="T"/>第四禪樂，護念清淨第四禪樂。』時，此世人聞
+<lb n="0140b22" ed="T"/>其聲已，仰語彼言：『善哉！善哉！願為我說護
+<lb n="0140b23" ed="T"/>念清淨第四禪道。』時，空中人聞此語已，即為
+<lb n="0140b24" ed="T"/>說第四禪道，此世間人聞其說已，即修第
+<lb n="0140b25" ed="T"/>四禪道，身壞命終，生果實天。</p><p xml:id="pT01p0140b2512" cb:place="inline">「爾時，地獄眾生
+<lb n="0140b26" ed="T"/>罪畢命終，來生人間，復修第四禪，身壞命終，
+<lb n="0140b27" ed="T"/>生果實天；畜生、餓鬼、阿須倫、四天王乃至遍
+<lb n="0140b28" ed="T"/>淨天眾生命終，來生人間，修第四禪，身壞
+<lb n="0140b29" ed="T"/>命終，生果實天。由此因緣，地獄道盡，畜生、
+<pb n="0140c" ed="T" xml:id="T01.0001.0140c"/>
+<lb n="0140c01" ed="T"/>餓鬼、阿須倫、四天王，乃至遍淨天趣皆盡。爾
+<lb n="0140c02" ed="T"/>時，地獄先盡，然後畜生盡；畜生盡已，餓鬼盡；
+<lb n="0140c03" ed="T"/>餓鬼盡已，阿須倫盡；阿須倫盡已，四天王盡；
+<lb n="0140c04" ed="T"/>四天王盡已，如是展轉至遍淨天盡；遍淨天
+<lb n="0140c05" ed="T"/>盡已，然後人盡無餘。人盡無餘已，此世間敗
+<lb n="0140c06" ed="T"/>壞，乃成為災。其後久久，有大風起，名曰大
+<lb n="0140c07" ed="T"/>僧伽，乃至果實天，其風四布，吹遍淨天宮、光
+<lb n="0140c08" ed="T"/>音天宮，使宮宮相拍，碎若粉塵。猶如力士
+<lb n="0140c09" ed="T"/>執二銅<note n="0140006" resp="Taisho" type="orig" place="foot text">杵＝<g ref="#CB04788"/>【宋】，釪【元】【明】</note><note n="0140006" resp="CBETA" type="mod">杵【大】，<g ref="#CB04788"/>【宋】，釪【元】【明】</note><app n="0140006"><lem wit="【大】">杵</lem><rdg resp="Taisho" wit="【宋】"><g ref="#CB04788"/></rdg><rdg resp="Taisho" wit="【元】 【明】">釪</rdg></app>，杵杵相拍，碎盡無餘，二宮相拍
+<lb n="0140c10" ed="T"/>亦復如是。以是當知，一切行無常，為變易
+<lb n="0140c11" ed="T"/>法，不可恃怙，凡諸有為甚可厭患，當求度
+<lb n="0140c12" ed="T"/>世解脫之道。</p><p xml:id="pT01p0140c1206" cb:place="inline">「其後此風吹梵迦夷天宮、他化
+<lb n="0140c13" ed="T"/>自在天宮，宮宮相拍，碎如粉塵，無有遺餘。
+<lb n="0140c14" ed="T"/>猶如力士執二銅<anchor xml:id="fxT01p0140c01"/>杵，杵杵相拍，碎盡無餘，
+<lb n="0140c15" ed="T"/>二宮相拍亦復如是。以是當知，一切行無
+<lb n="0140c16" ed="T"/>常，為變易法，不可恃怙，凡諸有為甚可厭
+<lb n="0140c17" ed="T"/>患，當求度世解脫之道。其後此風吹化自
+<lb n="0140c18" ed="T"/>在天宮、兜率天宮、炎摩天宮，宮宮相拍，碎若
+<lb n="0140c19" ed="T"/>粉塵，無有遺餘。猶如力士執二銅<anchor xml:id="fxT01p0140c02"/>杵，杵
+<lb n="0140c20" ed="T"/>杵相拍，碎盡無餘，彼宮如是碎盡無餘。以
+<lb n="0140c21" ed="T"/>是當知，一切行無常，為變易法，不可恃怙，
+<lb n="0140c22" ed="T"/>凡諸有為甚可厭患，當求度世解脫之道。</p>
+<lb n="0140c23" ed="T"/><p xml:id="pT01p0140c2301">「其後此風吹四天下及八萬天下諸山、大山、
+<lb n="0140c24" ed="T"/>須彌山王置於虛空，高百千由旬，山山相拍，
+<lb n="0140c25" ed="T"/>碎若粉塵。猶如力士手執輕糠散於空中，
+<lb n="0140c26" ed="T"/>彼四天下、須彌諸山碎盡分散，亦復如是。以
+<lb n="0140c27" ed="T"/>是可知，一切行無常，為變易法，不可恃怙，
+<lb n="0140c28" ed="T"/>凡諸有為甚可厭患，當求度世解脫之道。
+<lb n="0140c29" ed="T"/>其後風吹大地盡，地下水盡，水下風盡。是故
+<pb n="0141a" ed="T" xml:id="T01.0001.0141a"/>
+<lb n="0141a01" ed="T"/>當知，一切行無常，為變易法，不可恃怙，凡
+<lb n="0141a02" ed="T"/>諸有為甚可厭患，當求度世解脫之道。」</p><p xml:id="pT01p0141a0216" cb:place="inline">佛
+<lb n="0141a03" ed="T"/>告比丘：「遍淨天宮、光音天宮，宮宮相拍，碎若
+<lb n="0141a04" ed="T"/>粉塵。誰當信者？獨有見者，乃能知耳。如是
+<lb n="0141a05" ed="T"/>乃至地下水盡，水下風盡。誰能信者？獨有見
+<lb n="0141a06" ed="T"/>者，乃能信耳。是為風災。</p><p xml:id="pT01p0141a0610" cb:place="inline">「云何風災還復？其
+<lb n="0141a07" ed="T"/>後久久，有大黑雲周遍虛空，至果實天，而
+<lb n="0141a08" ed="T"/>降大雨，<app type="star" corresp="#0138014"><lem wit="【大】">渧</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">滴</rdg></app>如車<app type="star" corresp="#0140004"><lem wit="【大】">輪</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">軸</rdg></app>，霖雨無數百千萬歲，
+<lb n="0141a09" ed="T"/>其水漸長，至果實天。時，有四風持此水住。
+<lb n="0141a10" ed="T"/>何等為四？一名住風，二名持風，三名不動，
+<lb n="0141a11" ed="T"/>四名堅固。其後此水漸漸稍減無數百千由
+<lb n="0141a12" ed="T"/>旬，其水四面有大風起，名曰僧伽，吹水令
+<lb n="0141a13" ed="T"/>動，鼓蕩濤波，起沫積聚，風吹<note n="0141001" resp="Taisho" type="orig" place="foot text">離＝其【三】＊</note><note n="0141001" resp="CBETA" type="mod">離【大】＊，其【宋】＊【元】＊【明】＊</note><app n="0141001"><lem wit="【大】">離</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">其</rdg></app>水，在於空
+<lb n="0141a14" ed="T"/>中自然變成遍淨天宮，雜色參間，七寶所成，
+<lb n="0141a15" ed="T"/>以此因緣有遍淨天宮。其水轉減無數百千
+<lb n="0141a16" ed="T"/>由旬，彼僧伽風吹水令動，鼓蕩濤波，起沫
+<lb n="0141a17" ed="T"/>積聚，風吹<app type="star" corresp="#0141001"><lem wit="【大】">離</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">其</rdg></app>水，在於空中自然變成光音
+<lb n="0141a18" ed="T"/>天宮，雜色參間，七寶所成；乃至海水一味鹹
+<lb n="0141a19" ed="T"/>苦，亦如火災復時。是為風災。是為三災，是
+<lb n="0141a20" ed="T"/>為三復。」</p></cb:div>
+<lb n="0141a21" ed="T"/><cb:div type="pin"><cb:mulu level="3" type="品">10 戰鬥品</cb:mulu><head><note n="0141002" resp="Taisho" type="orig" place="foot text">〔佛說…記經〕－【明】</note><note n="0141002" resp="CBETA" type="mod">佛說…記經【大】，〔－〕【明】</note><app n="0141002" cb:word-count="11"><lem wit="【大】"><title>佛說長阿含</title>第四分世記經</lem><rdg resp="Taisho" wit="【明】"><space quantity="0"/></rdg></app>戰鬪品第十</head>
+<lb n="0141a22" ed="T"/><p xml:id="pT01p0141a2201">佛告比丘：「昔者，諸天與阿須倫共鬪。時，釋
+<lb n="0141a23" ed="T"/>提桓因命忉利諸天而告之曰：『汝等今往
+<lb n="0141a24" ed="T"/>與彼共戰，若得勝者，捉毘摩質多羅阿須
+<lb n="0141a25" ed="T"/>倫，以五繫繫縛，將詣善法講堂，吾欲觀之。』
+<lb n="0141a26" ed="T"/>時，忉利諸天受帝釋教已，各自莊嚴。時，毘摩
+<lb n="0141a27" ed="T"/>質多羅阿須倫命諸阿須倫而告之曰：『汝
+<lb n="0141a28" ed="T"/>等今往與彼共戰，若得勝者，捉釋提桓因，
+<lb n="0141a29" ed="T"/>以五繫繫縛，將詣七葉講堂，吾欲觀之。』時，
+<pb n="0141b" ed="T" xml:id="T01.0001.0141b"/>
+<lb n="0141b01" ed="T"/>諸阿須倫受毘摩質<note n="0141003" resp="Taisho" type="orig" place="foot text">多＋（羅）【三】</note><note n="0141003" resp="CBETA" type="mod">多【大】，多羅【宋】【元】【明】</note><app n="0141003"><lem wit="【大】">多</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">多羅</rdg></app>阿須倫教已，各自莊
+<lb n="0141b02" ed="T"/>嚴。</p><p xml:id="pT01p0141b0202" cb:place="inline">「於是，諸天、阿須倫眾遂共戰鬪，諸天得
+<lb n="0141b03" ed="T"/>勝，阿須倫退。時，忉利諸天捉阿須倫王，以
+<lb n="0141b04" ed="T"/>五繫繫縛，將詣善法堂所，示天帝釋。時，阿
+<lb n="0141b05" ed="T"/>須倫王見天上快樂，生<note n="0141004" resp="Taisho" type="orig" place="foot text">慕＝募【宋】</note><note n="0141004" resp="CBETA" type="mod">慕【大】，募【宋】</note><app n="0141004"><lem wit="【大】">慕</lem><rdg resp="Taisho" wit="【宋】">募</rdg></app>樂心，即自念言：
+<lb n="0141b06" ed="T"/>『此處殊勝，<note n="0141005" resp="Taisho" type="orig" place="foot text">即可＝可即【三】</note><note n="0141005" resp="CBETA" type="mod">即可【大】，可即【宋】【元】【明】</note><app n="0141005"><lem wit="【大】">即可</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">可即</rdg></app>居止，用復還歸阿須倫宮
+<lb n="0141b07" ed="T"/>為？』發此念時，五繫即得解，五樂在前。若阿
+<lb n="0141b08" ed="T"/>須倫生念欲還詣本宮殿，五繫還縛，五樂自
+<lb n="0141b09" ed="T"/>去。時，阿須倫所被繫縛，轉更牢固。魔所繫
+<lb n="0141b10" ed="T"/>縛復過於是，計吾我人為魔所縛，不計
+<lb n="0141b11" ed="T"/>吾我人魔縛得解，<note n="0141006" resp="Taisho" type="orig" place="foot text">愛＝受【三】＊</note><note n="0141006" resp="CBETA" type="mod">愛【大】＊，受【宋】＊【元】＊【明】＊</note><app n="0141006"><lem wit="【大】">愛</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">受</rdg></app>我為縛，<app type="star" corresp="#0141006"><lem wit="【大】">愛</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">受</rdg></app>愛為縛，
+<lb n="0141b12" ed="T"/>我當有為縛，我當無為縛，有色為縛，無色
+<lb n="0141b13" ed="T"/>為縛，有色無色為縛，我有想為縛，無想為
+<lb n="0141b14" ed="T"/>縛，有想無想為縛，我為大患、為癰、為刺。
+<lb n="0141b15" ed="T"/>是故，賢聖弟子知我為大患、為癰、為刺，
+<lb n="0141b16" ed="T"/>捨吾我想，修無我行，觀彼我為重擔、
+<lb n="0141b17" ed="T"/>為放逸、為有。當有我是有為，當<note n="0141007" resp="Taisho" type="orig" place="foot text">〔有〕－【三】</note><note n="0141007" resp="CBETA" type="mod">有【大】，〔－〕【宋】【元】【明】</note><app n="0141007"><lem wit="【大】">有</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>無
+<lb n="0141b18" ed="T"/>我是有為，有色是有為，無色是有為，有色無
+<lb n="0141b19" ed="T"/>色是有為，有想是有為，無想是有為，有想
+<lb n="0141b20" ed="T"/>無想是有為，<note n="0141008" resp="Taisho" type="orig" place="foot text">〔有為〕－【三】</note><note n="0141008" resp="CBETA" type="mod">有為【大】，〔－〕【宋】【元】【明】</note><app n="0141008"><lem wit="【大】">有為</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>為大患、為<note n="0141b2001" resp="CBETA" type="add">刺【CB】，剌【大】</note><app n="0141b2001"><lem wit="【CB】" resp="CBETA">刺</lem><rdg wit="【大】">剌</rdg></app>、為瘡。是
+<lb n="0141b21" ed="T"/>故，賢聖弟子知有為為大患、為<note n="0141b2101" resp="CBETA" type="add">刺【CB】，剌【大】</note><app n="0141b2101"><lem wit="【CB】" resp="CBETA">刺</lem><rdg wit="【大】">剌</rdg></app>、為瘡
+<lb n="0141b22" ed="T"/>故，捨有為，為無為行。」</p><p xml:id="pT01p0141b2209" cb:place="inline">佛告比丘：「昔者，諸天
+<lb n="0141b23" ed="T"/><note n="0141009" resp="Taisho" type="orig" place="foot text">〔子〕－【三】</note><note n="0141009" resp="CBETA" type="mod">子【大】，〔－〕【宋】【元】【明】</note><app n="0141009"><lem wit="【大】">子</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>與阿須倫共鬪。時，釋提桓因命忉利
+<lb n="0141b24" ed="T"/>天而告之曰：『汝等今往與阿須倫共鬪，
+<lb n="0141b25" ed="T"/>若得勝者，捉毘摩質多羅阿須倫，以五
+<lb n="0141b26" ed="T"/>繫繫縛，將詣善法講堂，吾欲觀之。』時，忉
+<lb n="0141b27" ed="T"/>利諸天受帝釋教已，各<note n="0141010" resp="Taisho" type="orig" place="foot text">〔即〕－【三】</note><note n="0141010" resp="CBETA" type="mod">即【大】，〔－〕【宋】【元】【明】</note><app n="0141010"><lem wit="【大】">即</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>自莊嚴。時，毘摩
+<lb n="0141b28" ed="T"/>質多阿須倫復命諸阿須倫而告之曰：『汝
+<lb n="0141b29" ed="T"/>等今往與彼共戰，若得勝者，捉釋提桓因，
+<pb n="0141c" ed="T" xml:id="T01.0001.0141c"/>
+<lb n="0141c01" ed="T"/>以五繫繫縛，將詣七葉講堂，吾欲觀之。』時，
+<lb n="0141c02" ed="T"/>諸阿須倫受毘摩質多阿須倫教已，各自莊
+<lb n="0141c03" ed="T"/>嚴。於是，諸天、阿須倫眾遂共戰鬪，諸天得勝，
+<lb n="0141c04" ed="T"/>阿須倫退。忉利諸天捉阿須倫，以五繫繫
+<lb n="0141c05" ed="T"/>縛，將詣善法堂所，示天帝<note n="0141011" resp="Taisho" type="orig" place="foot text">釋＋（時天帝釋）【三】</note><note n="0141011" resp="CBETA" type="mod">釋【大】，釋時天帝釋【宋】【元】【明】</note><app n="0141011"><lem wit="【大】">釋</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">釋時天帝釋</rdg></app>。<note n="0141012" resp="Taisho" type="orig" place="foot text">彷＝傍【宋】</note><note n="0141012" resp="CBETA" type="mod">彷【大】，傍【宋】</note><app n="0141012"><lem wit="【大】">彷</lem><rdg resp="Taisho" wit="【宋】">傍</rdg></app>徉<note n="0141013" resp="Taisho" type="orig" place="foot text">遊＋（行）【三】</note><note n="0141013" resp="CBETA" type="mod">遊【大】，遊行【宋】【元】【明】</note><app n="0141013"><lem wit="【大】">遊</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">遊行</rdg></app>善
+<lb n="0141c06" ed="T"/>法堂上，阿須倫王遙見帝釋，於五繫中惡
+<lb n="0141c07" ed="T"/>口罵詈。時，天<note n="0141014" resp="Taisho" type="orig" place="foot text">帝＋（傍）【三】</note><note n="0141014" resp="CBETA" type="mod">帝【大】，帝傍【宋】【元】【明】</note><app n="0141014"><lem wit="【大】">帝</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">帝傍</rdg></app>侍者於天帝前，即說偈言：</p>
+<lb n="0141c08" ed="T"/><lg type="regular" xml:id="lgT01p0141c0801" style="margin-left:2em;text-indent:-2em"><l>「『天帝何恐<note n="0141015" resp="Taisho" type="orig" place="foot text">怖＝畏【三】</note><note n="0141015" resp="CBETA" type="mod">怖【大】，畏【宋】【元】【明】</note><app n="0141015"><lem wit="【大】">怖</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">畏</rdg></app>，<caesura/>自現己劣弱，</l>
+<lb n="0141c09" ed="T"/><l>須質面毀<note n="0141016" resp="Taisho" type="orig" place="foot text">呰＝罵【三】</note><note n="0141016" resp="CBETA" type="mod">呰【大】，罵【宋】【元】【明】</note><app n="0141016"><lem wit="【大】">呰</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">罵</rdg></app>，<caesura/><note n="0141017" resp="Taisho" type="orig" place="foot text">默＝嘿【三】</note><note n="0141017" resp="CBETA" type="mod">默【大】，嘿【宋】【元】【明】</note><app n="0141017"><lem wit="【大】">默</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">嘿</rdg></app>聽其惡言。』</l></lg>
+<lb n="0141c10" ed="T"/><p xml:id="pT01p0141c1001">「時，天帝釋即復以偈答侍者曰：</p>
+<lb n="0141c11" ed="T"/><lg type="regular" xml:id="lgT01p0141c1101" style="margin-left:2em;text-indent:-2em"><l>「『彼亦無大力，<caesura/>我亦不恐畏，</l>
+<lb n="0141c12" ed="T"/><l>如何大智士，<caesura/>與彼無智諍。』</l></lg>
+<lb n="0141c13" ed="T"/><p xml:id="pT01p0141c1301">「爾時，侍者復作偈頌白帝釋言：</p>
+<lb n="0141c14" ed="T"/><lg type="regular" xml:id="lgT01p0141c1401" style="margin-left:2em;text-indent:-2em"><l>「『今不折愚者，<caesura/>恐後轉難忍，</l>
+<lb n="0141c15" ed="T"/><l>宜加以杖捶，<caesura/>使愚自改過。』</l></lg>
+<lb n="0141c16" ed="T"/><p xml:id="pT01p0141c1601">「時，天帝釋復作偈頌答侍者曰：</p>
+<lb n="0141c17" ed="T"/><lg type="regular" xml:id="lgT01p0141c1701" style="margin-left:2em;text-indent:-2em"><l>「『我常言智者，<caesura/>不應與愚諍，</l>
+<lb n="0141c18" ed="T"/><l>愚罵而智默，<caesura/><note n="0141018" resp="Taisho" type="orig" place="foot text">即為信勝彼＝則為勝彼愚【三】</note><note n="0141018" resp="CBETA" type="mod">即為信勝彼【大】，則為勝彼愚【宋】【元】【明】</note><app n="0141018"><lem wit="【大】">即為信勝彼</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">則為勝彼愚</rdg></app>。』</l></lg>
+<lb n="0141c19" ed="T"/><p xml:id="pT01p0141c1901">「爾時，侍者復作偈頌白帝釋言：</p>
+<lb n="0141c20" ed="T"/><lg type="regular" xml:id="lgT01p0141c2001" style="margin-left:2em;text-indent:-2em"><l>「『天王所以默，<caesura/>恐損智者行，</l>
+<lb n="0141c21" ed="T"/><l>而彼愚騃人，<caesura/>謂王懷怖畏。</l>
+<lb n="0141c22" ed="T"/><l>愚不自忖量，<caesura/>謂可與王敵，</l>
+<lb n="0141c23" ed="T"/><l>沒死來觸突，<caesura/>欲王如牛退。』</l></lg>
+<lb n="0141c24" ed="T"/><p xml:id="pT01p0141c2401">「時，天帝釋復作偈頌答侍者曰：</p>
+<lb n="0141c25" ed="T"/><lg type="regular" xml:id="lgT01p0141c2501" style="margin-left:2em;text-indent:-2em"><l>「『彼愚無知見，<caesura/>謂我懷恐怖，</l>
+<lb n="0141c26" ed="T"/><l>我觀第一義，<caesura/>忍默為最上。</l>
+<lb n="0141c27" ed="T"/><l>惡中之惡者，<caesura/>於瞋復生瞋，</l>
+<lb n="0141c28" ed="T"/><l>能於瞋不瞋，<caesura/>為戰中最上。</l>
+<lb n="0141c29" ed="T"/><l>夫人有二緣，<caesura/>為己亦為他，</l>
+<pb n="0142a" ed="T" xml:id="T01.0001.0142a"/>
+<lb n="0142a01" ed="T"/><l>眾人<note n="0142001" resp="Taisho" type="orig" place="foot text">諍有＝有諍【元】【明】</note><note n="0142001" resp="CBETA" type="mod">諍有【大】，有諍【元】【明】</note><app n="0142001"><lem wit="【大】">諍有</lem><rdg resp="Taisho" wit="【元】 【明】">有諍</rdg></app>訟，<caesura/>不報者為勝。</l>
+<lb n="0142a02" ed="T"/><l>夫人有二緣，<caesura/>為己亦為他，</l>
+<lb n="0142a03" ed="T"/><l>見無諍訟者，<caesura/><note n="0142002" resp="Taisho" type="orig" place="foot text">乃＝反【三】</note><note n="0142002" resp="CBETA" type="mod">乃【大】，反【宋】【元】【明】</note><app n="0142002"><lem wit="【大】">乃</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">反</rdg></app>謂為愚騃。</l>
+<lb n="0142a04" ed="T"/><l>若人有大力，<caesura/>能忍無力者，</l>
+<lb n="0142a05" ed="T"/><l>此力為第一，<caesura/>於忍中最上。</l>
+<lb n="0142a06" ed="T"/><l>愚自謂有力，<caesura/>此力非為力，</l>
+<lb n="0142a07" ed="T"/><l>如法忍力者，<caesura/>此力不可沮。』」</l></lg>
+<lb n="0142a08" ed="T"/><p xml:id="pT01p0142a0801">佛告比丘：「爾時，天帝釋豈異人乎？勿造斯
+<lb n="0142a09" ed="T"/>觀。時，天帝釋即我身是也。我於爾時，修習
+<lb n="0142a10" ed="T"/>忍辱，不行卒暴，常亦稱讚能忍辱者。若有
+<lb n="0142a11" ed="T"/>智<note n="0142003" resp="Taisho" type="orig" place="foot text">〔之〕－【三】</note><note n="0142003" resp="CBETA" type="mod">之【大】，〔－〕【宋】【元】【明】</note><app n="0142003"><lem wit="【大】">之</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>人欲弘吾道者，當修忍默，勿懷忿
+<lb n="0142a12" ed="T"/>諍。」</p><p xml:id="pT01p0142a1202" cb:place="inline">佛告比丘：「昔者，忉利諸天與阿須倫共
+<lb n="0142a13" ed="T"/>鬪。時，釋提桓因語質多阿須倫言：『卿等何為
+<lb n="0142a14" ed="T"/>嚴飾兵仗，懷怒害心，共戰諍為？今當共汝
+<lb n="0142a15" ed="T"/>講論道<note n="0142004" resp="Taisho" type="orig" place="foot text">義＝議【宋】</note><note n="0142004" resp="CBETA" type="mod">義【大】，議【宋】</note><app n="0142004"><lem wit="【大】">義</lem><rdg resp="Taisho" wit="【宋】">議</rdg></app>，知有勝負。』<note n="0142005" resp="Taisho" type="orig" place="foot text">彼＝時【三】</note><note n="0142005" resp="CBETA" type="mod">彼【大】，時【宋】【元】【明】</note><app n="0142005"><lem wit="【大】">彼</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">時</rdg></app>質多阿須倫語
+<lb n="0142a16" ed="T"/>帝釋言：『正使捨諸兵仗，止於諍訟<note n="0142006" resp="Taisho" type="orig" place="foot text">論義＝共論義【三】</note><note n="0142006" resp="CBETA" type="mod">論義【大】，共論義【宋】【元】【明】</note><app n="0142006"><lem wit="【大】">論義</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">共論義</rdg></app>者，
+<lb n="0142a17" ed="T"/>誰知勝負？』帝釋教言：『但共論議，今汝眾中、我
+<lb n="0142a18" ed="T"/>天眾中，自有智慧知勝負者。』時，阿須倫語
+<lb n="0142a19" ed="T"/>帝釋言：『汝先說偈。』帝釋報言：『汝是舊天，汝
+<lb n="0142a20" ed="T"/>應先說。』爾時，質多阿須倫即為帝釋而作
+<lb n="0142a21" ed="T"/>頌曰：</p>
+<lb n="0142a22" ed="T"/><lg type="regular" xml:id="lgT01p0142a2201" style="margin-left:2em;text-indent:-2em"><l>「『今不折愚者，<caesura/>恐後轉難忍，</l>
+<lb n="0142a23" ed="T"/><l>宜加以<note n="0142007" resp="Taisho" type="orig" place="foot text">杖＝仗【宋】</note><note n="0142007" resp="CBETA" type="mod">杖【大】，仗【宋】</note><app n="0142007"><lem wit="【大】">杖</lem><rdg resp="Taisho" wit="【宋】">仗</rdg></app>捶，<caesura/>使愚自改過。』</l></lg>
+<lb n="0142a24" ed="T"/><p xml:id="pT01p0142a2401">「時，阿須倫說此偈已，阿須倫眾即大歡喜，高
+<lb n="0142a25" ed="T"/>聲稱善；唯諸天眾默然無言。時，阿須倫王語
+<lb n="0142a26" ed="T"/>帝釋言：『汝次說偈。』爾時，帝釋即為阿須倫
+<lb n="0142a27" ed="T"/>而說偈言：</p>
+<lb n="0142a28" ed="T"/><lg type="regular" xml:id="lgT01p0142a2801" style="margin-left:2em;text-indent:-2em"><l>「『我常言智者，<caesura/>不應與愚諍，</l>
+<lb n="0142a29" ed="T"/><l>愚罵而智默，<caesura/>即為勝彼愚。』</l></lg>
+<pb n="0142b" ed="T" xml:id="T01.0001.0142b"/>
+<lb n="0142b01" ed="T"/><p xml:id="pT01p0142b0101">「時，天帝釋說此偈已，忉利諸天皆大歡喜，舉
+<lb n="0142b02" ed="T"/>聲稱善；時，阿須倫眾默然無言。爾時，天帝
+<lb n="0142b03" ed="T"/>語阿須倫言：『汝次說偈。』時，阿須倫復說偈
+<lb n="0142b04" ed="T"/>言：</p>
+<lb n="0142b05" ed="T"/><lg type="regular" xml:id="lgT01p0142b0501" style="margin-left:2em;text-indent:-2em"><l>「『天王所以默，<caesura/>恐損智者行，</l>
+<lb n="0142b06" ed="T"/><l>而彼愚騃人，<caesura/>謂王懷怖畏。</l>
+<lb n="0142b07" ed="T"/><l>愚不自忖量，<caesura/>謂可與王敵，</l>
+<lb n="0142b08" ed="T"/><l>沒死來觸突，<caesura/>欲王如牛退。』</l></lg>
+<lb n="0142b09" ed="T"/><p xml:id="pT01p0142b0901">「時，阿須倫王說此偈已，阿須倫眾踊躍歡喜，
+<lb n="0142b10" ed="T"/>舉聲稱善；時，忉利天眾默然無言。時，阿須倫
+<lb n="0142b11" ed="T"/>王語帝釋言：『汝次說偈。』時，天帝釋為阿須
+<lb n="0142b12" ed="T"/>倫而說偈言：</p>
+<lb n="0142b13" ed="T"/><lg type="regular" xml:id="lgT01p0142b1301" style="margin-left:2em;text-indent:-2em"><l>「『彼愚無知見，<caesura/>謂我懷恐畏，</l>
+<lb n="0142b14" ed="T"/><l>我觀第一義，<caesura/>忍默為最上。</l>
+<lb n="0142b15" ed="T"/><l>惡中之惡者，<caesura/>於瞋復生瞋，</l>
+<lb n="0142b16" ed="T"/><l>能於瞋不瞋，<caesura/>為戰中最<note n="0142008" resp="Taisho" type="orig" place="foot text">勝＝上【三】</note><note n="0142008" resp="CBETA" type="mod">勝【大】，上【宋】【元】【明】</note><app n="0142008"><lem wit="【大】">勝</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">上</rdg></app>。</l>
+<lb n="0142b17" ed="T"/><l>夫人有二緣，<caesura/>為己亦為他，</l>
+<lb n="0142b18" ed="T"/><l>眾人為諍訟，<caesura/>不報者為勝。</l>
+<lb n="0142b19" ed="T"/><l>夫人有二緣，<caesura/>為己亦為他，</l>
+<lb n="0142b20" ed="T"/><l>見無諍訟者，<caesura/><note n="0142009" resp="Taisho" type="orig" place="foot text">不＝反【三】</note><note n="0142009" resp="CBETA" type="mod">不【大】，反【宋】【元】【明】</note><app n="0142009"><lem wit="【大】">不</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">反</rdg></app>謂為愚騃。</l>
+<lb n="0142b21" ed="T"/><l>若人有大力，<caesura/>能忍無力者，</l>
+<lb n="0142b22" ed="T"/><l>此力為第一，<caesura/>於忍中最上。</l>
+<lb n="0142b23" ed="T"/><l>愚自謂有力，<caesura/>此力非為力，</l>
+<lb n="0142b24" ed="T"/><l>如法忍力者，<caesura/>此力不可沮。』</l></lg>
+<lb n="0142b25" ed="T"/><p xml:id="pT01p0142b2501">「釋提桓因說此偈已，忉利天眾踊躍歡喜，舉
+<lb n="0142b26" ed="T"/>聲稱善；阿須倫眾默然無言。時，天眾、阿須
+<lb n="0142b27" ed="T"/>倫眾各小退却，自相謂言：『阿須倫王所說偈
+<lb n="0142b28" ed="T"/>頌，有所觸犯，起刀劍讐，生鬪訟根，長諸怨
+<lb n="0142b29" ed="T"/>結，樹三有本。天帝釋所說偈者，無所觸嬈，
+<pb n="0142c" ed="T" xml:id="T01.0001.0142c"/>
+<lb n="0142c01" ed="T"/>不起刀劍，不生鬪訟，不長怨結，絕三有
+<lb n="0142c02" ed="T"/>本。天帝所說為善，阿須倫所說不善。諸天
+<lb n="0142c03" ed="T"/>為勝，阿須倫負。』」</p><p xml:id="pT01p0142c0307" cb:place="inline">佛告比丘：「爾時，釋提桓因
+<lb n="0142c04" ed="T"/>豈異人乎？勿造斯觀。所以者何？即我身是。
+<lb n="0142c05" ed="T"/>我於爾時，以柔<note n="0142010" resp="Taisho" type="orig" place="foot text">濡＝輭【三】</note><note n="0142010" resp="CBETA" type="mod">濡【大】，輭【宋】【元】【明】</note><app n="0142010"><lem wit="【大】">濡</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">輭</rdg></app>言，勝阿須倫眾。」</p><p xml:id="pT01p0142c0514" cb:place="inline">佛告
+<lb n="0142c06" ed="T"/>比丘：「昔者，諸天復與阿須倫共鬪。時，阿須倫
+<lb n="0142c07" ed="T"/>勝，諸天不如。時，釋提桓因乘千輻寶車怖
+<lb n="0142c08" ed="T"/>懼而走，中路見晱婆羅樹上有一<note n="0142011" resp="Taisho" type="orig" place="foot text">巢巢＝樔樔【三】</note><note n="0142011" resp="CBETA" type="mod">巢巢【大】，樔樔【宋】【元】【明】</note><app n="0142011"><lem wit="【大】">巢，巢</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">樔樔</rdg></app>有
+<lb n="0142c09" ed="T"/>兩子，即以偈頌告御者言，<note n="0142012" resp="Taisho" type="orig" place="foot text">〔頌曰〕－【三】</note><note n="0142012" resp="CBETA" type="mod">頌曰【大】，〔－〕【宋】【元】【明】</note><app n="0142012"><lem wit="【大】">頌曰</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>：</p>
+<lb n="0142c10" ed="T"/><lg type="regular" xml:id="lgT01p0142c1001" style="margin-left:2em;text-indent:-2em"><l>「『此樹有二鳥，<caesura/>汝當迴車避，</l>
+<lb n="0142c11" ed="T"/><l>正使賊害我，<caesura/>勿傷二鳥命。』</l></lg>
+<lb n="0142c12" ed="T"/><p xml:id="pT01p0142c1201">「爾時，御者聞帝釋偈已，尋便住車迴避鳥。
+<lb n="0142c13" ed="T"/>爾時，車<note n="0142013" resp="Taisho" type="orig" place="foot text">頭＝徑【三】</note><note n="0142013" resp="CBETA" type="mod">頭【大】，徑【宋】【元】【明】</note><app n="0142013"><lem wit="【大】">頭</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">徑</rdg></app>向阿須倫，阿須倫眾<note n="0142014" resp="Taisho" type="orig" place="foot text">遙＝逢【三】</note><note n="0142014" resp="CBETA" type="mod">遙【大】，逢【宋】【元】【明】</note><app n="0142014"><lem wit="【大】">遙</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">逢</rdg></app>見寶車
+<lb n="0142c14" ed="T"/>迴向，其軍即相謂言：『今天帝釋乘千輻寶車
+<lb n="0142c15" ed="T"/>迴向我眾，必欲還鬪，不可當也。』阿須倫眾
+<lb n="0142c16" ed="T"/>即便退散，諸天得勝，阿須倫退。」</p><p xml:id="pT01p0142c1613" cb:place="inline">佛告比丘：
+<lb n="0142c17" ed="T"/>「爾時，帝釋者豈異人乎？勿造斯觀。所以者
+<lb n="0142c18" ed="T"/>何？即我身是也。我於爾時，於諸眾生起慈
+<lb n="0142c19" ed="T"/>愍心。諸比丘！汝等於我法中出家修道，宜
+<lb n="0142c20" ed="T"/>起慈心，哀愍黎庶。」</p>
+<lb n="0142c21" ed="T"/><p xml:id="pT01p0142c2101">佛告比丘：「昔者，諸天與阿須倫共鬪。」爾時，
+<lb n="0142c22" ed="T"/>諸天得勝，阿須倫退。時，天帝釋戰勝還宮，
+<lb n="0142c23" ed="T"/>更造一堂，名曰最勝，東西長百由旬，南北廣
+<lb n="0142c24" ed="T"/>六十由旬。其堂百間，<note n="0142015" resp="Taisho" type="orig" place="foot text">〔間〕－【三】</note><note n="0142015" resp="CBETA" type="mod">間【大】，〔－〕【宋】【元】【明】</note><app n="0142015"><lem wit="【大】">間</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>間有七交露臺，一一
+<lb n="0142c25" ed="T"/>臺上有七玉女，一一玉女有七使人。釋提桓
+<lb n="0142c26" ed="T"/>因亦不憂供給諸玉女衣被、飲食、莊<note n="0142016" resp="Taisho" type="orig" place="foot text">嚴＝飾【三】</note><note n="0142016" resp="CBETA" type="mod">嚴【大】，飾【宋】【元】【明】</note><app n="0142016"><lem wit="【大】">嚴</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">飾</rdg></app>之
+<lb n="0142c27" ed="T"/>具，隨本所造，自受其福，以戰勝阿須倫，
+<lb n="0142c28" ed="T"/>因歡喜心而造此堂，故<note n="0142017" resp="Taisho" type="orig" place="foot text">名＝曰【三】</note><note n="0142017" resp="CBETA" type="mod">名【大】，曰【宋】【元】【明】</note><app n="0142017"><lem wit="【大】">名</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">曰</rdg></app>最勝堂。又千世
+<lb n="0142c29" ed="T"/>界中所有堂觀無及此堂，故名最勝。</p><p xml:id="pT01p0142c2915" cb:place="inline">佛告
+<pb n="0143a" ed="T" xml:id="T01.0001.0143a"/>
+<lb n="0143a01" ed="T"/>比丘：「昔者，阿須倫自生念言：『我有大威德，
+<lb n="0143a02" ed="T"/>神力不少，而忉利天、日月諸天常在虛空，
+<lb n="0143a03" ed="T"/>於我頂上遊行自在，今我寧可取彼日月
+<lb n="0143a04" ed="T"/>以為耳璫，自在遊行耶？』時，阿須倫王瞋恚熾
+<lb n="0143a05" ed="T"/>盛，即念捶打阿須倫，捶打阿須倫即復念言：
+<lb n="0143a06" ed="T"/>『今阿須倫王念我，我等當速莊嚴。』即勅左
+<lb n="0143a07" ed="T"/>右備具兵仗，駕乘寶車，與無數阿須倫眾
+<lb n="0143a08" ed="T"/>前後導從，詣阿須倫王前，於一面立。時，王
+<lb n="0143a09" ed="T"/>復念舍摩<note n="0143001" resp="Taisho" type="orig" place="foot text">梨＝黎【三】＊</note><note n="0143001" resp="CBETA" type="mod">梨【大】＊，黎【宋】＊【元】＊【明】＊</note><app n="0143001"><lem wit="【大】">梨</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">黎</rdg></app>阿須倫，舍摩<app type="star" corresp="#0143001"><lem wit="【大】">梨</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">黎</rdg></app>阿須倫復自
+<lb n="0143a10" ed="T"/>念言：『今王念我，我等宜速莊嚴。』即勅左右
+<lb n="0143a11" ed="T"/>備具兵仗，駕乘寶車，與無數阿須倫眾前
+<lb n="0143a12" ed="T"/>後導從，詣阿須倫王前，在一面立。</p><p xml:id="pT01p0143a1214" cb:place="inline">「時，王復
+<lb n="0143a13" ed="T"/>念毘摩質多阿須倫，毘摩質多阿須倫復自
+<lb n="0143a14" ed="T"/>念言：『今王念我，我等宜速莊嚴。』即勅左右
+<lb n="0143a15" ed="T"/>備具兵仗，駕乘寶車，與無數阿須倫眾前
+<lb n="0143a16" ed="T"/>後導從，往詣王前，在一面立。時，王復念大
+<lb n="0143a17" ed="T"/>臣阿須倫，大臣阿須倫即自念言：『今王念我，
+<lb n="0143a18" ed="T"/>我等宜速莊嚴。』即勅左右備具兵仗，駕乘
+<lb n="0143a19" ed="T"/>寶車，與無數阿須倫眾前後導從，往詣王
+<lb n="0143a20" ed="T"/>前，於一面立。時，王復念諸小阿須倫，諸小
+<lb n="0143a21" ed="T"/>阿須倫復自念言：『今王念我，我等宜速莊
+<lb n="0143a22" ed="T"/>嚴。』即自莊嚴，備具兵仗，與無數眾相隨，往
+<lb n="0143a23" ed="T"/>詣王前，於一面立。時，羅呵阿須倫王即自莊
+<lb n="0143a24" ed="T"/>嚴，身著寶鎧，駕乘寶車，與無數百千阿須
+<lb n="0143a25" ed="T"/>倫眾兵仗嚴事，前後圍遶出其境界，欲往
+<lb n="0143a26" ed="T"/>與諸天共鬪。」</p><p xml:id="pT01p0143a2606" cb:place="inline">「爾時，難陀龍王、跋難陀龍王
+<lb n="0143a27" ed="T"/>以身纏遶須彌山七匝，震動山谷，薄布微
+<lb n="0143a28" ed="T"/>雲，<note n="0143002" resp="Taisho" type="orig" place="foot text">渧渧＝滴滴【三】＊</note><note n="0143002" resp="CBETA" type="mod">渧渧【大】＊，滴滴【宋】＊【元】＊【明】＊</note><app n="0143002"><lem wit="【大】">渧渧</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">滴滴</rdg></app>稍雨，以尾打大海水，海水波涌，至
+<lb n="0143a29" ed="T"/>須彌山頂。時，忉利天即生念言：『今薄雲微布，
+<pb n="0143b" ed="T" xml:id="T01.0001.0143b"/>
+<lb n="0143b01" ed="T"/><app type="star" corresp="#0143002"><lem wit="【大】">渧渧</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">滴滴</rdg></app>稍雨，海水波涌，乃來至此。將是阿須
+<lb n="0143b02" ed="T"/>倫欲來戰鬪，故有此異瑞耳。』</p><p xml:id="pT01p0143b0212" cb:place="inline">「爾時，海中諸
+<lb n="0143b03" ed="T"/>龍兵眾無數巨億，皆持戈<note n="0143003" resp="Taisho" type="orig" place="foot text">鉾＝矛【元】【明】</note><note n="0143003" resp="CBETA" type="mod">鉾【大】，矛【元】【明】</note><app n="0143003"><lem wit="【大】">鉾</lem><rdg resp="Taisho" wit="【元】 【明】">矛</rdg></app>、弓矢、刀劍，重
+<lb n="0143b04" ed="T"/>被寶鎧，器仗嚴整，逆與阿須倫共戰，若龍
+<lb n="0143b05" ed="T"/>眾勝時，即逐阿須倫入其宮殿。若龍眾退，龍
+<lb n="0143b06" ed="T"/>不還宮，即<g ref="#CB01174"/>趣伽樓羅鬼神所，而告之曰：
+<lb n="0143b07" ed="T"/>『阿須倫眾欲與諸天共戰，我往逆鬪，彼今
+<lb n="0143b08" ed="T"/>得勝；汝等當備諸兵仗，眾共併力，與彼共
+<lb n="0143b09" ed="T"/>戰。』時，諸鬼神聞龍語已，即自莊嚴，備諸兵
+<lb n="0143b10" ed="T"/>仗，重被寶鎧，與諸龍眾共阿須倫<note n="0143004" resp="Taisho" type="orig" place="foot text">鬪＋（龍）【三】</note><note n="0143004" resp="CBETA" type="mod">鬪【大】，鬪龍【宋】【元】【明】</note><app n="0143004"><lem wit="【大】">鬪</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">鬪龍</rdg></app>，得
+<lb n="0143b11" ed="T"/>勝時，即逐阿須倫入其宮殿。若不如時，不
+<lb n="0143b12" ed="T"/>還本宮，即退<note n="0143005" resp="Taisho" type="orig" place="foot text">走<g ref="#CB01174"/>＝<g ref="#CB01174"/>走【三】＊</note><note n="0143005" resp="CBETA" type="mod">走<g ref="#CB01174"/>【大】＊，<g ref="#CB01174"/>走【宋】＊【元】＊【明】＊</note><app n="0143005"><lem wit="【大】">走<g ref="#CB01174"/></lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><g ref="#CB01174"/>走</rdg></app>持華鬼神界，而告之言：
+<lb n="0143b13" ed="T"/>『阿須倫眾欲與諸天共鬪，我等逆戰，彼今
+<lb n="0143b14" ed="T"/>得勝；汝等當備諸兵仗，眾共併力，與彼共
+<lb n="0143b15" ed="T"/>戰。』</p><p xml:id="pT01p0143b1502" cb:place="inline">「諸持華鬼神<note n="0143006" resp="Taisho" type="orig" place="foot text">（既）＋聞【三】</note><note n="0143006" resp="CBETA" type="mod">聞【大】，既聞【宋】【元】【明】</note><app n="0143006"><lem wit="【大】">聞</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">既聞</rdg></app>龍語已，即自莊嚴，備諸
+<lb n="0143b16" ed="T"/>兵仗，重被寶鎧，眾共併力，與阿須倫鬪，若
+<lb n="0143b17" ed="T"/>得勝時，即逐阿須倫入其宮殿。若不如時，
+<lb n="0143b18" ed="T"/>不還本宮，即退<app type="star" corresp="#0143005"><lem wit="【大】">走<g ref="#CB01174"/></lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><g ref="#CB01174"/>走</rdg></app>常樂鬼神界，而告之
+<lb n="0143b19" ed="T"/>言：『阿須倫眾欲與諸天共鬪，我等逆戰，彼
+<lb n="0143b20" ed="T"/>今得勝；汝等當備諸兵仗，與我<note n="0143007" resp="Taisho" type="orig" place="foot text">併＝并【三】</note><note n="0143007" resp="CBETA" type="mod">併【大】，并【宋】【元】【明】</note><app n="0143007"><lem wit="【大】">併</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">并</rdg></app>力，共
+<lb n="0143b21" ed="T"/>彼戰鬪。』時，諸常樂鬼神聞是語已，即自莊嚴，
+<lb n="0143b22" ed="T"/>備諸兵仗，重被寶鎧，眾共併力，與阿須倫
+<lb n="0143b23" ed="T"/>鬪，若得勝時，即逐阿須倫入其宮殿。若不
+<lb n="0143b24" ed="T"/>如時，不還本宮，即退<app type="star" corresp="#0143005"><lem wit="【大】">走<g ref="#CB01174"/></lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><g ref="#CB01174"/>走</rdg></app>四天王，而告之
+<lb n="0143b25" ed="T"/>曰：『阿須倫眾欲與諸天共鬪，我等逆戰，彼
+<lb n="0143b26" ed="T"/>今得勝；汝等當備諸兵仗，眾共併力，與彼
+<lb n="0143b27" ed="T"/>共戰。』</p><p xml:id="pT01p0143b2703" cb:place="inline">「時，四天王聞此語已，即自莊嚴，備諸兵
+<lb n="0143b28" ed="T"/>仗，重被寶鎧，眾共併力，與阿須倫共鬪，若
+<lb n="0143b29" ed="T"/>得勝時，即逐阿須倫入其宮殿。若不如者，
+<pb n="0143c" ed="T" xml:id="T01.0001.0143c"/>
+<lb n="0143c01" ed="T"/>四天王即詣善法講堂，白天帝釋及忉利諸
+<lb n="0143c02" ed="T"/>天言：『阿須倫欲與諸天共鬪，今忉利諸天
+<lb n="0143c03" ed="T"/>當自莊嚴，備諸兵仗，眾共併力，往共彼戰。』
+<lb n="0143c04" ed="T"/>時，天帝釋命一侍天而告之曰：『汝持我聲
+<lb n="0143c05" ed="T"/>往告<anchor xml:id="fxT01p0143c01"/>焰摩天、兜率天、化自在天、他化自在天
+<lb n="0143c06" ed="T"/>子言：「阿須<note n="0143008" resp="Taisho" type="orig" place="foot text">倫＋（王）【三】</note><note n="0143008" resp="CBETA" type="mod">倫【大】，倫王【宋】【元】【明】</note><app n="0143008"><lem wit="【大】">倫</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">倫王</rdg></app>與無數眾欲來戰鬪，今者諸
+<lb n="0143c07" ed="T"/>天當自莊嚴，備諸兵仗，助我<note n="0143009" resp="Taisho" type="orig" place="foot text">鬪戰＝戰鬪【三】</note><note n="0143009" resp="CBETA" type="mod">鬪戰【大】，戰鬪【宋】【元】【明】</note><app n="0143009"><lem wit="【大】">鬪戰</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">戰鬪</rdg></app>。」』時，彼侍
+<lb n="0143c08" ed="T"/>天受<note n="0143010" resp="Taisho" type="orig" place="foot text">帝＋（釋）【三】</note><note n="0143010" resp="CBETA" type="mod">帝【大】，帝釋【宋】【元】【明】</note><app n="0143010"><lem wit="【大】">帝</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">帝釋</rdg></app>教已，即詣焰摩天，乃至他化自在
+<lb n="0143c09" ed="T"/>天，持天帝釋聲而告之曰：『彼阿須倫<note n="0143c0901" resp="CBETA" type="add">無數【CB】，數無【大】</note><app n="0143c0901"><lem wit="【CB】" resp="CBETA">無數</lem><rdg wit="【大】">數無</rdg></app>
+<lb n="0143c10" ed="T"/><note n="0143011" resp="Taisho" type="orig" place="foot text">眾＋（欲）【三】</note><note n="0143011" resp="CBETA" type="mod">眾【大】，眾欲【宋】【元】【明】</note><app n="0143011"><lem wit="【大】">眾</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">眾欲</rdg></app><note n="0143012" resp="Taisho" type="orig" place="foot text">來＝求【明】</note><note n="0143012" resp="CBETA" type="mod">來【大】，求【明】</note><app n="0143012"><lem wit="【大】">來</lem><rdg resp="Taisho" wit="【明】">求</rdg></app>戰鬪，今者諸天當自莊嚴，備諸兵仗，
+<lb n="0143c11" ed="T"/>助我戰鬪。』</p><p xml:id="pT01p0143c1105" cb:place="inline">「時，<anchor xml:id="fxT01p0143c02"/>焰摩天子聞此語已，即自莊
+<lb n="0143c12" ed="T"/>嚴，備諸兵仗，重被寶鎧，駕乘寶車，與無數
+<lb n="0143c13" ed="T"/>巨億百千天眾前後圍遶，在須彌山東面住。
+<lb n="0143c14" ed="T"/>時，兜率天子聞此語已，即自莊嚴，備諸兵仗，
+<lb n="0143c15" ed="T"/>重被寶鎧，駕乘寶車，與無<note n="0143c1501" resp="CBETA" type="add">數【CB】，敷【大】</note><app n="0143c1501"><lem wit="【CB】" resp="CBETA">數</lem><rdg wit="【大】">敷</rdg></app>巨億百千天
+<lb n="0143c16" ed="T"/>眾圍遶，在須彌山南面住。時，化自在天子
+<lb n="0143c17" ed="T"/>聞此語已，亦嚴兵眾，在須彌山西面住。時，
+<lb n="0143c18" ed="T"/>他化自在天子聞此語已，亦嚴兵眾，在須
+<lb n="0143c19" ed="T"/>彌山北住。</p><p xml:id="pT01p0143c1905" cb:place="inline">「時，天帝釋即念三十三天忉利天，
+<lb n="0143c20" ed="T"/>三十三天忉利天即自念言：『今帝釋念我，
+<lb n="0143c21" ed="T"/>我等宜速莊嚴。』即勅左右備諸兵仗，駕乘
+<lb n="0143c22" ed="T"/>寶車，與無數巨億諸天眾前後圍遶，詣<note n="0143013" resp="Taisho" type="orig" place="foot text">〔天〕－【三】</note><note n="0143013" resp="CBETA" type="mod">天【大】，〔－〕【宋】【元】【明】</note><app n="0143013"><lem wit="【大】">天</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>
+<lb n="0143c23" ed="T"/>帝釋前，於一面立。時，天帝釋復念餘忉利
+<lb n="0143c24" ed="T"/>諸天，餘忉利諸天即自念言：『今帝釋念我，我
+<lb n="0143c25" ed="T"/>等宜速莊嚴。』即勅左右備諸兵仗，駕乘寶
+<lb n="0143c26" ed="T"/>車，與無數巨億諸天眾前後圍遶，詣帝釋
+<lb n="0143c27" ed="T"/>前，於一面立。時，帝釋復念妙匠鬼神，妙匠鬼
+<lb n="0143c28" ed="T"/>神即自念言：『今帝釋念我，我宜速莊嚴。』即
+<lb n="0143c29" ed="T"/>勅左右備諸兵仗，駕乘寶車，無數千眾前
+<pb n="0144a" ed="T" xml:id="T01.0001.0144a"/>
+<lb n="0144a01" ed="T"/>後圍遶，詣帝釋前立。時，帝釋復念善住龍
+<lb n="0144a02" ed="T"/>王，善住龍王即自念言：『今天帝<note n="0144001" resp="Taisho" type="orig" place="foot text">〔釋〕－【三】</note><note n="0144001" resp="CBETA" type="mod">釋【大】，〔－〕【宋】【元】【明】</note><app n="0144001"><lem wit="【大】">釋</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】"><space quantity="0"/></rdg></app>念我，我
+<lb n="0144a03" ed="T"/>今宜往。』即詣帝釋前立。</p><p xml:id="pT01p0144a0310" cb:place="inline">「時，帝釋即自莊嚴，
+<lb n="0144a04" ed="T"/>備諸兵仗，身被寶鎧，乘善住龍王頂上，與
+<lb n="0144a05" ed="T"/>無數諸天鬼神前後圍遶，自出天宮與阿須
+<lb n="0144a06" ed="T"/>倫<note n="0144002" resp="Taisho" type="orig" place="foot text">往＝共【三】</note><note n="0144002" resp="CBETA" type="mod">往【大】，共【宋】【元】【明】</note><app n="0144002"><lem wit="【大】">往</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">共</rdg></app>鬪。所謂嚴兵仗、刀劍、<note n="0144003" resp="Taisho" type="orig" place="foot text">鉾＝牟【宋】＊，矛【元】【明】＊</note><note n="0144003" resp="CBETA" type="mod">鉾【大】＊，牟【宋】＊，矛【元】【明】＊</note><app n="0144003"><lem wit="【大】">鉾</lem><rdg resp="Taisho" wit="【宋】">牟</rdg><rdg resp="Taisho" wit="【元】 【明】">矛</rdg></app>矟、弓矢、<note n="0144004" resp="Taisho" type="orig" place="foot text"><g ref="#CB00550"/>＝斵【元】【明】＊</note><note n="0144004" resp="CBETA" type="mod"><g ref="#CB00550"/>【大】＊，斵【元】【明】＊</note><app n="0144004"><lem wit="【大】"><g ref="#CB00550"/></lem><rdg resp="Taisho" wit="【元】 【明】">斵</rdg></app>
+<lb n="0144a07" ed="T"/><note n="0144005" resp="Taisho" type="orig" place="foot text">釿＝斤【三】</note><note n="0144005" resp="CBETA" type="mod">釿【大】＊，斤【宋】【元】【明】＊</note><app n="0144005"><lem wit="【大】">釿</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">斤</rdg></app>、<note n="0144a0701" resp="CBETA" type="add">鉞【CB】【麗-CB】，［－］【大】</note><app n="0144a0701"><lem resp="CBETA.maha" wit="【CB】 【麗-CB】">鉞<note type="cf1">K17n0647_p1016b04</note><note type="cf2">T01n0001_p0144a10</note></lem><rdg wit="【大】"><space quantity="0"/></rdg></app>斧、旋輪、羂索，兵仗鎧器，以七寶成，復以
+<lb n="0144a08" ed="T"/>鋒刃加阿須倫身，其身不傷，但刃觸而已。
+<lb n="0144a09" ed="T"/>阿須倫眾執持七寶刀劍、<app type="star" corresp="#0144003"><lem wit="【大】">鉾</lem><rdg resp="Taisho" wit="【宋】">牟</rdg><rdg resp="Taisho" wit="【元】 【明】">矛</rdg></app>矟、弓矢、<app type="star" corresp="#0144004"><lem wit="【大】"><g ref="#CB00550"/></lem><rdg resp="Taisho" wit="【元】 【明】">斵</rdg></app><app type="star" corresp="#0144005"><lem wit="【大】">釿</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">斤</rdg></app>、
+<lb n="0144a10" ed="T"/>鉞斧、旋輪、羂索，以鋒刃加諸天身，但觸而
+<lb n="0144a11" ed="T"/>已，不能傷損。如是欲行諸天共阿須倫鬪，
+<lb n="0144a12" ed="T"/><note n="0144006" resp="Taisho" type="orig" place="foot text">欲因欲＝緣欲因如【三】</note><note n="0144006" resp="CBETA" type="mod">欲因欲【大】，緣欲因如【宋】【元】【明】</note><app n="0144006"><lem wit="【大】">欲因欲</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">緣欲因如</rdg></app>是。」</p></cb:div>
+<lb n="0144a13" ed="T"/><cb:juan n="021" fun="close"><cb:jhead><title><note n="0144007" resp="Taisho" type="orig" place="foot text">〔佛說〕－【宋】【元】</note><note n="0144007" resp="CBETA" type="mod">佛說【大】，〔－〕【宋】【元】</note><app n="0144007"><lem wit="【大】">佛說</lem><rdg resp="Taisho" wit="【宋】 【元】"><space quantity="0"/></rdg></app>長阿含經</title>卷第二十一</cb:jhead></cb:juan>
+</cb:div></cb:div></body></text></TEI>

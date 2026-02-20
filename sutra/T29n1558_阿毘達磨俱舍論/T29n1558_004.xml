@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/cbeta-git/xml-p5a/master/schema/cbeta-p5a.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:cb="http://www.cbeta.org/ns/1.0" xml:id="T29n1558">
+<teiHeader>
+	<fileDesc>
+		<titleStmt>
+			<title>Taishō Tripiṭaka, Electronic version, No. 1558 阿毘達磨俱舍論</title>
+			<title xml:lang="zh-Hant">大正新脩大藏經數位版, No. 1558 阿毘達磨俱舍論</title>
+			<author>尊者世親造  唐 玄奘譯</author>
+			<respStmt>
+				<resp>Electronic Version by</resp>
+				<name>CBETA</name>
+			</respStmt>
+		</titleStmt>
+		<editionStmt>
+			<edition>單卷版 XML TEI P5b</edition>
+		</editionStmt>
+		<extent>30卷</extent>
+		<publicationStmt>
+			<idno type="CBETA">
+				<idno type="canon">T</idno>.<idno type="vol">29</idno>.<idno type="no">1558</idno>
+			</idno>
+			<distributor>
+				<name>中華電子佛典協會 (CBETA)</name>
+				<address>
+					<addrLine><email>service@cbeta.org</email></addrLine>
+				</address>
+			</distributor>
+			<availability>
+				<p>Available for non-commercial use when distributed with this header intact.</p>
+			</availability>
+			<date>2023-11-07 11:34:32 +0800</date>
+		</publicationStmt>
+		<sourceDesc>
+			<bibl>
+				<title level="s">Taishō Tripiṭaka</title>
+				<title level="s" xml:lang="zh-Hant">大正新脩大藏經</title>
+				<title level="m" xml:lang="zh-Hant">阿毘達磨俱舍論</title>
+			</bibl>
+		</sourceDesc>
+	</fileDesc>
+	<encodingDesc>
+		<projectDesc>
+			<p xml:lang="en" cb:type="ly">Text as provided by Mr. Hsiao Chen-Kuo, Tripitaka Koreana as provided by Mr. Christian Wittern, Text as provided by SAT, Japan, Text as provided by Anonymous from USA, Punctuated text as provided by Mr. Li Ming-Fang</p>
+			<p xml:lang="zh-Hant" cb:type="ly">蕭鎮國大德提供，維習安大德提供之高麗藏 CD 經文，日本 SAT 組織提供，北美某大德提供，李明芳大德提供新式標點</p>
+		</projectDesc>
+		<editorialDecl>
+			<punctuation resp="CBETA"><p>新式標點</p></punctuation>
+		</editorialDecl>
+		<tagsDecl>
+			<namespace name="http://www.tei-c.org/ns/1.0">
+				<tagUsage gi="rdg">
+					<listWit>
+						<witness xml:id="wit.orig">【大】</witness>
+						<witness xml:id="wit.cbeta">【CB】</witness>
+					</listWit>
+				</tagUsage>
+			</namespace>
+		</tagsDecl>
+		<charDecl>
+			<char xml:id="CB00595">
+				<charName>CBETA CHARACTER CB00595</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[麩-夫+少]</value>
+				</charProp>
+				<mapping type="normal_unicode">U+9EA8</mapping>
+				<mapping cb:dec="983635" type="PUA">U+F0253</mapping>
+			</char>
+			<char xml:id="CB00654">
+				<charName>CBETA CHARACTER CB00654</charName>
+				<charProp>
+					<localName>composition</localName>
+					<value>[夌*欠]</value>
+				</charProp>
+				<mapping type="unicode">U+238CB</mapping>
+				<mapping cb:dec="983694" type="PUA">U+F028E</mapping>
+			</char>
+		</charDecl>
+	</encodingDesc>
+	<profileDesc>
+		<langUsage>
+			<language ident="sa">Sanskrit</language>
+			<language ident="en">English</language>
+			<language ident="zh-Hant">Chinese (Traditional)</language>
+		</langUsage>
+	</profileDesc>
+	<revisionDesc>
+		<change when="2013-05-20">
+			<name>CW</name><name>Ray Chou 周邦信</name>P4 to P5 conversion by p4top5a.py, intended for publication
+		</change>
+		<change when="1999-06-28T20:31:40">
+			CW (ed.) Created initial TEI XML version with BASICX.BAT (99/6/28)
+		</change>
+	</revisionDesc>
+</teiHeader>
+<text><body>
+<cb:mulu n="2" level="1" type="品">2 分別根品</cb:mulu><cb:mulu level="2">1</cb:mulu><cb:div type="pin">
+<milestone unit="juan" n="4"/>
+<lb n="0018b09" ed="T"/>
+<lb n="0018b10" ed="T"/><cb:juan n="004" fun="open"><cb:mulu n="004" type="卷"></cb:mulu><cb:mulu level="2">2</cb:mulu><cb:jhead><title>阿毘達磨俱舍論</title>卷第四</cb:jhead>
+<lb n="0018b11" ed="T"/>
+<lb n="0018b12" ed="T"/><byline cb:type="author">尊者世親造</byline>
+<lb n="0018b13" ed="T"/><byline cb:type="Translator"><anchor xml:id="fxT29p0018b03"/>三藏法師玄奘奉　詔譯</byline>
+<lb n="0018b14" ed="T"/><cb:jhead type="pin">分別根品第二之二</cb:jhead></cb:juan>
+<lb n="0018b15" ed="T"/><p xml:id="pT29p0018b1501">今應思擇，一切有為如相不同，生亦各異，
+<lb n="0018b16" ed="T"/>為有諸法決定俱生、有定俱生。謂一切法
+<lb n="0018b17" ed="T"/>略有五品：一<note resp="Taisho" n="0018009" place="foot text" type="orig">Rūpa.</note><anchor xml:id="nkr_note_foreign_0018009" n="0018009"/>色、二<note resp="Taisho" n="0018010" place="foot text" type="orig">Citta.</note><anchor xml:id="nkr_note_foreign_0018010" n="0018010"/>心、三<note resp="Taisho" n="0018011" place="foot text" type="orig">Caitasika.</note><anchor xml:id="nkr_note_foreign_0018011" n="0018011"/>心所、四<note resp="Taisho" n="0018012" place="foot text" type="orig">Citta-viprayukta-saṃskāra.</note><anchor xml:id="nkr_note_foreign_0018012" n="0018012"/>心不
+<lb n="0018b18" ed="T"/>相應行、五無為。無為無生，此中不說。今先
+<lb n="0018b19" ed="T"/>辯色決定俱生。頌曰：</p>
+<lb n="0018b20" ed="T"/><lg type="regular" xml:id="lgT29p0018b2001"><l>欲微聚無聲，<caesura/>無根有八事，</l>
+<lb n="0018b21" ed="T"/><l>有身根九事，<caesura/>十事有餘根。</l></lg>
+<lb n="0018b22" ed="T"/><p xml:id="pT29p0018b2201">論曰：色聚極細立微聚名，為顯更無細於
+<lb n="0018b23" ed="T"/>此者。此在欲界無聲無根，八事俱生隨一
+<lb n="0018b24" ed="T"/>不減。云何八事？謂四大種及四所造色、香、味、
+<lb n="0018b25" ed="T"/>觸。無聲有根諸極微聚，此俱生事或九或
+<lb n="0018b26" ed="T"/>十。有身根聚九事俱生，八事如前，身為第
+<lb n="0018b27" ed="T"/>九。有餘根聚十事俱生，九事如前，加眼等
+<lb n="0018b28" ed="T"/>一。眼耳鼻舌必不離身，展轉相望處各別
+<lb n="0018b29" ed="T"/>故。於前諸聚若有聲生，如次數增九十十
+<pb n="0018c" ed="T" xml:id="T29.1558.0018c"/>
+<lb n="0018c01" ed="T"/>一，以有聲處不離根生，謂有執受大種因
+<lb n="0018c02" ed="T"/>起。若四大種不相離生，於諸聚中堅濕煖
+<lb n="0018c03" ed="T"/>動，云何隨一可得非餘？於彼聚中勢用增
+<lb n="0018c04" ed="T"/>者明了可得，餘體非無。如覺針鋒與籌合
+<lb n="0018c05" ed="T"/>觸，如甞鹽味與<g ref="#CB00595"/>合味。云何於彼知亦有
+<lb n="0018c06" ed="T"/>餘？由有攝熟長持業故。有說：遇緣堅等便
+<lb n="0018c07" ed="T"/>有流等相故，如水聚中由極冷故有煖相
+<lb n="0018c08" ed="T"/>起，雖不相離而冷用增，如受及聲用有勝
+<lb n="0018c09" ed="T"/>劣。有餘師說：於此聚中餘有種子未有體
+<lb n="0018c10" ed="T"/>相，故契經說：於木聚中有種<note resp="Taisho" n="0018013" place="foot text" type="orig">種界＝界種【宮】</note><note resp="CBETA" n="0018013" type="mod">種界【大】，界種【宮】</note><app n="0018013"><lem wit="【大】">種界</lem><rdg resp="Taisho" wit="【宮】">界種</rdg></app>。界謂
+<lb n="0018c11" ed="T"/>種子。如何風中知有顯色？此義可信，不可
+<lb n="0018c12" ed="T"/>比知。或所合香現可取故，香與顯色不相
+<lb n="0018c13" ed="T"/>離故。前說色界香味並無，故彼無聲有六
+<lb n="0018c14" ed="T"/>七八，有聲有七八九俱生。此可准知，故不
+<lb n="0018c15" ed="T"/>別說。此中言事為依體說、為依處說？若爾
+<lb n="0018c16" ed="T"/>何過？二俱有過。若依體說，八九十等便為
+<lb n="0018c17" ed="T"/>太少，由諸微聚必有形色，有多極微共積
+<lb n="0018c18" ed="T"/>集故。重性輕性定隨有一，滑性澁性隨一亦
+<lb n="0018c19" ed="T"/>然。或處有冷有飢有渴，是則所言有太少
+<lb n="0018c20" ed="T"/>過。若依處說，八九十等便為太多，由四大
+<lb n="0018c21" ed="T"/>種觸處攝故應說四等，是則所言有太多
+<lb n="0018c22" ed="T"/>失。二俱無過。應知此中所言事者，一分依
+<lb n="0018c23" ed="T"/>體說，謂所依大種；一分依處說，謂能依造
+<lb n="0018c24" ed="T"/>色。若爾，大種事應成多，造色各別，依一四
+<lb n="0018c25" ed="T"/>大種故。應知此中依體類說，諸四大種類
+<lb n="0018c26" ed="T"/>無別故。何用分別如是語為？語隨欲生，
+<lb n="0018c27" ed="T"/>義應思擇。如是已辯色定俱生。餘定俱生
+<lb n="0018c28" ed="T"/>今次當辯。頌曰：</p>
+<lb n="0018c29" ed="T"/><lg xml:id="lgT29p0018c2901"><l>心心所必俱，<caesura/>諸行相或得。</l></lg>
+<pb n="0019a" ed="T" xml:id="T29.1558.0019a"/>
+<lb n="0019a01" ed="T"/><p xml:id="pT29p0019a0101">論曰：心與心所必定俱生，隨闕一時餘則
+<lb n="0019a02" ed="T"/>不起。諸行即是一切有為，謂色、心、心所、心不
+<lb n="0019a03" ed="T"/>相應行。前必俱言流至於此，謂色心等諸行
+<lb n="0019a04" ed="T"/>生時，必與有為四相俱起。言或得者，謂諸
+<lb n="0019a05" ed="T"/>行內唯有情法與得俱生；餘法不然，是故言
+<lb n="0019a06" ed="T"/>或。向言心所，<note resp="Taisho" n="0019001" place="foot text" type="orig">何＝向【宮】</note><note resp="CBETA" n="0019001" type="mod">何【大】，向【宮】</note><app n="0019001"><lem wit="【大】">何</lem><rdg resp="Taisho" wit="【宮】">向</rdg></app>者是<note resp="Taisho" n="0019002" place="foot text" type="orig">邪＝耶【三】【宮】</note><note resp="CBETA" n="0019002" type="mod" cb:note_key="T29.0019a06.09">耶【CB】【麗-CB】【宋】【元】【明】【宮】，邪【大】</note><app n="0019002"><lem resp="CBETA.maha" wit="【CB】 【麗-CB】">耶<note type="cf1">K27n0955_p0478c16</note></lem><rdg wit="【大】">邪</rdg><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">耶</rdg></app>？頌曰：</p>
+<lb n="0019a07" ed="T"/><lg xml:id="lgT29p0019a0701"><l>心所且有五，<caesura/>大地法等異。</l></lg>
+<lb n="0019a08" ed="T"/><p xml:id="pT29p0019a0801">論曰：諸心所法且有五品。何等為五？一、大
+<lb n="0019a09" ed="T"/>地法；二、大善地法；三、大煩惱地法；四、大不善
+<lb n="0019a10" ed="T"/>地法；五、小煩惱地法。地謂行處，若此是彼所
+<lb n="0019a11" ed="T"/>行處，即說此為彼法地。大法地故名為<note resp="Taisho" n="0019003" place="foot text" type="orig">Mahābhūmika</note><anchor xml:id="nkr_note_foreign_0019003" n="0019003"/>大
+<lb n="0019a12" ed="T"/>地，此中若法大地所有名大地法，謂法恒於
+<lb n="0019a13" ed="T"/>一切心有。彼法是何？頌曰：</p>
+<lb n="0019a14" ed="T"/><lg type="regular" xml:id="lgT29p0019a1401"><l>受想思觸欲，<caesura/>慧念與作意，</l>
+<lb n="0019a15" ed="T"/><l>勝解三摩地，<caesura/>遍於一切心。</l></lg>
+<lb n="0019a16" ed="T"/><p xml:id="pT29p0019a1601">論曰：傳說：如是所列十法，諸心剎那和合遍
+<lb n="0019a17" ed="T"/>有。此中受謂三種領納：苦、樂、俱非，有差別
+<lb n="0019a18" ed="T"/>故。想謂於境取差別相。<note resp="Taisho" n="0019004" place="foot text" type="orig">Cetanā.</note><anchor xml:id="nkr_note_foreign_0019004" n="0019004"/>思謂能令心有造
+<lb n="0019a19" ed="T"/>作。<note resp="Taisho" n="0019005" place="foot text" type="orig">Sparśa.</note><anchor xml:id="nkr_note_foreign_0019005" n="0019005"/>觸謂根境識和合生，能有觸對。欲謂希
+<lb n="0019a20" ed="T"/>求所作事業。慧謂於法能有簡擇。<note resp="Taisho" n="0019006" place="foot text" type="orig">Smrti.</note><anchor xml:id="nkr_note_foreign_0019006" n="0019006"/>念謂於
+<lb n="0019a21" ed="T"/>緣明記不忘。<note resp="Taisho" n="0019007" place="foot text" type="orig">Manaskāra.</note><anchor xml:id="nkr_note_foreign_0019007" n="0019007"/>作意謂能令心警覺。<note resp="Taisho" n="0019008" place="foot text" type="orig">Adhimukti.</note><anchor xml:id="nkr_note_foreign_0019008" n="0019008"/>勝解
+<lb n="0019a22" ed="T"/>謂能於境印可。<note resp="Taisho" n="0019009" place="foot text" type="orig">Samādhi.</note><anchor xml:id="nkr_note_foreign_0019009" n="0019009"/>三摩地謂心一境性。諸心
+<lb n="0019a23" ed="T"/>心所異相微細，一一相續分別尚難，況一剎
+<lb n="0019a24" ed="T"/>那俱時而有。有色諸藥色根所取，其味差別
+<lb n="0019a25" ed="T"/>尚難了知，況無色法唯覺慧取。如是已說
+<lb n="0019a26" ed="T"/>十大地法。大善法地名大善地，此中若法大
+<lb n="0019a27" ed="T"/>善地所有名大善地法，謂法恒於諸善心
+<lb n="0019a28" ed="T"/>有。彼法是何？頌曰：</p>
+<lb n="0019a29" ed="T"/><lg type="regular" xml:id="lgT29p0019a2901"><l>信及不放逸，<caesura/>輕安捨慚愧，</l>
+<pb n="0019b" ed="T" xml:id="T29.1558.0019b"/>
+<lb n="0019b01" ed="T"/><l>二根及不害，<caesura/>勤唯遍善心。</l></lg>
+<lb n="0019b02" ed="T"/><p xml:id="pT29p0019b0201">論曰：如是諸法唯遍善心。此中<note resp="Taisho" n="0019010" place="foot text" type="orig">Sraddhā.</note><anchor xml:id="nkr_note_foreign_0019010" n="0019010"/>信者令
+<lb n="0019b03" ed="T"/>心澄淨。有說：於諦<note resp="Taisho" n="0019011" place="foot text" type="orig">實＝寶【石】</note><note resp="CBETA" n="0019011" type="mod">實【大】，寶【石】</note><app n="0019011"><lem wit="【大】">實</lem><rdg resp="Taisho" wit="【石】">寶</rdg></app>業果中現前忍許故
+<lb n="0019b04" ed="T"/>名為信。<note resp="Taisho" n="0019012" place="foot text" type="orig">Apramāda.</note><anchor xml:id="nkr_note_foreign_0019012" n="0019012"/>不放逸者，修諸善法離諸<note resp="Taisho" n="0019013" place="foot text" type="orig">〔不〕－【宮】【石】</note><note resp="CBETA" n="0019013" type="mod">不【大】，〔－〕【宮】【石】</note><app n="0019013"><lem wit="【大】">不</lem><rdg resp="Taisho" wit="【宮】 【石】"><space quantity="0"/></rdg></app>善
+<lb n="0019b05" ed="T"/>法。復何名修？謂此於善專注為性。餘部經
+<lb n="0019b06" ed="T"/>中有如是釋。能守護心名不放逸。輕安者
+<lb n="0019b07" ed="T"/>謂心堪任性。豈無經亦說有身輕安<note resp="Taisho" n="0019014" place="foot text" type="orig">耶＝邪【石】＊</note><note resp="CBETA" n="0019014" type="mod">耶【大】＊，邪【石】＊</note><app n="0019014"><lem wit="【大】">耶</lem><rdg resp="Taisho" wit="【石】">邪</rdg></app>？
+<lb n="0019b08" ed="T"/>雖非無說，此如身受應知亦爾，如何可
+<lb n="0019b09" ed="T"/>立此為覺支？應知此中身輕安者身堪任
+<lb n="0019b10" ed="T"/>性。復如何說此為<note resp="Taisho" n="0019015" place="foot text" type="orig">Bodhy-aṅga.</note><anchor xml:id="nkr_note_foreign_0019015" n="0019015"/>覺支？能順覺支故無
+<lb n="0019b11" ed="T"/>有失。以身輕安能引覺支心輕安故。於
+<lb n="0019b12" ed="T"/>餘亦見有是說<app corresp="#0019014" type="star"><lem wit="【大】">耶</lem><rdg resp="Taisho" wit="【石】">邪</rdg></app>？有，如經說：喜及順喜
+<lb n="0019b13" ed="T"/>法名喜覺支。瞋及瞋因緣名瞋恚蓋。正見、正
+<lb n="0019b14" ed="T"/>思惟、正勤名慧蘊。思惟及勤雖非慧性，隨
+<lb n="0019b15" ed="T"/>順慧故亦得慧名，故身輕安順覺支故得
+<lb n="0019b16" ed="T"/>名無失。心平等性、無警覺性說名為<note resp="Taisho" n="0019016" place="foot text" type="orig">Upekṣā.</note><anchor xml:id="nkr_note_foreign_0019016" n="0019016"/>捨。
+<lb n="0019b17" ed="T"/>如何可說於一心中有警覺性、無警覺
+<lb n="0019b18" ed="T"/>性？作意與捨二相應起。豈不前說諸心心
+<lb n="0019b19" ed="T"/>所其相微細難可了知。有雖難了，由審推
+<lb n="0019b20" ed="T"/>度而復可知。此最難知，謂相違背而不乖
+<lb n="0019b21" ed="T"/>反。此有警覺於餘則無，二既懸殊有何乖
+<lb n="0019b22" ed="T"/>反？若爾，不應同緣一境，或應一切皆互相
+<lb n="0019b23" ed="T"/>應。如是種類所餘諸法，此中應<note resp="Taisho" n="0019017" place="foot text" type="orig">求＝未【宮】，來【石】</note><note resp="CBETA" n="0019017" type="mod">求【大】，未【宮】，來【石】</note><app n="0019017"><lem wit="【大】">求</lem><rdg resp="Taisho" wit="【宮】">未</rdg><rdg resp="Taisho" wit="【石】">來</rdg></app>，如彼理
+<lb n="0019b24" ed="T"/>趣，今於此中應知亦爾。慚、愧二種如後當
+<lb n="0019b25" ed="T"/>釋。二根者，謂無貪、無瞋，無癡善根慧為性，
+<lb n="0019b26" ed="T"/>故前已說在大地法中，不重說為大善地
+<lb n="0019b27" ed="T"/>法。言<note resp="Taisho" n="0019018" place="foot text" type="orig">Ahiṃsā.</note><anchor xml:id="nkr_note_foreign_0019018" n="0019018"/>不害者，謂無損惱。勤謂令心勇悍
+<lb n="0019b28" ed="T"/>為性。如是已說大善地法。大煩惱法地名
+<lb n="0019b29" ed="T"/>大煩惱地，此中若法大煩惱地所有名大煩
+<pb n="0019c" ed="T" xml:id="T29.1558.0019c"/>
+<lb n="0019c01" ed="T"/>惱地法，謂法恒於染污心有。彼法是何？頌
+<lb n="0019c02" ed="T"/>曰：</p>
+<lb n="0019c03" ed="T"/><lg xml:id="lgT29p0019c0301"><l>癡逸怠不信，<caesura/>惛<note n="0019c0301" resp="CBETA" type="add">掉【CB】，悼【大】</note><app n="0019c0301"><lem wit="【CB】" resp="CBETA">掉</lem><rdg wit="【大】">悼</rdg></app>恒唯染。</l></lg>
+<lb n="0019c04" ed="T"/><p xml:id="pT29p0019c0401">論曰：此中<note resp="Taisho" n="0019019" place="foot text" type="orig">Moha.</note><anchor xml:id="nkr_note_foreign_0019019" n="0019019"/>癡者所謂愚癡，即是<note resp="Taisho" n="0019020" place="foot text" type="orig">Avidyā.</note><anchor xml:id="nkr_note_foreign_0019020" n="0019020"/>無明無智
+<lb n="0019c05" ed="T"/>無顯。逸謂放逸，不修諸善，是修諸善所對
+<lb n="0019c06" ed="T"/>治法。<note resp="Taisho" n="0019021" place="foot text" type="orig">Kausīdya.</note><anchor xml:id="nkr_note_foreign_0019021" n="0019021"/>怠謂懈怠，心不勇<note resp="Taisho" n="0019022" place="foot text" type="orig">悍＝悼【石】</note><note resp="CBETA" n="0019022" type="mod">悍【大】，悼【石】</note><app n="0019022"><lem wit="【大】">悍</lem><rdg resp="Taisho" wit="【石】">悼</rdg></app>，是前所說勤所
+<lb n="0019c07" ed="T"/>對治。不信者謂心不澄淨，是前所說信所對
+<lb n="0019c08" ed="T"/>治。惛謂惛沈。對法中說：云何惛沈？謂身重性、
+<lb n="0019c09" ed="T"/>心重性，身無堪任性、心無堪任性，身惛沈性、
+<lb n="0019c10" ed="T"/>心惛沈性，是名<note resp="Taisho" n="0019023" place="foot text" type="orig">Styāna.</note><anchor xml:id="nkr_note_foreign_0019023" n="0019023"/>惛沈。此是心所。如何名身？
+<lb n="0019c11" ed="T"/>如身受言，故亦無失。<note resp="Taisho" n="0019024" place="foot text" type="orig">Auddhatya.</note><anchor xml:id="nkr_note_foreign_0019024" n="0019024"/>掉謂掉舉，令心不
+<lb n="0019c12" ed="T"/>靜。唯有如是六種，名大煩惱地法。豈不
+<lb n="0019c13" ed="T"/>根本阿毘達磨中說有十種大煩惱地法，又
+<lb n="0019c14" ed="T"/>於彼論不說惛沈。何者<note resp="Taisho" n="0019025" place="foot text" type="orig">（為）＋十【三】【宮】</note><note resp="CBETA" n="0019025" type="mod">十【大】，為十【宋】【元】【明】【宮】</note><app n="0019025"><lem wit="【大】">十</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">為十</rdg></app>？謂不信、懈怠、
+<lb n="0019c15" ed="T"/>失念、心亂、無明、不正知、非理作意、邪勝解、掉舉、
+<lb n="0019c16" ed="T"/>放逸。天愛！汝今但知言，至不閑意旨。意旨
+<lb n="0019c17" ed="T"/>者何？謂失念、心亂、不正知、非理作意、邪勝解，
+<lb n="0019c18" ed="T"/>已說彼在大地法中，不應重立為大煩惱
+<lb n="0019c19" ed="T"/>地法。如無癡善根慧為體故，非大善地法，
+<lb n="0019c20" ed="T"/>彼亦應爾。即染污念名為失念，染污等持名
+<lb n="0019c21" ed="T"/>為心亂，諸染污慧名不正知，染污作意勝解
+<lb n="0019c22" ed="T"/>名為非理作意及邪勝解故說。若是大地法
+<lb n="0019c23" ed="T"/>亦大煩惱地法耶？應作四句。第一句，謂受、想、
+<lb n="0019c24" ed="T"/>思、觸、欲。第二句，謂不信、懈怠、無明、掉舉、放逸。
+<lb n="0019c25" ed="T"/>第三句，謂如前說念等五法。第四句，謂除
+<lb n="0019c26" ed="T"/>前相。有執邪等持非即是心亂，彼作四句
+<lb n="0019c27" ed="T"/>與此不同。又許惛沈通與一切煩惱相應，
+<lb n="0019c28" ed="T"/><note resp="Taisho" n="0019026" place="foot text" type="orig">不＋（許）【三】【宮】</note><note resp="CBETA" n="0019026" type="mod">不【大】，不許【宋】【元】【明】【宮】</note><app n="0019026"><lem wit="【大】">不</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">不許</rdg></app>說在大煩惱地法。於誰有過？有作是
+<lb n="0019c29" ed="T"/>言：應說在此，而不說者順等持故。彼謂諸
+<pb n="0020a" ed="T" xml:id="T29.1558.0020a"/>
+<lb n="0020a01" ed="T"/>有惛沈行者速發等持，非掉舉行。誰惛沈
+<lb n="0020a02" ed="T"/>行非掉舉行？誰掉舉行非惛沈行？此二未
+<lb n="0020a03" ed="T"/>嘗不俱行故。雖爾，應知隨增說行。雖知
+<lb n="0020a04" ed="T"/>說行隨用偏增，而依有體建立地法，故此
+<lb n="0020a05" ed="T"/>地法唯六義成，此唯遍染心俱起非餘故。
+<lb n="0020a06" ed="T"/>如是已說大煩惱地法。大不善法地名大不
+<lb n="0020a07" ed="T"/>善地，此中若法大不善地所有名大不善地
+<lb n="0020a08" ed="T"/>法，謂法恒於不善心有。彼法是何？頌曰。</p>
+<lb n="0020a09" ed="T"/><lg xml:id="lgT29p0020a0901"><l>唯遍不善心，<caesura/>無慚及無愧。</l></lg>
+<lb n="0020a10" ed="T"/><p xml:id="pT29p0020a1001">論曰：唯二心所但與一切不善心俱，謂無慚、
+<lb n="0020a11" ed="T"/>愧，故唯二種名此地法。此二法相如後當
+<lb n="0020a12" ed="T"/>辯。如是已說大不善地法。小煩惱法地名
+<lb n="0020a13" ed="T"/>小煩惱地，此中若法小煩惱地所有名小煩
+<lb n="0020a14" ed="T"/>惱地法，謂法少分染污心俱。彼法是何？頌
+<lb n="0020a15" ed="T"/>曰：</p>
+<lb n="0020a16" ed="T"/><lg type="regular" xml:id="lgT29p0020a1601"><l>忿覆慳嫉惱，<caesura/>害恨諂誑憍，</l>
+<lb n="0020a17" ed="T"/><l>如是類名為，<caesura/>小煩惱地法。</l></lg>
+<lb n="0020a18" ed="T"/><p xml:id="pT29p0020a1801">論曰：如是類法唯修所斷，意識地起、無明
+<lb n="0020a19" ed="T"/>相應、各別現行，故名為小煩惱地法。此法
+<lb n="0020a20" ed="T"/>如後<note resp="Taisho" n="0020001" place="foot text" type="orig">Upakleśa.</note><anchor xml:id="nkr_note_foreign_0020001" n="0020001"/>隨煩惱中當廣分別。如是已說五品
+<lb n="0020a21" ed="T"/>心所。復有此餘不定心所，惡作、<note resp="Taisho" n="0020002" place="foot text" type="orig">Middha.</note><anchor xml:id="nkr_note_foreign_0020002" n="0020002"/>睡眠、尋、伺
+<lb n="0020a22" ed="T"/>等法，此中應說。於何心品有幾心所決定
+<lb n="0020a23" ed="T"/>俱生？頌曰：</p>
+<lb n="0020a24" ed="T"/><lg type="regular" xml:id="lgT29p0020a2401"><l>欲有尋伺故，<caesura/>於善心品中，</l>
+<lb n="0020a25" ed="T"/><l>二十二心所，<caesura/>有時增惡作。</l>
+<lb n="0020a26" ed="T"/><l>於不善不共，<caesura/>見俱唯二十，</l>
+<lb n="0020a27" ed="T"/><l>四煩惱忿等，<caesura/>惡作二十一，</l>
+<lb n="0020a28" ed="T"/><l>有覆有十八，<caesura/>無覆許十二，</l>
+<lb n="0020a29" ed="T"/><l>睡眠遍不違，<caesura/>若有皆增一。</l></lg>
+<pb n="0020b" ed="T" xml:id="T29.1558.0020b"/>
+<lb n="0020b01" ed="T"/><p xml:id="pT29p0020b0101">論曰：且欲界中心品有五，謂<note resp="Taisho" n="0020003" place="foot text" type="orig">Kuśala.</note><anchor xml:id="nkr_note_foreign_0020003" n="0020003"/>善唯一。<note resp="Taisho" n="0020004" place="foot text" type="orig">Akuśala.</note><anchor xml:id="nkr_note_foreign_0020004" n="0020004"/>不善
+<lb n="0020b02" ed="T"/>有二，謂不共無明相應及餘煩惱等相應。
+<lb n="0020b03" ed="T"/><note resp="Taisho" n="0020005" place="foot text" type="orig">Avyākṛta</note><anchor xml:id="nkr_note_foreign_0020005" n="0020005"/>無記有二，謂<note resp="Taisho" n="0020006" place="foot text" type="orig">Nivṛtâvyākṛta.</note><anchor xml:id="nkr_note_foreign_0020006" n="0020006"/>有覆無記及<note resp="Taisho" n="0020007" place="foot text" type="orig">Anivṛtâvyākṛta.</note><anchor xml:id="nkr_note_foreign_0020007" n="0020007"/>無覆無記。然
+<lb n="0020b04" ed="T"/>欲界心定有尋伺故，善心品必二十二心所
+<lb n="0020b05" ed="T"/>俱生，謂十大地法、十大善地法，及不定二，謂
+<lb n="0020b06" ed="T"/>尋與伺。非諸善心皆有惡作，有時增數至
+<lb n="0020b07" ed="T"/>二十三。惡作者何？惡所作體名為<note resp="Taisho" n="0020008" place="foot text" type="orig">Kaukṛtya.</note><anchor xml:id="nkr_note_foreign_0020008" n="0020008"/>惡作。應
+<lb n="0020b08" ed="T"/>知此中緣惡作法說名惡作，謂緣惡作心
+<lb n="0020b09" ed="T"/>追悔性，如緣空解脫門說名為空，緣不淨
+<lb n="0020b10" ed="T"/>無貪說為不淨。又見世間約所依處說能
+<lb n="0020b11" ed="T"/>依事，如言一切村邑國土皆來集會。惡作即
+<lb n="0020b12" ed="T"/>是追悔所依，故約所依說為惡作。又於果
+<lb n="0020b13" ed="T"/>體假立因名，如說此六觸處應知名宿作
+<lb n="0020b14" ed="T"/>業。若緣未作事，云何名惡作？於未作事亦
+<lb n="0020b15" ed="T"/>立作名，如追悔言我先不作如是事業，
+<lb n="0020b16" ed="T"/>是我惡作。何等惡作說名為善？謂於善惡不
+<lb n="0020b17" ed="T"/>作作中心追悔性。與此相違名為不善。此
+<lb n="0020b18" ed="T"/>二各依二處而起，若於不善不共心品，必
+<lb n="0020b19" ed="T"/>有二十心所俱生，謂十大地法、六大煩惱地
+<lb n="0020b20" ed="T"/>法、二大不善地法，并二不定，謂尋與伺。何等
+<lb n="0020b21" ed="T"/>名為不共心品？謂此心品唯有無明，無有
+<lb n="0020b22" ed="T"/>所餘貪煩惱等。於不善見相應心品，亦有二
+<lb n="0020b23" ed="T"/>十心所俱生，名即如前不共品說。非見增故
+<lb n="0020b24" ed="T"/>有二十一，以即於十大地法中慧用差別
+<lb n="0020b25" ed="T"/>說為見故。言不善見相應心者，謂此心中
+<lb n="0020b26" ed="T"/>或有<note resp="Taisho" n="0020009" place="foot text" type="orig">Mithyā-dṛṣṭi.</note><anchor xml:id="nkr_note_foreign_0020009" n="0020009"/>邪見、或有見取、或戒禁取。於四不善
+<lb n="0020b27" ed="T"/>貪、瞋、慢、疑煩惱心品，有二十一心所俱生，二
+<lb n="0020b28" ed="T"/>十如不共，加貪等隨一。於前所說忿等相
+<lb n="0020b29" ed="T"/>應隨煩惱品，亦二十一心所俱生，二十如不
+<pb n="0020c" ed="T" xml:id="T29.1558.0020c"/>
+<lb n="0020c01" ed="T"/>共，加忿等隨一。不善惡作相應心品，亦二十
+<lb n="0020c02" ed="T"/>一心所俱生，謂即惡作第二十一。略說不善
+<lb n="0020c03" ed="T"/>不共及見相應品中唯有二十，餘四煩惱及
+<lb n="0020c04" ed="T"/>隨煩惱相應品中有二十一。若於無記有覆
+<lb n="0020c05" ed="T"/>心品唯有十八心所俱生，謂十大地法、六大
+<lb n="0020c06" ed="T"/>煩惱地法，并二不定，謂尋與伺。欲界無記有
+<lb n="0020c07" ed="T"/>覆心者，謂與薩迦<app corresp="#0019014" type="star"><lem wit="【大】">耶</lem><rdg resp="Taisho" wit="【石】">邪</rdg></app>見及邊執見相應，此
+<lb n="0020c08" ed="T"/>中見不增，應知如前釋。於餘無記無覆
+<lb n="0020c09" ed="T"/>心品，許唯十二心所俱生，謂十大地法并不
+<lb n="0020c10" ed="T"/>定尋伺。外方諸師欲令惡作亦通無記，此
+<lb n="0020c11" ed="T"/>相應品便有十<note resp="Taisho" n="0020010" place="foot text" type="orig">二＝三【三】【宮】【石】</note><note resp="CBETA" n="0020010" type="mod" cb:note_key="T29.0020c11.07">三【CB】【宮-CB】【宋】【元】【明】【宮】【石】，二【大】</note><app n="0020010"><lem wit="【CB】 【宮-CB】" resp="CBETA.poyung" cb:provider="討論區：王路 (2022-12-09)">三<note type="cf1">《福州藏》（日本宮內庁書陵部藏大藏經db2第4234帖第12圖第1行）</note></lem><rdg wit="【大】">二</rdg><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【石】">三</rdg></app>心所俱起。應知睡眠與
+<lb n="0020c12" ed="T"/>前所說一切心品皆不相違，通善不善無記
+<lb n="0020c13" ed="T"/>性故。隨何品有即說此增，謂二十二至二
+<lb n="0020c14" ed="T"/>十三，若二十三至二十四。不善無記如例
+<lb n="0020c15" ed="T"/>應知。已說欲界心所俱生諸品定量，當說
+<lb n="0020c16" ed="T"/>上界。頌曰：</p>
+<lb n="0020c17" ed="T"/><lg type="regular" xml:id="lgT29p0020c1701"><l>初定除不善，<caesura/>及惡作睡眠，</l>
+<lb n="0020c18" ed="T"/><l>中定又除尋，<caesura/>上兼除伺等。</l></lg>
+<lb n="0020c19" ed="T"/><p xml:id="pT29p0020c1901">論曰：初靜慮中於前所說諸心所法，除唯不
+<lb n="0020c20" ed="T"/>善惡作、睡眠，餘皆具有。唯不善者，謂瞋煩惱，
+<lb n="0020c21" ed="T"/>除<note resp="Taisho" n="0020011" place="foot text" type="orig">Śāṭhya.</note><anchor xml:id="nkr_note_foreign_0020011" n="0020011"/>諂、<note resp="Taisho" n="0020012" place="foot text" type="orig">Māyā.</note><anchor xml:id="nkr_note_foreign_0020012" n="0020012"/>誑、<note resp="Taisho" n="0020013" place="foot text" type="orig">Mada.</note><anchor xml:id="nkr_note_foreign_0020013" n="0020013"/>憍所餘忿等及無慚愧。餘皆有
+<lb n="0020c22" ed="T"/>者，如欲界說。中間靜慮除前所除，又更除
+<lb n="0020c23" ed="T"/>尋，餘皆具有。第二靜慮以上乃至無色界
+<lb n="0020c24" ed="T"/>中除前所除，又除伺等。等者顯除諂、誑，
+<lb n="0020c25" ed="T"/>餘皆如前具有。經說：諂誑極至梵天，眾相
+<lb n="0020c26" ed="T"/>依故，上地無有。以大梵王處自梵眾，忽被
+<lb n="0020c27" ed="T"/><note resp="Taisho" n="0020014" place="foot text" type="orig">Aśvajit-bhikṣu.</note><anchor xml:id="nkr_note_foreign_0020014" n="0020014"/>馬勝苾芻問言：此四大種當於何位盡滅
+<lb n="0020c28" ed="T"/>無餘？梵王不知無餘滅位，便矯亂答：我於
+<lb n="0020c29" ed="T"/>此梵眾是大梵，自在作者、化者、生者、養者，是
+<pb n="0021a" ed="T" xml:id="T29.1558.0021a"/>
+<lb n="0021a01" ed="T"/>一切父。作是語已，引出眾外諂言愧謝，令
+<lb n="0021a02" ed="T"/>還問佛。如是已說於諸界地諸心品中心
+<lb n="0021a03" ed="T"/>所數量，今次當說於前所辯諸心所中少
+<lb n="0021a04" ed="T"/>分差別。無慚無愧、愛之與敬差別云何？頌曰：</p>
+<lb n="0021a05" ed="T"/><lg type="regular" xml:id="lgT29p0021a0501"><l>無慚愧不重，<caesura/>於罪不見怖，</l>
+<lb n="0021a06" ed="T"/><l>愛敬謂信慚，<caesura/>唯於欲色有。</l></lg>
+<lb n="0021a07" ed="T"/><p xml:id="pT29p0021a0701">論曰：此中無慚<note resp="Taisho" n="0021001" place="foot text" type="orig">〔無〕－【宮】</note><note resp="CBETA" n="0021001" type="mod">無【大】，〔－〕【宮】</note><app n="0021001"><lem wit="【大】">無</lem><rdg resp="Taisho" wit="【宮】"><space quantity="0"/></rdg></app>愧別者，於諸功德及有德
+<lb n="0021a08" ed="T"/>者，無敬無崇、無所忌難、無所隨屬，說名
+<lb n="0021a09" ed="T"/><note resp="Taisho" n="0021002" place="foot text" type="orig">Ahrīkya.</note><anchor xml:id="nkr_note_foreign_0021002" n="0021002"/>無慚，即是恭敬所敵對法。為諸善士所
+<lb n="0021a10" ed="T"/>訶厭法說名為罪，於此罪中不見怖畏說
+<lb n="0021a11" ed="T"/>名<note resp="Taisho" n="0021003" place="foot text" type="orig">Anapatrāpya.</note><anchor xml:id="nkr_note_foreign_0021003" n="0021003"/>無愧。此中怖言，顯非愛果能生怖故。
+<lb n="0021a12" ed="T"/>不見怖言欲顯何義？為見而不怖名不見
+<lb n="0021a13" ed="T"/>怖、為不見彼怖名不見怖？若爾何失？二俱
+<lb n="0021a14" ed="T"/>有過。若見而不怖應顯智慧，若不見彼
+<lb n="0021a15" ed="T"/>怖應顯無明。此言不顯見與不見，何所
+<lb n="0021a16" ed="T"/>顯耶？此顯有法是隨煩惱為彼二因，說名
+<lb n="0021a17" ed="T"/>無愧。有餘師說：於所造罪自觀無恥名曰
+<lb n="0021a18" ed="T"/>無慚，觀他無恥說名無愧。若爾，此二所觀
+<lb n="0021a19" ed="T"/>不同，云何俱起？不說此二一時俱起別觀自
+<lb n="0021a20" ed="T"/>他。然有無恥，觀自時勝說名無慚。復有無
+<lb n="0021a21" ed="T"/>恥，觀他時增說為無愧。<note resp="Taisho" n="0021004" place="foot text" type="orig">Hrī.</note><anchor xml:id="nkr_note_foreign_0021004" n="0021004"/>慚<note resp="Taisho" n="0021005" place="foot text" type="orig">Apatrāpya.</note><anchor xml:id="nkr_note_foreign_0021005" n="0021005"/>愧差別翻此應
+<lb n="0021a22" ed="T"/>知，謂翻初釋有敬有崇、有所忌難、有所
+<lb n="0021a23" ed="T"/>隨屬說名為慚，於罪見怖說名為愧。翻第
+<lb n="0021a24" ed="T"/>二釋，於所造罪自觀有恥說名為慚，觀他
+<lb n="0021a25" ed="T"/>有恥說名為愧。已說無慚無愧差別。愛敬別
+<lb n="0021a26" ed="T"/>者，愛謂愛樂，體即是信。然<note resp="Taisho" n="0021006" place="foot text" type="orig">Preman.</note><anchor xml:id="nkr_note_foreign_0021006" n="0021006"/>愛有二：一有染
+<lb n="0021a27" ed="T"/>污、二無染污。有染謂貪，如愛妻子等。無染
+<lb n="0021a28" ed="T"/>謂信，如愛師長等。有信非愛，謂緣苦集信。
+<lb n="0021a29" ed="T"/>有愛非信，謂諸染污愛。有通信愛，謂緣滅
+<pb n="0021b" ed="T" xml:id="T29.1558.0021b"/>
+<lb n="0021b01" ed="T"/>道信。有非信愛，謂除前三相。有說：信者
+<lb n="0021b02" ed="T"/>忍許有德，由此為先方生愛樂，故愛非信。
+<lb n="0021b03" ed="T"/><note resp="Taisho" n="0021007" place="foot text" type="orig">Gurutva.</note><anchor xml:id="nkr_note_foreign_0021007" n="0021007"/>敬謂敬重，體即是慚，如前解慚謂有敬等。
+<lb n="0021b04" ed="T"/>有慚非敬，謂緣苦集慚。有通慚敬，謂緣
+<lb n="0021b05" ed="T"/>滅道慚。有說：敬者有所崇重，由此為先方
+<lb n="0021b06" ed="T"/>生慚恥，故敬非慚。望所緣境<note resp="Taisho" n="0021008" place="foot text" type="orig">Pudgala.</note><anchor xml:id="nkr_note_foreign_0021008" n="0021008"/>補特伽羅，
+<lb n="0021b07" ed="T"/>愛敬有無應作四句。有愛無敬，謂於妻子
+<lb n="0021b08" ed="T"/>共住門人等。有敬無愛，謂於他師有德貴
+<lb n="0021b09" ed="T"/>人等。有愛有敬，謂於自師父母伯叔等。無
+<lb n="0021b10" ed="T"/>愛無敬，謂除前三相。如是愛敬欲色界有，
+<lb n="0021b11" ed="T"/>無色界無。豈不信慚大善地法無色亦有？愛
+<lb n="0021b12" ed="T"/>敬有二，謂緣於法補特伽羅，緣法愛敬通
+<lb n="0021b13" ed="T"/>三界有。此中意說緣補特伽羅者，故欲色
+<lb n="0021b14" ed="T"/>有，無色界無。如是已說愛敬差別。尋、伺、慢、
+<lb n="0021b15" ed="T"/>憍差別云何？頌曰：</p>
+<lb n="0021b16" ed="T"/><lg type="regular" xml:id="lgT29p0021b1601"><l>尋伺心麁細，<caesura/>慢對他心舉，</l>
+<lb n="0021b17" ed="T"/><l>憍由染自法，<caesura/>心高無所顧。</l></lg>
+<lb n="0021b18" ed="T"/><p xml:id="pT29p0021b1801">論曰：尋伺別者，謂心麁細，心之麁性名尋，
+<lb n="0021b19" ed="T"/>心之細性名伺。云何此二一心相應？有作是
+<lb n="0021b20" ed="T"/>釋：如冷水上浮以熟酥，上烈日光之所照
+<lb n="0021b21" ed="T"/>觸，酥因水日非釋非凝。如是一心有尋有
+<lb n="0021b22" ed="T"/>伺，心由尋伺不<note resp="Taisho" n="0021009" place="foot text" type="orig">遍＝過【三】【宮】【石】</note><note resp="CBETA" n="0021009" type="mod">遍【大】，過【宋】【元】【明】【宮】【石】</note><app n="0021009"><lem wit="【大】">遍</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【石】">過</rdg></app>細麁，故於一心俱有
+<lb n="0021b23" ed="T"/>作用。若爾，<note resp="Taisho" n="0021010" place="foot text" type="orig">Vitarka.</note><anchor xml:id="nkr_note_foreign_0021010" n="0021010"/>尋<note resp="Taisho" n="0021011" place="foot text" type="orig">Vicāra.</note><anchor xml:id="nkr_note_foreign_0021011" n="0021011"/>伺是麁細因，非麁細體，如
+<lb n="0021b24" ed="T"/>水日光是凝釋，<note resp="Taisho" n="0021012" place="foot text" type="orig">曰＝因【三】【宮】【石】</note><note resp="CBETA" n="0021012" type="mod">曰【大】，因【宋】【元】【明】【宮】【石】，日【麗-CB】【CB】</note><app n="0021012"><lem resp="CBETA.maha" wit="【CB】 【麗-CB】">日<note type="cf1">K27n0955_p0482b10</note></lem><rdg wit="【大】">曰</rdg><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【石】">因</rdg></app>體非凝釋。又麁細性相
+<lb n="0021b25" ed="T"/>待而立，界地品別上下相形，乃至有頂應有
+<lb n="0021b26" ed="T"/>尋伺。又麁細性無別體類，不可依之以別
+<lb n="0021b27" ed="T"/>尋伺。復有釋言：尋伺二法是語言行，故契經
+<lb n="0021b28" ed="T"/>言：要有尋伺方有語言，非無尋伺此語言
+<lb n="0021b29" ed="T"/>行。麁者名尋，細者名伺，於一心內別法是
+<pb n="0021c" ed="T" xml:id="T29.1558.0021c"/>
+<lb n="0021c01" ed="T"/>麁、別法是細，於理何違？若有別體類，理實
+<lb n="0021c02" ed="T"/>無違；然無別體類，故成違理，一體類中無
+<lb n="0021c03" ed="T"/>容上下俱時起故。若言體類亦有差別，應
+<lb n="0021c04" ed="T"/>說體類別相云何。此二體類別相難說，但
+<lb n="0021c05" ed="T"/>由上下顯其別相，非由上下能顯別相，
+<lb n="0021c06" ed="T"/>一一類中有上下故。由是應知，尋伺二法
+<lb n="0021c07" ed="T"/>定不可執一心相應。若爾，云何契經中說：
+<lb n="0021c08" ed="T"/>於初靜慮具足五支。具五支言就一地說，
+<lb n="0021c09" ed="T"/>非一剎那，故無有過。如是已說尋伺差別。
+<lb n="0021c10" ed="T"/>慢憍別者，慢謂對他心自舉性，稱量自他德
+<lb n="0021c11" ed="T"/>類差別，心自舉恃<note resp="Taisho" n="0021013" place="foot text" type="orig"><g ref="#CB00654"/>＝陵【宋】【元】【宮】，凌【明】【石】</note><note resp="CBETA" n="0021013" type="mod"><g ref="#CB00654"/>【大】，陵【宋】【元】【宮】，凌【明】【石】</note><app n="0021013"><lem wit="【大】"><g ref="#CB00654"/></lem><rdg resp="Taisho" wit="【宋】 【元】 【宮】">陵</rdg><rdg resp="Taisho" wit="【明】 【石】">凌</rdg></app>蔑於他故名為<note resp="Taisho" n="0021014" place="foot text" type="orig">Māna.</note><anchor xml:id="nkr_note_foreign_0021014" n="0021014"/>慢。
+<lb n="0021c12" ed="T"/>憍謂染著自法為先，令心傲逸無所顧性。
+<lb n="0021c13" ed="T"/>有餘師說：如因酒生欣舉差別說名為醉，
+<lb n="0021c14" ed="T"/>如是貪生欣舉差別說名為憍。是謂慢憍差
+<lb n="0021c15" ed="T"/>別之相。如是已說諸心心所品類不同俱生
+<lb n="0021c16" ed="T"/>異相。然心心所於契經中隨義建立種種
+<lb n="0021c17" ed="T"/>名<note resp="Taisho" n="0021015" place="foot text" type="orig">想＝相【三】【宮】</note><note resp="CBETA" n="0021015" type="mod">想【大】，相【宋】【元】【明】【宮】</note><app n="0021015"><lem wit="【大】">想</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">相</rdg></app>，今當辯此名義差別。頌曰：</p>
+<lb n="0021c18" ed="T"/><lg type="regular" xml:id="lgT29p0021c1801"><l>心意識體一，<caesura/>心心所有依，</l>
+<lb n="0021c19" ed="T"/><l>有緣有行相，<caesura/>相應義有五。</l></lg>
+<lb n="0021c20" ed="T"/><p xml:id="pT29p0021c2001">論曰：集起故名<note resp="Taisho" n="0021016" place="foot text" type="orig">Citta.</note><anchor xml:id="nkr_note_foreign_0021016" n="0021016"/>心，思量故名<note resp="Taisho" n="0021017" place="foot text" type="orig">Manas.</note><anchor xml:id="nkr_note_foreign_0021017" n="0021017"/>意，了別故
+<lb n="0021c21" ed="T"/>名<note resp="Taisho" n="0021018" place="foot text" type="orig">Vijñāna.</note><anchor xml:id="nkr_note_foreign_0021018" n="0021018"/>識。復有釋言：淨不淨界種種差別故名
+<lb n="0021c22" ed="T"/>為心，即此為他作所依止故名為意，作能
+<lb n="0021c23" ed="T"/>依止故名為識。故心、意、識三名所詮，義雖
+<lb n="0021c24" ed="T"/>有異而體是一。如心意識三名所詮義異
+<lb n="0021c25" ed="T"/>體一，諸心心所名有所依所緣、行相相應亦
+<lb n="0021c26" ed="T"/>爾，名義雖殊而體是一。謂心心所皆名有所
+<lb n="0021c27" ed="T"/>依，託所依根故。或名有所緣，取所緣境故。
+<lb n="0021c28" ed="T"/>或名有行相，即於所緣品類差別等起行
+<lb n="0021c29" ed="T"/>相故。或名相應，等和合故。依何義故名等
+<pb n="0022a" ed="T" xml:id="T29.1558.0022a"/>
+<lb n="0022a01" ed="T"/>和合？有五義故，謂心心所五義平等故說
+<lb n="0022a02" ed="T"/>相應，所依所緣行相時事皆平等故。事平等
+<lb n="0022a03" ed="T"/>者，一相應中如心體一，諸心所法各各亦爾。
+<lb n="0022a04" ed="T"/>已說心心所廣分別義。心不相應行何者是
+<lb n="0022a05" ed="T"/>耶？頌曰：</p>
+<lb n="0022a06" ed="T"/><lg type="regular" xml:id="lgT29p0022a0601"><l>心不相應行，<caesura/>得非得同分，</l>
+<lb n="0022a07" ed="T"/><l>無想二定命，<caesura/>相名身等類。</l></lg>
+<lb n="0022a08" ed="T"/><p xml:id="pT29p0022a0801">論曰：如是諸法心不相應，非色等性，行蘊
+<lb n="0022a09" ed="T"/>所攝，是故名心不相應行。於中且辯得非
+<lb n="0022a10" ed="T"/>得相。頌曰：</p>
+<lb n="0022a11" ed="T"/><lg type="regular" xml:id="lgT29p0022a1101"><l><note resp="Taisho" n="0022001" place="foot text" type="orig">Prāpti.</note><anchor xml:id="nkr_note_foreign_0022001" n="0022001"/>得謂<note resp="Taisho" n="0022002" place="foot text" type="orig">Pratilambha.</note><anchor xml:id="nkr_note_foreign_0022002" n="0022002"/>獲<note resp="Taisho" n="0022003" place="foot text" type="orig">Samanvāgama.</note><anchor xml:id="nkr_note_foreign_0022003" n="0022003"/>成就，<caesura/><note resp="Taisho" n="0022004" place="foot text" type="orig">Aprāpti.</note><anchor xml:id="nkr_note_foreign_0022004" n="0022004"/>非得此相違，</l>
+<lb n="0022a12" ed="T"/><l>得非得唯於，<caesura/>自相續二滅。</l></lg>
+<lb n="0022a13" ed="T"/><p xml:id="pT29p0022a1301">論曰：得有二種，一者未得已失今獲、二者
+<lb n="0022a14" ed="T"/>得已不失成就，應知非得與此相違。於何
+<lb n="0022a15" ed="T"/>法中有得非得？於自相續及二滅中。謂有
+<lb n="0022a16" ed="T"/>為法若<note resp="Taisho" n="0022005" place="foot text" type="orig">（有）＋有【宮】</note><note resp="CBETA" n="0022005" type="mod">有【大】，有有【宮】</note><app n="0022005"><lem wit="【大】">有</lem><rdg resp="Taisho" wit="【宮】">有有</rdg></app>墮在自相續中有得非得，非他
+<lb n="0022a17" ed="T"/>相續，無有成就他身法故。非非相續，無
+<lb n="0022a18" ed="T"/>有成就非情法故。且有為法決定如是，無
+<lb n="0022a19" ed="T"/>為法中唯於二滅有得非得。一切有情無
+<lb n="0022a20" ed="T"/>不成就非擇滅者，故對法中<note resp="Taisho" n="0022006" place="foot text" type="orig">（得）＋傳【三】【宮】</note><note resp="CBETA" n="0022006" type="mod">傳【大】，得傳【宋】【元】【明】【宮】</note><app n="0022006"><lem wit="【大】">傳</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">得傳</rdg></app>說如是：誰
+<lb n="0022a21" ed="T"/>成無漏法？謂一切有情，除初剎那具縛聖
+<lb n="0022a22" ed="T"/>者及餘一切具縛異生，諸餘有情皆成擇滅。
+<lb n="0022a23" ed="T"/>決定無有成就虛空，故於虛空不言有
+<lb n="0022a24" ed="T"/>得，以得無故非得亦無。宗明得非得，相翻
+<lb n="0022a25" ed="T"/>而立故。諸有得者亦有非得，義准可知，故
+<lb n="0022a26" ed="T"/>不別釋。何緣知有別物名得？契經說故。
+<lb n="0022a27" ed="T"/>如契經言：聖者於彼十無學法，以生以得
+<lb n="0022a28" ed="T"/>以成就故，已斷五支，乃至廣說。若爾，非情
+<lb n="0022a29" ed="T"/>及他相續亦應成就。所以者何？契經說故。
+<pb n="0022b" ed="T" xml:id="T29.1558.0022b"/>
+<lb n="0022b01" ed="T"/>如契經說：苾芻當知，有轉輪王成就七寶，
+<lb n="0022b02" ed="T"/>乃至廣說。此中自在說名成就，謂轉輪王於
+<lb n="0022b03" ed="T"/>彼七寶有自在力，隨樂轉故。此既自在說
+<lb n="0022b04" ed="T"/>名成就，餘復何因知有別物？許有別物
+<lb n="0022b05" ed="T"/>有何非理？如是非理，謂所執得無體可知，
+<lb n="0022b06" ed="T"/>如色聲等或貪瞋等；無用可知，如眼耳等，
+<lb n="0022b07" ed="T"/>故無容有別物名得。執有別物，是為非
+<lb n="0022b08" ed="T"/>理。若謂此得亦有作用，謂作所得諸法生
+<lb n="0022b09" ed="T"/>因，是則無為應無有得。又所得法未得已
+<lb n="0022b10" ed="T"/>捨，界地轉易及離染故。彼現無得，當云何
+<lb n="0022b11" ed="T"/>生？若俱生得為生因者，生與生生復何所
+<lb n="0022b12" ed="T"/>作？又非情法應定不生。又具縛者，下中上品
+<lb n="0022b13" ed="T"/>煩惱現起差別應無，得無別故。若由餘因
+<lb n="0022b14" ed="T"/>有差別者，即應由彼諸法得生，得復何用？
+<lb n="0022b15" ed="T"/>故彼所言得有<note resp="Taisho" n="0022007" place="foot text" type="orig">作＝何【三】【宮】</note><note resp="CBETA" n="0022007" type="mod">作【大】，何【宋】【元】【明】【宮】</note><app n="0022007"><lem wit="【大】">作</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">何</rdg></app>用，謂作所得諸法生因，
+<lb n="0022b16" ed="T"/>理不成立。誰言此得作法生因？若爾，此得
+<lb n="0022b17" ed="T"/>有何作用？謂於差別為建立因。所以者何？
+<lb n="0022b18" ed="T"/>若無有得，異生聖者起世俗心，應無異生
+<lb n="0022b19" ed="T"/>及諸聖者建立差別。豈不煩惱已斷、未斷有
+<lb n="0022b20" ed="T"/>差別故，應有差別？若執無得，如何可說
+<lb n="0022b21" ed="T"/>煩惱已斷及與未斷？許有得者斷未斷成，
+<lb n="0022b22" ed="T"/>由煩惱得離未離故。此由所依有差別故，
+<lb n="0022b23" ed="T"/>煩惱已斷未斷義成。謂諸聖者見修道力，令
+<lb n="0022b24" ed="T"/>所依身轉變異本，於彼二道所斷惑中無
+<lb n="0022b25" ed="T"/>復功能令其現起。猶如種子火所焚燒，轉
+<lb n="0022b26" ed="T"/>變異前無能生用。如是聖者所依身中無
+<lb n="0022b27" ed="T"/>生惑能名煩惱斷。或世間道損所依中煩
+<lb n="0022b28" ed="T"/>惱<note resp="Taisho" n="0022008" place="foot text" type="orig">Bīja.</note><anchor xml:id="nkr_note_foreign_0022008" n="0022008"/>種子亦名為斷，與上相違名為未斷。諸
+<lb n="0022b29" ed="T"/>未斷者說名成就，諸已斷者名<note resp="Taisho" n="0022009" place="foot text" type="orig">Asamanvāgama.</note><anchor xml:id="nkr_note_foreign_0022009" n="0022009"/>不成就，如
+<pb n="0022c" ed="T" xml:id="T29.1558.0022c"/>
+<lb n="0022c01" ed="T"/>是二種但假非實。善法有二：一者不由功
+<lb n="0022c02" ed="T"/>力修得、二者要由功力修得，即名生得及
+<lb n="0022c03" ed="T"/>加行得。不由功力而修得者，若所依中種
+<lb n="0022c04" ed="T"/>未被損名為成就，若所依中種已被損名
+<lb n="0022c05" ed="T"/>不成就。謂斷善者由邪見力損所依中善根
+<lb n="0022c06" ed="T"/>種子應<note resp="Taisho" n="0022010" place="foot text" type="orig">知＝如【宮】</note><note resp="CBETA" n="0022010" type="mod">知【大】，如【宮】</note><app n="0022010"><lem wit="【大】">知</lem><rdg resp="Taisho" wit="【宮】">如</rdg></app>名斷，非所依中善根種子畢竟
+<lb n="0022c07" ed="T"/>被害說名為斷。要由功力而修得者，若所
+<lb n="0022c08" ed="T"/>依中彼法已起生彼功力自在無損說名成
+<lb n="0022c09" ed="T"/>就，與此相違名不成就。如是二種亦假非
+<lb n="0022c10" ed="T"/>實。故所依中唯有種子未拔未損增長自在，
+<lb n="0022c11" ed="T"/>於如是位立成就名，無有別物。此中何法
+<lb n="0022c12" ed="T"/>名為種子？謂名與色於生自果所有展轉
+<lb n="0022c13" ed="T"/>隣近功能，此由相續轉變差別。何名轉變？
+<lb n="0022c14" ed="T"/>謂相續中前後異性。何名相續？謂因果性三
+<lb n="0022c15" ed="T"/>世諸行。何名<note resp="Taisho" n="0022011" place="foot text" type="orig">差＝善【宋】【元】</note><note resp="CBETA" n="0022011" type="mod">差【大】，善【宋】【元】</note><app n="0022011"><lem wit="【大】">差</lem><rdg resp="Taisho" wit="【宋】 【元】">善</rdg></app>別？謂有無間生果功能。然
+<lb n="0022c16" ed="T"/>有處說，若成就貪便不能修四念住者。
+<lb n="0022c17" ed="T"/>彼說：<note resp="Taisho" n="0022012" place="foot text" type="orig">既＝耽【三】【宮】【石】</note><note resp="CBETA" n="0022012" type="mod">耽【CB】【宋】【元】【明】【宮】【石】，既【大】，躭【麗-CB】</note><app n="0022012"><lem resp="CBETA.maha" wit="【CB】">耽</lem><rdg wit="【大】">既</rdg><rdg resp="CBETA.maha" wit="【麗-CB】">躭<note type="cf1">K28n0958_p0484a18</note></rdg><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】 【石】">耽</rdg></app>著貪煩惱者，不能厭捨，故名成
+<lb n="0022c18" ed="T"/>就。由隨耽著貪愛時分，於四念住必不能
+<lb n="0022c19" ed="T"/>修。如是成就遍一切種，唯假非實。唯遮於
+<lb n="0022c20" ed="T"/>此名不成就，亦假非實。毘婆沙師說：此二
+<lb n="0022c21" ed="T"/>種皆有別物實而非假。如是二途皆為善
+<lb n="0022c22" ed="T"/>說。所以者何？不違理故、我所宗故。已辯自
+<lb n="0022c23" ed="T"/>性，差別云何？且應辯得。頌曰：</p>
+<lb n="0022c24" ed="T"/><lg type="regular" xml:id="lgT29p0022c2401"><l>三世法各三，<caesura/>善等唯善等，</l>
+<lb n="0022c25" ed="T"/><l>有繫自界得，<caesura/>無繫得通四，</l>
+<lb n="0022c26" ed="T"/><l>非學無學三，<caesura/>非所斷二種。</l></lg>
+<lb n="0022c27" ed="T"/><p xml:id="pT29p0022c2701">論曰：三世法得各有三種，謂過去法有過去
+<lb n="0022c28" ed="T"/>得、有未來得、有現在得，如是未來及現在
+<lb n="0022c29" ed="T"/>法各有三得。又善等法得唯善等，謂善不善
+<pb n="0023a" ed="T" xml:id="T29.1558.0023a"/>
+<lb n="0023a01" ed="T"/>及無記法，如其次第，有善不善無記三得。
+<lb n="0023a02" ed="T"/>又有繫法得唯自界，謂欲色界無色界法，如
+<lb n="0023a03" ed="T"/>其次第唯有欲色無色三得。若無繫法得通
+<lb n="0023a04" ed="T"/>四種，謂無漏法總而言之得有四種，即三
+<lb n="0023a05" ed="T"/>界得及無漏得。別分別者，非擇滅得，通三界
+<lb n="0023a06" ed="T"/>繫。若擇滅得，色無色繫及與無漏。<note resp="Taisho" n="0023001" place="foot text" type="orig">（其）＋道【三】【宮】</note><note resp="CBETA" n="0023001" type="mod">道【大】，其道【宋】【元】【明】【宮】</note><app n="0023001"><lem wit="【大】">道</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">其道</rdg></app>諦得，
+<lb n="0023a07" ed="T"/>唯<note resp="Taisho" n="0023002" place="foot text" type="orig">（有）＋無【三】【宮】</note><note resp="CBETA" n="0023002" type="mod">無【大】，有無【宋】【元】【明】【宮】</note><app n="0023002"><lem wit="【大】">無</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">有無</rdg></app>漏故。無繫法得，有四種。又有學法得
+<lb n="0023a08" ed="T"/>唯有學，若無學法得唯無學，非學<note resp="Taisho" n="0023003" place="foot text" type="orig">〔非〕－【宮】【石】</note><note resp="CBETA" n="0023003" type="mod">非【大】，〔－〕【宮】【石】</note><app n="0023003"><lem wit="【大】">非</lem><rdg resp="Taisho" wit="【宮】 【石】"><space quantity="0"/></rdg></app>無學得
+<lb n="0023a09" ed="T"/>有差別，謂此法得總說有三，別分別者一
+<lb n="0023a10" ed="T"/>切有漏及三無為皆名非學非無學法。且有
+<lb n="0023a11" ed="T"/>漏法唯有非學非無學得，非擇滅得。及非聖
+<lb n="0023a12" ed="T"/>道所引擇滅得亦如是，若有學道所引擇滅
+<lb n="0023a13" ed="T"/>得即有學，若無學道所引擇滅得即無學。又
+<lb n="0023a14" ed="T"/>見修所斷法，如其次第有見修所斷得。非所
+<lb n="0023a15" ed="T"/>斷法得有差別，謂此法得總說有二，別分別
+<lb n="0023a16" ed="T"/>者，諸無漏法名非所斷，非擇滅得唯修所斷。
+<lb n="0023a17" ed="T"/>若非聖道所引擇滅得亦如是。聖道所引擇
+<lb n="0023a18" ed="T"/>滅之得及道諦得，皆非所斷。前雖總說三世
+<lb n="0023a19" ed="T"/>法各三，今應簡別其中差別相。頌曰：</p>
+<lb n="0023a20" ed="T"/><lg type="regular" xml:id="lgT29p0023a2001"><l>無記得俱起，<caesura/>除二通變化，</l>
+<lb n="0023a21" ed="T"/><l>有覆色亦俱，<caesura/>欲色無前起。</l></lg>
+<lb n="0023a22" ed="T"/><p xml:id="pT29p0023a2201">論曰：無覆無記得唯俱起，無前後生，勢力劣
+<lb n="0023a23" ed="T"/>故。法若過去得亦過去，法若未來得亦未來，
+<lb n="0023a24" ed="T"/>法若現在得亦現在。一切無覆無記法得皆
+<lb n="0023a25" ed="T"/>如是耶？不爾。云何？除眼<note resp="Taisho" n="0023004" place="foot text" type="orig">耳通＝起道【宮】</note><note resp="CBETA" n="0023004" type="mod">耳通【大】，起道【宮】</note><app n="0023004"><lem wit="【大】">耳通</lem><rdg resp="Taisho" wit="【宮】">起道</rdg></app>及能變化。
+<lb n="0023a26" ed="T"/>謂眼耳通慧及能變化心，勢力強故、加行差
+<lb n="0023a27" ed="T"/>別所成辦故，雖是無覆無記性<note resp="Taisho" n="0023005" place="foot text" type="orig">收＝故【三】</note><note resp="CBETA" n="0023005" type="mod">收【大】，故【宋】【元】【明】</note><app n="0023005"><lem wit="【大】">收</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】">故</rdg></app>，而有前
+<lb n="0023a28" ed="T"/>後及俱起得。若工巧處及威儀路極數習者，
+<lb n="0023a29" ed="T"/>得亦許爾。唯有無覆無記法得但俱起耶？
+<pb n="0023b" ed="T" xml:id="T29.1558.0023b"/>
+<lb n="0023b01" ed="T"/>不爾。云何？有覆無記色得亦爾。謂諸有覆無
+<lb n="0023b02" ed="T"/>記表色得亦如前，但有俱起。雖有上品而
+<lb n="0023b03" ed="T"/>亦不能發無表故勢力微劣，由此定無法
+<lb n="0023b04" ed="T"/>前後得。如無記法得有別異，善不善得亦有
+<lb n="0023b05" ed="T"/>異耶？亦有。云何？謂欲界繫善不善色得無
+<lb n="0023b06" ed="T"/>前起，唯有俱生及後起得。非得如得，亦有
+<lb n="0023b07" ed="T"/>如上品類別耶？不爾。云何？頌曰：</p>
+<lb n="0023b08" ed="T"/><lg type="regular" xml:id="lgT29p0023b0801"><l>非得淨無記，<caesura/>去來世各三，</l>
+<lb n="0023b09" ed="T"/><l>三界不繫三，<caesura/>許聖道非得，</l>
+<lb n="0023b10" ed="T"/><l>說名異生性，<caesura/>得法易地捨。</l></lg>
+<lb n="0023b11" ed="T"/><p xml:id="pT29p0023b1101">論曰：性差別者，一切非得皆唯無覆無記性
+<lb n="0023b12" ed="T"/>攝。世差別者，過去未來各有三種，謂現在法
+<lb n="0023b13" ed="T"/>決定無有現在非得，唯有過去未來非得，
+<lb n="0023b14" ed="T"/>過去未來一一各有三世非得。界差別者，三
+<lb n="0023b15" ed="T"/>界繫法及不繫法各三非得，謂欲界繫法有
+<lb n="0023b16" ed="T"/>三界非得，色無色界繫及不繫亦爾。定無非
+<lb n="0023b17" ed="T"/>得是無漏者。所以者何？由許聖道非得，說
+<lb n="0023b18" ed="T"/>名異生性故。如本論言：云何異生性？謂不
+<lb n="0023b19" ed="T"/>獲聖法。不獲即是非得異名，非說異生性
+<lb n="0023b20" ed="T"/>是無漏應理。不獲何聖法名異生性？謂不
+<lb n="0023b21" ed="T"/>獲一切，不別說故。此不獲言，表離於獲。
+<lb n="0023b22" ed="T"/>若異此者，諸佛世尊亦不成就聲聞獨覺種
+<lb n="0023b23" ed="T"/><note resp="Taisho" n="0023006" place="foot text" type="orig">性＝姓【宮】＊</note><note resp="CBETA" n="0023006" type="mod">性【大】＊，姓【宮】＊</note><app n="0023006"><lem wit="【大】">性</lem><rdg resp="Taisho" wit="【宮】">姓</rdg></app>聖法，應名異生。若爾，彼論應說純言
+<lb n="0023b24" ed="T"/>不要須說，此一句中含純義故，如說此類
+<lb n="0023b25" ed="T"/>食水食風。有說：不獲苦法智忍及俱生法
+<lb n="0023b26" ed="T"/>名異生性。不可難言道類智時捨此法故
+<lb n="0023b27" ed="T"/>應成非聖，前已永害彼非得故。若爾，此<app corresp="#0023006" type="star"><lem wit="【大】">性</lem><rdg resp="Taisho" wit="【宮】">姓</rdg></app>
+<lb n="0023b28" ed="T"/>既通三乘，不獲何等名異生性？此亦應言
+<lb n="0023b29" ed="T"/>不獲一切。若爾，此應同前有難。此難復應
+<pb n="0023c" ed="T" xml:id="T29.1558.0023c"/>
+<lb n="0023c01" ed="T"/>如前通釋。若爾，重說唐捐其功。如經部師，
+<lb n="0023c02" ed="T"/>所說為善。經部所說其義云何？謂曾未生
+<lb n="0023c03" ed="T"/>聖法相續分<note resp="Taisho" n="0023007" place="foot text" type="orig">位＝別【石】</note><note resp="CBETA" n="0023007" type="mod">位【大】，別【石】</note><app n="0023007"><lem wit="【大】">位</lem><rdg resp="Taisho" wit="【石】">別</rdg></app>差別名異生性。如是非得
+<lb n="0023c04" ed="T"/>何時當捨？此法非得，得此法時或轉易地
+<lb n="0023c05" ed="T"/>捨此非得。如聖道非得說名異生性，得此
+<lb n="0023c06" ed="T"/>聖道時或易地便捨。餘法非得，類此應思。
+<lb n="0023c07" ed="T"/>若非得得斷，非得非得生，如是名為捨於
+<lb n="0023c08" ed="T"/>非得。得與非得，豈復有餘得與非得？應言
+<lb n="0023c09" ed="T"/>此二各<note resp="Taisho" n="0023008" place="foot text" type="orig">復＝得【三】【宮】</note><note resp="CBETA" n="0023008" type="mod">復【大】，得【宋】【元】【明】【宮】</note><app n="0023008"><lem wit="【大】">復</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">得</rdg></app>有餘得及非得。若爾，豈不有無
+<lb n="0023c10" ed="T"/>窮過？無無窮過，許得展轉更相成故。以法
+<lb n="0023c11" ed="T"/>生時并其自體三法俱起，第一本法、第二法
+<lb n="0023c12" ed="T"/>得、第三得得。謂相續中法得起故成就本法
+<lb n="0023c13" ed="T"/>及與得得，得得起故成就法得，是故此中
+<lb n="0023c14" ed="T"/>無無窮過。如是若善若染污法，一一自體初
+<lb n="0023c15" ed="T"/>生起時并其自體三法俱起，第二剎那六法
+<lb n="0023c16" ed="T"/>俱起，謂三法得及三得得，第三剎那十八俱
+<lb n="0023c17" ed="T"/>起，謂於第一第二剎那所生諸法，有九法得
+<lb n="0023c18" ed="T"/>及九得得。如是<note resp="Taisho" n="0023009" place="foot text" type="orig">諸＝謂【三】【宮】</note><note resp="CBETA" n="0023009" type="mod">諸【大】，謂【宋】【元】【明】【宮】</note><app n="0023009"><lem wit="【大】">諸</lem><rdg resp="Taisho" wit="【宋】 【元】 【明】 【宮】">謂</rdg></app>得後後轉增。一切過去
+<lb n="0023c19" ed="T"/>未來煩惱及隨煩惱并生得善剎那剎那相應，
+<lb n="0023c20" ed="T"/>俱有無始無終生死輪轉有無邊得，且一有
+<lb n="0023c21" ed="T"/>情生死相續剎那剎那起無邊得，如是一切
+<lb n="0023c22" ed="T"/>有情相續一一各別，剎那剎那無量無邊諸
+<lb n="0023c23" ed="T"/>得俱起。如是諸得極多集會，無對礙故互
+<lb n="0023c24" ed="T"/>相容受。若不爾者，一有情得虛空不容，況
+<lb n="0023c25" ed="T"/>第二等。</p>
+<lb n="0023c26" ed="T"/><cb:juan n="004" fun="close"><cb:jhead><title><anchor xml:id="fxT29p0023c01"/>說一切有部俱舍論</title><anchor xml:id="fxT29p0023c02"/>卷第四</cb:jhead></cb:juan>
+</cb:div></body></text></TEI>
