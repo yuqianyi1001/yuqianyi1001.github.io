@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 阿难为何差点不能参加第一次结集
-wechat_link: 
+wechat_link: https://mp.weixin.qq.com/s/kgNwSxvGDs_rxKKUPkPQoA
 description: 佛陀涅槃后，第一次佛经结集前夕，阿难因“未漏尽”一度被大迦叶请出七叶窟；在当夜精进证得阿罗汉后，最终重返清净众并以“如是我闻”参与结集。
 excerpt: 佛陀涅槃后，第一次佛经结集前夕，阿难因“未漏尽”一度被大迦叶请出七叶窟；在当夜精进证得阿罗汉后，最终重返清净众并以“如是我闻”参与结集。
 tags:
