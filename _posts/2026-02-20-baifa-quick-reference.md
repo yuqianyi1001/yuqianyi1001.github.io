@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 【建议收藏】《百法》的白话解释 ｜ 《百法》速查手册
-wechat_link: 
+wechat_link: https://mp.weixin.qq.com/s/v3iy7-SynRTev8UVAYsYtQ
 description: 这是按五位百法分类整理的白话速查手册，涵盖一百法核心定义与心行脉络，帮助您快速把握唯识框架、常用术语及修学次第，适合入门与复习，兼顾理解与实修应用场景参考。
 excerpt: 这是按五位百法分类整理的白话速查手册，涵盖一百法核心定义与心行脉络，帮助您快速把握唯识框架、常用术语及修学次第，适合入门与复习，兼顾理解与实修应用场景参考。
 tags: 
