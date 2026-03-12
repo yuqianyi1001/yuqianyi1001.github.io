@@ -13,3 +13,6 @@
 - Do not use fabricated sutra quotes or unverifiable references.
 - Citations should be specific enough for third-party AI(claude, gemini) verification (for example, include sutra name and where possible chapter/卷).
 
+## Workflow Rule
+
+- Before starting any substantive task in this repository, the agent must read `AGENTS.md` first and explicitly confirm it will follow these rules.
