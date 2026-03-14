@@ -4,7 +4,7 @@ title: 为何禅宗净土祖师都推崇这唯识入门经典？
 wechat_link: https://mp.weixin.qq.com/s/nl5MmiB8LIzivHGv0QxmtQ
 description: 
 excerpt: 
-tags:
+tags: [论典笔记, 学习方法]
 ---
 
 在浩瀚的佛学典籍中，《大乘百法明门论》首先是“唯识宗”的入门基石。它如同一张精准的“心识地图”，将我们纷繁复杂的内心世界，系统地归纳为一百个基本元素，是理解“万法唯识”理论不可或缺的第一把钥匙。

@@ -4,7 +4,7 @@ title: 江边学社《早期佛教》视频1中的20个错误
 wechat_link: https://mp.weixin.qq.com/s/7eg7dcTRDFJNB8t97Bnwbw
 description: 
 excerpt: 
-tags:
+tags: [佛教史, 社会观察]
 ---
 
 原始视频： https://space.bilibili.com/3461577426602212/lists/3100409  

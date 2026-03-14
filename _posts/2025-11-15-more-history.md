@@ -4,7 +4,7 @@ title: 多读宗教史，是对宗教最好的祛魅
 wechat_link: https://mp.weixin.qq.com/s/y3ieTQr9yFqHyW5nJ0P8uQ
 description: 
 excerpt: 
-tags:
+tags: [学习方法, 佛教史]
 ---
 
 # 多读宗教史，是对宗教最好的祛魅

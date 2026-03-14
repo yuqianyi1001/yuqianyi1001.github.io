@@ -4,7 +4,7 @@ title: 一切法
 wechat_link: https://mp.weixin.qq.com/s/bQLK1PnnEW2FyQBs7BulwQ
 description: 一切法 = 十二处 = 十八界 = 俱舍七十五法 = 唯识百法 = 有为法 + 无为法，一切有为法 = 五蕴
 excerpt: 一切法 = 十二处 = 十八界 = 俱舍七十五法 = 唯识百法 = 有为法 + 无为法，一切有为法 = 五蕴
-tags: 
+tags: [教义解析]
 ---
 
 # 一切法

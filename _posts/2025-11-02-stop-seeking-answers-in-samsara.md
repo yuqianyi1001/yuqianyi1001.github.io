@@ -6,7 +6,7 @@ title_url: stop-seeking-answers-in-samsara
 wechat_link: https://mp.weixin.qq.com/s/-7Kc6fTHDdp1qh8eOqXUcw
 description: 我们习惯在轮回中寻找答案，却忘了轮回中没有真正的出路。轮回的问题，只能在出世间法中解脱，而非在世间循环里修修补补。
 excerpt: 我们习惯在轮回中寻找答案，却忘了轮回中没有真正的出路。轮回的问题，只能在出世间法中解脱，而非在世间循环里修修补补。
-tags:
+tags: [修行]
 ---
 
 # 记住，不要在轮回中找答案

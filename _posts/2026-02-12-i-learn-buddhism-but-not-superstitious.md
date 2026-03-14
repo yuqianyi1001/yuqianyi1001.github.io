@@ -4,7 +4,7 @@ title: 我学佛，但不迷信
 wechat_link: https://mp.weixin.qq.com/s/Wk9WaFXxZkhDtT7ukJZ0Yw
 description: 学佛不是把命运交给神秘力量，而是把人生交还给自己。以慈悲待人，以理性处世，以行动改命运。
 excerpt: 学佛不是把命运交给神秘力量，而是把人生交还给自己。以慈悲待人，以理性处世，以行动改命运。
-tags: [修行经验, 学习方法]
+tags: [修行, 学习方法]
 ---
 
 # 我学佛，但不迷信

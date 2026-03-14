@@ -4,7 +4,7 @@ title: 不要当一宗一门之徒
 wechat_link: https://mp.weixin.qq.com/s/06537SaQATlxLOgJNfzz9g
 description: 请不要把自己关在“一宗一门一师一经”的小黑屋里自嗨。
 excerpt: 请不要把自己关在“一宗一门一师一经”的小黑屋里自嗨。
-tags:
+tags: [学习方法, 宗派比较]
 ---
 
 # 不要当一宗一门之徒

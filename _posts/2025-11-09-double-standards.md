@@ -4,7 +4,7 @@ title: 避开这类双标的佛教徒！
 wechat_link: https://mp.weixin.qq.com/s/FVMZghFjKcCCjQRXFfRAiw
 description: 有些佛教徒，对“法师”的一字一句深信不疑，对佛友却横挑鼻子竖挑眼。这不是恭敬法，而是执著相。
 excerpt: 有些佛教徒，对“法师”的一字一句深信不疑，对佛友却横挑鼻子竖挑眼。这不是恭敬法，而是执著相。
-tags: [佛法观察, 修行反思]
+tags: [修行, 社会观察]
 ---
 
 我遇到过一些这样的佛教徒，他们最大的特征就是——**双标**。  
