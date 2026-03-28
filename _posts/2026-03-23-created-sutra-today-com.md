@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 忍不住分享一件大事，我创建了一个新网站｜今文佛典：佛经现代语译计划｜白话佛经翻译
-wechat_link:
+wechat_link: https://mp.weixin.qq.com/s/fZCS3PfWBEHF6ui8KtdBfw
 description: 我启动了一件很大的事情：把佛经翻译成现代白话文。不只是翻译，而是帮助更多人进入佛经、理解佛经，最终回到原文，真正走上"深入经藏"这条路。网站叫 sutratoday.com 今文佛典
 excerpt: 我启动了一件很大的事情：把佛经翻译成现代白话文。不只是翻译，而是帮助更多人进入佛经、理解佛经，最终回到原文，真正走上"深入经藏"这条路。网站叫 sutratoday.com 今文佛典
 tags: [今文佛典, 社群公告]

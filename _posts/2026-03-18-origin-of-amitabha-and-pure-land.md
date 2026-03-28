@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 阿弥陀佛和极乐世界的由来
-wechat_link:
+wechat_link: https://mp.weixin.qq.com/s/lg6PFMEuk12sWGUUHuRvLA
 description: 很多人念南无阿弥陀佛，却未必知道阿弥陀佛和极乐世界背后，是一个从法藏比丘发愿到净土成就的漫长故事。
 excerpt: 从世自在王佛时代的国王出家，到法藏比丘发愿、成就极乐世界，再到释迦牟尼佛为众生开示净土，这是一条为苦难众生预备的归路。
 tags: [佛经故事]

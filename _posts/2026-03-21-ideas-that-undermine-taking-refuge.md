@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 警惕，这些观念会破坏三皈依
-wechat_link:
+wechat_link: https://mp.weixin.qq.com/s/-ILUtjuaLNlVm41ksjsgsg
 description: 很多人以为自己在学佛，其实一些看似圆融、开放、高级的观念，正在悄悄松动三皈依。本文逐条拆解这些常见误区，提醒学佛人重新看清皈依佛、法、僧的根本意义。
 excerpt: 很多人以为自己在学佛，其实一些看似圆融、开放、高级的观念，正在悄悄松动三皈依。本文逐条拆解这些常见误区，提醒学佛人重新看清皈依佛、法、僧的根本意义。
 tags: [教义解析, 修行]

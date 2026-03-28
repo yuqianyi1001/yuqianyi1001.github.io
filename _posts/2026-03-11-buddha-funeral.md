@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 释迦牟尼佛的葬礼
-wechat_link: 
+wechat_link: https://mp.weixin.qq.com/s/FkQRq1x13vUczh4Zh77k4g
 description: 这篇文章系统回顾了释迦牟尼佛涅槃前后的关键经过，以及圆寂后葬礼、荼毗与舍利分配的完整脉络，指出佛陀留下的核心教导是以法为师、以戒为师。
 excerpt: 这篇文章系统回顾了释迦牟尼佛涅槃前后的关键经过，以及圆寂后葬礼、荼毗与舍利分配的完整脉络，指出佛陀留下的核心教导是以法为师、以戒为师。
 tags: [教义解析, 佛经故事, 佛教史]

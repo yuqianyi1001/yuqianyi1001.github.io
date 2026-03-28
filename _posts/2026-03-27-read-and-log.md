@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 可以在“今文佛典”网站读经和打卡了｜欢迎一起来共建用白话翻译佛典这个项目
-wechat_link: 
+wechat_link: https://mp.weixin.qq.com/s/Qt5LZKvVjWFnRtodrMZ1yQ
 description: 
 excerpt: 
 tags:
