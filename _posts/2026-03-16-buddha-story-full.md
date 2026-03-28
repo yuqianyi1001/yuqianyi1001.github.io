@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 释迦牟尼佛的完整故事：从地狱中的一念善到久远成佛的真相
-wechat_link:
+wechat_link: https://mp.weixin.qq.com/s/w6Olyj9fEfo31G1oe5hVlA
 description: 很多人熟悉的只是佛陀从出生到涅槃的一段；若依佛经完整来看，前有初发心与授记，后有《法华经》揭示的久远实成。
 excerpt: 依佛经主线重述释迦牟尼佛的完整故事：初发心、燃灯授记、八相成道，以及《法华经》揭示的真实身份。
 tags: [佛经故事, 经典导读, 佛教史]
