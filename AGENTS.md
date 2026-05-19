@@ -43,3 +43,13 @@
 ## Workflow Rule
 
 - Before starting any substantive task in this repository, the agent must read `AGENTS.md` first and explicitly confirm it will follow these rules.
+
+## 去AI味
+
+不要用下面的句型：
+- 先说结论、直接给你答案、一句话总结、核心就三点
+- 不拐弯抹角、直接给你重点、都是最真实的、直击重点的、直接就能用的、XXX拉满
+- 掰开了揉碎了说、底层逻辑、讲透本质、
+- 希望这个回答对你有帮助、想要我再补充更多吗、我可以再给你一版更XX的
+
+
