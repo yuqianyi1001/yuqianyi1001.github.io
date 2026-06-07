@@ -1,0 +1,95 @@
+/* === 字体加载：思源宋体（正文）+ 思源黑体（标题） ===
+   Google Fonts CDN；macOS 系统宋体作降级 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+:root {
+  --slidev-cn-serif: 'Noto Serif SC', 'Songti SC', 'STSong', 'SimSun', serif;
+  --slidev-cn-sans: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+/* 全局：正文走衬线（宋体），保留英文用 seriph 自带的 EB Garamond 衬线感 */
+.slidev-layout,
+.slidev-layout p,
+.slidev-layout li,
+.slidev-layout td,
+.slidev-layout th,
+.slidev-layout div {
+  font-family: 'EB Garamond', var(--slidev-cn-serif);
+}
+
+/* 标题走黑体，更有重量感 */
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3,
+.slidev-layout h4,
+.slidev-layout h5,
+.slidev-layout h6 {
+  font-family: 'EB Garamond', var(--slidev-cn-sans);
+  font-weight: 500;
+}
+
+/* 加粗字体在中文环境下也走黑体（避免宋体的「伪粗体」糊成一团） */
+.slidev-layout strong,
+.slidev-layout b {
+  font-family: var(--slidev-cn-sans);
+  font-weight: 700;
+}
+
+/* === 封面：换成米白纯色背景 + 深棕文字 === */
+.slidev-layout.cover,
+.slidev-layout.intro {
+  background: #fffdf7 !important;
+  color: #2a241c !important;
+}
+
+.slidev-layout.cover *,
+.slidev-layout.intro * {
+  color: #2a241c !important;
+}
+
+.slidev-layout.cover h1,
+.slidev-layout.intro h1 {
+  color: #2a241c !important;
+}
+
+.slidev-layout.cover h2,
+.slidev-layout.intro h2,
+.slidev-layout.cover p,
+.slidev-layout.intro p {
+  color: #4a3f30 !important;
+}
+
+/* 落款行更淡一些 */
+.slidev-layout.cover .opacity-60,
+.slidev-layout.intro .opacity-60 {
+  color: #6a5f50 !important;
+}
+
+/* === 章节扉页（section layout）：也用米白底，主色青灰 === */
+.slidev-layout.section {
+  background: #fffdf7 !important;
+}
+
+/* === 默认页面背景也用米白，避免与封面割裂 === */
+.slidev-layout.default,
+.slidev-layout.two-cols,
+.slidev-layout.end {
+  background: #fffdf7 !important;
+  color: #2a241c !important;
+}
+
+/* end 页（结语）默认是黑底白字，强行翻成米白底深棕字 */
+.slidev-layout.end * {
+  color: #2a241c !important;
+}
+.slidev-layout.end .opacity-70,
+.slidev-layout.end .opacity-80 {
+  color: #6a5f50 !important;
+}
+
+/* 列表项小标，颜色淡一点更克制 */
+.slidev-layout ul li::marker {
+  color: #8a7d6b;
+}
+
+/* 强调色保持 seriph 默认青灰，仅微调饱和 */

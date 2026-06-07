@@ -16,3 +16,10 @@ _posts/.obsidian/workspace.json
 wechat_drafts/*
 scripts/__pycache__/*
 
+# videos/ — rebuildable artifacts in each slidev project
+videos/**/segments/
+videos/**/video/*.mp4
+# 撤销根目录 package.json 规则对 videos/ 内 slidev 项目的影响
+!videos/**/package.json
+!videos/**/package-lock.json
+

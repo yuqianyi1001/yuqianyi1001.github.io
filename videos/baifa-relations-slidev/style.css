@@ -1,0 +1,115 @@
+/* === 字体：思源宋体（正文）+ 思源黑体（标题） === */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+:root {
+  --slidev-cn-serif: 'Noto Serif SC', 'Songti SC', 'STSong', 'SimSun', serif;
+  --slidev-cn-sans: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+.slidev-layout,
+.slidev-layout p,
+.slidev-layout li,
+.slidev-layout td,
+.slidev-layout th,
+.slidev-layout div {
+  font-family: 'EB Garamond', var(--slidev-cn-serif);
+}
+
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3,
+.slidev-layout h4,
+.slidev-layout h5,
+.slidev-layout h6 {
+  font-family: 'EB Garamond', var(--slidev-cn-sans);
+  font-weight: 500;
+}
+
+.slidev-layout strong,
+.slidev-layout b {
+  font-family: var(--slidev-cn-sans);
+  font-weight: 700;
+}
+
+/* === 米白纯色背景：所有布局统一 === */
+.slidev-layout.cover,
+.slidev-layout.intro,
+.slidev-layout.section,
+.slidev-layout.default,
+.slidev-layout.two-cols,
+.slidev-layout.end {
+  background: #fffdf7 !important;
+  color: #2a241c !important;
+}
+
+.slidev-layout.cover *,
+.slidev-layout.intro * {
+  color: #2a241c !important;
+}
+
+.slidev-layout.cover h2,
+.slidev-layout.intro h2,
+.slidev-layout.cover p,
+.slidev-layout.intro p {
+  color: #4a3f30 !important;
+}
+
+.slidev-layout.cover .opacity-60,
+.slidev-layout.cover .opacity-70,
+.slidev-layout.intro .opacity-60,
+.slidev-layout.intro .opacity-70 {
+  color: #6a5f50 !important;
+}
+
+.slidev-layout.end * {
+  color: #2a241c !important;
+}
+.slidev-layout.end .opacity-70,
+.slidev-layout.end .opacity-80 {
+  color: #6a5f50 !important;
+}
+
+.slidev-layout ul li::marker {
+  color: #8a7d6b;
+}
+
+/* === 手机友好微调：字号 +30%、留白紧凑 === */
+.slidev-layout {
+  padding: 1.6rem 2.6rem !important;
+  font-size: 1.3em;
+  line-height: 1.55;
+}
+
+.slidev-layout ul,
+.slidev-layout ol {
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+
+.slidev-layout li {
+  margin-top: 0.35em;
+  margin-bottom: 0.35em;
+}
+
+.slidev-layout h1 {
+  font-size: 2.4em;
+  margin-bottom: 0.45em;
+}
+
+.slidev-layout h2 {
+  font-size: 2.8em;
+  margin-bottom: 0.35em;
+}
+
+.slidev-layout table th,
+.slidev-layout table td {
+  padding: 0.4em 0.7em;
+}
+
+/* 封面、章节扉页、结语保持宽 padding 留呼吸感 */
+.slidev-layout.cover,
+.slidev-layout.intro,
+.slidev-layout.section,
+.slidev-layout.end {
+  padding: 3rem 4rem !important;
+}
