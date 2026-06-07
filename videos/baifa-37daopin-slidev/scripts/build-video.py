@@ -6,7 +6,7 @@ For each slide:
   - Audio = the slide's mp3, padded with TAIL_SILENCE seconds of silence
   - Encode H.264 + AAC
 
-Then concat all 36 segments into video/baifa-relations.mp4.
+Then concat all 36 segments into video/baifa-37daopin.mp4.
 
 Idempotent: existing segments are reused. To rebuild, delete segments/.
 """
@@ -24,7 +24,7 @@ SEGMENTS = ROOT / "segments"
 VIDEO_DIR = ROOT / "video"
 SEGMENTS.mkdir(exist_ok=True)
 VIDEO_DIR.mkdir(exist_ok=True)
-OUT = VIDEO_DIR / "baifa-sanke.mp4"
+OUT = VIDEO_DIR / "baifa-37daopin.mp4"
 
 TAIL_SILENCE = 0.4  # seconds after each slide's audio for natural breath
 FRAMERATE = 30
@@ -111,7 +111,7 @@ def main() -> None:
 
     # 1. Build 33 segments
     segments = []
-    for i in range(1, 34):
+    for i in range(1, 33):
         segments.append(build_segment(i))
 
     # 2. Build concat list

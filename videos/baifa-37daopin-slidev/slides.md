@@ -514,7 +514,7 @@ layout: default
 | <strong>正思惟</strong> | 思（遍行心所之一）+ 慧 |
 | <strong>正语</strong> | 不妄语等 → <strong>语业</strong>（思心所驱动） |
 | <strong>正业</strong> | <strong>身业</strong>（不杀盗淫，由思心所驱动） |
-| <strong>正命</strong> | 身业 + 语业 + 不贪等 |
+| <strong>正命</strong> | 离<strong>邪命</strong>所摄的 身业 + 语业（依 无贪等 善根） |
 | <strong>正精进</strong> | 精进（善心所之一） |
 | <strong>正念</strong> | 念（别境心所之一） |
 | <strong>正定</strong> | 定（别境心所之一） |
@@ -577,13 +577,16 @@ class: text-center
 
 本期讲完了《百法》与<strong>三十七道品</strong>
 
-《百法》系列<strong>四讲</strong>也告一段落
-
-后续如有缘，会继续延伸——<strong>《百法》与见道、证果成阿罗汉</strong>
+下一讲——<strong>《百法》与 见道（开悟）、证果成阿罗汉</strong>
 
 </div>
 
-<div class="mt-8 text-base opacity-70">
+<div class="mt-6 p-4 bg-stone-50 rounded text-base opacity-80">
+从 <strong>加行位</strong>（暖 / 顶 / 忍 / 世第一法）→ <strong>见道</strong> 证 初果须陀洹 →<br>
+<strong>修道</strong> 证 二果斯陀含 / 三果阿那含 → 最终 证 <strong>四果阿罗汉</strong>
+</div>
+
+<div class="mt-6 text-base opacity-70">
 微信公众号 / 视频号：愚千一
 </div>
 

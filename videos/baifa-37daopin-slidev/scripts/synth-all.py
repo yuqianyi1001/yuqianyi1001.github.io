@@ -1,5 +1,5 @@
 """
-Synthesize all 36 slide notes from slides.md into audio/NN.mp3 files,
+Synthesize all 32 slide notes from slides.md into audio/NN.mp3 files,
 using the cloned 愚千一 voice on Aliyun 百炼 (cosyvoice-v2).
 
 Reads voice_id from .bailian_voice_id (created by clone-and-synth.py).
@@ -49,7 +49,14 @@ RETRY_DELAY_SECONDS = 3
 
 
 def extract_notes(slides_md: Path) -> list[str]:
-    """Return ordered list of note text from each slide's <!-- ... --> block."""
+    """Return ordered list of note text.
+
+    Prefer reading from notes/NN.txt files (one per slide, hand-written).
+    Fall back to extracting from slides.md's <!-- ... --> blocks if notes/ is empty.
+    """
+    txt_files = sorted(NOTES_DIR.glob("*.txt"))
+    if txt_files:
+        return [p.read_text(encoding="utf-8").strip() for p in txt_files]
     text = slides_md.read_text(encoding="utf-8")
     notes = re.findall(r"<!--\n(.*?)\n-->", text, flags=re.DOTALL)
     return [n.strip() for n in notes]
@@ -85,12 +92,13 @@ def synth_one(idx: int, text: str) -> tuple[int, str]:
 
 def main() -> None:
     notes = extract_notes(ROOT / "slides.md")
-    print(f"[setup] {len(notes)} notes extracted, voice_id={VOICE_ID}, rate={SPEECH_RATE}")
+    print(f"[setup] {len(notes)} notes loaded, voice_id={VOICE_ID}, rate={SPEECH_RATE}")
 
-    # Persist each note to notes/NN.txt for record-keeping / future regen
+    # Persist each note to notes/NN.txt only if not present yet (idempotent)
     for i, n in enumerate(notes, start=1):
-        (NOTES_DIR / f"{i:02d}.txt").write_text(n + "\n", encoding="utf-8")
-    print(f"[setup] notes written to {NOTES_DIR}")
+        path = NOTES_DIR / f"{i:02d}.txt"
+        if not path.exists():
+            path.write_text(n + "\n", encoding="utf-8")
 
     start = time.time()
     results: list[tuple[int, str]] = []

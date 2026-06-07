@@ -23,15 +23,15 @@ FFMPEG = str(Path.home() / "miniforge3" / "bin" / "ffmpeg")
 NOTES_DIR = ROOT / "notes"
 AUDIO_DIR = ROOT / "audio"
 VIDEO_DIR = ROOT / "video"
-SRT_PATH = VIDEO_DIR / "baifa-sanke.srt"
-ASS_PATH = VIDEO_DIR / "baifa-sanke.ass"
-INPUT_MP4 = VIDEO_DIR / "baifa-sanke.mp4"
-OUTPUT_MP4 = VIDEO_DIR / "baifa-sanke-hard.mp4"
+SRT_PATH = VIDEO_DIR / "baifa-37daopin.srt"
+ASS_PATH = VIDEO_DIR / "baifa-37daopin.ass"
+INPUT_MP4 = VIDEO_DIR / "baifa-37daopin.mp4"
+OUTPUT_MP4 = VIDEO_DIR / "baifa-37daopin-hard.mp4"
 
 TAIL_SILENCE = 0.4
 SOFT_BREAK_MIN_CHARS = 12
 MIN_DURATION = 0.6
-N_SLIDES = 33
+N_SLIDES = 32
 
 # Slide PNG canvas (preview/1.png is 1960x1104).
 PLAY_RES_X = 1960
