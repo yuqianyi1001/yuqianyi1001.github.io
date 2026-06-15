@@ -31,7 +31,7 @@ OUTPUT_MP4 = VIDEO_DIR / "baifa-jiandao-hard.mp4"
 TAIL_SILENCE = 0.4
 SOFT_BREAK_MIN_CHARS = 12
 MIN_DURATION = 0.6
-N_SLIDES = 26
+N_SLIDES = 28
 
 # Slide PNG canvas (preview/1.png is 1960x1104).
 PLAY_RES_X = 1960

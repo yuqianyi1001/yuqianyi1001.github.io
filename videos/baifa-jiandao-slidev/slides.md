@@ -3,7 +3,7 @@ theme: seriph
 title: 《大乘百法明门论》与 见道、证果成阿罗汉
 info: |
   ## 《大乘百法明门论》第五讲 · 与 见道、证果成阿罗汉
-  从加行 到 阿罗汉，百法里的什么变了？
+  从凡夫 到 阿罗汉，百法里的什么变了？
 
   作者：愚千一
 class: text-center
@@ -21,9 +21,9 @@ fonts:
 
 # 《大乘百法明门论》
 
-## 与 见道（开悟）、证果成阿罗汉
+## 与 见道、证果成阿罗汉
 
-<div class="text-2xl opacity-60 mt-3">从加行到阿罗汉，百法里的什么变了？</div>
+<div class="text-2xl opacity-60 mt-3">从凡夫到阿罗汉，百法里的什么变了？</div>
 
 <div class="pt-12 text-lg">
   <span class="opacity-70">第五讲</span>
@@ -44,7 +44,7 @@ layout: default
 - 本讲：把视角拉到<strong>整条修证路径</strong>——从凡夫修加行 → 一刹那 <strong>见道</strong> → 修道渐断 → 最终证 <strong>阿罗汉</strong>
 
 <div class="mt-6 p-4 bg-amber-50 rounded text-base">
-本讲以 <strong>玄奘代表的唯识 / 法相宗</strong> 为主立场——见道分 <strong>真见道 / 相见道</strong>、烦恼数按唯识 112 法、阿罗汉用 <strong>烦恼障 / 所知障</strong> 双层判教；俱舍说法作对照。
+本讲讲 <strong>声闻乘见道 / 修道 / 证果</strong> 的次第——以 <strong>《俱舍论》体系</strong> 为依据，借用<strong>《百法明门论》的心所体系</strong> 作对照分析。大乘 / 唯识 独立的概念（如真见道 / 相见道、所知障、八识转依等）本讲不展开。
 </div>
 
 ---
@@ -55,11 +55,11 @@ layout: default
 
 <div class="mt-4 space-y-3">
 
-- 见道是什么？《成唯识论》分「<strong>真见道</strong>」和「<strong>相见道</strong>」——怎么分？
-- 见所断 / 修所断——百法里怎么分？
+- 见道是什么？为什么说它是凡夫与圣者的「分水岭」？
+- 见所断 / 修所断——百法里怎么分？88 个 见所断烦恼怎么数出来？
 - 初果、二果、三果、四果，各断哪些烦恼？
 - <strong>阿罗汉的百法清单</strong>——哪些心所断尽？哪些保留并清净化？
-- <strong>阿罗汉 vs 佛果</strong>——差在哪里？关键：<strong>烦恼障 vs 所知障</strong>
+- 阿罗汉 = 究竟吗？为什么大乘说 <strong>佛果 才究竟</strong>？
 
 </div>
 
@@ -171,21 +171,21 @@ layout: section
 layout: default
 ---
 
-# 见道 · 真见道 + 相见道（唯识立场）
+# 见道 · 现观四谛十六行相 · 16 心模式
 
 <div class="text-base mt-3">
 
-| 层 | 体性 | 刹那数 |
-| --- | --- | --- |
-| <strong>真见道</strong> | <strong>根本无分别智</strong> · 现证 <strong>二空真如</strong>（人空 + 法空）| <strong>一刹那</strong> 一念 |
-| <strong>相见道</strong> | <strong>后得无分别智</strong> · 安立四谛 / 二空相 | 多刹那（16 心 或 3 心）|
+声闻乘见道——亲见四谛真理，分 <strong>16 个心刹那</strong>（《俱舍论》卷 23）：
+
+- <strong>4 谛 × 4 行相 = 16 行相</strong>
+- 每一谛 4 心：法忍 / 法智（缘欲界）+ 类忍 / 类智（缘上二界）
+- 共 <strong>8 忍 + 8 智 = 16 心</strong>
 
 </div>
 
-<div class="mt-4 p-3 bg-stone-50 rounded text-base">
-<strong>俱舍 vs 唯识 的关键差异</strong>——<br>
-《俱舍论》卷 23：<strong>前 15 心见道</strong>（8 忍 + 7 智）；<strong>第 16 心 = 道类智 = 修道</strong>（初果）<br>
-《成唯识论》卷 9：把<strong>真见道</strong>拈出——见道的<strong>本体</strong>是「一刹那现见真如」，16 心是相见道（认知层面）
+<div class="mt-4 p-3 bg-amber-50 rounded text-base">
+《俱舍论》卷 23：「<strong>前 15 心见道，第 16 心修道</strong>」<br>
+也就是 8 忍 + 7 智 = 15 心 完成见道；<strong>第 16 心（道类智）= 修道第一刹那 = 初果须陀洹</strong>
 </div>
 
 <div class="mt-3 text-base opacity-70">
@@ -211,7 +211,7 @@ layout: default
 </div>
 
 <div class="mt-5 p-4 bg-amber-50 rounded">
-注意：「见道顿断分别起烦恼」是说<strong>这些根本心所在「三界 × 四谛」下的具体形态被断除</strong>——下页详细展开<strong>断的是 88 个 / 112 个 什么</strong>。
+注意：「见道顿断分别起烦恼」是说<strong>这些根本心所在「三界 × 四谛」下的具体形态被断除</strong>——下页详细展开<strong>断的是 88 个 什么</strong>。
 </div>
 
 ---
@@ -239,8 +239,7 @@ layout: default
 </div>
 
 <div class="mt-3 p-3 bg-amber-50 rounded text-base">
-<strong>对照百法</strong>：88 个的根本心所其实只有<strong>10 个</strong>——百法<strong>根本烦恼 6 个</strong>（贪 / 嗔 / 痴 / 慢 / 疑 / <strong>不正见</strong>）里的「不正见」拆成 5 见。<br>
-《成唯识论》<strong>112 个</strong> = 俱舍 88 + <strong>法执起</strong>的分别烦恼（约 24 个）——唯识双断「我执 + 法执」。
+<strong>对照百法</strong>：88 个的根本心所其实只有<strong>10 个</strong>——百法<strong>根本烦恼 6 个</strong>（贪 / 嗔 / 痴 / 慢 / 疑 / <strong>不正见</strong>）里的「不正见」拆成 5 见。
 </div>
 
 ---
@@ -259,8 +258,7 @@ layout: default
 
 <div class="space-y-3 mt-3">
 
-- 俱舍说：见道 <strong>第 16 心</strong>（道类智）= 修道第一刹那 = <strong>初果须陀洹</strong>——<strong>预流</strong>（入圣流）
-- 唯识说：真见道无间引修道，从相见道开始 = 初果
+- 见道 <strong>第 16 心</strong>（道类智）= 修道第一刹那 = <strong>初果须陀洹</strong>——<strong>预流</strong>（入圣流）
 - 断 <strong>三结</strong>：
   - <strong>身见</strong>（萨迦耶见）——执五蕴和合为「我」
   - <strong>戒禁取见</strong>——执非戒为戒（持牛狗戒等外道无义戒）
@@ -382,8 +380,8 @@ layout: default
 </div>
 
 <div class="mt-5 p-3 bg-amber-50 rounded">
-全断的是<strong>「我执」起的烦恼</strong>——也就是<strong>烦恼障</strong>。<br>
-「法执」起的烦恼（所知障）还在，详见后页。
+阿罗汉 = 三界 见所断 + 修所断 的<strong>染污心所 全部断尽</strong>——「漏尽」。<br>
+善心所、别境、遍行 等 染污面 之外的心所 都保留并无漏化（见下页）。
 </div>
 
 ---
@@ -400,7 +398,7 @@ layout: default
 | <strong>别境心所 5</strong>（欲 / 胜解 / 念 / 定 / 慧）| <strong>保留 + 无漏化</strong>（特别是「慧」转为无漏慧）|
 | <strong>遍行心所 5</strong>（触 / 作意 / 受 / 想 / 思）| 保留（无漏识相应）|
 | 不定心所 4 中的 善 / 无记 面 | 保留 |
-| <strong>心王 8 识</strong> | 保留——但<strong>第七识染污末那断</strong>，第八识 仍存（详见下页）|
+| <strong>心王 8 识</strong> | 保留（百法立 8 识；声闻乘只立 6 识，此处不展开）|
 | 色法 11 / 不相应行 24 中的 善 / 中性法 | 保留 |
 
 </div>
@@ -409,50 +407,22 @@ layout: default
 layout: default
 ---
 
-# 阿罗汉的「转依」
+# 阿罗汉 vs 佛果 · 大乘观点
 
-<div class="text-base space-y-2 mt-2">
+<div class="space-y-3 mt-3">
 
-- <strong>染污末那</strong>（第七识 4 个俱生我执：<strong>我痴 / 我见 / 我慢 / 我爱</strong>）<strong>断</strong>
-  - 第七识 转 <strong>无漏</strong>
-- <strong>第八识</strong> 舍「阿赖耶」名（不再储存我执种子），但仍是 <strong>异熟识</strong>
-- 前五识 / 第六识——保留
-
-</div>
-
-<div class="mt-4 p-3 bg-stone-50 rounded text-base">
-《八识规矩颂》（玄奘造）——<br>
-<strong>「不动地前才舍藏，金刚道后异熟空」</strong><br>
-阿罗汉时 <strong>舍藏</strong>；异熟识 还要到更深的修证位 才空——本讲不展开。
-</div>
-
-<div class="mt-3 p-3 bg-amber-50 rounded text-base">
-<strong>核心判教</strong>（《成唯识论》卷 9）：阿罗汉只断 <strong>烦恼障</strong>（我执起），<strong>所知障</strong>（法执起）<strong>未断</strong>——下一页详解。
-</div>
-
----
-layout: default
----
-
-# 烦恼障 vs 所知障 ↔ 百法
-
-<div class="text-base">
-
-| 障 | 起因 | 百法表现 | 阿罗汉位 |
-| --- | --- | --- | --- |
-| <strong>烦恼障</strong> | <strong>我执</strong>起的烦恼 | 根本 6 + 随 20（缘我执版） | <strong>断尽</strong> |
-| <strong>所知障</strong> | <strong>法执</strong>起的烦恼 | 根本 6 + 随 20（缘法执版） | <strong>未断</strong> |
+- 声闻乘 看——阿罗汉 = <strong>极果</strong>。三界烦恼断尽，「不受后有」，永不再来。
+- 大乘 / 唯识 看——<strong>阿罗汉 ≠ 究竟</strong>：还有「法执」、还有更深的「所知障」要断。
+- <strong>佛果</strong> = 二障俱断 + 转 八识 为 四智 —— 才是真正的究竟。
 
 </div>
 
-<div class="mt-5 p-4 bg-stone-50 rounded text-base">
-唯识立场——每一个根本烦恼（贪 / 嗔 / 痴 / 慢 / 疑 / 不正见）和每一个随烦恼，<strong>都分「缘我」与「缘法」两版</strong>。<br>
-也就是说 共有 <strong>26 个心所类</strong>（6 根本 + 20 随）的「缘法执」版本——构成 所知障。
+<div class="mt-5 p-4 bg-amber-50 rounded">
+本讲 主线 = 声闻乘的 见道 → 阿罗汉。<strong>菩萨道 / 佛果 的更深转依</strong>（所知障 / 八识转四智 / 不动地前才舍藏 等）属于 唯识 大乘体系，本讲<strong>不展开</strong>。
 </div>
 
-<div class="mt-3 p-3 bg-amber-50 rounded text-base">
-阿罗汉只断<strong>缘我</strong>那一版——所知障 还在 → 所以阿罗汉 ≠ 究竟。<br>
-<strong>大乘观点：佛果 才是究竟。</strong>本讲不展开。
+<div class="mt-3 text-base opacity-70">
+注：声闻乘 体系（如《俱舍论》）不立 所知障 / 法执，也不立 第七识 / 第八识；这些都是大乘 / 唯识 独有的概念。
 </div>
 
 ---
@@ -472,8 +442,8 @@ layout: default
 <div class="space-y-3 mt-3">
 
 - <strong>资粮 / 加行位</strong>　相似修——「信 / 精进 / 念 / 定 / 慧」<strong>还是有漏</strong>，但方向对
-- <strong>见道位</strong>　一刹那「质变」——这几个心所从有漏转<strong>无漏</strong>；唯识立场 顿断<strong>分别起</strong>烦恼（含 我执 + 法执 两部分）
-- <strong>修道 → 无学位</strong>　渐断 <strong>俱生我执</strong>烦恼——阿罗汉位 <strong>烦恼障 尽</strong>
+- <strong>见道位</strong>　一刹那「质变」——这几个心所从有漏转<strong>无漏</strong>；顿断 <strong>88 个</strong>分别起 见所断烦恼
+- <strong>修道 → 无学位</strong>　渐断 <strong>9 地 81 品</strong>俱生烦恼——阿罗汉位 三界<strong>烦恼断尽</strong>
 
 </div>
 
@@ -482,7 +452,7 @@ layout: default
 </div>
 
 <div class="mt-3 p-3 bg-stone-50 rounded text-base">
-阿罗汉位 <strong>所知障 还在</strong>——大乘观点：佛果 才是究竟。
+阿罗汉 = 声闻乘 极果；<strong>大乘观点 — 佛果 才是究竟</strong>。本讲不展开。
 </div>
 
 ---
@@ -493,10 +463,11 @@ layout: default
 
 <div class="space-y-2 mt-3 text-base">
 
-- 见道 = 凡夫到圣者的<strong>分水岭</strong>。唯识分 <strong>真见道</strong>（一刹那现见二空真如）+ <strong>相见道</strong>（16 心 / 3 心）
-- 见道顿断 <strong>分别起</strong>烦恼（俱舍 88 个；唯识立场加上法执部分）
-- 修道 = 渐断 81 品<strong>俱生我执</strong>烦恼
-- 阿罗汉 = 染污末那断 / <strong>烦恼障尽</strong>；但 <strong>所知障未断</strong>——大乘观点 看 仍非究竟，<strong>佛果 才是究竟</strong>
+- 见道 = 凡夫到圣者的<strong>分水岭</strong>——<strong>现观四谛十六行相</strong>（《俱舍论》16 心模式：前 15 心见道 + 第 16 心修道 = 初果）
+- 见道顿断 <strong>88 个</strong>分别起见所断烦恼（三界 × 四谛 配伍）
+- 修道 = 渐断 <strong>9 地 81 品</strong>俱生烦恼
+- 阿罗汉 = 三界烦恼断尽，「不受后有」——<strong>声闻乘极果</strong>
+- <strong>大乘观点</strong>——佛果 才是究竟（本讲不展开）
 
 </div>
 

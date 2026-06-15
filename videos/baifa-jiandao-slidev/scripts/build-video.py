@@ -111,7 +111,7 @@ def main() -> None:
 
     # 1. Build 33 segments
     segments = []
-    for i in range(1, 30):
+    for i in range(1, 29):
         segments.append(build_segment(i))
 
     # 2. Build concat list

@@ -62,6 +62,25 @@ def extract_notes(slides_md: Path) -> list[str]:
     return [n.strip() for n in notes]
 
 
+# TTS pronunciation fixes — replace 行(xíng) with homophone 形 so cosyvoice
+# reads as xíng instead of defaulting to héng. Source notes/*.txt keep 行;
+# only the text sent to TTS is rewritten. Subtitles still show 行.
+PRONUNCIATION_FIXES = [
+    ("加行", "加形"),         # 加行位 — preliminary practice
+    ("行舍", "形舍"),         # 行舍 心所 — equanimity
+    ("十六行相", "十六形相"),  # 16 aspects
+    ("行相", "形相"),         # generic 行相 (4 谛 each has 4 行相)
+    ("行蕴", "形蕴"),         # 行蕴 — formation aggregate
+    ("梵行", "梵形"),         # 梵行 已立 — religious practice
+]
+
+
+def fix_pronunciation(text: str) -> str:
+    for orig, repl in PRONUNCIATION_FIXES:
+        text = text.replace(orig, repl)
+    return text
+
+
 def synth_one(idx: int, text: str) -> tuple[int, str]:
     """Synthesize one note. Returns (idx, status_message)."""
     label = f"{idx:02d}"
@@ -69,6 +88,7 @@ def synth_one(idx: int, text: str) -> tuple[int, str]:
     if out.exists() and out.stat().st_size > 0:
         return idx, f"skip (already exists, {out.stat().st_size/1024:.0f} KB)"
 
+    tts_text = fix_pronunciation(text)
     last_err = None
     for attempt in range(1, MAX_RETRIES + 1):
         try:
@@ -78,7 +98,7 @@ def synth_one(idx: int, text: str) -> tuple[int, str]:
                 format=AudioFormat.MP3_22050HZ_MONO_256KBPS,
                 speech_rate=SPEECH_RATE,
             )
-            audio = synth.call(text)
+            audio = synth.call(tts_text)
             if not audio:
                 raise RuntimeError("empty audio response")
             out.write_bytes(audio)

@@ -24,7 +24,7 @@ OUTPUT_MP4 = VIDEO_DIR / "baifa-jiandao-soft.mp4"
 TAIL_SILENCE = 0.4          # silence padded after each slide's audio (matches build-video.py)
 SOFT_BREAK_MIN_CHARS = 12   # only break on ，； when current chunk has at least this many chars
 MIN_DURATION = 0.6          # minimum on-screen time per subtitle (seconds)
-N_SLIDES = 26
+N_SLIDES = 28
 
 
 def get_duration(p: Path) -> float:
