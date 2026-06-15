@@ -44,7 +44,7 @@ PLAY_RES_Y = 1104
 # Subtitle box: light warm cream, ~80% opaque, soft padding via Outline.
 # OutlineColour == BackColour so the outline blends into the box (looks like padding).
 ASS_STYLE = {
-    "Fontname": "PingFang SC",
+    "Fontname": "Heiti SC",
     "Fontsize": 38,                    # was 32, +20% ≈ 38 (lands ~38px on 1104-tall canvas)
     "PrimaryColour": "&H00182430",     # deep brown (text body)
     "SecondaryColour": "&H000000FF",   # unused for karaoke
@@ -218,7 +218,7 @@ def burn_subs() -> None:
             "-i", str(INPUT_MP4),
             "-vf", f"ass=filename={ASS_PATH}",
             "-c:v", "libx264",
-            "-preset", "medium",
+            "-preset", "fast",
             "-crf", "20",
             "-pix_fmt", "yuv420p",
             "-c:a", "copy",

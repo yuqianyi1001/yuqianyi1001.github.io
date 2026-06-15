@@ -75,23 +75,22 @@ layout: section
 layout: default
 ---
 
-# 五位 总览 · 声闻 / 菩萨 对照
+# 声闻乘 五位 总览
 
 <div class="text-base">
 
-| 位次 | 声闻乘 | 菩萨乘（唯识） | 关键事件 |
-| --- | --- | --- | --- |
-| <strong>资粮位</strong> | 修四念住 / 四正勤 / 四神足 | 顺解脱分 · 修六度 | 还是凡夫 |
-| <strong>加行位</strong> | 暖 / 顶 / 忍 / 世第一法 | 顺决择分 · 四寻思 / 四如实智 | 还是凡夫（修五根 / 五力） |
-| <strong>见道位</strong> | 见道（初果须陀洹）| <strong>通达位</strong>（菩萨初地）| <strong>凡夫转圣者</strong> |
-| <strong>修道位</strong> | 修道（二果 / 三果）| <strong>修习位</strong>（二地–十地）| 渐断烦恼 |
-| <strong>无学位</strong> | 四果阿罗汉 | — | 烦恼断尽 |
-| — | — | <strong>究竟位</strong>（佛果）| 二障俱断 / 四智圆明 |
+| 位次 | 内容 | 关键事件 |
+| --- | --- | --- |
+| <strong>资粮位</strong> | 修四念住 / 四正勤 / 四神足 | 还是凡夫 |
+| <strong>加行位</strong> | 暖 / 顶 / 忍 / 世第一法 | 还是凡夫（修五根 / 五力） |
+| <strong>见道位</strong> | 见道（初果须陀洹）| <strong>凡夫转圣者</strong> |
+| <strong>修道位</strong> | 修道（二果 / 三果）| 渐断烦恼 |
+| <strong>无学位</strong> | 四果阿罗汉 | 烦恼断尽——声闻乘极果 |
 
 </div>
 
-<div class="mt-3 p-3 bg-stone-50 rounded text-base">
-《成唯识论》卷 9 立<strong>菩萨五位</strong>——声闻五位是菩萨道的初阶；阿罗汉的「无学」是声闻乘极果，<strong>但用大乘标准看仍非究竟</strong>。
+<div class="mt-3 p-3 bg-amber-50 rounded text-base">
+阿罗汉的「无学」是 <strong>声闻乘的极果</strong>——但用 <strong>大乘观点</strong> 看，<strong>佛果 才是究竟</strong>。本讲只讲到阿罗汉。
 </div>
 
 ---
@@ -410,25 +409,25 @@ layout: default
 layout: default
 ---
 
-# 阿罗汉的「转依」 · 仅断我执 法执仍在
+# 阿罗汉的「转依」
 
 <div class="text-base space-y-2 mt-2">
 
 - <strong>染污末那</strong>（第七识 4 个俱生我执：<strong>我痴 / 我见 / 我慢 / 我爱</strong>）<strong>断</strong>
-  - 第七识 转 <strong>无漏</strong>——但未到「<strong>平等性智</strong>」（菩萨初地以上事）
+  - 第七识 转 <strong>无漏</strong>
 - <strong>第八识</strong> 舍「阿赖耶」名（不再储存我执种子），但仍是 <strong>异熟识</strong>
-- 前五识 / 第六识——保留，但未转 <strong>成所作智 / 妙观察智</strong>（佛果转依）
+- 前五识 / 第六识——保留
 
 </div>
 
 <div class="mt-4 p-3 bg-stone-50 rounded text-base">
 《八识规矩颂》（玄奘造）——<br>
 <strong>「不动地前才舍藏，金刚道后异熟空」</strong><br>
-阿罗汉时 舍藏；要到 <strong>佛果金刚道</strong> 后 异熟才空。
+阿罗汉时 <strong>舍藏</strong>；异熟识 还要到更深的修证位 才空——本讲不展开。
 </div>
 
 <div class="mt-3 p-3 bg-amber-50 rounded text-base">
-<strong>核心判教</strong>（《成唯识论》卷 9）：阿罗汉只断 <strong>烦恼障</strong>（我执起），<strong>所知障</strong>（法执起）<strong>未断</strong>。
+<strong>核心判教</strong>（《成唯识论》卷 9）：阿罗汉只断 <strong>烦恼障</strong>（我执起），<strong>所知障</strong>（法执起）<strong>未断</strong>——下一页详解。
 </div>
 
 ---
@@ -439,21 +438,21 @@ layout: default
 
 <div class="text-base">
 
-| 障 | 起因 | 百法表现 | 谁能断 |
+| 障 | 起因 | 百法表现 | 阿罗汉位 |
 | --- | --- | --- | --- |
-| <strong>烦恼障</strong> | <strong>我执</strong>起的烦恼 | 根本 6 + 随 20（缘我执）| <strong>阿罗汉断</strong> |
-| <strong>所知障</strong> | <strong>法执</strong>起的烦恼 | 根本 6 + 随 20（缘法执）| <strong>唯佛能断尽</strong> |
+| <strong>烦恼障</strong> | <strong>我执</strong>起的烦恼 | 根本 6 + 随 20（缘我执版） | <strong>断尽</strong> |
+| <strong>所知障</strong> | <strong>法执</strong>起的烦恼 | 根本 6 + 随 20（缘法执版） | <strong>未断</strong> |
 
 </div>
 
-<div class="mt-5 p-4 bg-stone-50 rounded">
-唯识立场——每一个根本烦恼（贪 / 嗔 / 痴 / 慢 / 疑 / 不正见）和随烦恼，<strong>都分「缘我」与「缘法」两版</strong>：
-<br>
-阿罗汉只断<strong>缘我</strong>那一版；<strong>缘法</strong>那一版要到菩萨道渐断、<strong>佛果断尽</strong>。
+<div class="mt-5 p-4 bg-stone-50 rounded text-base">
+唯识立场——每一个根本烦恼（贪 / 嗔 / 痴 / 慢 / 疑 / 不正见）和每一个随烦恼，<strong>都分「缘我」与「缘法」两版</strong>。<br>
+也就是说 共有 <strong>26 个心所类</strong>（6 根本 + 20 随）的「缘法执」版本——构成 所知障。
 </div>
 
 <div class="mt-3 p-3 bg-amber-50 rounded text-base">
-所以阿罗汉 ≠ 究竟 ——大乘 / 唯识 立场：<strong>断二障 = 佛果</strong>。
+阿罗汉只断<strong>缘我</strong>那一版——所知障 还在 → 所以阿罗汉 ≠ 究竟。<br>
+<strong>大乘观点：佛果 才是究竟。</strong>本讲不展开。
 </div>
 
 ---
@@ -462,7 +461,7 @@ layout: section
 
 # 七、百法视角看修证全程
 
-<div class="text-3xl mt-4">心所的三阶段净化 + 二障双断</div>
+<div class="text-3xl mt-4">心所的三阶段净化</div>
 
 ---
 layout: default
@@ -473,14 +472,17 @@ layout: default
 <div class="space-y-3 mt-3">
 
 - <strong>资粮 / 加行位</strong>　相似修——「信 / 精进 / 念 / 定 / 慧」<strong>还是有漏</strong>，但方向对
-- <strong>见道位</strong>　一刹那「质变」——这几个心所从有漏转<strong>无漏</strong>；唯识立场 顿断 <strong>112 个</strong>见所断烦恼（含 我执 + 法执 分别起）
+- <strong>见道位</strong>　一刹那「质变」——这几个心所从有漏转<strong>无漏</strong>；唯识立场 顿断<strong>分别起</strong>烦恼（含 我执 + 法执 两部分）
 - <strong>修道 → 无学位</strong>　渐断 <strong>俱生我执</strong>烦恼——阿罗汉位 <strong>烦恼障 尽</strong>
-- 但 <strong>所知障</strong>（俱生法执）仍要靠 <strong>菩萨道渐断、佛果断尽</strong>
 
 </div>
 
 <div class="mt-5 p-4 bg-amber-50 rounded">
 百法视角下的修证——<strong>心所没有被「消灭」，是被「净化」</strong>：染污面断，善 / 别境 / 遍行 面保留并无漏化。
+</div>
+
+<div class="mt-3 p-3 bg-stone-50 rounded text-base">
+阿罗汉位 <strong>所知障 还在</strong>——大乘观点：佛果 才是究竟。
 </div>
 
 ---
@@ -492,10 +494,9 @@ layout: default
 <div class="space-y-2 mt-3 text-base">
 
 - 见道 = 凡夫到圣者的<strong>分水岭</strong>。唯识分 <strong>真见道</strong>（一刹那现见二空真如）+ <strong>相见道</strong>（16 心 / 3 心）
-- 见道顿断 <strong>分别起</strong>烦恼 112 个（含我执 + 法执）
+- 见道顿断 <strong>分别起</strong>烦恼（俱舍 88 个；唯识立场加上法执部分）
 - 修道 = 渐断 81 品<strong>俱生我执</strong>烦恼
-- 阿罗汉 = 染污末那断 / <strong>烦恼障尽</strong>；但 <strong>所知障未断</strong>——非究竟
-- 佛果 = <strong>二障俱断</strong> + 转 八识 为 <strong>四智</strong>
+- 阿罗汉 = 染污末那断 / <strong>烦恼障尽</strong>；但 <strong>所知障未断</strong>——大乘观点 看 仍非究竟，<strong>佛果 才是究竟</strong>
 
 </div>
 
@@ -519,13 +520,12 @@ class: text-center
 
 本期讲完了《百法》与<strong>见道、证果成阿罗汉</strong>
 
-下一讲——<strong>《百法》与 菩萨道转依、佛果四智</strong>
+《百法》系列<strong>五讲</strong>到此告一段落
 
 </div>
 
 <div class="mt-6 p-4 bg-stone-50 rounded text-base opacity-80">
-菩萨初地（通达位）→ 二地至十地（修习位）→ <strong>究竟位</strong>　佛果<br>
-<strong>二障双断</strong> + 转 八识 为 <strong>大圆镜智 / 平等性智 / 妙观察智 / 成所作智</strong>
+阿罗汉 是 <strong>声闻乘 的极果</strong>——但用 <strong>大乘观点</strong> 看，<strong>佛果 才是究竟</strong>。
 </div>
 
 <div class="mt-6 text-base opacity-70">
