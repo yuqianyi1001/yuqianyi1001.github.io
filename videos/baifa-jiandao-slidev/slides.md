@@ -351,7 +351,7 @@ layout: default
 - 断尽 上二界（色 / 无色）修所断 <strong>72 品</strong>烦恼
 - 三界 见所断 + 修所断 <strong>全断</strong>——「<strong>漏尽</strong>」
 - 自知「<strong>我生已尽，梵行已立，所作已办，不受后有</strong>」
-- 称「<strong>无学</strong>」——再无可学的有漏法
+- 称「<strong>无学</strong>」——三无漏学（戒 / 定 / 慧）圆满，再无应学（《俱舍论》卷 24）
 
 <div class="mt-5 p-4 bg-stone-50 rounded">
 但这只是 <strong>声闻乘的极果</strong>——用大乘 / 唯识标准看，还<strong>未到究竟</strong>。
