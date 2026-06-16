@@ -139,12 +139,6 @@ layout: default
 
 </div>
 
-<div class="mt-5 p-4 bg-stone-50 rounded text-base">
-<strong>唯识 特色 · 四寻思 / 四如实智</strong>（《成唯识论》卷 9）<br>
-- <strong>暖 / 顶</strong>　= <strong>四寻思智</strong>——寻思 名 / 义 / 自性 / 差别 皆「假有实无」<br>
-- <strong>忍 / 世第一</strong>　= <strong>四如实智</strong>——印可寻思的结果，准备亲见真如
-</div>
-
 ---
 layout: default
 ---
