@@ -75,19 +75,18 @@ layout: default
 
 # 前五识 ↔ 百法
 
-- 「前五识」= 百法 心法 八识里的 前五个
-- 体性：以 <strong>了别境界</strong> 为业——眼识了色，耳识了声，鼻识了香，舌识了味，身识了触
-- 所缘：<strong>色 / 声 / 香 / 味 / 触</strong> 五尘（五境）
-- 所依：<strong>净色根</strong>——五根
-  - 严格说 = 极微细净色（不是肉团根）
-  - 现代角度可理解为<strong>整个感官机制</strong>——比如 视觉 = 眼球 + 视神经 + 视觉中枢
-- 在三界中起：欲界 + 色界初禅（详后）
+<div class="text-base space-y-1 mt-2">
 
-<div class="mt-3 p-3 bg-amber-50 rounded text-base">
-关键术语区分——五识 有「<strong>了别</strong>」但无「<strong>分别</strong>」：<br>
-<strong>了别</strong>＝八识本身的功能——直接<strong>辨识</strong>所缘境（红 / 绿 / 高音 / 低音 / 香味）。五识都有这种能力。<br>
-<strong>分别</strong>＝在了别之上 加 <strong>名言 / 概念 / 推理 / 判断</strong>——「这是花」「这朵花真美」。这是<strong>第六意识</strong>的功能。<br>
-五识看到红色 但不知道「这是花」；判断「这是花」要第六识介入。
+- 「前五识」= 百法 心法八识里的前五个
+- 体性：<strong>了别境界</strong>——眼了色 / 耳了声 / 鼻了香 / 舌了味 / 身了触
+- 所缘：<strong>色 / 声 / 香 / 味 / 触</strong> 五尘
+- 所依：<strong>净色根</strong>（极微细净色 ≈ 整个感官机制）
+- 起处：欲界 + 色界初禅
+
+</div>
+
+<div class="mt-3 p-3 bg-amber-50 rounded text-sm">
+五识有「<strong>了别</strong>」但无「<strong>分别</strong>」——<strong>了别</strong>＝直接辨识所缘境（红 / 绿 / 香味）；<strong>分别</strong>＝加名言概念（「这是花」），是第六识的功能。
 </div>
 
 ---
