@@ -43,7 +43,7 @@ layout: default
 - 《八识规矩颂》给的是「**运作 + 转依**」（每个识在凡夫位怎么运作、在圣者位怎么转）
 
 <div class="mt-5 p-4 bg-amber-50 rounded">
-<strong>学习前提</strong>：对《百法》51 心所的分类要有基本认识——遍行 5 / 别境 5 / 善 11 / 根本烦恼 6 / 随烦恼 20 / 不定 4。本讲会快速复习，但不重新展开每个心所的含义。
+<strong>学习前提</strong>：对《百法》中的 <strong>51 个心所 + 它们的分类</strong> 都要了解——遍行 5 / 别境 5 / 善 11 / 根本烦恼 6 / 随烦恼 20 / 不定 4。本讲会快速复习，但不重新展开每个心所的含义。
 </div>
 
 ---
@@ -55,7 +55,7 @@ layout: default
 <div class="mt-4 space-y-3">
 
 - **前五识**是什么？哪 5 个？体性如何？
-- 凡夫位 五识 的运作机制——所缘什么境？什么量？善恶哪种性？与多少心所相应？
+- 凡夫位 五识 的运作机制——所缘什么境？什么量？是善 是恶 还是无记？与多少心所相应？
 - 圣者位 五识 转什么智？转依从什么时候开始？
 - 圣者修证 4 个阶位——五识 的转依进度 在每个阶位是什么？
 
@@ -75,7 +75,7 @@ layout: default
 
 # 前五识 ↔ 百法
 
-<div class="text-base space-y-1 mt-2">
+<div class="text-lg space-y-2 mt-3">
 
 - 「前五识」= 百法 心法八识里的前五个
 - 体性：<strong>了别境界</strong>——眼了色 / 耳了声 / 鼻了香 / 舌了味 / 身了触
@@ -85,8 +85,10 @@ layout: default
 
 </div>
 
-<div class="mt-3 p-3 bg-amber-50 rounded text-sm">
-五识有「<strong>了别</strong>」但无「<strong>分别</strong>」——<strong>了别</strong>＝直接辨识所缘境（红 / 绿 / 香味）；<strong>分别</strong>＝加名言概念（「这是花」），是第六识的功能。
+<div class="mt-4 p-3 bg-amber-50 rounded text-base">
+五识有「<strong>了别</strong>」但无「<strong>分别</strong>」——<br>
+<strong>了别</strong>＝直接辨识所缘境（红 / 绿 / 香味）；<br>
+<strong>分别</strong>＝加名言概念（「这是花」），是第六识的功能。
 </div>
 
 ---
@@ -101,7 +103,7 @@ layout: section
 layout: default
 ---
 
-# 第一颂 全文 + 大意
+# 第一颂 全文
 
 <div class="mt-6 p-6 bg-stone-50 rounded text-center">
 <div class="text-3xl">　性境现量通三性　　眼耳身三二地居</div>
@@ -125,10 +127,8 @@ layout: default
 
 # 第一颂 · 第一句详解：性境现量通三性
 
-<div class="text-xl mt-2">
-
-五识 = <strong>性境 · 现量 · 通三性</strong>
-
+<div class="mt-2 p-3 bg-amber-50 rounded text-lg">
+<strong>白话</strong>：前五识所缘 是 真实色法本身（不是想象，也不是带概念的执取）；当下直接感知（不做推理）；自己不能决定善恶，可以善、可以恶、可以无记。
 </div>
 
 <div class="grid grid-cols-2 gap-3 mt-4 text-base">
@@ -151,7 +151,7 @@ layout: default
 </div>
 
 <div class="mt-3 p-3 bg-amber-50 rounded text-base">
-<strong>通三性</strong>＝善 / 恶 / 无记 三性都可起。五识自体不分别，三性由<strong>心所配伍 + 第六识引发</strong>共同决定。
+<strong>通三性</strong>＝善 / 恶 / 无记 三性都可起。五识自体不分别，三性由<strong>心所搭配 + 第六识引发</strong>共同决定。
 </div>
 
 ---
@@ -160,13 +160,18 @@ layout: default
 
 # 第一颂 · 第二句详解：眼耳身三二地居
 
+<div class="mt-2 p-3 bg-amber-50 rounded text-lg">
+<strong>白话</strong>：眼识、耳识、身识 在欲界 + 色界初禅 两地起；鼻识、舌识 只在欲界起；二禅以上 前五识 全部停。
+</div>
+
 <div class="space-y-3 mt-3">
 
 - 「三」= <strong>眼识 + 耳识 + 身识</strong>，这三个可以在欲界 + 色界初禅 起
 - <strong>鼻识 + 舌识</strong> = 只在欲界起。色界众生已离段食欲（不需物质食物 / 香味），所以无鼻舌识
 - 「<strong>二地</strong>」= 五趣杂居地（欲界）+ 离生喜乐地（色界初禅）
   - 按《瑜伽师地论》卷 3 是「<strong>有寻有伺地</strong>」
-- 二禅以上 = 无寻唯伺 / 无寻无伺 地，五识全不起；全靠定中第六识缘内境
+- <strong>中间禅</strong>（初二禅之间）= <strong>无寻有伺地</strong>——只有伺，无寻
+- 二禅以上 = <strong>无寻无伺地</strong>——寻伺都无，五识全不起；全靠定中第六识缘内境
 
 </div>
 
@@ -175,6 +180,10 @@ layout: default
 ---
 
 # 第一颂 · 第三句详解：遍行别境善十一
+
+<div class="mt-2 p-3 bg-amber-50 rounded text-lg">
+<strong>白话</strong>：跟前五识可以相应的 善 / 中性心所，共 21 个——遍行 5 + 别境 5 + 善 11。
+</div>
 
 与前五识相应的 <strong>善 / 中性心所</strong> 共 21 个——
 
@@ -197,6 +206,10 @@ layout: default
 ---
 
 # 第一颂 · 第四句详解：中二大八贪嗔痴
+
+<div class="mt-2 p-3 bg-amber-50 rounded text-lg">
+<strong>白话</strong>：跟前五识可以相应的 染污心所，共 13 个——中随 2 + 大随 8 + 根本 3（贪嗔痴）。小随 10 和 慢/疑/不正见 不相应。
+</div>
 
 与前五识相应的 <strong>染污心所</strong> 共 13 个——
 
@@ -229,7 +242,7 @@ layout: default
 
 <div class="mt-8 p-4 bg-amber-50 rounded">
 注意——具体到某一刹那的五识，<strong>不会同时</strong>和 34 个相应。<br>
-根据当时的善 / 恶 / 无记 三性配伍——
+根据当时的善 / 恶 / 无记 三性搭配——
 <ul class="mt-2">
 <li>善心起时：与遍行 5 + 别境 5 + 善 11 = 21 个相应</li>
 <li>染心起时：与遍行 5 + 别境 5 + 染污 13 = 23 个相应</li>
@@ -241,7 +254,7 @@ layout: default
 layout: default
 ---
 
-# 第二颂 全文 + 大意
+# 第二颂 全文
 
 <div class="mt-6 p-6 bg-stone-50 rounded text-center">
 <div class="text-3xl">　五识同依净色根　　九缘八七好相邻</div>
@@ -265,6 +278,10 @@ layout: default
 
 # 第二颂 · 第一句详解：五识同依净色根
 
+<div class="mt-2 p-3 bg-amber-50 rounded text-lg">
+<strong>白话</strong>：前五识 都依「净色根」起。净色根 不是肉眼可见的肉团（眼球、耳朵），而是 整个感官机制 的精微部分。
+</div>
+
 <div class="space-y-3 mt-3">
 
 - 「净色根」= 五根的体性 = <strong>极微细净色</strong>，不是肉团
@@ -283,6 +300,10 @@ layout: default
 ---
 
 # 第二颂 · 第二句详解：九缘八七好相邻
+
+<div class="mt-2 p-3 bg-amber-50 rounded text-base">
+<strong>白话</strong>：前五识 生起 需要的「缘」——眼识 9 个、耳识 8 个、鼻舌身 各 7 个；缺一 不能起。
+</div>
 
 <div class="grid grid-cols-2 gap-4 mt-3 text-base">
   <div>
@@ -321,6 +342,10 @@ layout: default
 
 # 第二颂 · 第三句详解：合三离二观尘世
 
+<div class="mt-2 p-3 bg-amber-50 rounded text-lg">
+<strong>白话</strong>：前五识 取境分两种——眼识、耳识 要有距离（离中取）；鼻识、舌识、身识 必须接触（合中知）。
+</div>
+
 <div class="space-y-3 mt-3">
 
 - <strong>离中取</strong>：眼识 / 耳识——所缘境 与 根 之间要有空间距离（看远处、听远声）
@@ -340,6 +365,10 @@ layout: default
 ---
 
 # 第二颂 · 第四句详解：愚者难分识与根
+
+<div class="mt-2 p-3 bg-amber-50 rounded text-lg">
+<strong>白话</strong>：凡夫「愚者」 容易 把「识」跟「根」混淆——以为「眼睛能看」，其实 要 多个缘 合力 才能见。
+</div>
 
 <div class="space-y-3 mt-3">
 
@@ -371,7 +400,7 @@ layout: default
 </div>
 
 <div class="mt-6 p-4 bg-stone-50 rounded">
-凡夫位 五识——<strong>受第六识引发，与众多心所相应配伍，在三界二地中起 现量感知</strong>。但因不知 识根之别，流转生死。
+凡夫位 五识——<strong>受第六识引发，与众多心所相应搭配，在三界二地中起 现量感知</strong>。但因不知 识根之别，流转生死。
 </div>
 
 ---
@@ -386,7 +415,7 @@ layout: section
 layout: default
 ---
 
-# 第三颂 全文 + 大意
+# 第三颂 全文
 
 <div class="mt-6 p-6 bg-stone-50 rounded text-center">
 <div class="text-3xl">　变相观空唯后得　　果中犹自不诠真</div>
@@ -410,6 +439,10 @@ layout: default
 
 # 第三颂 · 第一句详解：变相观空唯后得
 
+<div class="mt-2 p-3 bg-amber-50 rounded text-lg">
+<strong>白话</strong>：前五识 即使到佛果，能观察 诸法空性，也 不是 直接 亲证 真如——它 必须 先现起 一个「空」的相，再借这个相 来观察。所以 这种观空 属于「后得智」，不是「根本智」。
+</div>
+
 <div class="space-y-3 mt-3">
 
 - <strong>变相观空</strong>：五识不能直接缘真如，必须<strong>变现真如的「相分」</strong>来观——这是<strong>后得智</strong>（后得无分别智）的功能
@@ -426,6 +459,10 @@ layout: default
 ---
 
 # 第三颂 · 第二句详解：果中犹自不诠真
+
+<div class="mt-2 p-3 bg-amber-50 rounded text-lg">
+<strong>白话</strong>：即使 到了佛果，前五识 转成 成所作智 之后，也 不能 直接「诠表」真如——它 只能 现量感知 相分，不能 用 名言概念 把 真如 表达出来。
+</div>
 
 <div class="space-y-3 mt-3">
 
@@ -446,6 +483,10 @@ layout: default
 
 # 第三颂 · 第三句详解：圆明初发成无漏
 
+<div class="mt-2 p-3 bg-amber-50 rounded text-lg">
+<strong>白话</strong>：前五识 第一次「圆满 明朗」地 起为 无漏，就在 佛果 一刹那（与 第八识 同时转）。在这之前 一直 都是 有漏。
+</div>
+
 <div class="space-y-3 mt-3">
 
 - <strong>圆明初发</strong>——指五识 第一次「圆满明朗」地无漏现起，就在 <strong>佛果一刹那</strong>
@@ -463,6 +504,10 @@ layout: default
 ---
 
 # 第三颂 · 第四句详解：三类分身息苦轮
+
+<div class="mt-2 p-3 bg-amber-50 rounded text-lg">
+<strong>白话</strong>：佛果 成所作智 起化用，化现 三类身 度众生——大化身、小化身、随类化身；度脱 六道众生 出离 苦海。
+</div>
 
 佛果 成所作智 起化用，化现三类身度众生——
 
@@ -487,30 +532,27 @@ layout: default
 
 # 圣者 4 阶位 · 前五识转依进度
 
-<div class="text-base">
+<div class="text-xl mt-2">
 
-| 阶位 | 五识转依进度 |
+| 阶位 | 前五识 转依进度 |
 | --- | --- |
-| <strong>见道（菩萨初地入心）</strong> | 五识 <strong>未转</strong>——仍是有漏。同时 第六 / 第七识 已分得 妙观察智 / 平等性智（部分） |
-| <strong>修道 二地至七地</strong> | 五识 <strong>仍未转</strong>——但凡夫位 烦恼障的分别起部分已断 |
-| <strong>第八不动地</strong> | 五识 <strong>仍未转</strong>——但俱生我执 已伏 |
-| <strong>佛果 / 究竟位</strong> | 五识 <strong>与第八识同时</strong>转 <strong>成所作智</strong>——「<strong>圆明初发</strong>」此刻 |
+| <strong>见道（菩萨初地入心）</strong> | <strong>未转</strong>——仍是有漏 |
+| <strong>修道 二地至七地</strong> | <strong>仍未转</strong>——有漏 |
+| <strong>第八不动地</strong> | <strong>仍未转</strong>——有漏 |
+| <strong>佛果</strong> | <strong>转 成所作智</strong>——「圆明初发」此刻 |
 
 </div>
 
-<div class="mt-3 p-3 bg-stone-50 rounded text-base">
-严格说 五识 转无漏 <strong>与第八识同时</strong>（《成唯识论》卷 10）——都在佛果一刹那圆明现起。不是五识「最晚」，而是它<strong>不能独立转</strong>——必须等第八识转大圆镜智后，五识 才有无漏所依。
-</div>
-
-<div class="mt-3 p-3 bg-amber-50 rounded text-base">
-关于「<strong>金刚道</strong>」——是菩萨修行的最后一刹那心（即将成佛的那一念），也就是「<strong>成佛前的一刹那</strong>」。下一刹那就是佛果。所以本表把 金刚道 与佛果合并，一般不单独列阶位。
+<div class="mt-5 p-4 bg-amber-50 rounded text-base">
+前五识 的关键特征——<strong>转依最晚</strong>，要到 佛果 一刹那 才能转。<br>
+其他三识（第六 / 第七 / 第八）的转依次第，会在 后续讲解 详细展开。
 </div>
 
 ---
 layout: default
 ---
 
-# 圣者位 小结
+# 圣者位 · 小结
 
 <div class="space-y-3 mt-4">
 
@@ -540,15 +582,15 @@ layout: default
 
 <div class="text-xl mt-2">
 
-| 维度 | 凡夫位 | 圣者位（佛果） |
-| --- | --- | --- |
-| <strong>所缘</strong> | 性境（真色法） | 真如的相分 |
-| <strong>量</strong> | 现量（直接感知） | 后得智的现量 |
-| <strong>性</strong> | 通三性（善恶无记） | 唯善（无漏） |
-| <strong>相应心所</strong> | 21 善/中性 + 13 染污 = 34 | 只与 21 善/中性 相应；染污全断 |
-| <strong>所依</strong> | 有漏净色根 | 无漏净色根 |
-| <strong>体性</strong> | 有漏识 | <strong>成所作智</strong> |
-| <strong>果用</strong> | 流转生死 | 三类分身息苦轮 |
+| 维度 | 凡夫位 | 见道 → 八地 | 佛果 |
+| --- | --- | --- | --- |
+| <strong>体性</strong> | 有漏识 | 仍是 有漏 | <strong>成所作智</strong>（无漏）|
+| <strong>所缘</strong> | 性境（色声香味触）| 同凡夫 | <strong>净色境</strong>（无漏五尘）+ 变现相分 间接观空 |
+| <strong>量</strong> | 现量 | 现量 | 后得智的现量 |
+| <strong>性</strong> | 通三性 | 通三性（渐净化）| 唯善（无漏）|
+| <strong>相应心所</strong> | 34 个（21 善+13 染）| 染污渐断 | 只 21 善 / 中性；染污全断 |
+| <strong>所依</strong> | 有漏净色根 | 同上 | 无漏净色根 |
+| <strong>果用</strong> | 流转生死 | — | 三类分身息苦轮 |
 
 </div>
 

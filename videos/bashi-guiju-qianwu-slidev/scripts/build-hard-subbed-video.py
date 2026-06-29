@@ -138,6 +138,8 @@ def build_subtitle_timeline() -> list[tuple[float, float, str]]:
         duration = get_duration(audio_file)
 
         chunks = split_sentences(text)
+        # 字幕显示时去除多余空格（TTS 用空格控制停顿，但字幕不需要）
+        chunks = [c.replace(" ", "").replace("　", "") for c in chunks]
         total_chars = sum(len(c) for c in chunks)
         if total_chars == 0:
             cum_offset += duration + TAIL_SILENCE

@@ -62,25 +62,39 @@ def extract_notes(slides_md: Path) -> list[str]:
     return [n.strip() for n in notes]
 
 
-# TTS pronunciation fixes — replace homophone-misread chars so cosyvoice
-# pronounces correctly. Source notes/*.txt keep original characters;
-# only the text sent to TTS is rewritten. Subtitles still show original.
+# TTS pronunciation fixes — use cosyvoice-v2 SSML <phoneme> tags for
+# multi-tone Chinese chars. Confirmed working format:
+#   <phoneme alphabet="py" ph="xing2">行</phoneme>
+# - alphabet="py" required (x-aliyun-py / no alphabet → 411/413 errors)
+# - ph must use pinyin letters + tone number 1-5 (no diacritics)
+# Source notes/*.txt keep original chars; only TTS text gets SSML.
+# Subtitles read from notes — always show original chars.
+def _ph(char: str, py: str) -> str:
+    return f'<phoneme alphabet="py" ph="{py}">{char}</phoneme>'
+
 PRONUNCIATION_FIXES = [
-    # 「行」xíng — TTS defaults to héng
-    ("加行", "加形"),         # 加行位 — preliminary practice
-    ("行舍", "形舍"),         # 行舍 心所 — equanimity
-    ("十六行相", "十六形相"),  # 16 aspects
-    ("行相", "形相"),         # generic 行相 (4 谛 each has 4 行相)
-    ("行蕴", "形蕴"),         # 行蕴 — formation aggregate
-    ("梵行", "梵形"),         # 梵行 已立 — religious practice
-    # 「了」liǎo — TTS defaults to le (sentence particle); 「瞭」also fails
-    # Use 「辨」(distinguish) — semantically close, TTS reads biàn clearly
-    ("了别", "辨别"),         # 了别 — 八识 cognitive function (most common)
-    ("了 色", "辨 色"),       # 眼识了 色
-    ("了 声", "辨 声"),       # 耳识了 声
-    ("了 香", "辨 香"),       # 鼻识了 香
-    ("了 味", "辨 味"),       # 舌识了 味
-    ("了 触", "辨 触"),       # 身识了 触
+    # 「行」xíng — TTS defaults to héng. Order: longest first.
+    ("十六行相", "十六" + _ph("行", "xing2") + _ph("相", "xiang4")),
+    ("加行", "加" + _ph("行", "xing2")),
+    ("行舍", _ph("行", "xing2") + "舍"),
+    ("行相", _ph("行", "xing2") + _ph("相", "xiang4")),
+    ("行蕴", _ph("行", "xing2") + "蕴"),
+    ("梵行", "梵" + _ph("行", "xing2")),
+    # 「了」liǎo — TTS defaults to le (sentence particle)
+    ("了别", _ph("了", "liao3") + "别"),
+    ("眼识了 色", "眼识" + _ph("了", "liao3") + " 色"),
+    ("耳识了 声", "耳识" + _ph("了", "liao3") + " 声"),
+    ("鼻识了 香", "鼻识" + _ph("了", "liao3") + " 香"),
+    ("舌识了 味", "舌识" + _ph("了", "liao3") + " 味"),
+    ("身识了 触", "身识" + _ph("了", "liao3") + " 触"),
+    # 「转」zhuǎn 3rd tone — TTS defaults to zhuàn 4th tone in 转依
+    ("转依", _ph("转", "zhuan3") + "依"),
+    # 「相」xiàng 4th tone — TTS defaults to xiāng 1st tone (行相 already above)
+    ("相分", _ph("相", "xiang4") + "分"),
+    # 「恶」è 4th tone — TTS defaults to ě 3rd tone in 恶心
+    ("恶心", _ph("恶", "e4") + "心"),
+    # 「二个」èr ge — substitute to 两个 liǎng ge (no good SSML fix for char swap)
+    ("二个", "两个"),
 ]
 
 
@@ -98,6 +112,9 @@ def synth_one(idx: int, text: str) -> tuple[int, str]:
         return idx, f"skip (already exists, {out.stat().st_size/1024:.0f} KB)"
 
     tts_text = fix_pronunciation(text)
+    # If text contains SSML phoneme tags, wrap in <speak> for cosyvoice-v2
+    if "<phoneme" in tts_text:
+        tts_text = f"<speak>{tts_text}</speak>"
     last_err = None
     for attempt in range(1, MAX_RETRIES + 1):
         try:
