@@ -86,9 +86,11 @@ layout: default
 </div>
 
 <div class="mt-4 p-3 bg-amber-50 rounded text-base">
-五识有「<strong>了别</strong>」但无「<strong>分别</strong>」——<br>
-<strong>了别</strong>＝直接辨识所缘境（红 / 绿 / 香味）；<br>
-<strong>分别</strong>＝加名言概念（「这是花」），是第六识的功能。
+按《成唯识论》三种分别——<br>
+<strong>自性分别</strong>（直接辨识所缘本身）：前五识 都有；如 眼识 能区分 红 / 绿<br>
+<strong>计度分别</strong>（名言、概念、推理）：第六识 特有；如 知道 那叫「红色」、「花」<br>
+<strong>随念分别</strong>（回忆、对比）：第六识 特有<br>
+<span class="text-xs opacity-70">前五识 有 自性分别，无 计度、随念——不是"完全不分别"</span>
 </div>
 
 ---
@@ -151,7 +153,7 @@ layout: default
 </div>
 
 <div class="mt-3 p-3 bg-amber-50 rounded text-base">
-<strong>通三性</strong>＝善 / 恶 / 无记 三性都可起。五识自体不分别，三性由<strong>心所搭配 + 第六识引发</strong>共同决定。
+<strong>通三性</strong>＝善 / 恶 / 无记 三性都可起。五识自体 <strong>无计度分别</strong>，三性由<strong>心所搭配 + 第六识引发</strong>共同决定。
 </div>
 
 ---
@@ -225,7 +227,7 @@ layout: default
 
 <div class="mt-4 p-3 bg-stone-50 rounded text-base">
 <strong>注 1</strong>：小随 10（忿 / 恨 / 覆 / 恼 / 嫉 / 悭 / 诳 / 谄 / 害 / 憍）<strong>不与前五识相应</strong>——《成唯识论》卷 5：「<strong>行相猛利</strong>，唯各别起，前五不与」<br>
-<strong>注 2</strong>：根本烦恼里的<strong>慢 / 疑 / 不正见</strong>也不与五识相应——需要分别判断，五识 无分别
+<strong>注 2</strong>：根本烦恼里的<strong>慢 / 疑 / 不正见</strong>也不与五识相应——需要 <strong>计度分别</strong> 判断，五识 无计度分别
 </div>
 
 ---

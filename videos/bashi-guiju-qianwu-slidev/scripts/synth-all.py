@@ -82,11 +82,12 @@ PRONUNCIATION_FIXES = [
     ("梵行", "梵" + _ph("行", "xing2")),
     # 「了」liǎo — TTS defaults to le (sentence particle)
     ("了别", _ph("了", "liao3") + "别"),
-    ("眼识了 色", "眼识" + _ph("了", "liao3") + " 色"),
-    ("耳识了 声", "耳识" + _ph("了", "liao3") + " 声"),
-    ("鼻识了 香", "鼻识" + _ph("了", "liao3") + " 香"),
-    ("舌识了 味", "舌识" + _ph("了", "liao3") + " 味"),
-    ("身识了 触", "身识" + _ph("了", "liao3") + " 触"),
+    # notes 用「眼识能了色」格式（v9 实测最自然）— 加「能」做上下文 + 无空格紧贴
+    ("眼识能了色", "眼识能" + _ph("了", "liao3") + "色"),
+    ("耳识能了声", "耳识能" + _ph("了", "liao3") + "声"),
+    ("鼻识能了香", "鼻识能" + _ph("了", "liao3") + "香"),
+    ("舌识能了味", "舌识能" + _ph("了", "liao3") + "味"),
+    ("身识能了触", "身识能" + _ph("了", "liao3") + "触"),
     # 「转」zhuǎn 3rd tone — TTS defaults to zhuàn 4th tone in 转依
     ("转依", _ph("转", "zhuan3") + "依"),
     # 「相」xiàng 4th tone — TTS defaults to xiāng 1st tone (行相 already above)
@@ -98,9 +99,30 @@ PRONUNCIATION_FIXES = [
 ]
 
 
+_HTML_NON_SSML_TAG = re.compile(r"</?(?:strong|em|b|i|u|br)(?:\s[^>]*)?\s*/?>", re.I)
+
+
+def strip_html(text: str) -> str:
+    """Remove HTML tags that aren't valid SSML (strong/em/b/i/u/br).
+    Keep speak/phoneme/break — those are valid SSML."""
+    return _HTML_NON_SSML_TAG.sub("", text)
+
+
 def fix_pronunciation(text: str) -> str:
     for orig, repl in PRONUNCIATION_FIXES:
         text = text.replace(orig, repl)
+    return text
+
+
+SENTENCE_END = ("。", "！", "？")
+
+
+def add_breaks(text: str) -> str:
+    """Insert <break time="300ms"/> after sentence-ending punctuation to
+    prevent cosyvoice-v2 from running consecutive sentences together
+    (e.g., 「身识能了触。所缘 = ...」being read as 「触所缘」)."""
+    for p in SENTENCE_END:
+        text = text.replace(p, p + '<break time="300ms"/>')
     return text
 
 
@@ -111,10 +133,14 @@ def synth_one(idx: int, text: str) -> tuple[int, str]:
     if out.exists() and out.stat().st_size > 0:
         return idx, f"skip (already exists, {out.stat().st_size/1024:.0f} KB)"
 
-    tts_text = fix_pronunciation(text)
-    # If text contains SSML phoneme tags, wrap in <speak> for cosyvoice-v2
-    if "<phoneme" in tts_text:
-        tts_text = f"<speak>{tts_text}</speak>"
+    tts_text = strip_html(text)
+    tts_text = fix_pronunciation(tts_text)
+    # NOTE: do NOT call add_breaks() globally — <break> caused cosyvoice-v2
+    # to read multi-char terms (凡夫位, 圣者位) as choppy single chars in P01.
+    # Rely on 。 for natural sentence breaks. Restructure specific run-on
+    # notes (e.g., 触/所缘) instead of universal break injection.
+    # Always wrap in <speak> — phoneme tags require SSML root
+    tts_text = f"<speak>{tts_text}</speak>"
     last_err = None
     for attempt in range(1, MAX_RETRIES + 1):
         try:

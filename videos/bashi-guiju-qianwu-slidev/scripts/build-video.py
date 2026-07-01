@@ -52,11 +52,16 @@ def build_segment(idx: int) -> Path:
     aud = AUDIO / f"{label}.mp3"
     seg = SEGMENTS / f"{label}.mp4"
 
-    if seg.exists() and seg.stat().st_size > 0:
-        return seg
-
     if not img.exists() or not aud.exists():
         sys.exit(f"missing assets for slide {label}: img={img.exists()} aud={aud.exists()}")
+
+    # Reuse cached segment only if it's newer than both inputs (audio + png).
+    # Otherwise rebuild — prevents stale segments after re-synth or PNG re-export.
+    if seg.exists() and seg.stat().st_size > 0:
+        seg_mt = seg.stat().st_mtime
+        if seg_mt >= aud.stat().st_mtime and seg_mt >= img.stat().st_mtime:
+            return seg
+        print(f"  [rebuild] segment {label} is stale (audio or png newer)")
 
     audio_dur = get_duration(aud)
     total_dur = audio_dur + TAIL_SILENCE
