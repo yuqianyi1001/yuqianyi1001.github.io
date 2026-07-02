@@ -115,46 +115,115 @@ def fix_pronunciation(text: str) -> str:
 
 
 SENTENCE_END = ("。", "！", "？")
+SILENCE_MS = 350  # gap inserted between synthesized sentences
+_SILENCE_CACHE: Path | None = None
 
 
-def add_breaks(text: str) -> str:
-    """Insert <break time="300ms"/> after sentence-ending punctuation to
-    prevent cosyvoice-v2 from running consecutive sentences together
-    (e.g., 「身识能了触。所缘 = ...」being read as 「触所缘」)."""
-    for p in SENTENCE_END:
-        text = text.replace(p, p + '<break time="300ms"/>')
-    return text
+def split_sentences(text: str) -> list[str]:
+    """Split text at 。！？, keeping the delimiter with the preceding sentence.
+    Strips whitespace-only fragments."""
+    parts: list[str] = []
+    buf = ""
+    for ch in text:
+        buf += ch
+        if ch in SENTENCE_END:
+            s = buf.strip()
+            if s:
+                parts.append(s)
+            buf = ""
+    tail = buf.strip()
+    if tail:
+        parts.append(tail)
+    return parts
+
+
+def get_silence_mp3() -> Path:
+    """Lazy-cached silence.mp3 (matches cosyvoice format: 22050Hz mono 256kbps)."""
+    global _SILENCE_CACHE
+    if _SILENCE_CACHE is None or not _SILENCE_CACHE.exists():
+        cache_dir = AUDIO_DIR / ".cache"
+        cache_dir.mkdir(exist_ok=True)
+        p = cache_dir / f"silence-{SILENCE_MS}ms.mp3"
+        if not p.exists():
+            import subprocess
+            subprocess.run(
+                ["ffmpeg", "-y", "-f", "lavfi",
+                 "-i", "anullsrc=r=22050:cl=mono",
+                 "-t", f"{SILENCE_MS/1000:.3f}",
+                 "-b:a", "256k", str(p)],
+                check=True, capture_output=True,
+            )
+        _SILENCE_CACHE = p
+    return _SILENCE_CACHE
+
+
+def _tts_call(text: str) -> bytes:
+    """Single cosyvoice call with SSML wrapping. Returns raw mp3 bytes."""
+    tts_text = strip_html(text)
+    tts_text = fix_pronunciation(tts_text)
+    tts_text = f"<speak>{tts_text}</speak>"
+    synth = SpeechSynthesizer(
+        model=TARGET_MODEL,
+        voice=VOICE_ID,
+        format=AudioFormat.MP3_22050HZ_MONO_256KBPS,
+        speech_rate=SPEECH_RATE,
+    )
+    audio = synth.call(tts_text)
+    if not audio:
+        raise RuntimeError("empty audio response")
+    return audio
 
 
 def synth_one(idx: int, text: str) -> tuple[int, str]:
-    """Synthesize one note. Returns (idx, status_message)."""
+    """Synthesize one note. Splits into sentences and concatenates with
+    silence to guarantee sentence-boundary pauses (cosyvoice-v2 doesn't
+    reliably pause at 。; <break> tag causes choppy delivery in some contexts)."""
     label = f"{idx:02d}"
     out = AUDIO_DIR / f"{label}.mp3"
     if out.exists() and out.stat().st_size > 0:
         return idx, f"skip (already exists, {out.stat().st_size/1024:.0f} KB)"
 
-    tts_text = strip_html(text)
-    tts_text = fix_pronunciation(tts_text)
-    # NOTE: do NOT call add_breaks() globally — <break> caused cosyvoice-v2
-    # to read multi-char terms (凡夫位, 圣者位) as choppy single chars in P01.
-    # Rely on 。 for natural sentence breaks. Restructure specific run-on
-    # notes (e.g., 触/所缘) instead of universal break injection.
-    # Always wrap in <speak> — phoneme tags require SSML root
-    tts_text = f"<speak>{tts_text}</speak>"
+    sentences = split_sentences(text)
+    if len(sentences) <= 1:
+        # Single sentence — direct synth, no concat overhead
+        last_err = None
+        for attempt in range(1, MAX_RETRIES + 1):
+            try:
+                audio = _tts_call(text)
+                out.write_bytes(audio)
+                return idx, f"ok ({len(audio)/1024:.0f} KB, 1 sent)"
+            except Exception as e:  # noqa: BLE001
+                last_err = e
+                if attempt < MAX_RETRIES:
+                    time.sleep(RETRY_DELAY_SECONDS * attempt)
+        return idx, f"FAILED after {MAX_RETRIES} attempts: {last_err}"
+
+    # Multi-sentence — synth each and concat with silence
+    import subprocess
+    import tempfile
+    silence = get_silence_mp3()
     last_err = None
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            synth = SpeechSynthesizer(
-                model=TARGET_MODEL,
-                voice=VOICE_ID,
-                format=AudioFormat.MP3_22050HZ_MONO_256KBPS,
-                speech_rate=SPEECH_RATE,
-            )
-            audio = synth.call(tts_text)
-            if not audio:
-                raise RuntimeError("empty audio response")
-            out.write_bytes(audio)
-            return idx, f"ok ({len(audio)/1024:.0f} KB)"
+            with tempfile.TemporaryDirectory(prefix=f"tts-{label}-") as td:
+                td_path = Path(td)
+                list_lines: list[str] = []
+                for i, sent in enumerate(sentences):
+                    audio = _tts_call(sent)
+                    part = td_path / f"p{i:03d}.mp3"
+                    part.write_bytes(audio)
+                    list_lines.append(f"file '{part}'")
+                    if i < len(sentences) - 1:
+                        list_lines.append(f"file '{silence}'")
+                list_file = td_path / "list.txt"
+                list_file.write_text("\n".join(list_lines))
+                subprocess.run(
+                    ["ffmpeg", "-y", "-f", "concat", "-safe", "0",
+                     "-i", str(list_file), "-c:a", "libmp3lame", "-b:a", "256k",
+                     str(out)],
+                    check=True, capture_output=True,
+                )
+            return idx, f"ok ({out.stat().st_size/1024:.0f} KB, {len(sentences)} sents)"
         except Exception as e:  # noqa: BLE001
             last_err = e
             if attempt < MAX_RETRIES:
