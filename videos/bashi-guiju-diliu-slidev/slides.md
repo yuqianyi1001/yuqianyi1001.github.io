@@ -41,19 +41,19 @@ fonts:
 layout: default
 ---
 
-# 为什么要学 第六识
+# 为什么要学第六识
 
 <div class="mt-3 space-y-2">
 
-- 第六识 = **意识**——三界九地 全 现行，最活跃、最容易观察
-- 三业中「动身、发语、意」的 **总指挥**——**引业 + 满业** 招感 三界果报 全靠它
-- 转依起步最早——**初地 欢喜地** 就开始 转 妙观察智；**七地 远行地** 后 纯无漏
-- 妙观察智 = **根本无分别智 + 后得智 都能起**（跟前五识 只能后得 对比）
+- 第六识 = **意识**——三界九地全现行，最活跃、最容易观察
+- 三业中「动身、发语、意」的 **总指挥**——**引业 + 满业** 招感三界果报全靠它
+- 转依起步最早——**初地欢喜地** 就开始转妙观察智；**七地远行地** 后纯无漏
+- 妙观察智 = **根本无分别智 + 后得智都能起**（跟前五识只能后得对比）
 
 </div>
 
 <div class="mt-5 p-4 bg-amber-50 rounded">
-<strong>学习前提</strong>：应已看过《百法》系列 + 《八识规矩颂》第一讲。对 51 心所分类、三性三量三境、5 圣者阶位 有基本认识。
+<strong>学习前提</strong>：应已看过《百法》系列 + 《八识规矩颂》第一讲。对 51 心所分类、三性三量三境、5 圣者阶位有基本认识。
 </div>
 
 <!--
@@ -74,11 +74,11 @@ layout: default
 
 <div class="mt-4 space-y-3">
 
-- 第六识 通几性 / 几量 / 几境？跟五识有什么区别？
-- 相应心所 有多少？为什么 **51 全通**？
-- 「动身发语独为最」——为什么造业主 是第六识 不是七、八？
+- 第六识通几性 / 几量 / 几境？跟五识有什么区别？
+- 相应心所有多少？为什么 **51 全通**？
+- 「动身发语独为最」——为什么造业主是第六识不是七、八？
 - 引业 vs 满业——概念如何区分？
-- 圣者位 5 阶位（凡夫 / 初地 / 二至六地 / 七地 / 佛果）—— 第六识 转依 每阶如何？
+- 圣者位 5 阶位（凡夫 / 初地 / 二至六地 / 七地 / 佛果）—— 第六识转依每阶如何？
 - **妙观察智** 跟 **成所作智**（五识转成的）区别是什么？
 
 </div>
@@ -101,19 +101,19 @@ layout: default
 
 <div class="text-lg space-y-2 mt-3">
 
-- 「第六识」= 百法 心法八识 里 的 第六个（**意识**）
-- 体性：**了别 一切法**——不限于 5 尘，法尘也缘
-- 所缘：**法尘**（含 一切法）
+- 「第六识」= 百法心法八识里的第六个（**意识**）
+- 体性：**了别一切法**——不限于 5 尘，法尘也缘
+- 所缘：**法尘**（含一切法）
 - 所依：**意根**（第七末那识）
-- 起处：**三界九地 全 现行**（对比 五识 只欲界 + 初禅部分）
+- 起处：**三界九地全现行**（对比五识只欲界 + 初禅部分）
 
 </div>
 
 <div class="mt-4 p-3 bg-amber-50 rounded text-base">
 <strong>两种起法</strong>——<br>
-<strong>五俱意识</strong>：跟前五识 同时起（比如 眼识见色 时 第六识 同缘）<br>
-<strong>独头意识</strong>：独自起（比如 定中、梦中、独散思考）<br>
-<span class="text-sm opacity-70">具足 <strong>三种分别</strong>（自性 + 计度 + 随念）—— 8 识里 唯一 三分别全有</span>
+<strong>五俱意识</strong>：跟前五识同时起（比如眼识见色时第六识同缘）<br>
+<strong>独头意识</strong>：独自起（比如定中、梦中、独散思考）<br>
+<span class="text-sm opacity-70">具足 <strong>三种分别</strong>（自性 + 计度 + 随念）—— 8 识里唯一三分别全有</span>
 </div>
 
 <!--
@@ -158,7 +158,7 @@ layout: default
 第一颂讲 4 个维度——
 
 - 第一句：**所缘性质**（三性 / 三量 / 三境）
-- 第二句：**起处**（三界九地 全通）
+- 第二句：**起处**（三界九地全通）
 - 第三句：**相应心所**（51 全通）
 - 第四句：**善恶配伍方式**（临时决定）
 
@@ -180,7 +180,7 @@ layout: default
 # 第一颂 · 第一句详解：三性三量通三境
 
 <div class="mt-2 p-3 bg-amber-50 rounded text-lg">
-<strong>白话</strong>：第六识 三性、三量、三境 <strong>全通</strong>——比五识 多通两维（量 + 境）。五识只能 <strong>性境 + 现量</strong>；第六识 可以 缘一切境、起一切量。
+<strong>白话</strong>：第六识三性、三量、三境 <strong>全通</strong>——比五识多通两维（量 + 境）。五识只能 <strong>性境 + 现量</strong>；第六识可以缘一切境、起一切量。
 </div>
 
 <div class="grid grid-cols-3 gap-3 mt-4 text-sm">
@@ -188,13 +188,13 @@ layout: default
     <strong>三性</strong>——道德性质：
     <ul class="mt-1">
       <li>善 / 恶 / 无记 <strong>全能起</strong></li>
-      <li>五识 也通 三性</li>
+      <li>五识也通三性</li>
     </ul>
   </div>
   <div class="p-3 bg-stone-50 rounded">
     <strong>三量</strong>——认识方式：
     <ul class="mt-1">
-      <li><strong>现量</strong>：五俱意识 直取</li>
+      <li><strong>现量</strong>：五俱意识直取</li>
       <li><strong>比量</strong>：正确推理</li>
       <li><strong>非量</strong>：错误推理</li>
     </ul>
@@ -210,7 +210,7 @@ layout: default
 </div>
 
 <div class="mt-3 p-3 bg-amber-50 rounded text-base">
-对比 五识——五识 <strong>唯性境、唯现量</strong>；第六识 三境三量 全通，能力最全。
+对比五识——五识 <strong>唯性境、唯现量</strong>；第六识三境三量全通，能力最全。
 </div>
 
 <!--
@@ -230,23 +230,23 @@ layout: default
 # 第一颂 · 第二句详解：三界轮时易可知
 
 <div class="mt-2 p-3 bg-amber-50 rounded text-lg">
-<strong>白话</strong>：三界九地——欲界、色界四禅、无色界四禅——<strong>全都</strong> 现行 第六识。轮回时 最活跃、最容易观察。
+<strong>白话</strong>：三界九地——欲界、色界四禅、无色界四禅——<strong>全都</strong> 现行第六识。轮回时最活跃、最容易观察。
 </div>
 
 <div class="space-y-3 mt-4 text-base">
 
-- 「轮时」= 三界 六道 **轮回时**；「易可知」= **最易观察**
-- 对比 前五识：欲界全有；色界初禅 只三识；二禅以上 全不起
-- 第六识 独一无二——**三界九地 全通**（欲界 + 色界四禅天 + 无色界四禅天 = 9 地）
+- 「轮时」= 三界六道 **轮回时**；「易可知」= **最易观察**
+- 对比前五识：欲界全有；色界初禅只三识；二禅以上全不起
+- 第六识独一无二——**三界九地全通**（欲界 + 色界四禅天 + 无色界四禅天 = 9 地）
 
 </div>
 
 <div class="mt-4 p-3 bg-amber-50 rounded text-base">
-<strong>例外——五位无心</strong>：<strong>无想定</strong> / <strong>无想天</strong> / <strong>灭尽定</strong> / <strong>极睡眠</strong> / <strong>极闷绝</strong> 时 第六识 暂断。除此之外 恒 现行。
+<strong>例外——五位无心</strong>：<strong>无想定</strong> / <strong>无想天</strong> / <strong>灭尽定</strong> / <strong>极睡眠</strong> / <strong>极闷绝</strong> 时第六识暂断。除此之外恒现行。
 </div>
 
 <div class="mt-3 p-3 bg-stone-50 rounded text-sm">
-<strong>划重点</strong>：三界轮回 主要靠 第六识 造业——这是「三界轮时易可知」的深意
+<strong>划重点</strong>：三界轮回主要靠第六识造业——这是「三界轮时易可知」的深意
 </div>
 
 <!--
@@ -266,7 +266,7 @@ layout: default
 # 第一颂 · 第三句详解：相应心所五十一
 
 <div class="mt-2 p-3 bg-amber-50 rounded text-lg">
-<strong>白话</strong>：<strong>51 心所 全部</strong> 都可以跟 第六识 相应——是 8 识里 相应最多的。
+<strong>白话</strong>：<strong>51 心所全部</strong> 都可以跟第六识相应——是 8 识里相应最多的。
 </div>
 
 <div class="text-base mt-3">
@@ -283,8 +283,8 @@ layout: default
 </div>
 
 <div class="mt-3 p-3 bg-amber-50 rounded text-base">
-对比 五识 只 34：<strong>小随 10</strong> + <strong>慢 / 疑 / 不正见</strong> + <strong>不定 4</strong> 都不相应——因为 五识 无 计度分别。
-第六识 具三种分别，所以 计度分别 类 心所 全能起。
+对比五识只 34：<strong>小随 10</strong> + <strong>慢 / 疑 / 不正见</strong> + <strong>不定 4</strong> 都不相应——因为五识无计度分别。
+第六识具三种分别，所以计度分别类心所全能起。
 </div>
 
 <!--
@@ -309,22 +309,22 @@ layout: default
 # 第一颂 · 第四句详解：善恶临时别配之
 
 <div class="mt-2 p-3 bg-amber-50 rounded text-lg">
-<strong>白话</strong>：具体 起善 / 起恶 / 起无记，<strong>临时</strong> 根据 缘境 决定——不是 恒定 一种性。
+<strong>白话</strong>：具体起善 / 起恶 / 起无记，<strong>临时</strong> 根据缘境决定——不是恒定一种性。
 </div>
 
 <div class="space-y-3 mt-4 text-base">
 
-- 「临时」= 当下 那一刹那 决定
-- 「别配」= 按 那一刹那 遇到的境、跟 相应心所 搭配 决定 三性
+- 「临时」= 当下那一刹那决定
+- 「别配」= 按那一刹那遇到的境、跟相应心所搭配决定三性
 - 举例：
-  - 见 佛像 起 敬心——**善**（跟 信、无贪、无嗔 等 相应）
-  - 见 仇人 起 嗔心——**恶**（跟 嗔 相应）
-  - 见 风景 无所思——**无记**（只跟 遍行 相应）
+  - 见佛像起敬心——**善**（跟信、无贪、无嗔等相应）
+  - 见仇人起嗔心——**恶**（跟嗔相应）
+  - 见风景无所思——**无记**（只跟遍行相应）
 
 </div>
 
 <div class="mt-4 p-3 bg-amber-50 rounded text-base">
-对比 <strong>第七识</strong>：<strong>恒审思量</strong>——恒 起 我执，从来不是 善——三性 <strong>唯有覆无记</strong>，一种 到底。
+对比 <strong>第七识</strong>：<strong>恒审思量</strong>——恒起我执，从来不是善——三性 <strong>唯有覆无记</strong>，一种到底。
 </div>
 
 <!--
@@ -353,10 +353,10 @@ layout: default
 
 第二颂讲 4 个维度——
 
-- 第一句：**性界受 三 恒转易**（三样 都 变易）
-- 第二句：**根随信等 总相连**（各类心所 全相应）
-- 第三句：**动身发语 独为最**（造业能力 第六识 最强）
-- 第四句：**引满能招 业力牵**（引业 + 满业 招感三界果报）
+- 第一句：**性界受三恒转易**（三样都变易）
+- 第二句：**根随信等总相连**（各类心所全相应）
+- 第三句：**动身发语独为最**（造业能力第六识最强）
+- 第四句：**引满能招业力牵**（引业 + 满业招感三界果报）
 
 </div>
 
@@ -376,17 +376,17 @@ layout: default
 # 第二颂 · 第一句详解：性界受三恒转易
 
 <div class="mt-2 p-3 bg-amber-50 rounded text-lg">
-<strong>白话</strong>：<strong>性</strong>、<strong>界</strong>、<strong>受</strong> 这 <strong>三样</strong>，都 恒时 变易——第六识 从不 定 在一个 状态。「三」修饰前三字，不是「三种受」。
+<strong>白话</strong>：<strong>性</strong>、<strong>界</strong>、<strong>受</strong> 这 <strong>三样</strong>，都恒时变易——第六识从不定在一个状态。「三」修饰前三字，不是「三种受」。
 </div>
 
 <div class="grid grid-cols-3 gap-3 mt-4 text-sm">
   <div class="p-3 bg-stone-50 rounded">
     <strong>性</strong>——三性交替<br>
-    善 / 恶 / 无记 灵活变易
+    善 / 恶 / 无记灵活变易
   </div>
   <div class="p-3 bg-stone-50 rounded">
     <strong>界</strong>——三界交替<br>
-    生到欲界 起欲界；生到色界 起色界
+    生到欲界起欲界；生到色界起色界
   </div>
   <div class="p-3 bg-stone-50 rounded">
     <strong>受</strong>——通 <strong>5 受</strong><br>
@@ -401,7 +401,7 @@ layout: default
 <li>前五识：三性通、界少（欲+初禅）、3 受（苦乐舍，无忧喜）</li>
 <li>第七识：三性唯 <strong>有覆无记</strong>、三界恒起（无变）、受 <strong>唯舍受</strong>——<strong>最恒定</strong></li>
 </ul>
-<span class="text-sm opacity-70">忧、喜 属心受，唯 第六识 有；苦、乐、舍 通 意识 与 五识</span>
+<span class="text-sm opacity-70">忧、喜属心受，唯第六识有；苦、乐、舍通意识与五识</span>
 </div>
 
 <!--
@@ -425,7 +425,7 @@ layout: default
 # 第二颂 · 第二句详解：根随信等总相连
 
 <div class="mt-2 p-3 bg-amber-50 rounded text-lg">
-<strong>白话</strong>：<strong>根本烦恼</strong>、<strong>随烦恼</strong>、<strong>善心所</strong>（信、精进 等）—— 都跟 第六识 相应。
+<strong>白话</strong>：<strong>根本烦恼</strong>、<strong>随烦恼</strong>、<strong>善心所</strong>（信、精进等）—— 都跟第六识相应。
 </div>
 
 <div class="text-base mt-4 space-y-2">
@@ -438,8 +438,8 @@ layout: default
 </div>
 
 <div class="mt-4 p-3 bg-amber-50 rounded text-base">
-对比 前五识 只 34：小随 10 + 慢 / 疑 / 不正见 + 不定 4 都不相应（五识 无计度分别）<br>
-第六识 具三种分别 → <strong>计度分别 类 心所 全能起</strong>
+对比前五识只 34：小随 10 + 慢 / 疑 / 不正见 + 不定 4 都不相应（五识无计度分别）<br>
+第六识具三种分别 → <strong>计度分别类心所全能起</strong>
 </div>
 
 <!--
@@ -461,24 +461,24 @@ layout: default
 # 第二颂 · 第三句详解：动身发语独为最
 
 <div class="mt-2 p-3 bg-amber-50 rounded text-lg">
-<strong>白话</strong>：三业里的 <strong>身业</strong>（动身）和 <strong>语业</strong>（发语），造业能力 第六识 <strong>最强、独一</strong>。
+<strong>白话</strong>：三业里的 <strong>身业</strong>（动身）和 <strong>语业</strong>（发语），造业能力第六识 <strong>最强、独一</strong>。
 </div>
 
 <div class="space-y-3 mt-4 text-base">
 
 - 「动身」= 引发 **身体行动**（走、坐、动作）
 - 「发语」= 引发 **言语造作**（说话、辩论）
-- 「独为最」= 8 识里 <strong>独 第六识 有 这个能力，且 最强</strong>
+- 「独为最」= 8 识里 <strong>独第六识有这个能力，且最强</strong>
 
 </div>
 
 <div class="mt-4 p-3 bg-amber-50 rounded text-base">
-<strong>为什么 只第六识 能</strong>——
+<strong>为什么只第六识能</strong>——
 <ul class="mt-1">
-<li><strong>前五识</strong>：只 了别当下 尘境，不能 主动 引发</li>
-<li><strong>第七识</strong>：只 内缘 第八识 见分，不外造业</li>
-<li><strong>第八识</strong>：无记 藏识，不 造业</li>
-<li><strong>意业</strong> = 第六识 起心动念 本身 就是</li>
+<li><strong>前五识</strong>：只了别当下尘境，不能主动引发</li>
+<li><strong>第七识</strong>：只内缘第八识见分，不外造业</li>
+<li><strong>第八识</strong>：无记藏识，不造业</li>
+<li><strong>意业</strong> = 第六识起心动念本身就是</li>
 </ul>
 </div>
 
@@ -507,28 +507,28 @@ layout: default
 # 第二颂 · 第四句详解：引满能招业力牵
 
 <div class="mt-2 p-3 bg-amber-50 rounded text-lg">
-<strong>白话</strong>：第六识 造 <strong>引业</strong> + <strong>满业</strong>，两种业力 都能招感 三界果报。
+<strong>白话</strong>：第六识造 <strong>引业</strong> + <strong>满业</strong>，两种业力都能招感三界果报。
 </div>
 
 <div class="grid grid-cols-2 gap-3 mt-4 text-base">
   <div class="p-3 bg-stone-50 rounded">
     <strong>引业</strong>（总报业）<br>
-    引导 生 哪一趣 的 <strong>主业</strong><br>
-    <span class="opacity-70">造 上品十善 → 引 生天</span><br>
-    <span class="opacity-70">造 十恶 → 引 堕地狱</span><br>
-    <strong>一期生死 的 主报</strong>
+    引导生哪一趣的 <strong>主业</strong><br>
+    <span class="opacity-70">造上品十善 → 引生天</span><br>
+    <span class="opacity-70">造十恶 → 引堕地狱</span><br>
+    <strong>一期生死的主报</strong>
   </div>
   <div class="p-3 bg-stone-50 rounded">
     <strong>满业</strong>（别报业）<br>
-    决定 那一趣 <strong>具体差别</strong> 的业<br>
-    <span class="opacity-70">同 生人道，长寿 / 短寿</span><br>
-    <span class="opacity-70">富贵 / 贫穷 是 满业 决定</span><br>
-    <strong>那一趣内 的 别报</strong>
+    决定那一趣 <strong>具体差别</strong> 的业<br>
+    <span class="opacity-70">同生人道，长寿 / 短寿</span><br>
+    <span class="opacity-70">富贵 / 贫穷是满业决定</span><br>
+    <strong>那一趣内的别报</strong>
   </div>
 </div>
 
 <div class="mt-4 p-3 bg-amber-50 rounded text-base">
-「能招」= 招感 相应果报；「业力牵」= 业力 牵引 众生 <strong>六道轮回</strong>
+「能招」= 招感相应果报；「业力牵」= 业力牵引众生 <strong>六道轮回</strong>
 </div>
 
 <!--
@@ -545,22 +545,22 @@ layout: default
 layout: default
 ---
 
-# 凡夫位 小结
+# 凡夫位小结
 
 <div class="mt-4 text-lg space-y-3">
 
-<strong>凡夫位 的 第六识</strong>——
+<strong>凡夫位的第六识</strong>——
 
-- **3 性 3 量 3 境 全通**，**三界九地 全 现行**
-- **51 心所全应**，临时决定 起 善 / 恶 / 无记
-- **三业造业主**（动身发语独为最），引满业 招感 三界果报
+- **3 性 3 量 3 境全通**，**三界九地全现行**
+- **51 心所全应**，临时决定起善 / 恶 / 无记
+- **三业造业主**（动身发语独为最），引满业招感三界果报
 - 具足 **三种分别**（自性 + 计度 + 随念）
 
 </div>
 
 <div class="mt-6 p-4 bg-amber-50 rounded text-base">
-对比 <strong>五识</strong> 只是 现量感知；对比 <strong>七识</strong> 只是 恒审我执——<br>
-<strong>只有 第六识 是「造业主」</strong>，招感 三界轮回 的 主力
+对比 <strong>五识</strong> 只是现量感知；对比 <strong>七识</strong> 只是恒审我执——<br>
+<strong>只有第六识是「造业主」</strong>，招感三界轮回的主力
 </div>
 
 <!--
@@ -600,10 +600,10 @@ layout: default
 
 第三颂讲 4 个层面——
 
-- 第一句：**转依起点**（初地 欢喜地 就开始）
-- 第二句：**俱生烦恼 未断**（登地后 仍现行）
-- 第三句：**纯无漏 时机**（七地 远行地 后）
-- 第四句：**转依果用**（妙观察智 观察圆明 照 大千）
+- 第一句：**转依起点**（初地欢喜地就开始）
+- 第二句：**俱生烦恼未断**（登地后仍现行）
+- 第三句：**纯无漏时机**（七地远行地后）
+- 第四句：**转依果用**（妙观察智观察圆明照大千）
 
 </div>
 
@@ -623,24 +623,24 @@ layout: default
 # 第三颂 · 第一句详解：发起初心欢喜地
 
 <div class="mt-2 p-3 bg-amber-50 rounded text-lg">
-<strong>白话</strong>：菩萨 登 <strong>初地 欢喜地</strong> 那一刹那——第六识 的转依 就 <strong>发起</strong> 了。
+<strong>白话</strong>：菩萨登 <strong>初地欢喜地</strong> 那一刹那——第六识的转依就 <strong>发起</strong> 了。
 </div>
 
 <div class="space-y-3 mt-4 text-base">
 
-- 「初心」= **初地 见道位** 那一心，也叫 <strong>通达位</strong>
-- 「欢喜地」= 十地 第一地
-- 「发起」= **妙观察智 初现**（先起 一分 无漏 无分别智）
+- 「初心」= **初地见道位** 那一心，也叫 <strong>通达位</strong>
+- 「欢喜地」= 十地第一地
+- 「发起」= **妙观察智初现**（先起一分无漏无分别智）
 
 </div>
 
 <div class="mt-4 p-3 bg-amber-50 rounded text-base">
-<strong>见道位 顿断 分别惑</strong>——三界 分别惑 88 使 一时 断尽。<br>
-但 <strong>俱生起</strong> 烦恼 还没 全断（下一句 讲）
+<strong>见道位顿断分别惑</strong>——三界分别惑 88 使一时断尽。<br>
+但 <strong>俱生起</strong> 烦恼还没全断（下一句讲）
 </div>
 
 <div class="mt-3 p-3 bg-stone-50 rounded text-sm">
-对比 五识：五识 转依 要 等 <strong>佛果一刹那</strong>；第六识 <strong>初地就发起</strong>——时机 早得多
+对比五识：五识转依要等 <strong>佛果一刹那</strong>；第六识 <strong>初地就发起</strong>——时机早得多
 </div>
 
 <!--
@@ -662,27 +662,27 @@ layout: default
 # 第三颂 · 第二句详解：俱生犹自现缠眠
 
 <div class="mt-2 p-3 bg-amber-50 rounded text-lg">
-<strong>白话</strong>：登初地后 一直到 七地，第六识 里 的 <strong>俱生烦恼</strong> 仍然 会 <strong>现行</strong> 或 <strong>潜伏</strong>（种子）。
+<strong>白话</strong>：登初地后一直到七地，第六识里的 <strong>俱生烦恼</strong> 仍然会 <strong>现行</strong> 或 <strong>潜伏</strong>（种子）。
 </div>
 
 <div class="space-y-3 mt-4 text-base">
 
-- 「俱生」= **与生俱来**（对比 见道 断 的 分别起）
-- 「缠」= **现行**（现前 显现）
-- 「眠」= **种子潜伏**（未现行 但 有种子）
+- 「俱生」= **与生俱来**（对比见道断的分别起）
+- 「缠」= **现行**（现前显现）
+- 「眠」= **种子潜伏**（未现行但有种子）
 
 </div>
 
 <div class="mt-4 p-3 bg-amber-50 rounded text-base">
 <strong>断除时序</strong>（按《成唯识论》卷 10）——
 <ul class="mt-1">
-<li><strong>俱生我执</strong>——二地起 渐断，<strong>七地满心</strong> 断尽</li>
-<li><strong>俱生法执</strong>——八地起 渐断，<strong>佛果</strong> 才 断尽</li>
+<li><strong>俱生我执</strong>——二地起渐断，<strong>七地满心</strong> 断尽</li>
+<li><strong>俱生法执</strong>——八地起渐断，<strong>佛果</strong> 才断尽</li>
 </ul>
 </div>
 
 <div class="mt-3 p-3 bg-stone-50 rounded text-sm">
-见道位 只 <strong>一时</strong> 断 分别惑；俱生惑 靠 修道 <strong>长时 渐断</strong>——所以「犹自现缠眠」
+见道位只 <strong>一时</strong> 断分别惑；俱生惑靠修道 <strong>长时渐断</strong>——所以「犹自现缠眠」
 </div>
 
 <!--
@@ -705,28 +705,28 @@ layout: default
 # 第三颂 · 第三句详解：远行地后纯无漏
 
 <div class="mt-2 p-3 bg-amber-50 rounded text-lg">
-<strong>白话</strong>：菩萨 修到 <strong>七地 远行地</strong> 之后——第六识 才 <strong>纯无漏</strong>（不再 起 有漏心）。
+<strong>白话</strong>：菩萨修到 <strong>七地远行地</strong> 之后——第六识才 <strong>纯无漏</strong>（不再起有漏心）。
 </div>
 
 <div class="space-y-3 mt-4 text-base">
 
 - 「远行地」= 十地 **第七地**
-- 「后」= 七地 圆满 进入 **八地**
-- 「纯无漏」= 第六识 里 <strong>有漏种子 已断</strong>，起心动念 全是 无漏
+- 「后」= 七地圆满进入 **八地**
+- 「纯无漏」= 第六识里 <strong>有漏种子已断</strong>，起心动念全是无漏
 
 </div>
 
 <div class="mt-4 p-3 bg-amber-50 rounded text-base">
-<strong>七地 是 关键转折</strong>——
+<strong>七地是关键转折</strong>——
 <ul class="mt-1">
-<li>初地至七地：有漏 无漏 <strong>交杂</strong>（有相加行位）</li>
+<li>初地至七地：有漏无漏 <strong>交杂</strong>（有相加行位）</li>
 <li>八地起：<strong>纯无漏</strong>（无相加行位 → 无功用道）</li>
-<li>八地 = <strong>不动地</strong>——无功用行 任运 起 妙观察智</li>
+<li>八地 = <strong>不动地</strong>——无功用行任运起妙观察智</li>
 </ul>
 </div>
 
 <div class="mt-3 p-3 bg-stone-50 rounded text-sm">
-对比：五识 转依 要 等 <strong>佛果一刹那</strong>；第六识 <strong>七地就纯无漏</strong>——比五识 早得多
+对比：五识转依要等 <strong>佛果一刹那</strong>；第六识 <strong>七地就纯无漏</strong>——比五识早得多
 </div>
 
 <!--
@@ -750,28 +750,28 @@ layout: default
 # 第三颂 · 第四句详解：观察圆明照大千
 
 <div class="mt-2 p-3 bg-amber-50 rounded text-lg">
-<strong>白话</strong>：佛果 位 妙观察智 <strong>观察圆满明朗</strong>，<strong>遍照 三千大千世界</strong>。
+<strong>白话</strong>：佛果位妙观察智 <strong>观察圆满明朗</strong>，<strong>遍照三千大千世界</strong>。
 </div>
 
 <div class="space-y-3 mt-4 text-base">
 
-- 「观察」= 妙观察智 的 特质——观察 诸法 **自相 共相 无碍**
-- 「圆明」= 圆满 明朗（佛果 圆满 无有 障碍）
+- 「观察」= 妙观察智的特质——观察诸法 **自相共相无碍**
+- 「圆明」= 圆满明朗（佛果圆满无有障碍）
 - 「大千」= 三千大千世界
 
 </div>
 
 <div class="mt-4 p-3 bg-amber-50 rounded text-base">
-<strong>妙观察智 果用</strong>（按《成唯识论》卷 10）——
+<strong>妙观察智果用</strong>——
 <ul class="mt-1">
-<li>观察 诸法 自共相 <strong>无碍</strong></li>
-<li>摄观 无量 总持定门 及 所发生 功德珍宝</li>
-<li><strong>说法断疑</strong>——观机说法，令诸有情 断疑生信、皆获利乐</li>
+<li>观察诸法自共相<strong>无碍</strong></li>
+<li>摄观无量总持定门及所发生功德珍宝</li>
+<li><strong>说法断疑</strong>——观机说法，令诸有情断疑生信、皆获利乐</li>
 </ul>
 </div>
 
 <div class="mt-3 p-3 bg-stone-50 rounded text-sm">
-<strong>说法度生</strong> 是 妙观察智 <strong>独有</strong> 的 果用——大圆镜智（第八转）与 平等性智（第七转）不主司 此
+<strong>说法度生只有妙观察智能做</strong>——大圆镜智（第八转）跟平等性智（第七转）都不做这个
 </div>
 
 <!--
@@ -798,18 +798,18 @@ layout: default
 
 | 维度 | **妙观察智**（六识转）| **成所作智**（五识转）|
 | --- | --- | --- |
-| 转依起点 | **初地 见道** 就 起 | **佛果一刹那** 才起 |
-| 纯无漏 | **七地后** 纯无漏 | **佛果** 才 纯无漏 |
-| 亲证真如 | **可起 根本无分别智** | 只能起 后得智 |
-| 观空方式 | 直接亲证 或 变相观空 都可 | 唯 变相观空 |
-| 果用 | 观察诸法自共相 + 说法度生 | 现三类化身 度苦轮 |
+| 转依起点 | **初地见道** 就起 | **佛果一刹那** 才起 |
+| 纯无漏 | **七地后** 纯无漏 | **佛果** 才纯无漏 |
+| 亲证真如 | **可起根本无分别智** | 只能起后得智 |
+| 观空方式 | 直接亲证或变相观空都可 | 唯变相观空 |
+| 果用 | 观察诸法自共相 + 说法度生 | 现三类化身度苦轮 |
 
 </div>
 
 <div class="mt-4 p-3 bg-amber-50 rounded text-base">
-<strong>为什么 第六识 能 亲证 真如？</strong><br>
-第六识 具 <strong>三种分别</strong>，能 <strong>舍相直取</strong> 真如；<br>
-前五识 只 <strong>自性分别</strong>（缘性境），必须 <strong>变相</strong> 才能 观空——所以 只能 后得智
+<strong>为什么第六识能亲证真如？</strong><br>
+第六识具 <strong>三种分别</strong>，能 <strong>舍相直取</strong> 真如；<br>
+前五识只 <strong>自性分别</strong>（缘性境），必须 <strong>变相</strong> 才能观空——所以只能后得智
 </div>
 
 <!--
@@ -827,23 +827,23 @@ layout: default
 layout: default
 ---
 
-# 圣者位 小结
+# 圣者位小结
 
 <div class="mt-4 text-lg space-y-3">
 
-<strong>圣者位 的 第六识</strong>——
+<strong>圣者位的第六识</strong>——
 
-- **初地 欢喜地** 就开始 转（比五识 早得多）
-- 见道 一刹那 **顿断 分别惑**，转 一分 无漏
-- 二至六地 修道位 **渐断 俱生我执**
-- **七地满** 俱生我执 断尽 → **八地起 纯无漏**
-- 佛果 妙观察智 圆满，**观察圆明 照大千**
+- **初地欢喜地** 就开始转（比五识早得多）
+- 见道一刹那 **顿断分别惑**，转一分无漏
+- 二至六地修道位 **渐断俱生我执**
+- **七地满** 俱生我执断尽 → **八地起纯无漏**
+- 佛果妙观察智圆满，**观察圆明照大千**
 
 </div>
 
 <div class="mt-5 p-3 bg-amber-50 rounded text-base">
-对比 <strong>五识</strong>——佛果 一刹那 才 转成 成所作智，且 只能 后得智<br>
-依据 来自《成唯识论》卷 9-10 + 《瑜伽师地论》卷 51
+对比 <strong>五识</strong>——佛果一刹那才转成成所作智，且只能后得智<br>
+依据来自《成唯识论》卷 9-10 + 《瑜伽师地论》卷 51
 </div>
 
 <!--
@@ -865,13 +865,13 @@ layout: default
 
 <div class="text-sm mt-3">
 
-| 阶位 | 所缘境 | 相应心所 | 是否 起无漏 | 智用 |
+| 阶位 | 所缘境 | 相应心所 | 是否起无漏 | 智用 |
 | --- | --- | --- | --- | --- |
-| **凡夫** | 三境全通 | 51 全应 | 全 有漏 | 无 |
-| **初地 见道** | 加 真如境 | 加 无漏善 | **一分 无漏** 初起 | 妙观察智 初现（一分）|
-| **二至六地** | 通 二 | 渐减 俱生我执 相应 | 有漏 无漏 **交杂** | 妙观察智 渐增 |
-| **七地满** | 通 二 | 俱生我执 断尽 | **纯无漏** 起点 | 妙观察智 增强 |
-| **佛果** | 全通 无碍 | 无漏善 圆满 | **纯无漏** 圆满 | 妙观察智 **圆明照大千** |
+| **凡夫** | 性境/带质境/独影境 | 51 全应 | 全有漏 | 无 |
+| **初地见道** | **真如**（一刹那亲证） | 加无漏善 | **一分无漏** 初起 | 妙观察智初现（一分）|
+| **二至六地** | 真如（入观）+ 有为诸法（出观） | 渐减俱生我执相应 | 有漏无漏**交杂** | 妙观察智渐增 |
+| **七地满** | 真如（入观）+ 有为诸法（出观） | 俱生我执断尽 | **纯无漏**起点 | 妙观察智增强 |
+| **佛果** | 真如 + 一切法无碍 | 无漏善圆满 | **纯无漏**圆满 | 妙观察智**圆明照大千** |
 
 </div>
 
@@ -881,11 +881,11 @@ layout: default
 
 <!--
 凡圣对照表——第六识 5 阶位。
-凡夫位——所缘 三境全通；相应心所 51 全应；全部 有漏；没有 智用。
-初地见道——所缘 加 真如境；相应 加 无漏善心所；一分无漏 初起；妙观察智 一分现前。
-二至六地——所缘 通 有漏 无漏 二种；相应心所 渐减 俱生我执；有漏无漏 交杂；妙观察智 渐增。
-七地满——所缘 通 二；俱生我执 断尽；纯无漏 起点；妙观察智 增强。
-佛果——所缘 全通无碍；无漏善心所 圆满；纯无漏 圆满；妙观察智 圆明照大千。
+凡夫位——所缘 是 性境、带质境、独影境 三境；相应心所 51 全应；全部 有漏；没有 智用。
+初地见道——所缘 只是 真如，一刹那 亲证；相应 加 无漏善心所；一分无漏 初起；妙观察智 一分现前。
+二至六地——修道位。入观 缘 真如，起 根本无分别智；出观 缘 有为诸法，起 后得智；相应心所 渐减 俱生我执；有漏无漏 交杂；妙观察智 渐增。
+七地满——所缘 跟 二至六地 一样，入观 缘真如，出观 缘 有为；俱生我执 断尽；纯无漏 起点；妙观察智 增强。
+佛果——真如 加 一切法 无碍；无漏善心所 圆满；纯无漏 圆满；妙观察智 圆明照大千。
 关键节点——初地（一分无漏初起），七地满（纯无漏起点），佛果（圆满）。
 -->
 
@@ -897,23 +897,23 @@ layout: default
 
 <div class="text-sm mt-3">
 
-| 维度 | **前五识**（V6）| **第六识**（本讲）|
+| 维度 | **前五识** | **第六识** |
 | --- | --- | --- |
-| 通境 | 唯 性境 | **三境 全通** |
-| 通量 | 唯 现量 | **三量 全通** |
+| 通境 | 唯性境 | **三境全通** |
+| 通量 | 唯现量 | **三量全通** |
 | 通性 | 三性 | 三性 |
 | 起处 | 欲界 + 初禅（部分）| **三界九地** 全通 |
 | 相应心所 | 34 | **51 全应** |
-| 分别类型 | 唯 自性分别 | **三种 全有** |
-| 造业 | 从属 | **动身发语 独为最** |
-| 转依起点 | **佛果一刹那** | **初地 见道** |
+| 分别类型 | 唯自性分别 | **三种全有** |
+| 造业 | 从属 | **动身发语独为最** |
+| 转依起点 | **佛果一刹那** | **初地见道** |
 | 纯无漏时机 | **佛果** | **七地后** |
-| 转成智 | 成所作智（唯 后得）| **妙观察智**（根本 + 后得）|
+| 转成智 | 成所作智（唯后得）| **妙观察智**（根本 + 后得）|
 
 </div>
 
 <div class="mt-3 p-3 bg-amber-50 rounded text-base">
-一句话——五识 是 <strong>感知层</strong>；六识 是 <strong>造业 + 转依主力</strong>。
+一句话——五识是 <strong>感知层</strong>；六识是 <strong>造业 + 转依主力</strong>。
 </div>
 
 <!--
@@ -939,21 +939,21 @@ layout: default
 
 <div class="mt-3 space-y-2 text-base">
 
-本讲 三个 核心 论断——
+本讲三个核心论断——
 
 - **第一**：第六识 = **三界九地全通 + 51 心所全应 + 三种分别全有**——最全能
-- **第二**：第六识 = **三业造业主**（动身发语独为最）——招感 三界果报
-- **第三**：第六识 转依 = **初地开始，七地纯无漏，佛果观察圆明**——转 妙观察智
+- **第二**：第六识 = **三业造业主**（动身发语独为最）——招感三界果报
+- **第三**：第六识转依 = **初地开始，七地纯无漏，佛果观察圆明**——转妙观察智
 
 </div>
 
 <div class="mt-5 p-4 bg-amber-50 rounded text-base">
-把《八识规矩颂》二讲 连起来看——
+把《八识规矩颂》二讲连起来看——
 <ul class="mt-1">
-<li>第一讲 讲 <strong>感知层</strong>（前五识）</li>
-<li>第二讲 讲 <strong>造业层</strong>（第六识）</li>
-<li>第三讲 会讲 <strong>我执层</strong>（第七识 末那）</li>
-<li>第四讲 会讲 <strong>藏识层</strong>（第八识 阿赖耶）</li>
+<li>第一讲讲 <strong>感知层</strong>（前五识）</li>
+<li>第二讲讲 <strong>造业层</strong>（第六识）</li>
+<li>第三讲会讲 <strong>我执层</strong>（第七识末那）</li>
+<li>第四讲会讲 <strong>藏识层</strong>（第八识阿赖耶）</li>
 </ul>
 </div>
 
@@ -985,18 +985,18 @@ layout: default
 <div class="mt-5 p-4 bg-amber-50 rounded text-base">
 <strong>关键疑难</strong>——
 <ul class="mt-1">
-<li>为什么 末那 <strong>恒起</strong> 我执？</li>
-<li>四烦恼常俱 = 我痴 / 我见 / 我慢 / 我爱——如何 常俱？</li>
-<li>转依 分几阶？八地起 舍藏识 是什么意思？</li>
+<li>为什么末那 <strong>恒起</strong> 我执？</li>
+<li>四烦恼常俱 = 我痴 / 我见 / 我慢 / 我爱——如何常俱？</li>
+<li>转依分几阶？八地起舍藏识是什么意思？</li>
 </ul>
 </div>
 
 <div class="mt-4 p-3 bg-stone-50 rounded text-sm">
-<strong>学习难点</strong>——末那识 是 唯识 独有 的说法，最费理解。学好 末那 才能 真正 理解 我执 的 根源
+<strong>学习难点</strong>——末那识是唯识独有的说法，最费理解。学好末那才能真正理解我执的根源
 </div>
 
 <div class="mt-6 text-center text-xl opacity-70">
-—— 感谢 观看 ——
+—— 感谢观看 ——
 </div>
 
 <!--
