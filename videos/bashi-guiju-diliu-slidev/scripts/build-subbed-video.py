@@ -3,8 +3,8 @@ Generate SRT from notes/*.txt + audio/*.mp3 (timing by char-proportion),
 then mux into existing MP4 as a soft subtitle track.
 
 Output:
-  video/bashi-guiju-qianwu.srt        - editable subtitle file
-  video/bashi-guiju-qianwu-soft.mp4   - MP4 with embedded subtitle track
+  video/bashi-guiju-diliu.srt        - editable subtitle file
+  video/bashi-guiju-diliu-soft.mp4   - MP4 with embedded subtitle track
 """
 from __future__ import annotations
 
@@ -17,14 +17,14 @@ ROOT = Path(__file__).resolve().parent.parent
 NOTES_DIR = ROOT / "notes"
 AUDIO_DIR = ROOT / "audio"
 VIDEO_DIR = ROOT / "video"
-SRT_PATH = VIDEO_DIR / "bashi-guiju-qianwu.srt"
-INPUT_MP4 = VIDEO_DIR / "bashi-guiju-qianwu.mp4"
-OUTPUT_MP4 = VIDEO_DIR / "bashi-guiju-qianwu-soft.mp4"
+SRT_PATH = VIDEO_DIR / "bashi-guiju-diliu.srt"
+INPUT_MP4 = VIDEO_DIR / "bashi-guiju-diliu.mp4"
+OUTPUT_MP4 = VIDEO_DIR / "bashi-guiju-diliu-soft.mp4"
 
 TAIL_SILENCE = 0.4          # silence padded after each slide's audio (matches build-video.py)
 SOFT_BREAK_MIN_CHARS = 12   # only break on ，； when current chunk has at least this many chars
 MIN_DURATION = 0.6          # minimum on-screen time per subtitle (seconds)
-N_SLIDES = 31
+N_SLIDES = 28
 
 
 def get_duration(p: Path) -> float:

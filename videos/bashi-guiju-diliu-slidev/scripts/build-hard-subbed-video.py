@@ -23,15 +23,15 @@ FFMPEG = str(Path.home() / "miniforge3" / "bin" / "ffmpeg")
 NOTES_DIR = ROOT / "notes"
 AUDIO_DIR = ROOT / "audio"
 VIDEO_DIR = ROOT / "video"
-SRT_PATH = VIDEO_DIR / "bashi-guiju-qianwu.srt"
-ASS_PATH = VIDEO_DIR / "bashi-guiju-qianwu.ass"
-INPUT_MP4 = VIDEO_DIR / "bashi-guiju-qianwu.mp4"
-OUTPUT_MP4 = VIDEO_DIR / "bashi-guiju-qianwu-hard.mp4"
+SRT_PATH = VIDEO_DIR / "bashi-guiju-diliu.srt"
+ASS_PATH = VIDEO_DIR / "bashi-guiju-diliu.ass"
+INPUT_MP4 = VIDEO_DIR / "bashi-guiju-diliu.mp4"
+OUTPUT_MP4 = VIDEO_DIR / "bashi-guiju-diliu-hard.mp4"
 
 TAIL_SILENCE = 0.4
 SOFT_BREAK_MIN_CHARS = 12
 MIN_DURATION = 0.6
-N_SLIDES = 31
+N_SLIDES = 28
 
 # Slide PNG canvas (preview/1.png is 1960x1104).
 PLAY_RES_X = 1960

@@ -96,6 +96,9 @@ PRONUNCIATION_FIXES = [
     ("恶心", _ph("恶", "e4") + "心"),
     # 「二个」èr ge — substitute to 两个 liǎng ge (no good SSML fix for char swap)
     ("二个", "两个"),
+    # 名字「愚千一」— cosyvoice 会把「千一」读成「千一一」(额外加音)
+    # 在「愚」前后加空格切断连读上下文
+    ("我是愚千一", "我是 愚千一"),
 ]
 
 
@@ -198,7 +201,10 @@ def synth_one(idx: int, text: str) -> tuple[int, str]:
                     time.sleep(RETRY_DELAY_SECONDS * attempt)
         return idx, f"FAILED after {MAX_RETRIES} attempts: {last_err}"
 
-    # Multi-sentence — synth each and concat with silence
+    # Multi-sentence — synth each and concat with silence.
+    # Use ffmpeg filter_complex concat (decode→concat→re-encode) — the
+    # `-f concat` demuxer + libmp3lame triggers "inadequate AVFrame plane
+    # padding" errors on some cosyvoice mp3 outputs (exit 234).
     import subprocess
     import tempfile
     silence = get_silence_mp3()
@@ -207,23 +213,43 @@ def synth_one(idx: int, text: str) -> tuple[int, str]:
         try:
             with tempfile.TemporaryDirectory(prefix=f"tts-{label}-") as td:
                 td_path = Path(td)
-                list_lines: list[str] = []
+                inputs: list[Path] = []
                 for i, sent in enumerate(sentences):
                     audio = _tts_call(sent)
                     part = td_path / f"p{i:03d}.mp3"
                     part.write_bytes(audio)
-                    list_lines.append(f"file '{part}'")
+                    inputs.append(part)
                     if i < len(sentences) - 1:
-                        list_lines.append(f"file '{silence}'")
-                list_file = td_path / "list.txt"
-                list_file.write_text("\n".join(list_lines))
-                subprocess.run(
-                    ["ffmpeg", "-y", "-f", "concat", "-safe", "0",
-                     "-i", str(list_file), "-c:a", "libmp3lame", "-b:a", "256k",
-                     str(out)],
-                    check=True, capture_output=True,
+                        inputs.append(silence)
+                # Build filter_complex concat: [0:a][1:a]...[N:a]concat=n=N:v=0:a=1[out]
+                filter_ins = "".join(f"[{i}:a]" for i in range(len(inputs)))
+                filter_expr = f"{filter_ins}concat=n={len(inputs)}:v=0:a=1[out]"
+                cmd = ["ffmpeg", "-y"]
+                for p in inputs:
+                    cmd.extend(["-i", str(p)])
+                cmd.extend(["-filter_complex", filter_expr,
+                            "-map", "[out]", "-c:a", "libmp3lame", "-b:a", "256k",
+                            str(out)])
+                r = subprocess.run(cmd, capture_output=True)
+                # ffmpeg 62.x libmp3lame sometimes returns non-zero (exit 234:
+                # "inadequate AVFrame plane padding") even when output is
+                # written correctly. Trust the output file if it exists and
+                # ffprobe can read a positive duration from it.
+                if not out.exists() or out.stat().st_size == 0:
+                    raise RuntimeError(f"ffmpeg exit={r.returncode}, no output. stderr tail: {r.stderr[-500:]!r}")
+                probe = subprocess.run(
+                    ["ffprobe", "-v", "error", "-show_entries",
+                     "format=duration", "-of",
+                     "default=noprint_wrappers=1:nokey=1", str(out)],
+                    capture_output=True, text=True,
                 )
-            return idx, f"ok ({out.stat().st_size/1024:.0f} KB, {len(sentences)} sents)"
+                try:
+                    dur = float(probe.stdout.strip())
+                except ValueError:
+                    raise RuntimeError(f"ffmpeg exit={r.returncode}, unreadable output. probe: {probe.stdout!r}")
+                if dur <= 0:
+                    raise RuntimeError(f"ffmpeg exit={r.returncode}, zero duration")
+            return idx, f"ok ({out.stat().st_size/1024:.0f} KB, {len(sentences)} sents, {dur:.1f}s)"
         except Exception as e:  # noqa: BLE001
             last_err = e
             if attempt < MAX_RETRIES:

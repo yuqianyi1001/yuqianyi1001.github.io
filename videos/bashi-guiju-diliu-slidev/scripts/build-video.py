@@ -6,7 +6,7 @@ For each slide:
   - Audio = the slide's mp3, padded with TAIL_SILENCE seconds of silence
   - Encode H.264 + AAC
 
-Then concat all 36 segments into video/bashi-guiju-qianwu.mp4.
+Then concat all 28 segments into video/bashi-guiju-diliu.mp4.
 
 Idempotent: existing segments are reused. To rebuild, delete segments/.
 """
@@ -24,8 +24,9 @@ SEGMENTS = ROOT / "segments"
 VIDEO_DIR = ROOT / "video"
 SEGMENTS.mkdir(exist_ok=True)
 VIDEO_DIR.mkdir(exist_ok=True)
-OUT = VIDEO_DIR / "bashi-guiju-qianwu.mp4"
+OUT = VIDEO_DIR / "bashi-guiju-diliu.mp4"
 
+N_SLIDES = 28
 TAIL_SILENCE = 0.4  # seconds after each slide's audio for natural breath
 FRAMERATE = 30
 
@@ -114,9 +115,9 @@ def main() -> None:
     if not shutil.which("ffmpeg"):
         sys.exit("ffmpeg not found in PATH")
 
-    # 1. Build 33 segments
+    # 1. Build N segments
     segments = []
-    for i in range(1, 32):
+    for i in range(1, N_SLIDES + 1):
         segments.append(build_segment(i))
 
     # 2. Build concat list
