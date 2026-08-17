@@ -1,0 +1,293 @@
+"""
+Synthesize all 26 slide notes from slides.md into audio/NN.mp3 files,
+using the cloned 愚千一 voice on Aliyun 百炼 (cosyvoice-v2).
+
+Reads voice_id from .bailian_voice_id (created by clone-and-synth.py).
+Skips slides whose audio already exists (idempotent).
+Runs up to MAX_PARALLEL synth calls concurrently.
+Retries each call up to MAX_RETRIES times on transient failure.
+"""
+from __future__ import annotations
+
+import os
+import re
+import sys
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
+
+env_file = Path.home() / ".env"
+if env_file.exists():
+    for line in env_file.read_text().splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, _, value = line.partition("=")
+        os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
+
+import dashscope  # noqa: E402
+from dashscope.audio.tts_v2 import SpeechSynthesizer, AudioFormat  # noqa: E402
+
+API_KEY = os.environ.get("DASHSCOPE_API_KEY")
+if not API_KEY:
+    sys.exit("ERROR: DASHSCOPE_API_KEY not found")
+dashscope.api_key = API_KEY
+
+ROOT = Path(__file__).resolve().parent.parent
+VOICE_ID = (ROOT / ".bailian_voice_id").read_text().strip()
+TARGET_MODEL = "cosyvoice-v2"
+SPEECH_RATE = 1.0
+
+NOTES_DIR = ROOT / "notes"
+AUDIO_DIR = ROOT / "audio"
+NOTES_DIR.mkdir(exist_ok=True)
+AUDIO_DIR.mkdir(exist_ok=True)
+
+MAX_PARALLEL = 4
+MAX_RETRIES = 3
+RETRY_DELAY_SECONDS = 3
+
+
+def extract_notes(slides_md: Path) -> list[str]:
+    """Return ordered list of note text.
+
+    Prefer reading from notes/NN.txt files (one per slide, hand-written).
+    Fall back to extracting from slides.md's <!-- ... --> blocks if notes/ is empty.
+    """
+    txt_files = sorted(NOTES_DIR.glob("*.txt"))
+    if txt_files:
+        return [p.read_text(encoding="utf-8").strip() for p in txt_files]
+    text = slides_md.read_text(encoding="utf-8")
+    notes = re.findall(r"<!--\n(.*?)\n-->", text, flags=re.DOTALL)
+    return [n.strip() for n in notes]
+
+
+# TTS pronunciation fixes — use cosyvoice-v2 SSML <phoneme> tags for
+# multi-tone Chinese chars. Confirmed working format:
+#   <phoneme alphabet="py" ph="xing2">行</phoneme>
+# - alphabet="py" required (x-aliyun-py / no alphabet → 411/413 errors)
+# - ph must use pinyin letters + tone number 1-5 (no diacritics)
+# Source notes/*.txt keep original chars; only TTS text gets SSML.
+# Subtitles read from notes — always show original chars.
+def _ph(char: str, py: str) -> str:
+    return f'<phoneme alphabet="py" ph="{py}">{char}</phoneme>'
+
+PRONUNCIATION_FIXES = [
+    # 「行」xíng — TTS defaults to héng. Order: longest first.
+    ("十六行相", "十六" + _ph("行", "xing2") + _ph("相", "xiang4")),
+    ("加行", "加" + _ph("行", "xing2")),
+    ("行舍", _ph("行", "xing2") + "舍"),
+    ("行相", _ph("行", "xing2") + _ph("相", "xiang4")),
+    ("行蕴", _ph("行", "xing2") + "蕴"),
+    ("梵行", "梵" + _ph("行", "xing2")),
+    # 「了」liǎo — TTS defaults to le (sentence particle)
+    ("了别", _ph("了", "liao3") + "别"),
+    # notes 用「眼识能了色」格式（v9 实测最自然）— 加「能」做上下文 + 无空格紧贴
+    ("眼识能了色", "眼识能" + _ph("了", "liao3") + "色"),
+    ("耳识能了声", "耳识能" + _ph("了", "liao3") + "声"),
+    ("鼻识能了香", "鼻识能" + _ph("了", "liao3") + "香"),
+    ("舌识能了味", "舌识能" + _ph("了", "liao3") + "味"),
+    ("身识能了触", "身识能" + _ph("了", "liao3") + "触"),
+    # 「转」zhuǎn 3rd tone — TTS defaults to zhuàn 4th tone in 转依
+    ("转依", _ph("转", "zhuan3") + "依"),
+    # 「相」xiàng 4th tone — TTS defaults to xiāng 1st tone (行相 already above)
+    ("相分", _ph("相", "xiang4") + "分"),
+    # 「恶」è 4th tone — TTS defaults to ě 3rd tone in 恶心
+    ("恶心", _ph("恶", "e4") + "心"),
+    # 「二个」èr ge — substitute to 两个 liǎng ge (no good SSML fix for char swap)
+    ("二个", "两个"),
+    # 名字「愚千一」— cosyvoice 会把「千一」读成「千一一」(额外加音)
+    # 在「愚」前后加空格切断连读上下文
+    ("我是愚千一", "我是 愚千一"),
+]
+
+
+_HTML_NON_SSML_TAG = re.compile(r"</?(?:strong|em|b|i|u|br)(?:\s[^>]*)?\s*/?>", re.I)
+
+
+def strip_html(text: str) -> str:
+    """Remove HTML tags that aren't valid SSML (strong/em/b/i/u/br).
+    Keep speak/phoneme/break — those are valid SSML."""
+    return _HTML_NON_SSML_TAG.sub("", text)
+
+
+def fix_pronunciation(text: str) -> str:
+    for orig, repl in PRONUNCIATION_FIXES:
+        text = text.replace(orig, repl)
+    return text
+
+
+SENTENCE_END = ("。", "！", "？")
+SILENCE_MS = 350  # gap inserted between synthesized sentences
+_SILENCE_CACHE: Path | None = None
+
+
+def split_sentences(text: str) -> list[str]:
+    """Split text at 。！？, keeping the delimiter with the preceding sentence.
+    Strips whitespace-only fragments."""
+    parts: list[str] = []
+    buf = ""
+    for ch in text:
+        buf += ch
+        if ch in SENTENCE_END:
+            s = buf.strip()
+            if s:
+                parts.append(s)
+            buf = ""
+    tail = buf.strip()
+    if tail:
+        parts.append(tail)
+    return parts
+
+
+def get_silence_mp3() -> Path:
+    """Lazy-cached silence.mp3 (matches cosyvoice format: 22050Hz mono 256kbps)."""
+    global _SILENCE_CACHE
+    if _SILENCE_CACHE is None or not _SILENCE_CACHE.exists():
+        cache_dir = AUDIO_DIR / ".cache"
+        cache_dir.mkdir(exist_ok=True)
+        p = cache_dir / f"silence-{SILENCE_MS}ms.mp3"
+        if not p.exists():
+            import subprocess
+            subprocess.run(
+                ["ffmpeg", "-y", "-f", "lavfi",
+                 "-i", "anullsrc=r=22050:cl=mono",
+                 "-t", f"{SILENCE_MS/1000:.3f}",
+                 "-b:a", "256k", str(p)],
+                check=True, capture_output=True,
+            )
+        _SILENCE_CACHE = p
+    return _SILENCE_CACHE
+
+
+def _tts_call(text: str) -> bytes:
+    """Single cosyvoice call with SSML wrapping. Returns raw mp3 bytes."""
+    tts_text = strip_html(text)
+    tts_text = fix_pronunciation(tts_text)
+    tts_text = f"<speak>{tts_text}</speak>"
+    synth = SpeechSynthesizer(
+        model=TARGET_MODEL,
+        voice=VOICE_ID,
+        format=AudioFormat.MP3_22050HZ_MONO_256KBPS,
+        speech_rate=SPEECH_RATE,
+    )
+    audio = synth.call(tts_text)
+    if not audio:
+        raise RuntimeError("empty audio response")
+    return audio
+
+
+def synth_one(idx: int, text: str) -> tuple[int, str]:
+    """Synthesize one note. Splits into sentences and concatenates with
+    silence to guarantee sentence-boundary pauses (cosyvoice-v2 doesn't
+    reliably pause at 。; <break> tag causes choppy delivery in some contexts)."""
+    label = f"{idx:02d}"
+    out = AUDIO_DIR / f"{label}.mp3"
+    if out.exists() and out.stat().st_size > 0:
+        return idx, f"skip (already exists, {out.stat().st_size/1024:.0f} KB)"
+
+    sentences = split_sentences(text)
+    if len(sentences) <= 1:
+        # Single sentence — direct synth, no concat overhead
+        last_err = None
+        for attempt in range(1, MAX_RETRIES + 1):
+            try:
+                audio = _tts_call(text)
+                out.write_bytes(audio)
+                return idx, f"ok ({len(audio)/1024:.0f} KB, 1 sent)"
+            except Exception as e:  # noqa: BLE001
+                last_err = e
+                if attempt < MAX_RETRIES:
+                    time.sleep(RETRY_DELAY_SECONDS * attempt)
+        return idx, f"FAILED after {MAX_RETRIES} attempts: {last_err}"
+
+    # Multi-sentence — synth each and concat with silence.
+    # Use ffmpeg filter_complex concat (decode→concat→re-encode) — the
+    # `-f concat` demuxer + libmp3lame triggers "inadequate AVFrame plane
+    # padding" errors on some cosyvoice mp3 outputs (exit 234).
+    import subprocess
+    import tempfile
+    silence = get_silence_mp3()
+    last_err = None
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            with tempfile.TemporaryDirectory(prefix=f"tts-{label}-") as td:
+                td_path = Path(td)
+                inputs: list[Path] = []
+                for i, sent in enumerate(sentences):
+                    audio = _tts_call(sent)
+                    part = td_path / f"p{i:03d}.mp3"
+                    part.write_bytes(audio)
+                    inputs.append(part)
+                    if i < len(sentences) - 1:
+                        inputs.append(silence)
+                # Build filter_complex concat: [0:a][1:a]...[N:a]concat=n=N:v=0:a=1[out]
+                filter_ins = "".join(f"[{i}:a]" for i in range(len(inputs)))
+                filter_expr = f"{filter_ins}concat=n={len(inputs)}:v=0:a=1[out]"
+                cmd = ["ffmpeg", "-y"]
+                for p in inputs:
+                    cmd.extend(["-i", str(p)])
+                cmd.extend(["-filter_complex", filter_expr,
+                            "-map", "[out]", "-c:a", "libmp3lame", "-b:a", "256k",
+                            str(out)])
+                r = subprocess.run(cmd, capture_output=True)
+                # ffmpeg 62.x libmp3lame sometimes returns non-zero (exit 234:
+                # "inadequate AVFrame plane padding") even when output is
+                # written correctly. Trust the output file if it exists and
+                # ffprobe can read a positive duration from it.
+                if not out.exists() or out.stat().st_size == 0:
+                    raise RuntimeError(f"ffmpeg exit={r.returncode}, no output. stderr tail: {r.stderr[-500:]!r}")
+                probe = subprocess.run(
+                    ["ffprobe", "-v", "error", "-show_entries",
+                     "format=duration", "-of",
+                     "default=noprint_wrappers=1:nokey=1", str(out)],
+                    capture_output=True, text=True,
+                )
+                try:
+                    dur = float(probe.stdout.strip())
+                except ValueError:
+                    raise RuntimeError(f"ffmpeg exit={r.returncode}, unreadable output. probe: {probe.stdout!r}")
+                if dur <= 0:
+                    raise RuntimeError(f"ffmpeg exit={r.returncode}, zero duration")
+            return idx, f"ok ({out.stat().st_size/1024:.0f} KB, {len(sentences)} sents, {dur:.1f}s)"
+        except Exception as e:  # noqa: BLE001
+            last_err = e
+            if attempt < MAX_RETRIES:
+                time.sleep(RETRY_DELAY_SECONDS * attempt)
+    return idx, f"FAILED after {MAX_RETRIES} attempts: {last_err}"
+
+
+def main() -> None:
+    notes = extract_notes(ROOT / "slides.md")
+    print(f"[setup] {len(notes)} notes loaded, voice_id={VOICE_ID}, rate={SPEECH_RATE}")
+
+    # Persist each note to notes/NN.txt only if not present yet (idempotent)
+    for i, n in enumerate(notes, start=1):
+        path = NOTES_DIR / f"{i:02d}.txt"
+        if not path.exists():
+            path.write_text(n + "\n", encoding="utf-8")
+
+    start = time.time()
+    results: list[tuple[int, str]] = []
+    with ThreadPoolExecutor(max_workers=MAX_PARALLEL) as pool:
+        futures = {
+            pool.submit(synth_one, i, n): i for i, n in enumerate(notes, start=1)
+        }
+        done = 0
+        for fut in as_completed(futures):
+            idx, msg = fut.result()
+            done += 1
+            print(f"[{done:02d}/{len(notes)}] slide {idx:02d}: {msg}")
+            results.append((idx, msg))
+
+    elapsed = time.time() - start
+    failures = [r for r in results if "FAILED" in r[1]]
+    print(f"\n[done] {len(notes)} jobs in {elapsed:.1f}s; failures: {len(failures)}")
+    if failures:
+        for idx, msg in sorted(failures):
+            print(f"  - slide {idx:02d}: {msg}")
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()
