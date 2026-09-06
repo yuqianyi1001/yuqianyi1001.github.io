@@ -35,23 +35,32 @@ def mask(value: str, visible: int = 4) -> str:
     return f"{value[:visible]}...{value[-visible:]}"
 
 
+APP_ID_KEYS = ("WECHAT_APP_ID", "WEIXIN_AppID")
+APP_SECRET_KEYS = ("WECHAT_APP_SECRET", "WEIXIN_AppSecret")
+
+
+def _pick(values: dict[str, str], keys: tuple[str, ...]) -> str | None:
+    for key in keys:
+        if values.get(key):
+            return values[key]
+    return None
+
+
 def resolve_config() -> tuple[str, str, str]:
-    cwd_env = Path.cwd() / ".baoyu-skills" / ".env"
-    home_env = Path.home() / ".baoyu-skills" / ".env"
+    home_env = Path.home() / ".env"
 
-    cwd_values = load_env_file(cwd_env)
+    env_id = _pick(dict(os.environ), APP_ID_KEYS)
+    env_secret = _pick(dict(os.environ), APP_SECRET_KEYS)
+    if env_id and env_secret:
+        return env_id, env_secret, "environment"
+
     home_values = load_env_file(home_env)
+    file_id = _pick(home_values, APP_ID_KEYS)
+    file_secret = _pick(home_values, APP_SECRET_KEYS)
+    if file_id and file_secret:
+        return file_id, file_secret, str(home_env)
 
-    if os.environ.get("WECHAT_APP_ID") and os.environ.get("WECHAT_APP_SECRET"):
-        return os.environ["WECHAT_APP_ID"], os.environ["WECHAT_APP_SECRET"], "environment"
-
-    if cwd_values.get("WECHAT_APP_ID") and cwd_values.get("WECHAT_APP_SECRET"):
-        return cwd_values["WECHAT_APP_ID"], cwd_values["WECHAT_APP_SECRET"], str(cwd_env)
-
-    if home_values.get("WECHAT_APP_ID") and home_values.get("WECHAT_APP_SECRET"):
-        return home_values["WECHAT_APP_ID"], home_values["WECHAT_APP_SECRET"], str(home_env)
-
-    raise RuntimeError("Missing WECHAT_APP_ID or WECHAT_APP_SECRET in env, .baoyu-skills/.env, or ~/.baoyu-skills/.env")
+    raise RuntimeError("Missing WECHAT_APP_ID/WEIXIN_AppID or WECHAT_APP_SECRET/WEIXIN_AppSecret in env or ~/.env")
 
 
 def fetch_access_token(app_id: str, app_secret: str) -> dict[str, object]:

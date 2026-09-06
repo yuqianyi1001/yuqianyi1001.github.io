@@ -258,6 +258,7 @@ def apply_dotenv() -> None:
     candidate_paths = [
         pathlib.Path.cwd() / DOTENV_FILENAME,
         script_dir.parent / DOTENV_FILENAME,
+        pathlib.Path.home() / DOTENV_FILENAME,
     ]
 
     for env_path in candidate_paths:
@@ -265,6 +266,14 @@ def apply_dotenv() -> None:
             continue
         for key, value in load_env_from_file(env_path).items():
             os.environ.setdefault(key, value)
+
+    # Accept WEIXIN_AppID / WEIXIN_AppSecret as aliases for the expected names.
+    for target, alias in (
+        ("WECHAT_APP_ID", "WEIXIN_AppID"),
+        ("WECHAT_APP_SECRET", "WEIXIN_AppSecret"),
+    ):
+        if not os.environ.get(target) and os.environ.get(alias):
+            os.environ[target] = os.environ[alias]
 
 
 def slugify(value: str) -> str:
