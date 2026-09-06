@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 《八识规矩颂》逐句解释
-wechat_link: 
+wechat_link: https://mp.weixin.qq.com/s/9fSjIO58hjBaZXmM0u6q5w
 description: 
 excerpt: 
 tags:
