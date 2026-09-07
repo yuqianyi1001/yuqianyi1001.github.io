@@ -44,6 +44,7 @@ MARKDOWN_IMAGE_PATTERN = re.compile(r"!\[([^\]]*)\]\(([^)\s]+)(?:\s+\"[^\"]*\")?
 MARKDOWN_REF_IMAGE_PATTERN = re.compile(r"^\[([^\]]+)\]:\s*(\S+)(.*)$", re.MULTILINE)
 DEFAULT_THUMB_MEDIA_ID = "LJGNckXOaezci8bZiAJY7N5Ubz6wjqAIk079wmXjBhmS0HTLjQcurh4xfcNBS_QF"
 IMAGE_CACHE_FILENAME = "wechat_image_cache.json"
+FOOTER_FILENAME = "wechat_footer.html"
 
 _CSS_RULE_RE = re.compile(r"([^{}]+)\{([^{}]+)\}")
 _WECHAT_TAG_STYLES: Optional[Dict[str, str]] = None
@@ -715,6 +716,18 @@ def wechatify_html(html_fragment: str, *, allow_local_media: bool = False) -> st
     return transformer.get_html()
 
 
+def load_footer_html() -> str:
+    """Return the shared article footer (recommendations, group info) as WeChat-ready HTML."""
+
+    footer_path = pathlib.Path(__file__).resolve().parent / FOOTER_FILENAME
+    if not footer_path.exists():
+        return ""
+    fragment = footer_path.read_text(encoding="utf-8").strip()
+    if not fragment:
+        return ""
+    return wechatify_html(fragment)
+
+
 def build_preview_document(body_html: str) -> str:
     tag_styles, _ = _load_wechat_style_rules()
     body_style = tag_styles.get("body", "")
@@ -763,6 +776,7 @@ def load_markdown_article(
     upload_images: bool = True,
     converter: str = "markdown",
     allow_local_media: bool = False,
+    include_footer: bool = True,
 ) -> Tuple[Dict[str, object], str]:
     ensure_yaml_available()
     if converter != "markdown":
@@ -830,6 +844,13 @@ def load_markdown_article(
 
     html_content = sanitize_html(html_content)
     html_content = wechatify_html(html_content, allow_local_media=allow_local_media)
+
+    # Front matter `wechat_footer: false` opts a single article out of the shared footer.
+    if include_footer and metadata.get("wechat_footer") is not False:
+        footer_html = load_footer_html()
+        if footer_html:
+            html_content += footer_html
+
     return metadata, html_content
 
 
@@ -925,6 +946,7 @@ def cmd_push(client: WeChatClient, args: argparse.Namespace) -> None:
             metadata, html_content = load_markdown_article(
                 markdown_path,
                 client,
+                include_footer=not getattr(args, "no_footer", False),
             )
             article_payload = build_article_payload(metadata, html_content)
             client.update_draft(args.media_id, article_index, article_payload)
@@ -960,6 +982,7 @@ def cmd_create(client: WeChatClient, args: argparse.Namespace) -> None:
         metadata, html_content = load_markdown_article(
             markdown_path,
             client,
+            include_footer=not getattr(args, "no_footer", False),
         )
         articles.append(build_article_payload(metadata, html_content))
 
@@ -986,6 +1009,7 @@ def cmd_preview(client: WeChatClient, args: argparse.Namespace) -> None:
         upload_images=False,
         converter="markdown",
         allow_local_media=True,
+        include_footer=not getattr(args, "no_footer", False),
     )
 
     rendered = build_preview_document(html_content)
@@ -1050,6 +1074,11 @@ def build_parser() -> argparse.ArgumentParser:
         nargs="*",
         help="Markdown source files to sync (front matter will populate article metadata)",
     )
+    push_parser.add_argument(
+        "--no-footer",
+        action="store_true",
+        help="Do not append the shared footer template (scripts/wechat_footer.html)",
+    )
     push_parser.set_defaults(func=cmd_push)
 
     create_parser = subparsers.add_parser("create", help="Create a new draft from Markdown sources")
@@ -1064,6 +1093,11 @@ def build_parser() -> argparse.ArgumentParser:
         "--skip-download",
         action="store_true",
         help="Do not fetch and store the created draft locally after upload",
+    )
+    create_parser.add_argument(
+        "--no-footer",
+        action="store_true",
+        help="Do not append the shared footer template (scripts/wechat_footer.html)",
     )
     create_parser.set_defaults(func=cmd_create)
 
@@ -1081,6 +1115,11 @@ def build_parser() -> argparse.ArgumentParser:
         "--output",
         type=pathlib.Path,
         help="Optional output HTML path (defaults to <markdown>.preview.html)",
+    )
+    preview_parser.add_argument(
+        "--no-footer",
+        action="store_true",
+        help="Do not append the shared footer template (scripts/wechat_footer.html)",
     )
     preview_parser.set_defaults(func=cmd_preview)
 
