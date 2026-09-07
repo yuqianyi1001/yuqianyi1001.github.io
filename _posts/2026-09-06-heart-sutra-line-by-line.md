@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 《心经》白话和解释（般若版）
+wechat_link: https://mp.weixin.qq.com/s/OtajLZ1CqWWUrbK5yaCmhA
 description: 逐句给出《心经》的白话直译、义理解释与术语，另附经论参考；解读全依「缘起性空」的般若中观立场。
 excerpt: 
 thumb_media_id: LJGNckXOaezci8bZiAJY7HQ56STY06u2z19JmRZT3XgPE1Ux-6769RbqS9ePbSs6
