@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 《心经》白话和解释（唯识版）
+wechat_link: https://mp.weixin.qq.com/s/xM9I7A_GPIU6RmE7blTKrw
 description: 逐句给出《心经》的白话直译、义理解释与术语，另附经论参考；解读全依《成唯识论》「唯识无境、三性三无性」的玄奘唯识立场。
 excerpt: 
 thumb_media_id: LJGNckXOaezci8bZiAJY7PX9xq_iFpbWsfQq2RMeEIA0ZdIppFo-AbY5JdEOWqIj
