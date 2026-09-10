@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 《心经》白话和解释（如来藏版）
+wechat_link: https://mp.weixin.qq.com/s/MCHj38VCzPqhw322dkEiew
 description: 逐句给出《心经》的白话直译、义理解释与术语，另附经论参考；解读全依《大乘起信论》「一心二门、相妄性真」的如来藏立场。
 excerpt: 
 thumb_media_id: LJGNckXOaezci8bZiAJY7Owmwhc4AEq2aQztcB_pUQGo6tEkZHCoZjosx0gmIfYU
