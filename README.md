@@ -17,7 +17,7 @@
 ## 特别感谢
 
 * 💗💗公众号订阅者，X关注者，Threads关注者等 —— 以及网站的读者们💗💗
-* CBETA：https://cbetaonline.dila.edu.tw/zh/ （大陆版：https://cbetaonline.cn/zh/）
+* CBETA：https://cbetaonline.dila.edu.tw/zh/ （大陆版 已关闭：https://cbetaonline.cn/zh/）
 * 各类AI：ChatGPT，Gemini，通义，Grok，豆包等
 * 一行佛学词典：https://buddhaspace.org/dict/ ，简体插件请参考：https://yuqianyi.com/tools/buddhaspace-dict-ext/
 * 公众号文章封面制作：https://www.canva.cn/
