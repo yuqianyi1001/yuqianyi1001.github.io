@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 《心经》白话和解释（般若、唯识、如来藏对照）
+wechat_link: https://mp.weixin.qq.com/s/da1vVQXRiBsfwjtLi07wdA
 description: 先对照般若、唯识、如来藏三家的核心理论，再逐句对照翻译《心经》——三家无别处一句直译，有别处分列三家白话，把各自的解读直接写进译文。
 excerpt: 
 thumb_media_id: LJGNckXOaezci8bZiAJY7DPTXC4_hqEWRF54YD4jfWlS9z7rj73P6kCQ1FplbXkM
