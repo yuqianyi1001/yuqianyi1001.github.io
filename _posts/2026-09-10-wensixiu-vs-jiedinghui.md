@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 「闻思修」与「戒定慧」是什么关系？有先后吗？
+wechat_link: https://mp.weixin.qq.com/s/cmPynHaMLk0Zb3vL85fyzw
 description: 没有先后，但有侧重：闻思修侧重正见与理论，戒定慧侧重实修。两者不可偏执，应当结合、相互促进，才能知行合一。
 excerpt: 
 thumb_media_id: LJGNckXOaezci8bZiAJY7G8j9MHdq1XfqmWOzgl0e7J4ucKAwMXqb4Dqglol8IAs
