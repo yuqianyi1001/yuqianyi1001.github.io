@@ -38,11 +38,27 @@ except ModuleNotFoundError:  # pragma: no cover - handled at runtime
     markdown = None
 
 
-API_BASE = "https://api.weixin.qq.com"
+DEFAULT_API_BASE = "https://api.weixin.qq.com"
+# Kept for backward compatibility with external importers; runtime code below
+# resolves the base lazily via api_base() so WECHAT_API_BASE from .env works.
+API_BASE = DEFAULT_API_BASE
+
+
+def api_base() -> str:
+    """Return the WeChat API base URL.
+
+    Defaults to the official endpoint. Set WECHAT_API_BASE to route calls
+    through an authenticated relay (see scripts/wechat_relay/) when running
+    from a host whose IP is not in the WeChat IP whitelist, e.g. a Claude
+    Code cloud session. Pair it with WECHAT_RELAY_TOKEN for authentication.
+    """
+
+    return os.getenv("WECHAT_API_BASE", DEFAULT_API_BASE).rstrip("/")
 DOTENV_FILENAME = ".env"
 MARKDOWN_IMAGE_PATTERN = re.compile(r"!\[([^\]]*)\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)")
 MARKDOWN_REF_IMAGE_PATTERN = re.compile(r"^\[([^\]]+)\]:\s*(\S+)(.*)$", re.MULTILINE)
-DEFAULT_THUMB_MEDIA_ID = "LJGNckXOaezci8bZiAJY7N5Ubz6wjqAIk079wmXjBhmS0HTLjQcurh4xfcNBS_QF"
+# No default cover: build_article_payload refuses to build an article whose
+# front matter lacks thumb_media_id, so a wrong cover never ships silently.
 IMAGE_CACHE_FILENAME = "wechat_image_cache.json"
 FOOTER_FILENAME = "wechat_footer.html"
 
@@ -330,7 +346,7 @@ class WeChatClient:
             "appid": self._app_id,
             "secret": self._app_secret,
         }
-        url = f"{API_BASE}/cgi-bin/token?{urllib.parse.urlencode(params)}"
+        url = f"{api_base()}/cgi-bin/token?{urllib.parse.urlencode(params)}"
         data = self._http_request("GET", url)
         if "access_token" not in data:
             raise WeChatAPIError(json.dumps(data, ensure_ascii=False))
@@ -345,7 +361,7 @@ class WeChatClient:
         retry_on_auth_error: bool = True,
     ) -> Dict[str, object]:
         token = self.access_token
-        url = f"{API_BASE}{path}?access_token={urllib.parse.quote(token)}"
+        url = f"{api_base()}{path}?access_token={urllib.parse.quote(token)}"
         data_bytes = None
         headers = {}
         if payload is not None:
@@ -369,7 +385,11 @@ class WeChatClient:
         data: Optional[bytes] = None,
         headers: Optional[Dict[str, str]] = None,
     ) -> Dict[str, object]:
-        request = urllib.request.Request(url, data=data, method=method, headers=headers or {})
+        headers = dict(headers or {})
+        relay_token = os.getenv("WECHAT_RELAY_TOKEN")
+        if relay_token:
+            headers.setdefault("X-Relay-Token", relay_token)
+        request = urllib.request.Request(url, data=data, method=method, headers=headers)
         try:
             with urllib.request.urlopen(request) as response:
                 payload = response.read()
@@ -416,7 +436,7 @@ class WeChatClient:
         headers = {"Content-Type": f"multipart/form-data; boundary={boundary}"}
         result = self._http_request(
             "POST",
-            f"{API_BASE}/cgi-bin/media/uploadimg?access_token={urllib.parse.quote(self.access_token)}",
+            f"{api_base()}/cgi-bin/media/uploadimg?access_token={urllib.parse.quote(self.access_token)}",
             data=body,
             headers=headers,
         )
@@ -871,8 +891,13 @@ def build_article_payload(metadata: Dict[str, object], html_content: str) -> Dic
         digest = plain.strip()[:120]
 
     thumb_media_id = metadata.get("thumb_media_id") if isinstance(metadata.get("thumb_media_id"), str) else None
-    if not thumb_media_id:
-        thumb_media_id = DEFAULT_THUMB_MEDIA_ID
+    if not thumb_media_id or not thumb_media_id.strip():
+        raise RuntimeError(
+            "Front matter is missing thumb_media_id (article cover). "
+            "Upload the cover first (scripts/wechat_upload_thumb.py) and put the "
+            "returned media_id into the post's front matter, then retry. "
+            "Refusing to fall back to the default cover."
+        )
 
     author = metadata.get("author") if isinstance(metadata.get("author"), str) else None
     content_source_url = metadata.get("content_source_url") if isinstance(metadata.get("content_source_url"), str) else None
