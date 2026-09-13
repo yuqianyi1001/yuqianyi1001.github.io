@@ -65,6 +65,6 @@ description: 写佛经／颂文／论典的「逐句白话和解释」注解文�
 ## 发布到公众号（可选，用户要求时才做）
 
 1. **封面**：按仓库根目录 `wechat-cover.html` 的绘制逻辑生成 2.35:1 与 1:1 两张（可复制其 render 代码做无头版，用 headless Chrome 截图；标题手动分行比自动换行好看，如「《心经》／白话和解释／（般若版）」）。生成后先发给用户过目。
-2. **上传封面素材**：走代理调 `/cgi-bin/material/add_material?type=image` 取得 `media_id`，写入文章 front matter 的 `thumb_media_id`。
-3. **建草稿**：`scripts/wechat_proxy_run.sh <python> scripts/wechat_draft_sync.py create --markdown <post 路径> --skip-download`。`<python>` 需装有 yaml + markdown（本机可用 `~/miniforge3/envs/GPTSoVits/bin/python3`）；微信 API 必须经 `wechat_proxy_run.sh` 的北京代理，凭证读 `~/.env`。
+2. **上传封面素材**：用 `scripts/wechat_upload_thumb.py <封面图>`（走代理）取得 `media_id`，写入文章 front matter 的 `thumb_media_id`。
+3. **建草稿**：`scripts/wechat_proxy_run.sh <python> scripts/wechat_draft_sync.py create --markdown <post 路径> --skip-download`。`<python>` 需装有 yaml + markdown（本机可用 `~/miniforge3/envs/GPTSoVits/bin/python3`）；微信 API 必须经 `wechat_proxy_run.sh` 的北京代理，凭证读 `~/.env`。**封面是硬前提**：front matter 没有 `thumb_media_id` 时 create 会直接报错（脚本已移除默认封面回退）——此时停下来先完成第 1、2 步，绝不用默认图或他文封面顶替。建草稿的执行者要确认所在 checkout 已包含写入 `thumb_media_id` 的那次提交（先 `git pull`）。
 4. **结尾模板**：create/push/preview 会自动在正文后追加公众号结尾模板（`scripts/wechat_footer.html`：关注说明、加群、推荐文章、二维码）；单篇不要模板时加 `--no-footer`，或在 front matter 写 `wechat_footer: false`。发草稿前可先用 `preview` 子命令本地过目。

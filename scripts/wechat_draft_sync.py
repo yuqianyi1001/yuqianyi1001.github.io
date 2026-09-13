@@ -57,7 +57,8 @@ def api_base() -> str:
 DOTENV_FILENAME = ".env"
 MARKDOWN_IMAGE_PATTERN = re.compile(r"!\[([^\]]*)\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)")
 MARKDOWN_REF_IMAGE_PATTERN = re.compile(r"^\[([^\]]+)\]:\s*(\S+)(.*)$", re.MULTILINE)
-DEFAULT_THUMB_MEDIA_ID = "LJGNckXOaezci8bZiAJY7N5Ubz6wjqAIk079wmXjBhmS0HTLjQcurh4xfcNBS_QF"
+# No default cover: build_article_payload refuses to build an article whose
+# front matter lacks thumb_media_id, so a wrong cover never ships silently.
 IMAGE_CACHE_FILENAME = "wechat_image_cache.json"
 FOOTER_FILENAME = "wechat_footer.html"
 
@@ -890,8 +891,13 @@ def build_article_payload(metadata: Dict[str, object], html_content: str) -> Dic
         digest = plain.strip()[:120]
 
     thumb_media_id = metadata.get("thumb_media_id") if isinstance(metadata.get("thumb_media_id"), str) else None
-    if not thumb_media_id:
-        thumb_media_id = DEFAULT_THUMB_MEDIA_ID
+    if not thumb_media_id or not thumb_media_id.strip():
+        raise RuntimeError(
+            "Front matter is missing thumb_media_id (article cover). "
+            "Upload the cover first (scripts/wechat_upload_thumb.py) and put the "
+            "returned media_id into the post's front matter, then retry. "
+            "Refusing to fall back to the default cover."
+        )
 
     author = metadata.get("author") if isinstance(metadata.get("author"), str) else None
     content_source_url = metadata.get("content_source_url") if isinstance(metadata.get("content_source_url"), str) else None
