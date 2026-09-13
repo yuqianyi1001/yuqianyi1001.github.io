@@ -25,7 +25,7 @@ import uuid
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 
-from wechat_draft_sync import API_BASE, WeChatAPIError, WeChatClient, apply_dotenv
+from wechat_draft_sync import WeChatAPIError, WeChatClient, api_base, apply_dotenv
 
 
 def add_material_image(client: WeChatClient, image_path: pathlib.Path) -> dict:
@@ -46,7 +46,7 @@ def add_material_image(client: WeChatClient, image_path: pathlib.Path) -> dict:
     headers = {"Content-Type": f"multipart/form-data; boundary={boundary}"}
     result = client._http_request(
         "POST",
-        f"{API_BASE}/cgi-bin/material/add_material"
+        f"{api_base()}/cgi-bin/material/add_material"
         f"?access_token={urllib.parse.quote(client.access_token)}&type=image",
         data=body,
         headers=headers,
