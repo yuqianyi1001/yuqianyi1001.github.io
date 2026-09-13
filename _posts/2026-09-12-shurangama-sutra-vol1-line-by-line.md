@@ -3,6 +3,7 @@ layout: post
 title: 《楞严经》白话和解释（卷一）
 description: 逐段给出《楞严经》卷一的白话直译、义理解释与术语，另附经论参考；本经即如来藏系根本经典，解读直依「常住真心、性净明体」的经中自宗。
 excerpt: 
+thumb_media_id: LJGNckXOaezci8bZiAJY7AVu4_5LGHM-w2zb1EPyLxiCa4omjLKVE-QhnJrIL1lG
 tags:
  - 如来藏
  - 楞严经
