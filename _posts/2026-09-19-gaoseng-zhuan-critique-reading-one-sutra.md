@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 《高僧传》如何批判所谓的专读一经的？
-wechat_link:
+wechat_link: https://mp.weixin.qq.com/s/6Cwud6xyQwNTN3HcV24VRg
 description: 慧皎《高僧传》为二百五十七位高僧立传，却在书中直斥「唯慕钻求一典、谓言广读多惑」是「堕学之辞」；本文逐句白话这段话，讲清「专读一经」与「贯采禅律、融冶经论」之别。
 excerpt:
 thumb_media_id: LJGNckXOaezci8bZiAJY7OSb6cw85SbY3Sk5heDKnaIgE82FdT7xpM8J1J8Uiin8
