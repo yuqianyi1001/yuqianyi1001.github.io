@@ -18,6 +18,8 @@ scripts/__pycache__/*
 
 # videos/ — 中间产物（segments 可重建），最终视频入仓
 videos/**/segments/
+# 口播音频用 wav 入仓（撤销根目录 *.wav 规则）
+!videos/**/audio/*.wav
 # 撤销根目录 package.json 规则对 videos/ 内 slidev 项目的影响
 !videos/**/package.json
 !videos/**/package-lock.json

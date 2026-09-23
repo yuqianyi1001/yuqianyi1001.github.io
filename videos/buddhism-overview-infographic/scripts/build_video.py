@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""把 out-16x9/card-N.png 和 audio/NN.mp3 合成视频，并生成字幕。
+"""把 out-16x9/card-N.png 和 audio/NN.wav 合成视频，并生成字幕。
 
 输出到 video/：
   buddhism-overview.mp4       无字幕
@@ -90,7 +90,7 @@ def main():
     notes = sorted(NOTES.glob("*.txt"))
     cues, t0, parts = [], 0.0, []
     for i, note in enumerate(notes, 1):
-        card, wav = CARDS / f"card-{i}.png", AUDIO / f"{note.stem}.mp3"
+        card, wav = CARDS / f"card-{i}.png", AUDIO / f"{note.stem}.wav"
         assert card.exists() and wav.exists(), (card, wav)
         adur = duration(wav)
         seg = SEG / f"{note.stem}.mp4"

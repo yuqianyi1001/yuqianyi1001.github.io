@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
-"""用百炼 Qwen3 TTS（克隆音色「愚千一」）把 notes/NN.txt 合成为 audio/NN.mp3。
+"""用百炼 Qwen3 TTS（克隆音色「愚千一」）把 notes/NN.txt 合成为 audio/NN.wav。
 
 - 模型和音色从 ~/.env 读取：BAILIAN_TTS_MODEL、BAILIAN_QWEN_TTS_VOICE_YUQIANYI、DASHSCOPE_API_KEY
 - 每段按行切块（单次请求不超过 MAX_CHARS 字），逐块合成后拼接，块间留 GAP 秒静音
-- 幂等：audio/NN.mp3 已存在就跳过；要重合成某一段，删掉对应 mp3 再跑
+- 幂等：audio/NN.wav 已存在就跳过；要重合成某一段，删掉对应 wav 再跑
 用法：python3 scripts/synth.py [01 03 ...]
 """
 import io
-import subprocess
 import sys
 import time
 import wave
@@ -20,7 +19,6 @@ ROOT = Path(__file__).resolve().parent.parent
 NOTES = ROOT / "notes"
 AUDIO = ROOT / "audio"
 ENDPOINT = "https://dashscope.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation"
-FFMPEG = str(Path.home() / "miniforge3/bin/ffmpeg")
 MAX_CHARS = 280
 GAP = 0.35
 MAX_PARALLEL = 4
@@ -90,8 +88,7 @@ def tts(text):
 
 
 def synth_one(note):
-    out = AUDIO / (note.stem + ".mp3")
-    tmp = AUDIO / (note.stem + ".wav")
+    out = AUDIO / (note.stem + ".wav")
     if out.exists():
         return f"{note.stem}: skip"
     params, frames = None, []
@@ -102,12 +99,10 @@ def synth_one(note):
             elif frames:
                 frames.append(b"\x00" * int(params.framerate * GAP) * params.sampwidth * params.nchannels)
             frames.append(w.readframes(w.getnframes()))
-    with wave.open(str(tmp), "wb") as w:
+    with wave.open(str(out), "wb") as w:
         w.setparams(params)
         for f in frames:
             w.writeframes(f)
-    subprocess.run([FFMPEG, "-y", "-v", "error", "-i", str(tmp), "-c:a", "libmp3lame", "-q:a", "2", str(out)], check=True)
-    tmp.unlink()
     dur = sum(len(f) for f in frames) / (params.framerate * params.sampwidth * params.nchannels)
     return f"{note.stem}: {dur:.1f}s"
 
