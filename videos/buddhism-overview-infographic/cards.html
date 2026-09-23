@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>佛教全景 · 小红书卡片</title>
+<style>
+  :root {
+    --paper: #f2e8d2;
+    --paper-deep: #e6d7b8;
+    --ink: #2a241e;
+    --ink-soft: #5e5448;
+    --ink-faint: #9a8d7a;
+    --cinnabar: #a8352a;
+    --cinnabar-soft: #c9685a;
+    --line: rgba(42, 36, 30, 0.22);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #8a8072;
+    font-family: "Songti SC", "STSong", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  body.review { padding: 40px 0; }
+  body.review .card { margin: 0 auto 40px; box-shadow: 0 8px 30px rgba(0,0,0,.35); }
+  body.single { background: var(--paper); }
+  body.single .card:not(.on) { display: none !important; }
+  body.single .card.on { display: block; }
+
+  .card {
+    position: relative;
+    width: 1080px;
+    height: 1440px;
+    overflow: hidden;
+    padding: 110px 96px 120px;
+    background-color: var(--paper);
+    background-image:
+      radial-gradient(ellipse at 50% 40%, rgba(255,250,238,.55) 0%, rgba(255,250,238,0) 60%),
+      radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 60%, rgba(120,90,50,.16) 100%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .27  0 0 0 0 .17  0 0 0 .10 0'/></filter><rect width='400' height='400' filter='url(%23n)'/></svg>"),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='900'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='.012 .04' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 .45  0 0 0 0 .36  0 0 0 0 .22  0 0 0 .07 0'/></filter><rect width='900' height='900' filter='url(%23f)'/></svg>");
+  }
+  /* 页眉页脚 */
+  .head {
+    position: absolute; top: 52px; left: 96px; right: 96px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 24px; letter-spacing: 4px; color: var(--ink-faint);
+  }
+  .head .series::before {
+    content: ""; display: inline-block; width: 12px; height: 12px;
+    background: var(--cinnabar); margin-right: 14px; vertical-align: 2px;
+  }
+  .foot {
+    position: absolute; bottom: 50px; left: 96px; right: 96px;
+    display: flex; justify-content: space-between; align-items: flex-end;
+    font-size: 22px; letter-spacing: 3px; color: var(--ink-faint);
+  }
+  .seal {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 66px; height: 66px; border-radius: 6px;
+    background: var(--cinnabar); color: #f6e9d6;
+    font-size: 20px; line-height: 1.05; font-weight: 700;
+    writing-mode: vertical-rl; letter-spacing: 1px;
+    box-shadow: inset 0 0 0 3px var(--cinnabar), inset 0 0 0 5px rgba(246,233,214,.8);
+    transform: rotate(-2deg);
+  }
+  .foot .sign { display: flex; align-items: center; gap: 18px; }
+
+  h1.title {
+    font-size: 72px; font-weight: 900; letter-spacing: 6px; line-height: 1.25;
+  }
+  .kicker {
+    font-size: 28px; letter-spacing: 6px; color: var(--cinnabar); margin-bottom: 20px;
+  }
+  .rule {
+    width: 120px; height: 4px; background: var(--cinnabar); margin: 34px 0 44px;
+  }
+  p, li { font-size: 32px; line-height: 1.75; letter-spacing: 1px; }
+  .muted { color: var(--ink-soft); }
+  .red { color: var(--cinnabar); }
+  b { font-weight: 700; }
+
+  /* ---------- 卡1 封面 ---------- */
+  .cover { display: flex; flex-direction: column; justify-content: center; padding-top: 60px; }
+  .cover .big {
+    font-size: 132px; font-weight: 900; letter-spacing: 14px; line-height: 1.18;
+  }
+  .cover .sub {
+    margin-top: 40px; font-size: 40px; letter-spacing: 6px; color: var(--ink-soft);
+  }
+  .cover .mini-line {
+    margin-top: 110px; position: relative; height: 150px;
+  }
+  .cover .mini-line .axis {
+    position: absolute; left: 0; right: 0; top: 40px; height: 3px; background: var(--ink);
+  }
+  .cover .mini-line .pt {
+    position: absolute; top: 26px; width: 180px; margin-left: -90px; text-align: center;
+  }
+  .cover .mini-line .pt i {
+    display: block; width: 30px; height: 30px; margin: 0 auto 22px; border-radius: 50%;
+    background: var(--paper); border: 4px solid var(--ink);
+  }
+  .cover .mini-line .pt.hot i { background: var(--cinnabar); border-color: var(--cinnabar); }
+  .cover .mini-line .pt span { font-size: 30px; letter-spacing: 2px; font-weight: 700; }
+  .cover .note {
+    margin-top: 70px; font-size: 30px; line-height: 1.8; color: var(--ink-soft);
+    border-left: 4px solid var(--cinnabar); padding-left: 28px;
+  }
+  .bg-char {
+    position: absolute; right: -40px; top: 140px;
+    font-size: 560px; font-weight: 900; color: rgba(42,36,30,.045);
+    line-height: 1; pointer-events: none;
+  }
+
+  /* ---------- 卡2 两种框架 ---------- */
+  .two-col { display: flex; gap: 36px; margin-top: 10px; }
+  .box {
+    flex: 1; padding: 40px 36px; border: 2px solid var(--line);
+    background: rgba(255,250,238,.35); border-radius: 4px;
+  }
+  .box h3 { font-size: 40px; letter-spacing: 3px; margin-bottom: 8px; }
+  .box .tag { font-size: 26px; color: var(--cinnabar); letter-spacing: 3px; margin-bottom: 24px; }
+  .box p { font-size: 29px; line-height: 1.7; }
+  .box ul { list-style: none; margin-top: 18px; }
+  .box li { font-size: 28px; line-height: 1.6; padding-left: 26px; position: relative; margin-bottom: 8px; }
+  .box li::before { content: "·"; position: absolute; left: 4px; color: var(--cinnabar); font-weight: 900; }
+  .callout {
+    margin-top: 56px; padding: 36px 40px; background: rgba(168,53,42,.07);
+    border-left: 6px solid var(--cinnabar);
+  }
+  .callout p { font-size: 31px; }
+  .callout .h { font-weight: 700; font-size: 34px; margin-bottom: 10px; }
+
+  /* ---------- 佛教分期时间轴 ---------- */
+  .tl { position: relative; margin-top: 8px; padding-left: 70px; }
+  .tl::before {
+    content: ""; position: absolute; left: 20px; top: 20px; bottom: 30px;
+    width: 3px; background: var(--ink);
+  }
+  .tl .era { position: relative; margin-bottom: 34px; }
+  .tl .era::before {
+    content: ""; position: absolute; left: -64px; top: 10px;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--paper); border: 4px solid var(--ink);
+  }
+  .tl .era.hot::before { background: var(--cinnabar); border-color: var(--cinnabar); }
+  .tl .era .row1 { display: flex; align-items: baseline; gap: 22px; }
+  .tl .era .name { font-size: 44px; font-weight: 900; letter-spacing: 3px; }
+  .tl .era .date { font-size: 27px; color: var(--cinnabar); letter-spacing: 2px; }
+  .tl .era .texts span { white-space: nowrap; }
+  .tl .era .texts { font-size: 29px; line-height: 1.6; margin-top: 6px; }
+  .tl .era .fact { font-size: 25px; line-height: 1.55; color: var(--ink-soft); margin-top: 4px; }
+
+  /* ---------- 卡4 宗派矩阵 ---------- */
+  .matrix { width: 100%; border-collapse: collapse; margin-top: 4px; table-layout: fixed; }
+  .matrix col.p { width: 72px; }
+  .matrix th {
+    font-size: 25px; font-weight: 700; letter-spacing: 1px; line-height: 1.3;
+    padding: 0 0 18px; color: var(--ink-soft); vertical-align: bottom;
+    border-bottom: 3px solid var(--ink);
+  }
+  .matrix th:first-child { text-align: left; }
+  .matrix td { border-bottom: 1px solid var(--line); padding: 14px 0; text-align: center; }
+  .matrix td.sect { text-align: left; }
+  .matrix td.sect > div { display: inline-block; vertical-align: baseline; }
+  .matrix td.sect .s { width: 140px; line-height: 1.2; font-size: 34px; font-weight: 900; letter-spacing: 3px; }
+  .matrix td.sect .src { font-size: 21px; white-space: nowrap; line-height: 1.3; color: var(--ink-soft); letter-spacing: 0; }
+  .dot {
+    display: inline-block; width: 28px; height: 28px; border-radius: 50%;
+    background: var(--cinnabar); vertical-align: middle;
+  }
+  .dot.o { background: transparent; border: 4px solid var(--cinnabar); }
+  .matrix col.band { background: rgba(42,36,30,.035); }
+  .legend { margin-top: 34px; display: flex; gap: 40px; font-size: 25px; color: var(--ink-soft); align-items: center; flex-wrap: wrap; }
+  .legend span { display: inline-flex; align-items: center; gap: 12px; }
+  .legend .dot { width: 24px; height: 24px; }
+  .legend .dot.o { border-width: 3px; }
+  .fine { margin-top: 18px; font-size: 24px; line-height: 1.6; color: var(--ink-faint); }
+
+
+  /* ---------- 封面三维 ---------- */
+  .dims { margin-top: 90px; display: flex; flex-direction: column; gap: 26px; }
+  .dims .d { display: flex; align-items: baseline; gap: 30px; }
+  .dims .d .k {
+    flex: none; width: 150px; font-size: 32px; font-weight: 900; letter-spacing: 2px;
+    color: var(--cinnabar); border-bottom: 3px solid var(--cinnabar); padding-bottom: 4px;
+  }
+  .dims .d .v { font-size: 32px; letter-spacing: 2px; }
+  .dims .d.sm .v { color: var(--ink-soft); font-size: 30px; }
+
+  /* ---------- 四大思想体系 ---------- */
+  .grid4 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .sys { padding: 26px 28px 22px; background: rgba(255,250,238,.38); border-top: 6px solid var(--ink); }
+  .sys.r { border-top-color: var(--cinnabar); }
+  .sys .nm { display: flex; justify-content: space-between; align-items: baseline; }
+  .sys .nm b { font-size: 44px; font-weight: 900; letter-spacing: 4px; }
+  .sys .nm span { font-size: 23px; color: var(--cinnabar); letter-spacing: 1px; }
+  .sys .claim { font-size: 27px; line-height: 1.6; margin: 14px 0 12px; }
+  .sys .src { font-size: 22px; line-height: 1.55; color: var(--ink-soft); border-top: 1px solid var(--line); padding-top: 12px; }
+  .note2 { margin-top: 26px; font-size: 24px; line-height: 1.7; color: var(--ink-soft); }
+  .note2 b { color: var(--ink); }
+
+  /* ---------- 总图 ---------- */
+  .flow { display: block; margin-top: 0; }
+  .flow text { font-family: "Songti SC", "STSong", serif; }
+  .flow-legend { display: flex; gap: 44px; font-size: 25px; color: var(--ink-soft); margin-top: 18px; align-items: center; }
+  .flow-legend i { display: inline-block; width: 60px; vertical-align: middle; margin-right: 12px; }
+  .flow-legend .main i { border-top: 8px solid var(--cinnabar); }
+  .flow-legend .side i { border-top: 3px dashed var(--ink-soft); }
+
+  /* ---------- 三大传承表 ---------- */
+  .tri { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  .tri col.k { width: 150px; }
+  .tri th { font-size: 40px; font-weight: 900; letter-spacing: 6px; padding: 0 0 18px; border-bottom: 3px solid var(--ink); }
+  .tri th.hl { color: var(--cinnabar); }
+  .tri td { font-size: 26px; line-height: 1.55; padding: 20px 10px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: center; }
+  .tri td.k { text-align: left; font-weight: 700; color: var(--ink-soft); padding-left: 0; font-size: 26px; letter-spacing: 2px; }
+  .tri col.b { background: rgba(42,36,30,.035); }
+
+  /* ---------- 十宗 × 思想体系 ---------- */
+  .matrix.m4 col.p { width: 98px; }
+  .matrix td.span { font-size: 22px; white-space: nowrap; color: var(--ink-soft); text-align: center; letter-spacing: 1px; }
+
+  /* ---------- 学习建议 ---------- */
+  .lead { font-size: 30px; line-height: 1.75; }
+  .lead b { color: var(--cinnabar); }
+  .sub-h { font-size: 34px; font-weight: 900; letter-spacing: 3px; margin: 44px 0 20px; }
+  .sub-h::before { content: "〡"; color: var(--cinnabar); margin-right: 4px; }
+  .lanes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .lane { background: rgba(255,250,238,.38); border-top: 5px solid var(--ink); padding: 14px 10px 16px; text-align: center; min-height: 176px; }
+  .lane.r { border-top-color: var(--cinnabar); background: rgba(168,53,42,.07); }
+  .lane .nm { font-size: 29px; font-weight: 900; letter-spacing: 2px; margin-bottom: 12px; }
+  .lane .chip { display: inline-block; font-size: 24px; padding: 3px 12px; margin: 4px 3px; background: var(--cinnabar); color: #f6e9d6; border-radius: 3px; }
+  .lane .chip.g { background: transparent; color: var(--cinnabar); border: 2px solid var(--cinnabar); }
+  .lane .empty { font-size: 22px; color: var(--ink-faint); line-height: 1.5; padding-top: 6px; }
+  .lane-note { font-size: 24px; line-height: 1.65; color: var(--ink-soft); margin-top: 14px; }
+  .steps { display: flex; flex-direction: column; gap: 12px; }
+  .step { display: flex; align-items: baseline; gap: 20px; }
+  .step .n { flex: none; width: 44px; height: 44px; border-radius: 50%; background: var(--ink); color: #f6e9d6; font-size: 25px; display: flex; align-items: center; justify-content: center; align-self: center; }
+  .step .n.r { background: var(--cinnabar); }
+  .step .nm { flex: none; width: 150px; font-size: 31px; font-weight: 900; letter-spacing: 2px; }
+  .step .bk { font-size: 26px; color: var(--ink-soft); }
+
+  /* ================= 横屏 16:9（?land=1） ================= */
+  body.land .card { width: 1920px; height: 1080px; padding: 120px 120px 110px; }
+  body.land .head { top: 48px; left: 120px; right: 120px; }
+  body.land .foot { bottom: 44px; left: 120px; right: 120px; }
+  body.land .bg-char { right: 40px; top: 60px; font-size: 760px; }
+  /* 封面：左标题，右三维 */
+  body.land .cover { display: grid; grid-template-columns: 1fr 940px; column-gap: 60px; align-content: center; padding-top: 0; }
+  body.land .cover > .kicker, body.land .cover > .big, body.land .cover > .sub { grid-column: 1; }
+  body.land .cover > .dims { grid-column: 2; grid-row: 1 / span 3; margin-top: 0; align-self: center; }
+  /* 分期：横向时间轴 */
+  body.land .tl { padding-left: 0; padding-top: 64px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 40px; margin-top: 10px; }
+  body.land .tl::before { left: 0; right: 0; top: 20px; bottom: auto; width: auto; height: 3px; }
+  body.land .tl .era { margin-bottom: 0; }
+  body.land .tl .era::before { left: 0; top: -58px; }
+  body.land .tl .era .row1 { flex-direction: column; gap: 6px; }
+  body.land .tl .era .texts span { white-space: normal; }
+  body.land .tl .era .texts { margin-top: 16px; }
+  body.land .tl .era .fact { margin-top: 12px; }
+  /* 思想体系：四列 */
+  body.land .grid4 { grid-template-columns: repeat(4, 1fr); }
+  body.land .sys { min-height: 440px; }
+  /* 左右分栏：左侧标题与图例，右侧主体 */
+  body.land .card.lx-side { display: grid; grid-template-columns: 560px 1fr; column-gap: 70px; grid-template-rows: auto auto auto 1fr; align-content: start; }
+  body.land .lx-side > .kicker { grid-column: 1; grid-row: 1; }
+  body.land .lx-side > h1.title { grid-column: 1; grid-row: 2; font-size: 62px !important; letter-spacing: 3px !important; }
+  body.land .lx-side > .rule { grid-column: 1; grid-row: 3; }
+  body.land .lx-side > .lx-aside { grid-column: 1; grid-row: 4; align-self: start; }
+  body.land .lx-side > .lx-main { grid-column: 2; grid-row: 1 / span 4; align-self: center; }
+  body.land .lx-side > svg.flow.lx-main { width: 777px; height: 840px; justify-self: center; }
+  body.land .lx-side .flow-legend { flex-direction: column; align-items: flex-start; gap: 18px; margin-top: 0; }
+  body.land .lx-side .lead { font-size: 30px; }
+  body.land .dims .d .v { white-space: nowrap; }
+  body.land .lx-side > h1.title { font-size: 56px !important; }
+  body.land .tri th { font-size: 36px; padding-bottom: 12px; }
+  body.land .tri td { font-size: 24px; line-height: 1.45; padding: 11px 8px; }
+  body.land .lx-side > table.tri.lx-main { align-self: start; }
+  .lx-br { display: none; }
+  body.land .lx-br { display: inline; }
+  body.land .lx-side .lx-main .sub-h:first-child { margin-top: 0; }
+</style>
+</head>
+<body class="review">
+
+<!-- ============ 封面 ============ -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 01</span><span class="pg"></span></div>
+  <div class="bg-char">法</div>
+  <div class="cover" style="height:100%;">
+    <div class="kicker">一组图看懂</div>
+    <div class="big">佛教<br>全景图</div>
+    <div class="sub">佛教分期 · 思想体系 · 传承</div>
+    <div class="dims">
+      <div class="d"><span class="k">佛教分期</span><span class="v">早期 · 部派 · 初期大乘 · 中期大乘 · 密教</span></div>
+      <div class="d"><span class="k">思想体系</span><span class="v">根本佛教 · 中观 · 唯识 · 如来藏</span></div>
+      <div class="d"><span class="k">传承</span><span class="v">南传 · 汉传 · 藏传</span></div>
+      <div class="d sm"><span class="k">附</span><span class="v">汉传十宗的位置 · 学习建议</span></div>
+    </div>
+  </div>
+  <div class="foot"><span>经论编号均可在 CBETA 检索</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ============ 佛教分期 ============ -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 01</span><span class="pg"></span></div>
+  <div class="kicker">第一个维度 · 年代为学界大致推定</div>
+  <h1 class="title">佛教分期</h1>
+  <div class="rule" style="margin-bottom:40px"></div>
+
+  <div class="tl">
+    <div class="era">
+      <div class="row1"><span class="name">早期佛教</span><span class="date">约前 5 – 前 4 世纪</span></div>
+      <div class="texts">四《阿含》/ 巴利五部尼柯耶（经藏）· 律藏</div>
+      <div class="fact">佛陀在世说法，到佛灭后约百年僧团分裂之前</div>
+    </div>
+    <div class="era">
+      <div class="row1"><span class="name">部派佛教</span><span class="date">约前 3 世纪起</span></div>
+      <div class="texts">阿毗达磨论书 · 各部派所传律</div>
+      <div class="fact">上座部、大众部、说一切有部、法藏部等相继分出</div>
+    </div>
+    <div class="era hot">
+      <div class="row1"><span class="name">初期大乘</span><span class="date">约前 1 – 后 3 世纪</span></div>
+      <div class="texts"><span>般若经 · 法华经 · 华严经各品 ·</span> <span>无量寿经 · 阿弥陀经 · 维摩经 ·</span> <span>龙树《中论》</span></div>
+      <div class="fact">179 年支娄迦谶在洛阳译出《道行般若经》（T224）</div>
+    </div>
+    <div class="era hot">
+      <div class="row1"><span class="name">中期大乘</span><span class="date">约 3 – 5 世纪</span></div>
+      <div class="texts">如来藏系：如来藏经 · 胜鬘经 · 大般涅槃经<br>唯识系：解深密经 · 无著、世亲论书</div>
+    </div>
+    <div class="era hot">
+      <div class="row1"><span class="name">后期大乘 · 密教</span><span class="date">约 7 世纪起</span></div>
+      <div class="texts">大日经 · 金刚顶经 · 此后的无上瑜伽续</div>
+      <div class="fact">8 世纪由善无畏、金刚智、不空传入唐朝</div>
+    </div>
+  </div>
+
+  <div class="foot"><span>佛学图文 · 佛教全景</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ============ 四大思想体系 ============ -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 01</span><span class="pg"></span></div>
+  <div class="kicker">第二个维度</div>
+  <h1 class="title">四大思想体系</h1>
+  <div class="rule"></div>
+  <div class="grid4">
+    <div class="sys">
+      <div class="nm"><b>根本佛教</b><span>早期 · 部派</span></div>
+      <div class="claim">四谛、十二缘起、三法印：诸行无常、诸法无我、涅槃寂静。</div>
+      <div class="src">四阿含 / 巴利尼柯耶<br>部派阿毗达磨：《俱舍论》等</div>
+    </div>
+    <div class="sys">
+      <div class="nm"><b>中　观</b><span>初期大乘</span></div>
+      <div class="claim">一切法依因缘而生，没有自性，所以说空；空也是假名。</div>
+      <div class="src">般若经<br>龙树《中论》、提婆《百论》</div>
+    </div>
+    <div class="sys">
+      <div class="nm"><b>唯　识</b><span>中期大乘</span></div>
+      <div class="claim">一切现象都由识变现。立八识，以阿赖耶识为根本；说三性。</div>
+      <div class="src">《解深密经》<br>《瑜伽师地论》《成唯识论》</div>
+    </div>
+    <div class="sys r">
+      <div class="nm"><b>如来藏</b><span>中期大乘</span></div>
+      <div class="claim">一切众生本具如来藏（佛性），被烦恼覆盖，尚未显现。</div>
+      <div class="src">《如来藏经》《胜鬘经》《大般涅槃经》<br>《究竟一乘宝性论》</div>
+    </div>
+  </div>
+  <div class="note2">
+    <b>密教</b>不另立思想体系。藏传宗义书把佛教见地分为有部、经部、唯识、中观四部；宗喀巴《密宗道次第广论》说显、密的差别在方便，不在见地。<br>
+    <b>印顺法师</b>在《印度之佛教》中称后三系为：性空唯名、虚妄唯识、真常唯心。
+  </div>
+  <div class="foot"><span>佛学图文 · 佛教全景</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ============ 总图 ============ -->
+<section class="card lx-side">
+  <div class="head"><span class="series">佛学图文 · 01</span><span class="pg"></span></div>
+  <div class="kicker">三个维度</div>
+  <h1 class="title" style="font-size:58px;letter-spacing:3px">佛教分期 · <br class="lx-br">思想体系 · <br class="lx-br">传承</h1>
+  <div class="rule" style="margin:28px 0 22px"></div>
+  <svg class="flow lx-main" width="888" height="960" viewBox="0 0 888 960"><text x="105.0" y="34" text-anchor="middle" font-size="28" fill="#9a8d7a" letter-spacing="4">佛教分期</text><line x1="0" y1="54" x2="210" y2="54" stroke="#2a241e" stroke-width="3"/><text x="444.0" y="34" text-anchor="middle" font-size="28" fill="#9a8d7a" letter-spacing="4">思想体系</text><line x1="339" y1="54" x2="549" y2="54" stroke="#2a241e" stroke-width="3"/><text x="783.0" y="34" text-anchor="middle" font-size="28" fill="#9a8d7a" letter-spacing="4">传　承</text><line x1="678" y1="54" x2="888" y2="54" stroke="#2a241e" stroke-width="3"/><path d="M210,870 C274.5,870 274.5,650 339,650" fill="none" stroke="#5e5448" stroke-width="3" stroke-dasharray="9 7" stroke-opacity=".75"/><path d="M210,870 C274.5,870 274.5,790 339,790" fill="none" stroke="#5e5448" stroke-width="3" stroke-dasharray="9 7" stroke-opacity=".75"/><path d="M549,215 C613.5,215 613.5,483.75 678,483.75" fill="none" stroke="#5e5448" stroke-width="3" stroke-dasharray="9 7" stroke-opacity=".75"/><path d="M549,490 C613.5,490 613.5,521.25 678,521.25" fill="none" stroke="#5e5448" stroke-width="3" stroke-dasharray="9 7" stroke-opacity=".75"/><path d="M549,650 C613.5,650 613.5,558.75 678,558.75" fill="none" stroke="#5e5448" stroke-width="3" stroke-dasharray="9 7" stroke-opacity=".75"/><path d="M549,215 C613.5,215 613.5,773.75 678,773.75" fill="none" stroke="#5e5448" stroke-width="3" stroke-dasharray="9 7" stroke-opacity=".75"/><path d="M549,650 C613.5,650 613.5,828.75 678,828.75" fill="none" stroke="#5e5448" stroke-width="3" stroke-dasharray="9 7" stroke-opacity=".75"/><path d="M549,790 C613.5,790 613.5,856.25 678,856.25" fill="none" stroke="#5e5448" stroke-width="3" stroke-dasharray="9 7" stroke-opacity=".75"/><path d="M210,136 C274.5,136 274.5,215 339,215" fill="none" stroke="#a8352a" stroke-width="8" stroke-opacity=".85"/><path d="M210,294 C274.5,294 274.5,215 339,215" fill="none" stroke="#a8352a" stroke-width="8" stroke-opacity=".85"/><path d="M210,463 C274.5,463 274.5,490 339,490" fill="none" stroke="#a8352a" stroke-width="8" stroke-opacity=".85"/><path d="M210,667 C274.5,667 274.5,650 339,650" fill="none" stroke="#a8352a" stroke-width="8" stroke-opacity=".85"/><path d="M210,667 C274.5,667 274.5,790 339,790" fill="none" stroke="#a8352a" stroke-width="8" stroke-opacity=".85"/><path d="M210,870 C274.5,870 274.5,490 339,490" fill="none" stroke="#a8352a" stroke-width="8" stroke-opacity=".85"/><path d="M549,215 C613.5,215 613.5,215.0 678,215.0" fill="none" stroke="#a8352a" stroke-width="8" stroke-opacity=".85"/><path d="M549,790 C613.5,790 613.5,596.25 678,596.25" fill="none" stroke="#a8352a" stroke-width="8" stroke-opacity=".85"/><path d="M549,490 C613.5,490 613.5,801.25 678,801.25" fill="none" stroke="#a8352a" stroke-width="8" stroke-opacity=".85"/><rect x="0" y="91.0" width="210" height="90" rx="4" fill="#f6eedd" stroke="#2a241e" stroke-width="2.5"/><text x="105.0" y="132" text-anchor="middle" font-size="31" font-weight="900" fill="#2a241e" letter-spacing="2">早期佛教</text><text x="105.0" y="164" text-anchor="middle" font-size="21" fill="#a8352a">约前5–前4世纪</text><rect x="0" y="249.0" width="210" height="90" rx="4" fill="#f6eedd" stroke="#2a241e" stroke-width="2.5"/><text x="105.0" y="290" text-anchor="middle" font-size="31" font-weight="900" fill="#2a241e" letter-spacing="2">部派佛教</text><text x="105.0" y="322" text-anchor="middle" font-size="21" fill="#a8352a">约前3世纪起</text><rect x="0" y="418.0" width="210" height="90" rx="4" fill="#f6eedd" stroke="#2a241e" stroke-width="2.5"/><text x="105.0" y="459" text-anchor="middle" font-size="31" font-weight="900" fill="#2a241e" letter-spacing="2">初期大乘</text><text x="105.0" y="491" text-anchor="middle" font-size="21" fill="#a8352a">约前1–后3世纪</text><rect x="0" y="622.0" width="210" height="90" rx="4" fill="#f6eedd" stroke="#2a241e" stroke-width="2.5"/><text x="105.0" y="663" text-anchor="middle" font-size="31" font-weight="900" fill="#2a241e" letter-spacing="2">中期大乘</text><text x="105.0" y="695" text-anchor="middle" font-size="21" fill="#a8352a">约3–5世纪</text><rect x="0" y="825.0" width="210" height="90" rx="4" fill="#f6eedd" stroke="#2a241e" stroke-width="2.5"/><text x="105.0" y="866" text-anchor="middle" font-size="31" font-weight="900" fill="#2a241e" letter-spacing="2">后期 · 密教</text><text x="105.0" y="898" text-anchor="middle" font-size="21" fill="#a8352a">约7世纪起</text><rect x="339" y="180.0" width="210" height="70" rx="4" fill="#f6eedd" stroke="#2a241e" stroke-width="2.5"/><text x="444.0" y="226" text-anchor="middle" font-size="31" font-weight="900" fill="#2a241e" letter-spacing="2">根本佛教</text><rect x="339" y="455.0" width="210" height="70" rx="4" fill="#f6eedd" stroke="#2a241e" stroke-width="2.5"/><text x="444.0" y="501" text-anchor="middle" font-size="31" font-weight="900" fill="#2a241e" letter-spacing="2">中　观</text><rect x="339" y="615.0" width="210" height="70" rx="4" fill="#f6eedd" stroke="#2a241e" stroke-width="2.5"/><text x="444.0" y="661" text-anchor="middle" font-size="31" font-weight="900" fill="#2a241e" letter-spacing="2">唯　识</text><rect x="339" y="755.0" width="210" height="70" rx="4" fill="#f6eedd" stroke="#2a241e" stroke-width="2.5"/><text x="444.0" y="801" text-anchor="middle" font-size="31" font-weight="900" fill="#2a241e" letter-spacing="2">如来藏</text><rect x="678" y="140.0" width="210" height="150" rx="4" fill="#a8352a" stroke="#a8352a" stroke-width="2.5"/><text x="783.0" y="211" text-anchor="middle" font-size="38" font-weight="900" fill="#f6e9d6" letter-spacing="2">南　传</text><text x="783.0" y="249" text-anchor="middle" font-size="21" fill="#f6e9d6">巴利语</text><rect x="678" y="445.0" width="210" height="190" rx="4" fill="#a8352a" stroke="#a8352a" stroke-width="2.5"/><text x="783.0" y="536" text-anchor="middle" font-size="38" font-weight="900" fill="#f6e9d6" letter-spacing="2">汉　传</text><text x="783.0" y="574" text-anchor="middle" font-size="21" fill="#f6e9d6">汉文</text><rect x="678" y="740.0" width="210" height="150" rx="4" fill="#a8352a" stroke="#a8352a" stroke-width="2.5"/><text x="783.0" y="811" text-anchor="middle" font-size="38" font-weight="900" fill="#f6e9d6" letter-spacing="2">藏　传</text><text x="783.0" y="849" text-anchor="middle" font-size="21" fill="#f6e9d6">藏文</text></svg>
+  <div class="flow-legend lx-aside"><span class="main"><i></i>主流</span><span class="side"><i></i>兼学或支流</span></div>
+  <div class="foot"><span>佛学图文 · 佛教全景</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ============ 三大传承 ============ -->
+<section class="card lx-side">
+  <div class="head"><span class="series">佛学图文 · 01</span><span class="pg"></span></div>
+  <div class="kicker">第三个维度</div>
+  <h1 class="title">三大传承</h1>
+  <div class="rule"></div>
+  <table class="tri lx-main">
+    <colgroup><col class="k"><col><col class="b"><col></colgroup>
+    <tr><th></th><th>南传</th><th class="hl">汉传</th><th>藏传</th></tr>
+    <tr><td class="k">传入</td><td>前 3 世纪<br>传入斯里兰卡</td><td>约 1 世纪<br>东汉传入</td><td>7 – 8 世纪<br>传入吐蕃</td></tr>
+    <tr><td class="k">经典</td><td>巴利三藏</td><td>汉文大藏经</td><td>藏文<br>甘珠尔、丹珠尔</td></tr>
+    <tr><td class="k">戒律</td><td>上座部律</td><td>四分律<br>（法藏部）</td><td>根本说一切<br>有部律</td></tr>
+    <tr><td class="k">佛教分期</td><td>早期 · 部派</td><td>早期至中期大乘<br>兼有唐密</td><td>中期大乘<br>后期密教</td></tr>
+    <tr><td class="k">思想</td><td>根本佛教<br>上座部阿毗达磨</td><td>如来藏为主<br>兼有中观、唯识</td><td>中观为主<br>兼学唯识、因明</td></tr>
+    <tr><td class="k">修持</td><td>止观禅修<br>（四念处）</td><td>禅、净土</td><td>密教</td></tr>
+    <tr><td class="k">地区</td><td>斯里兰卡<br>缅甸、泰国<br>柬埔寨、老挝</td><td>中国、日本<br>朝鲜半岛、越南</td><td>西藏、蒙古<br>不丹、尼泊尔</td></tr>
+  </table>
+  <div class="foot"><span>佛学图文 · 佛教全景</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ============ 卡4 宗派矩阵 ============ -->
+<section class="card lx-side">
+  <div class="head"><span class="series">佛学图文 · 01</span><span class="pg"></span></div>
+  <div class="kicker">按所依经论属于哪一期</div>
+  <h1 class="title">汉传十宗 × <br class="lx-br">佛教分期</h1>
+  <div class="rule" style="margin:30px 0 30px"></div>
+
+  <table class="matrix lx-main">
+    <colgroup><col><col class="p"><col class="p band"><col class="p"><col class="p band"><col class="p"></colgroup>
+    <tr>
+      <th>宗派 · 所依经论</th><th>早期</th><th>部派</th><th>初期<br>大乘</th><th>中期<br>大乘</th><th>密教</th>
+    </tr>
+    <tr><td class="sect"><div class="s">律　宗</div><div class="src">四分律 T1428</div></td>
+      <td></td><td><i class="dot"></i></td><td></td><td></td><td></td></tr>
+    <tr><td class="sect"><div class="s">俱舍宗</div><div class="src">俱舍论 T1558</div></td>
+      <td></td><td><i class="dot"></i></td><td></td><td></td><td></td></tr>
+    <tr><td class="sect"><div class="s">成实宗</div><div class="src">成实论 T1646</div></td>
+      <td></td><td><i class="dot"></i></td><td></td><td></td><td></td></tr>
+    <tr><td class="sect"><div class="s">三论宗</div><div class="src">中论 T1564 · 十二门论 · 百论</div></td>
+      <td></td><td></td><td><i class="dot"></i></td><td></td><td></td></tr>
+    <tr><td class="sect"><div class="s">天台宗</div><div class="src">法华经 T262 · 中论</div></td>
+      <td></td><td></td><td><i class="dot"></i></td><td></td><td></td></tr>
+    <tr><td class="sect"><div class="s">华严宗</div><div class="src">华严经 T278/279 · 起信论 T1666</div></td>
+      <td></td><td></td><td><i class="dot"></i></td><td><i class="dot o"></i></td><td></td></tr>
+    <tr><td class="sect"><div class="s">净土宗</div><div class="src">无量寿经 T360 · 阿弥陀经 T366</div></td>
+      <td></td><td></td><td><i class="dot"></i></td><td></td><td></td></tr>
+    <tr><td class="sect"><div class="s">禅　宗</div><div class="src">金刚经 T235 · 楞伽经 T670</div></td>
+      <td></td><td></td><td><i class="dot"></i></td><td><i class="dot"></i></td><td></td></tr>
+    <tr><td class="sect"><div class="s">法相宗</div><div class="src">解深密经 T676 · 成唯识论 T1585</div></td>
+      <td></td><td></td><td></td><td><i class="dot"></i></td><td></td></tr>
+    <tr><td class="sect"><div class="s">密　宗</div><div class="src">大日经 T848 · 金刚顶经 T865</div></td>
+      <td colspan="4" class="span">以三密修持立宗，见地依中观、如来藏</td></tr>
+  </table>
+
+  <div class="lx-aside">
+  <div class="legend">
+    <span><i class="dot"></i>所依经论属于这一期</span>
+    <span><i class="dot o"></i>解经所用的思想（华严宗用《起信论》）</span>
+  </div>
+  <div class="fine">禅宗早期传《楞伽经》，六祖以后重《金刚经》。<br>俱舍、成实二宗唐以后已无独立传承。T 为大正藏编号，可在 CBETA 检索。</div>
+  </div>
+
+  <div class="foot"><span></span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ============ 十宗 × 思想体系 ============ -->
+<section class="card lx-side">
+  <div class="head"><span class="series">佛学图文 · 01</span><span class="pg"></span></div>
+  <div class="kicker">按各宗所属的思想体系</div>
+  <h1 class="title">汉传十宗 × <br class="lx-br">思想体系</h1>
+  <div class="rule" style="margin:30px 0 30px"></div>
+  <table class="matrix m4 lx-main">
+    <colgroup><col><col class="p"><col class="p band"><col class="p"><col class="p band"></colgroup>
+    <tr><th>宗派 · 代表人物</th><th>根本<br>佛教</th><th>中观</th><th>唯识</th><th>如来藏</th></tr>
+<tr><td class="sect"><div class="s">律　宗</div><div class="src">道宣</div></td><td><i class="dot"></i></td><td></td><td></td><td></td></tr>
+<tr><td class="sect"><div class="s">俱舍宗</div><div class="src">普光、法宝</div></td><td><i class="dot"></i></td><td></td><td></td><td></td></tr>
+<tr><td class="sect"><div class="s">成实宗</div><div class="src">僧旻、法云</div></td><td><i class="dot"></i></td><td></td><td></td><td></td></tr>
+<tr><td class="sect"><div class="s">三论宗</div><div class="src">吉藏</div></td><td></td><td><i class="dot"></i></td><td></td><td></td></tr>
+<tr><td class="sect"><div class="s">天台宗</div><div class="src">智顗</div></td><td></td><td><i class="dot o"></i></td><td></td><td><i class="dot"></i></td></tr>
+<tr><td class="sect"><div class="s">华严宗</div><div class="src">法藏</div></td><td></td><td></td><td></td><td><i class="dot"></i></td></tr>
+<tr><td class="sect"><div class="s">净土宗</div><div class="src">昙鸾、道绰、善导</div></td><td colspan="4" class="span">以念佛法门立宗，思想兼采各系</td></tr>
+<tr><td class="sect"><div class="s">禅　宗</div><div class="src">慧能</div></td><td></td><td><i class="dot o"></i></td><td></td><td><i class="dot"></i></td></tr>
+<tr><td class="sect"><div class="s">法相宗</div><div class="src">玄奘、窥基</div></td><td></td><td></td><td><i class="dot"></i></td><td></td></tr>
+<tr><td class="sect"><div class="s">密　宗</div><div class="src">善无畏、金刚智、不空</div></td><td colspan="4" class="span">以三密修持立宗，见地依中观、如来藏</td></tr>
+  </table>
+  <div class="lx-aside"><div class="legend"><span><i class="dot"></i>主要思想体系</span><span><i class="dot o"></i>兼用</span></div>
+  <div class="fine">天台、华严、禅归入如来藏一系，依印顺法师、圣严法师的看法。天台讲「性具」，华严讲「性起」。天台三谛说取自《中论·观四谛品》。</div></div>
+  <div class="foot"><span>佛学图文 · 佛教全景</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ============ 学习建议 ============ -->
+<section class="card lx-side">
+  <div class="head"><span class="series">佛学图文 · 01</span><span class="pg"></span></div>
+  <div class="kicker">学习建议</div>
+  <h1 class="title" style="font-size:64px">建议从<br class="lx-br">思想体系上学习，<br>而不是宗派</h1>
+  <div class="rule" style="margin:28px 0 32px"></div>
+
+  <p class="lead lx-aside">四大思想体系边界分明，像数学、物理、化学，各有自己要回答的问题和依据的经论。<b>先按体系学，再看宗派</b>，脉络更清楚。</p>
+
+  <div class="lx-main">
+  <div class="sub-h">从宗派入手，容易只学到一系</div>
+  <div class="lanes">
+    <div class="lane"><div class="nm">根本佛教</div><div class="empty">俱舍、成实<br>已无独立传承</div></div>
+    <div class="lane"><div class="nm">中　观</div><div class="empty">三论宗<br>唐以后衰微</div></div>
+    <div class="lane"><div class="nm">唯　识</div><div class="empty">法相宗<br>唐以后衰微</div></div>
+    <div class="lane r"><div class="nm">如来藏</div><span class="chip">禅</span><span class="chip">天台</span><span class="chip">华严</span><span class="chip g">净土</span></div>
+  </div>
+  <div class="lane-note">今天汉地流行的禅、天台、华严同属如来藏一系；净土宗以念佛立宗，明清以来多用天台、华严的思想解经。只从这几宗学，其余三系容易缺席。</div>
+
+  <div class="sub-h">建议顺序：按成立先后，每系读一两部</div>
+  <div class="steps">
+    <div class="step"><span class="n">1</span><span class="nm">根本佛教</span><span class="bk">《杂阿含经》T99</span></div>
+    <div class="step"><span class="n">2</span><span class="nm">中　观</span><span class="bk">《大智度论》T1509 · 龙树《中论》T1564</span></div>
+    <div class="step"><span class="n">3</span><span class="nm">唯　识</span><span class="bk">世亲《唯识三十论颂》T1586</span></div>
+    <div class="step"><span class="n r">4</span><span class="nm">如来藏</span><span class="bk">《大乘起信论》T1666</span></div>
+  </div>
+  <div class="lane-note">四系读过，再回到禅、天台、华严、净土，能看出各宗站在哪一系上。</div>
+  </div>
+
+  <div class="foot"><span>佛学图文 · 佛教全景</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+</section>
+
+<script>
+  // 页码与 id 按卡片顺序自动生成；?c=3 只显示第 3 张，用于逐张导出 PNG
+  var cards = document.querySelectorAll('.card');
+  cards.forEach(function (el, i) {
+    el.id = 'c' + (i + 1);
+    var pg = el.querySelector('.pg');
+    if (pg) pg.textContent = (i + 1) + ' / ' + cards.length;
+  });
+  var m = location.search.match(/[?&]c=(\d+)/);
+  var land = /[?&]land=1/.test(location.search);
+  if (land) document.body.classList.add('land');
+  if (m) {
+    document.body.className = land ? 'single land' : 'single';
+    var el = document.getElementById('c' + m[1]);
+    if (el) el.classList.add('on');
+  }
+</script>
+</body>
+</html>
