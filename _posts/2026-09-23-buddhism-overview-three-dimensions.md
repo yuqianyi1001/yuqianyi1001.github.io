@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 用三个维度把佛教全景图一次看明白
-wechat_link:
+wechat_link: https://mp.weixin.qq.com/s/Anzwpx8FU7Mr8J1WKkVJNA
 description: 佛教分五期；思想分根本佛教、中观、唯识、如来藏四大体系；传承分南传、汉传、藏传。再看汉传十宗各在哪里，最后一个学习建议：从思想体系上学，而不是从宗派上学。
 excerpt:
 thumb_media_id: LJGNckXOaezci8bZiAJY7H8LUl7SXmB1Y_BmP_Jz0okXLVZdjhtOeJ4G5hl1bkem
