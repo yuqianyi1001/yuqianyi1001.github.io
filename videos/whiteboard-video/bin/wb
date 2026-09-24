@@ -6,7 +6,7 @@
 #   wb stills <期>             导出每个 beat 的静帧到 <后台>/<期>/work/frames/（检查排版）
 #   wb image <期> name="英文描述" [最多4个]   codex 出白板贴纸 → <期>/assets/<name>.png
 #   wb logo <期> name="Commons 文件名.svg|搜索词" [--vs=a,b]   真实 Logo → <期>/assets/<name>.png（--search="词" 只列候选）
-#   wb tts <期> [scene]        火山克隆音配旁白
+#   wb tts <期> [scene]        配旁白（config tts.engine：volc 火山 / bailian 百炼）
 #   wb render <期> [scene]     渲染 → <后台>/<期>/work/out/master.mp4
 #   wb mix <期> [gain]         混 BGM → <后台>/<期>/outputs/final.mp4
 #   wb cover <期>              出封面 → <期>/封面-4x3.png、封面-3x4.png（scenes.js 里 build 第三参 cover）
@@ -20,6 +20,7 @@ cd "$ROOT"
 PROJECTS=$(node -p "require('./lib/paths.cjs').PROJECTS_DIR")
 resolve() { node -p "require('./lib/paths.cjs').resolveProject(process.argv[1])" "$1"; }
 finalOf() { node -p "require('./lib/paths.cjs').projectPaths(process.argv[1]).final" "$1"; }
+ttsScript() { node -p "require('./config.json').tts.engine==='bailian'?'lib/tts-bailian.mjs':'lib/tts-volc.mjs'"; }
 studioOf() { node -p "require('./lib/paths.cjs').projectPaths(process.argv[1]).studio" "$1"; }
 
 cmd="$1"; shift || true
@@ -41,7 +42,7 @@ case "$cmd" in
   logo)
     if [[ "$1" == --search=* ]]; then node lib/fetch-logo.mjs _ "$1"; exit; fi
     P=$(resolve "$1"); shift; node lib/fetch-logo.mjs "$P" "$@" ;;
-  tts) P=$(resolve "$1"); shift; node lib/tts-volc.mjs "$P" "$@" 2>&1 | grep -vE "^\s+at " ;;
+  tts) P=$(resolve "$1"); shift; node "$(ttsScript)" "$P" "$@" 2>&1 | grep -vE "^\s+at " ;;
   render) P=$(resolve "$1"); shift; node lib/render.js "$P" "$@" ;;
   clean) P=$(resolve "$1"); node lib/render.js "$P" --clean ;;
   cover) P=$(resolve "$1"); node "$P/scenes.js" >/dev/null; node lib/render.js "$P" --cover ;;
@@ -49,7 +50,7 @@ case "$cmd" in
   build)
     P=$(resolve "$1")
     node "$P/scenes.js"
-    node lib/tts-volc.mjs "$P" 2>&1 | grep -vE "^\s+at "
+    node "$(ttsScript)" "$P" 2>&1 | grep -vE "^\s+at "
     node lib/render.js "$P"
     node lib/mix-bgm.mjs "$P"
     node "$P/scenes.js" >/dev/null   # 刷新旁白稿里的时长与成片链接
