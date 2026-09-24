@@ -35,7 +35,10 @@
           "想、形、识"
         ]
       ],
-      "_note": "engine=bailian 时用百炼 Qwen-TTS 声音复刻（lib/tts-bailian.mjs）。model 留空读 BAILIAN_TTS_MODEL；voice 留空读 voiceEnv 指定的环境变量；API key 读 DASHSCOPE_API_KEY，云端环境由代理注入时可不设。pronunciation=多音字同音替换，只改送 TTS 的文本。百炼按原生语速合成，不用 tts.speed"
+      "_note": "engine=bailian 时用百炼 Qwen-TTS 声音复刻（lib/tts-bailian.mjs）。model 留空读 BAILIAN_TTS_MODEL；voice 留空读 voiceEnv 指定的环境变量；API key 读 DASHSCOPE_API_KEY，云端环境由代理注入时可不设。pronunciation=多音字同音替换，只改送 TTS 的文本。speed=合成后 atempo 变速倍率（不变调，tts.speed 只给火山用）；loudness=目标响度 LUFS，全期统一增益，truePeak=限幅 dBTP",
+      "speed": 1.1,
+      "loudness": -16,
+      "truePeak": -1.5
     }
   },
   "bgm": {

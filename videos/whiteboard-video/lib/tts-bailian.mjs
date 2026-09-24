@@ -4,11 +4,13 @@
 // 请求走 curl（云端环境的出网代理对 curl 放行，Node 内置 fetch 会被拒）。
 // 用 SSE 流式接口，音频以 base64 随响应返回（结果 OSS 链接的域名在云端环境里不一定放行）。
 // Qwen-TTS 不返回逐字时间戳：按句合成，句子时长是真实的，句内按字数均分，供字幕和画图节奏对齐。
+// 合成后处理：tts.bailian.speed 用 ffmpeg atempo 逐句变速（不变调，结果按倍率另存缓存）；
+//   tts.bailian.loudness 目标响度（LUFS）：全期所有场景用同一个增益，再过限幅器，场景之间音量一致。
 // 输出 <build>/audio/<scene>.wav + <scene>.json（duration / segmentStarts / wordList），与 tts-volc.mjs 同格式。
 import fs from "fs";
 import path from "path";
 import crypto from "crypto";
-import { execFile } from "child_process";
+import { execFile, execFileSync, spawnSync } from "child_process";
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 const paths = require("./paths.cjs");
@@ -23,7 +25,10 @@ if (!MODEL || !VOICE) throw new Error("缺少百炼模型或音色：设 BAILIAN
 const URL = "https://dashscope.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation";
 const FIXES = B.pronunciation || [];          // [["原词", "同音替换"], ...]，只改送给 TTS 的文本，字幕仍用原文
 const GAP = B.sentenceGap ?? 0.12, BEAT_GAP = B.beatGap ?? 0.3, PAR = B.parallel || 4;
+const SPEED = B.speed || 1, LUFS = B.loudness ?? null, TP = B.truePeak ?? -1.5;
 const RATE = 24000, BPS = RATE * 2;           // 24kHz 单声道 16bit
+const FF = ["-hide_banner", "-loglevel", "error"], RAW = ["-f", "s16le", "-ar", String(RATE), "-ac", "1"];
+const ffPcm = (pcm, af) => execFileSync("ffmpeg", [...FF, ...RAW, "-i", "-", "-af", af, ...RAW, "-"], { input: pcm, maxBuffer: 256 << 20 });
 
 const script = JSON.parse(fs.readFileSync(P.script));
 const cacheDir = path.join(P.audio, "cache");
@@ -70,6 +75,15 @@ async function synth(text) {
   }
 }
 
+// 逐句变速，按原音频哈希 + 倍率缓存
+function tempo(pcm) {
+  const f = path.join(cacheDir, crypto.createHash("sha1").update(pcm).digest("hex") + `.x${SPEED}.pcm`);
+  if (fs.existsSync(f)) return fs.readFileSync(f);
+  const out = ffPcm(pcm, `atempo=${SPEED}`);
+  fs.writeFileSync(f, out);
+  return out;
+}
+
 function wavHeader(n) {
   const h = Buffer.alloc(44);
   h.write("RIFF", 0); h.writeUInt32LE(36 + n, 4); h.write("WAVE", 8); h.write("fmt ", 12);
@@ -90,6 +104,7 @@ await Promise.all(Array.from({ length: PAR }, async () => {
   while (next < jobs.length) {
     const j = jobs[next++];
     j.pcm = await synth(fix(j.text));
+    if (SPEED !== 1) j.pcm = tempo(j.pcm);
     process.stdout.write(`\r合成 ${++done}/${jobs.length}`);
   }
 }));
@@ -117,9 +132,26 @@ for (const sc of script) {
       parts.push(s.pcm); t += dur;
     });
   });
-  const pcm = Buffer.concat(parts);
-  fs.writeFileSync(path.join(P.audio, `${sc.name}.wav`), Buffer.concat([wavHeader(pcm.length), pcm]));
+  sc._pcm = Buffer.concat(parts);
   fs.writeFileSync(path.join(P.audio, `${sc.name}.json`), JSON.stringify({ name: sc.name, duration: t, segmentStarts: starts, segments: sc.segments,
     engine: "bailian", model: MODEL, wordList: words }, null, 1));
   console.log(`${sc.name}: ${t.toFixed(1)}s  starts=${starts.map((x) => x.toFixed(1)).join(",")}`);
+}
+
+// 响度：测本次合成的全部场景拼起来的整体响度（只重配单个场景时就按该场景算），统一增益 + 限幅，写 wav
+const done_ = script.filter((sc) => sc._pcm);
+let gain = 0;
+function measure(pcm) {
+  const r = spawnSync("ffmpeg", ["-hide_banner", ...RAW, "-i", "-", "-af", "ebur128", "-f", "null", "-"], { input: pcm, maxBuffer: 256 << 20 });
+  const m = [...String(r.stderr).matchAll(/I:\s+(-?[\d.]+) LUFS/g)].pop();
+  return m ? Number(m[1]) : null;
+}
+if (LUFS != null) {
+  const I = measure(Buffer.concat(done_.map((sc) => sc._pcm)));
+  if (I != null) gain = LUFS - I;
+  console.log(`响度 ${I} LUFS → 目标 ${LUFS} LUFS，增益 ${gain.toFixed(1)} dB，限幅 ${TP} dBTP`);
+}
+for (const sc of done_) {
+  const pcm = LUFS != null ? ffPcm(sc._pcm, `volume=${gain.toFixed(2)}dB,alimiter=limit=${Math.pow(10, TP / 20).toFixed(3)}:level=disabled`) : sc._pcm;
+  fs.writeFileSync(path.join(P.audio, `${sc.name}.wav`), Buffer.concat([wavHeader(pcm.length), pcm]));
 }
