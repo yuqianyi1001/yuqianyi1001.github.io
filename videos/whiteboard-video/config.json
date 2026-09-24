@@ -1,0 +1,123 @@
+{
+  "dirs": {
+    "projects": "./episodes",
+    "build": "./build",
+    "_note": "projects = 每期内容目录（人看、人改的：scenes.js、场景图、贴纸、旁白稿、字幕、封面、README、发布.md），可以指到 Obsidian 仓库里；build = 后台目录，每期 <期>/work/ 放中间产物（音频/逐帧/分段 mp4），<期>/outputs/final.mp4 是成片。相对路径以本仓库根目录为准，~ 表示家目录"
+  },
+  "tts": {
+    "engine": "bailian",
+    "voice": "",
+    "resourceId": "",
+    "speed": 1.2,
+    "_note": "voice 留空就读 .env 的 VOLC_TTS_VOICE。官方音色配 resourceId seed-tts-1.0（或按控制台提示的 2.0 资源 ID）；声音复刻音色配 volc.megatts.default。留空就读 .env 的 VOLC_TTS_RESOURCE_ID。speed=语速倍率（1=原速，1.2 推荐；映射到火山 speech_rate=(speed-1)*100，范围 0.5~2，原生合成不变调），改了会自动重配所有场景（缓存键含语速）",
+    "bailian": {
+      "model": "",
+      "voiceEnv": "BAILIAN_QWEN_TTS_VOICE_YUQIANYI",
+      "voice": "",
+      "sentenceGap": 0.12,
+      "beatGap": 0.3,
+      "parallel": 4,
+      "pronunciation": [
+        [
+          "行苦",
+          "形苦"
+        ],
+        [
+          "一切行",
+          "一切形"
+        ],
+        [
+          "诸行",
+          "诸形"
+        ],
+        [
+          "想、行、识",
+          "想、形、识"
+        ]
+      ],
+      "_note": "engine=bailian 时用百炼 Qwen-TTS 声音复刻（lib/tts-bailian.mjs）。model 留空读 BAILIAN_TTS_MODEL；voice 留空读 voiceEnv 指定的环境变量；API key 读 DASHSCOPE_API_KEY，云端环境由代理注入时可不设。pronunciation=多音字同音替换，只改送 TTS 的文本。speed=合成后 atempo 变速倍率（不变调，tts.speed 只给火山用）；loudness=目标响度 LUFS，全期统一增益，truePeak=限幅 dBTP",
+      "speed": 1.1,
+      "loudness": -16,
+      "truePeak": -1.5
+    }
+  },
+  "bgm": {
+    "file": "assets/bgm.mp3",
+    "trim": [],
+    "gain": 0.5,
+    "speak": 0.1,
+    "gap": 0.22,
+    "rampSeconds": 0.35,
+    "tailFadeSeconds": 3.5,
+    "_note": "配乐不随仓库附带：放一首无版权音乐到 assets/bgm.mp3（或改 file 指到别处），没有就出无配乐成片。trim=[起, 止] 秒截一段循环，留空用整首。说话时音量 ×speak、停顿 ×gap，rampSeconds 缓坡，tailFadeSeconds 尾部淡出；gain 总音量，嫌吵就调小，临时试听 wb mix <期> 0.4"
+  },
+  "render": {
+    "fps": 30,
+    "leadSeconds": 0.3,
+    "holdSeconds": 0.7,
+    "workers": 4,
+    "_note": "workers=并行出帧的页面数（每页一个 Chromium 渲染进程，交错截图，成片逐帧一致）；1=老的单页串行",
+    "pen": {
+      "speed": 1000,
+      "fillSpeed": 9000,
+      "minSeconds": 0.35,
+      "gapSeconds": 0.12,
+      "charSeconds": [
+        0.06,
+        0.2
+      ],
+      "overflow": 0.35,
+      "travelMax": 1.6,
+      "_note": "speed=描边像素/秒；fillSpeed=斜线填充像素/秒；minSeconds=每个元素最短绘制时长；gapSeconds=两笔之间抬笔间隙；charSeconds=[最小,最大] 每个汉字的书写秒数（按字号/700 取，拉丁字母减半）；overflow=一个 beat 画不完时最多溢出到下一段的比例；travelMax=抬笔移动最长秒数，超过就中途藏笔；fillMaxSeconds=单个图形填充（斜线/实底）最长秒数",
+      "fillMaxSeconds": 1.2
+    }
+  },
+  "captions": {
+    "enabled": true,
+    "fontSize": 46,
+    "baselineY": 1022,
+    "safeTop": 960,
+    "minChars": 6,
+    "maxChars": 20,
+    "leadSeconds": 0.08,
+    "tailSeconds": 0.25,
+    "_note": "烧录字幕：小赖字体、墨色 + 纸色描边，居中于底部；safeTop 以下 110px 留给字幕，场景元素别越界（wb scenes 会警告）。SRT 另存期目录 字幕.srt"
+  },
+  "brand": {
+    "name": "愚千一",
+    "slogan": "讲逻辑、讲层次、讲科学的人间佛教。",
+    "accent": "#2f9e44",
+    "ink": "#1e1e1e",
+    "logo": "",
+    "watermark": {
+      "enabled": true,
+      "position": "top-right",
+      "opacity": 0.72,
+      "size": 36,
+      "margin": 56,
+      "drawInSeconds": 1.2,
+      "sparkle": true,
+      "underline": true
+    },
+    "endCard": {
+      "enabled": true,
+      "seconds": 5.5,
+      "cta": "点赞 · 关注 · 评论区聊聊",
+      "holdSeconds": 1.5
+    },
+    "pen": {
+      "color": "#f5b942"
+    },
+    "_note": "品牌层。name=水印/片尾的手写字（小赖字体）；accent=品牌绿（水印下划线、星号、片尾划线，DSL 里 C.brand）；logo=可选透明底 png 路径（~ 可用），给了就代替手写名；watermark.position=top-right|top-left|bottom-right|bottom-left，drawInSeconds=第一场景开头逐笔画出水印的时长（0 则直接出现）；endCard=片尾品牌卡（名字+划线+slogan+CTA，静音，BGM 继续；seconds 总长，最后 holdSeconds 静止展示）；pen.color=铅笔笔身颜色"
+  },
+  "cover": {
+    "ratios": [
+      "4:3",
+      "3:4"
+    ],
+    "seriesTag": "白板讲佛法",
+    "frame": true,
+    "frameColor": "#1e1e1e",
+    "_note": "封面：ratios 出几种画幅（4:3=1440×1080 公众号/横版，3:4=1080×1440 视频号竖版/小红书；也支持 16:9=1920×1080）；seriesTag=左上角系列标签默认文案（scenes.js 里 tag 可覆盖）；frame=四周手绘粗边框。封面内容在 scenes.js 的 cover 函数里写，wb cover 出 <期>/封面-4x3.png、封面-3x4.png"
+  }
+}
