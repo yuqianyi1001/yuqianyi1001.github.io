@@ -1,0 +1,8 @@
+#!/bin/bash
+# 愚千一白板视频：调用 whiteboard-video-skills 仓库的 wb，用本目录 config.json 覆盖默认配置（期目录、品牌、多音字）。
+# 工具位置默认是与本仓库并排克隆的 whiteboard-video-skills，别处就设 WB_HOME=<whiteboard-video-skills>/skills/whiteboard-video
+# 用法同 wb：./wb build 人生是苦、./wb tts 人生是苦 03-xxx ……
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+WB_HOME="${WB_HOME:-$HERE/../../../whiteboard-video-skills/skills/whiteboard-video}"
+[ -x "$WB_HOME/bin/wb" ] || { echo "找不到 whiteboard-video 工具：$WB_HOME/bin/wb（先 git clone https://github.com/yuqianyi1001/whiteboard-video-skills，或设 WB_HOME）"; exit 1; }
+WB_CONFIG="$HERE/config.json" exec "$WB_HOME/bin/wb" "$@"

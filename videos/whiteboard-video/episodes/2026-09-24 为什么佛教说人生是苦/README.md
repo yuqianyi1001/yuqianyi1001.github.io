@@ -30,5 +30,5 @@
 
 ## 配音
 
-- `config.json` 里 `tts.engine = "bailian"`，`wb tts` / `wb build` 走 `lib/tts-bailian.mjs`；模型和音色读环境变量 `BAILIAN_TTS_MODEL`、`BAILIAN_QWEN_TTS_VOICE_YUQIANYI`。
+- 配音走 whiteboard-video-skills 仓库的 `lib/tts-bailian.mjs`（千问 Qwen-TTS）；模型和音色读环境变量 `BAILIAN_TTS_MODEL`、`BAILIAN_TTS_VOICE`，多音字替换在本目录 `config.json` 的 `tts.pronunciation`。
 - 多音字替换（只改送给 TTS 的文本）：行苦→形苦、一切行→一切形、诸行→诸形、想、行、识→想、形、识。
