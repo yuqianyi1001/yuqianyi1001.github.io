@@ -2,7 +2,7 @@
 // 流程：改这里 → wb stills "人生是苦" 看 frames/ 排版 → wb build "人生是苦" 出片
 // 经文出处见同目录 README.md「资料来源」，全部可在 CBETA 检索。
 // 本期未出贴纸（环境里没有 codex CLI），人物与物件都用 Excalidraw 图形画。
-const { Scene, C, CX, build } = require(require('path').join(__dirname, '../../lib/scene-dsl')).use(__dirname);
+const { Scene, C, CX, build } = require(require('path').join(process.env.WB_ROOT, 'lib/scene-dsl')).use(__dirname);
 const scenes = [];
 function heading(s, t) { s.text(120, 65, t, { size: 80, color: C.brand }); }
 function card(s, x, y, w, h, t, color = C.ink, fill = C.fYellow, size = 48) {
