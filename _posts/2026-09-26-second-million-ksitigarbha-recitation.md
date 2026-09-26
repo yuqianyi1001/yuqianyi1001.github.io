@@ -11,6 +11,8 @@ tags:
  - 修行
 ---
 
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-26-second-million-ksitigarbha-recitation-cover.png)
+
 
 
 上个月的时候，我参加了法鼓山在我们这里举办的地藏法会，地藏法会的过程中，有法师开示的环节。法师在开示中，介绍了好几个《地藏经》所提及的地藏法门的实修方法，包括诵经，念菩萨名号，礼拜，供水等等。
