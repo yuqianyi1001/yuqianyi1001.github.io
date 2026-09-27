@@ -45,6 +45,17 @@ layout: default
       outline-offset: 2px;
     }
 
+    #d_tags_cn:not(.expanded) .tag-toggle.tag-extra:not([aria-pressed="true"]) {
+      display: none;
+    }
+
+    #toggle-all-tags {
+      font-size: x-small;
+      color: #2b90d9;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
     #post-monthly-summary .month-toggle {
       font-size: smaller;
       padding: 4px 10px;
@@ -95,6 +106,7 @@ layout: default
         <button type="button" class="tag-toggle" data-tag="{{ tag }}" data-count="{{ tag_count }}" aria-pressed="false">{{ tag }} ({{ tag_count }})</button>
       {%- endfor -%}
   </div>
+  <a href="#" id="toggle-all-tags" hidden aria-expanded="false" aria-controls="d_tags_cn">显示全部</a>
 </div>
 
 <div id="post-monthly-summary" style="margin-top: 10px;">
@@ -256,6 +268,26 @@ layout: default
       }
 
       sortTagContainer(TAG_CONTAINER_ID);
+
+      // Show only the top tags by default; the rest behind a "显示全部" toggle
+      const TAG_VISIBLE_LIMIT = 10;
+      const tagContainer = document.getElementById(TAG_CONTAINER_ID);
+      const allTagsButton = document.getElementById('toggle-all-tags');
+      const tagButtons = tagContainer ? tagContainer.querySelectorAll('.tag-toggle') : [];
+      if (allTagsButton && tagButtons.length > TAG_VISIBLE_LIMIT) {
+        const collapsedLabel = `显示全部 (${tagButtons.length})`;
+        tagButtons.forEach((button, index) => {
+          button.classList.toggle('tag-extra', index >= TAG_VISIBLE_LIMIT);
+        });
+        allTagsButton.textContent = collapsedLabel;
+        allTagsButton.hidden = false;
+        allTagsButton.addEventListener('click', (event) => {
+          event.preventDefault();
+          const expanded = tagContainer.classList.toggle('expanded');
+          allTagsButton.textContent = expanded ? '收起' : collapsedLabel;
+          allTagsButton.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        });
+      }
 
       window.updatePostsVisibility = function updatePostsVisibility() {
         const lang = getLang();
