@@ -50,6 +50,8 @@ layout: default
     }
 
     #toggle-all-tags {
+      align-self: center;
+      white-space: nowrap;
       font-size: x-small;
       color: #2b90d9;
       text-decoration: underline;
@@ -281,6 +283,7 @@ layout: default
         });
         allTagsButton.textContent = collapsedLabel;
         allTagsButton.hidden = false;
+        tagContainer.appendChild(allTagsButton);
         allTagsButton.addEventListener('click', (event) => {
           event.preventDefault();
           const expanded = tagContainer.classList.toggle('expanded');
