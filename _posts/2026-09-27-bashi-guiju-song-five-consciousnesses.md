@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 《八识规矩颂》图文第一讲：前五识颂
-description: 用 24 张图讲《八识规矩颂》前五识颂三颂十二句：凡夫位的前五识缘什么境、在哪几地起、和哪 34 个心所相应、依什么根、要几个缘；圣者位的前五识为什么要到成佛那一刹那才转成成所作智。
+title: 《八识规矩颂》第一讲：前五识颂
+description: 讲《八识规矩颂》前五识颂三颂十二句：凡夫位的前五识缘什么境、在哪几地起、和哪 34 个心所相应、依什么根、要几个缘；圣者位的前五识为什么要到成佛那一刹那才转成成所作智。
 excerpt:
 tags:
  - 唯识
@@ -10,13 +10,11 @@ tags:
  - 成唯识论
 ---
 
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-card-1.jpg)
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-cover.png)
 
-这是「佛学图文」系列。前些天我录了《八识规矩颂》四讲视频，现在把它改成图文，一讲一篇，方便没法看视频的朋友慢慢读。今天是第一讲：前五识颂，也就是眼识、耳识、鼻识、舌识、身识这五个识。
+前些天我录了《八识规矩颂》四讲视频，现在把它改写成文章，一讲一篇，方便没法看视频的朋友慢慢读。今天是第一讲：前五识颂，也就是眼识、耳识、鼻识、舌识、身识这五个识。
 
 这一讲分两半：前一半讲凡夫的五识平时怎么运作，后一半讲修到圣者位，五识怎样「转依」，转成智慧。
-
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-card-2.jpg)
 
 先说为什么要学《八识规矩颂》。
 
@@ -28,8 +26,6 @@ tags:
 
 读这一讲之前，最好先看过我《百法》系列的五讲，对五十一个心所的分类有个印象：遍行五、别境五、善十一、根本烦恼六、随烦恼二十、不定四。下面会快速带过，不再逐个解释。
 
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-card-3.jpg)
-
 这一讲围绕四个问题：
 
 第一，前五识是哪五个，体性是什么？
@@ -39,8 +35,6 @@ tags:
 第三，到了圣者位，前五识转成什么智，什么时候转？
 
 第四，圣者修证分几个阶位，前五识在每个阶位转到了哪一步？
-
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-card-4.jpg)
 
 先把前五识整体看一遍。
 
@@ -66,16 +60,12 @@ tags:
 
 ## 凡夫位的前五识
 
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-card-5.jpg)
-
 讲凡夫位的是第一颂和第二颂，一共八句。先看第一颂：
 
 > 性境现量通三性，眼耳身三二地居。
 > 遍行别境善十一，中二大八贪嗔痴。
 
 这四句分别讲：所缘的性质、在哪几地起、相应的善心所、相应的染污心所。下面一句一句看。
-
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-card-6.jpg)
 
 **性境现量通三性。**
 
@@ -86,8 +76,6 @@ tags:
 三量，是按认识的方式分：现量，当下直接感知；比量，经过推理得到正确的认识；非量，错误的认识。前五识是现量。
 
 三性，就是善、恶、无记。前五识自己没有计度分别，谈不上起善心恶心，它是善是恶，要看同时生起的心所怎么搭配，又受第六识引导：第六识起善心，五识跟着成善；第六识起染心，五识跟着成染。所以说它「通三性」。
-
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-card-7.jpg)
 
 **眼耳身三二地居。**
 
@@ -103,8 +91,6 @@ tags:
 
 那鼻识、舌识为什么连初禅都没有？因为色界众生已经离了段食的欲望，不吃物质的食物，也就用不着闻香、尝味。
 
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-card-8.jpg)
-
 **遍行别境善十一。**
 
 这一句列出跟前五识相应的善心所和中性心所，一共二十一个。
@@ -118,8 +104,6 @@ tags:
 五加五加十一，一共二十一个。
 
 这里顺带说一处异说。《成唯识论》卷六讲到轻安时，列了两家看法：一家说「五识唯有十种，自性散动无轻安故」；另一家说五识也有轻安，因为定所引发的善也有调畅，而且成所作智一定带着轻安。颂文取的是后一家，所以说「善十一」。
-
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-card-9.jpg)
 
 **中二大八贪嗔痴。**
 
@@ -139,15 +123,11 @@ tags:
 
 另一类是根本烦恼里的慢、疑、恶见。《成唯识论》卷六说：「五识唯三，谓贪瞋痴，无分别故，由称量等起慢等故。」慢要比较高下，疑要怀疑道理，恶见要作错误的推断，都得靠第六识的计度分别，五识做不到。
 
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-card-10.jpg)
-
 把两句合起来：善和中性的二十一个，加上染污的十三个，一共三十四个。
 
 但三十四个是「可能相应」的范围，不是说五识每一刹那都跟这三十四个一起生起。
 
 起善心的时候，五识可以跟那二十一个相应；起染心的时候，五识跟遍行五、别境五，再加中随二、大随八、贪嗔痴相应。善和染不能同时起。就算起善心，二十一个也不一定全部现行，要看当时的心境和心所怎么搭配。
-
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-card-11.jpg)
 
 再看第二颂：
 
@@ -155,8 +135,6 @@ tags:
 > 合三离二观尘世，愚者难分识与根。
 
 这四句讲：所依的根、需要的缘、取境的方式、凡夫常犯的误认。
-
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-card-12.jpg)
 
 **五识同依净色根。**
 
@@ -167,8 +145,6 @@ tags:
 净色根，是极微细的清净色法，真正帮助五识起了别作用的是这一层。
 
 古人没有解剖学，但净色根说的，和今天讲的整个感官系统是同一类东西。所以颂文说五识都依净色根，而不是依扶尘根。
-
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-card-13.jpg)
 
 **九缘八七好相邻。**
 
@@ -188,8 +164,6 @@ tags:
 
 从这里能看出，前五识生起的时候，第六、第七、第八识都得同时在场，给它们作依靠。八个识是相互依托着一起运作的。
 
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-card-14.jpg)
-
 **合三离二观尘世。**
 
 这一句讲前五识取境的两种方式。
@@ -198,8 +172,6 @@ tags:
 
 合中知：境必须碰到根，识才能起。香气碰到鼻根，味道碰到舌根，冷热软硬碰到身根。鼻识、舌识、身识是这一类，就是「合三」。
 
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-card-15.jpg)
-
 **愚者难分识与根。**
 
 「愚者」指凡夫。凡夫容易把识和根混为一谈，觉得「是眼睛在看」。
@@ -207,8 +179,6 @@ tags:
 仔细分析：只有眼根，就算眼睛完好、净色根具足，也看不见；只有眼识，没有根、没有境、没有作意，也看不见。真正能看见，是眼识、眼根、色境、作意、第六识、第七识、第八识、种子这些缘同时具足。
 
 根是色法，识是心法，两者性质不同。《百法》把心法八识和色法五根分成两类，也是这个道理。把根当成识，就没法看清八识的运作。
-
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-card-16.jpg)
 
 凡夫位小结一下：
 
@@ -226,16 +196,12 @@ tags:
 
 ## 圣者位的前五识：转成所作智
 
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-card-17.jpg)
-
 第三颂讲前五识的转依：
 
 > 变相观空唯后得，果中犹自不诠真。
 > 圆明初发成无漏，三类分身息苦轮。
 
 四句分别讲：怎样观空、到了佛果能做什么不能做什么、什么时候转、转了以后起什么作用。
-
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-card-18.jpg)
 
 **变相观空唯后得。**
 
@@ -247,8 +213,6 @@ tags:
 
 前五识为什么只能起后得智？因为它本来就是现量，一定要有个实际的所缘境，离不开相分。这一点是由五识本身的性质决定的。
 
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-card-19.jpg)
-
 **果中犹自不诠真。**
 
 「果」指佛果。「诠」是用名言、概念来表达，「诠真」就是把真如说出来。
@@ -258,8 +222,6 @@ tags:
 用名言说法、显示真理的，是第六识转成的妙观察智。《成唯识论》卷十说妙观察智「于大众会能现无边作用差别，皆得自在，雨大法雨，断一切疑」。
 
 这不算五识的缺陷。五识本来就是管感知的，不是管诠表的。到了佛果，它照样起感知的作用，和妙观察智一起完成度众生的事。
-
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-card-20.jpg)
 
 **圆明初发成无漏。**
 
@@ -275,8 +237,6 @@ tags:
 
 （《成唯识论》在这里也列了异说，另一家认为成所作智在菩萨修道位就能起。玄奘一系取的是上面这一家，颂文「圆明初发」说的也是这个。）
 
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-card-21.jpg)
-
 **三类分身息苦轮。**
 
 《成唯识论》卷十说成所作智「为欲利乐诸有情故，普于十方示现种种变化三业，成本愿力所应作事」。颂文把它的变化归成三类化身，注家通常这样解释：
@@ -291,9 +251,7 @@ tags:
 
 ## 凡圣对照
 
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-card-22.jpg)
-
-这张表把前五识分成三个阶段来比：凡夫位、见道到八地、佛果。
+把前五识分成三个阶段来比：凡夫位、见道到八地、佛果。
 
 体性：凡夫位是有漏识；见道到八地仍是有漏；佛果才转成成所作智，是无漏。
 
@@ -309,8 +267,6 @@ tags:
 
 果用：凡夫位是流转生死；佛果是三类分身，息苦轮。
 
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-card-23.jpg)
-
 最后把四智放在一起，看各自什么时候开始转。依据是《成唯识论》卷十。
 
 圣者修证的次第：见道（初地入心）→ 修道（二地到七地）→ 不动地（八地）→ 佛果，四智圆明。
@@ -324,8 +280,6 @@ tags:
 成所作智，前五识转的。也是成佛那一刹那，和大圆镜智同时。
 
 所以顺序是：第六识、第七识先转，第八识和前五识最后一起在佛果转。前五识在见道、修道、八地这几个阶位都还没转，是八识里转得最晚的一组。第六、七、八识各自的转依细节，放到后面几讲再讲。
-
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-09-27-bashi-guiju-song-five-consciousnesses-card-24.jpg)
 
 回顾这一讲的四条：
 
