@@ -119,6 +119,12 @@ exclude:
 
 # Add default redirects from legacy Traditional Chinese URLs to Simplified ones
 defaults:
+  # Default social share image (og:image / twitter:image) for jekyll-seo-tag;
+  # a page's own `image:` front matter overrides it
+  - scope:
+      path: ""
+    values:
+      image: /images/og-image.png
   - scope:
       path: ""
       type: "posts"
