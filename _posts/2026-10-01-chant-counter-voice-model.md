@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 科技与念诵计数——利用模型自动计数
+title: 科技与念诵计数——让手机听我念佛，自动帮我数数
 wechat_link:
 description: 想再念一百万遍地藏菩萨圣号，手头的计数器却都用不了，开车时更没法一边念一边按。于是用 AI 做了一个网页：手机听着念诵，自动数遍数。先试了“现场学习再套模板”的办法，漏数一成；又从零训练了一个只有一百多万参数的小模型，念 100 遍数出 100 遍。网页已经公开，别人也可以用。
 excerpt:
@@ -15,7 +15,9 @@ tags:
 
 然后我就开始念了。既然有数量的要求，那么在念诵的时候，自然就需要计数了。而在佛教圈里面，最常见的计数器，就是一个戴在手指上的计数器，大概样子是这样的。
 
-【插图：手指计数器的照片，待补】
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-10-01-chant-counter-finger-counter.jpg)
+
+（图片来源：维基共享资源，作者 Wikiman5676，[CC BY-SA 4.0](https://commons.wikimedia.org/wiki/File:Digital_tally_counter.jpg)）
 
 碰巧我手头的计数器要么坏了，要么丢了，要么没电池了。这下要计数，该怎么办呢？首先我就想到了找一个手机应用（app），最好是可以在我的苹果手表上用的，这样就方便了。我还真的找到了一个 —— Counter，它不仅在手机上可用，也可以在手表上用。用起来整体感觉还是可以的。
 
