@@ -11,6 +11,8 @@ tags:
  - AI
 ---
 
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-10-01-chant-counter-voice-model-cover.png)
+
 前几天我写了一篇文章《[地藏法门：第二个百万地藏菩萨圣号](https://yuqianyi.com/second-million-ksitigarbha-recitation/)》，只发在我的网站上，公众号发表没通过审批。文章里面主要说了两件事情：十多年前，我刚学佛的时候，念过地藏菩萨圣号一百万遍；十多年后的今天，我想要再念一次，再念一百万遍。
 
 然后我就开始念了。既然有数量的要求，那么在念诵的时候，自然就需要计数了。而在佛教圈里面，最常见的计数器，就是一个戴在手指上的计数器，大概样子是这样的。
