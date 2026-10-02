@@ -3,6 +3,7 @@ layout: post
 title: 为什么佛教说人生是苦？
 description: 用阿含经原文讲佛教说的苦：《分别圣谛经》的八苦，《众集经》的三苦，快乐为什么也算苦，《杂阿含经》的两支毒箭，最后是佛陀以良医自比，说苦是诊断，后面还有治法。
 excerpt:
+thumb_media_id: LJGNckXOaezci8bZiAJY7Lojh8v8KmF0KWOoRzbnVjS6RhkJwBpBVQ29Dkjifg7I
 tags:
  - 四圣谛
  - 阿含经
