@@ -55,6 +55,7 @@ def api_base() -> str:
 
     return os.getenv("WECHAT_API_BASE", DEFAULT_API_BASE).rstrip("/")
 DOTENV_FILENAME = ".env"
+DIGEST_MAX_CHARS = 120
 MARKDOWN_IMAGE_PATTERN = re.compile(r"!\[([^\]]*)\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)")
 MARKDOWN_REF_IMAGE_PATTERN = re.compile(r"^\[([^\]]+)\]:\s*(\S+)(.*)$", re.MULTILINE)
 # No default cover: build_article_payload refuses to build an article whose
@@ -888,7 +889,10 @@ def build_article_payload(metadata: Dict[str, object], html_content: str) -> Dic
                 break
     if not digest:
         plain = re.sub(r"<[^>]+>", "", html_content)
-        digest = plain.strip()[:120]
+        digest = plain.strip()[:DIGEST_MAX_CHARS]
+    # WeChat rejects a digest longer than 120 characters, so a long front matter
+    # description would otherwise keep the whole draft from being created.
+    digest = digest.strip()[:DIGEST_MAX_CHARS]
 
     thumb_media_id = metadata.get("thumb_media_id") if isinstance(metadata.get("thumb_media_id"), str) else None
     if not thumb_media_id or not thumb_media_id.strip():
