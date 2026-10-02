@@ -24,7 +24,8 @@ Duplicate protection:
 
 Notifications:
 - when NOTIFY_URL is set, a Telegram message is sent for every draft created
-  and for every post that fails. A failing post is retried every run, so its
+  and for every post that fails, and when the copy of these scripts on the
+  server differs from scripts/ in the repo (a fix that was never deployed). A failing post is retried every run, so its
   failure is reported once per distinct error, not once per run. The server
   cannot reach api.telegram.org itself; NOTIFY_URL is a relay that can
   (scripts/telegram-relay), authenticated with NOTIFY_SECRET.
@@ -41,6 +42,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import hashlib
 import json
 import os
 import pathlib
@@ -62,6 +64,15 @@ SYNC_SINCE = os.getenv("SYNC_SINCE", "2026-09-25")
 BASE_DIR = pathlib.Path(__file__).resolve().parent
 STATE_DIR = pathlib.Path(os.getenv("WECHAT_SYNC_STATE_DIR", str(BASE_DIR / "state")))
 WORK_DIR = pathlib.Path(os.getenv("WECHAT_SYNC_WORK_DIR", str(BASE_DIR / "work")))
+
+# What scripts/wechat_auto_sync_deploy.sh copies to the server, from scripts/ in the repo.
+DEPLOYED_FILES = (
+    "wechat_auto_sync.py",
+    "wechat_draft_sync.py",
+    "wechat_upload_thumb.py",
+    "markdown_.css",
+    "wechat_footer.html",
+)
 
 POST_NAME_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})-.+\.md$")
 # Image URLs that point back into this repo, e.g. raw.githubusercontent.com/<repo>/master/images/x.jpg
@@ -172,6 +183,27 @@ def list_posts(commit: str) -> Dict[str, str]:
 def fetch_repo_file(commit: str, repo_path: str) -> bytes:
     quoted = urllib.parse.quote(repo_path)
     return github_get(f"/repos/{REPO}/contents/{quoted}?ref={commit}", raw=True)
+
+
+def stale_code(commit: str) -> List[str]:
+    """Names of the files next to this script that differ from scripts/ in the repo at `commit`.
+
+    The server's copy is installed by hand (wechat_auto_sync_deploy.sh), so a fix
+    that is committed but not deployed would otherwise go unnoticed.
+    """
+
+    data = github_json(f"/repos/{REPO}/git/trees/{commit}:scripts")
+    in_repo = {str(item["path"]): str(item["sha"]) for item in data.get("tree", [])}
+    stale = []
+    for name in DEPLOYED_FILES:
+        path = BASE_DIR / name
+        if name not in in_repo or not path.is_file():
+            continue
+        content = path.read_bytes()
+        blob_sha = hashlib.sha1(b"blob %d\0" % len(content) + content).hexdigest()
+        if blob_sha != in_repo[name]:
+            stale.append(name)
+    return stale
 
 
 # State ------------------------------------------------------------------------
@@ -382,6 +414,17 @@ def cmd_run(args: argparse.Namespace) -> int:
         return 0
 
     log(f"commit {commit[:10]} on {BRANCH}")
+    if state.get("code_checked") != commit and not args.dry_run:
+        stale = stale_code(commit)
+        if stale:
+            log(f"STALE CODE: {', '.join(stale)} differ from the repo; run scripts/wechat_auto_sync_deploy.sh")
+            report_failure(
+                state, "deploy", "", f"服务器上的同步脚本落后于仓库（{'、'.join(stale)}），请运行 scripts/wechat_auto_sync_deploy.sh"
+            )
+        else:
+            state.setdefault("failures", {}).pop("deploy", None)
+        state["code_checked"] = commit
+        save_state(state)
     posts = list_posts(commit)
     candidates = pick_candidates(posts, commit, state)
     if not candidates:

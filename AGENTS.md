@@ -6,6 +6,15 @@
 - Use lowercase English words in kebab-case.
 - Keep the short name concise and semantic (avoid long pinyin slugs).
 
+## 文章摘要（description）规则
+
+- front matter 里的 `description` 不能超过 120 个字符（中文、标点、数字、空格都各算 1 个）；写的时候按 110 字以内来写。公众号把它当作摘要，超过 120 字会拒绝创建草稿（errcode 45004）。
+- 写完或改完文章后、提交之前，运行 `python3 scripts/check_posts.py`，有 ERROR 就先改掉。GitHub 上每个 PR 和每次推送到 master 也会跑同一个检查（`.github/workflows/check-posts.yml`），检查不通过不要合并。
+
+## 公众号同步脚本的部署规则
+
+- 北京服务器上的同步脚本是手工拷贝的，不会随 git 自动更新。改了 `scripts/` 下的 `wechat_auto_sync.py`、`wechat_draft_sync.py`、`wechat_upload_thumb.py`、`markdown_.css`、`wechat_footer.html` 之后，合并到 master 后必须运行 `scripts/wechat_auto_sync_deploy.sh`，并在服务器上确认生效。只提交不部署，等于没修。
+
 ## Sutra Citation Rule
 
 - Any Buddhist scripture citation must come from real canonical texts, be searchable and verifiable in CBETA, and never use fabricated or unverifiable quotes.

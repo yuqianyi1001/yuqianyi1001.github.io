@@ -1,0 +1,16 @@
+# Fails a pull request (or a push to master) whose posts cannot become WeChat drafts,
+# e.g. a description over 120 characters. See scripts/check_posts.py.
+name: check posts
+on:
+  pull_request:
+    paths: ['_posts/**', 'scripts/check_posts.py', '.github/workflows/check-posts.yml']
+  push:
+    branches: [master]
+    paths: ['_posts/**', 'scripts/check_posts.py', '.github/workflows/check-posts.yml']
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install --quiet pyyaml
+      - run: python3 scripts/check_posts.py
