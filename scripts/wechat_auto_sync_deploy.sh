@@ -17,6 +17,8 @@ scp -q "$SCRIPT_DIR/wechat_auto_sync.py" "$SCRIPT_DIR/wechat_draft_sync.py" "$SC
 echo "code copied to $SSH_HOST:$REMOTE_DIR"
 
 if [[ "${1:-}" != "--setup" ]]; then
+    # Run once with the new code, so a "scripts are out of date" entry in the failure log clears now.
+    ssh "$SSH_HOST" "cd $REMOTE_DIR && [ -x venv/bin/python ] && flock -n state/lock venv/bin/python wechat_auto_sync.py run --recheck >> logs/sync.log 2>&1 || true"
     exit 0
 fi
 

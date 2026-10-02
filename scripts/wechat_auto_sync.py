@@ -22,13 +22,18 @@ Duplicate protection:
   the account may call that API) is checked for the same title; a match is
   recorded instead of creating a new draft.
 
-Notifications:
-- when NOTIFY_URL is set, a Telegram message is sent for every draft created
-  and for every post that fails, and when the copy of these scripts on the
-  server differs from scripts/ in the repo (a fix that was never deployed). A failing post is retried every run, so its
-  failure is reported once per distinct error, not once per run. The server
-  cannot reach api.telegram.org itself; NOTIFY_URL is a relay that can
-  (scripts/telegram-relay), authenticated with NOTIFY_SECRET.
+Failure log:
+- failures are written to one special WeChat draft titled FAILURE_DRAFT_TITLE.
+  It lists every post that currently fails with its reason, and the latest
+  ones that recovered. There is only ever one such draft: it is created on the
+  first failure and updated in place afterwards, and only when something
+  changed (a post is retried every run, but the same error is not rewritten).
+  It also reports when the copy of these scripts on the server differs from
+  scripts/ in the repo (a fix that was never deployed).
+- optionally, when NOTIFY_URL is set, the same events are also sent as
+  Telegram messages. The server cannot reach api.telegram.org itself;
+  NOTIFY_URL is a relay that can (scripts/telegram-relay), authenticated with
+  NOTIFY_SECRET.
 
 Usage:
     python3 wechat_auto_sync.py run [--dry-run] [--recheck]
@@ -43,6 +48,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import hashlib
+import html
 import json
 import os
 import pathlib
@@ -73,6 +79,16 @@ DEPLOYED_FILES = (
     "markdown_.css",
     "wechat_footer.html",
 )
+
+FAILURE_DRAFT_TITLE = "【同步失败】公众号草稿同步失败记录"
+RECOVERED_KEEP = 20  # how many recovered entries the failure log keeps
+# Failures that are not about one post.
+KEY_DEPLOY = "服务器上的同步脚本"
+KEY_WECHAT = "微信接口"
+WECHAT_ERROR_NOTES = {
+    "45004": "摘要 description 超过 120 字",
+    "40164": "服务器 IP 不在公众号的 IP 白名单里",
+}
 
 POST_NAME_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})-.+\.md$")
 # Image URLs that point back into this repo, e.g. raw.githubusercontent.com/<repo>/master/images/x.jpg
@@ -120,25 +136,136 @@ def notify(text: str) -> bool:
 def error_signature(exc: object) -> str:
     """The stable part of an error: WeChat appends a different hint/rid to every response."""
 
-    return re.sub(r"\s*(hint:|rid:).*", "", str(exc)).strip()[:300]
+    text = str(exc)
+    match = re.search(r'"errcode":\s*(-?\d+).*?"errmsg":\s*"([^"]*)"', text)
+    if match:
+        code, message = match.group(1), re.sub(r"\s*(hint:|rid:).*", "", match.group(2)).strip()
+        known = WECHAT_ERROR_NOTES.get(code)
+        return f"微信接口错误 {code}：{message}" + (f"（{known}）" if known else "")
+    return re.sub(r"\s*(hint:|rid:).*", "", text).strip()[:300]
 
 
-def report_failure(state: Dict[str, object], key: str, title: str, exc: object) -> None:
-    """Notify about a failing post (or "run" for the whole run) once per distinct error."""
+def now_iso() -> str:
+    return dt.datetime.now().isoformat(sep=" ", timespec="seconds")
 
-    failures: Dict[str, str] = state.setdefault("failures", {})  # type: ignore[assignment]
+
+def record_failure(state: Dict[str, object], key: str, title: str, exc: object) -> None:
+    """Remember that `key` (a post, or KEY_DEPLOY / KEY_WECHAT) fails. The same error is kept as is."""
+
+    failing: Dict[str, Dict[str, object]] = state.setdefault("failing", {})  # type: ignore[assignment]
     signature = error_signature(exc)
-    if failures.get(key) == signature:
+    entry = failing.get(key)
+    if entry and entry.get("error") == signature:
         return
-    subject = f"《{title}》\n{key}" if title else key
-    if notify(f"❌ 公众号草稿同步失败\n{subject}\n原因：{signature}\n每 10 分钟自动重试；同一原因不再重复通知。"):
-        failures[key] = signature  # not recorded when the relay is down, so it is sent next run
+    failing[key] = {
+        "title": title,
+        "error": signature,
+        "since": entry["since"] if entry else now_iso(),
+        "notified": False,
+    }
+    save_state(state)
+
+
+def record_recovery(state: Dict[str, object], key: str) -> bool:
+    """Move `key` from the failing list to the recovered list. True if it was failing."""
+
+    failing: Dict[str, Dict[str, object]] = state.setdefault("failing", {})  # type: ignore[assignment]
+    entry = failing.pop(key, None)
+    if entry is None:
+        return False
+    recovered: List[Dict[str, object]] = state.setdefault("recovered", [])  # type: ignore[assignment]
+    recovered.append({"key": key, "title": entry.get("title"), "error": entry.get("error"),
+                      "since": entry.get("since"), "recovered_at": now_iso()})
+    del recovered[:-RECOVERED_KEEP]
+    save_state(state)
+    return True
+
+
+def send_failure_notifications(state: Dict[str, object]) -> None:
+    """Telegram (optional): one message per failure that has not been sent yet."""
+
+    for key, entry in state.get("failing", {}).items():  # type: ignore[union-attr]
+        if entry.get("notified"):
+            continue
+        subject = f"《{entry['title']}》\n{key}" if entry.get("title") else key
+        if notify(f"❌ 公众号草稿同步失败\n{subject}\n原因：{entry['error']}\n每 10 分钟自动重试；同一原因不再重复通知。"):
+            entry["notified"] = True  # left unset when the relay is down, so it is sent next run
+            save_state(state)
+
+
+def render_failure_log(state: Dict[str, object]) -> Tuple[str, str, str]:
+    """Return (signature, digest, html) of the failure-log draft for the current state."""
+
+    failing: Dict[str, Dict[str, object]] = state.get("failing", {})  # type: ignore[assignment]
+    recovered: List[Dict[str, object]] = state.get("recovered", [])  # type: ignore[assignment]
+    esc = html.escape
+
+    def block(key: str, entry: Dict[str, object], extra: str) -> str:
+        head = f"《{esc(str(entry['title']))}》" if entry.get("title") else esc(key)
+        where = f"文件：{esc(key)}<br>" if entry.get("title") else ""
+        return f"<p><strong>{head}</strong><br>{where}原因：{esc(str(entry.get('error')))}<br>{extra}</p>"
+
+    parts = ["<p>这是同步脚本自动维护的失败记录，不是文章，请不要发布。内容有变化时会自动更新；失败的文章每 10 分钟自动重试。</p>"]
+    parts.append(f"<h2>当前同步失败（{len(failing)}）</h2>")
+    if failing:
+        parts += [block(key, entry, f"首次失败：{esc(str(entry.get('since')))}") for key, entry in sorted(failing.items())]
+    else:
+        parts.append("<p>当前没有同步失败的文章。</p>")
+    if recovered:
+        parts.append(f"<h2>已恢复（最近 {len(recovered)} 条）</h2>")
+        parts += [
+            block(str(entry["key"]), entry, f"失败于：{esc(str(entry.get('since')))}<br>恢复于：{esc(str(entry.get('recovered_at')))}")
+            for entry in reversed(recovered)
+        ]
+    signature = hashlib.sha1("".join(parts).encode("utf-8")).hexdigest()
+    parts.append(f"<p>更新时间：{now_iso()}</p>")
+    if failing:
+        names = "；".join(str(entry.get("title") or key) for key, entry in sorted(failing.items()))
+        digest = f"当前 {len(failing)} 项同步失败：{names}"
+    else:
+        digest = "当前没有同步失败的文章。"
+    return signature, digest, "".join(parts)
+
+
+def sync_failure_draft(client: "wds.WeChatClient", state: Dict[str, object], titles: Dict[str, str]) -> None:
+    """Create or update the single failure-log draft, only when its content changed."""
+
+    record: Dict[str, object] = state.setdefault("failure_log", {})  # type: ignore[assignment]
+    failing = state.get("failing", {})
+    signature, digest, content = render_failure_log(state)
+    if record.get("signature") == signature:
+        return
+    media_id = record.get("media_id") or titles.get(FAILURE_DRAFT_TITLE)
+    if not failing and not media_id:
+        return  # nothing has failed yet: no draft
+    try:
+        thumbs = list(state.get("thumbs", {}).values())  # type: ignore[union-attr]
+        if not thumbs:
+            raise RuntimeError("no cover image has been uploaded yet, and a draft needs one")
+        payload = wds.build_article_payload(
+            {"title": FAILURE_DRAFT_TITLE, "digest": digest, "thumb_media_id": thumbs[-1]}, content
+        )
+        if media_id:
+            try:
+                client.update_draft(str(media_id), 0, payload)
+            except wds.WeChatAPIError as exc:
+                log(f"failure log: cannot update draft {media_id} ({error_signature(exc)})")
+                media_id = None  # e.g. the draft was deleted by hand
+        if not media_id:
+            if not failing:
+                record.clear()  # the log was deleted and there is nothing to report
+                save_state(state)
+                return
+            media_id = client.add_draft([payload])
+        record.update({"media_id": media_id, "signature": signature, "updated_at": now_iso()})
         save_state(state)
+        log(f"failure log draft {media_id}: {digest}")
+    except Exception as exc:  # noqa: BLE001 - the log must never break the sync
+        log(f"failure log: could not write the draft: {exc}")
 
 
 def report_success(state: Dict[str, object], key: str, title: str) -> None:
-    failures: Dict[str, str] = state.setdefault("failures", {})  # type: ignore[assignment]
-    retried = failures.pop(key, None) is not None
+    retried = record_recovery(state, key)
     notify(f"✅ 公众号草稿已创建{'（重试成功）' if retried else ''}\n《{title}》\n{key}")
 
 
@@ -414,20 +541,31 @@ def cmd_run(args: argparse.Namespace) -> int:
         return 0
 
     log(f"commit {commit[:10]} on {BRANCH}")
-    if state.get("code_checked") != commit and not args.dry_run:
+    state.pop("failures", None)  # replaced by "failing"
+    failing: Dict[str, Dict[str, object]] = state.setdefault("failing", {})  # type: ignore[assignment]
+    if (state.get("code_checked") != commit or KEY_DEPLOY in failing) and not args.dry_run:
         stale = stale_code(commit)
         if stale:
             log(f"STALE CODE: {', '.join(stale)} differ from the repo; run scripts/wechat_auto_sync_deploy.sh")
-            report_failure(
-                state, "deploy", "", f"服务器上的同步脚本落后于仓库（{'、'.join(stale)}），请运行 scripts/wechat_auto_sync_deploy.sh"
+            record_failure(
+                state, KEY_DEPLOY, "", f"和仓库里的不一致（{'、'.join(stale)}），请运行 scripts/wechat_auto_sync_deploy.sh"
             )
         else:
-            state.setdefault("failures", {}).pop("deploy", None)
+            record_recovery(state, KEY_DEPLOY)
         state["code_checked"] = commit
         save_state(state)
     posts = list_posts(commit)
     candidates = pick_candidates(posts, commit, state)
-    if not candidates:
+    if not args.dry_run:
+        # A post that failed before but is no longer a candidate needs no draft any more
+        # (published, switched off, removed, or waiting for a cover).
+        wanted = {f"_posts/{name}" for name, _, _ in candidates}
+        for key in [k for k in failing if k.startswith("_posts/") and k not in wanted]:
+            record_recovery(state, key)
+    log_pending = bool(failing or state.get("failure_log", {}).get("media_id")) and (
+        render_failure_log(state)[0] != state.get("failure_log", {}).get("signature")
+    )
+    if not candidates and not log_pending:
         log("no posts to sync")
         if not args.dry_run:
             state["last_commit"] = commit
@@ -438,7 +576,9 @@ def cmd_run(args: argparse.Namespace) -> int:
         app_id=os.getenv("WECHAT_APP_ID"), app_secret=os.getenv("WECHAT_APP_SECRET")
     )
     titles = existing_wechat_titles(client)
-    state.setdefault("failures", {}).pop("run", None)  # the WeChat API answers again
+    if not args.dry_run:
+        record_recovery(state, KEY_WECHAT)  # the WeChat API answers again
+    failed_now = set()
     synced: Dict[str, object] = state["synced"]  # type: ignore[assignment]
     failures = 0
 
@@ -467,8 +607,9 @@ def cmd_run(args: argparse.Namespace) -> int:
             media_id = client.add_draft([wds.build_article_payload(meta, html_content)])
         except Exception as exc:  # noqa: BLE001 - one bad post must not block the others
             failures += 1
+            failed_now.add(key)
             log(f"FAIL {key}: {exc}")
-            report_failure(state, key, title, exc)
+            record_failure(state, key, title, exc)
             continue
         synced[key] = {
             "how": "created",
@@ -483,6 +624,12 @@ def cmd_run(args: argparse.Namespace) -> int:
         log(f"created draft {media_id} for {key} 《{title}》")
         shutil.rmtree(work_dir, ignore_errors=True)
 
+    if not args.dry_run:
+        # A candidate that did not fail this run (created, or adopted by title) has recovered.
+        for key in [k for k in failing if k.startswith("_posts/") and k not in failed_now]:
+            record_recovery(state, key)
+        sync_failure_draft(client, state, titles)
+        send_failure_notifications(state)
     if failures == 0 and not args.dry_run:
         state["last_commit"] = commit
         save_state(state)
@@ -504,8 +651,9 @@ def cmd_status(_args: argparse.Namespace) -> int:
     print(f"since: {SYNC_SINCE}   old posts tracked: {len(state.get('old_blobs', {}))}")
     for key, info in sorted(state.get("synced", {}).items()):
         print(f"- {key}: {info.get('how')} {info.get('media_id', '')} 《{info.get('title')}》")
-    for key, error in sorted(state.get("failures", {}).items()):
-        print(f"! {key}: failing, notified: {error}")
+    for key, entry in sorted(state.get("failing", {}).items()):
+        print(f"! {key}: failing since {entry.get('since')}: {entry.get('error')}")
+    print(f"failure log draft: {state.get('failure_log', {}).get('media_id')}")
     return 0
 
 
@@ -554,8 +702,11 @@ def main(argv: Optional[List[str]] = None) -> int:
         return 1
     except wds.WeChatAPIError as exc:
         # Raised outside the per-post loop (token, draft listing): nothing can be synced.
+        # The failure-log draft cannot be written either; Telegram, if configured, still can.
         log(f"WeChat API error: {exc}")
-        report_failure(load_state(), "run", "", exc)
+        state = load_state()
+        record_failure(state, KEY_WECHAT, "", exc)
+        send_failure_notifications(state)
         return 2
 
 
