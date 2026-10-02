@@ -1,0 +1,10 @@
+{
+  // Deploy: cd scripts/telegram-relay && wrangler deploy
+  // Secrets: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, RELAY_SECRET (wrangler secret put <NAME>)
+  "name": "telegram-relay",
+  "main": "worker.js",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": false,
+  // *.workers.dev is not reachable from mainland China; a custom domain is.
+  "routes": [{ "pattern": "notify.yuqianyi.com", "custom_domain": true }]
+}
