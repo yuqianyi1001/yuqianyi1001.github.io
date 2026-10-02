@@ -22,8 +22,16 @@ Duplicate protection:
   the account may call that API) is checked for the same title; a match is
   recorded instead of creating a new draft.
 
+Notifications:
+- when NOTIFY_URL is set, a Telegram message is sent for every draft created
+  and for every post that fails. A failing post is retried every run, so its
+  failure is reported once per distinct error, not once per run. The server
+  cannot reach api.telegram.org itself; NOTIFY_URL is a relay that can
+  (scripts/telegram-relay), authenticated with NOTIFY_SECRET.
+
 Usage:
     python3 wechat_auto_sync.py run [--dry-run] [--recheck]
+    python3 wechat_auto_sync.py notify-test                      # send a test notification
     python3 wechat_auto_sync.py status
     python3 wechat_auto_sync.py mark _posts/2026-09-25-xxx.md     # record as done, never create
     python3 wechat_auto_sync.py forget _posts/2026-09-26-xxx.md   # sync it again
@@ -68,6 +76,59 @@ WECHAT_IMAGE_HOSTS = ("mmbiz.qpic.cn", "mmbiz.qlogo.cn")
 
 def log(message: str) -> None:
     print(f"[{dt.datetime.now():%Y-%m-%d %H:%M:%S}] {message}", flush=True)
+
+
+# Notifications ----------------------------------------------------------------
+
+
+def notify(text: str) -> bool:
+    """Send `text` through the relay. Returns False (and logs) if it is not configured or fails."""
+
+    url = os.getenv("NOTIFY_URL")
+    if not url:
+        return False
+    request = urllib.request.Request(
+        url,
+        data=json.dumps({"text": text}, ensure_ascii=False).encode("utf-8"),
+        headers={
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {os.getenv('NOTIFY_SECRET', '')}",
+            "User-Agent": "wechat-auto-sync",
+        },
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=20) as response:
+            response.read()
+    except Exception as exc:  # noqa: BLE001 - a notification must never break the sync
+        log(f"notify failed: {exc}")
+        return False
+    return True
+
+
+def error_signature(exc: object) -> str:
+    """The stable part of an error: WeChat appends a different hint/rid to every response."""
+
+    return re.sub(r"\s*(hint:|rid:).*", "", str(exc)).strip()[:300]
+
+
+def report_failure(state: Dict[str, object], key: str, title: str, exc: object) -> None:
+    """Notify about a failing post (or "run" for the whole run) once per distinct error."""
+
+    failures: Dict[str, str] = state.setdefault("failures", {})  # type: ignore[assignment]
+    signature = error_signature(exc)
+    if failures.get(key) == signature:
+        return
+    subject = f"《{title}》\n{key}" if title else key
+    if notify(f"❌ 公众号草稿同步失败\n{subject}\n原因：{signature}\n每 10 分钟自动重试；同一原因不再重复通知。"):
+        failures[key] = signature  # not recorded when the relay is down, so it is sent next run
+        save_state(state)
+
+
+def report_success(state: Dict[str, object], key: str, title: str) -> None:
+    failures: Dict[str, str] = state.setdefault("failures", {})  # type: ignore[assignment]
+    retried = failures.pop(key, None) is not None
+    notify(f"✅ 公众号草稿已创建{'（重试成功）' if retried else ''}\n《{title}》\n{key}")
 
 
 # GitHub -----------------------------------------------------------------------
@@ -334,6 +395,7 @@ def cmd_run(args: argparse.Namespace) -> int:
         app_id=os.getenv("WECHAT_APP_ID"), app_secret=os.getenv("WECHAT_APP_SECRET")
     )
     titles = existing_wechat_titles(client)
+    state.setdefault("failures", {}).pop("run", None)  # the WeChat API answers again
     synced: Dict[str, object] = state["synced"]  # type: ignore[assignment]
     failures = 0
 
@@ -363,6 +425,7 @@ def cmd_run(args: argparse.Namespace) -> int:
         except Exception as exc:  # noqa: BLE001 - one bad post must not block the others
             failures += 1
             log(f"FAIL {key}: {exc}")
+            report_failure(state, key, title, exc)
             continue
         synced[key] = {
             "how": "created",
@@ -371,6 +434,7 @@ def cmd_run(args: argparse.Namespace) -> int:
             "commit": commit,
             "synced_at": dt.datetime.now().isoformat(timespec="seconds"),
         }
+        report_success(state, key, title)
         save_state(state)
         titles[title] = media_id
         log(f"created draft {media_id} for {key} 《{title}》")
@@ -382,12 +446,23 @@ def cmd_run(args: argparse.Namespace) -> int:
     return 1 if failures else 0
 
 
+def cmd_notify_test(_args: argparse.Namespace) -> int:
+    if not os.getenv("NOTIFY_URL"):
+        print("NOTIFY_URL is not set")
+        return 1
+    ok = notify(f"🔔 公众号同步通知测试\n{dt.datetime.now():%Y-%m-%d %H:%M:%S}")
+    print("sent" if ok else "failed (see the log line above)")
+    return 0 if ok else 1
+
+
 def cmd_status(_args: argparse.Namespace) -> int:
     state = load_state()
     print(f"last_commit: {state.get('last_commit')}")
     print(f"since: {SYNC_SINCE}   old posts tracked: {len(state.get('old_blobs', {}))}")
     for key, info in sorted(state.get("synced", {}).items()):
         print(f"- {key}: {info.get('how')} {info.get('media_id', '')} 《{info.get('title')}》")
+    for key, error in sorted(state.get("failures", {}).items()):
+        print(f"! {key}: failing, notified: {error}")
     return 0
 
 
@@ -421,6 +496,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     run_parser.add_argument("--recheck", action="store_true", help="Run even if master has no new commit")
     run_parser.set_defaults(func=cmd_run)
     sub.add_parser("status", help="Show recorded state").set_defaults(func=cmd_status)
+    sub.add_parser("notify-test", help="Send a test notification").set_defaults(func=cmd_notify_test)
     mark_parser = sub.add_parser("mark", help="Record a post as done without creating a draft")
     mark_parser.add_argument("post", help="e.g. _posts/2026-09-25-xxx.md")
     mark_parser.set_defaults(func=cmd_mark)
@@ -434,7 +510,9 @@ def main(argv: Optional[List[str]] = None) -> int:
         log(f"network error, will retry next run: {exc}")
         return 1
     except wds.WeChatAPIError as exc:
+        # Raised outside the per-post loop (token, draft listing): nothing can be synced.
         log(f"WeChat API error: {exc}")
+        report_failure(load_state(), "run", "", exc)
         return 2
 
 
