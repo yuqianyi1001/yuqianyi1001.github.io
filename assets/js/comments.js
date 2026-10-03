@@ -1,4 +1,6 @@
 // 文章评论区。后端和账号与今文佛典（sutratoday.com）共用：浏览公开，发表需登录。
+// 登录在 sutratoday.com 上完成：点“登录”跳到那边的 sso.html，已经登录的话立刻带着一次性短码
+// 跳回来（地址末尾的 #sso=…），这里用短码向后端换到同一个登录。说明见后端 README 的“跳转登录”。
 // 用法见 _layouts/post.html：<div id="yq-comments" data-slug="blog-文章名"></div>
 (function () {
   'use strict';
@@ -9,8 +11,10 @@
 
   // 本地开发：localStorage.setItem('yq_api_base', 'http://localhost:8787')
   var API_BASE = read('yq_api_base', true) || 'https://api.sutratoday.com';
+  // 本地开发：localStorage.setItem('yq_sso_url', 'http://localhost:8080/sso.html')
+  var SSO_URL = read('yq_sso_url', true) || 'https://sutratoday.com/sso.html';
   var SESSION_KEY = 'yq_account_session';
-  var ACCOUNT_NOTE = '账号和今文佛典（sutratoday.com）是同一个：在那边注册过的，直接用同一个用户名和密码登录；没有的话可以在这里注册，注册后两边都能用。';
+  var ACCOUNT_NOTE = '评论用今文佛典（sutratoday.com）的账号：点下面的按钮去那边登录或注册，完成后会自动回到这里；已经在那边登录过的，点一下就好。';
 
   var STYLE =
     '#yq-comments { font-size: 16px; line-height: 1.7; }' +
@@ -29,19 +33,8 @@
     '.yq-button { font: inherit; font-size: 15px; padding: 7px 18px; border: 1px solid #4183c4; border-radius: 999px; background: #4183c4; color: #fff; cursor: pointer; }' +
     '.yq-button.is-plain { background: transparent; color: #4183c4; }' +
     '.yq-button:disabled { opacity: .5; cursor: default; }' +
-    '.yq-error { color: #b3261e; font-size: 14px; min-height: 1.4em; margin: 6px 0 0; }' +
-    '.yq-dialog { border: 0; border-radius: 12px; padding: 0; width: min(92vw, 360px); background: #fff; color: #222; box-shadow: 0 10px 40px rgba(0, 0, 0, .25); }' +
-    '.yq-dialog::backdrop { background: rgba(0, 0, 0, .45); }' +
-    '.yq-dialog form { padding: 20px; display: grid; gap: 12px; }' +
-    '.yq-tabs { display: flex; gap: 6px; }' +
-    '.yq-tabs button { flex: 1; font: inherit; padding: 8px; border: 1px solid #ccc; border-radius: 8px; background: transparent; color: inherit; cursor: pointer; }' +
-    '.yq-tabs button[aria-selected="true"] { background: #4183c4; border-color: #4183c4; color: #fff; }' +
-    '.yq-dialog label { display: grid; gap: 4px; font-size: 14px; }' +
-    '.yq-dialog input { font: inherit; font-size: 16px; padding: 9px 10px; border: 1px solid #ccc; border-radius: 8px; }' +
-    '.yq-dialog small { color: #666; }' +
-    '.yq-dialog .yq-note { margin: 0; font-size: 13px; }' +
-    '.yq-dialog .yq-error { margin: 0; }' +
-    '.yq-dialog-actions { display: flex; gap: 8px; justify-content: flex-end; }';
+    '.yq-error { color: #b3261e; font-size: 14px; min-height: 1.4em; margin: 6px 0 0; }';
+
 
   function read(key, raw) {
     try {
@@ -212,8 +205,11 @@
     box.appendChild(el('p', 'yq-note', '登录后才能发表评论。' + ACCOUNT_NOTE));
     var button = el('button', 'yq-button', '登录 / 注册后评论');
     button.type = 'button';
-    button.onclick = openDialog;
+    button.onclick = function () {
+      location.href = SSO_URL + '?return=' + encodeURIComponent(location.href.split('#')[0]);
+    };
     box.appendChild(button);
+    if (loginError) box.appendChild(el('p', 'yq-error', loginError));
     return box;
   }
 
@@ -233,96 +229,28 @@
     root.appendChild(session ? renderForm() : renderLogin());
   }
 
-  // ---------------------------------------------------------------- 登录 / 注册
+  // ---------------------------------------------------------------- 登录
 
-  var dialog = null;
-  var dialogMode = 'login';
+  var loginError = '';
 
-  function ensureDialog() {
-    if (dialog) return dialog;
-    dialog = el('dialog', 'yq-dialog');
-    dialog.innerHTML =
-      '<form method="dialog">' +
-      '<div class="yq-tabs" role="tablist">' +
-      '<button type="button" role="tab" data-mode="login">登录</button>' +
-      '<button type="button" role="tab" data-mode="register">注册</button>' +
-      '</div>' +
-      '<p class="yq-note"></p>' +
-      '<label>用户名' +
-      '<input name="username" autocomplete="username" autocapitalize="none" spellcheck="false" required>' +
-      '<small data-register>5–20 位，字母、数字或下划线</small>' +
-      '</label>' +
-      '<label>密码' +
-      '<input name="password" type="password" required>' +
-      '<small data-register>至少 5 位</small>' +
-      '</label>' +
-      '<label data-register>邮箱（可选，用于找回密码）' +
-      '<input name="email" type="email" autocomplete="email">' +
-      '</label>' +
-      '<div class="yq-error" role="alert"></div>' +
-      '<div class="yq-dialog-actions">' +
-      '<button type="button" class="yq-button is-plain" data-cancel>取消</button>' +
-      '<button type="submit" class="yq-button"></button>' +
-      '</div>' +
-      '</form>';
-    dialog.querySelector('.yq-note').textContent = ACCOUNT_NOTE;
-    document.body.appendChild(dialog);
-    var form = dialog.querySelector('form');
-    Array.prototype.forEach.call(dialog.querySelectorAll('[data-mode]'), function (tab) {
-      tab.onclick = function () {
-        setMode(tab.getAttribute('data-mode'));
-      };
-    });
-    dialog.querySelector('[data-cancel]').onclick = function () {
-      dialog.close();
-    };
-    form.onsubmit = function (event) {
-      event.preventDefault();
-      var submit = form.querySelector('[type="submit"]');
-      var fields = { username: form.username.value.trim(), password: form.password.value };
-      if (dialogMode === 'register' && form.email.value.trim()) fields.email = form.email.value.trim();
-      submit.disabled = true;
-      setError('');
-      request('POST', dialogMode === 'register' ? '/auth/register' : '/auth/login', fields, false)
-        .then(function (data) {
-          session = { token: data.token, user: data.user };
-          write(SESSION_KEY, session);
-          form.password.value = '';
-          dialog.close();
-          load(); // 重新拉取，才能认出哪些是自己的评论
-        })
-        .catch(function (e) {
-          setError(e.message);
-        })
-        .then(function () {
-          submit.disabled = false;
-        });
-    };
-    return dialog;
-  }
-
-  function setError(message) {
-    dialog.querySelector('.yq-error').textContent = message;
-  }
-
-  function setMode(mode) {
-    dialogMode = mode;
-    var register = mode === 'register';
-    Array.prototype.forEach.call(dialog.querySelectorAll('[data-mode]'), function (tab) {
-      tab.setAttribute('aria-selected', String(tab.getAttribute('data-mode') === mode));
-    });
-    Array.prototype.forEach.call(dialog.querySelectorAll('[data-register]'), function (node) {
-      node.hidden = !register;
-    });
-    dialog.querySelector('[type="submit"]').textContent = register ? '注册' : '登录';
-    dialog.querySelector('[name="password"]').autocomplete = register ? 'new-password' : 'current-password';
-    setError('');
-  }
-
-  function openDialog() {
-    ensureDialog();
-    setMode('login');
-    dialog.showModal();
+  // 从 sutratoday.com 跳回来时，地址末尾带着 #sso=短码
+  function finishLogin() {
+    var match = /^#sso=([\w-]+)$/.exec(location.hash);
+    if (!match) return false;
+    history.replaceState(null, '', location.pathname + location.search);
+    request('POST', '/auth/sso/exchange', { code: match[1] }, false)
+      .then(function (data) {
+        session = { token: data.token, user: data.user };
+        write(SESSION_KEY, session);
+      })
+      .catch(function (e) {
+        loginError = e.message;
+      })
+      .then(function () {
+        load(); // 重新拉取，才能认出哪些是自己的评论
+        root.scrollIntoView();
+      });
+    return true;
   }
 
   function logout() {
@@ -340,5 +268,5 @@
   var style = document.createElement('style');
   style.textContent = STYLE;
   document.head.appendChild(style);
-  load();
+  if (!finishLogin()) load();
 })();
