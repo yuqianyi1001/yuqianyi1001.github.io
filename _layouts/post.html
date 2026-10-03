@@ -33,18 +33,11 @@ layout: default
   </div>
 
   <h2>评论区</h2>
-  <div id="tcomment"></div>
-  <script src="https://cdn.jsdelivr.net/npm/twikoo@1.7.4/dist/twikoo.min.js"></script>
-
-  <script>
-
-    twikoo.init({
-      envId: "https://twikoo-cloudflare.jeffwoo2019.workers.dev",
-      el: "#tcomment",
-      lang: "zh-CN",
-    });
-
-  </script>
+  <!-- 评论和今文佛典（sutratoday.com）共用同一个后端和账号，见 assets/js/comments.js -->
+  <div id="yq-comments" data-slug="blog-{{ page.slug }}">
+    <noscript>需要启用 JavaScript 才能查看和发表评论。</noscript>
+  </div>
+  <script src="{{ '/assets/js/comments.js' | relative_url }}?v=1" defer></script>
 
   <!-- <script src="https://giscus.app/client.js"
         data-repo="yuqianyi1001/yuqianyi1001.github.io"
