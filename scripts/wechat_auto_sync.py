@@ -14,6 +14,10 @@ Which posts are synced:
 - without `thumb_media_id` in front matter, the post's first image is uploaded
   as a permanent material and used as the cover (its media_id is kept in
   state.json, so a retry does not upload it again).
+- `wechat_type: newspic` (or 贴图) creates a 贴图 instead of a 文章: every image
+  in the post (at most 20, the first is the cover) is uploaded as a permanent
+  material, and the text becomes plain text (no formatting, links as "text（url）").
+- `wechat_title` overrides `title` on WeChat (also for the duplicate check).
 
 Duplicate protection:
 - a post is recorded in state.json right after `draft/add` succeeds and is
@@ -488,6 +492,19 @@ def cover_media_id(client: wds.WeChatClient, state: Dict[str, object], key: str,
     return media_id
 
 
+def newspic_image_id(client: wds.WeChatClient, state: Dict[str, object], key: str, image_path: pathlib.Path) -> str:
+    """Upload one 贴图 image as a permanent material; media_ids are kept per post so a retry reuses them."""
+
+    images: Dict[str, Dict[str, str]] = state.setdefault("newspic_images", {})  # type: ignore[assignment]
+    per_post = images.setdefault(key, {})
+    digest = hashlib.sha256(image_path.read_bytes()).hexdigest()
+    if digest not in per_post:
+        per_post[digest] = str(add_material_image(client, image_path)["media_id"])
+        save_state(state)
+        log(f"uploaded 贴图 image {image_path.name} for {key}: {per_post[digest]}")
+    return per_post[digest]
+
+
 # Run --------------------------------------------------------------------------
 
 
@@ -584,7 +601,7 @@ def cmd_run(args: argparse.Namespace) -> int:
 
     for name, metadata, text in candidates:
         key = f"_posts/{name}"
-        title = str(metadata.get("title", "")).strip()
+        title = wds.wechat_title(metadata)
         if title in titles:
             log(f"adopt {key}: a WeChat article titled 《{title}》 already exists ({titles[title]})")
             if not args.dry_run:
@@ -601,10 +618,14 @@ def cmd_run(args: argparse.Namespace) -> int:
             md_path = work_dir / "_posts" / name
             md_path.parent.mkdir(parents=True, exist_ok=True)
             md_path.write_text(local_text, encoding="utf-8")
-            meta, html_content = wds.load_markdown_article(md_path, client)
-            if not str(meta.get("thumb_media_id") or "").strip():
-                meta["thumb_media_id"] = cover_media_id(client, state, key, local_text)
-            media_id = client.add_draft([wds.build_article_payload(meta, html_content)])
+            if wds.wechat_article_type(metadata) == "newspic":
+                payload = wds.load_newspic_article(md_path, lambda path: newspic_image_id(client, state, key, path))
+            else:
+                meta, html_content = wds.load_markdown_article(md_path, client)
+                if not str(meta.get("thumb_media_id") or "").strip():
+                    meta["thumb_media_id"] = cover_media_id(client, state, key, local_text)
+                payload = wds.build_article_payload(meta, html_content)
+            media_id = client.add_draft([payload])
         except Exception as exc:  # noqa: BLE001 - one bad post must not block the others
             failures += 1
             failed_now.add(key)

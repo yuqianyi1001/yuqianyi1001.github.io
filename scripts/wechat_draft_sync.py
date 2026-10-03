@@ -875,10 +875,102 @@ def load_markdown_article(
     return metadata, html_content
 
 
+NEWSPIC_TYPES = ("newspic", "贴图", "图片消息")
+NEWSPIC_MAX_IMAGES = 20
+TITLE_MAX_CHARS = 32
+
+
+def wechat_article_type(metadata: Dict[str, object]) -> str:
+    """Front matter `wechat_type: newspic` (or 贴图) makes a 贴图 draft; anything else is a 文章 (news)."""
+
+    value = str(metadata.get("wechat_type") or "").strip().lower()
+    return "newspic" if value in NEWSPIC_TYPES else "news"
+
+
+def wechat_title(metadata: Dict[str, object]) -> str:
+    """The WeChat title: front matter `wechat_title` if set, else `title`."""
+
+    for key in ("wechat_title", "title"):
+        value = metadata.get(key)
+        if isinstance(value, str) and value.strip():
+            return value.strip()
+    raise RuntimeError("Article metadata must include a 'title'")
+
+
+_PLAIN_LINK = re.compile(r"(?<!!)\[([^\]]+)\]\(([^)\s]+)\)")
+
+
+def markdown_to_plain_text(body: str) -> str:
+    """Markdown body -> the plain text a 贴图 allows: images dropped, links as "text（url）"."""
+
+    text = MARKDOWN_IMAGE_PATTERN.sub("", body)
+    text = MARKDOWN_REF_IMAGE_PATTERN.sub("", text)
+    text = _PLAIN_LINK.sub(lambda m: m.group(1) if m.group(1) == m.group(2) else f"{m.group(1)}（{m.group(2)}）", text)
+    lines = []
+    for line in text.splitlines():
+        line = re.sub(r"^\s{0,3}#{1,6}\s+(.*)$", r"【\1】", line)  # headings
+        line = re.sub(r"^\s*[-*+]\s+", "· ", line)  # bullets
+        line = re.sub(r"(\*\*|__)(.+?)\1", r"\2", line)  # bold
+        line = re.sub(r"(?<![*\w])\*(?!\s)(.+?)(?<!\s)\*(?!\*)", r"\1", line)  # italics
+        line = re.sub(r"`([^`]+)`", r"\1", line)
+        line = re.sub(r"<[^>]+>", "", line)
+        lines.append(line.rstrip())
+    return re.sub(r"\n{3,}", "\n\n", "\n".join(lines)).strip()
+
+
+def _flag(metadata: Dict[str, object], key: str) -> int:
+    value = metadata.get(key)
+    if isinstance(value, str) and value.isdigit():
+        value = int(value)
+    return value if value in (0, 1) else 0
+
+
+def build_newspic_payload(metadata: Dict[str, object], content: str, image_media_ids: List[str]) -> Dict[str, object]:
+    """A 贴图 (article_type newspic): images must be permanent materials; the first one is the cover."""
+
+    title = wechat_title(metadata)
+    if len(title) > TITLE_MAX_CHARS:
+        raise RuntimeError(f"Title is {len(title)} characters; WeChat allows {TITLE_MAX_CHARS} (set wechat_title)")
+    if not image_media_ids:
+        raise RuntimeError("A 贴图 needs at least one image")
+    if len(image_media_ids) > NEWSPIC_MAX_IMAGES:
+        raise RuntimeError(f"A 贴图 takes at most {NEWSPIC_MAX_IMAGES} images, the post has {len(image_media_ids)}")
+    if not content.strip():
+        raise RuntimeError("A 贴图 needs some text")
+    return {
+        "article_type": "newspic",
+        "title": title,
+        "content": content,
+        "image_info": {"image_list": [{"image_media_id": media_id} for media_id in image_media_ids]},
+        "need_open_comment": _flag(metadata, "need_open_comment"),
+        "only_fans_can_comment": _flag(metadata, "only_fans_can_comment"),
+    }
+
+
+def load_newspic_article(markdown_path: pathlib.Path, upload_image) -> Dict[str, object]:
+    """Read a post and build its 贴图 payload; `upload_image(path) -> media_id` uploads one image."""
+
+    ensure_yaml_available()
+    text = markdown_path.read_text(encoding="utf-8")
+    metadata: Dict[str, object] = {}
+    body = text
+    if text.startswith("---"):
+        parts = text.split("---", 2)
+        if len(parts) < 3:
+            raise RuntimeError(f"Malformed front matter in {markdown_path}")
+        metadata = yaml.safe_load(parts[1]) or {}
+        body = parts[2]
+    media_ids = []
+    for match in MARKDOWN_IMAGE_PATTERN.finditer(body):
+        ref = match.group(2)
+        if ref.startswith(("http://", "https://")):
+            raise RuntimeError(f"贴图 images must be local files, got {ref}")
+        media_ids.append(upload_image((markdown_path.parent / ref).resolve()))
+    return build_newspic_payload(metadata, markdown_to_plain_text(body), media_ids)
+
+
 def build_article_payload(metadata: Dict[str, object], html_content: str) -> Dict[str, object]:
-    title = metadata.get("title") if isinstance(metadata.get("title"), str) else None
-    if not title:
-        raise RuntimeError("Article metadata must include a 'title'")
+    title = wechat_title(metadata)
 
     digest = metadata.get("digest") if isinstance(metadata.get("digest"), str) else None
     if not digest:
@@ -1008,6 +1100,14 @@ def cmd_push(client: WeChatClient, args: argparse.Namespace) -> None:
 def cmd_create(client: WeChatClient, args: argparse.Namespace) -> None:
     articles: List[Dict[str, object]] = []
     for markdown_path in args.markdown:
+        head = markdown_path.read_text(encoding="utf-8").split("---", 2)
+        if len(head) == 3 and yaml is not None and wechat_article_type(yaml.safe_load(head[1]) or {}) == "newspic":
+            from wechat_upload_thumb import add_material_image  # local import: that module imports this one
+
+            articles.append(
+                load_newspic_article(markdown_path, lambda path: str(add_material_image(client, path)["media_id"]))
+            )
+            continue
         metadata, html_content = load_markdown_article(
             markdown_path,
             client,
