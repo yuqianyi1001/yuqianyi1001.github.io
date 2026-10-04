@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>佛教四大思想体系 · 图卡</title>
+<style>
+  :root {
+    --paper: #f2e8d2;
+    --paper-deep: #e6d7b8;
+    --ink: #2a241e;
+    --ink-soft: #5e5448;
+    --ink-faint: #9a8d7a;
+    --cinnabar: #a8352a;
+    --cinnabar-soft: #c9685a;
+    --line: rgba(42, 36, 30, 0.22);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #8a8072;
+    font-family: "Songti SC", "STSong", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  body.review { padding: 40px 0; }
+  body.review .card { margin: 0 auto 40px; box-shadow: 0 8px 30px rgba(0,0,0,.35); }
+  body.single { background: var(--paper); }
+  body.single .card:not(.on) { display: none !important; }
+  body.single .card.on { display: block; }
+
+  .card {
+    position: relative;
+    width: 1080px;
+    height: 1440px;
+    overflow: hidden;
+    padding: 110px 96px 120px;
+    background-color: var(--paper);
+    background-image:
+      radial-gradient(ellipse at 50% 40%, rgba(255,250,238,.55) 0%, rgba(255,250,238,0) 60%),
+      radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 60%, rgba(120,90,50,.16) 100%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .27  0 0 0 0 .17  0 0 0 .10 0'/></filter><rect width='400' height='400' filter='url(%23n)'/></svg>"),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='900'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='.012 .04' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 .45  0 0 0 0 .36  0 0 0 0 .22  0 0 0 .07 0'/></filter><rect width='900' height='900' filter='url(%23f)'/></svg>");
+  }
+  /* 页眉页脚 */
+  .head {
+    position: absolute; top: 52px; left: 96px; right: 96px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 24px; letter-spacing: 4px; color: var(--ink-faint);
+  }
+  .head .series::before {
+    content: ""; display: inline-block; width: 12px; height: 12px;
+    background: var(--cinnabar); margin-right: 14px; vertical-align: 2px;
+  }
+  .foot {
+    position: absolute; bottom: 50px; left: 96px; right: 96px;
+    display: flex; justify-content: space-between; align-items: flex-end;
+    font-size: 22px; letter-spacing: 3px; color: var(--ink-faint);
+  }
+  .seal {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 66px; height: 66px; border-radius: 6px;
+    background: var(--cinnabar); color: #f6e9d6;
+    font-size: 20px; line-height: 1.05; font-weight: 700;
+    writing-mode: vertical-rl; letter-spacing: 1px;
+    box-shadow: inset 0 0 0 3px var(--cinnabar), inset 0 0 0 5px rgba(246,233,214,.8);
+    transform: rotate(-2deg);
+  }
+  .foot .sign { display: flex; align-items: center; gap: 18px; }
+
+  h1.title {
+    font-size: 72px; font-weight: 900; letter-spacing: 6px; line-height: 1.25;
+  }
+  .kicker {
+    font-size: 28px; letter-spacing: 6px; color: var(--cinnabar); margin-bottom: 20px;
+  }
+  .rule {
+    width: 120px; height: 4px; background: var(--cinnabar); margin: 34px 0 44px;
+  }
+  p, li { font-size: 32px; line-height: 1.75; letter-spacing: 1px; }
+  .muted { color: var(--ink-soft); }
+  .red { color: var(--cinnabar); }
+  b { font-weight: 700; }
+
+  /* ===== 16:9 版面 ===== */
+  .card { width: 1920px; height: 1080px; padding: 118px 120px 110px; }
+  .head { top: 48px; left: 120px; right: 120px; }
+  .foot { bottom: 44px; left: 120px; right: 120px; }
+  h1.title { font-size: 64px; letter-spacing: 5px; line-height: 1.2; }
+  .kicker { font-size: 28px; margin-bottom: 12px; }
+  .rule { margin: 18px 0 24px; }
+  .bg-char { right: 40px; top: 60px; font-size: 760px; color: rgba(42,36,30,.045); position: absolute; font-weight: 900; line-height: 1; }
+  .tt { display: flex; align-items: baseline; gap: 36px; }
+  .tt .kicker { margin: 0; }
+
+  /* 封面 */
+  .cover { height: 100%; display: grid; grid-template-columns: 1fr 1010px; column-gap: 60px; align-content: center; align-items: center; }
+  .cover .big { font-size: 120px; font-weight: 900; letter-spacing: 12px; line-height: 1.2; }
+  .cover .sub { margin-top: 36px; font-size: 36px; letter-spacing: 5px; color: var(--ink-soft); line-height: 1.7; }
+  .chain { display: flex; flex-direction: column; }
+  .chain .n { display: grid; grid-template-columns: 210px 1fr; align-items: baseline; padding: 14px 28px; background: rgba(255,250,238,.4); border-top: 6px solid var(--ink); }
+  .chain .n.r { border-top-color: var(--cinnabar); }
+  .chain .n b { font-size: 44px; font-weight: 900; letter-spacing: 4px; }
+  .chain .n span { font-size: 30px; color: var(--ink-soft); }
+  .chain .n span small { font-size: 23px; color: var(--ink-faint); }
+  .chain .ar { display: grid; grid-template-columns: 210px 1fr; padding: 8px 28px; font-size: 25px; color: var(--cinnabar); line-height: 1.4; }
+  .chain .ar i { font-style: normal; font-size: 30px; text-align: center; padding-right: 150px; }
+
+  /* 通用块 */
+  .cols { display: grid; gap: 28px; }
+  .c2 { grid-template-columns: 1fr 1fr; }
+  .c3 { grid-template-columns: 1fr 1fr 1fr; }
+  .blk { padding: 28px 32px 26px; background: rgba(255,250,238,.4); border-top: 6px solid var(--ink); }
+  .blk.r { border-top-color: var(--cinnabar); background: rgba(168,53,42,.06); }
+  .blk h3 { font-size: 40px; font-weight: 900; letter-spacing: 3px; margin-bottom: 4px; }
+  .blk .tag { font-size: 25px; color: var(--cinnabar); letter-spacing: 2px; margin-bottom: 14px; }
+  .blk p { font-size: 29px; line-height: 1.65; letter-spacing: .5px; }
+  .blk p + p { margin-top: 10px; }
+  .src { font-size: 23px; line-height: 1.5; color: var(--ink-soft); }
+  .q { font-size: 36px; line-height: 1.65; letter-spacing: 1px; border-left: 6px solid var(--cinnabar); padding: 6px 0 6px 28px; margin: 14px 0 6px; }
+  .q-src { font-size: 24px; color: var(--ink-soft); padding-left: 34px; margin-bottom: 18px; }
+  .strip { margin-top: 18px; font-size: 27px; line-height: 1.65; color: var(--ink-soft); border-left: 4px solid var(--cinnabar); padding-left: 24px; }
+  .strip b { color: var(--ink); }
+
+  /* 十二因缘链 */
+  .dir { display: flex; align-items: center; gap: 24px; font-size: 30px; letter-spacing: 2px; margin: 18px 0 10px; }
+  .dir .lab { flex: none; padding: 4px 18px; background: var(--cinnabar); color: #f6e9d6; font-weight: 700; }
+  .dir.back .lab { background: var(--ink); }
+  .dir .fm { color: var(--ink-soft); }
+  .nid { display: flex; align-items: center; }
+  .nid .c { flex: 1; text-align: center; font-size: 30px; font-weight: 700; padding: 14px 0; border: 2px solid var(--ink); background: rgba(255,250,238,.5); letter-spacing: 1px; }
+  .nid .c.x { border-color: var(--cinnabar); color: var(--cinnabar); background: rgba(168,53,42,.07); text-decoration: line-through; text-decoration-thickness: 3px; }
+  .nid .a { flex: none; width: 30px; text-align: center; color: var(--ink-soft); font-size: 26px; }
+  .nid.back .a { color: var(--cinnabar); }
+  .three { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; margin-top: 26px; }
+  .three .blk { padding: 16px 32px 16px; display: flex; align-items: baseline; gap: 24px; }
+  .three .blk h3 { margin: 0; font-size: 36px; }
+  .three .blk p { font-size: 28px; }
+
+  .p3 .blk p { font-size: 26px; line-height: 1.55; }
+  .p3 .blk h3 { font-size: 36px; }
+  /* 表格 */
+  table.t { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  table.t th { font-size: 28px; letter-spacing: 3px; color: var(--ink-soft); text-align: left; padding: 0 16px 14px; border-bottom: 3px solid var(--ink); }
+  table.t td { font-size: 27px; line-height: 1.5; padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.t td.k { font-size: 36px; font-weight: 900; letter-spacing: 3px; white-space: nowrap; }
+  table.t tr.r td.k { color: var(--cinnabar); }
+  table.t td.k small { display: block; font-size: 23px; font-weight: 400; letter-spacing: 1px; color: var(--ink-soft); margin-top: 4px; }
+  table.t td.pb { color: var(--cinnabar); }
+
+  /* 三性 */
+  .tri3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; margin-top: 8px; }
+  .tri3 .blk .arrow { font-size: 30px; color: var(--cinnabar); margin: 10px 0 8px; letter-spacing: 1px; }
+  .tri3 .blk .wu { font-size: 36px; font-weight: 900; letter-spacing: 3px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 4px; }
+  .pill { font-size: 30px; font-weight: 700; padding: 8px 22px; border: 2px solid var(--ink); background: rgba(255,250,238,.5); letter-spacing: 2px; }
+  .pill.r { border-color: var(--cinnabar); color: var(--cinnabar); }
+  .eq { display: flex; align-items: center; gap: 22px; margin: 6px 0 4px; }
+  .eq .e { flex: 1; text-align: center; padding: 26px 10px; background: rgba(255,250,238,.5); border-top: 6px solid var(--ink); }
+  .eq .e b { display: block; font-size: 44px; font-weight: 900; letter-spacing: 4px; }
+  .eq .e span { font-size: 26px; color: var(--ink-soft); }
+  .eq .e.r { border-top-color: var(--cinnabar); background: rgba(168,53,42,.07); }
+  .eq .op { font-size: 44px; color: var(--cinnabar); font-weight: 900; }
+</style>
+</head>
+<body class="review">
+
+<!-- ===== 1 封面 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 02</span><span class="pg"></span></div>
+  <div class="bg-char">缘</div>
+  <div class="cover">
+    <div>
+      <div class="kicker">一次说清楚</div>
+      <div class="big">佛教四大<br>思想体系</div>
+      <div class="sub">核心内容 · 容易被误解的地方<br>以及怎样学才不容易走错</div>
+    </div>
+    <div class="chain">
+      <div class="n"><b>根本佛教</b><span>缘起 · 四谛 · 涅槃<br><small>早期佛教 + 部派佛教</small></span></div>
+      <div class="ar"><i>↓</i><span>部派佛教偏有（极微实有）；偏重个人解脱，不以度尽一切众生为志愿</span></div>
+      <div class="n"><b>中　观</b><span>缘起性空</span></div>
+      <div class="ar"><i>↓</i><span>最大的误解：误解空性，以为什么都没有，这叫恶取空</span></div>
+      <div class="n"><b>唯　识</b><span>三性 · 三无性</span></div>
+      <div class="ar"><i>↓</i><span>五种性：一阐提不能成佛，与“人人成佛”不合</span></div>
+      <div class="n r"><b>如来藏</b><span>众生本具如来藏</span></div>
+      <div class="ar"><i>↓</i><span>最大的误解：以为成佛后还会再堕落；以为本来是佛，就不必精进</span></div>
+    </div>
+  </div>
+  <div class="foot"><span>经论编号均可在 CBETA 检索</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 2 根本佛教 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 02</span><span class="pg"></span></div>
+  <div class="tt"><div class="kicker">第一个体系</div></div>
+  <h1 class="title">根本佛教：缘起与涅槃</h1>
+  <div class="rule"></div>
+  <div class="q">此有故彼有，此起故彼起；<br>此无故彼无，此灭故彼灭。</div>
+  <div class="q-src">《杂阿含经》卷 12 第 298 经、卷 13 第 335 经（T99）　原经用它讲十二因缘；推广到一切事物，同样成立</div>
+  <div class="dir"><span class="lab">顺转</span><span>此有故彼有，此起故彼起 →　苦聚集起</span></div>
+  <div class="nid">
+    <div class="c">无明</div><div class="a">→</div><div class="c">行</div><div class="a">→</div><div class="c">识</div><div class="a">→</div><div class="c">名色</div><div class="a">→</div><div class="c">六入</div><div class="a">→</div><div class="c">触</div><div class="a">→</div><div class="c">受</div><div class="a">→</div><div class="c">爱</div><div class="a">→</div><div class="c">取</div><div class="a">→</div><div class="c">有</div><div class="a">→</div><div class="c">生</div><div class="a">→</div><div class="c">老死</div>
+  </div>
+  <div class="dir back"><span class="lab">逆转</span><span>此无故彼无，此灭故彼灭 →　苦聚灭，烦恼灭尽即涅槃</span></div>
+  <div class="nid back">
+    <div class="c x">无明</div><div class="a">→</div><div class="c x">行</div><div class="a">→</div><div class="c x">识</div><div class="a">→</div><div class="c x">名色</div><div class="a">→</div><div class="c x">六入</div><div class="a">→</div><div class="c x">触</div><div class="a">→</div><div class="c x">受</div><div class="a">→</div><div class="c x">爱</div><div class="a">→</div><div class="c x">取</div><div class="a">→</div><div class="c x">有</div><div class="a">→</div><div class="c x">生</div><div class="a">→</div><div class="c x">老死</div>
+  </div>
+  <div class="three">
+    <div class="blk"><h3>四谛</h3><p>苦 · 集 · 灭 · 道</p></div>
+    <div class="blk"><h3>三十七道品</h3><p>灭除烦恼的具体修法</p></div>
+    <div class="blk r"><h3>目标：涅槃</h3><p>烦恼灭尽，就是涅槃</p></div>
+  </div>
+  <div class="foot"><span>佛学图文 · 佛教四大思想体系</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 3 根本佛教的三个问题 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 02</span><span class="pg"></span></div>
+  <div class="tt"><div class="kicker">第一个体系</div></div>
+  <h1 class="title">根本佛教：偏有、法空、自度</h1>
+  <div class="rule"></div>
+  <div class="cols c3">
+    <div class="blk">
+      <h3>偏　有</h3>
+      <div class="tag">部派佛教的倾向：有，且有极微</div>
+      <p>部派中的说一切有部，立“三世实有”（《俱舍论》卷 20）。</p>
+      <p>把物质分析到最小，是极微：「分析诸色至一极微，故一极微为色极少」（卷 12）。有部认为极微是实有的。</p>
+      <p>对“有”分析极细，名相繁多，学起来很难。</p>
+    </div>
+    <div class="blk">
+      <h3>人空法有？</h3>
+      <div class="tag">常被提出的批评</div>
+      <p>批评说：只讲人我空，没有讲法我空。原始经文里已有依据：</p>
+      <p>「眼生时无有来处，灭时无有去处。如是眼不实而生，生已尽灭，有业报而无作者」（《杂阿含》卷 13 第 335 经）。</p>
+      <p>从“此有故彼有”可顺推出法空，只是没有重点强调。</p>
+    </div>
+    <div class="blk r">
+      <h3>重个人解脱</h3>
+      <div class="tag">这一点属实</div>
+      <p>根本佛教追求的是自己的烦恼灭尽、出离生死。</p>
+      <p>没有把度尽一切众生作为志愿。</p>
+      <p>菩萨道的迫切度生之心，要到大乘才充分展开。</p>
+    </div>
+  </div>
+  <div class="strip"><b>承接：</b>有部“偏有”的倾向，由般若“一切空”来纠偏。</div>
+  <div class="foot"><span>佛学图文 · 佛教四大思想体系</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 4 中观 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 02</span><span class="pg"></span></div>
+  <div class="tt"><div class="kicker">第二个体系</div></div>
+  <h1 class="title">中观（般若）：缘起性空</h1>
+  <div class="rule"></div>
+  <div class="eq">
+    <div class="e"><b>因缘</b><span>一切现象依条件而生</span></div>
+    <div class="op">＋</div>
+    <div class="e"><b>自性空</b><span>没有自性</span></div>
+    <div class="op">＝</div>
+    <div class="e r"><b>空性</b><span>缘起，所以性空</span></div>
+  </div>
+  <div class="cols c2" style="margin-top:26px">
+    <div class="blk r">
+      <h3>“自性空”是什么意思</h3>
+      <p>没有一个固定的、恒常的、不变的实体。</p>
+      <p>任何事物，都是靠各种条件聚合起来的，条件变了，它就跟着变。找不到哪一样东西，可以脱离条件独立存在，并且永远是那个样子。</p>
+      <p>这个“没有”，指的是没有这样的实体。</p>
+    </div>
+    <div class="blk">
+      <h3>空性不是没有</h3>
+      <p>现象上的“有”，般若并不否认。因缘聚合，花开花落、人来人往，都是有的。</p>
+      <p>般若否认的是：在现象背后，另有一个绝对不变的东西。</p>
+      <p>理解了“缘起性空”，读《心经》《金刚经》《般若经》就容易得多。</p>
+    </div>
+  </div>
+  <div class="q" style="margin-top:22px;font-size:32px">未曾有一法，不从因缘生，是故一切法，无不是空者。<span style="font-size:24px;color:var(--ink-soft);margin-left:14px">《中论》卷 4 观四谛品（T1564）</span></div>
+  <div class="foot"><span>佛学图文 · 佛教四大思想体系</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 5 恶取空 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 02</span><span class="pg"></span></div>
+  <div class="tt"><div class="kicker">第二个体系 · 最大的误解</div></div>
+  <h1 class="title">误解空性：恶取空</h1>
+  <div class="rule"></div>
+  <p style="font-size:29px;line-height:1.65;margin-bottom:18px">把空性理解成什么都没有，连业果、因果也一并否定，这种误解叫恶取空。经论批评它，比批评执着“有”更重。</p>
+  <div class="cols c2">
+    <div class="blk r">
+      <div class="q" style="margin-top:0;font-size:33px">宁如一类起我见者，<br>不如一类恶取空者。</div>
+      <div class="src">《瑜伽师地论》卷 36（T1579）。论中说：起我见者不诽谤一切所知境界，不因此堕恶趣；恶取空者诽谤一切，因此堕恶趣。</div>
+    </div>
+    <div class="blk">
+      <div class="q" style="margin-top:0;border-left-color:var(--ink);font-size:33px">宁起我见积若须弥，<br>非以空见起增上慢。</div>
+      <div class="src">《大宝积经》卷 112 普明菩萨会（迦叶品，T310）</div>
+    </div>
+    <div class="blk">
+      <div class="q" style="margin-top:0;border-left-color:var(--ink);font-size:33px">若复见有空，<br>诸佛所不化。</div>
+      <div class="src">《中论》卷 2 观行品（T1564）：大圣说空法，为离诸见故；若复见有空，诸佛所不化。</div>
+    </div>
+    <div class="blk">
+      <div class="q" style="margin-top:0;border-left-color:var(--ink);font-size:33px">不能正观空，钝根则自害，<br>如不善咒术，不善捉毒蛇。</div>
+      <div class="src">《中论》卷 4 观四谛品（T1564）</div>
+    </div>
+  </div>
+  <div class="strip" style="margin-top:14px;margin-right:90px;border-left-width:8px;background:rgba(168,53,42,.08);padding:12px 28px;font-size:36px;line-height:1.5;color:var(--ink);font-weight:700"><span class="red">建议：</span>如果对“空”不能产生正确的理解，干脆就认为“有”，一切都是“有”，也可以。</div>
+  <div class="foot"><span>佛学图文 · 佛教四大思想体系</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 6 唯识 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 02</span><span class="pg"></span></div>
+  <div class="tt"><div class="kicker">第三个体系</div></div>
+  <h1 class="title">唯识：把“有”分析清楚，也把“空”讲明白</h1>
+  <div class="rule"></div>
+  <div class="tri3">
+    <div class="blk">
+      <h3>遍计所执性</h3>
+      <div class="tag">执着出来的“实我实法”</div>
+      <div class="arrow">立 →</div>
+      <div class="wu">相无性</div>
+    </div>
+    <div class="blk">
+      <h3>依他起性</h3>
+      <div class="tag">依因缘而生的现象</div>
+      <div class="arrow">立 →</div>
+      <div class="wu">无自然性（生无性）</div>
+    </div>
+    <div class="blk r">
+      <h3>圆成实性</h3>
+      <div class="tag">远离执着所显的真如</div>
+      <div class="arrow">立 →</div>
+      <div class="wu">胜义无性</div>
+    </div>
+  </div>
+  <div class="q" style="margin-top:34px">即依此三性，立彼三无性，<br>故佛密意说，一切法无性。</div>
+  <div class="q-src">世亲《唯识三十论颂》（T1586）</div>
+  <div class="strip"><b>对前两个问题：</b>“有”的一面，三性逐层分析；“空”的一面，三无性说明白。既不偏有，也不堕入恶取空。唯识属大乘，立菩萨道，重个人解脱的问题也一并解决。<br><b>要留意：</b>唯识把依他起、圆成实说成“有”，与中观的说法有出入，这一点以后专门讲。</div>
+  <div class="foot"><span>佛学图文 · 佛教四大思想体系</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 7 唯识的短板 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 02</span><span class="pg"></span></div>
+  <div class="tt"><div class="kicker">第三个体系 · 不被汉地认可之处</div></div>
+  <h1 class="title">唯识的短板：五种性</h1>
+  <div class="rule"></div>
+  <div class="cols" style="grid-template-columns: 560px 1fr;">
+    <div class="blk">
+      <h3>五种性</h3>
+      <div class="tag">《成唯识论》卷 2：「既说本有五种性别」</div>
+      <div class="pills">
+        <span class="pill">声闻种性</span><span class="pill">独觉种性</span><span class="pill">如来种性</span><span class="pill">不定种性</span><span class="pill r">无种性</span>
+      </div>
+      <p style="margin-top:20px;font-size:26px;color:var(--ink-soft)">《瑜伽师地论》卷 21 说无种姓的人“无涅槃法”，诸佛也不能救。</p>
+    </div>
+    <div class="cols" style="gap:20px;">
+      <div class="blk r">
+        <h3>与汉地的两处冲突</h3>
+        <p><b>一、</b>无种性的一阐提没有成佛的可能，与“人人都能成佛”不合。</p>
+        <p><b>二、</b>定性声闻永远不入菩萨乘，与《法华经》“声闻终成佛”不合（卷 2：舍利弗未来成华光如来）。</p>
+      </div>
+      <div class="blk">
+        <h3>汉地的背景，早于玄奘</h3>
+        <p>东晋义熙十四年（418），法显带回的六卷《泥洹经》译出，竺道生据此说“一阐提皆得成佛”（《高僧传》卷 7）；《涅槃经》大本译出后，说一切众生悉有佛性。玄奘西行在唐初，晚了两百多年。</p>
+      </div>
+    </div>
+  </div>
+  <div class="strip"><b>附记：</b>《解深密经》卷 2 自己说：“唯有一乘”是密意说，“非于一切有情界中，无有种种有情种性”。</div>
+  <div class="foot"><span>佛学图文 · 佛教四大思想体系</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 8 如来藏 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 02</span><span class="pg"></span></div>
+  <div class="tt"><div class="kicker">第四个体系</div></div>
+  <h1 class="title">如来藏：人人本具，烦恼如尘</h1>
+  <div class="rule"></div>
+  <div class="cols c2">
+    <div>
+      <div class="q" style="margin-top:0">一切众生，虽在诸趣，<br>烦恼身中有如来藏，<br>常无染污，德相备足，如我无异。</div>
+      <div class="q-src">《如来藏经》（T666，佛陀跋陀罗译）</div>
+      <div class="q" style="margin-top:30px">譬如天眼之人，观未敷花，<br>见诸花内有如来身……除去萎花，便得显现。</div>
+      <div class="q-src">同上　以萎花喻烦恼，花中佛身喻如来藏</div>
+    </div>
+    <div>
+      <div class="q" style="margin-top:0">如来法身不离烦恼藏，<br>名如来藏。</div>
+      <div class="q-src">《胜鬘经》卷 1（T353，求那跋陀罗译）</div>
+      <div class="blk" style="margin-top:20px">
+        <h3>为什么受欢迎</h3>
+        <p>人人都能成佛，只要除去烦恼；鼓舞人心，修行的方便也多。</p>
+        <p>汉传佛教的主流是如来藏一系，也是流传最广的一系。</p>
+      </div>
+    </div>
+  </div>
+  <div class="strip" style="margin-top:34px"><b>依据：</b>《如来藏经》《胜鬘经》《大般涅槃经》，以及《究竟一乘宝性论》（T1611）。</div>
+  <div class="foot"><span>佛学图文 · 佛教四大思想体系</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 9 如来藏的问题 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 02</span><span class="pg"></span></div>
+  <div class="tt"><div class="kicker">第四个体系 · 最大的误解</div></div>
+  <h1 class="title">如来藏的三个问题，与一个解释</h1>
+  <div class="rule"></div>
+  <div class="cols c3 p3">
+    <div class="blk">
+      <h3>“本具”怎么理解</h3>
+      <p><b>甲、本具的是佛性的种子。</b>佛不会再长大，种子和佛是两样东西。</p>
+      <p><b>乙、本具的是圆满的佛。</b>被烦恼盖住：烦恼强，佛智就不圆满；佛智强，为什么不能自己破除烦恼？</p>
+    </div>
+    <div class="blk">
+      <h3>变得懈怠</h3>
+      <p>既然本来是佛，只要拂去灰尘，听上去不必很用力修行。不少人因此发心不大：反正迟早成佛。</p>
+      <p>实际上成佛要非常努力。</p>
+    </div>
+    <div class="blk r">
+      <h3>成佛又变凡夫？</h3>
+      <p>有人以为：本来是佛，后来堕落成凡夫；修成佛以后，又会再堕落。</p>
+      <p>那就成了新的轮回，谈不上解脱。佛成就以后不再退转。</p>
+    </div>
+  </div>
+  <div class="blk" style="margin-top:24px;border-top-color:var(--cinnabar);background:rgba(168,53,42,.06)">
+    <h3>用唯识来理解：佛性是什么　<span style="font-size:24px;font-weight:400;color:var(--ink-soft);letter-spacing:1px">作者的看法</span></h3>
+    <div class="cols" style="grid-template-columns:1fr 1fr 1fr;gap:28px;margin-top:10px">
+      <p>有大师说佛性是空性。但空性没有作用，把没有作用的东西当作佛性，与“佛性能成佛”对不上。</p>
+      <p>结合唯识，我们把佛性理解成这颗<b>清净的无漏种子</b>（《成唯识论》卷 2），是一种比较好、稳妥的理解方式。</p>
+      <p>种子本身没有力量，要生根发芽才有力量。所以既不是“本来就是佛”，也不是“不必修”，上面两种理解的难处也不再出现。</p>
+    </div>
+  </div>
+  <div class="foot"><span>佛学图文 · 佛教四大思想体系</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 10 总图 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 02</span><span class="pg"></span></div>
+  <div class="tt"><div class="kicker">总图</div></div>
+  <h1 class="title">四个体系的核心与误解</h1>
+  <div class="rule"></div>
+  <table class="t">
+    <colgroup><col style="width:260px"><col style="width:640px"><col></colgroup>
+    <tr><th></th><th>核心</th><th>容易被误解 / 留下的问题</th></tr>
+    <tr><td class="k">根本佛教</td><td>缘起；四谛、十二因缘、三十七道品；涅槃＝烦恼灭尽（早期＋部派）</td><td class="pb">部派偏有（极微实有）；偏重个人解脱，不以度尽一切众生为志愿</td></tr>
+    <tr><td class="k">中　观</td><td>因缘生，没有自性（没有固定、恒常、不变的实体），所以是空性</td><td class="pb">最大的误解：误解空性，以为什么都没有，否定因果，这叫恶取空</td></tr>
+    <tr><td class="k">唯　识</td><td>八识；三性、三无性</td><td class="pb">五种性：一阐提、定性声闻不能成佛</td></tr>
+    <tr class="r"><td class="k">如来藏</td><td>众生本具如来藏，烦恼如尘</td><td class="pb">最大的误解：以为成佛后还会再堕落；以为本来是佛，就不必精进</td></tr>
+  </table>
+  <div class="strip" style="margin-top:34px;border-left-width:8px;background:rgba(168,53,42,.08);padding:20px 30px;font-size:40px;line-height:1.55;color:var(--ink);font-weight:700">学习唯识，误解最少，走错路的可能性最小；用唯识来理解如来藏，同样稳妥。</div>
+  <div class="foot"><span>佛学图文 · 佛教四大思想体系</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+</section>
+
+<script>
+  var cards = document.querySelectorAll('.card');
+  cards.forEach(function (el, i) {
+    el.id = 'c' + (i + 1);
+    var pg = el.querySelector('.pg');
+    if (pg) pg.textContent = (i + 1) + ' / ' + cards.length;
+  });
+  var m = location.search.match(/[?&]c=(\d+)/);
+  if (m) {
+    document.body.className = 'single';
+    var el = document.getElementById('c' + m[1]);
+    if (el) el.classList.add('on');
+  }
+</script>
+</body>
+</html>
