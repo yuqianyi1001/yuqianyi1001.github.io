@@ -64,6 +64,9 @@ title: 佛教史年表
   .item.bar.out .lbl { left: 100%; padding-left: 5px; }
   .item.conf-approx.bar { border: 1.5px dashed var(--c); }
   .item.conf-trad.bar { border: 0; background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--c) 40%, #fff) 25%, color-mix(in srgb, var(--c) 40%, #fff) 75%, transparent); }
+  .item.bar.ongoing { border-right-color: transparent; background: linear-gradient(90deg, color-mix(in srgb, var(--c) 24%, #fff) 75%, transparent); }
+  .item.bar.ongoing::after { content: "▸"; position: absolute; right: 3px; top: 0; color: var(--c); }
+  .item.bar.conf-trad.ongoing { background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--c) 40%, #fff) 25%, color-mix(in srgb, var(--c) 40%, #fff) 75%, transparent); }
   .item.pt { width: 0; }
   .item.pt::before { content: ""; position: absolute; left: -6px; top: 4px; width: 10px; height: 10px; background: var(--c); transform: rotate(45deg); }
   .item.pt.conf-trad::before { background: #fff; border: 2px solid var(--c); box-sizing: border-box; }
@@ -117,7 +120,7 @@ title: 佛教史年表
     <h1>佛教史年表</h1>
     <span class="draft" id="bh-draft" style="display:none">数据核对中：带“？”的年代待核</span>
     <span class="sp"></span>
-    <span class="legend"><span><i class="lg-firm"></i>基本确定</span><span><i class="lg-approx"></i>约数／有分歧</span><span><i class="lg-trad"></i>传统说法</span><span>？年代待核</span></span>
+    <span class="legend"><span><i class="lg-firm"></i>基本确定</span><span><i class="lg-approx"></i>约数／有分歧</span><span><i class="lg-trad"></i>传统说法</span><span>▸ 延续至今</span><span>？年代待核</span></span>
     <button id="bh-zin" title="放大">＋</button>
     <button id="bh-zout" title="缩小">－</button>
   </div>
@@ -159,6 +162,10 @@ title: 佛教史年表
   function pos(h) { return h < 0 ? h + 1 : h; }
   function hist(p) { var r = Math.round(p); return r <= 0 ? r - 1 : r; }
   function fmtY(h) { return h < 0 ? '前' + (-h) : '公元' + h; }
+  function rangeText(o) {
+    if (o.ongoing) return fmtY(o.start) + '年起，延续至今';
+    return o.end == null ? fmtY(o.start) + '年' : fmtRange(o.start, o.end);
+  }
   function fmtRange(s, e) {
     if (e == null) return fmtY(s) + '年';
     if (s < 0 && e < 0) return '前' + (-s) + '–前' + (-e) + '年';
@@ -222,14 +229,15 @@ title: 佛教史年表
       var o = Object.assign({}, it);
       o.s = pos(it.start);
       o.pt = it.end == null;
+      o.ongoing = !!it.ongoing;
       o.e = o.pt ? o.s : pos(it.end);
       o.rowRef = r;
       o.color = r.color;
       o.lblW = (it.name.length + (it.check ? 1 : 0)) * CHAR_W + 8;
       var el = document.createElement('div');
-      el.className = 'item ' + (o.pt ? 'pt' : 'bar') + ' conf-' + (it.conf || 'firm');
+      el.className = 'item ' + (o.pt ? 'pt' : 'bar') + ' conf-' + (it.conf || 'firm') + (o.ongoing ? ' ongoing' : '');
       el.style.setProperty('--c', o.color);
-      el.title = it.name + '（' + fmtRange(it.start, it.end) + '）';
+      el.title = it.name + '（' + rangeText(it) + '）';
       var lb = document.createElement('span');
       lb.className = 'lbl'; lb.textContent = it.name + (it.check ? '？' : '');
       el.appendChild(lb);
@@ -446,7 +454,7 @@ title: 佛教史年表
       var o = selected;
       h += '<div class="detail" style="--c:' + o.color + '"><b>' + esc(o.name) + '</b>' +
         '<div class="meta">' + esc(o.rowRef.lane.name) + (o.rowRef.row.name ? ' · ' + esc(o.rowRef.row.name) : '') + '</div>' +
-        '<div>' + esc(fmtRange(o.start, o.end)) + '</div>' +
+        '<div>' + esc(rangeText(o)) + '</div>' +
         '<div class="meta">' + esc(CONF[o.conf] || '') + '</div>' +
         (o.check ? '<div class="warn">年代尚未核实，仅供参考</div>' : '') +
         (o.note ? '<div>' + esc(o.note) + '</div>' : '') +
@@ -466,7 +474,7 @@ title: 佛教史年表
         act.forEach(function (o) {
           var sub = o.rowRef.row.name && lane.rows.length > 1 ? o.rowRef.row.name + ' ' : '';
           h += '<div class="ent" data-id="' + esc(o.id) + '" style="--c:' + o.color + '">' + esc(o.name) +
-            '<small>' + esc(sub + (o.pt ? fmtY(o.start) : fmtRange(o.start, o.end))) + '</small></div>';
+            '<small>' + esc(sub + (o.pt ? fmtY(o.start) : o.ongoing ? fmtY(o.start) + '起，至今' : fmtRange(o.start, o.end))) + '</small></div>';
         });
         h += '</div>';
       });
