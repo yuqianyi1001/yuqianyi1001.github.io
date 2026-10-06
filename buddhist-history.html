@@ -97,6 +97,7 @@ title: 佛教史年表
   .detail { flex: none; width: 260px; font-size: 13px; line-height: 1.6; background: #fff; border: 1px solid #d3d8de; border-left: 4px solid var(--c); border-radius: 4px; padding: 6px 10px; }
   .detail b { font-size: 15px; }
   .detail .meta { color: #666; font-size: 12px; }
+  .detail .warn { color: #b45309; font-size: 12px; }
   .detail .src { word-break: break-all; }
   .detail .src a { color: #1d4ed8; }
 
@@ -114,9 +115,9 @@ title: 佛教史年表
 <div id="bh-app">
   <div id="bh-bar">
     <h1>佛教史年表</h1>
-    <span class="draft" id="bh-draft" style="display:none">草稿：年代待核对</span>
+    <span class="draft" id="bh-draft" style="display:none">数据核对中：带“？”的年代待核</span>
     <span class="sp"></span>
-    <span class="legend"><span><i class="lg-firm"></i>基本确定</span><span><i class="lg-approx"></i>约数／有分歧</span><span><i class="lg-trad"></i>传统说法</span></span>
+    <span class="legend"><span><i class="lg-firm"></i>基本确定</span><span><i class="lg-approx"></i>约数／有分歧</span><span><i class="lg-trad"></i>传统说法</span><span>？年代待核</span></span>
     <button id="bh-zin" title="放大">＋</button>
     <button id="bh-zout" title="缩小">－</button>
   </div>
@@ -224,13 +225,13 @@ title: 佛教史年表
       o.e = o.pt ? o.s : pos(it.end);
       o.rowRef = r;
       o.color = r.color;
-      o.lblW = it.name.length * CHAR_W + 8;
+      o.lblW = (it.name.length + (it.check ? 1 : 0)) * CHAR_W + 8;
       var el = document.createElement('div');
       el.className = 'item ' + (o.pt ? 'pt' : 'bar') + ' conf-' + (it.conf || 'firm');
       el.style.setProperty('--c', o.color);
       el.title = it.name + '（' + fmtRange(it.start, it.end) + '）';
       var lb = document.createElement('span');
-      lb.className = 'lbl'; lb.textContent = it.name;
+      lb.className = 'lbl'; lb.textContent = it.name + (it.check ? '？' : '');
       el.appendChild(lb);
       el.onclick = function (ev) { ev.stopPropagation(); select(o); };
       o.el = el; o.lbl = lb;
@@ -447,6 +448,7 @@ title: 佛教史年表
         '<div class="meta">' + esc(o.rowRef.lane.name) + (o.rowRef.row.name ? ' · ' + esc(o.rowRef.row.name) : '') + '</div>' +
         '<div>' + esc(fmtRange(o.start, o.end)) + '</div>' +
         '<div class="meta">' + esc(CONF[o.conf] || '') + '</div>' +
+        (o.check ? '<div class="warn">年代尚未核实，仅供参考</div>' : '') +
         (o.note ? '<div>' + esc(o.note) + '</div>' : '') +
         (o.alt ? '<div class="meta">' + esc(o.alt) + '</div>' : '') +
         (o.src ? '<div class="meta src">出处：' + linkify(o.src) + '</div>' : '') + '</div>';
