@@ -97,6 +97,8 @@ title: 佛教史年表
   .detail { flex: none; width: 260px; font-size: 13px; line-height: 1.6; background: #fff; border: 1px solid #d3d8de; border-left: 4px solid var(--c); border-radius: 4px; padding: 6px 10px; }
   .detail b { font-size: 15px; }
   .detail .meta { color: #666; font-size: 12px; }
+  .detail .src { word-break: break-all; }
+  .detail .src a { color: #1d4ed8; }
 
   @media (max-width: 760px) {
     #bh-app { --label-w: 44px; --lane-w: 20px; }
@@ -430,6 +432,13 @@ title: 佛教史年表
 
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
 
+  // 出处里的网址变成可点击链接（先转义，再替换）
+  function linkify(s) {
+    return esc(s).replace(/https?:\/\/[^\s；;，,）)]+/g, function (u) {
+      return '<a href="' + u + '" target="_blank" rel="noopener">' + u.replace(/^https?:\/\/(www\.)?/, '').slice(0, 38) + '</a>';
+    });
+  }
+
   function renderPanel() {
     var h = '';
     if (selected) {
@@ -440,7 +449,7 @@ title: 佛教史年表
         '<div class="meta">' + esc(CONF[o.conf] || '') + '</div>' +
         (o.note ? '<div>' + esc(o.note) + '</div>' : '') +
         (o.alt ? '<div class="meta">' + esc(o.alt) + '</div>' : '') +
-        (o.src ? '<div class="meta">出处：' + esc(o.src) + '</div>' : '') + '</div>';
+        (o.src ? '<div class="meta src">出处：' + linkify(o.src) + '</div>' : '') + '</div>';
     }
     if (cutP == null) {
       $('bh-yr').textContent = '横切面';
