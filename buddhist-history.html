@@ -97,9 +97,10 @@ title: 佛教史年表
   .col .ent { font-size: 12px; line-height: 1.5; cursor: pointer; border-left: 3px solid var(--c); padding-left: 5px; margin-bottom: 3px; }
   .col .ent small { color: #777; margin-left: 4px; }
   .col .ent:hover { background: #eef2f7; }
-  .detail { flex: none; width: 260px; font-size: 13px; line-height: 1.6; background: #fff; border: 1px solid #d3d8de; border-left: 4px solid var(--c); border-radius: 4px; padding: 6px 10px; }
+  .detail { flex: none; width: 320px; font-size: 13px; line-height: 1.6; background: #fff; border: 1px solid #d3d8de; border-left: 4px solid var(--c); border-radius: 4px; padding: 6px 10px; }
   .detail b { font-size: 15px; }
   .detail .meta { color: #666; font-size: 12px; }
+  .detail .evi { margin-top: 4px; padding-top: 4px; border-top: 1px dashed #d3d8de; }
   .detail .warn { color: #b45309; font-size: 12px; }
   .detail .src { word-break: break-all; }
   .detail .src a { color: #1d4ed8; }
@@ -459,6 +460,7 @@ title: 佛教史年表
         (o.check ? '<div class="warn">年代尚未核实，仅供参考</div>' : '') +
         (o.note ? '<div>' + esc(o.note) + '</div>' : '') +
         (o.alt ? '<div class="meta">' + esc(o.alt) + '</div>' : '') +
+        (o.evidence ? '<div class="meta evi">核对依据：' + linkify(o.evidence) + '</div>' : '') +
         (o.src ? '<div class="meta src">出处：' + linkify(o.src) + '</div>' : '') + '</div>';
     }
     if (cutP == null) {
