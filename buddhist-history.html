@@ -1,0 +1,495 @@
+---
+layout: individual
+title: 佛教史年表
+---
+
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; }
+  body { font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif; color: #222; background: #fff; }
+
+  #bh-app {
+    --label-w: 96px;
+    --lane-w: 24px;
+    --row-h: 24px;
+    display: flex; flex-direction: column;
+    height: 100vh; height: 100dvh;
+  }
+
+  /* 工具栏 */
+  #bh-bar { display: flex; align-items: center; gap: 8px; padding: 6px 12px 0 12px; flex: none; }
+  #bh-bar h1 { font-size: 16px; margin: 0; white-space: nowrap; }
+  #bh-bar .draft { font-size: 11px; color: #b45309; background: #fef3c7; border-radius: 3px; padding: 1px 6px; white-space: nowrap; }
+  #bh-bar .sp { flex: 1; }
+  #bh-bar .legend { font-size: 11px; color: #666; display: flex; gap: 10px; align-items: center; white-space: nowrap; }
+  #bh-bar .legend i { display: inline-block; width: 22px; height: 10px; vertical-align: middle; margin-right: 3px; }
+  .lg-firm { background: #bbb; border: 1px solid #666; }
+  .lg-approx { background: #ddd; border: 1.5px dashed #666; }
+  .lg-trad { background: linear-gradient(90deg, transparent, #bbb 30%, #bbb 70%, transparent); }
+  #bh-bar button, #bh-chips button, #bh-panel-head button {
+    font: inherit; font-size: 12px; border: 1px solid #c8ccd0; background: #fff; border-radius: 4px;
+    padding: 3px 9px; cursor: pointer; color: #222;
+  }
+  #bh-bar button:hover, #bh-chips button:hover, #bh-panel-head button:hover { background: #f1f5f9; }
+  #bh-chips { display: flex; gap: 6px; padding: 6px 12px; overflow-x: auto; flex: none; white-space: nowrap; }
+
+  /* 舞台：坐标轴 + 泳道 */
+  #bh-stage { position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column; margin: 0 12px; border-top: 1px solid #dde1e6; }
+  #bh-axis { position: relative; height: 34px; margin-left: calc(var(--label-w) + var(--lane-w)); flex: none; overflow: hidden; border-bottom: 1px solid #aeb4bb; background: #fafbfc; }
+  .tick { position: absolute; top: 0; bottom: 0; border-left: 1px solid #cdd2d8; }
+  .tick span { position: absolute; left: 4px; top: 9px; font-size: 11px; color: #555; white-space: nowrap; }
+  .tick.zero { border-left: 2px solid #b45309; }
+  .tick.zero span { color: #b45309; font-weight: 700; }
+  #bh-grid { position: absolute; left: calc(var(--label-w) + var(--lane-w)); right: 0; top: 34px; bottom: 0; pointer-events: none; overflow: hidden; }
+  #bh-grid .gl { position: absolute; top: 0; bottom: 0; border-left: 1px solid #eef0f2; }
+  #bh-grid .gl.zero { border-left: 2px solid #f3d9b8; }
+
+  #bh-scroll { position: relative; flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden; }
+  .lane { display: flex; border-bottom: 1px solid #d3d8de; min-height: 96px; }
+  .lane-name {
+    flex: none; width: var(--lane-w); writing-mode: vertical-rl; text-align: center;
+    font-size: 13px; font-weight: 700; letter-spacing: 2px; color: #fff; background: var(--c);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .rows { flex: 1; min-width: 0; }
+  .row { display: flex; border-bottom: 1px dotted #e1e4e8; }
+  .row:last-child { border-bottom: 0; }
+  .row-name { flex: none; width: var(--label-w); box-sizing: border-box; padding: 4px 6px 0 0; text-align: right; font-size: 11px; color: #555; }
+  .track { position: relative; flex: 1; min-width: 0; overflow: hidden; }
+
+  /* 条目 */
+  .item { position: absolute; height: 20px; box-sizing: border-box; font-size: 12px; line-height: 18px; white-space: nowrap; cursor: pointer; transition: top .15s; }
+  .item .lbl { position: absolute; top: 0; left: 0; padding: 0 4px; pointer-events: none; }
+  .item.bar { border-radius: 3px; background: color-mix(in srgb, var(--c) 24%, #fff); border: 1px solid var(--c); overflow: hidden; }
+  .item.bar.out { overflow: visible; }
+  .item.bar.out .lbl { left: 100%; padding-left: 5px; }
+  .item.conf-approx.bar { border: 1.5px dashed var(--c); }
+  .item.conf-trad.bar { border: 0; background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--c) 40%, #fff) 25%, color-mix(in srgb, var(--c) 40%, #fff) 75%, transparent); }
+  .item.bar.ongoing { border-right-color: transparent; background: linear-gradient(90deg, color-mix(in srgb, var(--c) 24%, #fff) 75%, transparent); }
+  .item.bar.ongoing::after { content: "▸"; position: absolute; right: 3px; top: 0; color: var(--c); }
+  .item.bar.conf-trad.ongoing { background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--c) 40%, #fff) 25%, color-mix(in srgb, var(--c) 40%, #fff) 75%, transparent); }
+  .item.pt { width: 0; }
+  .item.pt::before { content: ""; position: absolute; left: -6px; top: 4px; width: 10px; height: 10px; background: var(--c); transform: rotate(45deg); }
+  .item.pt.conf-trad::before { background: #fff; border: 2px solid var(--c); box-sizing: border-box; }
+  .item.pt .lbl { left: 8px; }
+  .item.active { box-shadow: 0 0 0 2px #f59e0b; z-index: 3; }
+  .item.sel { box-shadow: 0 0 0 2px #1d4ed8; z-index: 4; }
+  .item:hover { z-index: 5; filter: brightness(.96); }
+
+  /* 横切面竖线 */
+  #bh-cut { position: absolute; top: 0; bottom: 0; width: 0; border-left: 2px solid #dc2626; display: none; pointer-events: none; z-index: 20; }
+  #bh-handle {
+    position: absolute; top: 2px; transform: translateX(-50%); display: none; z-index: 21; cursor: ew-resize; touch-action: none;
+    background: #dc2626; color: #fff; font-size: 11px; line-height: 1; padding: 5px 8px; border-radius: 10px; white-space: nowrap; user-select: none;
+  }
+
+  /* 底部面板 */
+  #bh-panel { flex: none; border-top: 2px solid #aeb4bb; background: #fbfbfc; margin: 0; }
+  #bh-panel-head { display: flex; align-items: center; gap: 8px; padding: 5px 12px; }
+  #bh-panel-head .yr { font-weight: 700; font-size: 14px; }
+  #bh-panel-head .sp { flex: 1; }
+  #bh-panel-body { height: 24vh; max-height: 220px; overflow: auto; padding: 0 12px 10px 12px; display: flex; gap: 14px; align-items: flex-start; }
+  #bh-panel.collapsed #bh-panel-body { display: none; }
+  .hint { color: #777; font-size: 13px; padding-top: 4px; }
+  .cols { display: flex; gap: 12px; flex: 1; min-width: 0; }
+  .col { flex: 1 1 130px; min-width: 110px; }
+  .col h4 { margin: 0 0 4px 0; font-size: 12px; color: #fff; background: var(--c); padding: 2px 6px; border-radius: 3px; }
+  .col .none { color: #aaa; font-size: 12px; }
+  .col .ent { font-size: 12px; line-height: 1.5; cursor: pointer; border-left: 3px solid var(--c); padding-left: 5px; margin-bottom: 3px; }
+  .col .ent small { color: #777; margin-left: 4px; }
+  .col .ent:hover { background: #eef2f7; }
+  .detail { flex: none; width: 260px; font-size: 13px; line-height: 1.6; background: #fff; border: 1px solid #d3d8de; border-left: 4px solid var(--c); border-radius: 4px; padding: 6px 10px; }
+  .detail b { font-size: 15px; }
+  .detail .meta { color: #666; font-size: 12px; }
+  .detail .warn { color: #b45309; font-size: 12px; }
+  .detail .src { word-break: break-all; }
+  .detail .src a { color: #1d4ed8; }
+
+  @media (max-width: 760px) {
+    #bh-app { --label-w: 44px; --lane-w: 20px; }
+    #bh-bar .legend { display: none; }
+    #bh-bar h1 { margin-right: 28px; }
+    .row-name { font-size: 10px; padding-right: 3px; }
+    #bh-panel-body { flex-direction: column; height: 34vh; }
+    .detail { width: auto; align-self: stretch; }
+    .cols { flex-wrap: wrap; }
+  }
+</style>
+
+<div id="bh-app">
+  <div id="bh-bar">
+    <h1>佛教史年表</h1>
+    <span class="draft" id="bh-draft" style="display:none">数据核对中：带“？”的年代待核</span>
+    <span class="sp"></span>
+    <span class="legend"><span><i class="lg-firm"></i>基本确定</span><span><i class="lg-approx"></i>约数／有分歧</span><span><i class="lg-trad"></i>传统说法</span><span>▸ 延续至今</span><span>？年代待核</span></span>
+    <button id="bh-zin" title="放大">＋</button>
+    <button id="bh-zout" title="缩小">－</button>
+  </div>
+  <div id="bh-chips"></div>
+
+  <div id="bh-stage">
+    <div id="bh-axis"></div>
+    <div id="bh-grid"></div>
+    <div id="bh-scroll"></div>
+    <div id="bh-cut"></div>
+    <div id="bh-handle"></div>
+  </div>
+
+  <div id="bh-panel">
+    <div id="bh-panel-head">
+      <button id="bh-toggle" title="展开／收起">▾</button>
+      <span class="yr" id="bh-yr">横切面</span>
+      <span class="sp"></span>
+      <button id="bh-unpin" style="display:none">取消竖线</button>
+    </div>
+    <div id="bh-panel-body"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script>
+(function () {
+  var LANE_GAP = 6;      // 同一行内相邻条目的最小间距（px）
+  var TIER2_PPY = 0.8;   // 每年多少像素以上显示二级条目
+  var ROW_H = 24;
+  var CHAR_W = 12.5;     // 估算文字宽度（px/字）
+
+  var $ = function (id) { return document.getElementById(id); };
+  var stage = $('bh-stage'), axisEl = $('bh-axis'), gridEl = $('bh-grid'), scrollEl = $('bh-scroll');
+  var cutEl = $('bh-cut'), handleEl = $('bh-handle');
+  var panelEl = $('bh-panel'), bodyEl = $('bh-panel-body');
+
+  // 历史纪年（无公元 0 年）与连续坐标互转：公元前 1 年 = 0，公元 1 年 = 1
+  function pos(h) { return h < 0 ? h + 1 : h; }
+  function hist(p) { var r = Math.round(p); return r <= 0 ? r - 1 : r; }
+  function fmtY(h) { return h < 0 ? '前' + (-h) : '公元' + h; }
+  function rangeText(o) {
+    if (o.ongoing) return fmtY(o.start) + '年起，延续至今';
+    return o.end == null ? fmtY(o.start) + '年' : fmtRange(o.start, o.end);
+  }
+  function fmtRange(s, e) {
+    if (e == null) return fmtY(s) + '年';
+    if (s < 0 && e < 0) return '前' + (-s) + '–前' + (-e) + '年';
+    if (s < 0) return '前' + (-s) + '–公元' + e + '年';
+    return '公元' + s + '–' + e + '年';
+  }
+  var CONF = { firm: '基本确定', approx: '约数，学界有不同说法', trad: '传统说法' };
+
+  var data, items = [], rows = [], laneById = {}, base, t = d3.zoomIdentity, x, W = 0;
+  var zoom, sel, cutP = null, pinned = false, selected = null, pending = false;
+
+  fetch('/data/buddhist-history.json').then(function (r) { return r.json(); }).then(init);
+
+  function init(d) {
+    data = d;
+    if (d.meta && d.meta.status === 'draft') $('bh-draft').style.display = '';
+    build();
+    measure();
+    setupZoom();
+    setupChips();
+    setupCut();
+    $('bh-toggle').onclick = function () {
+      panelEl.classList.toggle('collapsed');
+      $('bh-toggle').textContent = panelEl.classList.contains('collapsed') ? '▴' : '▾';
+      onResize();
+    };
+    $('bh-zin').onclick = function () { sel.transition().duration(250).call(zoom.scaleBy, 1.6); };
+    $('bh-zout').onclick = function () { sel.transition().duration(250).call(zoom.scaleBy, 1 / 1.6); };
+    window.addEventListener('resize', onResize);
+    renderPanel();
+    render();
+  }
+
+  function build() {
+    scrollEl.innerHTML = '';
+    data.lanes.forEach(function (lane) {
+      laneById[lane.id] = lane;
+      var ln = document.createElement('section');
+      ln.className = 'lane';
+      ln.style.setProperty('--c', lane.color);
+      var nm = document.createElement('div');
+      nm.className = 'lane-name'; nm.textContent = lane.name;
+      var rs = document.createElement('div');
+      rs.className = 'rows';
+      lane.rows.forEach(function (row) {
+        var re = document.createElement('div');
+        re.className = 'row';
+        var rn = document.createElement('div');
+        rn.className = 'row-name'; rn.textContent = row.name;
+        var tr = document.createElement('div');
+        tr.className = 'track';
+        re.appendChild(rn); re.appendChild(tr); rs.appendChild(re);
+        rows.push({ lane: lane, row: row, color: row.color || lane.color, el: tr, items: [] });
+      });
+      ln.appendChild(nm); ln.appendChild(rs);
+      scrollEl.appendChild(ln);
+    });
+    data.items.forEach(function (it) {
+      var r = rows.filter(function (r) { return r.lane.id === it.lane && r.row.id === it.row; })[0];
+      if (!r) return;
+      var o = Object.assign({}, it);
+      o.s = pos(it.start);
+      o.pt = it.end == null;
+      o.ongoing = !!it.ongoing;
+      o.e = o.pt ? o.s : pos(it.end);
+      o.rowRef = r;
+      o.color = r.color;
+      o.lblW = (it.name.length + (it.check ? 1 : 0)) * CHAR_W + 8;
+      var el = document.createElement('div');
+      el.className = 'item ' + (o.pt ? 'pt' : 'bar') + ' conf-' + (it.conf || 'firm') + (o.ongoing ? ' ongoing' : '');
+      el.style.setProperty('--c', o.color);
+      el.title = it.name + '（' + rangeText(it) + '）';
+      var lb = document.createElement('span');
+      lb.className = 'lbl'; lb.textContent = it.name + (it.check ? '？' : '');
+      el.appendChild(lb);
+      el.onclick = function (ev) { ev.stopPropagation(); select(o); };
+      o.el = el; o.lbl = lb;
+      r.el.appendChild(el);
+      r.items.push(o);
+      items.push(o);
+    });
+    rows.forEach(function (r) { r.items.sort(function (a, b) { return a.s - b.s || b.e - a.e; }); });
+  }
+
+  function measure() {
+    W = axisEl.clientWidth;
+    base = d3.scaleLinear().domain([pos(data.range[0]), pos(data.range[1])]).range([0, W]);
+  }
+
+  function setupZoom() {
+    zoom = d3.zoom()
+      .scaleExtent([1, 90])
+      .extent([[0, 0], [W, 1]])
+      .translateExtent([[0, 0], [W, 1]])
+      .filter(function (ev) { return ev.type === 'wheel' ? ev.ctrlKey || ev.metaKey : !ev.button; })
+      .on('zoom', function (ev) { t = ev.transform; render(); });
+    sel = d3.select(stage);
+    sel.call(zoom);
+    // d3-zoom 默认 touch-action:none，会让手机无法纵向滚动泳道
+    stage.style.touchAction = 'pan-y';
+    stage.addEventListener('wheel', function (ev) {
+      if (ev.ctrlKey || ev.metaKey) return;      // 缩放交给 d3
+      var dx = Math.abs(ev.deltaX) > Math.abs(ev.deltaY) ? ev.deltaX : (ev.shiftKey ? ev.deltaY : 0);
+      if (!dx) return;                            // 纵向滚动保留给泳道
+      ev.preventDefault();
+      sel.call(zoom.translateBy, -dx / t.k, 0);
+    }, { passive: false });
+  }
+
+  function setupChips() {
+    var box = $('bh-chips');
+    data.views.forEach(function (v) {
+      var b = document.createElement('button');
+      b.textContent = v.name;
+      b.onclick = function () {
+        var a = base(pos(v.from)), z = base(pos(v.to));
+        var k = Math.max(1, Math.min(90, W / (z - a)));
+        sel.transition().duration(600).call(zoom.transform, d3.zoomIdentity.scale(k).translate(-a, 0));
+      };
+      box.appendChild(b);
+    });
+  }
+
+  function onResize() {
+    var oldW = W;
+    measure();
+    zoom.extent([[0, 0], [W, 1]]).translateExtent([[0, 0], [W, 1]]);
+    if (oldW) t = d3.zoomIdentity.translate(t.x * W / oldW, 0).scale(t.k);
+    stage.__zoom = t;
+    render();
+  }
+
+  /* ---------- 渲染 ---------- */
+  function render() {
+    if (pending) return;
+    pending = true;
+    requestAnimationFrame(function () { pending = false; draw(); });
+  }
+
+  function draw() {
+    x = t.rescaleX(base);
+    var ppy = x(1) - x(0);
+    var showTier2 = ppy >= TIER2_PPY;
+
+    rows.forEach(function (r) {
+      var lines = [];
+      r.items.forEach(function (o) {
+        var vis = o.tier <= 1 || showTier2 || o === selected;
+        o.vis = vis;
+        o.el.style.display = vis ? '' : 'none';
+        if (!vis) return;
+        var x0 = x(o.s), x1 = x(o.e);
+        var bw = o.pt ? 0 : Math.max(x1 - x0, 4);
+        var inside = !o.pt && bw >= o.lblW;
+        var ext = inside ? x0 + bw : x0 + bw + (o.pt ? 12 : 4) + o.lblW;
+        var left = o.pt ? x0 : x0;
+        var li = 0;
+        while (li < lines.length && lines[li] + LANE_GAP > left) li++;
+        lines[li] = ext;
+        o.line = li;
+        o.x0 = x0; o.bw = bw; o.inside = inside;
+      });
+      var h = Math.max(lines.length, 1) * ROW_H + 6;
+      r.el.style.height = h + 'px';
+      r.items.forEach(function (o) {
+        if (!o.vis) return;
+        var st = o.el.style;
+        st.top = (3 + o.line * ROW_H) + 'px';
+        st.left = o.x0 + 'px';
+        if (!o.pt) {
+          st.width = o.bw + 'px';
+          o.el.classList.toggle('out', !o.inside);
+          // 条目左端被挤出屏幕时，文字贴着可视区左缘
+          var shift = o.inside ? Math.max(0, Math.min(-o.x0, o.bw - o.lblW)) : 0;
+          o.lbl.style.paddingLeft = (4 + shift) + 'px';
+        }
+      });
+    });
+
+    drawAxis(ppy);
+    positionCut();
+  }
+
+  function drawAxis(ppy) {
+    var steps = [1, 2, 5, 10, 20, 25, 50, 100, 200, 500];
+    var want = 90 / ppy, step = steps[steps.length - 1];
+    for (var i = 0; i < steps.length; i++) { if (steps[i] >= want) { step = steps[i]; break; } }
+    var lo = data.range[0], hi = data.range[1];
+    var html = '', g = '';
+    var first = Math.ceil(lo / step) * step;
+    for (var h = first; h <= hi; h += step) {
+      if (h === 0) continue;
+      var px = x(pos(h));
+      if (px < -50 || px > W + 50) continue;
+      html += '<div class="tick" style="left:' + px.toFixed(1) + 'px"><span>' + (h < 0 ? '前' + (-h) : h) + '</span></div>';
+      g += '<div class="gl" style="left:' + px.toFixed(1) + 'px"></div>';
+    }
+    var z = x(0);
+    html += '<div class="tick zero" style="left:' + z.toFixed(1) + 'px"><span>公元元年</span></div>';
+    g += '<div class="gl zero" style="left:' + z.toFixed(1) + 'px"></div>';
+    axisEl.innerHTML = html;
+    gridEl.innerHTML = g;
+  }
+
+  /* ---------- 横切面 ---------- */
+  function trackLeft() { return axisEl.getBoundingClientRect().left - stage.getBoundingClientRect().left; }
+
+  function setCut(p, pin) {
+    cutP = Math.max(base.domain()[0], Math.min(base.domain()[1], p));
+    if (pin != null) pinned = pin;
+    positionCut();
+    renderPanel();
+  }
+
+  function positionCut() {
+    if (cutP == null) { cutEl.style.display = handleEl.style.display = 'none'; return; }
+    var px = trackLeft() + x(cutP);
+    var vis = px >= trackLeft() && px <= trackLeft() + W;
+    cutEl.style.display = handleEl.style.display = vis ? 'block' : 'none';
+    cutEl.style.left = px + 'px';
+    handleEl.style.left = px + 'px';
+    handleEl.textContent = fmtY(hist(cutP)) + '年';
+    $('bh-unpin').style.display = pinned ? '' : 'none';
+    items.forEach(function (o) { o.el.classList.toggle('active', o.vis && isActive(o)); });
+  }
+
+  function isActive(o) {
+    if (cutP == null) return false;
+    if (o.pt) { var tol = Math.max(2, 6 / Math.max(x(1) - x(0), 0.01)); return Math.abs(cutP - o.s) <= tol; }
+    return cutP >= o.s - 0.5 && cutP <= o.e + 0.5;
+  }
+
+  function setupCut() {
+    var track = function (ev) { return ev.clientX - stage.getBoundingClientRect().left - trackLeft(); };
+    stage.addEventListener('mousemove', function (ev) {
+      if (pinned) return;
+      var px = track(ev);
+      if (px < 0 || px > W) return;
+      setCut(x.invert(px), false);
+    });
+    stage.addEventListener('mouseleave', function () {
+      if (!pinned && cutP != null) { cutP = null; positionCut(); }
+    });
+    stage.addEventListener('click', function (ev) {
+      var px = track(ev);
+      if (px < 0 || px > W) return;
+      if (pinned && cutP != null && Math.abs(x(cutP) - px) < 6) { pinned = false; positionCut(); return; }
+      setCut(x.invert(px), true);
+    });
+    $('bh-unpin').onclick = function () { pinned = false; cutP = null; positionCut(); renderPanel(); };
+
+    // 竖线手柄：拖动时固定
+    ['mousedown', 'touchstart'].forEach(function (n) { handleEl.addEventListener(n, function (e) { e.stopPropagation(); }); });
+    handleEl.addEventListener('click', function (e) { e.stopPropagation(); });
+    handleEl.addEventListener('pointerdown', function (ev) {
+      handleEl.setPointerCapture(ev.pointerId);
+      pinned = true;
+      var mv = function (e) { setCut(x.invert(track(e)), true); };
+      var up = function () { handleEl.removeEventListener('pointermove', mv); handleEl.removeEventListener('pointerup', up); };
+      handleEl.addEventListener('pointermove', mv);
+      handleEl.addEventListener('pointerup', up);
+    });
+  }
+
+  /* ---------- 面板 ---------- */
+  function select(o) {
+    selected = o;
+    items.forEach(function (i) { i.el.classList.toggle('sel', i === o); });
+    renderPanel();
+    panelEl.classList.remove('collapsed');
+    $('bh-toggle').textContent = '▾';
+  }
+
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+  // 出处里的网址变成可点击链接（先转义，再替换）
+  function linkify(s) {
+    return esc(s).replace(/https?:\/\/[^\s；;，,）)]+/g, function (u) {
+      return '<a href="' + u + '" target="_blank" rel="noopener">' + u.replace(/^https?:\/\/(www\.)?/, '').slice(0, 38) + '</a>';
+    });
+  }
+
+  function renderPanel() {
+    var h = '';
+    if (selected) {
+      var o = selected;
+      h += '<div class="detail" style="--c:' + o.color + '"><b>' + esc(o.name) + '</b>' +
+        '<div class="meta">' + esc(o.rowRef.lane.name) + (o.rowRef.row.name ? ' · ' + esc(o.rowRef.row.name) : '') + '</div>' +
+        '<div>' + esc(rangeText(o)) + '</div>' +
+        '<div class="meta">' + esc(CONF[o.conf] || '') + '</div>' +
+        (o.check ? '<div class="warn">年代尚未核实，仅供参考</div>' : '') +
+        (o.note ? '<div>' + esc(o.note) + '</div>' : '') +
+        (o.alt ? '<div class="meta">' + esc(o.alt) + '</div>' : '') +
+        (o.src ? '<div class="meta src">出处：' + linkify(o.src) + '</div>' : '') + '</div>';
+    }
+    if (cutP == null) {
+      $('bh-yr').textContent = '横切面';
+      h += '<div class="hint">把鼠标移到时间轴上，或点击轨道、拖动红色手柄，查看某一年各条线上有什么。点击条目看详情。</div>';
+    } else {
+      $('bh-yr').textContent = fmtY(hist(cutP)) + '年';
+      h += '<div class="cols">';
+      data.lanes.forEach(function (lane) {
+        var act = items.filter(function (o) { return o.rowRef.lane === lane && isActiveAny(o); });
+        h += '<div class="col" style="--c:' + lane.color + '"><h4>' + esc(lane.name) + '</h4>';
+        if (!act.length) h += '<div class="none">—</div>';
+        act.forEach(function (o) {
+          var sub = o.rowRef.row.name && lane.rows.length > 1 ? o.rowRef.row.name + ' ' : '';
+          h += '<div class="ent" data-id="' + esc(o.id) + '" style="--c:' + o.color + '">' + esc(o.name) +
+            '<small>' + esc(sub + (o.pt ? fmtY(o.start) : o.ongoing ? fmtY(o.start) + '起，至今' : fmtRange(o.start, o.end))) + '</small></div>';
+        });
+        h += '</div>';
+      });
+      h += '</div>';
+    }
+    bodyEl.innerHTML = h;
+    Array.prototype.forEach.call(bodyEl.querySelectorAll('.ent'), function (e) {
+      e.onclick = function () {
+        var o = items.filter(function (i) { return i.id === e.getAttribute('data-id'); })[0];
+        if (o) select(o);
+      };
+    });
+  }
+
+  // 面板列出所有层级的条目（含放大后才显示的二级条目）
+  function isActiveAny(o) { return isActive(o); }
+})();
+</script>
