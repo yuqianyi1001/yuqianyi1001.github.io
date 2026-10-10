@@ -197,6 +197,23 @@
   .zh.back .z.ye .n { background: transparent; color: var(--ink); }
   .zh.back .z .d { padding: 16px 6px; }
   .zh.back .z .t { border-top-color: rgba(168,53,42,.3); }
+
+  /* ===== 三十七道品矩阵 ===== */
+  .mx { display: grid; grid-template-columns: 210px repeat(6, 1fr) 0.9fr 1.25fr; gap: 6px; }
+  .mx .hd { white-space: nowrap; text-align: center; padding: 0 0 4px; font-size: 21px; color: var(--ink-soft); letter-spacing: 1px; line-height: 1.3; }
+  .mx .hd b { font-size: 28px; margin-right: 6px; color: var(--ink); font-weight: 900; letter-spacing: 3px; }
+  .mx .hd.hx b { color: var(--ink-faint); }
+  .mx .rl { display: flex; align-items: baseline; justify-content: space-between; padding: 0 14px; align-self: stretch; align-items: center; font-size: 28px; font-weight: 900; letter-spacing: 2px; border-left: 6px solid var(--ink); background: rgba(255,250,238,.45); }
+  .mx .rl small { font-size: 20px; font-weight: 400; color: var(--ink-faint); letter-spacing: 0; }
+  .mx .c { display: flex; align-items: center; justify-content: center; text-align: center; min-height: 58px; padding: 4px 4px; font-size: 26px; line-height: 1.3; border: 2px solid var(--ink); background: rgba(255,250,238,.6); font-weight: 700; }
+  .mx .c small { display: block; font-size: 18px; font-weight: 400; color: var(--ink-soft); }
+  .mx .c.e { border: 1px dashed var(--line); background: transparent; }
+  .mx .c.ext { border-color: var(--ink-faint); color: var(--ink-soft); }
+  .mx .rl.bz { border-left-color: var(--cinnabar); background: var(--cinnabar); color: #f6e9d6; font-size: 34px; }
+  .mx .rl.bz small { color: #f3d9cf; }
+  .mx .c.bz { background: var(--cinnabar); border-color: var(--cinnabar); color: #f6e9d6; font-size: 28px; min-height: 70px; }
+  .mx .c.bz.e { background: transparent; border: 1px dashed var(--line); }
+  .mx .exr { grid-column: 2 / span 8; text-align: left; font-size: 22px; color: var(--cinnabar); letter-spacing: 2px; padding: 4px 0 2px 6px; }
   .q { margin-top: 18px; font-size: 27px; line-height: 1.6; letter-spacing: .5px; border-left: 6px solid var(--cinnabar); padding: 4px 0 4px 24px; }
   .q small { display: block; font-size: 22px; color: var(--ink-soft); }
 </style>
@@ -316,6 +333,53 @@
   </div>
 
   <div class="q" style="margin-top:40px">「若无明离欲而生明……老死则断，则知断其根本，如截多罗树头，于未来世成不生法。」<small>《杂阿含经》卷 12 第 297 经 大空法经（T99）　同经：「彼无明灭则行灭，乃至纯大苦聚灭」</small></div>
+
+  <div class="foot"><span>佛学图文 · 四圣谛</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 八正道 展开为 三十七道品 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 03 · 四圣谛</span><span class="pg"></span></div>
+  <div class="top">
+    <div>
+      <div class="kicker">道 → 八正道 → 三十七道品</div>
+      <h1 class="title">八正道展开为三十七道品</h1>
+    </div>
+    <div class="di4">
+      <div class="half" style="opacity:.35"><div class="cap">世间的因果</div><div class="ch"><b>苦</b><b>集</b></div></div>
+      <div class="half"><div class="cap r">出世间的因果</div><div class="ch"><b style="opacity:.35">灭</b><b class="r">道</b></div></div>
+    </div>
+  </div>
+  <div class="rule"></div>
+
+  <div class="mx">
+    <div></div>
+    <div class="hd">体 <b>慧</b></div>
+    <div class="hd">体 <b>寻</b></div>
+    <div class="hd">体 <b>戒</b></div>
+    <div class="hd">体 <b>勤</b></div>
+    <div class="hd">体 <b>念</b></div>
+    <div class="hd">体 <b>定</b></div>
+    <div class="hd hx">体 <b>信</b></div>
+    <div class="hd hx">体 <b>喜安舍</b></div>
+    <div class="rl bz">八正道<small>8</small></div>
+    <div class="c bz">正见</div><div class="c bz">正思惟</div><div class="c bz">正语<br>正业 正命</div><div class="c bz">正精进</div><div class="c bz">正念</div><div class="c bz">正定</div><div class="c bz e"></div><div class="c bz e"></div>
+    <div></div><div class="exr">↓ 展开：八正道每一支的体，贯穿下面六组　　右边两列（信，喜、轻安、舍）是八正道之外另加的</div>
+    <div class="rl ">四念处<small>4</small></div>
+    <div class="c ">身 受 心 法</div><div class="c e"></div><div class="c e"></div><div class="c e"></div><div class="c e"></div><div class="c e"></div><div class="c e"></div><div class="c e"></div>
+    <div class="rl ">四正勤<small>4</small></div>
+    <div class="c e"></div><div class="c e"></div><div class="c e"></div><div class="c ">断恶 · 生善</div><div class="c e"></div><div class="c e"></div><div class="c e"></div><div class="c e"></div>
+    <div class="rl ">四神足<small>4</small></div>
+    <div class="c e"></div><div class="c e"></div><div class="c e"></div><div class="c e"></div><div class="c e"></div><div class="c ">欲 勤 心 观</div><div class="c e"></div><div class="c e"></div>
+    <div class="rl ">五根<small>5</small></div>
+    <div class="c ">慧根</div><div class="c e"></div><div class="c e"></div><div class="c ">精进根</div><div class="c ">念根</div><div class="c ">定根</div><div class="c ext">信根</div><div class="c e"></div>
+    <div class="rl ">五力<small>5</small></div>
+    <div class="c ">慧力</div><div class="c e"></div><div class="c e"></div><div class="c ">精进力</div><div class="c ">念力</div><div class="c ">定力</div><div class="c ext">信力</div><div class="c e"></div>
+    <div class="rl ">七觉支<small>7</small></div>
+    <div class="c ">择法觉支</div><div class="c e"></div><div class="c e"></div><div class="c ">精进觉支</div><div class="c ">念觉支</div><div class="c ">定觉支</div><div class="c e"></div><div class="c ext">喜 · 轻安 · 舍</div>
+  </div>
+
+  <div class="q" style="margin-top:18px">「此觉分名虽三十七，实事唯十，即慧勤等。」<small>《俱舍论》卷 25（T1558）：四念住……正见以慧为体；四正断……正精进以勤为体；四神足……正定以定为体；正语、正业、正命以戒为体；正思惟以寻为体</small></div>
 
   <div class="foot"><span>佛学图文 · 四圣谛</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
 </section>
