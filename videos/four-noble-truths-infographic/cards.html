@@ -90,7 +90,7 @@
   .foot { bottom: 44px; left: 120px; right: 120px; }
   h1.title { font-size: 60px; letter-spacing: 5px; line-height: 1.2; }
   .kicker { font-size: 28px; margin-bottom: 12px; }
-  .rule { margin: 16px 0 26px; }
+  .rule { margin: 12px 0 20px; }
 
   /* 标题行右侧：四谛四字 */
   .top { display: flex; justify-content: space-between; align-items: flex-end; }
@@ -105,7 +105,7 @@
 
   /* 三行：集苦 / 灭 / 道 */
   .row { display: grid; grid-template-columns: 250px 1fr; column-gap: 30px; align-items: stretch; }
-  .lab { display: flex; flex-direction: column; justify-content: center; padding: 10px 22px; border-left: 10px solid var(--ink); background: rgba(255,250,238,.45); }
+  .lab { display: flex; flex-direction: column; justify-content: center; padding: 6px 22px; border-left: 10px solid var(--ink); background: rgba(255,250,238,.45); }
   .lab.r { border-left-color: var(--cinnabar); background: rgba(168,53,42,.07); }
   .lab b { font-size: 50px; font-weight: 900; letter-spacing: 4px; line-height: 1.15; }
   .lab b em { font-style: normal; font-size: 30px; color: var(--ink-faint); margin: 0 6px; vertical-align: 8px; }
@@ -123,7 +123,7 @@
   .nid.back .c + .a { margin: 0 2px; }
   .nid.back .end { color: var(--cinnabar); }
 
-  .legend { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 26px; margin-top: 12px; font-size: 24px; color: var(--ink-soft); }
+  .legend { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 26px; margin-top: 8px; font-size: 24px; color: var(--ink-soft); }
   .legend .sw { display: inline-block; width: 22px; height: 22px; vertical-align: -3px; margin-right: 8px; border: 2px solid var(--ink); }
   .legend .sw.huo { background: var(--cinnabar); border-color: var(--cinnabar); }
   .legend .sw.ye { background: var(--ink); }
@@ -131,25 +131,29 @@
   .legend b { color: var(--ink); }
   .legend .src { margin-left: auto; font-size: 22px; color: var(--ink-faint); }
 
-  .up { display: grid; grid-template-columns: 250px 1fr; column-gap: 30px; margin: 10px 0; }
+  .up { display: grid; grid-template-columns: 250px 1fr; column-gap: 30px; margin: 6px 0 8px; }
   .up div:last-child { font-size: 26px; color: var(--cinnabar); letter-spacing: 1px; padding-left: 6px; }
   .up div:last-child b { font-size: 30px; margin-right: 10px; }
 
-  /* 三十七道品 */
-  .dp { display: grid; grid-template-columns: repeat(6, 1fr) 2.75fr; gap: 12px; align-items: stretch; }
-  .dp .g { display: flex; flex-direction: column; justify-content: center; text-align: center; padding: 12px 4px 10px; border-top: 6px solid var(--ink); background: rgba(255,250,238,.5); }
-  .dp .g b { display: block; font-size: 31px; font-weight: 900; letter-spacing: 2px; }
-  .dp .g span { font-size: 22px; color: var(--ink-soft); }
-  .dp .g.r { border-top-color: var(--cinnabar); background: rgba(168,53,42,.08); text-align: left; padding: 12px 20px 10px; }
-  .dp .g.r b { color: var(--cinnabar); display: inline; margin-right: 14px; }
-  .dp .g.r .hd { display: block; }
-  .dp .g.r .items { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px 8px; }
-  .dp .g.r .items i { font-style: normal; font-size: 23px; padding: 1px 10px; border: 1.5px solid var(--cinnabar); color: var(--ink); }
-  .sum { margin-top: 10px; font-size: 24px; color: var(--ink-soft); }
-  .sum b { color: var(--ink); }
-
-  .nid.back .a { width: 16px; font-size: 18px; }
-  .q { margin-top: 26px; font-size: 27px; line-height: 1.6; letter-spacing: .5px; border-left: 6px solid var(--cinnabar); padding: 4px 0 4px 24px; }
+  /* 道：八正道为主，展开为三十七道品 */
+  .dao { display: grid; grid-template-columns: 640px 120px 1fr; align-items: stretch; }
+  .bz { padding: 10px 26px 14px; border: 4px solid var(--cinnabar); background: rgba(168,53,42,.09); }
+  .bz .hd { display: flex; align-items: baseline; gap: 16px; }
+  .bz .hd b { font-size: 46px; font-weight: 900; letter-spacing: 5px; color: var(--cinnabar); }
+  .bz .hd span { font-size: 23px; color: var(--ink-soft); letter-spacing: 1px; }
+  .bz .items { margin-top: 8px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .bz .items i { font-style: normal; text-align: center; font-size: 28px; font-weight: 700; padding: 3px 0; border: 2px solid var(--cinnabar); background: rgba(255,250,238,.6); letter-spacing: 1px; }
+  .ex { display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--cinnabar); }
+  .ex b { font-size: 26px; letter-spacing: 4px; }
+  .ex i { font-style: normal; font-size: 52px; line-height: 1; }
+  .sq { padding: 14px 22px 14px; border-top: 6px solid var(--ink); background: rgba(255,250,238,.45); display: flex; flex-direction: column; justify-content: center; }
+  .sq .hd { font-size: 30px; font-weight: 900; letter-spacing: 3px; margin-bottom: 12px; }
+  .sq .hd span { font-size: 22px; font-weight: 400; color: var(--ink-soft); letter-spacing: 1px; margin-left: 12px; }
+  .sq .gs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .sq .gs div { text-align: center; font-size: 24px; padding: 4px 0; border: 1.5px solid var(--line); background: rgba(255,250,238,.5); }
+  .sq .gs div small { font-size: 19px; color: var(--ink-faint); margin-left: 4px; }
+  .sq .gs div.r { border: 2px solid var(--cinnabar); color: var(--cinnabar); font-weight: 700; background: rgba(168,53,42,.08); }
+  .q { margin-top: 18px; font-size: 27px; line-height: 1.6; letter-spacing: .5px; border-left: 6px solid var(--cinnabar); padding: 4px 0 4px 24px; }
   .q small { display: block; font-size: 22px; color: var(--ink-soft); }
 </style>
 </head>
@@ -189,7 +193,7 @@
   </div>
 
   <!-- 灭：十二因缘逆转 -->
-  <div class="row" style="margin-top:22px">
+  <div class="row" style="margin-top:14px">
     <div class="lab r"><b>灭</b><span>十二因缘逆转<br>还灭</span></div>
     <div class="nid back" style="align-self:center">
       <div class="c">无明灭</div><div class="a">→</div><div class="c">行灭</div><div class="a">→</div><div class="c">识灭</div><div class="a">→</div><div class="c">名色灭</div><div class="a">→</div><div class="c">六入灭</div><div class="a">→</div><div class="c">触灭</div><div class="a">→</div><div class="c">受灭</div><div class="a">→</div><div class="c">爱灭</div><div class="a">→</div><div class="c">取灭</div><div class="a">→</div><div class="c">有灭</div><div class="a">→</div><div class="c">生灭</div><div class="a">→</div><div class="c">老死灭</div>
@@ -197,24 +201,26 @@
     </div>
   </div>
 
-  <div class="up"><div></div><div><b>↑</b>道是因，灭是果：依道修行，无明灭，乃至老死灭</div></div>
+  <div class="up"><div></div><div><b>↑</b>道是因，灭是果：依八正道修行，无明灭，乃至老死灭</div></div>
 
   <!-- 道：八正道 → 三十七道品 -->
   <div class="row">
-    <div class="lab r"><b>道</b><span>八正道<br>→ 三十七道品</span></div>
+    <div class="lab r"><b>道</b><span>八正道展开<br>为三十七道品</span></div>
     <div>
-      <div class="dp">
-        <div class="g"><b>四念处</b><span>4</span></div>
-        <div class="g"><b>四正勤</b><span>4</span></div>
-        <div class="g"><b>四神足</b><span>4</span></div>
-        <div class="g"><b>五根</b><span>5</span></div>
-        <div class="g"><b>五力</b><span>5</span></div>
-        <div class="g"><b>七觉支</b><span>7</span></div>
-        <div class="g r"><div class="hd"><b>八正道</b><span>8</span></div>
+      <div class="dao">
+        <div class="bz">
+          <div class="hd"><b>八正道</b><span>道的主干 · 八支</span></div>
           <div class="items"><i>正见</i><i>正思惟</i><i>正语</i><i>正业</i><i>正命</i><i>正精进</i><i>正念</i><i>正定</i></div>
         </div>
+        <div class="ex"><b>展开</b><i>→</i></div>
+        <div class="sq">
+          <div class="hd">三十七道品<span>七组，共 37 项</span></div>
+          <div class="gs">
+            <div>四念处<small>4</small></div><div>四正勤<small>4</small></div><div>四神足<small>4</small></div><div>五根<small>5</small></div>
+            <div>五力<small>5</small></div><div>七觉支<small>7</small></div><div class="r">八正道<small>8</small></div><div style="border:none;background:none;font-size:21px;color:var(--ink-soft)">＝ 37</div>
+          </div>
+        </div>
       </div>
-      <div class="sum">4 + 4 + 4 + 5 + 5 + 7 + 8 ＝ <b>三十七道品</b>　　八正道是道的主干，三十七道品是展开后的全部</div>
     </div>
   </div>
 
