@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>四圣谛 · 图卡</title>
+<style>
+  /* 本机没有宋体时（Linux 预览）用 Noto Serif SC；Mac 上用 Songti SC */
+  @font-face { font-family: "PreviewSerif"; font-weight: 400; src: local("Songti SC"), url("file:///root/.fonts/nss-400.woff2"); }
+  @font-face { font-family: "PreviewSerif"; font-weight: 700; src: local("Songti SC Bold"), url("file:///root/.fonts/nss-700.woff2"); }
+  @font-face { font-family: "PreviewSerif"; font-weight: 900; src: local("Songti SC Black"), url("file:///root/.fonts/nss-900.woff2"); }
+  :root {
+    --paper: #f2e8d2;
+    --paper-deep: #e6d7b8;
+    --ink: #2a241e;
+    --ink-soft: #5e5448;
+    --ink-faint: #9a8d7a;
+    --cinnabar: #a8352a;
+    --cinnabar-soft: #c9685a;
+    --line: rgba(42, 36, 30, 0.22);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #8a8072;
+    font-family: "Songti SC", "STSong", "PreviewSerif", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  body.review { padding: 40px 0; }
+  body.review .card { margin: 0 auto 40px; box-shadow: 0 8px 30px rgba(0,0,0,.35); }
+  body.single { background: var(--paper); }
+  body.single .card:not(.on) { display: none !important; }
+  body.single .card.on { display: block; }
+
+  .card {
+    position: relative;
+    width: 1080px;
+    height: 1440px;
+    overflow: hidden;
+    padding: 110px 96px 120px;
+    background-color: var(--paper);
+    background-image:
+      radial-gradient(ellipse at 50% 40%, rgba(255,250,238,.55) 0%, rgba(255,250,238,0) 60%),
+      radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 60%, rgba(120,90,50,.16) 100%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .27  0 0 0 0 .17  0 0 0 .10 0'/></filter><rect width='400' height='400' filter='url(%23n)'/></svg>"),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='900'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='.012 .04' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 .45  0 0 0 0 .36  0 0 0 0 .22  0 0 0 .07 0'/></filter><rect width='900' height='900' filter='url(%23f)'/></svg>");
+  }
+  /* 页眉页脚 */
+  .head {
+    position: absolute; top: 52px; left: 96px; right: 96px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 24px; letter-spacing: 4px; color: var(--ink-faint);
+  }
+  .head .series::before {
+    content: ""; display: inline-block; width: 12px; height: 12px;
+    background: var(--cinnabar); margin-right: 14px; vertical-align: 2px;
+  }
+  .foot {
+    position: absolute; bottom: 50px; left: 96px; right: 96px;
+    display: flex; justify-content: space-between; align-items: flex-end;
+    font-size: 22px; letter-spacing: 3px; color: var(--ink-faint);
+  }
+  .seal {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 66px; height: 66px; border-radius: 6px;
+    background: var(--cinnabar); color: #f6e9d6;
+    font-size: 20px; line-height: 1.05; font-weight: 700;
+    writing-mode: vertical-rl; letter-spacing: 1px;
+    box-shadow: inset 0 0 0 3px var(--cinnabar), inset 0 0 0 5px rgba(246,233,214,.8);
+    transform: rotate(-2deg);
+  }
+  .foot .sign { display: flex; align-items: center; gap: 18px; }
+
+  h1.title {
+    font-size: 72px; font-weight: 900; letter-spacing: 6px; line-height: 1.25;
+  }
+  .kicker {
+    font-size: 28px; letter-spacing: 6px; color: var(--cinnabar); margin-bottom: 20px;
+  }
+  .rule {
+    width: 120px; height: 4px; background: var(--cinnabar); margin: 34px 0 44px;
+  }
+  p, li { font-size: 32px; line-height: 1.75; letter-spacing: 1px; }
+  .muted { color: var(--ink-soft); }
+  .red { color: var(--cinnabar); }
+  b { font-weight: 700; }
+
+  /* ===== 16:9 版面 ===== */
+  .card { width: 1920px; height: 1080px; padding: 112px 120px 110px; }
+  .head { top: 48px; left: 120px; right: 120px; }
+  .foot { bottom: 44px; left: 120px; right: 120px; }
+  h1.title { font-size: 60px; letter-spacing: 5px; line-height: 1.2; }
+  .kicker { font-size: 28px; margin-bottom: 12px; }
+  .rule { margin: 16px 0 26px; }
+
+  /* 标题行右侧：四谛四字 */
+  .top { display: flex; justify-content: space-between; align-items: flex-end; }
+  .di4 { display: flex; gap: 40px; }
+  .di4 .half { text-align: center; }
+  .di4 .half .cap { font-size: 23px; letter-spacing: 3px; color: var(--ink-soft); margin-bottom: 8px; }
+  .di4 .half .cap.r { color: var(--cinnabar); }
+  .di4 .ch { display: flex; gap: 10px; }
+  .di4 .ch b { width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-size: 40px; font-weight: 900; border: 3px solid var(--ink); background: rgba(255,250,238,.5); }
+  .di4 .ch b.r { border-color: var(--cinnabar); color: var(--cinnabar); }
+  .di4 .ch i { font-style: normal; font-size: 26px; align-self: center; color: var(--ink-faint); }
+
+  /* 三行：集苦 / 灭 / 道 */
+  .row { display: grid; grid-template-columns: 250px 1fr; column-gap: 30px; align-items: stretch; }
+  .lab { display: flex; flex-direction: column; justify-content: center; padding: 10px 22px; border-left: 10px solid var(--ink); background: rgba(255,250,238,.45); }
+  .lab.r { border-left-color: var(--cinnabar); background: rgba(168,53,42,.07); }
+  .lab b { font-size: 50px; font-weight: 900; letter-spacing: 4px; line-height: 1.15; }
+  .lab b em { font-style: normal; font-size: 30px; color: var(--ink-faint); margin: 0 6px; vertical-align: 8px; }
+  .lab.r b { color: var(--cinnabar); }
+  .lab span { font-size: 23px; letter-spacing: 2px; line-height: 1.45; color: var(--ink-soft); margin-top: 6px; }
+
+  .nid { display: flex; align-items: center; }
+  .nid .c { flex: 1; text-align: center; font-size: 29px; font-weight: 700; padding: 13px 0; border: 2px solid var(--ink); background: rgba(255,250,238,.55); letter-spacing: 1px; white-space: nowrap; }
+  .nid .c.huo { background: var(--cinnabar); border-color: var(--cinnabar); color: #f6e9d6; }
+  .nid .c.ye  { background: var(--ink); color: #f6e9d6; }
+  .nid .a { flex: none; width: 24px; text-align: center; color: var(--ink-soft); font-size: 22px; }
+  .nid .end { flex: none; margin-left: 14px; font-size: 27px; font-weight: 700; letter-spacing: 1px; white-space: nowrap; }
+  .nid.back .c { border: 2px dashed var(--cinnabar); color: var(--cinnabar); background: rgba(168,53,42,.05); font-size: 23px; letter-spacing: 0; padding: 16px 0; }
+  .nid.back .a { color: var(--cinnabar); }
+  .nid.back .c + .a { margin: 0 2px; }
+  .nid.back .end { color: var(--cinnabar); }
+
+  .legend { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 26px; margin-top: 12px; font-size: 24px; color: var(--ink-soft); }
+  .legend .sw { display: inline-block; width: 22px; height: 22px; vertical-align: -3px; margin-right: 8px; border: 2px solid var(--ink); }
+  .legend .sw.huo { background: var(--cinnabar); border-color: var(--cinnabar); }
+  .legend .sw.ye { background: var(--ink); }
+  .legend .sw.shi { background: rgba(255,250,238,.7); }
+  .legend b { color: var(--ink); }
+  .legend .src { margin-left: auto; font-size: 22px; color: var(--ink-faint); }
+
+  .up { display: grid; grid-template-columns: 250px 1fr; column-gap: 30px; margin: 10px 0; }
+  .up div:last-child { font-size: 26px; color: var(--cinnabar); letter-spacing: 1px; padding-left: 6px; }
+  .up div:last-child b { font-size: 30px; margin-right: 10px; }
+
+  /* 三十七道品 */
+  .dp { display: grid; grid-template-columns: repeat(6, 1fr) 2.75fr; gap: 12px; align-items: stretch; }
+  .dp .g { display: flex; flex-direction: column; justify-content: center; text-align: center; padding: 12px 4px 10px; border-top: 6px solid var(--ink); background: rgba(255,250,238,.5); }
+  .dp .g b { display: block; font-size: 31px; font-weight: 900; letter-spacing: 2px; }
+  .dp .g span { font-size: 22px; color: var(--ink-soft); }
+  .dp .g.r { border-top-color: var(--cinnabar); background: rgba(168,53,42,.08); text-align: left; padding: 12px 20px 10px; }
+  .dp .g.r b { color: var(--cinnabar); display: inline; margin-right: 14px; }
+  .dp .g.r .hd { display: block; }
+  .dp .g.r .items { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px 8px; }
+  .dp .g.r .items i { font-style: normal; font-size: 23px; padding: 1px 10px; border: 1.5px solid var(--cinnabar); color: var(--ink); }
+  .sum { margin-top: 10px; font-size: 24px; color: var(--ink-soft); }
+  .sum b { color: var(--ink); }
+
+  .nid.back .a { width: 16px; font-size: 18px; }
+  .q { margin-top: 26px; font-size: 27px; line-height: 1.6; letter-spacing: .5px; border-left: 6px solid var(--cinnabar); padding: 4px 0 4px 24px; }
+  .q small { display: block; font-size: 22px; color: var(--ink-soft); }
+</style>
+</head>
+<body class="review">
+
+<!-- ===== 总图：四圣谛、十二因缘、三十七道品 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 03 · 四圣谛</span><span class="pg"></span></div>
+  <div class="top">
+    <div>
+      <div class="kicker">总图</div>
+      <h1 class="title">四圣谛 · 十二因缘 · 三十七道品</h1>
+    </div>
+    <div class="di4">
+      <div class="half"><div class="cap">世间的因果</div><div class="ch"><b>苦</b><b>集</b></div></div>
+      <div class="half"><div class="cap r">出世间的因果</div><div class="ch"><b class="r">灭</b><b class="r">道</b></div></div>
+    </div>
+  </div>
+  <div class="rule"></div>
+
+  <!-- 集·苦：十二因缘顺转 -->
+  <div class="row">
+    <div class="lab"><b>集<em>→</em>苦</b><span>十二因缘顺转<br>流转</span></div>
+    <div>
+      <div class="nid">
+        <div class="c huo">无明</div><div class="a">→</div><div class="c ye">行</div><div class="a">→</div><div class="c">识</div><div class="a">→</div><div class="c">名色</div><div class="a">→</div><div class="c">六入</div><div class="a">→</div><div class="c">触</div><div class="a">→</div><div class="c">受</div><div class="a">→</div><div class="c huo">爱</div><div class="a">→</div><div class="c huo">取</div><div class="a">→</div><div class="c ye">有</div><div class="a">→</div><div class="c">生</div><div class="a">→</div><div class="c">老死</div>
+        <div class="end">纯大苦聚集</div>
+      </div>
+      <div class="legend">
+        <span><i class="sw huo"></i>惑：无明、爱、取</span>
+        <span><i class="sw ye"></i>业：行、有</span>
+        <span>→ <b>集</b>（苦的因）</span>
+        <span><i class="sw shi"></i>事：其余七支 → <b>苦</b>（果）</span>
+        <span class="src">《俱舍论》卷9：三烦恼二业，七事亦名果</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 灭：十二因缘逆转 -->
+  <div class="row" style="margin-top:22px">
+    <div class="lab r"><b>灭</b><span>十二因缘逆转<br>还灭</span></div>
+    <div class="nid back" style="align-self:center">
+      <div class="c">无明灭</div><div class="a">→</div><div class="c">行灭</div><div class="a">→</div><div class="c">识灭</div><div class="a">→</div><div class="c">名色灭</div><div class="a">→</div><div class="c">六入灭</div><div class="a">→</div><div class="c">触灭</div><div class="a">→</div><div class="c">受灭</div><div class="a">→</div><div class="c">爱灭</div><div class="a">→</div><div class="c">取灭</div><div class="a">→</div><div class="c">有灭</div><div class="a">→</div><div class="c">生灭</div><div class="a">→</div><div class="c">老死灭</div>
+        <div class="end">纯大苦聚灭</div>
+    </div>
+  </div>
+
+  <div class="up"><div></div><div><b>↑</b>道是因，灭是果：依道修行，无明灭，乃至老死灭</div></div>
+
+  <!-- 道：八正道 → 三十七道品 -->
+  <div class="row">
+    <div class="lab r"><b>道</b><span>八正道<br>→ 三十七道品</span></div>
+    <div>
+      <div class="dp">
+        <div class="g"><b>四念处</b><span>4</span></div>
+        <div class="g"><b>四正勤</b><span>4</span></div>
+        <div class="g"><b>四神足</b><span>4</span></div>
+        <div class="g"><b>五根</b><span>5</span></div>
+        <div class="g"><b>五力</b><span>5</span></div>
+        <div class="g"><b>七觉支</b><span>7</span></div>
+        <div class="g r"><div class="hd"><b>八正道</b><span>8</span></div>
+          <div class="items"><i>正见</i><i>正思惟</i><i>正语</i><i>正业</i><i>正命</i><i>正精进</i><i>正念</i><i>正定</i></div>
+        </div>
+      </div>
+      <div class="sum">4 + 4 + 4 + 5 + 5 + 7 + 8 ＝ <b>三十七道品</b>　　八正道是道的主干，三十七道品是展开后的全部</div>
+    </div>
+  </div>
+
+  <div class="q">「谓八圣道，正见、正志、正语、正业、正命、正方便、正念、正定。我从彼道见老病死、老病死集、老病死灭、老病死灭道迹……」<small>《杂阿含经》卷 12 第 287 经（T99）　佛自述：依八圣道，看见十二支各自的集、灭、灭道迹</small></div>
+
+  <div class="foot"><span>佛学图文 · 四圣谛</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+</section>
+
+<script>
+  var cards = document.querySelectorAll('.card');
+  cards.forEach(function (el, i) {
+    el.id = 'c' + (i + 1);
+    var pg = el.querySelector('.pg');
+    if (pg) pg.textContent = (i + 1) + ' / ' + cards.length;
+  });
+  var m = location.search.match(/[?&]c=(\d+)/);
+  if (m) {
+    document.body.className = 'single';
+    var el = document.getElementById('c' + m[1]);
+    if (el) el.classList.add('on');
+  }
+</script>
+</body>
+</html>
