@@ -153,11 +153,94 @@
   .sq .gs div { text-align: center; font-size: 24px; padding: 4px 0; border: 1.5px solid var(--line); background: rgba(255,250,238,.5); }
   .sq .gs div small { font-size: 19px; color: var(--ink-faint); margin-left: 4px; }
   .sq .gs div.r { border: 2px solid var(--cinnabar); color: var(--cinnabar); font-weight: 700; background: rgba(168,53,42,.08); }
+
+  /* ===== 苦集卡 ===== */
+  .ks { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .ks .blk { padding: 14px 26px 14px; background: rgba(255,250,238,.45); border-top: 6px solid var(--ink); }
+  .ks .blk .h { display: flex; align-items: baseline; gap: 16px; }
+  .ks .blk .h b { font-size: 40px; font-weight: 900; letter-spacing: 4px; }
+  .ks .blk .h span { font-size: 23px; color: var(--ink-soft); }
+  .ks .pl { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .ks .pl i { font-style: normal; font-size: 25px; padding: 2px 12px; border: 2px solid var(--ink); background: rgba(255,250,238,.6); }
+  .ks .pl i.last { border-color: var(--cinnabar); color: var(--cinnabar); font-weight: 700; }
+  .ks .blk p { font-size: 25px; line-height: 1.55; margin-top: 8px; }
+  .ks .blk .s { font-size: 21px; color: var(--ink-faint); margin-top: 6px; }
+
+  .sj { display: grid; grid-template-columns: 2fr 5fr 3fr 2fr; gap: 10px; margin-top: 24px; }
+  .sj div { text-align: center; font-size: 24px; letter-spacing: 2px; padding: 6px 0 8px; border-bottom: 4px solid var(--ink); }
+  .sj div b { font-weight: 900; margin-left: 10px; }
+  .sj div.ji b { color: var(--cinnabar); }
+  .sj div.ji { border-bottom-color: var(--cinnabar); }
+  .sj div small { display: block; font-size: 19px; color: var(--ink-faint); letter-spacing: 1px; }
+
+  .zh { display: grid; grid-template-columns: repeat(12, 1fr); gap: 10px; margin-top: 12px; }
+  .zh .z { background: rgba(255,250,238,.5); border: 2px solid var(--ink); display: flex; flex-direction: column; }
+  .zh .z .n { text-align: center; font-size: 32px; font-weight: 900; padding: 8px 0; letter-spacing: 1px; border-bottom: 2px solid var(--ink); }
+  .zh .z.huo { border-color: var(--cinnabar); }
+  .zh .z.huo .n { background: var(--cinnabar); color: #f6e9d6; border-bottom-color: var(--cinnabar); }
+  .zh .z.ye .n { background: var(--ink); color: #f6e9d6; }
+  .zh .z .d { font-size: 22px; line-height: 1.5; padding: 10px 6px 10px; color: var(--ink); text-align: center; }
+  .zh .z .t { font-size: 22px; font-weight: 700; color: var(--ink-soft); text-align: center; padding: 4px 0; margin-top: auto; letter-spacing: 2px; border-top: 1px solid var(--line); }
+  .zh .z.huo .t { color: var(--cinnabar); }
   .q { margin-top: 18px; font-size: 27px; line-height: 1.6; letter-spacing: .5px; border-left: 6px solid var(--cinnabar); padding: 4px 0 4px 24px; }
   .q small { display: block; font-size: 22px; color: var(--ink-soft); }
 </style>
 </head>
 <body class="review">
+
+<!-- ===== 苦集 与 十二因缘顺转 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 03 · 四圣谛</span><span class="pg"></span></div>
+  <div class="top">
+    <div>
+      <div class="kicker">苦 · 集 → 十二因缘顺转</div>
+      <h1 class="title">苦从哪里来：流转门</h1>
+    </div>
+    <div class="di4">
+      <div class="half"><div class="cap r">世间的因果</div><div class="ch"><b class="r">苦</b><b class="r">集</b></div></div>
+      <div class="half" style="opacity:.35"><div class="cap">出世间的因果</div><div class="ch"><b>灭</b><b>道</b></div></div>
+    </div>
+  </div>
+  <div class="rule"></div>
+
+  <div class="ks">
+    <div class="blk">
+      <div class="h"><b>苦</b><span>果 · 八苦</span></div>
+      <div class="pl"><i>生苦</i><i>老苦</i><i>病苦</i><i>死苦</i><i>怨憎会苦</i><i>爱别离苦</i><i>所求不得苦</i><i class="last">略五盛阴苦</i></div>
+      <div class="s">《中阿含经》卷 7 第 31 经 分别圣谛经</div>
+    </div>
+    <div class="blk" style="border-top-color:var(--cinnabar)">
+      <div class="h"><b style="color:var(--cinnabar)">集</b><span>因 · 经中叫「爱习苦习圣谛」</span></div>
+      <p>对内六处、对妻子财物「有爱、有腻、有染、有著」，是名为习。<br>放到十二支里：<b class="red">惑</b>（无明、爱、取）加上<b>业</b>（行、有），就是集。</p>
+      <div class="s">《中阿含经》卷 7 第 31 经；《俱舍论》卷 9「三烦恼二业，七事亦名果」</div>
+    </div>
+  </div>
+
+  <div class="sj">
+    <div class="ji">过去世<b>因 · 集</b><small>前际二支</small></div>
+    <div>现在世<b>果 · 苦</b><small>中际五支</small></div>
+    <div class="ji">现在世<b>因 · 集</b><small>中际三支</small></div>
+    <div>未来世<b>果 · 苦</b><small>后际二支</small></div>
+  </div>
+  <div class="zh">
+    <div class="z huo"><div class="n">无明</div><div class="d">不知前后际<br>不知业报<br>不知苦集<br>灭道</div><div class="t">惑</div></div>
+    <div class="z ye"><div class="n">行</div><div class="d">身行<br>口行<br>意行</div><div class="t">业</div></div>
+    <div class="z"><div class="n">识</div><div class="d">六识身<br>眼识乃至<br>意识</div><div class="t">事</div></div>
+    <div class="z"><div class="n">名色</div><div class="d">名：受想<br>行识四阴<br>色：四大<br>及所造色</div><div class="t">事</div></div>
+    <div class="z"><div class="n">六入</div><div class="d">眼耳鼻舌<br>身意<br>六内入处</div><div class="t">事</div></div>
+    <div class="z"><div class="n">触</div><div class="d">六触身<br>眼触乃至<br>意触</div><div class="t">事</div></div>
+    <div class="z"><div class="n">受</div><div class="d">苦受<br>乐受<br>不苦不乐受</div><div class="t">事</div></div>
+    <div class="z huo"><div class="n">爱</div><div class="d">欲爱<br>色爱<br>无色爱</div><div class="t">惑</div></div>
+    <div class="z huo"><div class="n">取</div><div class="d">欲取<br>见取<br>戒取<br>我取</div><div class="t">惑</div></div>
+    <div class="z ye"><div class="n">有</div><div class="d">欲有<br>色有<br>无色有</div><div class="t">业</div></div>
+    <div class="z"><div class="n">生</div><div class="d">得阴、得界<br>得入处<br>得命根</div><div class="t">事</div></div>
+    <div class="z"><div class="n">老死</div><div class="d">发白皮缓<br>身坏寿尽<br>命灭</div><div class="t">事</div></div>
+  </div>
+
+  <div class="q" style="margin-top:20px">「此有故彼有，此起故彼起，谓缘无明行，乃至纯大苦聚集。」<small>《杂阿含经》卷 12 第 298 经（T99）：十二支的解释同出此经。三世两重因果依《俱舍论》卷 9「十二支三际，前后际各二，中八据圆满」</small></div>
+
+  <div class="foot"><span>佛学图文 · 四圣谛</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+</section>
 
 <!-- ===== 总图：四圣谛、十二因缘、三十七道品 ===== -->
 <section class="card">
