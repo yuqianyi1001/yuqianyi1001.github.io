@@ -3,14 +3,8 @@
 坐标按原图 756×602 像素量取，SVG viewBox 与原图一致。"""
 import pathlib, re
 
-FILL = {  # 原图的玻璃质感配色：上浅下深
-    'w': ('#ffffff', '#f1f1f1', '#3a3a3a'),
-    'c': ('#b6f3f3', '#4fc9cf', '#2b7f86'),   # 慧：青
-    'y': ('#ffff9a', '#f3e61e', '#8f8a12'),   # 念：黄
-    'o': ('#ffd38a', '#f0981e', '#9a5a0c'),   # 精进：橙
-    'g': ('#a8f5a0', '#3cc43a', '#24772a'),   # 定：绿
-    'r': ('#ffc2c2', '#e46e6e', '#9a3434'),   # 信：红
-}
+import sys; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from xmind import FILL, LINE as C, defs, box as _box, toggle, inject
 LEAF, GROUP = [], []
 def leaves(items, x0=None, x1=None, ys=None):
     for (txt, col, a, b), y in zip(items, ys):
@@ -54,7 +48,6 @@ CENTER = (286, 274, 452, 336)
 SOLID = [((282,110),(355,274)), ((456,110),(384,274)), ((430,274),(509,244)), ((446,334),(510,363)),
          ((383,336),(455,503)), ((356,336),(282,503)), ((286,318),(224,324))]
 
-C = {'y':'#c4cb34','b':'#a2520e','r':'#b02a2a','g':'#1d6e1d','n':'#16166e','k':'#111111'}
 # (颜色, 路径, 是否箭头, [(标签, x, y)])
 DOTS = [
     ('y','M454,104 C390,108 262,126 194,166',0,[('=',323,124)]),
@@ -78,21 +71,11 @@ DOTS = [
     ('k','M455,117 C400,150 272,238 222,301',1,[('滿足',334,203)]),
 ]
 
-def box(x0, y0, x1, y1, col, r, fs, txt, bold=False):
-    top, bot, stroke = FILL[col]
-    gid = f'g{col}'
-    cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
-    return (f'<rect x="{x0}" y="{y0}" width="{x1-x0}" height="{y1-y0}" rx="{r}" fill="url(#{gid})" stroke="{stroke}" stroke-width="0.9"/>'
-            f'<rect x="{x0+1.2}" y="{y0+1.2}" width="{x1-x0-2.4}" height="{(y1-y0)*0.42}" rx="{max(r-1,1)}" fill="#fff" opacity="{0.35 if col!="w" else 0}"/>'
-            f'<text x="{cx}" y="{cy+fs*0.36}" font-size="{fs}" text-anchor="middle"{" font-weight=\"600\"" if bold else ""}>{txt}</text>')
+def box(x0, y0, x1, y1, col, r, fs, txt):
+    return _box(x0, y0, x1, y1, col, r, fs, txt)
 
 def svg():
-    o = ['<svg class="mm" viewBox="0 0 756 602" xmlns="http://www.w3.org/2000/svg">', '<defs>']
-    for k, (top, bot, _) in FILL.items():
-        o.append(f'<linearGradient id="g{k}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{top}"/><stop offset="1" stop-color="{bot}"/></linearGradient>')
-    for k, c in C.items():
-        o.append(f'<marker id="a{k}" viewBox="0 0 8 8" refX="7.4" refY="4" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,0.6 L7.4,4 L1,7.4" fill="none" stroke="{c}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>')
-    o.append('</defs>')
+    o = ['<svg class="mm" viewBox="0 0 756 602" xmlns="http://www.w3.org/2000/svg">'] + defs()
     # 实线：中心到各组
     for (a, b) in SOLID:
         o.append(f'<line x1="{a[0]}" y1="{a[1]}" x2="{b[0]}" y2="{b[1]}" stroke="#222" stroke-width="0.9"/>')
@@ -115,7 +98,7 @@ def svg():
         o.append(box(x0, y0, x1, y1, col, 3, 11.5, txt))
     for name, (x0,y0,x1,y1), col, (mx,my), *_ in GROUPS:
         o.append(box(x0, y0, x1, y1, col, 6, 16.5, name))
-        o.append(f'<circle cx="{mx}" cy="{my}" r="4" fill="#e3ebf7" stroke="#8aa3c8" stroke-width="0.8"/><line x1="{mx-2.2}" y1="{my}" x2="{mx+2.2}" y2="{my}" stroke="#5a78a8" stroke-width="0.9"/>')
+        o.append(toggle(mx, my))
     o.append(box(*CENTER, 'w', 10, 25, '三十七道品'))
     # 标签（放在节点之后、带底色，避免被线穿过）
     for col, d, arrow, labels in DOTS:
@@ -125,8 +108,5 @@ def svg():
     o.append('</svg>')
     return '\n'.join(o)
 
-p = pathlib.Path(__file__).resolve().parent.parent / 'cards.html'
-s = p.read_text()
-s = re.sub(r'(<!-- MINDMAP37 -->).*?(<!-- /MINDMAP37 -->)', lambda m: m.group(1) + '\n' + svg() + '\n' + m.group(2), s, flags=re.S)
-p.write_text(s)
+inject('MINDMAP37', svg())
 print('ok')
