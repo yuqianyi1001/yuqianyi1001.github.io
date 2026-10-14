@@ -4,6 +4,7 @@
 import pathlib, re
 
 import sys; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import xmind
 from xmind import FILL, LINE as C, defs, box as _box, toggle, inject
 LEAF, GROUP = [], []
 def leaves(items, x0=None, x1=None, ys=None):
@@ -74,8 +75,13 @@ DOTS = [
 def box(x0, y0, x1, y1, col, r, fs, txt):
     return _box(x0, y0, x1, y1, col, r, fs, txt)
 
-def svg():
-    o = ['<svg class="mm" viewBox="0 0 756 602" xmlns="http://www.w3.org/2000/svg">'] + defs()
+S2T = str.maketrans('', '')
+SIMP = str.maketrans({'見':'见','語':'语','業':'业','進':'进','覺':'觉','擇':'择','捨':'舍','惡':'恶','斷':'断',
+                      '習':'习','觀':'观','聖':'圣','諦':'谛','滿':'满','勤':'勤','益':'益'})
+
+def body(simplified=False):
+    tr = SIMP if simplified else S2T
+    o = []
     # 实线：中心到各组
     for (a, b) in SOLID:
         o.append(f'<line x1="{a[0]}" y1="{a[1]}" x2="{b[0]}" y2="{b[1]}" stroke="#222" stroke-width="0.9"/>')
@@ -90,8 +96,7 @@ def svg():
         o.append(f'<line x1="{bx}" y1="{my}" x2="{gx}" y2="{my}" stroke="#333" stroke-width="0.9"/>')
     # 虚线（点线）关系
     for col, d, arrow, labels in DOTS:
-        mk = f' marker-start="url(#a{col})"' if False else ''
-        mk = f' marker-end="url(#a{col})"' if arrow else ''
+        mk = f' marker-end="url(#{xmind.PFX}a{col})"' if arrow else ''
         o.append(f'<path d="{d}" fill="none" stroke="{C[col]}" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"{mk}/>')
     # 节点
     for x0, y0, x1, y1, txt, col in LEAF:
@@ -105,8 +110,11 @@ def svg():
         for t, x, y in labels:
             o.append(f'<text x="{x}" y="{y}" font-size="{11 if t!="=" else 11}" text-anchor="middle" fill="#555" class="lb">{t}</text>')
     o.append('<text x="24" y="371" font-size="11" text-anchor="middle" fill="#555" class="lb">四聖諦</text>')
-    o.append('</svg>')
-    return '\n'.join(o)
+    return [x.translate(tr) for x in o]
 
-inject('MINDMAP37', svg())
-print('ok')
+def svg():
+    return '\n'.join(['<svg class="mm" viewBox="0 0 756 602" xmlns="http://www.w3.org/2000/svg">'] + defs() + body() + ['</svg>'])
+
+if __name__ == '__main__':
+    inject('MINDMAP37', svg())
+    print('ok')
