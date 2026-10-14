@@ -7,21 +7,21 @@ import sys, pathlib
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import xmind
 xmind.PFX = 'ov'
-from xmind import defs, box, toggle, dotted, solid, label, inject
+from xmind import TIER1, TIER2, defs, box, toggle, dotted, solid, label, inject
 import mindmap37
 
 FS = 19
 TYPE = {'无明': 'r', '爱': 'r', '取': 'r', '行': 'b', '有': 'b'}
 LINKS = ['无明', '行', '识', '名色', '六入', '触', '受', '爱', '取', '有', '生', '老死']
 BX0, BX1, NX = 318, 398, 494          # 顺转框、逆转文字的位置
-ROW0, PITCH, BH = 190, 56, 30
+ROW0, PITCH, BH = 150, 56, 30
 def ry(i): return ROW0 + i * PITCH
 def mid(i, j): return (ry(i) + ry(j) + BH) / 2
 
 CENTER = (236, 16, 436, 92)
-YIN = (306, 112, 410, 146)
-JI, KU = (40, 300, 120, 344), (40, 600, 120, 644)
-MIE, DAO = (690, 20, 770, 60), (1124, 20, 1204, 60)
+YIN = (350, 854, 502, 906)   # 十二因缘标题放在一列的下方
+JI, KU = (40, 270, 120, 316), (40, 580, 120, 626)
+MIE, DAO = (690, 18, 770, 64), (1124, 18, 1204, 64)
 # 三十七道品导图：原图 756×602，缩放后放在右侧
 MX, MY, MS = 680, 128, 1.312
 def mp(x, y): return (MX + x * MS, MY + y * MS)
@@ -34,12 +34,12 @@ def svg():
     o = [f'<svg class="mm" viewBox="0 0 1680 920" xmlns="http://www.w3.org/2000/svg">'] + defs()
     # 嵌入的三十七道品导图
     o.append(f'<g transform="translate({MX},{MY}) scale({MS})">')
-    o += mindmap37.body(simplified=True)
+    o += mindmap37.body(simplified=True, emph=True)
     o.append('</g>')
     # 树干
     cx = (BX0 + BX1) / 2
     for a, b in [((236, 60), (80, 300)), ((250, 92), (80, 600)), ((436, 40), (690, 40)),
-                 ((436, 76), (1124, 50)), ((cx, 92), (cx, 112)), ((1164, 60), mp(369, 274))]:
+                 ((436, 76), (1124, 50)), ((1164, 64), mp(369, 274))]:
         o.append(solid(a, b))
     # 三世两重因果的括号
     for i, j, t, who in SEGS:
@@ -52,17 +52,17 @@ def svg():
         ty = mid(i, j)
         col = 'r' if who == 'ji' else 's'
         o.append(dotted(col, f'M{sx},{sy} C{sx+60},{sy} {BRX-130},{ty} {BRX-76},{ty}', True))
-    o.append(dotted('k', f'M80,{JI[3]} L80,{KU[1]-3}', True)); o.append(label('因 → 果', 80, 480, 17))
+    o.append(dotted('k', f'M80,{JI[3]} L80,{KU[1]-3}', True)); o.append(label('因 → 果', 80, 455, 17))
     # 灭 ＝ 逆转那一列；道 → 灭：因 → 果
     o.append(dotted('g', f'M{MIE[0]},{MIE[3]-6} C{MIE[0]-80},{MIE[3]+30} {NX+40},{ROW0-60} {NX+6},{ROW0-38}', True))
-    o.append(label('＝', 600, 112, 17))
+    o.append(label('＝', 600, 96, 17))
     o.append(dotted('k', f'M{DAO[0]},{DAO[1]+6} C{DAO[0]-120},{DAO[1]-14} {MIE[2]+110},{MIE[1]-14} {MIE[2]+3},{MIE[1]+8}', True))
     o.append(label('因 → 果', 950, 14, 17))
     # 节点
-    o.append(box(*CENTER, 'w', 12, 44, '四圣谛'))
+    o.append(box(*CENTER, 'w', 12, 46, '四圣谛', **TIER1))
     for r, t, c in [(JI, '集', 'w'), (KU, '苦', 'w'), (MIE, '灭', 'm'), (DAO, '道', 'm')]:
-        o.append(box(*r, c, 8, 28, t))
-    o.append(box(*YIN, 'w', 7, 21, '十二因缘'))
+        o.append(box(*r, c, 8, 27, t, **TIER2))
+    o.append(box(*YIN, 'w', 9, 30, '十二因缘', **TIER1))
     o.append(f'<text x="{cx}" y="{ROW0-14}" font-size="17" text-anchor="middle" class="lg">顺转</text>')
     o.append(f'<text x="{NX}" y="{ROW0-14}" font-size="17" text-anchor="middle" class="ni">逆转</text>')
     for i, t in enumerate(LINKS):
@@ -76,7 +76,7 @@ def svg():
     o.append(f'<text x="{cx}" y="{yend}" font-size="19" text-anchor="middle" class="ar">纯大苦聚集</text>')
     o.append(f'<text x="{NX}" y="{yend}" font-size="19" text-anchor="middle" class="ni">纯大苦聚灭</text>')
     # 图例
-    for (x0, y0, c, t) in [(30, 780, 'r', '惑'), (130, 780, 'b', '业'), (30, 814, 'w', '事'), (130, 814, 'm', '还灭')]:
+    for (x0, y0, c, t) in [(30, 760, 'r', '惑'), (130, 760, 'b', '业'), (30, 794, 'w', '事'), (130, 794, 'm', '还灭')]:
         o.append(box(x0, y0, x0 + 30, y0 + 20, c, 3, 9, ''))
         o.append(f'<text x="{x0+38}" y="{y0+17}" font-size="18" class="lg">{t}</text>')
     o.append('</svg>')

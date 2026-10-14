@@ -5,7 +5,7 @@ import pathlib, re
 
 import sys; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import xmind
-from xmind import FILL, LINE as C, defs, box as _box, toggle, inject
+from xmind import FILL, LINE as C, TIER1, TIER2, defs, box as _box, toggle, inject
 LEAF, GROUP = [], []
 def leaves(items, x0=None, x1=None, ys=None):
     for (txt, col, a, b), y in zip(items, ys):
@@ -72,18 +72,20 @@ DOTS = [
     ('k','M455,117 C400,150 272,238 222,301',1,[('滿足',334,203)]),
 ]
 
-def box(x0, y0, x1, y1, col, r, fs, txt):
-    return _box(x0, y0, x1, y1, col, r, fs, txt)
+def box(x0, y0, x1, y1, col, r, fs, txt, **kw):
+    return _box(x0, y0, x1, y1, col, r, fs, txt, **kw)
 
 S2T = str.maketrans('', '')
 SIMP = str.maketrans({'見':'见','語':'语','業':'业','進':'进','覺':'觉','擇':'择','捨':'舍','惡':'恶','斷':'断',
                       '習':'习','觀':'观','聖':'圣','諦':'谛','滿':'满','勤':'勤','益':'益'})
 
-def body(simplified=False):
+def body(simplified=False, emph=False):
+    """emph=True：嵌入总图时用，八正道按第一层强调、三十七道品按第二层强调；单独那张原图不强调。"""
     tr = SIMP if simplified else S2T
     o = []
     # 实线：中心到各组
     for (a, b) in SOLID:
+        if emph and a == (282, 110): a = (296, 112)
         o.append(f'<line x1="{a[0]}" y1="{a[1]}" x2="{b[0]}" y2="{b[1]}" stroke="#222" stroke-width="0.9"/>')
     # 树形括号
     for name, (x0,y0,x1,y1), col, (mx,my), bx, (ya,yb), side, (edge,) in GROUPS:
@@ -102,9 +104,12 @@ def body(simplified=False):
     for x0, y0, x1, y1, txt, col in LEAF:
         o.append(box(x0, y0, x1, y1, col, 3, 11.5, txt))
     for name, (x0,y0,x1,y1), col, (mx,my), *_ in GROUPS:
-        o.append(box(x0, y0, x1, y1, col, 6, 16.5, name))
+        if emph and name == '八正道':
+            o.append(box(212, 84, 296, 132, col, 7, 22, name, **TIER1))
+        else:
+            o.append(box(x0, y0, x1, y1, col, 6, 16.5, name))
         o.append(toggle(mx, my))
-    o.append(box(*CENTER, 'w', 10, 25, '三十七道品'))
+    o.append(box(*CENTER, 'w', 10, 21, '三十七道品', **TIER2) if emph else box(*CENTER, 'w', 10, 25, '三十七道品'))
     # 标签（放在节点之后、带底色，避免被线穿过）
     for col, d, arrow, labels in DOTS:
         for t, x, y in labels:

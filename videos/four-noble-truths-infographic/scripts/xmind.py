@@ -11,6 +11,10 @@ FILL = {  # 上浅、下深、描边
     'b': ('#d6e2ff', '#86a0dc', '#3d5592'),   # 业：蓝
     'm': ('#e9fbe6', '#b9e8b0', '#4f8a4a'),   # 灭：浅绿
 }
+# 层级强调：第一层朱红粗框，第二层深色粗框
+TIER1 = dict(weight=700, sw=2.6, sc='#a8352a')
+TIER2 = dict(weight=600, sw=1.8, sc='#222222')
+
 LINE = {'y': '#c4cb34', 'b': '#a2520e', 'r': '#b02a2a', 'g': '#1d6e1d', 'n': '#16166e',
         'k': '#111111', 'u': '#3d5592', 's': '#555555'}
 
@@ -25,11 +29,12 @@ def defs():
     o.append('</defs>')
     return o
 
-def box(x0, y0, x1, y1, col, r, fs, txt, weight=None):
+def box(x0, y0, x1, y1, col, r, fs, txt, weight=None, sw=0.9, sc=None):
     top, bot, stroke = FILL[col]
+    stroke = sc or stroke
     cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
     fw = f' font-weight="{weight}"' if weight else ''
-    return (f'<rect x="{x0}" y="{y0}" width="{x1-x0}" height="{y1-y0}" rx="{r}" fill="url(#{PFX}g{col})" stroke="{stroke}" stroke-width="0.9"/>'
+    return (f'<rect x="{x0}" y="{y0}" width="{x1-x0}" height="{y1-y0}" rx="{r}" fill="url(#{PFX}g{col})" stroke="{stroke}" stroke-width="{sw}"/>'
             f'<rect x="{x0+1.2}" y="{y0+1.2}" width="{x1-x0-2.4}" height="{(y1-y0)*0.42}" rx="{max(r-1,1)}" fill="#fff" opacity="{0.35 if col!="w" else 0}"/>'
             f'<text x="{cx}" y="{cy+fs*0.36}" font-size="{fs}" text-anchor="middle"{fw}>{txt}</text>')
 
