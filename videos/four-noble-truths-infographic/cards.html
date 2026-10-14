@@ -235,11 +235,153 @@
   .card.xm .foot { top: 30px; bottom: auto; justify-content: flex-end; }
   .card.xm .foot > span:first-child { display: none; }
   .card.xm .head .pg { display: none; }
+
+  /* ===== 封面、经证卡 ===== */
+  .bg-char { right: 40px; top: 60px; font-size: 760px; color: rgba(42,36,30,.045); position: absolute; font-weight: 900; line-height: 1; }
+  .cover { height: 100%; display: grid; grid-template-columns: 1fr 1010px; column-gap: 60px; align-content: center; align-items: center; }
+  .cover .big { font-size: 150px; font-weight: 900; letter-spacing: 16px; line-height: 1.15; }
+  .cover .sub { margin-top: 30px; font-size: 36px; letter-spacing: 5px; color: var(--ink-soft); line-height: 1.7; }
+  .chain { display: flex; flex-direction: column; }
+  .chain .n { display: grid; grid-template-columns: 250px 120px 1fr; align-items: baseline; padding: 20px 28px; background: rgba(255,250,238,.4); border-top: 6px solid var(--ink); }
+  .chain .n.r { border-top-color: var(--cinnabar); background: rgba(168,53,42,.06); }
+  .chain .n b { font-size: 46px; font-weight: 900; letter-spacing: 4px; }
+  .chain .n em { font-style: normal; font-size: 34px; font-weight: 700; color: var(--cinnabar); letter-spacing: 4px; }
+  .chain .n span { font-size: 28px; color: var(--ink-soft); line-height: 1.5; }
+  .chain .gap { height: 14px; }
+  .cols3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; }
+  .cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .ev { padding: 22px 28px 20px; background: rgba(255,250,238,.45); border-top: 6px solid var(--ink); display: flex; flex-direction: column; }
+  .ev.r { border-top-color: var(--cinnabar); }
+  .ev h3 { font-size: 40px; font-weight: 900; letter-spacing: 4px; }
+  .ev .tag { font-size: 24px; color: var(--cinnabar); letter-spacing: 2px; margin: 2px 0 12px; }
+  .ev .qt { font-size: 29px; line-height: 1.6; border-left: 5px solid var(--cinnabar); padding-left: 18px; margin-bottom: 12px; }
+  .ev p { font-size: 26px; line-height: 1.6; }
+  .ev .s { margin-top: auto; padding-top: 10px; font-size: 21px; color: var(--ink-faint); line-height: 1.45; }
+  .concl { margin-top: 26px; font-size: 32px; line-height: 1.55; font-weight: 700; border-left: 8px solid var(--cinnabar); background: rgba(168,53,42,.08); padding: 16px 28px; }
+  /* 四谛表 + 三转十二行 */
+  .dt { display: grid; grid-template-columns: 170px repeat(4, 1fr); gap: 8px; }
+  .dt .h { text-align: center; padding: 10px 0; font-size: 44px; font-weight: 900; letter-spacing: 6px; border-top: 6px solid var(--ink); background: rgba(255,250,238,.45); }
+  .dt .h.r { border-top-color: var(--cinnabar); color: var(--cinnabar); background: rgba(168,53,42,.07); }
+  .dt .h small { display: block; font-size: 21px; font-weight: 400; letter-spacing: 1px; color: var(--ink-soft); }
+  .dt .rl { display: flex; align-items: center; font-size: 26px; font-weight: 700; letter-spacing: 2px; padding-left: 4px; }
+  .dt .rl small { display: block; font-size: 19px; font-weight: 400; color: var(--ink-faint); letter-spacing: 0; }
+  .dt .c { font-size: 23px; line-height: 1.5; padding: 10px 14px; background: rgba(255,250,238,.5); border: 1px solid var(--line); }
+  .dt .c.k { text-align: center; font-size: 27px; font-weight: 700; }
+  .dt .c.k.r { color: var(--cinnabar); }
   .q { margin-top: 18px; font-size: 27px; line-height: 1.6; letter-spacing: .5px; border-left: 6px solid var(--cinnabar); padding: 4px 0 4px 24px; }
   .q small { display: block; font-size: 22px; color: var(--ink-soft); }
 </style>
 </head>
 <body class="review">
+
+<!-- ===== 封面 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 03 · 四圣谛</span><span class="pg"></span></div>
+  <div class="bg-char">谛</div>
+  <div class="cover">
+    <div>
+      <div class="kicker">佛教核心思想</div>
+      <div class="big">四圣谛</div>
+      <div class="sub">十二因缘 · 八正道 · 三十七道品<br>一组图看清它们的关系</div>
+    </div>
+    <div class="chain">
+      <div class="n r"><b>四圣谛</b><em>核心</em><span>苦 · 集 · 灭 · 道</span></div>
+      <div class="gap"></div>
+      <div class="n"><b>十二因缘</b><em>原理</em><span>苦集 → 顺转（流转）<br>灭道 → 逆转（还灭）</span></div>
+      <div class="gap"></div>
+      <div class="n"><b>八正道</b><em>方法</em><span>展开为三十七道品</span></div>
+      <div style="margin-top:28px;font-size:28px;line-height:1.6;color:var(--ink-soft);border-left:4px solid var(--cinnabar);padding-left:22px">四圣谛不是小乘思想。<br>大乘的中观、唯识、如来藏，都不离四圣谛。</div>
+    </div>
+  </div>
+  <div class="foot"><span>经论出处均可在 CBETA 检索</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 为什么四圣谛是核心 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 03 · 四圣谛</span><span class="pg"></span></div>
+  <div class="kicker">为什么是核心 · 一</div>
+  <h1 class="title">佛初转法轮讲四圣谛，一切善法都入四圣谛</h1>
+  <div class="rule"></div>
+  <div class="cols2">
+    <div class="ev r">
+      <h3>初转法轮</h3>
+      <div class="tag">佛在波罗㮈鹿野苑，为五比丘说</div>
+      <div class="qt">「我已于四圣谛三转十二行生眼、智、明、觉，故于诸天、魔、梵、沙门、婆罗门闻法众中，得出、得脱，自证得成阿耨多罗三藐三菩提。」</div>
+      <p>佛成道后第一次说法，讲的是四圣谛。佛自己说：对四圣谛三转十二行生起眼、智、明、觉，才自证成就无上正等正觉。</p>
+      <div class="s">《杂阿含经》卷 15 第 379 经（T99）</div>
+    </div>
+    <div class="ev">
+      <h3>象迹喻</h3>
+      <div class="tag">舍梨子告诸比丘</div>
+      <div class="qt">「若有无量善法，彼一切法皆四圣谛所摄，来入四圣谛中，谓四圣谛于一切法最为第一。……犹如诸畜之迹，象迹为第一。」</div>
+      <p>各种动物的脚印，都能放进大象的脚印里。各种善法，也都摄在四圣谛里面。</p>
+      <div class="s">《中阿含经》卷 7 第 30 经 象迹喻经（T26）</div>
+    </div>
+  </div>
+  <div class="concl">四圣谛是佛说法的起点，一切善法都摄在其中。所以说四圣谛是佛教的核心。</div>
+  <div class="foot"><span>佛学图文 · 四圣谛</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 大乘三系都不离四圣谛 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 03 · 四圣谛</span><span class="pg"></span></div>
+  <div class="kicker">为什么是核心 · 二</div>
+  <h1 class="title">大乘的中观、唯识、如来藏，都不离四圣谛</h1>
+  <div class="rule"></div>
+  <div class="cols3">
+    <div class="ev">
+      <h3>中观</h3>
+      <div class="tag">空，是为了成立四谛</div>
+      <div class="qt">「以有空义故，一切法得成。」<br>「若见因缘法，则为能见佛，见苦集灭道。」</div>
+      <p>有人质疑：一切皆空，就没有四圣谛了。龙树在观四谛品里回答：因为有空义，一切法才能成立；见缘起法，就能见苦集灭道。</p>
+      <div class="s">《中论》卷 4 观四谛品（T1564）</div>
+    </div>
+    <div class="ev">
+      <h3>唯识</h3>
+      <div class="tag">菩萨见道，观的是四谛</div>
+      <div class="qt">「缘安立谛有十六心……谓于苦谛有四种心……集、灭、道谛应知亦尔。」</div>
+      <p>讲菩萨见道（通达位）的相见道：于苦谛有苦法智忍、苦法智、苦类智忍、苦类智四心，集、灭、道谛也各有四心。</p>
+      <div class="s">《成唯识论》卷 9（T1585）</div>
+    </div>
+    <div class="ev r">
+      <h3>如来藏</h3>
+      <div class="tag">从灭谛讲如来藏</div>
+      <div class="qt">「所言苦灭者……如来法身不离烦恼藏，名如来藏。」</div>
+      <p>经中讲「无作四圣谛」，说圆满的知苦、断集、证灭、修道，「唯如来、应、等正觉事究竟」。接着从苦灭讲到如来法身、如来藏。</p>
+      <div class="s">《胜鬘经》（T353）</div>
+    </div>
+  </div>
+  <div class="concl">离开四圣谛，大乘的见道、修道就无从说起。四圣谛不是小乘思想，是佛教的核心思想。</div>
+  <div class="foot"><span>佛学图文 · 四圣谛</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 四圣谛是什么 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 03 · 四圣谛</span><span class="pg"></span></div>
+  <div class="kicker">四圣谛是什么</div>
+  <h1 class="title">苦、集、灭、道，与三转十二行</h1>
+  <div class="rule"></div>
+  <div class="dt">
+    <div></div>
+    <div class="h">苦<small>果 · 世间</small></div>
+    <div class="h">集<small>因 · 世间</small></div>
+    <div class="h r">灭<small>果 · 出世间</small></div>
+    <div class="h r">道<small>因 · 出世间</small></div>
+    <div class="rl"><span>是什么<small>分别圣谛经</small></span></div>
+    <div class="c">生苦、老苦、病苦、死苦、怨憎会苦、爱别离苦、所求不得苦、略五盛阴苦</div>
+    <div class="c">「爱习苦习圣谛」：于内六处、妻子财物「有爱、有腻、有染、有著，是名为习」</div>
+    <div class="c">「爱灭苦灭圣谛」：「不染不著、断舍吐尽、无欲、灭、止没，是名苦灭」</div>
+    <div class="c">「苦灭道圣谛」：正见、正志、正语、正业、正命、正方便、正念、正定</div>
+    <div class="rl"><span>示转<small>这是什么</small></span></div>
+    <div class="c k">此是苦</div><div class="c k">此是集</div><div class="c k r">此是灭</div><div class="c k r">此是道</div>
+    <div class="rl"><span>劝转<small>应当怎样</small></span></div>
+    <div class="c k">当知</div><div class="c k">当断</div><div class="c k r">当作证</div><div class="c k r">当修</div>
+    <div class="rl"><span>证转<small>已经做到</small></span></div>
+    <div class="c k">已知</div><div class="c k">已断</div><div class="c k r">已作证</div><div class="c k r">已修</div>
+  </div>
+  <div class="q" style="margin-top:22px">「苦圣谛知当复知……苦集圣谛已知当断……苦灭圣谛已知当作证……苦灭道迹圣谛已知当修。」<small>《杂阿含经》卷 15 第 379 经：四谛各三转，共十二行。四谛的解释依《中阿含经》卷 7 第 31 经 分别圣谛经（T26）</small></div>
+  <div class="foot"><span>佛学图文 · 四圣谛</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
 
 <!-- ===== 苦集 与 十二因缘顺转 ===== -->
 <section class="card">
