@@ -19,5 +19,5 @@ git clone https://github.com/yuqianyi1001/whiteboard-video-skills ../whiteboard-
 
 - 工具不在并排位置时设 `WB_HOME=<whiteboard-video-skills>/skills/whiteboard-video`。
 - `./wb` 把本目录 `config.json` 作为 `WB_CONFIG` 传给工具：只写与工具默认值不同的字段，其余（语速 1.1、响度 -16 LUFS、字幕、笔速等）沿用工具仓库的 `config.json`。
-- 配音用千问 Qwen-TTS 声音复刻：环境变量 `BAILIAN_TTS_MODEL`、`BAILIAN_TTS_VOICE`，API key `DASHSCOPE_API_KEY`（云端环境由代理注入时可不设）。
+- 配音用百炼 Qwen-Audio-TTS 声音复刻：环境变量 `BAILIAN_TTS_MODEL`（`qwen-audio-3.0-tts-plus`）、`BAILIAN_TTS_VOICE`（复刻得到的音色 ID），API key `DASHSCOPE_API_KEY`（云端环境由代理注入时可不设）。
 - 中间产物与成片在本目录 `build/`（不入库），成片复制到期目录 `成片.mp4`。

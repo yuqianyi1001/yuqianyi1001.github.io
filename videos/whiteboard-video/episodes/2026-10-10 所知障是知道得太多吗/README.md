@@ -35,7 +35,7 @@
 
 ## 配音
 
-- 配音用愚千一的声音复刻：2026-10-14 用用户提供的一段约 17 分钟的录音里 66.9–85.2 秒的一段讲话（18 秒）在百炼 `voice-enrollment` 复刻，目标模型 `qwen-audio-3.0-tts-plus`，音色 ID `qwen-audio-3.0-tts-plus-yuqianyi-4e0f9f3f46fc4f7290bf7b4822fc730a`，写在 `videos/whiteboard-video/config.json` 的 `tts.model` / `tts.voice`，以后各期直接复用。合成后 1.1 倍变速、响度标准化到 -16 LUFS。
+- 配音用愚千一的声音复刻：2026-10-14 用用户提供的一段约 17 分钟的录音里 66.9–85.2 秒的一段讲话（18 秒）在百炼 `voice-enrollment` 复刻，目标模型 `qwen-audio-3.0-tts-plus`，音色 ID `qwen-audio-3.0-tts-plus-yuqianyi-4e0f9f3f46fc4f7290bf7b4822fc730a`，配置在环境变量 `BAILIAN_TTS_MODEL` / `BAILIAN_TTS_VOICE`，以后各期直接复用。合成后 1.1 倍变速、响度标准化到 -16 LUFS。
 - 原来的 `qwen3-tts-vc-2026-01-22` 复刻模型已下线（接口返回 Model not exist），旧音色不能再用。
 - 配音走 whiteboard-video-skills 仓库的 `lib/tts-bailian.mjs`：`qwen-audio-*` 模型走 `audio/tts/SpeechSynthesizer` 接口。
 - 多音字替换（只改送给 TTS 的文本，写在 `videos/whiteboard-video/config.json` 的 `tts.pronunciation`）：种性→肿性、明处→明触、恚→会、执为→执维。
