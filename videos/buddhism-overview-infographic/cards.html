@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <title>佛教全景 · 小红书卡片</title>
 <style>
+  /* 本机没有宋体时（Linux 预览）用 Noto Serif SC；Mac 上用 Songti SC */
+  @font-face { font-family: "PreviewSerif"; font-weight: 400; src: local("Songti SC"), url("file:///root/.fonts/nss-400.woff2"); }
+  @font-face { font-family: "PreviewSerif"; font-weight: 700; src: local("Songti SC Bold"), url("file:///root/.fonts/nss-700.woff2"); }
+  @font-face { font-family: "PreviewSerif"; font-weight: 900; src: local("Songti SC Black"), url("file:///root/.fonts/nss-900.woff2"); }
   :root {
     --paper: #f2e8d2;
     --paper-deep: #e6d7b8;
@@ -17,7 +21,7 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     background: #8a8072;
-    font-family: "Songti SC", "STSong", serif;
+    font-family: "Songti SC", "STSong", "PreviewSerif", serif;
     color: var(--ink);
     -webkit-font-smoothing: antialiased;
   }
@@ -65,6 +69,7 @@
     transform: rotate(-2deg);
   }
   .foot .sign { display: flex; align-items: center; gap: 18px; }
+  .foot .url { text-align: right; line-height: 1.45; }
 
   h1.title {
     font-size: 72px; font-weight: 900; letter-spacing: 6px; line-height: 1.25;
@@ -203,7 +208,7 @@
 
   /* ---------- 总图 ---------- */
   .flow { display: block; margin-top: 0; }
-  .flow text { font-family: "Songti SC", "STSong", serif; }
+  .flow text { font-family: "Songti SC", "STSong", "PreviewSerif", serif; }
   .flow-legend { display: flex; gap: 44px; font-size: 25px; color: var(--ink-soft); margin-top: 18px; align-items: center; }
   .flow-legend i { display: inline-block; width: 60px; vertical-align: middle; margin-right: 12px; }
   .flow-legend .main i { border-top: 8px solid var(--cinnabar); }
@@ -300,7 +305,7 @@
       <div class="d sm"><span class="k">附</span><span class="v">汉传十宗的位置 · 学习建议</span></div>
     </div>
   </div>
-  <div class="foot"><span>经论编号均可在 CBETA 检索</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+  <div class="foot"><span>经论编号均可在 CBETA 检索</span><span class="sign"><span class="url">愚千一 · sutratoday.com<br>yuqianyi.com</span><span class="seal">愚千一</span></span></div>
 </section>
 
 <!-- ============ 佛教分期 ============ -->
@@ -337,7 +342,7 @@
     </div>
   </div>
 
-  <div class="foot"><span>佛学图文 · 佛教全景</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+  <div class="foot"><span>佛学图文 · 佛教全景</span><span class="sign"><span class="url">愚千一 · sutratoday.com<br>yuqianyi.com</span><span class="seal">愚千一</span></span></div>
 </section>
 
 <!-- ============ 四大思想体系 ============ -->
@@ -372,7 +377,7 @@
     <b>密教</b>不另立思想体系。藏传宗义书把佛教见地分为有部、经部、唯识、中观四部；宗喀巴《密宗道次第广论》说显、密的差别在方便，不在见地。<br>
     <b>印顺法师</b>在《印度之佛教》中称后三系为：性空唯名、虚妄唯识、真常唯心。
   </div>
-  <div class="foot"><span>佛学图文 · 佛教全景</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+  <div class="foot"><span>佛学图文 · 佛教全景</span><span class="sign"><span class="url">愚千一 · sutratoday.com<br>yuqianyi.com</span><span class="seal">愚千一</span></span></div>
 </section>
 
 <!-- ============ 总图 ============ -->
@@ -383,7 +388,7 @@
   <div class="rule" style="margin:28px 0 22px"></div>
   <svg class="flow lx-main" width="888" height="960" viewBox="0 0 888 960"><text x="105.0" y="34" text-anchor="middle" font-size="28" fill="#9a8d7a" letter-spacing="4">佛教分期</text><line x1="0" y1="54" x2="210" y2="54" stroke="#2a241e" stroke-width="3"/><text x="444.0" y="34" text-anchor="middle" font-size="28" fill="#9a8d7a" letter-spacing="4">思想体系</text><line x1="339" y1="54" x2="549" y2="54" stroke="#2a241e" stroke-width="3"/><text x="783.0" y="34" text-anchor="middle" font-size="28" fill="#9a8d7a" letter-spacing="4">传　承</text><line x1="678" y1="54" x2="888" y2="54" stroke="#2a241e" stroke-width="3"/><path d="M210,870 C274.5,870 274.5,650 339,650" fill="none" stroke="#5e5448" stroke-width="3" stroke-dasharray="9 7" stroke-opacity=".75"/><path d="M210,870 C274.5,870 274.5,790 339,790" fill="none" stroke="#5e5448" stroke-width="3" stroke-dasharray="9 7" stroke-opacity=".75"/><path d="M549,215 C613.5,215 613.5,483.75 678,483.75" fill="none" stroke="#5e5448" stroke-width="3" stroke-dasharray="9 7" stroke-opacity=".75"/><path d="M549,490 C613.5,490 613.5,521.25 678,521.25" fill="none" stroke="#5e5448" stroke-width="3" stroke-dasharray="9 7" stroke-opacity=".75"/><path d="M549,650 C613.5,650 613.5,558.75 678,558.75" fill="none" stroke="#5e5448" stroke-width="3" stroke-dasharray="9 7" stroke-opacity=".75"/><path d="M549,215 C613.5,215 613.5,773.75 678,773.75" fill="none" stroke="#5e5448" stroke-width="3" stroke-dasharray="9 7" stroke-opacity=".75"/><path d="M549,650 C613.5,650 613.5,828.75 678,828.75" fill="none" stroke="#5e5448" stroke-width="3" stroke-dasharray="9 7" stroke-opacity=".75"/><path d="M549,790 C613.5,790 613.5,856.25 678,856.25" fill="none" stroke="#5e5448" stroke-width="3" stroke-dasharray="9 7" stroke-opacity=".75"/><path d="M210,136 C274.5,136 274.5,215 339,215" fill="none" stroke="#a8352a" stroke-width="8" stroke-opacity=".85"/><path d="M210,294 C274.5,294 274.5,215 339,215" fill="none" stroke="#a8352a" stroke-width="8" stroke-opacity=".85"/><path d="M210,463 C274.5,463 274.5,490 339,490" fill="none" stroke="#a8352a" stroke-width="8" stroke-opacity=".85"/><path d="M210,667 C274.5,667 274.5,650 339,650" fill="none" stroke="#a8352a" stroke-width="8" stroke-opacity=".85"/><path d="M210,667 C274.5,667 274.5,790 339,790" fill="none" stroke="#a8352a" stroke-width="8" stroke-opacity=".85"/><path d="M210,870 C274.5,870 274.5,490 339,490" fill="none" stroke="#a8352a" stroke-width="8" stroke-opacity=".85"/><path d="M549,215 C613.5,215 613.5,215.0 678,215.0" fill="none" stroke="#a8352a" stroke-width="8" stroke-opacity=".85"/><path d="M549,790 C613.5,790 613.5,596.25 678,596.25" fill="none" stroke="#a8352a" stroke-width="8" stroke-opacity=".85"/><path d="M549,490 C613.5,490 613.5,801.25 678,801.25" fill="none" stroke="#a8352a" stroke-width="8" stroke-opacity=".85"/><rect x="0" y="91.0" width="210" height="90" rx="4" fill="#f6eedd" stroke="#2a241e" stroke-width="2.5"/><text x="105.0" y="132" text-anchor="middle" font-size="31" font-weight="900" fill="#2a241e" letter-spacing="2">早期佛教</text><text x="105.0" y="164" text-anchor="middle" font-size="21" fill="#a8352a">约前5–前4世纪</text><rect x="0" y="249.0" width="210" height="90" rx="4" fill="#f6eedd" stroke="#2a241e" stroke-width="2.5"/><text x="105.0" y="290" text-anchor="middle" font-size="31" font-weight="900" fill="#2a241e" letter-spacing="2">部派佛教</text><text x="105.0" y="322" text-anchor="middle" font-size="21" fill="#a8352a">约前3世纪起</text><rect x="0" y="418.0" width="210" height="90" rx="4" fill="#f6eedd" stroke="#2a241e" stroke-width="2.5"/><text x="105.0" y="459" text-anchor="middle" font-size="31" font-weight="900" fill="#2a241e" letter-spacing="2">初期大乘</text><text x="105.0" y="491" text-anchor="middle" font-size="21" fill="#a8352a">约前1–后3世纪</text><rect x="0" y="622.0" width="210" height="90" rx="4" fill="#f6eedd" stroke="#2a241e" stroke-width="2.5"/><text x="105.0" y="663" text-anchor="middle" font-size="31" font-weight="900" fill="#2a241e" letter-spacing="2">中期大乘</text><text x="105.0" y="695" text-anchor="middle" font-size="21" fill="#a8352a">约3–5世纪</text><rect x="0" y="825.0" width="210" height="90" rx="4" fill="#f6eedd" stroke="#2a241e" stroke-width="2.5"/><text x="105.0" y="866" text-anchor="middle" font-size="31" font-weight="900" fill="#2a241e" letter-spacing="2">后期 · 密教</text><text x="105.0" y="898" text-anchor="middle" font-size="21" fill="#a8352a">约7世纪起</text><rect x="339" y="180.0" width="210" height="70" rx="4" fill="#f6eedd" stroke="#2a241e" stroke-width="2.5"/><text x="444.0" y="226" text-anchor="middle" font-size="31" font-weight="900" fill="#2a241e" letter-spacing="2">根本佛教</text><rect x="339" y="455.0" width="210" height="70" rx="4" fill="#f6eedd" stroke="#2a241e" stroke-width="2.5"/><text x="444.0" y="501" text-anchor="middle" font-size="31" font-weight="900" fill="#2a241e" letter-spacing="2">中　观</text><rect x="339" y="615.0" width="210" height="70" rx="4" fill="#f6eedd" stroke="#2a241e" stroke-width="2.5"/><text x="444.0" y="661" text-anchor="middle" font-size="31" font-weight="900" fill="#2a241e" letter-spacing="2">唯　识</text><rect x="339" y="755.0" width="210" height="70" rx="4" fill="#f6eedd" stroke="#2a241e" stroke-width="2.5"/><text x="444.0" y="801" text-anchor="middle" font-size="31" font-weight="900" fill="#2a241e" letter-spacing="2">如来藏</text><rect x="678" y="140.0" width="210" height="150" rx="4" fill="#a8352a" stroke="#a8352a" stroke-width="2.5"/><text x="783.0" y="211" text-anchor="middle" font-size="38" font-weight="900" fill="#f6e9d6" letter-spacing="2">南　传</text><text x="783.0" y="249" text-anchor="middle" font-size="21" fill="#f6e9d6">巴利语</text><rect x="678" y="445.0" width="210" height="190" rx="4" fill="#a8352a" stroke="#a8352a" stroke-width="2.5"/><text x="783.0" y="536" text-anchor="middle" font-size="38" font-weight="900" fill="#f6e9d6" letter-spacing="2">汉　传</text><text x="783.0" y="574" text-anchor="middle" font-size="21" fill="#f6e9d6">汉文</text><rect x="678" y="740.0" width="210" height="150" rx="4" fill="#a8352a" stroke="#a8352a" stroke-width="2.5"/><text x="783.0" y="811" text-anchor="middle" font-size="38" font-weight="900" fill="#f6e9d6" letter-spacing="2">藏　传</text><text x="783.0" y="849" text-anchor="middle" font-size="21" fill="#f6e9d6">藏文</text></svg>
   <div class="flow-legend lx-aside"><span class="main"><i></i>主流</span><span class="side"><i></i>兼学或支流</span></div>
-  <div class="foot"><span>佛学图文 · 佛教全景</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+  <div class="foot"><span>佛学图文 · 佛教全景</span><span class="sign"><span class="url">愚千一 · sutratoday.com<br>yuqianyi.com</span><span class="seal">愚千一</span></span></div>
 </section>
 
 <!-- ============ 三大传承 ============ -->
@@ -403,7 +408,7 @@
     <tr><td class="k">修持</td><td>止观禅修<br>（四念处）</td><td>禅、净土</td><td>密教</td></tr>
     <tr><td class="k">地区</td><td>斯里兰卡<br>缅甸、泰国<br>柬埔寨、老挝</td><td>中国、日本<br>朝鲜半岛、越南</td><td>西藏、蒙古<br>不丹、尼泊尔</td></tr>
   </table>
-  <div class="foot"><span>佛学图文 · 佛教全景</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+  <div class="foot"><span>佛学图文 · 佛教全景</span><span class="sign"><span class="url">愚千一 · sutratoday.com<br>yuqianyi.com</span><span class="seal">愚千一</span></span></div>
 </section>
 
 <!-- ============ 卡4 宗派矩阵 ============ -->
@@ -448,7 +453,7 @@
   <div class="fine">禅宗早期传《楞伽经》，六祖以后重《金刚经》。<br>俱舍、成实二宗唐以后已无独立传承。T 为大正藏编号，可在 CBETA 检索。</div>
   </div>
 
-  <div class="foot"><span></span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+  <div class="foot"><span></span><span class="sign"><span class="url">愚千一 · sutratoday.com<br>yuqianyi.com</span><span class="seal">愚千一</span></span></div>
 </section>
 
 <!-- ============ 十宗 × 思想体系 ============ -->
@@ -473,7 +478,7 @@
   </table>
   <div class="lx-aside"><div class="legend"><span><i class="dot"></i>主要思想体系</span><span><i class="dot o"></i>兼用</span></div>
   <div class="fine">天台、华严、禅归入如来藏一系，依印顺法师、圣严法师的看法。天台讲「性具」，华严讲「性起」。天台三谛说取自《中论·观四谛品》。</div></div>
-  <div class="foot"><span>佛学图文 · 佛教全景</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+  <div class="foot"><span>佛学图文 · 佛教全景</span><span class="sign"><span class="url">愚千一 · sutratoday.com<br>yuqianyi.com</span><span class="seal">愚千一</span></span></div>
 </section>
 
 <!-- ============ 学习建议 ============ -->
@@ -505,7 +510,7 @@
   <div class="lane-note">四系读过，再回到禅、天台、华严、净土，能看出各宗站在哪一系上。</div>
   </div>
 
-  <div class="foot"><span>佛学图文 · 佛教全景</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+  <div class="foot"><span>佛学图文 · 佛教全景</span><span class="sign"><span class="url">愚千一 · sutratoday.com<br>yuqianyi.com</span><span class="seal">愚千一</span></span></div>
 </section>
 
 <script>
