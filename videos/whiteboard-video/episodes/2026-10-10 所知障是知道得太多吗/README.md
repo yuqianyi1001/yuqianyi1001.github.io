@@ -1,8 +1,6 @@
 # 所知障是知道得太多吗？ · 资料来源
 
-「佛教最容易被误解的概念」系列。白板讲解视频（成片：`成片.mp4`），7 个场景，旁白约 820 字，成片 2 分 39 秒（含片尾卡 5.5 秒，ffprobe 实测 158.8 秒），无配乐。字幕时间：句子起止来自真实音频，句内按字数均分。
-
-**配音说明（待重配）**：本次出片时，百炼声音复刻模型 `qwen3-tts-vc-2026-01-22` 接口返回 `Model not exist`（复刻音色仍登记在该模型下，`qwen3-tts-flash` 可正常调用），所以成片暂用官方音色 `qwen3-tts-flash / Ethan` 配音。复刻模型恢复后，在 `videos/whiteboard-video/` 下直接跑 `./wb build 所知障`（TTS 缓存按模型 + 音色区分，会自动全部重配），再把 `build/.../outputs/final.mp4` 复制成本目录 `成片.mp4`。
+「佛教最容易被误解的概念」系列。白板讲解视频（成片：`成片.mp4`），7 个场景，旁白约 820 字，成片 3 分 41 秒（含片尾卡 5.5 秒，ffprobe 实测 221.1 秒），无配乐。字幕时间：句子起止来自真实音频，句内按字数均分。
 
 ## 资料来源（全部可在 CBETA 检索）
 
@@ -37,5 +35,7 @@
 
 ## 配音
 
-- 配音走 whiteboard-video-skills 仓库的 `lib/tts-bailian.mjs`（千问 Qwen-TTS）。
+- 配音用愚千一的声音复刻：2026-10-14 用用户提供的一段约 17 分钟的录音里 66.9–85.2 秒的一段讲话（18 秒）在百炼 `voice-enrollment` 复刻，目标模型 `qwen-audio-3.0-tts-plus`，音色 ID `qwen-audio-3.0-tts-plus-yuqianyi-4e0f9f3f46fc4f7290bf7b4822fc730a`，写在 `videos/whiteboard-video/config.json` 的 `tts.model` / `tts.voice`，以后各期直接复用。合成后 1.1 倍变速、响度标准化到 -16 LUFS。
+- 原来的 `qwen3-tts-vc-2026-01-22` 复刻模型已下线（接口返回 Model not exist），旧音色不能再用。
+- 配音走 whiteboard-video-skills 仓库的 `lib/tts-bailian.mjs`：`qwen-audio-*` 模型走 `audio/tts/SpeechSynthesizer` 接口。
 - 多音字替换（只改送给 TTS 的文本，写在 `videos/whiteboard-video/config.json` 的 `tts.pronunciation`）：种性→肿性、明处→明触、恚→会、执为→执维。
