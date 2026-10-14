@@ -83,6 +83,12 @@ def body(simplified=False, emph=False):
     """emph=True：嵌入总图时用，八正道按第一层强调、三十七道品按第二层强调；单独那张原图不强调。"""
     tr = SIMP if simplified else S2T
     o = []
+    # 嵌入总图时，四神足按《杂阿含》第 179 经、《俱舍论》「以定为体」统一作定（绿色）
+    SHENZU = ('欲神足', '精進神足', '心神足', '觀神足')
+    leaves = [(a, b, c, d, t, 'g' if emph and t in SHENZU else col) for a, b, c, d, t, col in LEAF]
+    dots = [x for x in DOTS if not (emph and x[1].startswith(('M521,105', 'M521,110', 'M550,254')))]
+    if emph:
+        dots.append(('g', 'M648,402 C704,430 640,524 565,531', 1, []))
     # 实线：中心到各组
     for (a, b) in SOLID:
         if emph and a == (282, 110): a = (296, 112)
@@ -90,18 +96,18 @@ def body(simplified=False, emph=False):
     # 树形括号
     for name, (x0,y0,x1,y1), col, (mx,my), bx, (ya,yb), side, (edge,) in GROUPS:
         o.append(f'<line x1="{bx}" y1="{ya}" x2="{bx}" y2="{yb}" stroke="#333" stroke-width="0.9"/>')
-        for lx0, ly0, lx1, ly1, *_ in LEAF:
+        for lx0, ly0, lx1, ly1, *_ in leaves:
             cy = (ly0 + ly1) / 2
             if ya - 1 <= cy <= yb + 1 and ((side == 'L' and lx1 == edge) or (side == 'R' and lx0 == edge)):
                 o.append(f'<line x1="{bx}" y1="{cy}" x2="{edge}" y2="{cy}" stroke="#333" stroke-width="0.9"/>')
         gx = x1 if side == 'L' else x0
         o.append(f'<line x1="{bx}" y1="{my}" x2="{gx}" y2="{my}" stroke="#333" stroke-width="0.9"/>')
     # 虚线（点线）关系
-    for col, d, arrow, labels in DOTS:
+    for col, d, arrow, labels in dots:
         mk = f' marker-end="url(#{xmind.PFX}a{col})"' if arrow else ''
         o.append(f'<path d="{d}" fill="none" stroke="{C[col]}" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"{mk}/>')
     # 节点
-    for x0, y0, x1, y1, txt, col in LEAF:
+    for x0, y0, x1, y1, txt, col in leaves:
         o.append(box(x0, y0, x1, y1, col, 3, 11.5, txt))
     for name, (x0,y0,x1,y1), col, (mx,my), *_ in GROUPS:
         if emph and name == '八正道':
@@ -111,7 +117,7 @@ def body(simplified=False, emph=False):
         o.append(toggle(mx, my))
     o.append(box(*CENTER, 'w', 10, 21, '三十七道品', **TIER2) if emph else box(*CENTER, 'w', 10, 25, '三十七道品'))
     # 标签（放在节点之后、带底色，避免被线穿过）
-    for col, d, arrow, labels in DOTS:
+    for col, d, arrow, labels in dots:
         for t, x, y in labels:
             o.append(f'<text x="{x}" y="{y}" font-size="{11 if t!="=" else 11}" text-anchor="middle" fill="#555" class="lb">{t}</text>')
     o.append('<text x="24" y="371" font-size="11" text-anchor="middle" fill="#555" class="lb">四聖諦</text>')
