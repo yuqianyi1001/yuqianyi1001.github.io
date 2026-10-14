@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""总图的思维导图版：四圣谛 → 苦、集、灭、道；集下挂十二因缘顺转，灭下挂逆转，道下挂三十七道品。
-点线表示跨分支的对应：集＝惑＋业，苦果落在生、老死，灭＝无明灭、爱灭，正见生明而无明灭。
+"""总图的思维导图版：四圣谛 → 苦、集、灭、道，道下挂三十七道品。十二因缘只画一列：
+框和 ↓ 是顺转，框右边「X灭 ↓」是逆转。点线：集＝惑＋业，苦果落在生、老死，灭＝还灭那一列，正见生明而无明灭。
 写入 cards.html 的 MINDMAP_OVERVIEW 标记之间。viewBox 1000×580。"""
 import sys, pathlib
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
@@ -48,59 +48,69 @@ class Group:
 
 KU = Group('苦', (300, 70, 352, 104), 'w', 'L',
            [(t, 'w') for t in ['生苦', '老苦', '病苦', '死苦', '怨憎会苦', '爱别离苦', '所求不得苦', '五盛阴苦']], fs=19)
-JI = Group('集', (300, 212, 352, 246), 'w', 'L', [('惑 · 无明 爱 取', 'r'), ('业 · 行 有', 'b')], fs=19)
+JI = Group('集', (300, 270, 352, 304), 'w', 'L', [('惑 · 无明 爱 取', 'r'), ('业 · 行 有', 'b')], fs=19)
+MIE = Group('灭', (648, 70, 700, 104), 'm', 'R',
+            [('贪欲永尽', 'm'), ('瞋恚永尽', 'm'), ('愚痴永尽', 'm'), ('一切烦恼永尽', 'm')], fs=19)
+DAO = Group('道', (648, 300, 700, 334), 'm', 'R',
+            [('正见', 'c'), ('正思惟', 'w'), ('正语', 'w'), ('正业', 'w'), ('正命', 'w'), ('正精进', 'o'), ('正念', 'y'), ('正定', 'g')], fs=19)
+DP = Group('三十七道品', (648, 470, 744, 504), 'w', 'R',
+           [('四念处', 'y'), ('四正勤', 'o'), ('四如意足', 'w'), ('五根', 'w'), ('五力', 'w'), ('七觉支', 'w'), ('八正道', 'w')], fs=14)
+GROUPS = [KU, JI, MIE, DAO, DP]
+CENTER = (420, 8, 580, 64)
+YIN = (424, 90, 512, 120)  # 「十二因缘」
+
+# 十二因缘只画一列：框和 ↓ 是顺转；框右边的「X灭 ↓」是逆转
 TYPE = {'无明': 'r', '爱': 'r', '取': 'r', '行': 'b', '有': 'b'}
 LINKS = ['无明', '行', '识', '名色', '六入', '触', '受', '爱', '取', '有', '生', '老死']
-SHUN = Group('十二因缘 · 顺转', (186, 391, 300, 425), 'w', 'L', [(x, TYPE.get(x, 'w')) for x in LINKS], fs=14)
-MIE = Group('灭', (648, 59, 700, 93), 'm', 'R',
-            [('贪欲永尽', 'm'), ('瞋恚永尽', 'm'), ('愚痴永尽', 'm'), ('一切烦恼永尽', 'm')], fs=19)
-NI = Group('十二因缘 · 逆转', (712, 261, 826, 295), 'm', 'R', [(x + '灭', 'm') for x in LINKS], fs=14)
-DAO = Group('道', (648, 473, 700, 507), 'm', 'R',
-            [('正见', 'c'), ('正思惟', 'w'), ('正语', 'w'), ('正业', 'w'), ('正命', 'w'), ('正精进', 'o'), ('正念', 'y'), ('正定', 'g')], fs=19)
-DP = Group('三十七道品', (520, 485, 616, 519), 'w', 'L',
-           [('四念处', 'y'), ('四正勤', 'o'), ('四如意足', 'w'), ('五根', 'w'), ('五力', 'w'), ('七觉支', 'w'), ('八正道', 'w')], fs=14)
-GROUPS = [KU, JI, SHUN, MIE, NI, DAO, DP]
-CENTER = (420, 248, 580, 312)
+BX0, BX1, NX, ROW0, PITCH, BH = 432, 492, 540, 154, 32, 20
+def row(t): i = LINKS.index(t); return ROW0 + i * PITCH
+def lft(t): return (BX0, row(t) + BH / 2)
 
 def svg():
     o = ['<svg class="mm" viewBox="0 0 1000 580" xmlns="http://www.w3.org/2000/svg">'] + defs()
-    # 树干：中心 → 四谛；集 → 顺转；灭 → 逆转；道 → 三十七道品
-    for a, b in [((436, 248), (352, 87)), ((420, 266), (352, 229)), ((580, 260), (648, 76)), ((566, 312), (648, 490)),
-                 ((326, 246), (290, 391)), ((684, 93), (740, 261)), ((648, 496), (616, 502))]:
+    for a, b in [((420, 36), (352, 87)), ((420, 56), (352, 287)), ((580, 36), (648, 87)), ((580, 56), (648, 312)),
+                 ((468, 64), (468, 90)), ((674, 334), (696, 470))]:
         o.append(solid(a, b))
     for g in GROUPS: o += g.draw()
-    # 点线：跨分支的对应
-    ax, ay = JI.left('惑 · 无明 爱 取'); bx, by = JI.left('业 · 行 有')
+    # 集＝惑＋业 → 对应的支
     for t in ['无明', '爱', '取']:
-        tx, ty = SHUN.right(t)
-        lx, ly = SHUN.left(t)
-        o.append(dotted('r', f'M{ax},{ay} C{ax-70},{ay+6} {lx-34},{ly-60} {lx-3},{ly}', True))
+        tx, ty = lft(t)
+        o.append(dotted('r', f'M352,284 C398,284 {tx-48},{ty} {tx-3},{ty}', True))
     for t in ['行', '有']:
-        tx, ty = SHUN.right(t)
-        lx, ly = SHUN.left(t)
-        o.append(dotted('u', f'M{bx},{by} C{bx-80},{by+10} {lx-52},{ly-70} {lx-3},{ly}', True))
-    for t, tgt, dx in [('生苦', '生', 0), ('老苦', '老死', 10), ('死苦', '老死', 20)]:
-        sx, sy = KU.left(t); tx, ty = SHUN.left(tgt)
-        o.append(dotted('s', f'M{sx},{sy} C{sx-150-dx},{sy+20} {20+dx},{ty-220} {30+dx},{ty-60} C{36+dx},{ty-10} {tx-30},{ty} {tx-3},{ty}', True))
-    o.append(label('＝', 34, 330))
+        tx, ty = lft(t)
+        o.append(dotted('u', f'M352,292 C392,296 {tx-44},{ty} {tx-3},{ty}', True))
+    # 苦果落在生、老死
+    for t, d in [('生', 0), ('老死', 8)]:
+        tx, ty = lft(t)
+        o.append(dotted('s', f'M352,98 C{392+d},120 {372+d},{ty-60} {tx-3},{ty}', True))
     # 集 → 苦，道 → 灭：因 → 果
-    o.append(dotted('k', 'M326,212 L326,107', True)); o.append(label('因 → 果', 352, 165))
-    o.append(dotted('k', 'M674,473 C672,350 672,200 674,96', True)); o.append(label('因 → 果', 646, 400))
-    # 灭 ＝ 逆转
-    sx, sy = MIE.right('愚痴永尽'); tx, ty = NI.left('无明灭')
-    o.append(dotted('g', f'M{sx},{sy} C{sx+40},{sy+10} {tx-40},{ty-20} {tx-3},{ty}', True)); o.append(label('＝', (sx+tx)/2+8, (sy+ty)/2-4))
-    sx, sy = MIE.right('贪欲永尽'); tx, ty = NI.right('爱灭')
-    o.append(dotted('g', f'M{sx},{sy} C{sx+120},{sy-10} 1000,120 975,230 C960,290 930,{ty} {tx+3},{ty}', True)); o.append(label('＝', 978, 200))
-    # 正见 → 无明灭：无明离欲而生明
-    sx, sy = DAO.right('正见'); tx, ty = NI.right('无明灭')
-    o.append(dotted('n', f'M{sx},{sy} C{sx+120},{sy+30} 962,440 952,320 C944,220 930,{ty} {tx+3},{ty}', True)); o.append(label('生明', 952, 340))
+    o.append(dotted('k', 'M326,270 L326,107', True)); o.append(label('因 → 果', 352, 190))
+    o.append(dotted('k', 'M674,300 L674,107', True)); o.append(label('因 → 果', 646, 205))
+    # 灭 ＝ 还灭那一列；正见 → 无明灭（生明）
+    o.append(dotted('g', f'M648,100 C618,104 600,118 {NX+14},{ROW0-16}', True)); o.append(label('＝', 622, 116))
+    nx_end = NX + 22
+    o.append(dotted('n', f'M648,312 C606,300 616,{ROW0+40} {nx_end+3},{ROW0+BH/2}', True)); o.append(label('生明', 604, 230))
     # 节点
     for g in GROUPS: o += g.nodes()
     o.append(box(*CENTER, 'w', 10, 30, '四圣谛'))
+    o.append(box(*YIN, 'w', 6, 15, '十二因缘'))
+    cx = (BX0 + BX1) / 2
+    o.append(f'<text x="{cx}" y="{ROW0-8}" font-size="10.5" text-anchor="middle" class="lg">顺转</text>')
+    o.append(f'<text x="{NX}" y="{ROW0-8}" font-size="10.5" text-anchor="middle" class="ni">逆转</text>')
+    for i, t in enumerate(LINKS):
+        y = row(t)
+        o.append(box(BX0, y, BX1, y + BH, TYPE.get(t, 'w'), 3, FS, t))
+        o.append(f'<text x="{NX}" y="{y+14}" font-size="11.5" text-anchor="middle" class="ni">{t}灭</text>')
+        ay = y + BH + (PITCH - BH) / 2 + 4
+        o.append(f'<text x="{cx}" y="{ay}" font-size="10" text-anchor="middle" class="ar">↓</text>')
+        o.append(f'<text x="{NX}" y="{ay}" font-size="10" text-anchor="middle" class="ni">↓</text>')
+    yend = row('老死') + PITCH + 12
+    o.append(f'<text x="{cx}" y="{yend}" font-size="11.5" text-anchor="middle" class="ar">纯大苦聚集</text>')
+    o.append(f'<text x="{NX}" y="{yend}" font-size="11.5" text-anchor="middle" class="ni">纯大苦聚灭</text>')
     # 图例
-    for x, c, t in [(176, 'r', '惑'), (226, 'b', '业'), (276, 'w', '事·苦果'), (356, 'm', '还灭')]:
-        o.append(box(x, 556, x + 20, 569, c, 2, 9, ''))
-        o.append(f'<text x="{x+25}" y="567" font-size="11" class="lg">{t}</text>')
+    for (x0, y0, c, t) in [(40, 520, 'r', '惑'), (96, 520, 'b', '业'), (40, 540, 'w', '事·苦果'), (120, 540, 'm', '还灭')]:
+        o.append(box(x0, y0, x0 + 20, y0 + 13, c, 2, 9, ''))
+        o.append(f'<text x="{x0+25}" y="{y0+11}" font-size="11" class="lg">{t}</text>')
     o.append('</svg>')
     return '\n'.join(o)
 
