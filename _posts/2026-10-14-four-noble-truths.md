@@ -83,7 +83,31 @@ tags:
 
 ![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-10-14-four-noble-truths-card-7.jpg)
 
-道的主干是八正道。八正道再展开，就是三十七道品。
+道，就是八正道。八正道每一支是什么？《杂阿含经》卷二十八第七八四经，佛一支一支解释了。
+
+正见：「谓说有施、有说、有斋，有善行、有恶行，有善恶行果报，有此世、有他世，有父母、有众生生，有阿罗汉善到、善向」，有人在这一世自知作证，「我生已尽，梵行已立，所作已作，自知不受后有」。正见，是相信有布施、有善恶业的果报、有此世他世，也相信有人能证得阿罗汉。
+
+正志，也就是正思惟：「谓出要志、无恚志、不害志」，出离的心，不瞋恚的心，不伤害众生的心。
+
+正语：「谓离妄语、离两舌、离恶口、离绮语」。
+
+正业：「谓离杀、盗、淫」。
+
+正命：「谓如法求衣服、饮食、卧具、汤药，非不如法」。
+
+正方便，也就是正精进：「谓欲、精进、方便、出离、勤竞、堪能常行不退」。
+
+正念：「谓念随顺，念不妄、不虚」。
+
+正定：「谓住心不乱、坚固、摄持、寂止、三昧、一心」。
+
+紧接着的第七八五经，又把每一支分成两种：一种是世俗的、有漏的，能让人转向善趣；一种是圣的、出世间的、无漏的，能让人「正尽苦，转向苦边」。
+
+八支又可以归成戒、定、慧三聚。《中阿含经》卷五十八第二一〇经，法乐比丘尼回答毗舍佉优婆夷说：「正语、正业、正命，此三道支圣戒聚所摄。正念、正定，此二道支圣定聚所摄。正见、正志、正方便，此三道支圣慧聚所摄。」她还说明，是三聚摄八支圣道，不是八支圣道摄三聚。这里正方便归在慧聚；巴利《中部》第四十四经，把正精进归在定聚，两处说法不同。
+
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-10-14-four-noble-truths-card-8.jpg)
+
+八正道再展开，就是三十七道品。
 
 《杂阿含经》卷十三第三〇五经说：「八圣道修习满足已，四念处修习满足，四正勤、四如意足、五根、五力、七觉分修习满足。」八正道修满了，其余六组道品也就随着修满了。
 
@@ -95,7 +119,7 @@ tags:
 
 《俱舍论》卷二十五和《大智度论》卷十九的分法不一样，它们按体性分，把四念处归入「慧」。这里依《杂阿含》和《解脱道论》。
 
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-10-14-four-noble-truths-card-8.jpg)
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-10-14-four-noble-truths-card-9.jpg)
 
 三十七道品之间的关系，可以再看这张思维导图。这张图是依一张流传的三十七道品思维导图重绘的，保留了原图的繁体字和画法。
 
@@ -105,7 +129,7 @@ tags:
 
 正见到慧根的那条线，标的是「四圣谛」。《解脱道论》卷十一说：「正见者，四谛智。」
 
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-10-14-four-noble-truths-card-9.jpg)
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-10-14-four-noble-truths-card-10.jpg)
 
 最后，用一张图，把四圣谛、十二因缘、三十七道品的关系画出来。
 
@@ -117,7 +141,7 @@ tags:
 
 第三行，是道。八正道是道的主干，展开为三十七道品。依道修行，无明灭，乃至老死灭：道是因，灭是果。
 
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-10-14-four-noble-truths-card-10.jpg)
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-10-14-four-noble-truths-card-11.jpg)
 
 同样的内容，也可以画成一张思维导图。
 
