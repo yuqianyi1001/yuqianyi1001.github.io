@@ -25,7 +25,7 @@ SLUG = "four-noble-truths"
 TAIL_SILENCE = 0.4
 FRAMERATE = 30
 MIN_DURATION = 0.6
-MAX_LINE = 34
+MAX_LINE = 26  # 字幕框不超过约 900px，避开卡片左下角页脚和右下角署名
 
 ASS_HEADER = """[Script Info]
 ScriptType: v4.00+
@@ -35,7 +35,7 @@ WrapStyle: 0
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Default,Heiti SC,38,&H00182430,&H00182430,&H30E5F4FB,&H30E5F4FB,0,0,0,0,100,100,0,0,3,8,0,2,60,60,70,1
+Style: Default,Heiti SC,34,&H00182430,&H00182430,&H30E5F4FB,&H30E5F4FB,0,0,0,0,100,100,0,0,3,7,0,2,60,60,14,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -65,6 +65,8 @@ def split_lines(text):
                 lines.append(cur); cur = ""
             elif ch == "、" and len(cur) >= MAX_LINE - 6:
                 lines.append(cur); cur = ""
+            elif len(cur) >= MAX_LINE:
+                lines.append(cur); cur = ""
         if cur.strip():
             lines.append(cur)
     out = []
@@ -86,6 +88,8 @@ def ts_ass(t):
 
 
 def main():
+    import sys
+    subs_only = "--subs-only" in sys.argv
     OUT.mkdir(exist_ok=True)
     SEG.mkdir(exist_ok=True)
     notes = sorted(NOTES.glob("*.txt"))
@@ -95,7 +99,8 @@ def main():
         assert card.exists() and wav.exists(), (card, wav)
         adur = duration(wav)
         seg = SEG / f"{note.stem}.mp4"
-        run([FFMPEG, "-y", "-v", "error", "-loop", "1", "-framerate", str(FRAMERATE), "-i", str(card), "-i", str(wav),
+        if not subs_only:
+          run([FFMPEG, "-y", "-v", "error", "-loop", "1", "-framerate", str(FRAMERATE), "-i", str(card), "-i", str(wav),
              "-af", f"apad=pad_dur={TAIL_SILENCE}", "-t", f"{adur + TAIL_SILENCE:.3f}",
              "-c:v", "libx264", "-tune", "stillimage", "-preset", "fast", "-crf", "20", "-pix_fmt", "yuv420p",
              "-c:a", "aac", "-b:a", "160k", "-ar", "48000", "-ac", "2", str(seg)])
@@ -116,7 +121,8 @@ def main():
     concat = SEG / "list.txt"
     concat.write_text("".join(f"file '{p}'\n" for p in parts))
     base = OUT / f"{SLUG}.mp4"
-    run([FFMPEG, "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", str(concat), "-c", "copy",
+    if not subs_only:
+      run([FFMPEG, "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", str(concat), "-c", "copy",
          "-movflags", "+faststart", str(base)])
 
     srt = "".join(f"{n}\n{ts_srt(s)} --> {ts_srt(e)}\n{l}\n\n" for n, (s, e, l) in enumerate(cues, 1))

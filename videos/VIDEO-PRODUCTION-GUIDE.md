@@ -1,7 +1,9 @@
-# 视频制作指南 ——《百法》系列五讲 提炼
+# 视频制作指南 ——《百法》系列五讲 + 「佛学图文」系列 提炼
 
-> 这份指南把 V1-V5 五讲视频的全部流程、风格、约定 总结成一份可复用的规范。
+> 这份指南把 V1-V5 五讲视频（slidev）和「佛学图文」系列（cards.html 图卡）的流程、风格、约定 总结成一份可复用的规范。
 > 下一次做新视频时，只要引用本文件，就能保持一致的输出。
+>
+> **配音的模型、音色、API key 一律以 env 为准**（本机 `~/.env`，云端会话的环境变量），本文件和仓库里都不写死具体的 voice id——音色会重新复刻、模型会升级，写死的值很快就过期。见 [TTS 合成约定](#tts-合成约定)。
 
 ---
 
@@ -23,6 +25,35 @@
 
 ## 项目结构
 
+现在有两种项目：
+
+- **「佛学图文」系列**（2026-09 起，当前在用）：`videos/<slug>-infographic/`，图卡用一份 `cards.html` 画，headless Chrome 导出 PNG。
+- **slidev 系列**（《百法》《八识规矩颂》V1-V5，旧流程）：`videos/<slug>-slidev/`。
+
+### 「佛学图文」项目（当前）
+
+```
+videos/<slug>-infographic/
+├── cards.html                 # 全部图卡，一张 <section class="card"> 一张卡；?c=N 单独显示第 N 张
+├── render.sh                  # 逐张导出 out/card-N.png（1920×1080；张数按 cards.html 自动计算）
+├── out/                       # 导出的图卡 PNG
+├── scripts/
+│   ├── synth.py               # notes/NN.txt → audio/NN.wav（读 env 里的模型和音色）
+│   ├── build_video.py         # 图卡 + 配音 → video/，生成字幕；--subs-only 只重做字幕和硬字幕版
+│   └── *.py                   # 需要时：用脚本生成的 SVG 图（如思维导图）
+├── notes/                     # 口播稿，01.txt..NN.txt，与 out/card-N.png 一一对应
+├── script.md                  # 由 notes 拼成，便于通读；开头是读音表
+├── sources.md                 # 引文核对记录（CBETA 原卷逐字核对）
+├── audio/                     # 配音 WAV（入仓）
+├── segments/                  # ffmpeg 中间产物（gitignore）
+├── video/                     # <slug>.mp4、<slug>-hard.mp4、<slug>.srt/.ass、<slug>.zh-TW.srt
+└── PUBLISH.md                 # 简繁两版发布文案（标题、摘要、正文、章节时间戳、标签）
+```
+
+图文同时出一篇网站文章：`_posts/YYYY-MM-DD-<slug>.md`，配图是 `images/YYYY-MM-DD-<slug>-card-N.jpg`（由 out/ 的 PNG 转 JPG）。新项目初始化：复制上一期的 `cards.html`（保留页眉、页脚、署名的样式）、`render.sh`、`scripts/synth.py`、`scripts/build_video.py`，改 `build_video.py` 里的 `SLUG`。
+
+### slidev 项目（旧流程）
+
 每个视频是一个独立的 slidev 项目，放在 `videos/<slug>-slidev/`：
 
 ```
@@ -32,7 +63,7 @@ videos/
 │   ├── slides.md                  # PPT 内容（Markdown）
 │   ├── style.css                  # 字体 / 字号 / 留白
 │   ├── package.json + package-lock.json
-│   ├── .bailian_voice_id          # cosyvoice 克隆音色 ID（公开 ID，不是 API key）
+│   ├── .bailian_voice_id          # 旧：cosyvoice 克隆音色 ID。新项目不再用，音色以 env 为准
 │   ├── notes/                     # 口播稿，01.txt..NN.txt 每页一段
 │   ├── preview/                   # slidev 导出的 PNG（1.png..N.png）
 │   ├── audio/                     # cosyvoice 合成的 MP3（01.mp3..NN.mp3）
@@ -47,11 +78,13 @@ videos/
 │   └── PUBLISH-AI.md              # AI 推荐用文案（关键词 + 章节戳）
 ```
 
-新项目初始化：从最近的项目（V5 jiandao）复制 `package.json` / `package-lock.json` / `style.css` / `.bailian_voice_id` / `scripts/`，然后 `npm install`。
+新项目初始化：从最近的项目（V5 jiandao）复制 `package.json` / `package-lock.json` / `style.css` / `scripts/`，然后 `npm install`。配音改用 env 里的模型和音色（见 TTS 一节），不再复制 `.bailian_voice_id`。
 
 ---
 
 ## 完整流程
+
+「佛学图文」项目的顺序：画图卡（`cards.html` → `render.sh`）→ 写网站文章 → 写口播稿 → 用户 review → 合成配音（`python3 scripts/synth.py`）→ ASR 核对读音 → 合成视频（`python3 scripts/build_video.py`）→ 写 `PUBLISH.md`。下面的表格是 slidev 项目的七步。
 
 **七步走，每步可独立 iterate：**
 
@@ -148,18 +181,47 @@ videos/
 
 ## TTS 合成约定
 
-### 引擎 / 音色
+### 引擎 / 音色：以 env 为准
 
-- 阿里云百炼 **cosyvoice-v2**，克隆音色「愚千一」
-- voice_id 存在 `.bailian_voice_id`（公开 ID，不是 API key）
-- API key 在用户 `~/.env` 的 `DASHSCOPE_API_KEY`，**绝不入仓**
-- 速率 `SPEECH_RATE = 1.0`
-- 并发 `MAX_PARALLEL = 4`
-- 重试 `MAX_RETRIES = 3`，遇过卡死要 kill 进程重跑（idempotent，跳过已合成）
+模型、音色、API key 都从 env 读，**不写进仓库，也不写进本文件**：
+
+| 变量 | 含义 | 放在哪里 |
+|---|---|---|
+| `BAILIAN_TTS_MODEL` | 合成模型（如 Qwen-Audio-TTS 系列） | 本机 `~/.env`；云端会话的环境变量 |
+| `BAILIAN_TTS_VOICE` | 「愚千一」克隆音色的 voice id | 同上 |
+| `DASHSCOPE_API_KEY` | 百炼 API key，**绝不入仓** | 本机 `~/.env`；云端由网络代理自动注入，可不设 |
+
+- 音色重新复刻、模型升级时，**只改 env**，脚本和文档都不用动。voice id 的前缀就是它对应的模型名，两者必须配套（复刻时的 `target_model` 要和合成时的 `model` 一致）。
+- `scripts/synth.py` 的读取顺序：先读 `~/.env`，再用进程环境变量覆盖；音色先找 `BAILIAN_TTS_VOICE`，没有时再找旧名 `BAILIAN_QWEN_TTS_VOICE_YUQIANYI`。
+- 白板视频（`videos/whiteboard-video/`）用的是同一组变量。
+- 旧的 cosyvoice-v2 项目把 voice id 存在 `.bailian_voice_id`；那是旧做法，新项目不要再用。
+
+### 接口
+
+- Qwen-Audio-TTS（`qwen-audio-3.0-tts-*`）和 CosyVoice 非实时合成，走 `POST https://dashscope.aliyuncs.com/api/v1/services/audio/tts/SpeechSynthesizer`，请求体 `{"model", "input": {"text", "voice", "format": "wav", "sample_rate": 24000}}`，返回 `output.audio.url`，再下载 WAV。
+- 旧的 multimodal-generation 接口（`/api/v1/services/aigc/multimodal-generation/generation`）对这个模型会报 `InvalidParameter: url error`。换模型时先用一句话试一次接口。
+- 单次请求不超过 `MAX_CHARS = 280` 字，按行切块，块间留 0.35 秒静音；并发 `MAX_PARALLEL = 4`，重试 `MAX_RETRIES = 3`。
+- 幂等：`audio/NN.wav` 已存在就跳过。要重合成某一段，删掉对应 wav 再跑 `python3 scripts/synth.py 04 07`。
+
+### 合成后用 ASR 核对读音
+
+配音合成完，用 `qwen3-asr-flash`（同一个百炼账号）把每段转写成文字，和口播稿逐句对照，专门看经号、多音字、生僻字。识别结果里的同音字（如「两谛」→「两地」）不算错；真读错的，加替换规则后只重合成那几段。
 
 ### 多音字读音修复
 
-**核心技巧**：在 `synth-all.py` 里加 `fix_pronunciation()`，对 TTS 发送的文本做同音字替换。`notes/` 源文件保持原字，字幕和 PPT 显示原字。
+**核心技巧**：在合成脚本（图文项目是 `scripts/synth.py`，slidev 项目是 `synth-all.py`）里加 `fix_pronunciation()`，对 TTS 发送的文本做同音字替换。`notes/` 源文件保持原字，字幕和图卡 / PPT 显示原字。
+
+已经用过的替换（新项目从上一期的 `PRONUNCIATION_FIXES` 复制，再按需要加）：
+
+| 原词 | 送给 TTS | 原因 |
+|---|---|---|
+| 空 | 崆 | 一律读 kōng |
+| 俱舍 | 俱社 | shè |
+| 般若 | 波惹 | bō rě |
+| 〇（经号里） | 零 | 「第三〇五经」会读成「第三五经」 |
+| 第八一〇经 | 第八百一十经 | 「八一〇」会读成「八幺零」 |
+| 集著 / 染著 | 集灼 / 染灼 | 著读 zhuó |
+| 胜鬘 / 拘絺罗 / 毗舍佉 / 猗觉 / 如来藏 | 胜蛮 / 拘痴罗 / 毗舍区 / 依觉 / 如来葬 | 生僻字、多音字 |
 
 ```python
 PRONUNCIATION_FIXES = [
@@ -182,7 +244,7 @@ def fix_pronunciation(text: str) -> str:
 
 ### 增量重 synth
 
-`synth-all.py` 是 idempotent 的——已存在的 audio/NN.mp3 跳过。所以**只删要重 synth 的 mp3，重跑脚本即可**。
+合成脚本都是 idempotent 的——已存在的音频跳过（图文项目 `audio/NN.wav`，slidev 项目 `audio/NN.mp3`）。所以**只删要重 synth 的那几段，重跑脚本即可**。
 
 ---
 
@@ -190,10 +252,18 @@ def fix_pronunciation(text: str) -> str:
 
 ### 工具链
 
-- **ffmpeg**：必须用 `~/miniforge3/bin/ffmpeg`（含 libass）— brew 版没 libass
-- Python 3.9，`/usr/bin/python3`（不是 miniforge3 python，要的是 dashscope SDK）
+- **ffmpeg**：本机（macOS）用 `~/miniforge3/bin/ffmpeg`（含 libass）— brew 版没 libass；云端 Linux 用系统的 `/usr/bin/ffmpeg`（含 libass）。图文项目的 `build_video.py` 会先找 miniforge3，找不到再用 PATH 里的 ffmpeg。
+- 图文项目的脚本只依赖 `requests`，任何 python3 都能跑；slidev 旧脚本要 dashscope SDK（`/usr/bin/python3`）。
+- 云端没有宋体、黑体：图卡用 `cards.html` 里的 `PreviewSerif`（Noto Serif SC）回退，字幕由 fontconfig 回退到文泉驿正黑，字形和 Mac 上略有不同。要和以前完全一致，就在 Mac 上重跑 `render.sh` / `build_video.py`。
 
-### build-video.py 关键变量
+### 图文项目 build_video.py
+
+- 张数按 `notes/*.txt` 自动计算，`out/card-N.png` 与 `notes/NN.txt` 一一对应，不用改脚本里的数字。
+- `python3 scripts/build_video.py`：逐段合成 → 拼接无字幕版 → 生成 srt/ass → 烧硬字幕版。
+- `python3 scripts/build_video.py --subs-only`：只改了字幕样式时用，沿用 `segments/` 和无字幕版，只重做字幕和硬字幕版。
+- 繁体字幕：`opencc` 的 `s2t`（与 02、03 期一致，用爲、衆、裏），生成 `video/<slug>.zh-TW.srt`。
+
+### slidev 项目 build-video.py 关键变量
 
 ```python
 N_SLIDES = 28               # 必须等于 notes / preview 文件数
@@ -214,26 +284,29 @@ OUT = "<slug>.mp4"
 
 ## 字幕约定（ASS）
 
-### 样式
+### 样式（图文项目，当前）
 
 ```python
-ASS_STYLE = {
-    "Fontname": "Heiti SC",     # macOS 公开字体路径，可被 fontconfig 找到
-    "Fontsize": 38,              # 32 太小，V3 起改 38（+20%）
-    "PrimaryColour": "&H00182430",   # 深棕褐色
-    "BackColour": "&H30E5F4FB",      # 米白色背景框 alpha 30
-    "OutlineColour": "&H30E5F4FB",   # 同 BackColour（外发光融入背景）
-    "BorderStyle": 3,            # opaque box
-    "Outline": 8,                # 内边距 8px
-    "Alignment": 2,              # 底部居中
-    "MarginV": 70,               # 距底部 70px
-}
+# Style: Default,Heiti SC,34,&H00182430,&H00182430,&H30E5F4FB,&H30E5F4FB,0,0,0,0,100,100,0,0,3,7,0,2,60,60,14,1
+"Fontname": "Heiti SC",          # macOS 公开字体路径；云端回退到文泉驿正黑
+"Fontsize": 34,
+"PrimaryColour": "&H00182430",   # 深棕褐色
+"BackColour": "&H30E5F4FB",      # 米白色背景框
+"BorderStyle": 3, "Outline": 7,  # 不透明底框
+"Alignment": 2,                  # 底部居中
+"MarginV": 14,                   # 贴近底边，不挡图卡正文
+MAX_LINE = 26                    # 每行最多 26 字，字幕框约 900px，避开左下角页脚和右下角署名
 ```
+
+图卡的正文、引文都在画面 950px 以上，底边一条留给页脚和署名。字幕放在底边中间，宽度控制在页脚和署名之间。
+
+slidev 项目（旧）用的是 `Fontsize 38`、`MarginV 70`、`Outline 8`：PPT 页面底部留白多，不会挡内容；图卡底部放了出处小字，这个位置会挡住，所以图文项目改成上面的样式。
 
 ### 字幕生成原则
 
 - **句号 / 问号 / 感叹号** 一定换行
 - **逗号 / 分号** 在当前段 ≥12 字符时换行
+- 没有标点的长句，满 `MAX_LINE` 字强制换行
 - 单段最短 0.6 秒（`MIN_DURATION`）
 - 时长按 `(累计字符数 / 总字符数) × 段 audio 时长` 比例分配
 
@@ -299,7 +372,7 @@ ASS_STYLE = {
 
 ### 简繁互转
 
-直接用 `opencc` 命令：`opencc -c s2tw.json -i PUBLISH.md -o ...`，但中文常用术语手工微调（如「軟件」/「軟體」）。
+用 OpenCC 的 `s2t`（与「佛学图文」02、03 期一致：爲、衆、裏）。云端没有 opencc 命令时：`pip install opencc-python-reimplemented`，`opencc.OpenCC('s2t').convert(text)`。中文常用术语手工微调（如「軟件」/「軟體」）。
 
 ---
 
@@ -311,7 +384,8 @@ ASS_STYLE = {
 node_modules           # 已全局忽略
 videos/**/segments/    # 中间产物可重建
 *.wav                  # 录音临时文件
-.env                   # API key — 绝不入仓
+!videos/**/audio/*.wav # 例外：视频配音 WAV 入仓
+.env                   # API key、模型、音色 — 绝不入仓
 !videos/**/package.json     # 撤销根目录的 package.json 忽略规则
 !videos/**/package-lock.json
 ```
@@ -331,7 +405,7 @@ videos: V[N] 第[X]讲 [主题] — [本次主要改动一句话]
 
 最终成片：[时长] / [大小] / [字幕条数]。
 
-Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
+Co-Authored-By: <按当前会话提示的署名行>
 ```
 
 每次小修订也要 commit + push（保持仓库可追溯）。
@@ -384,13 +458,49 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
 - **症状**：`**X**「Y」` 加粗失效，整个区块变灰
 - **修复**：改用 `<strong>X</strong>「Y」`
 
+### 9. 换了 TTS 模型，接口报 url error
+
+- **症状**：`InvalidParameter: url error, please check url`
+- **原因**：Qwen-Audio-TTS 不走 multimodal-generation 接口
+- **修复**：改用 `/api/v1/services/audio/tts/SpeechSynthesizer`（见 TTS 一节）
+
+### 10. 经号读错
+
+- **症状**：「第三〇五经」读成「第三五经」，「第八一〇经」读成「八幺零」
+- **修复**：`〇` → `零`；个别经号写成「第八百一十经」送给 TTS。合成后用 ASR 核对
+
+### 11. 字幕挡住图卡
+
+- **症状**：硬字幕盖住图卡底部的出处小字
+- **修复**：`MarginV 14`、`MAX_LINE 26`，改完用 `build_video.py --subs-only` 重做
+
+### 12. 视频文件超过对话发送上限
+
+- **症状**：硬字幕版 70MB+，对话里发不出去（上限 30MB）
+- **修复**：给用户完整路径和 GitHub 链接；需要预览就另压一份 720p 放 scratchpad，不入仓
+
 ---
 
 ## 速查清单（新视频启动 checklist）
 
+### 「佛学图文」项目
+
+- [ ] 复制上一期 `cards.html`、`render.sh`、`scripts/synth.py`、`scripts/build_video.py`，改 `SLUG`
+- [ ] 画图卡 → `render.sh` → 用户 review
+- [ ] 引文用 CBETA 逐字核对，记进 `sources.md`
+- [ ] 写 `_posts` 文章，图卡转 JPG 放 `images/`，跑 `python3 scripts/check_posts.py`
+- [ ] 写 `notes/NN.txt`，拼 `script.md` → 用户 review
+- [ ] 确认 env 里有 `BAILIAN_TTS_MODEL`、`BAILIAN_TTS_VOICE`（不要把值写进仓库）
+- [ ] `python3 scripts/synth.py` → ASR 核对读音 → 修替换规则，重合成受影响的段
+- [ ] `python3 scripts/build_video.py` → 抽帧看字幕位置和字体
+- [ ] 繁体字幕（`s2t`）、`PUBLISH.md`（章节时间戳按实际段长核对）
+- [ ] commit + push；给用户的路径一律写从仓库根目录起的完整路径
+
+### slidev 项目
+
 - [ ] 决定主题，写 outline.md
 - [ ] 用户 review outline
-- [ ] 复制 slidev 项目（package.json / style.css / scripts / .bailian_voice_id）
+- [ ] 复制 slidev 项目（package.json / style.css / scripts）；音色以 env 为准
 - [ ] `npm install`
 - [ ] 改 scripts/build-video.py range + N_SLIDES (3 个脚本)
 - [ ] 改 scripts 文件名 prefix（旧项目 slug → 新 slug）
@@ -409,7 +519,15 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
 
 ## 系列示例
 
-已完成 5 讲，每讲约 15-25 分钟 / 28-37 页：
+「佛学图文」系列：
+
+| # | 目录 | 主题 | 时长 / 张数 |
+|---|---|---|---|
+| 01 | buddhism-overview-infographic | 佛教全景图 | 竖版 8 张 |
+| 02 | buddhism-four-systems-infographic | 佛教四大思想体系 | 16:14 / 10 |
+| 03 | four-noble-truths-infographic | 四圣谛、十二因缘、八正道、三十七道品 | 17:18 / 10 |
+
+slidev 系列已完成 5 讲，每讲约 15-25 分钟 / 28-37 页：
 
 | # | slug | 主题 | 时长 / 页数 |
 |---|---|---|---|
