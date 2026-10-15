@@ -69,6 +69,7 @@
     transform: rotate(-2deg);
   }
   .foot .sign { display: flex; align-items: center; gap: 18px; }
+  .foot .url { text-align: right; line-height: 1.45; }
 
   h1.title {
     font-size: 72px; font-weight: 900; letter-spacing: 6px; line-height: 1.25;
@@ -135,7 +136,7 @@
   .up div:last-child { font-size: 26px; color: var(--cinnabar); letter-spacing: 1px; padding-left: 6px; }
   .up div:last-child b { font-size: 30px; margin-right: 10px; }
 
-  /* 道：八正道为主，展开为三十七道品 */
+  /* 道：八正道为主干，更全面的是三十七道品 */
   .dao { display: grid; grid-template-columns: 640px 120px 1fr; align-items: stretch; }
   .bz { padding: 10px 26px 14px; border: 4px solid var(--cinnabar); background: rgba(168,53,42,.09); }
   .bz .hd { display: flex; align-items: baseline; gap: 16px; }
@@ -199,7 +200,7 @@
   .zh.back .z .t { border-top-color: rgba(168,53,42,.3); }
 
   /* ===== 三十七道品矩阵 ===== */
-  .mx { display: grid; grid-template-columns: 210px 1fr 0.75fr 0.9fr 1fr 1fr 1.85fr; gap: 6px; }
+  .mx { display: grid; grid-template-columns: 210px 1fr 0.72fr 0.85fr 1fr 1fr 1.05fr 0.72fr 1.15fr; gap: 6px; }
   .mx .hd { white-space: nowrap; text-align: center; padding: 0 0 4px; font-size: 21px; color: var(--ink-soft); letter-spacing: 1px; line-height: 1.3; }
   .mx .hd b { font-size: 28px; margin-right: 6px; color: var(--ink); font-weight: 900; letter-spacing: 3px; }
   .mx .hd.hx b { color: var(--ink-faint); }
@@ -210,17 +211,191 @@
   .mx .c.e { border: 1px dashed var(--line); background: transparent; }
   .mx .c .it { display: inline-block; margin: 2px 7px; }
   .mx .c.multi { flex-wrap: wrap; }
+  .mx .c.out { border: 2px dashed var(--ink-faint); color: var(--ink-soft); background: transparent; font-weight: 700; }
+  .mx .c.oh { border: 1px dashed var(--ink-faint); background: transparent; color: var(--ink-faint); font-size: 20px; font-weight: 400; line-height: 1.35; }
   .mx .c.ext { border-color: var(--ink-faint); color: var(--ink-soft); }
   .mx .rl.bz { border-left-color: var(--cinnabar); background: var(--cinnabar); color: #f6e9d6; font-size: 34px; }
   .mx .rl.bz small { color: #f3d9cf; }
   .mx .c.bz { background: var(--cinnabar); border-color: var(--cinnabar); color: #f6e9d6; font-size: 28px; min-height: 70px; }
   .mx .c.bz.e { background: transparent; border: 1px dashed var(--line); }
-  .mx .exr { grid-column: 2 / span 6; text-align: left; font-size: 22px; color: var(--cinnabar); letter-spacing: 2px; padding: 4px 0 2px 6px; }
+  .mx .exr { grid-column: 2 / span 8; text-align: left; font-size: 22px; color: var(--cinnabar); letter-spacing: 2px; padding: 4px 0 2px 6px; }
+
+  /* ===== 三十七道品思维导图（还原原图） ===== */
+  .card.xm { background: #eef0f5; }
+  .card.xm .mmwrap { position: absolute; left: 307px; top: 24px; width: 1306px; height: 1040px; }
+  .card.xm svg.mm { width: 100%; height: 100%; font-family: "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", "WenQuanYi Zen Hei", sans-serif; }
+  .card.xm svg.mm text { fill: #1a1a1a; }
+  .card.xm svg.mm text.lb { fill: #555; paint-order: stroke; stroke: #eef0f5; stroke-width: 3px; }
+  .card.xm .side { position: absolute; left: 120px; top: 120px; width: 170px; font-size: 22px; line-height: 1.7; color: var(--ink-soft); }
+  .card.xm .side b { display: block; font-size: 34px; color: var(--ink); letter-spacing: 3px; margin-bottom: 14px; }
+  .card.xm.ov .mmwrap { left: 120px; top: 96px; width: 1680px; height: 920px; }
+  .card.xm svg.mm text.lg { fill: #444; }
+  .card.xm svg.mm text.ni { fill: #3f7d3a; }
+  .card.xm svg.mm text.ar { fill: #333; }
+  .card.xm.ov svg.mm { font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "WenQuanYi Zen Hei", sans-serif; }
+  /* 导图卡底部被图占满：署名移到右上角，页码随之隐藏 */
+  .card.xm .foot { top: 30px; bottom: auto; justify-content: flex-end; }
+  .card.xm .foot > span:first-child { display: none; }
+  .card.xm .head .pg { display: none; }
+
+  /* ===== 封面、经证卡 ===== */
+  .bg-char { right: 40px; top: 60px; font-size: 760px; color: rgba(42,36,30,.045); position: absolute; font-weight: 900; line-height: 1; }
+  .cover { height: 100%; display: grid; grid-template-columns: 1fr 1010px; column-gap: 60px; align-content: center; align-items: center; }
+  .cover .big { font-size: 150px; font-weight: 900; letter-spacing: 16px; line-height: 1.15; }
+  .cover .sub { margin-top: 30px; font-size: 36px; letter-spacing: 5px; color: var(--ink-soft); line-height: 1.7; }
+  .chain { display: flex; flex-direction: column; }
+  .chain .n { display: grid; grid-template-columns: 250px 120px 1fr; align-items: baseline; padding: 20px 28px; background: rgba(255,250,238,.4); border-top: 6px solid var(--ink); }
+  .chain .n.r { border-top-color: var(--cinnabar); background: rgba(168,53,42,.06); }
+  .chain .n b { font-size: 46px; font-weight: 900; letter-spacing: 4px; }
+  .chain .n em { font-style: normal; font-size: 34px; font-weight: 700; color: var(--cinnabar); letter-spacing: 4px; }
+  .chain .n span { font-size: 28px; color: var(--ink-soft); line-height: 1.5; }
+  .chain .gap { height: 14px; }
+  .cols3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; }
+  .cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .ev { padding: 22px 28px 20px; background: rgba(255,250,238,.45); border-top: 6px solid var(--ink); display: flex; flex-direction: column; }
+  .ev.r { border-top-color: var(--cinnabar); }
+  .ev h3 { font-size: 40px; font-weight: 900; letter-spacing: 4px; }
+  .ev .tag { font-size: 24px; color: var(--cinnabar); letter-spacing: 2px; margin: 2px 0 12px; }
+  .ev .qt { font-size: 29px; line-height: 1.6; border-left: 5px solid var(--cinnabar); padding-left: 18px; margin-bottom: 12px; }
+  .ev p { font-size: 26px; line-height: 1.6; }
+  .ev .s { margin-top: auto; padding-top: 10px; font-size: 21px; color: var(--ink-faint); line-height: 1.45; }
+  .concl { margin-top: 26px; font-size: 32px; line-height: 1.55; font-weight: 700; border-left: 8px solid var(--cinnabar); background: rgba(168,53,42,.08); padding: 16px 28px; }
+  /* 四谛表 + 三转十二行 */
+  .dt { display: grid; grid-template-columns: 170px repeat(4, 1fr); gap: 8px; }
+  .dt .h { text-align: center; padding: 10px 0; font-size: 44px; font-weight: 900; letter-spacing: 6px; border-top: 6px solid var(--ink); background: rgba(255,250,238,.45); }
+  .dt .h.r { border-top-color: var(--cinnabar); color: var(--cinnabar); background: rgba(168,53,42,.07); }
+  .dt .h small { display: block; font-size: 21px; font-weight: 400; letter-spacing: 1px; color: var(--ink-soft); }
+  .dt .rl { display: flex; align-items: center; font-size: 26px; font-weight: 700; letter-spacing: 2px; padding-left: 4px; }
+  .dt .rl small { display: block; font-size: 19px; font-weight: 400; color: var(--ink-faint); letter-spacing: 0; }
+  .dt .c { font-size: 23px; line-height: 1.5; padding: 10px 14px; background: rgba(255,250,238,.5); border: 1px solid var(--line); }
+  .dt .c.k { text-align: center; font-size: 27px; font-weight: 700; }
+  .dt .c.k.r { color: var(--cinnabar); }
+
+  /* ===== 八正道 ===== */
+  .bz8t { display: grid; grid-template-columns: 250px 1fr 150px; column-gap: 0; row-gap: 6px; }
+  .bz8t .hd { font-size: 22px; letter-spacing: 3px; color: var(--ink-soft); padding: 0 18px 8px; border-bottom: 3px solid var(--ink); }
+  .bz8t .nm { display: flex; align-items: baseline; gap: 12px; padding: 5px 18px; background: rgba(255,250,238,.5); border-left: 8px solid var(--ink); }
+  .bz8t .nm b { font-size: 31px; font-weight: 900; letter-spacing: 3px; }
+  .bz8t .nm small { font-size: 20px; color: var(--ink-faint); }
+  .bz8t .df { display: flex; align-items: center; padding: 5px 18px; font-size: 25px; line-height: 1.45; background: rgba(255,250,238,.5); }
+  .bz8t .jy { display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 900; letter-spacing: 6px; }
+  .bz8t .nm.hui { border-left-color: #2b7f86; } .bz8t .jy.hui { background: rgba(79,201,207,.22); color: #1f646a; }
+  .bz8t .nm.jie { border-left-color: var(--cinnabar); } .bz8t .jy.jie { background: rgba(168,53,42,.12); color: var(--cinnabar); }
+  .bz8t .nm.ding { border-left-color: #24772a; } .bz8t .jy.ding { background: rgba(60,196,58,.18); color: #1d5f22; }
   .q { margin-top: 18px; font-size: 27px; line-height: 1.6; letter-spacing: .5px; border-left: 6px solid var(--cinnabar); padding: 4px 0 4px 24px; }
   .q small { display: block; font-size: 22px; color: var(--ink-soft); }
 </style>
 </head>
 <body class="review">
+
+<!-- ===== 封面 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 03 · 四圣谛</span><span class="pg"></span></div>
+  <div class="bg-char">谛</div>
+  <div class="cover">
+    <div>
+      <div class="kicker">佛教核心思想</div>
+      <div class="big">四圣谛</div>
+      <div class="sub">十二因缘 · 八正道 · 三十七道品<br>一组图看清它们的关系</div>
+    </div>
+    <div class="chain">
+      <div class="n r"><b>四圣谛</b><em>总则</em><span>苦 · 集 · 灭 · 道</span></div>
+      <div class="gap"></div>
+      <div class="n"><b>十二因缘</b><em>拆解</em><span>苦集 → 顺转（流转）<br>灭道 → 逆转（还灭）</span></div>
+      <div class="gap"></div>
+      <div class="n"><b>八正道</b><em>主干</em><span>更全面的是三十七道品</span></div>
+      <div style="margin-top:28px;font-size:28px;line-height:1.6;color:var(--ink-soft);border-left:4px solid var(--cinnabar);padding-left:22px">四圣谛不是小乘思想。<br>大乘的中观、唯识、如来藏，都不离四圣谛。</div>
+    </div>
+  </div>
+  <div class="foot"><span>经论出处均可在 CBETA 检索</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 为什么四圣谛是核心 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 03 · 四圣谛</span><span class="pg"></span></div>
+  <div class="kicker">为什么是核心 · 一</div>
+  <h1 class="title">佛初转法轮讲四圣谛；从初果到成佛，都要知四圣谛</h1>
+  <div class="rule"></div>
+  <div class="cols2">
+    <div class="ev r">
+      <h3>初转法轮</h3>
+      <div class="tag">佛在波罗㮈鹿野苑，为五比丘说</div>
+      <div class="qt">「我已于四圣谛三转十二行生眼、智、明、觉，故于诸天、魔、梵、沙门、婆罗门闻法众中，得出、得脱，自证得成阿耨多罗三藐三菩提。」</div>
+      <p>佛成道后第一次说法，讲的是四圣谛。佛自己说：对四圣谛三转十二行生起眼、智、明、觉，才自证成就无上正等正觉。</p>
+      <div class="s">《杂阿含经》卷 15 第 379 经（T99）</div>
+    </div>
+    <div class="ev">
+      <h3>一切都知四圣谛</h3>
+      <div class="tag">佛在波罗㮈鹿野苑告诸比丘</div>
+      <div class="qt">「若善男子正信非家，出家学道，彼一切所应当知四圣谛法。……若得辟支佛道证，彼一切知四圣谛故。……若得无上等正觉，彼一切知四圣谛故。」</div>
+      <p>出家学道的人，证须陀洹、斯陀含、阿那含、阿罗汉的人，证辟支佛道的人，成无上正等正觉的佛，经里一一说：都是知四圣谛。</p>
+      <div class="s">《杂阿含经》卷 15 第 393 经（T99）</div>
+    </div>
+  </div>
+  <div class="concl">四圣谛是佛说法的起点；从初果到成佛，都是知四圣谛。所以说四圣谛是佛教的核心。</div>
+  <div class="foot"><span>佛学图文 · 四圣谛</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 大乘三系都不离四圣谛 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 03 · 四圣谛</span><span class="pg"></span></div>
+  <div class="kicker">为什么是核心 · 二</div>
+  <h1 class="title">大乘的中观、唯识、如来藏，都不离四圣谛</h1>
+  <div class="rule"></div>
+  <div class="cols3">
+    <div class="ev">
+      <h3>中观</h3>
+      <div class="tag">空，是为了成立四谛</div>
+      <div class="qt">「以有空义故，一切法得成。」<br>「若见因缘法，则为能见佛，见苦集灭道。」</div>
+      <p>有人质疑：一切皆空，就没有四圣谛了。龙树在观四谛品里回答：因为有空义，一切法才能成立；见缘起法，就能见苦集灭道。</p>
+      <div class="s">《中论》卷 4 观四谛品（T1564）</div>
+    </div>
+    <div class="ev">
+      <h3>唯识</h3>
+      <div class="tag">菩萨见道，观的是四谛</div>
+      <div class="qt">「缘安立谛有十六心……谓于苦谛有四种心……集、灭、道谛应知亦尔。」</div>
+      <p>讲菩萨见道（通达位）的相见道：于苦谛有苦法智忍、苦法智、苦类智忍、苦类智四心，集、灭、道谛也各有四心。</p>
+      <div class="s">《成唯识论》卷 9（T1585）</div>
+    </div>
+    <div class="ev r">
+      <h3>如来藏</h3>
+      <div class="tag">从灭谛讲如来藏</div>
+      <div class="qt">「所言苦灭者……如来法身不离烦恼藏，名如来藏。」</div>
+      <p>经中讲「无作四圣谛」，说圆满的知苦、断集、证灭、修道，「唯如来、应、等正觉事究竟」。接着从苦灭讲到如来法身、如来藏。</p>
+      <div class="s">《胜鬘经》（T353）</div>
+    </div>
+  </div>
+  <div class="concl">离开四圣谛，大乘的见道、修道就无从说起。四圣谛不是小乘思想，是佛教的核心思想。</div>
+  <div class="foot"><span>佛学图文 · 四圣谛</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 四圣谛是什么 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 03 · 四圣谛</span><span class="pg"></span></div>
+  <div class="kicker">四圣谛是什么</div>
+  <h1 class="title">苦、集、灭、道，与三转十二行</h1>
+  <div class="rule"></div>
+  <div class="dt">
+    <div></div>
+    <div class="h">苦<small>果 · 世间</small></div>
+    <div class="h">集<small>因 · 世间</small></div>
+    <div class="h r">灭<small>果 · 出世间</small></div>
+    <div class="h r">道<small>因 · 出世间</small></div>
+    <div class="rl"><span>是什么<small>杂阿含 344</small></span></div>
+    <div class="c">生苦、老苦、病苦、死苦、恩爱别苦、怨憎会苦、所欲不得苦，「如是略说五受阴苦」</div>
+    <div class="c">「当来有爱，喜、贪俱，彼彼集著，是名苦集」</div>
+    <div class="c">「若当来有爱，喜、贪俱，彼彼染著无余断，乃至息、没，是名苦灭」</div>
+    <div class="c">「苦灭道迹」：「谓八圣道」，正见、正志、正语、正业、正命、正方便、正念、正定</div>
+    <div class="rl"><span>示转<small>这是什么</small></span></div>
+    <div class="c k">此是苦</div><div class="c k">此是集</div><div class="c k r">此是灭</div><div class="c k r">此是道</div>
+    <div class="rl"><span>劝转<small>应当怎样</small></span></div>
+    <div class="c k">当知</div><div class="c k">当断</div><div class="c k r">当作证</div><div class="c k r">当修</div>
+    <div class="rl"><span>证转<small>已经做到</small></span></div>
+    <div class="c k">已知</div><div class="c k">已断</div><div class="c k r">已作证</div><div class="c k r">已修</div>
+  </div>
+  <div class="q" style="margin-top:22px">「苦圣谛知当复知……苦集圣谛已知当断……苦灭圣谛已知当作证……苦灭道迹圣谛已知当修。」<small>《杂阿含经》卷 15 第 379 经：四谛各三转，共十二行。四谛的解释依《杂阿含经》卷 14 第 344 经，舍利弗答摩诃拘絺罗</small></div>
+  <div class="foot"><span>佛学图文 · 四圣谛</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
 
 <!-- ===== 苦集 与 十二因缘顺转 ===== -->
 <section class="card">
@@ -240,13 +415,13 @@
   <div class="ks">
     <div class="blk">
       <div class="h"><b>苦</b><span>果 · 八苦</span></div>
-      <div class="pl"><i>生苦</i><i>老苦</i><i>病苦</i><i>死苦</i><i>怨憎会苦</i><i>爱别离苦</i><i>所求不得苦</i><i class="last">略五盛阴苦</i></div>
-      <div class="s">《中阿含经》卷 7 第 31 经 分别圣谛经</div>
+      <div class="pl"><i>生苦</i><i>老苦</i><i>病苦</i><i>死苦</i><i>恩爱别苦</i><i>怨憎会苦</i><i>所欲不得苦</i><i class="last">略说五受阴苦</i></div>
+      <div class="s">《杂阿含经》卷 14 第 344 经</div>
     </div>
     <div class="blk" style="border-top-color:var(--cinnabar)">
-      <div class="h"><b style="color:var(--cinnabar)">集</b><span>因 · 经中叫「爱习苦习圣谛」</span></div>
-      <p>对内六处、对妻子财物「有爱、有腻、有染、有著」，是名为习。<br>放到十二支里：<b class="red">惑</b>（无明、爱、取）加上<b>业</b>（行、有），就是集。</p>
-      <div class="s">《中阿含经》卷 7 第 31 经；《俱舍论》卷 9「三烦恼二业，七事亦名果」</div>
+      <div class="h"><b style="color:var(--cinnabar)">集</b><span>因 · 当来有爱</span></div>
+      <p>「当来有爱，喜、贪俱，彼彼集著，是名苦集」。<br>放到十二支里：<b class="red">惑</b>（无明、爱、取）加上<b>业</b>（行、有），就是集。</p>
+      <div class="s">《杂阿含经》卷 14 第 344 经；《俱舍论》卷 9「三烦恼二业，七事亦名果」</div>
     </div>
   </div>
 
@@ -273,7 +448,7 @@
 
   <div class="q" style="margin-top:20px">「此有故彼有，此起故彼起，谓缘无明行，乃至纯大苦聚集。」<small>《杂阿含经》卷 12 第 298 经（T99）：十二支的解释同出此经。三世两重因果依《俱舍论》卷 9「十二支三际，前后际各二，中八据圆满」</small></div>
 
-  <div class="foot"><span>佛学图文 · 四圣谛</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+  <div class="foot"><span>佛学图文 · 四圣谛</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
 </section>
 
 <!-- ===== 灭道 与 十二因缘逆转 ===== -->
@@ -301,7 +476,7 @@
       <div class="h"><b style="color:var(--cinnabar)">道</b><span>因 · 八正道</span></div>
       <div class="qt">「有道有向，修习多修习，得涅槃耶？」「有。谓八正道——正见乃至正定。」</div>
       <div class="bz8"><i>正见</i><i>正思惟</i><i>正语</i><i>正业</i><i>正命</i><i>正精进</i><i>正念</i><i>正定</i></div>
-      <div class="s">同经。《中阿含》分别圣谛经的道谛，也是这八支</div>
+      <div class="s">同经。《杂阿含》第 344 经：苦灭道迹，「谓八圣道」</div>
     </div>
   </div>
 
@@ -336,16 +511,37 @@
 
   <div class="q" style="margin-top:40px">「若无明离欲而生明……老死则断，则知断其根本，如截多罗树头，于未来世成不生法。」<small>《杂阿含经》卷 12 第 297 经 大空法经（T99）　同经：「彼无明灭则行灭，乃至纯大苦聚灭」</small></div>
 
-  <div class="foot"><span>佛学图文 · 四圣谛</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+  <div class="foot"><span>佛学图文 · 四圣谛</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
 </section>
 
-<!-- ===== 八正道 展开为 三十七道品 ===== -->
+<!-- ===== 八正道 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 03 · 四圣谛</span><span class="pg"></span></div>
+  <div class="kicker">道 · 八正道</div>
+  <h1 class="title">八正道：每一支是什么，分属戒、定、慧</h1>
+  <div class="rule"></div>
+  <div class="bz8t">
+    <div class="hd">八支</div><div class="hd">经中的解释</div><div class="hd" style="text-align:center">三聚</div>
+    <div class="nm hui"><b>正见</b><small></small></div><div class="df">有施、有说、有斋；有善行、恶行，有善恶行果报；有此世、他世；有父母、有众生生；有阿罗汉自知作证</div><div class="jy hui">慧</div>
+    <div class="nm hui"><b>正志</b><small>正思惟</small></div><div class="df">出要志、无恚志、不害志</div><div class="jy hui">慧</div>
+    <div class="nm jie"><b>正语</b><small></small></div><div class="df">离妄语、离两舌、离恶口、离绮语</div><div class="jy jie">戒</div>
+    <div class="nm jie"><b>正业</b><small></small></div><div class="df">离杀、盗、淫</div><div class="jy jie">戒</div>
+    <div class="nm jie"><b>正命</b><small></small></div><div class="df">如法求衣服、饮食、卧具、汤药，非不如法</div><div class="jy jie">戒</div>
+    <div class="nm hui"><b>正方便</b><small>正精进</small></div><div class="df">欲、精进、方便、出离、勤竞、堪能常行不退</div><div class="jy hui">慧</div>
+    <div class="nm ding"><b>正念</b><small></small></div><div class="df">念随顺，念不妄、不虚</div><div class="jy ding">定</div>
+    <div class="nm ding"><b>正定</b><small></small></div><div class="df">住心不乱、坚固、摄持、寂止、三昧、一心</div><div class="jy ding">定</div>
+  </div>
+  <div class="q" style="margin-top:20px">「正语、正业、正命，此三道支圣戒聚所摄。正念、正定，此二道支圣定聚所摄。正见、正志、正方便，此三道支圣慧聚所摄。」<small>各支解释依《杂阿含经》卷 28 第 784 经。《杂阿含》没有逐支分三聚，三聚依《中阿含经》卷 58 第 210 经（T26）；巴利《中部》第 44 经把正精进归入定聚</small></div>
+  <div class="foot"><span>佛学图文 · 四圣谛</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 八正道 与 三十七道品 ===== -->
 <section class="card">
   <div class="head"><span class="series">佛学图文 · 03 · 四圣谛</span><span class="pg"></span></div>
   <div class="top">
     <div>
       <div class="kicker">道 → 八正道 → 三十七道品</div>
-      <h1 class="title">八正道展开为三十七道品</h1>
+      <h1 class="title">八正道是主干，三十七道品更全面</h1>
     </div>
     <div class="di4">
       <div class="half" style="opacity:.35"><div class="cap">世间的因果</div><div class="ch"><b>苦</b><b>集</b></div></div>
@@ -356,95 +552,448 @@
 
   <div class="mx">
     <div class="rl bz">八正道<small>8</small></div>
-    <div class="c bz">正见</div><div class="c bz">正思惟</div><div class="c bz">正语<br>正业 正命</div><div class="c bz">正精进</div><div class="c bz">正念</div><div class="c bz">正定</div>
-    <div></div><div class="exr">↓ 其余六组，「成入」八正道各支</div>
+    <div class="c bz">正见</div><div class="c bz">正思惟</div><div class="c bz">正语<br>正业 正命</div><div class="c bz">正精进</div><div class="c bz">正念</div><div class="c bz">正定</div><div class="c oh">信</div><div class="c oh">喜 · 猗 · 舍</div>
+    <div></div><div class="exr">↓ 其余六组归到八正道哪一支：先依《杂阿含》，《杂阿含》没说的依《俱舍论》；右边两列不在八支之内</div>
     <div class="rl ">四念处<small>4</small></div>
-    <div class="c e"></div><div class="c e"></div><div class="c e"></div><div class="c e"></div><div class="c ">身 受 心 法</div><div class="c e"></div>
+    <div class="c e"></div><div class="c e"></div><div class="c e"></div><div class="c e"></div><div class="c ">身 受 心 法</div><div class="c e"></div><div class="c e"></div><div class="c e"></div>
     <div class="rl ">四正勤<small>4</small></div>
-    <div class="c e"></div><div class="c e"></div><div class="c e"></div><div class="c ">四正勤</div><div class="c e"></div><div class="c e"></div>
+    <div class="c e"></div><div class="c e"></div><div class="c e"></div><div class="c ">四正勤</div><div class="c e"></div><div class="c e"></div><div class="c e"></div><div class="c e"></div>
     <div class="rl ">四如意足<small>4</small></div>
-    <div class="c ">慧如意足</div><div class="c e"></div><div class="c e"></div><div class="c multi"><span class="it">欲如意足</span><span class="it">精进如意足</span></div><div class="c e"></div><div class="c ">心如意足</div>
+    <div class="c e"></div><div class="c e"></div><div class="c e"></div><div class="c e"></div><div class="c e"></div><div class="c ">欲定 · 精进定<br>意定 · 思惟定</div><div class="c e"></div><div class="c e"></div>
     <div class="rl ">五根<small>5</small></div>
-    <div class="c ">慧根</div><div class="c e"></div><div class="c e"></div><div class="c ">精进根</div><div class="c ">念根</div><div class="c multi"><span class="it">定根</span><span class="it">信根</span></div>
+    <div class="c ">慧根</div><div class="c e"></div><div class="c e"></div><div class="c ">精进根</div><div class="c ">念根</div><div class="c ">定根</div><div class="c out">信根</div><div class="c e"></div>
     <div class="rl ">五力<small>5</small></div>
-    <div class="c ">慧力</div><div class="c e"></div><div class="c e"></div><div class="c ">精进力</div><div class="c ">念力</div><div class="c multi"><span class="it">定力</span><span class="it">信力</span></div>
+    <div class="c ">慧力</div><div class="c e"></div><div class="c e"></div><div class="c ">精进力</div><div class="c ">念力</div><div class="c ">定力</div><div class="c out">信力</div><div class="c e"></div>
     <div class="rl ">七觉支<small>7</small></div>
-    <div class="c ">择法觉支</div><div class="c e"></div><div class="c e"></div><div class="c ">精进觉支</div><div class="c ">念觉支</div><div class="c multi"><span class="it">定觉支</span><span class="it">喜觉支</span><span class="it">猗觉支</span><span class="it">舍觉支</span></div>
+    <div class="c ">择法觉支</div><div class="c e"></div><div class="c e"></div><div class="c ">精进觉支</div><div class="c ">念觉支</div><div class="c ">定觉支</div><div class="c e"></div><div class="c out">喜 · 猗 · 舍<small>三觉支</small></div>
   </div>
 
-  <div class="q" style="margin-top:18px">「八圣道修习满足已，四念处修习满足，四正勤、四如意足、五根、五力、七觉分修习满足。」<small>《杂阿含经》卷 13 第 305 经（T99）；四念处即正念：同经卷 37 第 1028 经；其余归属依《解脱道论》卷 11「三十七菩提法，成入八正道内」</small></div>
+  <div class="q" style="margin-top:18px">「八圣道修习满足已，四念处修习满足，四正勤、四如意足、五根、五力、七觉分修习满足。」<small>《杂阿含经》卷 13 第 305 经（T99）。四念处即正念：卷 37 第 1028 经；「精进根谓四正断，念根谓四念处，定根谓四禅，慧根谓四圣谛」：卷 26 第 658 经；四如意足是欲、精进、意、思惟四种定：卷 7 第 179 经。信、喜、猗（轻安）、舍，依《俱舍论》卷 25 各有其体</small></div>
 
-  <div class="foot"><span>佛学图文 · 四圣谛</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+  <div class="foot"><span>佛学图文 · 四圣谛</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
 </section>
 
-<!-- ===== 总图：四圣谛、十二因缘、三十七道品 ===== -->
-<section class="card">
-  <div class="head"><span class="series">佛学图文 · 03 · 四圣谛</span><span class="pg"></span></div>
-  <div class="top">
-    <div>
-      <div class="kicker">总图</div>
-      <h1 class="title">四圣谛 · 十二因缘 · 三十七道品</h1>
-    </div>
-    <div class="di4">
-      <div class="half"><div class="cap">世间的因果</div><div class="ch"><b>苦</b><b>集</b></div></div>
-      <div class="half"><div class="cap r">出世间的因果</div><div class="ch"><b class="r">灭</b><b class="r">道</b></div></div>
-    </div>
+<!-- ===== 三十七道品 思维导图（还原） ===== -->
+<section class="card xm">
+  <div class="head"><span class="series">佛学图文 · 03</span><span class="pg"></span></div>
+  <div class="mmwrap">
+<!-- MINDMAP37 -->
+<svg class="mm" viewBox="0 0 756 602" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="gw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f1f1f1"/></linearGradient>
+<linearGradient id="gc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b6f3f3"/><stop offset="1" stop-color="#4fc9cf"/></linearGradient>
+<linearGradient id="gy" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffff9a"/><stop offset="1" stop-color="#f3e61e"/></linearGradient>
+<linearGradient id="go" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd38a"/><stop offset="1" stop-color="#f0981e"/></linearGradient>
+<linearGradient id="gg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a8f5a0"/><stop offset="1" stop-color="#3cc43a"/></linearGradient>
+<linearGradient id="gr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffc2c2"/><stop offset="1" stop-color="#e46e6e"/></linearGradient>
+<linearGradient id="gb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6e2ff"/><stop offset="1" stop-color="#86a0dc"/></linearGradient>
+<linearGradient id="gm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9fbe6"/><stop offset="1" stop-color="#b9e8b0"/></linearGradient>
+<marker id="ay" viewBox="0 0 8 8" refX="7.4" refY="4" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,0.6 L7.4,4 L1,7.4" fill="none" stroke="#c4cb34" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="ab" viewBox="0 0 8 8" refX="7.4" refY="4" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,0.6 L7.4,4 L1,7.4" fill="none" stroke="#a2520e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="ar" viewBox="0 0 8 8" refX="7.4" refY="4" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,0.6 L7.4,4 L1,7.4" fill="none" stroke="#b02a2a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="ag" viewBox="0 0 8 8" refX="7.4" refY="4" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,0.6 L7.4,4 L1,7.4" fill="none" stroke="#1d6e1d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="an" viewBox="0 0 8 8" refX="7.4" refY="4" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,0.6 L7.4,4 L1,7.4" fill="none" stroke="#16166e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="ak" viewBox="0 0 8 8" refX="7.4" refY="4" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,0.6 L7.4,4 L1,7.4" fill="none" stroke="#111111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="au" viewBox="0 0 8 8" refX="7.4" refY="4" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,0.6 L7.4,4 L1,7.4" fill="none" stroke="#3d5592" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="as" viewBox="0 0 8 8" refX="7.4" refY="4" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,0.6 L7.4,4 L1,7.4" fill="none" stroke="#555555" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<line x1="282" y1="110" x2="355" y2="274" stroke="#222" stroke-width="0.9"/>
+<line x1="456" y1="110" x2="384" y2="274" stroke="#222" stroke-width="0.9"/>
+<line x1="430" y1="274" x2="509" y2="244" stroke="#222" stroke-width="0.9"/>
+<line x1="446" y1="334" x2="510" y2="363" stroke="#222" stroke-width="0.9"/>
+<line x1="383" y1="336" x2="455" y2="503" stroke="#222" stroke-width="0.9"/>
+<line x1="356" y1="336" x2="282" y2="503" stroke="#222" stroke-width="0.9"/>
+<line x1="286" y1="318" x2="224" y2="324" stroke="#222" stroke-width="0.9"/>
+<line x1="202" y1="21" x2="202" y2="196" stroke="#333" stroke-width="0.9"/>
+<line x1="202" y1="21.0" x2="193" y2="21.0" stroke="#333" stroke-width="0.9"/>
+<line x1="202" y1="46.0" x2="193" y2="46.0" stroke="#333" stroke-width="0.9"/>
+<line x1="202" y1="71.0" x2="193" y2="71.0" stroke="#333" stroke-width="0.9"/>
+<line x1="202" y1="96.0" x2="193" y2="96.0" stroke="#333" stroke-width="0.9"/>
+<line x1="202" y1="121.0" x2="193" y2="121.0" stroke="#333" stroke-width="0.9"/>
+<line x1="202" y1="146.0" x2="193" y2="146.0" stroke="#333" stroke-width="0.9"/>
+<line x1="202" y1="171.0" x2="193" y2="171.0" stroke="#333" stroke-width="0.9"/>
+<line x1="202" y1="196.0" x2="193" y2="196.0" stroke="#333" stroke-width="0.9"/>
+<line x1="202" y1="108" x2="281" y2="108" stroke="#333" stroke-width="0.9"/>
+<line x1="534" y1="69" x2="534" y2="144" stroke="#333" stroke-width="0.9"/>
+<line x1="534" y1="69.0" x2="543" y2="69.0" stroke="#333" stroke-width="0.9"/>
+<line x1="534" y1="94.0" x2="543" y2="94.0" stroke="#333" stroke-width="0.9"/>
+<line x1="534" y1="119.0" x2="543" y2="119.0" stroke="#333" stroke-width="0.9"/>
+<line x1="534" y1="144.0" x2="543" y2="144.0" stroke="#333" stroke-width="0.9"/>
+<line x1="534" y1="106" x2="454" y2="106" stroke="#333" stroke-width="0.9"/>
+<line x1="588" y1="198" x2="588" y2="273" stroke="#333" stroke-width="0.9"/>
+<line x1="588" y1="198.0" x2="597" y2="198.0" stroke="#333" stroke-width="0.9"/>
+<line x1="588" y1="223.0" x2="597" y2="223.0" stroke="#333" stroke-width="0.9"/>
+<line x1="588" y1="248.0" x2="597" y2="248.0" stroke="#333" stroke-width="0.9"/>
+<line x1="588" y1="273.0" x2="597" y2="273.0" stroke="#333" stroke-width="0.9"/>
+<line x1="588" y1="235" x2="509" y2="235" stroke="#333" stroke-width="0.9"/>
+<line x1="590" y1="327" x2="590" y2="402" stroke="#333" stroke-width="0.9"/>
+<line x1="590" y1="327.0" x2="599" y2="327.0" stroke="#333" stroke-width="0.9"/>
+<line x1="590" y1="352.0" x2="599" y2="352.0" stroke="#333" stroke-width="0.9"/>
+<line x1="590" y1="377.0" x2="599" y2="377.0" stroke="#333" stroke-width="0.9"/>
+<line x1="590" y1="402.0" x2="599" y2="402.0" stroke="#333" stroke-width="0.9"/>
+<line x1="590" y1="364" x2="510" y2="364" stroke="#333" stroke-width="0.9"/>
+<line x1="516" y1="456" x2="516" y2="556" stroke="#333" stroke-width="0.9"/>
+<line x1="516" y1="456.0" x2="526" y2="456.0" stroke="#333" stroke-width="0.9"/>
+<line x1="516" y1="481.0" x2="526" y2="481.0" stroke="#333" stroke-width="0.9"/>
+<line x1="516" y1="506.0" x2="526" y2="506.0" stroke="#333" stroke-width="0.9"/>
+<line x1="516" y1="531.0" x2="526" y2="531.0" stroke="#333" stroke-width="0.9"/>
+<line x1="516" y1="556.0" x2="526" y2="556.0" stroke="#333" stroke-width="0.9"/>
+<line x1="516" y1="506" x2="454" y2="506" stroke="#333" stroke-width="0.9"/>
+<line x1="219" y1="453" x2="219" y2="553" stroke="#333" stroke-width="0.9"/>
+<line x1="219" y1="453.0" x2="210" y2="453.0" stroke="#333" stroke-width="0.9"/>
+<line x1="219" y1="478.0" x2="210" y2="478.0" stroke="#333" stroke-width="0.9"/>
+<line x1="219" y1="503.0" x2="210" y2="503.0" stroke="#333" stroke-width="0.9"/>
+<line x1="219" y1="528.0" x2="210" y2="528.0" stroke="#333" stroke-width="0.9"/>
+<line x1="219" y1="553.0" x2="210" y2="553.0" stroke="#333" stroke-width="0.9"/>
+<line x1="219" y1="503" x2="281" y2="503" stroke="#333" stroke-width="0.9"/>
+<line x1="145" y1="249" x2="145" y2="399" stroke="#333" stroke-width="0.9"/>
+<line x1="145" y1="249.0" x2="135" y2="249.0" stroke="#333" stroke-width="0.9"/>
+<line x1="145" y1="274.0" x2="135" y2="274.0" stroke="#333" stroke-width="0.9"/>
+<line x1="145" y1="299.0" x2="135" y2="299.0" stroke="#333" stroke-width="0.9"/>
+<line x1="145" y1="324.0" x2="135" y2="324.0" stroke="#333" stroke-width="0.9"/>
+<line x1="145" y1="349.0" x2="135" y2="349.0" stroke="#333" stroke-width="0.9"/>
+<line x1="145" y1="374.0" x2="135" y2="374.0" stroke="#333" stroke-width="0.9"/>
+<line x1="145" y1="399.0" x2="135" y2="399.0" stroke="#333" stroke-width="0.9"/>
+<line x1="145" y1="324" x2="223" y2="324" stroke="#333" stroke-width="0.9"/>
+<path d="M454,104 C390,108 262,126 194,166" fill="none" stroke="#c4cb34" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"/>
+<path d="M454,112 C380,132 232,220 136,247" fill="none" stroke="#c4cb34" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"/>
+<path d="M521,105 C600,110 692,150 736,230 C764,292 722,362 649,377" fill="none" stroke="#c4cb34" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"/>
+<path d="M521,110 C612,124 702,170 744,252 C772,322 716,396 649,402" fill="none" stroke="#c4cb34" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"/>
+<path d="M484,124 C470,200 454,300 461,392 C467,462 500,496 526,503" fill="none" stroke="#c4cb34" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"/>
+<path d="M476,124 C462,212 446,312 456,402 C464,472 498,506 526,509" fill="none" stroke="#c4cb34" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"/>
+<path d="M526,509 C470,536 290,540 214,505" fill="none" stroke="#c4cb34" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round" marker-end="url(#ay)"/>
+<path d="M194,146 C300,150 442,190 509,228" fill="none" stroke="#a2520e" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"/>
+<path d="M136,298 C250,262 402,226 509,237" fill="none" stroke="#a2520e" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"/>
+<path d="M517,253 C482,300 464,380 476,430 C486,466 506,476 526,480" fill="none" stroke="#a2520e" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"/>
+<path d="M550,254 C560,300 576,332 599,350" fill="none" stroke="#a2520e" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"/>
+<path d="M526,482 C430,470 300,474 214,478" fill="none" stroke="#a2520e" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round" marker-end="url(#ab)"/>
+<path d="M526,457 C420,444 300,449 214,453" fill="none" stroke="#b02a2a" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round" marker-end="url(#ar)"/>
+<path d="M156,196 C92,206 40,260 50,320 C58,360 80,372 86,374" fill="none" stroke="#1d6e1d" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"/>
+<path d="M86,378 C55,386 50,440 80,490 C110,526 150,530 174,528" fill="none" stroke="#1d6e1d" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"/>
+<path d="M526,532 C430,552 300,546 214,528" fill="none" stroke="#1d6e1d" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round" marker-end="url(#ag)"/>
+<path d="M156,21 C60,40 10,200 20,380 C30,530 150,590 330,592 C430,592 490,580 526,558" fill="none" stroke="#16166e" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"/>
+<path d="M526,556 C430,576 300,571 214,553" fill="none" stroke="#16166e" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round" marker-end="url(#an)"/>
+<path d="M455,117 C400,150 272,238 222,301" fill="none" stroke="#111111" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round" marker-end="url(#ak)"/>
+<rect x="156" y="11" width="37" height="20" rx="3" fill="url(#gc)" stroke="#2b7f86" stroke-width="0.9"/><rect x="157.2" y="12.2" width="34.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="174.5" y="25.14" font-size="11.5" text-anchor="middle">正見</text>
+<rect x="143" y="36" width="50" height="20" rx="3" fill="url(#gw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="144.2" y="37.2" width="47.6" height="8.4" rx="2" fill="#fff" opacity="0"/><text x="168.0" y="50.14" font-size="11.5" text-anchor="middle">正思惟</text>
+<rect x="156" y="61" width="37" height="20" rx="3" fill="url(#gw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="157.2" y="62.2" width="34.6" height="8.4" rx="2" fill="#fff" opacity="0"/><text x="174.5" y="75.14" font-size="11.5" text-anchor="middle">正語</text>
+<rect x="156" y="86" width="37" height="20" rx="3" fill="url(#gw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="157.2" y="87.2" width="34.6" height="8.4" rx="2" fill="#fff" opacity="0"/><text x="174.5" y="100.14" font-size="11.5" text-anchor="middle">正業</text>
+<rect x="156" y="111" width="37" height="20" rx="3" fill="url(#gw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="157.2" y="112.2" width="34.6" height="8.4" rx="2" fill="#fff" opacity="0"/><text x="174.5" y="125.14" font-size="11.5" text-anchor="middle">正命</text>
+<rect x="143" y="136" width="50" height="20" rx="3" fill="url(#go)" stroke="#9a5a0c" stroke-width="0.9"/><rect x="144.2" y="137.2" width="47.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="168.0" y="150.14" font-size="11.5" text-anchor="middle">正精進</text>
+<rect x="156" y="161" width="37" height="20" rx="3" fill="url(#gy)" stroke="#8f8a12" stroke-width="0.9"/><rect x="157.2" y="162.2" width="34.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="174.5" y="175.14" font-size="11.5" text-anchor="middle">正念</text>
+<rect x="156" y="186" width="37" height="20" rx="3" fill="url(#gg)" stroke="#24772a" stroke-width="0.9"/><rect x="157.2" y="187.2" width="34.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="174.5" y="200.14" font-size="11.5" text-anchor="middle">正定</text>
+<rect x="543" y="59" width="49" height="20" rx="3" fill="url(#gy)" stroke="#8f8a12" stroke-width="0.9"/><rect x="544.2" y="60.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="567.5" y="73.14" font-size="11.5" text-anchor="middle">身念住</text>
+<rect x="543" y="84" width="49" height="20" rx="3" fill="url(#gy)" stroke="#8f8a12" stroke-width="0.9"/><rect x="544.2" y="85.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="567.5" y="98.14" font-size="11.5" text-anchor="middle">受念住</text>
+<rect x="543" y="109" width="49" height="20" rx="3" fill="url(#gy)" stroke="#8f8a12" stroke-width="0.9"/><rect x="544.2" y="110.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="567.5" y="123.14" font-size="11.5" text-anchor="middle">心念住</text>
+<rect x="543" y="134" width="49" height="20" rx="3" fill="url(#gy)" stroke="#8f8a12" stroke-width="0.9"/><rect x="544.2" y="135.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="567.5" y="148.14" font-size="11.5" text-anchor="middle">法念住</text>
+<rect x="597" y="188" width="101" height="20" rx="3" fill="url(#go)" stroke="#9a5a0c" stroke-width="0.9"/><rect x="598.2" y="189.2" width="98.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="647.5" y="202.14" font-size="11.5" text-anchor="middle">已起惡不善法斷</text>
+<rect x="597" y="213" width="115" height="20" rx="3" fill="url(#go)" stroke="#9a5a0c" stroke-width="0.9"/><rect x="598.2" y="214.2" width="112.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="654.5" y="227.14" font-size="11.5" text-anchor="middle">未起惡不善法不起</text>
+<rect x="597" y="238" width="88" height="20" rx="3" fill="url(#go)" stroke="#9a5a0c" stroke-width="0.9"/><rect x="598.2" y="239.2" width="85.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="641.0" y="252.14" font-size="11.5" text-anchor="middle">未起善法令起</text>
+<rect x="597" y="263" width="115" height="20" rx="3" fill="url(#go)" stroke="#9a5a0c" stroke-width="0.9"/><rect x="598.2" y="264.2" width="112.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="654.5" y="277.14" font-size="11.5" text-anchor="middle">已起善法增益修習</text>
+<rect x="599" y="317" width="49" height="20" rx="3" fill="url(#gw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="600.2" y="318.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0"/><text x="623.5" y="331.14" font-size="11.5" text-anchor="middle">欲神足</text>
+<rect x="599" y="342" width="62" height="20" rx="3" fill="url(#go)" stroke="#9a5a0c" stroke-width="0.9"/><rect x="600.2" y="343.2" width="59.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="630.0" y="356.14" font-size="11.5" text-anchor="middle">精進神足</text>
+<rect x="599" y="367" width="49" height="20" rx="3" fill="url(#gy)" stroke="#8f8a12" stroke-width="0.9"/><rect x="600.2" y="368.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="623.5" y="381.14" font-size="11.5" text-anchor="middle">心神足</text>
+<rect x="599" y="392" width="49" height="20" rx="3" fill="url(#gy)" stroke="#8f8a12" stroke-width="0.9"/><rect x="600.2" y="393.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="623.5" y="406.14" font-size="11.5" text-anchor="middle">觀神足</text>
+<rect x="526" y="446" width="36" height="20" rx="3" fill="url(#gr)" stroke="#9a3434" stroke-width="0.9"/><rect x="527.2" y="447.2" width="33.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="544.0" y="460.14" font-size="11.5" text-anchor="middle">信根</text>
+<rect x="526" y="471" width="50" height="20" rx="3" fill="url(#go)" stroke="#9a5a0c" stroke-width="0.9"/><rect x="527.2" y="472.2" width="47.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="551.0" y="485.14" font-size="11.5" text-anchor="middle">精進根</text>
+<rect x="526" y="496" width="36" height="20" rx="3" fill="url(#gy)" stroke="#8f8a12" stroke-width="0.9"/><rect x="527.2" y="497.2" width="33.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="544.0" y="510.14" font-size="11.5" text-anchor="middle">念根</text>
+<rect x="526" y="521" width="36" height="20" rx="3" fill="url(#gg)" stroke="#24772a" stroke-width="0.9"/><rect x="527.2" y="522.2" width="33.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="544.0" y="535.14" font-size="11.5" text-anchor="middle">定根</text>
+<rect x="526" y="546" width="36" height="20" rx="3" fill="url(#gc)" stroke="#2b7f86" stroke-width="0.9"/><rect x="527.2" y="547.2" width="33.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="544.0" y="560.14" font-size="11.5" text-anchor="middle">慧根</text>
+<rect x="174" y="443" width="36" height="20" rx="3" fill="url(#gr)" stroke="#9a3434" stroke-width="0.9"/><rect x="175.2" y="444.2" width="33.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="192.0" y="457.14" font-size="11.5" text-anchor="middle">信力</text>
+<rect x="161" y="468" width="49" height="20" rx="3" fill="url(#go)" stroke="#9a5a0c" stroke-width="0.9"/><rect x="162.2" y="469.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="185.5" y="482.14" font-size="11.5" text-anchor="middle">精進力</text>
+<rect x="174" y="493" width="36" height="20" rx="3" fill="url(#gy)" stroke="#8f8a12" stroke-width="0.9"/><rect x="175.2" y="494.2" width="33.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="192.0" y="507.14" font-size="11.5" text-anchor="middle">念力</text>
+<rect x="174" y="518" width="36" height="20" rx="3" fill="url(#gg)" stroke="#24772a" stroke-width="0.9"/><rect x="175.2" y="519.2" width="33.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="192.0" y="532.14" font-size="11.5" text-anchor="middle">定力</text>
+<rect x="174" y="543" width="36" height="20" rx="3" fill="url(#gc)" stroke="#2b7f86" stroke-width="0.9"/><rect x="175.2" y="544.2" width="33.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="192.0" y="557.14" font-size="11.5" text-anchor="middle">慧力</text>
+<rect x="86" y="239" width="49" height="20" rx="3" fill="url(#gy)" stroke="#8f8a12" stroke-width="0.9"/><rect x="87.2" y="240.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="110.5" y="253.14" font-size="11.5" text-anchor="middle">念覺支</text>
+<rect x="73" y="264" width="62" height="20" rx="3" fill="url(#gw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="74.2" y="265.2" width="59.6" height="8.4" rx="2" fill="#fff" opacity="0"/><text x="104.0" y="278.14" font-size="11.5" text-anchor="middle">擇法覺支</text>
+<rect x="73" y="289" width="62" height="20" rx="3" fill="url(#go)" stroke="#9a5a0c" stroke-width="0.9"/><rect x="74.2" y="290.2" width="59.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="104.0" y="303.14" font-size="11.5" text-anchor="middle">精進覺支</text>
+<rect x="86" y="314" width="49" height="20" rx="3" fill="url(#gw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="87.2" y="315.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0"/><text x="110.5" y="328.14" font-size="11.5" text-anchor="middle">猗覺支</text>
+<rect x="86" y="339" width="49" height="20" rx="3" fill="url(#gw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="87.2" y="340.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0"/><text x="110.5" y="353.14" font-size="11.5" text-anchor="middle">喜覺支</text>
+<rect x="86" y="364" width="49" height="20" rx="3" fill="url(#gg)" stroke="#24772a" stroke-width="0.9"/><rect x="87.2" y="365.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="110.5" y="378.14" font-size="11.5" text-anchor="middle">定覺支</text>
+<rect x="86" y="389" width="49" height="20" rx="3" fill="url(#gw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="87.2" y="390.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0"/><text x="110.5" y="403.14" font-size="11.5" text-anchor="middle">捨覺支</text>
+<rect x="216" y="90" width="65" height="36" rx="6" fill="url(#gw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="217.2" y="91.2" width="62.6" height="15.12" rx="5" fill="#fff" opacity="0"/><text x="248.5" y="113.94" font-size="16.5" text-anchor="middle">八正道</text>
+<circle cx="208" cy="108" r="4" fill="#e3ebf7" stroke="#8aa3c8" stroke-width="0.8"/><line x1="205.8" y1="108" x2="210.2" y2="108" stroke="#5a78a8" stroke-width="0.9"/>
+<rect x="454" y="87" width="66" height="37" rx="6" fill="url(#gy)" stroke="#8f8a12" stroke-width="0.9"/><rect x="455.2" y="88.2" width="63.6" height="15.54" rx="5" fill="#fff" opacity="0.35"/><text x="487.0" y="111.44" font-size="16.5" text-anchor="middle">四念住</text>
+<circle cx="527" cy="106" r="4" fill="#e3ebf7" stroke="#8aa3c8" stroke-width="0.8"/><line x1="524.8" y1="106" x2="529.2" y2="106" stroke="#5a78a8" stroke-width="0.9"/>
+<rect x="509" y="217" width="65" height="36" rx="6" fill="url(#go)" stroke="#9a5a0c" stroke-width="0.9"/><rect x="510.2" y="218.2" width="62.6" height="15.12" rx="5" fill="#fff" opacity="0.35"/><text x="541.5" y="240.94" font-size="16.5" text-anchor="middle">四正勤</text>
+<circle cx="581" cy="235" r="4" fill="#e3ebf7" stroke="#8aa3c8" stroke-width="0.8"/><line x1="578.8" y1="235" x2="583.2" y2="235" stroke="#5a78a8" stroke-width="0.9"/>
+<rect x="510" y="345" width="66" height="37" rx="6" fill="url(#gw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="511.2" y="346.2" width="63.6" height="15.54" rx="5" fill="#fff" opacity="0"/><text x="543.0" y="369.44" font-size="16.5" text-anchor="middle">四神足</text>
+<circle cx="583" cy="364" r="4" fill="#e3ebf7" stroke="#8aa3c8" stroke-width="0.8"/><line x1="580.8" y1="364" x2="585.2" y2="364" stroke="#5a78a8" stroke-width="0.9"/>
+<rect x="454" y="488" width="49" height="36" rx="6" fill="url(#gw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="455.2" y="489.2" width="46.6" height="15.12" rx="5" fill="#fff" opacity="0"/><text x="478.5" y="511.94" font-size="16.5" text-anchor="middle">五根</text>
+<circle cx="509" cy="506" r="4" fill="#e3ebf7" stroke="#8aa3c8" stroke-width="0.8"/><line x1="506.8" y1="506" x2="511.2" y2="506" stroke="#5a78a8" stroke-width="0.9"/>
+<rect x="233" y="485" width="48" height="36" rx="6" fill="url(#gw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="234.2" y="486.2" width="45.6" height="15.12" rx="5" fill="#fff" opacity="0"/><text x="257.0" y="508.94" font-size="16.5" text-anchor="middle">五力</text>
+<circle cx="226" cy="503" r="4" fill="#e3ebf7" stroke="#8aa3c8" stroke-width="0.8"/><line x1="223.8" y1="503" x2="228.2" y2="503" stroke="#5a78a8" stroke-width="0.9"/>
+<rect x="158" y="306" width="65" height="36" rx="6" fill="url(#gw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="159.2" y="307.2" width="62.6" height="15.12" rx="5" fill="#fff" opacity="0"/><text x="190.5" y="329.94" font-size="16.5" text-anchor="middle">七覺支</text>
+<circle cx="150" cy="324" r="4" fill="#e3ebf7" stroke="#8aa3c8" stroke-width="0.8"/><line x1="147.8" y1="324" x2="152.2" y2="324" stroke="#5a78a8" stroke-width="0.9"/>
+<rect x="286" y="274" width="166" height="62" rx="10" fill="url(#gw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="287.2" y="275.2" width="163.6" height="26.04" rx="9" fill="#fff" opacity="0"/><text x="369.0" y="314.0" font-size="25" text-anchor="middle">三十七道品</text>
+<text x="323" y="124" font-size="11" text-anchor="middle" fill="#555" class="lb">=</text>
+<text x="301" y="178" font-size="11" text-anchor="middle" fill="#555" class="lb">=</text>
+<text x="457" y="339" font-size="11" text-anchor="middle" fill="#555" class="lb">=</text>
+<text x="376" y="166" font-size="11" text-anchor="middle" fill="#555" class="lb">=</text>
+<text x="323" y="240" font-size="11" text-anchor="middle" fill="#555" class="lb">=</text>
+<text x="478" y="345" font-size="11" text-anchor="middle" fill="#555" class="lb">=</text>
+<text x="334" y="203" font-size="11" text-anchor="middle" fill="#555" class="lb">滿足</text>
+<text x="24" y="371" font-size="11" text-anchor="middle" fill="#555" class="lb">四聖諦</text>
+</svg>
+<!-- /MINDMAP37 -->
   </div>
-  <div class="rule"></div>
+  <div class="foot"><span>佛学图文 · 四圣谛</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
 
-  <!-- 集·苦：十二因缘顺转 -->
-  <div class="row">
-    <div class="lab"><b>集<em>→</em>苦</b><span>十二因缘顺转<br>流转</span></div>
-    <div>
-      <div class="nid">
-        <div class="c huo">无明</div><div class="a">→</div><div class="c ye">行</div><div class="a">→</div><div class="c">识</div><div class="a">→</div><div class="c">名色</div><div class="a">→</div><div class="c">六入</div><div class="a">→</div><div class="c">触</div><div class="a">→</div><div class="c">受</div><div class="a">→</div><div class="c huo">爱</div><div class="a">→</div><div class="c huo">取</div><div class="a">→</div><div class="c ye">有</div><div class="a">→</div><div class="c">生</div><div class="a">→</div><div class="c">老死</div>
-        <div class="end">纯大苦聚集</div>
-      </div>
-      <div class="legend">
-        <span><i class="sw huo"></i>惑：无明、爱、取</span>
-        <span><i class="sw ye"></i>业：行、有</span>
-        <span>→ <b>集</b>（苦的因）</span>
-        <span><i class="sw shi"></i>事：其余七支 → <b>苦</b>（果）</span>
-        <span class="src">《俱舍论》卷9：三烦恼二业，七事亦名果</span>
-      </div>
-    </div>
+<!-- ===== 总图（思维导图） ===== -->
+<section class="card xm ov">
+  <div class="head"><span class="series">佛学图文 · 03 · 四圣谛 · 总图</span><span class="pg"></span></div>
+  <div class="mmwrap">
+<!-- MINDMAP_OVERVIEW -->
+<svg class="mm" viewBox="0 0 1680 920" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="ovgw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f1f1f1"/></linearGradient>
+<linearGradient id="ovgc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b6f3f3"/><stop offset="1" stop-color="#4fc9cf"/></linearGradient>
+<linearGradient id="ovgy" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffff9a"/><stop offset="1" stop-color="#f3e61e"/></linearGradient>
+<linearGradient id="ovgo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd38a"/><stop offset="1" stop-color="#f0981e"/></linearGradient>
+<linearGradient id="ovgg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a8f5a0"/><stop offset="1" stop-color="#3cc43a"/></linearGradient>
+<linearGradient id="ovgr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffc2c2"/><stop offset="1" stop-color="#e46e6e"/></linearGradient>
+<linearGradient id="ovgb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6e2ff"/><stop offset="1" stop-color="#86a0dc"/></linearGradient>
+<linearGradient id="ovgm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9fbe6"/><stop offset="1" stop-color="#b9e8b0"/></linearGradient>
+<marker id="ovay" viewBox="0 0 8 8" refX="7.4" refY="4" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,0.6 L7.4,4 L1,7.4" fill="none" stroke="#c4cb34" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="ovab" viewBox="0 0 8 8" refX="7.4" refY="4" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,0.6 L7.4,4 L1,7.4" fill="none" stroke="#a2520e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="ovar" viewBox="0 0 8 8" refX="7.4" refY="4" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,0.6 L7.4,4 L1,7.4" fill="none" stroke="#b02a2a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="ovag" viewBox="0 0 8 8" refX="7.4" refY="4" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,0.6 L7.4,4 L1,7.4" fill="none" stroke="#1d6e1d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="ovan" viewBox="0 0 8 8" refX="7.4" refY="4" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,0.6 L7.4,4 L1,7.4" fill="none" stroke="#16166e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="ovak" viewBox="0 0 8 8" refX="7.4" refY="4" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,0.6 L7.4,4 L1,7.4" fill="none" stroke="#111111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="ovau" viewBox="0 0 8 8" refX="7.4" refY="4" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,0.6 L7.4,4 L1,7.4" fill="none" stroke="#3d5592" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="ovas" viewBox="0 0 8 8" refX="7.4" refY="4" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,0.6 L7.4,4 L1,7.4" fill="none" stroke="#555555" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<g transform="translate(680,128) scale(1.312)">
+<line x1="296" y1="112" x2="355" y2="274" stroke="#222" stroke-width="0.9"/>
+<line x1="456" y1="110" x2="384" y2="274" stroke="#222" stroke-width="0.9"/>
+<line x1="430" y1="274" x2="509" y2="244" stroke="#222" stroke-width="0.9"/>
+<line x1="446" y1="334" x2="510" y2="363" stroke="#222" stroke-width="0.9"/>
+<line x1="383" y1="336" x2="455" y2="503" stroke="#222" stroke-width="0.9"/>
+<line x1="356" y1="336" x2="282" y2="503" stroke="#222" stroke-width="0.9"/>
+<line x1="286" y1="318" x2="224" y2="324" stroke="#222" stroke-width="0.9"/>
+<line x1="202" y1="21" x2="202" y2="196" stroke="#333" stroke-width="0.9"/>
+<line x1="202" y1="21.0" x2="193" y2="21.0" stroke="#333" stroke-width="0.9"/>
+<line x1="202" y1="46.0" x2="193" y2="46.0" stroke="#333" stroke-width="0.9"/>
+<line x1="202" y1="71.0" x2="193" y2="71.0" stroke="#333" stroke-width="0.9"/>
+<line x1="202" y1="96.0" x2="193" y2="96.0" stroke="#333" stroke-width="0.9"/>
+<line x1="202" y1="121.0" x2="193" y2="121.0" stroke="#333" stroke-width="0.9"/>
+<line x1="202" y1="146.0" x2="193" y2="146.0" stroke="#333" stroke-width="0.9"/>
+<line x1="202" y1="171.0" x2="193" y2="171.0" stroke="#333" stroke-width="0.9"/>
+<line x1="202" y1="196.0" x2="193" y2="196.0" stroke="#333" stroke-width="0.9"/>
+<line x1="202" y1="108" x2="281" y2="108" stroke="#333" stroke-width="0.9"/>
+<line x1="534" y1="69" x2="534" y2="144" stroke="#333" stroke-width="0.9"/>
+<line x1="534" y1="69.0" x2="543" y2="69.0" stroke="#333" stroke-width="0.9"/>
+<line x1="534" y1="94.0" x2="543" y2="94.0" stroke="#333" stroke-width="0.9"/>
+<line x1="534" y1="119.0" x2="543" y2="119.0" stroke="#333" stroke-width="0.9"/>
+<line x1="534" y1="144.0" x2="543" y2="144.0" stroke="#333" stroke-width="0.9"/>
+<line x1="534" y1="106" x2="454" y2="106" stroke="#333" stroke-width="0.9"/>
+<line x1="588" y1="198" x2="588" y2="273" stroke="#333" stroke-width="0.9"/>
+<line x1="588" y1="198.0" x2="597" y2="198.0" stroke="#333" stroke-width="0.9"/>
+<line x1="588" y1="223.0" x2="597" y2="223.0" stroke="#333" stroke-width="0.9"/>
+<line x1="588" y1="248.0" x2="597" y2="248.0" stroke="#333" stroke-width="0.9"/>
+<line x1="588" y1="273.0" x2="597" y2="273.0" stroke="#333" stroke-width="0.9"/>
+<line x1="588" y1="235" x2="509" y2="235" stroke="#333" stroke-width="0.9"/>
+<line x1="590" y1="327" x2="590" y2="402" stroke="#333" stroke-width="0.9"/>
+<line x1="590" y1="327.0" x2="599" y2="327.0" stroke="#333" stroke-width="0.9"/>
+<line x1="590" y1="352.0" x2="599" y2="352.0" stroke="#333" stroke-width="0.9"/>
+<line x1="590" y1="377.0" x2="599" y2="377.0" stroke="#333" stroke-width="0.9"/>
+<line x1="590" y1="402.0" x2="599" y2="402.0" stroke="#333" stroke-width="0.9"/>
+<line x1="590" y1="364" x2="510" y2="364" stroke="#333" stroke-width="0.9"/>
+<line x1="516" y1="456" x2="516" y2="556" stroke="#333" stroke-width="0.9"/>
+<line x1="516" y1="456.0" x2="526" y2="456.0" stroke="#333" stroke-width="0.9"/>
+<line x1="516" y1="481.0" x2="526" y2="481.0" stroke="#333" stroke-width="0.9"/>
+<line x1="516" y1="506.0" x2="526" y2="506.0" stroke="#333" stroke-width="0.9"/>
+<line x1="516" y1="531.0" x2="526" y2="531.0" stroke="#333" stroke-width="0.9"/>
+<line x1="516" y1="556.0" x2="526" y2="556.0" stroke="#333" stroke-width="0.9"/>
+<line x1="516" y1="506" x2="454" y2="506" stroke="#333" stroke-width="0.9"/>
+<line x1="219" y1="453" x2="219" y2="553" stroke="#333" stroke-width="0.9"/>
+<line x1="219" y1="453.0" x2="210" y2="453.0" stroke="#333" stroke-width="0.9"/>
+<line x1="219" y1="478.0" x2="210" y2="478.0" stroke="#333" stroke-width="0.9"/>
+<line x1="219" y1="503.0" x2="210" y2="503.0" stroke="#333" stroke-width="0.9"/>
+<line x1="219" y1="528.0" x2="210" y2="528.0" stroke="#333" stroke-width="0.9"/>
+<line x1="219" y1="553.0" x2="210" y2="553.0" stroke="#333" stroke-width="0.9"/>
+<line x1="219" y1="503" x2="281" y2="503" stroke="#333" stroke-width="0.9"/>
+<line x1="145" y1="249" x2="145" y2="399" stroke="#333" stroke-width="0.9"/>
+<line x1="145" y1="249.0" x2="135" y2="249.0" stroke="#333" stroke-width="0.9"/>
+<line x1="145" y1="274.0" x2="135" y2="274.0" stroke="#333" stroke-width="0.9"/>
+<line x1="145" y1="299.0" x2="135" y2="299.0" stroke="#333" stroke-width="0.9"/>
+<line x1="145" y1="324.0" x2="135" y2="324.0" stroke="#333" stroke-width="0.9"/>
+<line x1="145" y1="349.0" x2="135" y2="349.0" stroke="#333" stroke-width="0.9"/>
+<line x1="145" y1="374.0" x2="135" y2="374.0" stroke="#333" stroke-width="0.9"/>
+<line x1="145" y1="399.0" x2="135" y2="399.0" stroke="#333" stroke-width="0.9"/>
+<line x1="145" y1="324" x2="223" y2="324" stroke="#333" stroke-width="0.9"/>
+<path d="M454,104 C390,108 262,126 194,166" fill="none" stroke="#c4cb34" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"/>
+<path d="M454,112 C380,132 232,220 136,247" fill="none" stroke="#c4cb34" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"/>
+<path d="M484,124 C470,200 454,300 461,392 C467,462 500,496 526,503" fill="none" stroke="#c4cb34" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"/>
+<path d="M476,124 C462,212 446,312 456,402 C464,472 498,506 526,509" fill="none" stroke="#c4cb34" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"/>
+<path d="M526,509 C470,536 290,540 214,505" fill="none" stroke="#c4cb34" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round" marker-end="url(#ovay)"/>
+<path d="M194,146 C300,150 442,190 509,228" fill="none" stroke="#a2520e" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"/>
+<path d="M136,298 C250,262 402,226 509,237" fill="none" stroke="#a2520e" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"/>
+<path d="M517,253 C482,300 464,380 476,430 C486,466 506,476 526,480" fill="none" stroke="#a2520e" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"/>
+<path d="M526,482 C430,470 300,474 214,478" fill="none" stroke="#a2520e" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round" marker-end="url(#ovab)"/>
+<path d="M526,457 C420,444 300,449 214,453" fill="none" stroke="#b02a2a" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round" marker-end="url(#ovar)"/>
+<path d="M156,196 C92,206 40,260 50,320 C58,360 80,372 86,374" fill="none" stroke="#1d6e1d" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"/>
+<path d="M86,378 C55,386 50,440 80,490 C110,526 150,530 174,528" fill="none" stroke="#1d6e1d" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"/>
+<path d="M526,532 C430,552 300,546 214,528" fill="none" stroke="#1d6e1d" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round" marker-end="url(#ovag)"/>
+<path d="M156,21 C60,40 10,200 20,380 C30,530 150,590 330,592 C430,592 490,580 526,558" fill="none" stroke="#16166e" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round"/>
+<path d="M526,556 C430,576 300,571 214,553" fill="none" stroke="#16166e" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round" marker-end="url(#ovan)"/>
+<path d="M455,117 C400,150 272,238 222,301" fill="none" stroke="#111111" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round" marker-end="url(#ovak)"/>
+<path d="M648,402 C704,430 640,524 565,531" fill="none" stroke="#1d6e1d" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round" marker-end="url(#ovag)"/>
+<rect x="156" y="11" width="37" height="20" rx="3" fill="url(#ovgc)" stroke="#2b7f86" stroke-width="0.9"/><rect x="157.2" y="12.2" width="34.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="174.5" y="25.14" font-size="11.5" text-anchor="middle">正见</text>
+<rect x="143" y="36" width="50" height="20" rx="3" fill="url(#ovgw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="144.2" y="37.2" width="47.6" height="8.4" rx="2" fill="#fff" opacity="0"/><text x="168.0" y="50.14" font-size="11.5" text-anchor="middle">正思惟</text>
+<rect x="156" y="61" width="37" height="20" rx="3" fill="url(#ovgw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="157.2" y="62.2" width="34.6" height="8.4" rx="2" fill="#fff" opacity="0"/><text x="174.5" y="75.14" font-size="11.5" text-anchor="middle">正语</text>
+<rect x="156" y="86" width="37" height="20" rx="3" fill="url(#ovgw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="157.2" y="87.2" width="34.6" height="8.4" rx="2" fill="#fff" opacity="0"/><text x="174.5" y="100.14" font-size="11.5" text-anchor="middle">正业</text>
+<rect x="156" y="111" width="37" height="20" rx="3" fill="url(#ovgw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="157.2" y="112.2" width="34.6" height="8.4" rx="2" fill="#fff" opacity="0"/><text x="174.5" y="125.14" font-size="11.5" text-anchor="middle">正命</text>
+<rect x="143" y="136" width="50" height="20" rx="3" fill="url(#ovgo)" stroke="#9a5a0c" stroke-width="0.9"/><rect x="144.2" y="137.2" width="47.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="168.0" y="150.14" font-size="11.5" text-anchor="middle">正精进</text>
+<rect x="156" y="161" width="37" height="20" rx="3" fill="url(#ovgy)" stroke="#8f8a12" stroke-width="0.9"/><rect x="157.2" y="162.2" width="34.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="174.5" y="175.14" font-size="11.5" text-anchor="middle">正念</text>
+<rect x="156" y="186" width="37" height="20" rx="3" fill="url(#ovgg)" stroke="#24772a" stroke-width="0.9"/><rect x="157.2" y="187.2" width="34.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="174.5" y="200.14" font-size="11.5" text-anchor="middle">正定</text>
+<rect x="543" y="59" width="49" height="20" rx="3" fill="url(#ovgy)" stroke="#8f8a12" stroke-width="0.9"/><rect x="544.2" y="60.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="567.5" y="73.14" font-size="11.5" text-anchor="middle">身念住</text>
+<rect x="543" y="84" width="49" height="20" rx="3" fill="url(#ovgy)" stroke="#8f8a12" stroke-width="0.9"/><rect x="544.2" y="85.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="567.5" y="98.14" font-size="11.5" text-anchor="middle">受念住</text>
+<rect x="543" y="109" width="49" height="20" rx="3" fill="url(#ovgy)" stroke="#8f8a12" stroke-width="0.9"/><rect x="544.2" y="110.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="567.5" y="123.14" font-size="11.5" text-anchor="middle">心念住</text>
+<rect x="543" y="134" width="49" height="20" rx="3" fill="url(#ovgy)" stroke="#8f8a12" stroke-width="0.9"/><rect x="544.2" y="135.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="567.5" y="148.14" font-size="11.5" text-anchor="middle">法念住</text>
+<rect x="597" y="188" width="101" height="20" rx="3" fill="url(#ovgo)" stroke="#9a5a0c" stroke-width="0.9"/><rect x="598.2" y="189.2" width="98.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="647.5" y="202.14" font-size="11.5" text-anchor="middle">已起恶不善法断</text>
+<rect x="597" y="213" width="115" height="20" rx="3" fill="url(#ovgo)" stroke="#9a5a0c" stroke-width="0.9"/><rect x="598.2" y="214.2" width="112.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="654.5" y="227.14" font-size="11.5" text-anchor="middle">未起恶不善法不起</text>
+<rect x="597" y="238" width="88" height="20" rx="3" fill="url(#ovgo)" stroke="#9a5a0c" stroke-width="0.9"/><rect x="598.2" y="239.2" width="85.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="641.0" y="252.14" font-size="11.5" text-anchor="middle">未起善法令起</text>
+<rect x="597" y="263" width="115" height="20" rx="3" fill="url(#ovgo)" stroke="#9a5a0c" stroke-width="0.9"/><rect x="598.2" y="264.2" width="112.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="654.5" y="277.14" font-size="11.5" text-anchor="middle">已起善法增益修习</text>
+<rect x="599" y="317" width="49" height="20" rx="3" fill="url(#ovgg)" stroke="#24772a" stroke-width="0.9"/><rect x="600.2" y="318.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="623.5" y="331.14" font-size="11.5" text-anchor="middle">欲神足</text>
+<rect x="599" y="342" width="62" height="20" rx="3" fill="url(#ovgg)" stroke="#24772a" stroke-width="0.9"/><rect x="600.2" y="343.2" width="59.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="630.0" y="356.14" font-size="11.5" text-anchor="middle">精进神足</text>
+<rect x="599" y="367" width="49" height="20" rx="3" fill="url(#ovgg)" stroke="#24772a" stroke-width="0.9"/><rect x="600.2" y="368.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="623.5" y="381.14" font-size="11.5" text-anchor="middle">心神足</text>
+<rect x="599" y="392" width="49" height="20" rx="3" fill="url(#ovgg)" stroke="#24772a" stroke-width="0.9"/><rect x="600.2" y="393.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="623.5" y="406.14" font-size="11.5" text-anchor="middle">观神足</text>
+<rect x="526" y="446" width="36" height="20" rx="3" fill="url(#ovgr)" stroke="#9a3434" stroke-width="0.9"/><rect x="527.2" y="447.2" width="33.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="544.0" y="460.14" font-size="11.5" text-anchor="middle">信根</text>
+<rect x="526" y="471" width="50" height="20" rx="3" fill="url(#ovgo)" stroke="#9a5a0c" stroke-width="0.9"/><rect x="527.2" y="472.2" width="47.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="551.0" y="485.14" font-size="11.5" text-anchor="middle">精进根</text>
+<rect x="526" y="496" width="36" height="20" rx="3" fill="url(#ovgy)" stroke="#8f8a12" stroke-width="0.9"/><rect x="527.2" y="497.2" width="33.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="544.0" y="510.14" font-size="11.5" text-anchor="middle">念根</text>
+<rect x="526" y="521" width="36" height="20" rx="3" fill="url(#ovgg)" stroke="#24772a" stroke-width="0.9"/><rect x="527.2" y="522.2" width="33.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="544.0" y="535.14" font-size="11.5" text-anchor="middle">定根</text>
+<rect x="526" y="546" width="36" height="20" rx="3" fill="url(#ovgc)" stroke="#2b7f86" stroke-width="0.9"/><rect x="527.2" y="547.2" width="33.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="544.0" y="560.14" font-size="11.5" text-anchor="middle">慧根</text>
+<rect x="174" y="443" width="36" height="20" rx="3" fill="url(#ovgr)" stroke="#9a3434" stroke-width="0.9"/><rect x="175.2" y="444.2" width="33.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="192.0" y="457.14" font-size="11.5" text-anchor="middle">信力</text>
+<rect x="161" y="468" width="49" height="20" rx="3" fill="url(#ovgo)" stroke="#9a5a0c" stroke-width="0.9"/><rect x="162.2" y="469.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="185.5" y="482.14" font-size="11.5" text-anchor="middle">精进力</text>
+<rect x="174" y="493" width="36" height="20" rx="3" fill="url(#ovgy)" stroke="#8f8a12" stroke-width="0.9"/><rect x="175.2" y="494.2" width="33.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="192.0" y="507.14" font-size="11.5" text-anchor="middle">念力</text>
+<rect x="174" y="518" width="36" height="20" rx="3" fill="url(#ovgg)" stroke="#24772a" stroke-width="0.9"/><rect x="175.2" y="519.2" width="33.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="192.0" y="532.14" font-size="11.5" text-anchor="middle">定力</text>
+<rect x="174" y="543" width="36" height="20" rx="3" fill="url(#ovgc)" stroke="#2b7f86" stroke-width="0.9"/><rect x="175.2" y="544.2" width="33.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="192.0" y="557.14" font-size="11.5" text-anchor="middle">慧力</text>
+<rect x="86" y="239" width="49" height="20" rx="3" fill="url(#ovgy)" stroke="#8f8a12" stroke-width="0.9"/><rect x="87.2" y="240.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="110.5" y="253.14" font-size="11.5" text-anchor="middle">念觉支</text>
+<rect x="73" y="264" width="62" height="20" rx="3" fill="url(#ovgw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="74.2" y="265.2" width="59.6" height="8.4" rx="2" fill="#fff" opacity="0"/><text x="104.0" y="278.14" font-size="11.5" text-anchor="middle">择法觉支</text>
+<rect x="73" y="289" width="62" height="20" rx="3" fill="url(#ovgo)" stroke="#9a5a0c" stroke-width="0.9"/><rect x="74.2" y="290.2" width="59.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="104.0" y="303.14" font-size="11.5" text-anchor="middle">精进觉支</text>
+<rect x="86" y="314" width="49" height="20" rx="3" fill="url(#ovgw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="87.2" y="315.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0"/><text x="110.5" y="328.14" font-size="11.5" text-anchor="middle">猗觉支</text>
+<rect x="86" y="339" width="49" height="20" rx="3" fill="url(#ovgw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="87.2" y="340.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0"/><text x="110.5" y="353.14" font-size="11.5" text-anchor="middle">喜觉支</text>
+<rect x="86" y="364" width="49" height="20" rx="3" fill="url(#ovgg)" stroke="#24772a" stroke-width="0.9"/><rect x="87.2" y="365.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="110.5" y="378.14" font-size="11.5" text-anchor="middle">定觉支</text>
+<rect x="86" y="389" width="49" height="20" rx="3" fill="url(#ovgw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="87.2" y="390.2" width="46.6" height="8.4" rx="2" fill="#fff" opacity="0"/><text x="110.5" y="403.14" font-size="11.5" text-anchor="middle">舍觉支</text>
+<rect x="212" y="84" width="84" height="48" rx="7" fill="url(#ovgw)" stroke="#a8352a" stroke-width="2.6"/><rect x="213.2" y="85.2" width="81.6" height="20.16" rx="6" fill="#fff" opacity="0"/><text x="254.0" y="115.92" font-size="22" text-anchor="middle" font-weight="700">八正道</text>
+<circle cx="208" cy="108" r="4" fill="#e3ebf7" stroke="#8aa3c8" stroke-width="0.8"/><line x1="205.8" y1="108" x2="210.2" y2="108" stroke="#5a78a8" stroke-width="0.9"/>
+<rect x="454" y="87" width="66" height="37" rx="6" fill="url(#ovgy)" stroke="#8f8a12" stroke-width="0.9"/><rect x="455.2" y="88.2" width="63.6" height="15.54" rx="5" fill="#fff" opacity="0.35"/><text x="487.0" y="111.44" font-size="16.5" text-anchor="middle">四念住</text>
+<circle cx="527" cy="106" r="4" fill="#e3ebf7" stroke="#8aa3c8" stroke-width="0.8"/><line x1="524.8" y1="106" x2="529.2" y2="106" stroke="#5a78a8" stroke-width="0.9"/>
+<rect x="509" y="217" width="65" height="36" rx="6" fill="url(#ovgo)" stroke="#9a5a0c" stroke-width="0.9"/><rect x="510.2" y="218.2" width="62.6" height="15.12" rx="5" fill="#fff" opacity="0.35"/><text x="541.5" y="240.94" font-size="16.5" text-anchor="middle">四正勤</text>
+<circle cx="581" cy="235" r="4" fill="#e3ebf7" stroke="#8aa3c8" stroke-width="0.8"/><line x1="578.8" y1="235" x2="583.2" y2="235" stroke="#5a78a8" stroke-width="0.9"/>
+<rect x="510" y="345" width="66" height="37" rx="6" fill="url(#ovgw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="511.2" y="346.2" width="63.6" height="15.54" rx="5" fill="#fff" opacity="0"/><text x="543.0" y="369.44" font-size="16.5" text-anchor="middle">四神足</text>
+<circle cx="583" cy="364" r="4" fill="#e3ebf7" stroke="#8aa3c8" stroke-width="0.8"/><line x1="580.8" y1="364" x2="585.2" y2="364" stroke="#5a78a8" stroke-width="0.9"/>
+<rect x="454" y="488" width="49" height="36" rx="6" fill="url(#ovgw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="455.2" y="489.2" width="46.6" height="15.12" rx="5" fill="#fff" opacity="0"/><text x="478.5" y="511.94" font-size="16.5" text-anchor="middle">五根</text>
+<circle cx="509" cy="506" r="4" fill="#e3ebf7" stroke="#8aa3c8" stroke-width="0.8"/><line x1="506.8" y1="506" x2="511.2" y2="506" stroke="#5a78a8" stroke-width="0.9"/>
+<rect x="233" y="485" width="48" height="36" rx="6" fill="url(#ovgw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="234.2" y="486.2" width="45.6" height="15.12" rx="5" fill="#fff" opacity="0"/><text x="257.0" y="508.94" font-size="16.5" text-anchor="middle">五力</text>
+<circle cx="226" cy="503" r="4" fill="#e3ebf7" stroke="#8aa3c8" stroke-width="0.8"/><line x1="223.8" y1="503" x2="228.2" y2="503" stroke="#5a78a8" stroke-width="0.9"/>
+<rect x="158" y="306" width="65" height="36" rx="6" fill="url(#ovgw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="159.2" y="307.2" width="62.6" height="15.12" rx="5" fill="#fff" opacity="0"/><text x="190.5" y="329.94" font-size="16.5" text-anchor="middle">七觉支</text>
+<circle cx="150" cy="324" r="4" fill="#e3ebf7" stroke="#8aa3c8" stroke-width="0.8"/><line x1="147.8" y1="324" x2="152.2" y2="324" stroke="#5a78a8" stroke-width="0.9"/>
+<rect x="286" y="274" width="166" height="62" rx="10" fill="url(#ovgw)" stroke="#222222" stroke-width="1.8"/><rect x="287.2" y="275.2" width="163.6" height="26.04" rx="9" fill="#fff" opacity="0"/><text x="369.0" y="312.56" font-size="21" text-anchor="middle" font-weight="600">三十七道品</text>
+<text x="323" y="124" font-size="11" text-anchor="middle" fill="#555" class="lb">=</text>
+<text x="301" y="178" font-size="11" text-anchor="middle" fill="#555" class="lb">=</text>
+<text x="457" y="339" font-size="11" text-anchor="middle" fill="#555" class="lb">=</text>
+<text x="376" y="166" font-size="11" text-anchor="middle" fill="#555" class="lb">=</text>
+<text x="323" y="240" font-size="11" text-anchor="middle" fill="#555" class="lb">=</text>
+<text x="478" y="345" font-size="11" text-anchor="middle" fill="#555" class="lb">=</text>
+<text x="334" y="203" font-size="11" text-anchor="middle" fill="#555" class="lb">满足</text>
+<text x="24" y="371" font-size="11" text-anchor="middle" fill="#555" class="lb">四圣谛</text>
+</g>
+<line x1="236" y1="60" x2="80" y2="300" stroke="#222" stroke-width="0.9"/>
+<line x1="250" y1="92" x2="80" y2="600" stroke="#222" stroke-width="0.9"/>
+<line x1="436" y1="40" x2="690" y2="40" stroke="#222" stroke-width="0.9"/>
+<line x1="436" y1="76" x2="1124" y2="50" stroke="#222" stroke-width="0.9"/>
+<line x1="1164" y1="64" x2="1164.1280000000002" y2="487.488" stroke="#222" stroke-width="0.9"/>
+<path d="M308,154 L300,154 L300,232 L308,232" fill="none" stroke="#777" stroke-width="1.4"/>
+<text x="292" y="200.0" font-size="18" text-anchor="end" class="lg">过去因</text>
+<path d="M308,266 L300,266 L300,512 L308,512" fill="none" stroke="#777" stroke-width="1.4"/>
+<text x="292" y="396.0" font-size="18" text-anchor="end" class="lg">现在果</text>
+<path d="M308,546 L300,546 L300,680 L308,680" fill="none" stroke="#777" stroke-width="1.4"/>
+<text x="292" y="620.0" font-size="18" text-anchor="end" class="lg">现在因</text>
+<path d="M308,714 L300,714 L300,792 L308,792" fill="none" stroke="#777" stroke-width="1.4"/>
+<text x="292" y="760.0" font-size="18" text-anchor="end" class="lg">未来果</text>
+<path d="M120,293.0 C180,293.0 170,193.0 224,193.0" fill="none" stroke="#b02a2a" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round" marker-end="url(#ovar)"/>
+<path d="M120,603.0 C180,603.0 170,389.0 224,389.0" fill="none" stroke="#555555" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round" marker-end="url(#ovas)"/>
+<path d="M120,293.0 C180,293.0 170,613.0 224,613.0" fill="none" stroke="#b02a2a" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round" marker-end="url(#ovar)"/>
+<path d="M120,603.0 C180,603.0 170,753.0 224,753.0" fill="none" stroke="#555555" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round" marker-end="url(#ovas)"/>
+<path d="M80,316 L80,577" fill="none" stroke="#111111" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round" marker-end="url(#ovak)"/>
+<text x="80" y="455" font-size="17" text-anchor="middle" class="lb">因 → 果</text>
+<path d="M690,58 C610,94 534,90 500,112" fill="none" stroke="#1d6e1d" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round" marker-end="url(#ovag)"/>
+<text x="600" y="96" font-size="17" text-anchor="middle" class="lb">＝</text>
+<path d="M1124,24 C1004,4 880,4 773,26" fill="none" stroke="#111111" stroke-width="2" stroke-dasharray="0 3.1" stroke-linecap="round" marker-end="url(#ovak)"/>
+<text x="950" y="14" font-size="17" text-anchor="middle" class="lb">因 → 果</text>
+<rect x="236" y="16" width="200" height="76" rx="12" fill="url(#ovgw)" stroke="#a8352a" stroke-width="2.6"/><rect x="237.2" y="17.2" width="197.6" height="31.919999999999998" rx="11" fill="#fff" opacity="0"/><text x="336.0" y="70.56" font-size="46" text-anchor="middle" font-weight="700">四圣谛</text>
+<rect x="40" y="270" width="80" height="46" rx="8" fill="url(#ovgw)" stroke="#222222" stroke-width="1.8"/><rect x="41.2" y="271.2" width="77.6" height="19.32" rx="7" fill="#fff" opacity="0"/><text x="80.0" y="302.72" font-size="27" text-anchor="middle" font-weight="600">集</text>
+<rect x="40" y="580" width="80" height="46" rx="8" fill="url(#ovgw)" stroke="#222222" stroke-width="1.8"/><rect x="41.2" y="581.2" width="77.6" height="19.32" rx="7" fill="#fff" opacity="0"/><text x="80.0" y="612.72" font-size="27" text-anchor="middle" font-weight="600">苦</text>
+<rect x="690" y="18" width="80" height="46" rx="8" fill="url(#ovgm)" stroke="#222222" stroke-width="1.8"/><rect x="691.2" y="19.2" width="77.6" height="19.32" rx="7" fill="#fff" opacity="0.35"/><text x="730.0" y="50.72" font-size="27" text-anchor="middle" font-weight="600">灭</text>
+<rect x="1124" y="18" width="80" height="46" rx="8" fill="url(#ovgm)" stroke="#222222" stroke-width="1.8"/><rect x="1125.2" y="19.2" width="77.6" height="19.32" rx="7" fill="#fff" opacity="0.35"/><text x="1164.0" y="50.72" font-size="27" text-anchor="middle" font-weight="600">道</text>
+<rect x="350" y="854" width="152" height="52" rx="9" fill="url(#ovgw)" stroke="#a8352a" stroke-width="2.6"/><rect x="351.2" y="855.2" width="149.6" height="21.84" rx="8" fill="#fff" opacity="0"/><text x="426.0" y="890.8" font-size="30" text-anchor="middle" font-weight="700">十二因缘</text>
+<text x="358.0" y="136" font-size="17" text-anchor="middle" class="lg">顺转</text>
+<text x="494" y="136" font-size="17" text-anchor="middle" class="ni">逆转</text>
+<rect x="318" y="150" width="80" height="30" rx="4" fill="url(#ovgr)" stroke="#9a3434" stroke-width="0.9"/><rect x="319.2" y="151.2" width="77.6" height="12.6" rx="3" fill="#fff" opacity="0.35"/><text x="358.0" y="171.84" font-size="19" text-anchor="middle">无明</text>
+<text x="494" y="171" font-size="19" text-anchor="middle" class="ni">无明灭</text>
+<text x="358.0" y="199.0" font-size="16" text-anchor="middle" class="ar">↓</text>
+<text x="494" y="199.0" font-size="16" text-anchor="middle" class="ni">↓</text>
+<rect x="318" y="206" width="80" height="30" rx="4" fill="url(#ovgb)" stroke="#3d5592" stroke-width="0.9"/><rect x="319.2" y="207.2" width="77.6" height="12.6" rx="3" fill="#fff" opacity="0.35"/><text x="358.0" y="227.84" font-size="19" text-anchor="middle">行</text>
+<text x="494" y="227" font-size="19" text-anchor="middle" class="ni">行灭</text>
+<text x="358.0" y="255.0" font-size="16" text-anchor="middle" class="ar">↓</text>
+<text x="494" y="255.0" font-size="16" text-anchor="middle" class="ni">↓</text>
+<rect x="318" y="262" width="80" height="30" rx="4" fill="url(#ovgw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="319.2" y="263.2" width="77.6" height="12.6" rx="3" fill="#fff" opacity="0"/><text x="358.0" y="283.84" font-size="19" text-anchor="middle">识</text>
+<text x="494" y="283" font-size="19" text-anchor="middle" class="ni">识灭</text>
+<text x="358.0" y="311.0" font-size="16" text-anchor="middle" class="ar">↓</text>
+<text x="494" y="311.0" font-size="16" text-anchor="middle" class="ni">↓</text>
+<rect x="318" y="318" width="80" height="30" rx="4" fill="url(#ovgw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="319.2" y="319.2" width="77.6" height="12.6" rx="3" fill="#fff" opacity="0"/><text x="358.0" y="339.84" font-size="19" text-anchor="middle">名色</text>
+<text x="494" y="339" font-size="19" text-anchor="middle" class="ni">名色灭</text>
+<text x="358.0" y="367.0" font-size="16" text-anchor="middle" class="ar">↓</text>
+<text x="494" y="367.0" font-size="16" text-anchor="middle" class="ni">↓</text>
+<rect x="318" y="374" width="80" height="30" rx="4" fill="url(#ovgw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="319.2" y="375.2" width="77.6" height="12.6" rx="3" fill="#fff" opacity="0"/><text x="358.0" y="395.84" font-size="19" text-anchor="middle">六入</text>
+<text x="494" y="395" font-size="19" text-anchor="middle" class="ni">六入灭</text>
+<text x="358.0" y="423.0" font-size="16" text-anchor="middle" class="ar">↓</text>
+<text x="494" y="423.0" font-size="16" text-anchor="middle" class="ni">↓</text>
+<rect x="318" y="430" width="80" height="30" rx="4" fill="url(#ovgw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="319.2" y="431.2" width="77.6" height="12.6" rx="3" fill="#fff" opacity="0"/><text x="358.0" y="451.84" font-size="19" text-anchor="middle">触</text>
+<text x="494" y="451" font-size="19" text-anchor="middle" class="ni">触灭</text>
+<text x="358.0" y="479.0" font-size="16" text-anchor="middle" class="ar">↓</text>
+<text x="494" y="479.0" font-size="16" text-anchor="middle" class="ni">↓</text>
+<rect x="318" y="486" width="80" height="30" rx="4" fill="url(#ovgw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="319.2" y="487.2" width="77.6" height="12.6" rx="3" fill="#fff" opacity="0"/><text x="358.0" y="507.84" font-size="19" text-anchor="middle">受</text>
+<text x="494" y="507" font-size="19" text-anchor="middle" class="ni">受灭</text>
+<text x="358.0" y="535.0" font-size="16" text-anchor="middle" class="ar">↓</text>
+<text x="494" y="535.0" font-size="16" text-anchor="middle" class="ni">↓</text>
+<rect x="318" y="542" width="80" height="30" rx="4" fill="url(#ovgr)" stroke="#9a3434" stroke-width="0.9"/><rect x="319.2" y="543.2" width="77.6" height="12.6" rx="3" fill="#fff" opacity="0.35"/><text x="358.0" y="563.84" font-size="19" text-anchor="middle">爱</text>
+<text x="494" y="563" font-size="19" text-anchor="middle" class="ni">爱灭</text>
+<text x="358.0" y="591.0" font-size="16" text-anchor="middle" class="ar">↓</text>
+<text x="494" y="591.0" font-size="16" text-anchor="middle" class="ni">↓</text>
+<rect x="318" y="598" width="80" height="30" rx="4" fill="url(#ovgr)" stroke="#9a3434" stroke-width="0.9"/><rect x="319.2" y="599.2" width="77.6" height="12.6" rx="3" fill="#fff" opacity="0.35"/><text x="358.0" y="619.84" font-size="19" text-anchor="middle">取</text>
+<text x="494" y="619" font-size="19" text-anchor="middle" class="ni">取灭</text>
+<text x="358.0" y="647.0" font-size="16" text-anchor="middle" class="ar">↓</text>
+<text x="494" y="647.0" font-size="16" text-anchor="middle" class="ni">↓</text>
+<rect x="318" y="654" width="80" height="30" rx="4" fill="url(#ovgb)" stroke="#3d5592" stroke-width="0.9"/><rect x="319.2" y="655.2" width="77.6" height="12.6" rx="3" fill="#fff" opacity="0.35"/><text x="358.0" y="675.84" font-size="19" text-anchor="middle">有</text>
+<text x="494" y="675" font-size="19" text-anchor="middle" class="ni">有灭</text>
+<text x="358.0" y="703.0" font-size="16" text-anchor="middle" class="ar">↓</text>
+<text x="494" y="703.0" font-size="16" text-anchor="middle" class="ni">↓</text>
+<rect x="318" y="710" width="80" height="30" rx="4" fill="url(#ovgw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="319.2" y="711.2" width="77.6" height="12.6" rx="3" fill="#fff" opacity="0"/><text x="358.0" y="731.84" font-size="19" text-anchor="middle">生</text>
+<text x="494" y="731" font-size="19" text-anchor="middle" class="ni">生灭</text>
+<text x="358.0" y="759.0" font-size="16" text-anchor="middle" class="ar">↓</text>
+<text x="494" y="759.0" font-size="16" text-anchor="middle" class="ni">↓</text>
+<rect x="318" y="766" width="80" height="30" rx="4" fill="url(#ovgw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="319.2" y="767.2" width="77.6" height="12.6" rx="3" fill="#fff" opacity="0"/><text x="358.0" y="787.84" font-size="19" text-anchor="middle">老死</text>
+<text x="494" y="787" font-size="19" text-anchor="middle" class="ni">老死灭</text>
+<text x="358.0" y="815.0" font-size="16" text-anchor="middle" class="ar">↓</text>
+<text x="494" y="815.0" font-size="16" text-anchor="middle" class="ni">↓</text>
+<text x="358.0" y="842" font-size="19" text-anchor="middle" class="ar">纯大苦聚集</text>
+<text x="494" y="842" font-size="19" text-anchor="middle" class="ni">纯大苦聚灭</text>
+<rect x="30" y="760" width="30" height="20" rx="3" fill="url(#ovgr)" stroke="#9a3434" stroke-width="0.9"/><rect x="31.2" y="761.2" width="27.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="45.0" y="773.24" font-size="9" text-anchor="middle"></text>
+<text x="68" y="777" font-size="18" class="lg">惑</text>
+<rect x="130" y="760" width="30" height="20" rx="3" fill="url(#ovgb)" stroke="#3d5592" stroke-width="0.9"/><rect x="131.2" y="761.2" width="27.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="145.0" y="773.24" font-size="9" text-anchor="middle"></text>
+<text x="168" y="777" font-size="18" class="lg">业</text>
+<rect x="30" y="794" width="30" height="20" rx="3" fill="url(#ovgw)" stroke="#3a3a3a" stroke-width="0.9"/><rect x="31.2" y="795.2" width="27.6" height="8.4" rx="2" fill="#fff" opacity="0"/><text x="45.0" y="807.24" font-size="9" text-anchor="middle"></text>
+<text x="68" y="811" font-size="18" class="lg">事</text>
+<rect x="130" y="794" width="30" height="20" rx="3" fill="url(#ovgm)" stroke="#4f8a4a" stroke-width="0.9"/><rect x="131.2" y="795.2" width="27.6" height="8.4" rx="2" fill="#fff" opacity="0.35"/><text x="145.0" y="807.24" font-size="9" text-anchor="middle"></text>
+<text x="168" y="811" font-size="18" class="lg">还灭</text>
+</svg>
+<!-- /MINDMAP_OVERVIEW -->
   </div>
-
-  <!-- 灭：十二因缘逆转 -->
-  <div class="row" style="margin-top:14px">
-    <div class="lab r"><b>灭</b><span>十二因缘逆转<br>还灭</span></div>
-    <div class="nid back" style="align-self:center">
-      <div class="c">无明灭</div><div class="a">→</div><div class="c">行灭</div><div class="a">→</div><div class="c">识灭</div><div class="a">→</div><div class="c">名色灭</div><div class="a">→</div><div class="c">六入灭</div><div class="a">→</div><div class="c">触灭</div><div class="a">→</div><div class="c">受灭</div><div class="a">→</div><div class="c">爱灭</div><div class="a">→</div><div class="c">取灭</div><div class="a">→</div><div class="c">有灭</div><div class="a">→</div><div class="c">生灭</div><div class="a">→</div><div class="c">老死灭</div>
-        <div class="end">纯大苦聚灭</div>
-    </div>
-  </div>
-
-  <div class="up"><div></div><div><b>↑</b>道是因，灭是果：依八正道修行，无明灭，乃至老死灭</div></div>
-
-  <!-- 道：八正道 → 三十七道品 -->
-  <div class="row">
-    <div class="lab r"><b>道</b><span>八正道展开<br>为三十七道品</span></div>
-    <div>
-      <div class="dao">
-        <div class="bz">
-          <div class="hd"><b>八正道</b><span>道的主干 · 八支</span></div>
-          <div class="items"><i>正见</i><i>正思惟</i><i>正语</i><i>正业</i><i>正命</i><i>正精进</i><i>正念</i><i>正定</i></div>
-        </div>
-        <div class="ex"><b>展开</b><i>→</i></div>
-        <div class="sq">
-          <div class="hd">三十七道品<span>七组，共 37 项</span></div>
-          <div class="gs">
-            <div>四念处<small>4</small></div><div>四正勤<small>4</small></div><div>四神足<small>4</small></div><div>五根<small>5</small></div>
-            <div>五力<small>5</small></div><div>七觉支<small>7</small></div><div class="r">八正道<small>8</small></div><div style="border:none;background:none;font-size:21px;color:var(--ink-soft)">＝ 37</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="q">「谓八圣道，正见、正志、正语、正业、正命、正方便、正念、正定。我从彼道见老病死、老病死集、老病死灭、老病死灭道迹……」<small>《杂阿含经》卷 12 第 287 经（T99）　佛自述：依八圣道，看见十二支各自的集、灭、灭道迹</small></div>
-
-  <div class="foot"><span>佛学图文 · 四圣谛</span><span class="sign">愚千一 · sutratoday.com<span class="seal">愚千一</span></span></div>
+  <div class="foot"><span>佛学图文 · 四圣谛</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
 </section>
 
 <script>
