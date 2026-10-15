@@ -25,6 +25,10 @@ SLUG = "four-noble-truths"
 TAIL_SILENCE = 0.4
 FRAMERATE = 30
 MIN_DURATION = 0.6
+# 硬字幕版：卡片整体缩到 92%，底部留出一条字幕带，字幕不压在卡片内容上
+HARD_SCALE = (1766, 994)
+HARD_OFFSET = (77, 10)
+HARD_PAD = "0xD9CBB0"  # 取卡片四角的纸色
 MAX_LINE = 26  # 字幕框不超过约 900px，避开卡片左下角页脚和右下角署名
 
 ASS_HEADER = """[Script Info]
@@ -35,7 +39,7 @@ WrapStyle: 0
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Default,Heiti SC,34,&H00182430,&H00182430,&H30E5F4FB,&H30E5F4FB,0,0,0,0,100,100,0,0,3,7,0,2,60,60,14,1
+Style: Default,Heiti SC,34,&H00182430,&H00182430,&H30E5F4FB,&H30E5F4FB,0,0,0,0,100,100,0,0,3,7,0,2,60,60,18,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -132,7 +136,9 @@ def main():
     ass_path.write_text(ass)
 
     hard = OUT / f"{SLUG}-hard.mp4"
-    run([FFMPEG, "-y", "-v", "error", "-stats", "-i", str(base), "-vf", f"ass={ass_path}",
+    run([FFMPEG, "-y", "-v", "error", "-stats", "-i", str(base), "-vf",
+         f"scale={HARD_SCALE[0]}:{HARD_SCALE[1]}:flags=lanczos,"
+         f"pad=1920:1080:{HARD_OFFSET[0]}:{HARD_OFFSET[1]}:color={HARD_PAD},ass={ass_path}",
          "-c:v", "libx264", "-preset", "fast", "-crf", "20", "-pix_fmt", "yuv420p", "-c:a", "copy",
          "-movflags", "+faststart", str(hard)])
     print(f"done: {base.name}, {hard.name}, {len(cues)} 条字幕, 总长 {duration(base):.1f}s")
