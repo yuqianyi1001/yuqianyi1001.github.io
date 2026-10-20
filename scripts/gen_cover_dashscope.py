@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""用通义千问（DashScope qwen-image）生成文章封面图，输出 1280x720 PNG。
+"""用通义万相（DashScope，默认 wan2.2-t2i-plus）生成文章封面图，输出 1280x720 PNG。
+
+qwen-image 在 text2image 接口上已不可用（Model not exist），改用万相；
+要换模型时设环境变量 COVER_MODEL。
 
 用法：
     DASHSCOPE_API_KEY=... python3 scripts/gen_cover_dashscope.py <post 文件名（不含 .md）> "<提示词>"
@@ -34,9 +37,9 @@ def main():
     task = call(
         f"{API}/services/aigc/text2image/image-synthesis",
         {
-            "model": "qwen-image",
+            "model": os.environ.get("COVER_MODEL", "wan2.2-t2i-plus"),
             "input": {"prompt": prompt},
-            "parameters": {"size": "1664*928", "n": 1, "prompt_extend": True, "watermark": False},
+            "parameters": {"size": "1280*720", "n": 1, "prompt_extend": True, "watermark": False},
         },
         {"X-DashScope-Async": "enable"},
     )
