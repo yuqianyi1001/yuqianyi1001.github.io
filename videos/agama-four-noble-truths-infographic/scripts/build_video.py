@@ -62,6 +62,9 @@ def split_lines(text):
     for para in [p.strip() for p in text.splitlines() if p.strip()]:
         cur = ""
         for ch in para:
+            if ch in "」』”" and not cur and lines:  # 句末标点后的右引号归上一行
+                lines[-1] += ch
+                continue
             cur += ch
             if ch in "。？！":
                 lines.append(cur); cur = ""
