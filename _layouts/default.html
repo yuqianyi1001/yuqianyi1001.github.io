@@ -9,8 +9,8 @@
             crossorigin="anonymous"></script>
 
     <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
-    <link rel="icon" href="{{ '/images/yuqianyi-logo.png' | relative_url }}" type="image/png">
-    <link rel="apple-touch-icon" href="{{ '/images/yuqianyi-logo.png' | relative_url }}">
+    <link rel="icon" href="{{ '/images/branding/yuqianyi_transparent.svg' | relative_url }}" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="{{ '/images/branding/yuqianyi_white_circle_512.png' | relative_url }}">
 
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.baseurl }}/feed.xml" />
@@ -73,7 +73,7 @@
     <div class="wrapper-masthead">
       <div class="container">
         <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
+          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar | relative_url }}" alt="{{ site.name | escape }} logo" width="70" height="70" /></a>
 
           <div class="site-info">
             <a href="{{ site.baseurl }}/" style="font-size: larger;">{{ site.name }}</a>
