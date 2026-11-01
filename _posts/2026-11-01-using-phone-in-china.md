@@ -11,6 +11,8 @@ tags:
  - 手机
 ---
 
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-11-01-using-phone-in-china-cover.svg)
+
 每次从美国回国，手机都是一个让人头疼的问题。
 
 从 iPhone 14 开始，美国销售的 iPhone 就取消了实体 SIM 卡槽，只支持 eSIM。对于长期生活在美国、又需要经常回国的人来说，这带来了不少麻烦。
@@ -65,6 +67,8 @@ tags:
 
 如果只是偶尔接一下国内电话、收收短信，平时主要依赖微信和其他 App，它还是有一定实用价值的。
 
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-11-01-using-phone-in-china-roaming.svg)
+
 ## 方案三：把国内 SIM 卡留在家里，远程转发
 
 网上还有一些比较特殊的硬件方案。
@@ -106,6 +110,8 @@ tags:
 当然，这并不意味着所有 Pixel 手机在国内都会遇到同样的问题。具体情况可能取决于机型、系统版本和运营商。
 
 但从我自己的使用经历来说，这个方案实在有点折腾。
+
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-11-01-using-phone-in-china-phones.svg)
 
 ## 方案五：再准备一部 iPhone
 
