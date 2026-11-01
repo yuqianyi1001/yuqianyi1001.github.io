@@ -11,7 +11,7 @@ tags:
  - 手机
 ---
 
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-11-01-using-phone-in-china-cover.svg)
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/phone_china_cover_iphone14.png)
 
 每次从美国回国，手机都是一个让人头疼的问题。
 
@@ -67,7 +67,7 @@ tags:
 
 如果只是偶尔接一下国内电话、收收短信，平时主要依赖微信和其他 App，它还是有一定实用价值的。
 
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-11-01-using-phone-in-china-roaming.svg)
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/phone_china_roaming_wuyouxing.png)
 
 ## 方案三：把国内 SIM 卡留在家里，远程转发
 
@@ -111,7 +111,7 @@ tags:
 
 但从我自己的使用经历来说，这个方案实在有点折腾。
 
-![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-11-01-using-phone-in-china-phones.svg)
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/phone_china_pixel_comparison.png)
 
 ## 方案五：再准备一部 iPhone
 
