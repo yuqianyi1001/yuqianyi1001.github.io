@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>阿含经中的三十七道品 · 图卡</title>
+<style>
+  /* 本机没有宋体时（Linux 预览）用 Noto Serif SC；Mac 上用 Songti SC */
+  @font-face { font-family: "PreviewSerif"; font-weight: 400; src: local("Songti SC"), url("file:///root/.fonts/nss-400.woff2"); }
+  @font-face { font-family: "PreviewSerif"; font-weight: 700; src: local("Songti SC Bold"), url("file:///root/.fonts/nss-700.woff2"); }
+  @font-face { font-family: "PreviewSerif"; font-weight: 900; src: local("Songti SC Black"), url("file:///root/.fonts/nss-900.woff2"); }
+  :root {
+    --paper: #f2e8d2;
+    --paper-deep: #e6d7b8;
+    --ink: #2a241e;
+    --ink-soft: #5e5448;
+    --ink-faint: #9a8d7a;
+    --cinnabar: #a8352a;
+    --cinnabar-soft: #c9685a;
+    --line: rgba(42, 36, 30, 0.22);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #8a8072;
+    font-family: "Songti SC", "STSong", "PreviewSerif", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  body.review { padding: 40px 0; }
+  body.review .card { margin: 0 auto 40px; box-shadow: 0 8px 30px rgba(0,0,0,.35); }
+  body.single { background: var(--paper); }
+  body.single .card:not(.on) { display: none !important; }
+  body.single .card.on { display: block; }
+
+  .card {
+    position: relative;
+    width: 1080px;
+    height: 1440px;
+    overflow: hidden;
+    padding: 110px 96px 120px;
+    background-color: var(--paper);
+    background-image:
+      radial-gradient(ellipse at 50% 40%, rgba(255,250,238,.55) 0%, rgba(255,250,238,0) 60%),
+      radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 60%, rgba(120,90,50,.16) 100%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .27  0 0 0 0 .17  0 0 0 .10 0'/></filter><rect width='400' height='400' filter='url(%23n)'/></svg>"),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='900'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='.012 .04' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 .45  0 0 0 0 .36  0 0 0 0 .22  0 0 0 .07 0'/></filter><rect width='900' height='900' filter='url(%23f)'/></svg>");
+  }
+  /* 页眉页脚 */
+  .head {
+    position: absolute; top: 52px; left: 96px; right: 96px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 24px; letter-spacing: 4px; color: var(--ink-faint);
+  }
+  .head .series::before {
+    content: ""; display: inline-block; width: 12px; height: 12px;
+    background: var(--cinnabar); margin-right: 14px; vertical-align: 2px;
+  }
+  .foot {
+    position: absolute; bottom: 50px; left: 96px; right: 96px;
+    display: flex; justify-content: space-between; align-items: flex-end;
+    font-size: 22px; letter-spacing: 3px; color: var(--ink-faint);
+  }
+  .seal {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 66px; height: 66px; border-radius: 6px;
+    background: var(--cinnabar); color: #f6e9d6;
+    font-size: 20px; line-height: 1.05; font-weight: 700;
+    writing-mode: vertical-rl; letter-spacing: 1px;
+    box-shadow: inset 0 0 0 3px var(--cinnabar), inset 0 0 0 5px rgba(246,233,214,.8);
+    transform: rotate(-2deg);
+  }
+  .foot .sign { display: flex; align-items: center; gap: 18px; }
+  .foot .url { text-align: right; line-height: 1.45; }
+
+  h1.title {
+    font-size: 72px; font-weight: 900; letter-spacing: 6px; line-height: 1.25;
+  }
+  .kicker {
+    font-size: 28px; letter-spacing: 6px; color: var(--cinnabar); margin-bottom: 20px;
+  }
+  .rule {
+    width: 120px; height: 4px; background: var(--cinnabar); margin: 34px 0 44px;
+  }
+  p, li { font-size: 32px; line-height: 1.75; letter-spacing: 1px; }
+  .muted { color: var(--ink-soft); }
+  .red { color: var(--cinnabar); }
+  b { font-weight: 700; }
+
+  /* ===== 16:9 版面 ===== */
+  .card { width: 1920px; height: 1080px; padding: 112px 120px 110px; }
+  .head { top: 48px; left: 120px; right: 120px; }
+  .foot { bottom: 44px; left: 120px; right: 120px; }
+  h1.title { font-size: 60px; letter-spacing: 5px; line-height: 1.2; }
+  .kicker { font-size: 28px; margin-bottom: 12px; }
+  .rule { margin: 12px 0 20px; }
+
+  /* 标题行右侧：四谛四字 */
+  .top { display: flex; justify-content: space-between; align-items: flex-end; }
+  .di4 { display: flex; gap: 40px; }
+  .di4 .half { text-align: center; }
+  .di4 .half .cap { font-size: 23px; letter-spacing: 3px; color: var(--ink-soft); margin-bottom: 8px; }
+  .di4 .half .cap.r { color: var(--cinnabar); }
+  .di4 .ch { display: flex; gap: 10px; }
+  .di4 .ch b { width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-size: 40px; font-weight: 900; border: 3px solid var(--ink); background: rgba(255,250,238,.5); }
+  .di4 .ch b.r { border-color: var(--cinnabar); color: var(--cinnabar); }
+  .di4 .ch i { font-style: normal; font-size: 26px; align-self: center; color: var(--ink-faint); }
+
+  /* 三行：集苦 / 灭 / 道 */
+  .row { display: grid; grid-template-columns: 250px 1fr; column-gap: 30px; align-items: stretch; }
+  .lab { display: flex; flex-direction: column; justify-content: center; padding: 6px 22px; border-left: 10px solid var(--ink); background: rgba(255,250,238,.45); }
+  .lab.r { border-left-color: var(--cinnabar); background: rgba(168,53,42,.07); }
+  .lab b { font-size: 50px; font-weight: 900; letter-spacing: 4px; line-height: 1.15; }
+  .lab b em { font-style: normal; font-size: 30px; color: var(--ink-faint); margin: 0 6px; vertical-align: 8px; }
+  .lab.r b { color: var(--cinnabar); }
+  .lab span { font-size: 23px; letter-spacing: 2px; line-height: 1.45; color: var(--ink-soft); margin-top: 6px; }
+
+  .nid { display: flex; align-items: center; }
+  .nid .c { flex: 1; text-align: center; font-size: 29px; font-weight: 700; padding: 13px 0; border: 2px solid var(--ink); background: rgba(255,250,238,.55); letter-spacing: 1px; white-space: nowrap; }
+  .nid .c.huo { background: var(--cinnabar); border-color: var(--cinnabar); color: #f6e9d6; }
+  .nid .c.ye  { background: var(--ink); color: #f6e9d6; }
+  .nid .a { flex: none; width: 24px; text-align: center; color: var(--ink-soft); font-size: 22px; }
+  .nid .end { flex: none; margin-left: 14px; font-size: 27px; font-weight: 700; letter-spacing: 1px; white-space: nowrap; }
+  .nid.back .c { border: 2px dashed var(--cinnabar); color: var(--cinnabar); background: rgba(168,53,42,.05); font-size: 23px; letter-spacing: 0; padding: 16px 0; }
+  .nid.back .a { color: var(--cinnabar); }
+  .nid.back .c + .a { margin: 0 2px; }
+  .nid.back .end { color: var(--cinnabar); }
+
+  .legend { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 26px; margin-top: 8px; font-size: 24px; color: var(--ink-soft); }
+  .legend .sw { display: inline-block; width: 22px; height: 22px; vertical-align: -3px; margin-right: 8px; border: 2px solid var(--ink); }
+  .legend .sw.huo { background: var(--cinnabar); border-color: var(--cinnabar); }
+  .legend .sw.ye { background: var(--ink); }
+  .legend .sw.shi { background: rgba(255,250,238,.7); }
+  .legend b { color: var(--ink); }
+  .legend .src { margin-left: auto; font-size: 22px; color: var(--ink-faint); }
+
+  .up { display: grid; grid-template-columns: 250px 1fr; column-gap: 30px; margin: 6px 0 8px; }
+  .up div:last-child { font-size: 26px; color: var(--cinnabar); letter-spacing: 1px; padding-left: 6px; }
+  .up div:last-child b { font-size: 30px; margin-right: 10px; }
+
+  /* 道：八正道为主干，更全面的是三十七道品 */
+  .dao { display: grid; grid-template-columns: 640px 120px 1fr; align-items: stretch; }
+  .bz { padding: 10px 26px 14px; border: 4px solid var(--cinnabar); background: rgba(168,53,42,.09); }
+  .bz .hd { display: flex; align-items: baseline; gap: 16px; }
+  .bz .hd b { font-size: 46px; font-weight: 900; letter-spacing: 5px; color: var(--cinnabar); }
+  .bz .hd span { font-size: 23px; color: var(--ink-soft); letter-spacing: 1px; }
+  .bz .items { margin-top: 8px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .bz .items i { font-style: normal; text-align: center; font-size: 28px; font-weight: 700; padding: 3px 0; border: 2px solid var(--cinnabar); background: rgba(255,250,238,.6); letter-spacing: 1px; }
+  .ex { display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--cinnabar); }
+  .ex b { font-size: 26px; letter-spacing: 4px; }
+  .ex i { font-style: normal; font-size: 52px; line-height: 1; }
+  .sq { padding: 14px 22px 14px; border-top: 6px solid var(--ink); background: rgba(255,250,238,.45); display: flex; flex-direction: column; justify-content: center; }
+  .sq .hd { font-size: 30px; font-weight: 900; letter-spacing: 3px; margin-bottom: 12px; }
+  .sq .hd span { font-size: 22px; font-weight: 400; color: var(--ink-soft); letter-spacing: 1px; margin-left: 12px; }
+  .sq .gs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .sq .gs div { text-align: center; font-size: 24px; padding: 4px 0; border: 1.5px solid var(--line); background: rgba(255,250,238,.5); }
+  .sq .gs div small { font-size: 19px; color: var(--ink-faint); margin-left: 4px; }
+  .sq .gs div.r { border: 2px solid var(--cinnabar); color: var(--cinnabar); font-weight: 700; background: rgba(168,53,42,.08); }
+
+  /* ===== 苦集卡 ===== */
+  .ks { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .ks .blk { padding: 14px 26px 14px; background: rgba(255,250,238,.45); border-top: 6px solid var(--ink); }
+  .ks .blk .h { display: flex; align-items: baseline; gap: 16px; }
+  .ks .blk .h b { font-size: 40px; font-weight: 900; letter-spacing: 4px; }
+  .ks .blk .h span { font-size: 23px; color: var(--ink-soft); }
+  .ks .pl { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .ks .pl i { font-style: normal; font-size: 25px; padding: 2px 12px; border: 2px solid var(--ink); background: rgba(255,250,238,.6); }
+  .ks .pl i.last { border-color: var(--cinnabar); color: var(--cinnabar); font-weight: 700; }
+  .ks .blk p { font-size: 25px; line-height: 1.55; margin-top: 8px; }
+  .ks .blk .s { font-size: 21px; color: var(--ink-faint); margin-top: 6px; }
+
+  .sj { display: grid; grid-template-columns: 2fr 5fr 3fr 2fr; gap: 10px; margin-top: 24px; }
+  .sj div { text-align: center; font-size: 24px; letter-spacing: 2px; padding: 6px 0 8px; border-bottom: 4px solid var(--ink); }
+  .sj div b { font-weight: 900; margin-left: 10px; }
+  .sj div.ji b { color: var(--cinnabar); }
+  .sj div.ji { border-bottom-color: var(--cinnabar); }
+  .sj div small { display: block; font-size: 19px; color: var(--ink-faint); letter-spacing: 1px; }
+
+  .zh { display: grid; grid-template-columns: repeat(12, 1fr); gap: 10px; margin-top: 12px; }
+  .zh .z { background: rgba(255,250,238,.5); border: 2px solid var(--ink); display: flex; flex-direction: column; }
+  .zh .z .n { text-align: center; font-size: 32px; font-weight: 900; padding: 8px 0; letter-spacing: 1px; border-bottom: 2px solid var(--ink); }
+  .zh .z.huo { border-color: var(--cinnabar); }
+  .zh .z.huo .n { background: var(--cinnabar); color: #f6e9d6; border-bottom-color: var(--cinnabar); }
+  .zh .z.ye .n { background: var(--ink); color: #f6e9d6; }
+  .zh .z .d { font-size: 22px; line-height: 1.5; padding: 10px 6px 10px; color: var(--ink); text-align: center; }
+  .zh .z .t { font-size: 22px; font-weight: 700; color: var(--ink-soft); text-align: center; padding: 4px 0; margin-top: auto; letter-spacing: 2px; border-top: 1px solid var(--line); }
+  .zh .z.huo .t { color: var(--cinnabar); }
+
+  /* ===== 灭道卡 ===== */
+  .ks .blk .qt { font-size: 25px; line-height: 1.55; margin-top: 8px; border-left: 4px solid var(--cinnabar); padding-left: 16px; }
+  .ks .bz8 { display: grid; grid-template-columns: repeat(8, 1fr); gap: 6px; margin-top: 10px; }
+  .ks .bz8 i { font-style: normal; text-align: center; font-size: 22px; font-weight: 700; padding: 3px 0; border: 2px solid var(--cinnabar); background: rgba(255,250,238,.6); }
+  .mk { display: grid; grid-template-columns: repeat(12, 1fr); gap: 10px; margin-top: 40px; }
+  .mk div { text-align: center; font-size: 22px; letter-spacing: 1px; padding-bottom: 6px; color: var(--ink-soft); }
+  .mk div.cut { color: #f6e9d6; background: var(--cinnabar); font-weight: 700; padding: 6px 0; }
+  .zh.back .z { border: 2px dashed var(--cinnabar); background: rgba(168,53,42,.04); }
+  .zh.back .z .n { color: var(--cinnabar); background: transparent; border-bottom: 2px dashed var(--cinnabar); font-size: 28px; padding: 10px 0; }
+  .zh.back .z.huo { border-style: solid; background: rgba(168,53,42,.10); }
+  .zh.back .z.huo .n { background: var(--cinnabar); color: #f6e9d6; border-bottom-style: solid; }
+  .zh.back .z.ye .n { background: transparent; color: var(--ink); }
+  .zh.back .z .d { padding: 16px 6px; }
+  .zh.back .z .t { border-top-color: rgba(168,53,42,.3); }
+
+  /* ===== 三十七道品矩阵 ===== */
+  .mx { display: grid; grid-template-columns: 210px 1fr 0.72fr 0.85fr 1fr 1fr 1.05fr 0.72fr 1.15fr; gap: 6px; }
+  .mx .hd { white-space: nowrap; text-align: center; padding: 0 0 4px; font-size: 21px; color: var(--ink-soft); letter-spacing: 1px; line-height: 1.3; }
+  .mx .hd b { font-size: 28px; margin-right: 6px; color: var(--ink); font-weight: 900; letter-spacing: 3px; }
+  .mx .hd.hx b { color: var(--ink-faint); }
+  .mx .rl { display: flex; align-items: baseline; justify-content: space-between; padding: 0 14px; align-self: stretch; align-items: center; font-size: 28px; font-weight: 900; letter-spacing: 2px; border-left: 6px solid var(--ink); background: rgba(255,250,238,.45); }
+  .mx .rl small { font-size: 20px; font-weight: 400; color: var(--ink-faint); letter-spacing: 0; }
+  .mx .c { display: flex; align-items: center; justify-content: center; text-align: center; min-height: 58px; padding: 4px 4px; font-size: 26px; line-height: 1.3; border: 2px solid var(--ink); background: rgba(255,250,238,.6); font-weight: 700; }
+  .mx .c small { display: block; font-size: 18px; font-weight: 400; color: var(--ink-soft); }
+  .mx .c.e { border: 1px dashed var(--line); background: transparent; }
+  .mx .c .it { display: inline-block; margin: 2px 7px; }
+  .mx .c.multi { flex-wrap: wrap; }
+  .mx .c.out { border: 2px dashed var(--ink-faint); color: var(--ink-soft); background: transparent; font-weight: 700; }
+  .mx .c.oh { border: 1px dashed var(--ink-faint); background: transparent; color: var(--ink-faint); font-size: 20px; font-weight: 400; line-height: 1.35; }
+  .mx .c.ext { border-color: var(--ink-faint); color: var(--ink-soft); }
+  .mx .rl.bz { border-left-color: var(--cinnabar); background: var(--cinnabar); color: #f6e9d6; font-size: 34px; }
+  .mx .rl.bz small { color: #f3d9cf; }
+  .mx .c.bz { background: var(--cinnabar); border-color: var(--cinnabar); color: #f6e9d6; font-size: 28px; min-height: 70px; }
+  .mx .c.bz.e { background: transparent; border: 1px dashed var(--line); }
+  .mx .exr { grid-column: 2 / span 8; text-align: left; font-size: 22px; color: var(--cinnabar); letter-spacing: 2px; padding: 4px 0 2px 6px; }
+
+  /* ===== 三十七道品思维导图（还原原图） ===== */
+  .card.xm { background: #eef0f5; }
+  .card.xm .mmwrap { position: absolute; left: 307px; top: 24px; width: 1306px; height: 1040px; }
+  .card.xm svg.mm { width: 100%; height: 100%; font-family: "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", "WenQuanYi Zen Hei", sans-serif; }
+  .card.xm svg.mm text { fill: #1a1a1a; }
+  .card.xm svg.mm text.lb { fill: #555; paint-order: stroke; stroke: #eef0f5; stroke-width: 3px; }
+  .card.xm .side { position: absolute; left: 120px; top: 120px; width: 170px; font-size: 22px; line-height: 1.7; color: var(--ink-soft); }
+  .card.xm .side b { display: block; font-size: 34px; color: var(--ink); letter-spacing: 3px; margin-bottom: 14px; }
+  .card.xm.ov .mmwrap { left: 120px; top: 96px; width: 1680px; height: 920px; }
+  .card.xm svg.mm text.lg { fill: #444; }
+  .card.xm svg.mm text.ni { fill: #3f7d3a; }
+  .card.xm svg.mm text.ar { fill: #333; }
+  .card.xm.ov svg.mm { font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "WenQuanYi Zen Hei", sans-serif; }
+  /* 导图卡底部被图占满：署名移到右上角，页码随之隐藏 */
+  .card.xm .foot { top: 30px; bottom: auto; justify-content: flex-end; }
+  .card.xm .foot > span:first-child { display: none; }
+  .card.xm .head .pg { display: none; }
+
+  /* ===== 封面、经证卡 ===== */
+  .bg-char { right: 40px; top: 60px; font-size: 760px; color: rgba(42,36,30,.045); position: absolute; font-weight: 900; line-height: 1; }
+  .cover { height: 100%; display: grid; grid-template-columns: 1fr 1010px; column-gap: 60px; align-content: center; align-items: center; }
+  .cover .big { font-size: 150px; font-weight: 900; letter-spacing: 16px; line-height: 1.15; }
+  .cover .sub { margin-top: 30px; font-size: 36px; letter-spacing: 5px; color: var(--ink-soft); line-height: 1.7; }
+  .chain { display: flex; flex-direction: column; }
+  .chain .n { display: grid; grid-template-columns: 250px 120px 1fr; align-items: baseline; padding: 20px 28px; background: rgba(255,250,238,.4); border-top: 6px solid var(--ink); }
+  .chain .n.r { border-top-color: var(--cinnabar); background: rgba(168,53,42,.06); }
+  .chain .n b { font-size: 46px; font-weight: 900; letter-spacing: 4px; }
+  .chain .n em { font-style: normal; font-size: 34px; font-weight: 700; color: var(--cinnabar); letter-spacing: 4px; }
+  .chain .n span { font-size: 28px; color: var(--ink-soft); line-height: 1.5; }
+  .chain .gap { height: 14px; }
+  .cols3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; }
+  .cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .ev { padding: 22px 28px 20px; background: rgba(255,250,238,.45); border-top: 6px solid var(--ink); display: flex; flex-direction: column; }
+  .ev.r { border-top-color: var(--cinnabar); }
+  .ev h3 { font-size: 40px; font-weight: 900; letter-spacing: 4px; }
+  .ev .tag { font-size: 24px; color: var(--cinnabar); letter-spacing: 2px; margin: 2px 0 12px; }
+  .ev .qt { font-size: 29px; line-height: 1.6; border-left: 5px solid var(--cinnabar); padding-left: 18px; margin-bottom: 12px; }
+  .ev p { font-size: 26px; line-height: 1.6; }
+  .ev .s { margin-top: auto; padding-top: 10px; font-size: 21px; color: var(--ink-faint); line-height: 1.45; }
+  .concl { margin-top: 26px; font-size: 32px; line-height: 1.55; font-weight: 700; border-left: 8px solid var(--cinnabar); background: rgba(168,53,42,.08); padding: 16px 28px; }
+  /* 四谛表 + 三转十二行 */
+  .dt { display: grid; grid-template-columns: 170px repeat(4, 1fr); gap: 8px; }
+  .dt .h { text-align: center; padding: 10px 0; font-size: 44px; font-weight: 900; letter-spacing: 6px; border-top: 6px solid var(--ink); background: rgba(255,250,238,.45); }
+  .dt .h.r { border-top-color: var(--cinnabar); color: var(--cinnabar); background: rgba(168,53,42,.07); }
+  .dt .h small { display: block; font-size: 21px; font-weight: 400; letter-spacing: 1px; color: var(--ink-soft); }
+  .dt .rl { display: flex; align-items: center; font-size: 26px; font-weight: 700; letter-spacing: 2px; padding-left: 4px; }
+  .dt .rl small { display: block; font-size: 19px; font-weight: 400; color: var(--ink-faint); letter-spacing: 0; }
+  .dt .c { font-size: 23px; line-height: 1.5; padding: 10px 14px; background: rgba(255,250,238,.5); border: 1px solid var(--line); }
+  .dt .c.k { text-align: center; font-size: 27px; font-weight: 700; }
+  .dt .c.k.r { color: var(--cinnabar); }
+
+  /* ===== 八正道 ===== */
+  .bz8t { display: grid; grid-template-columns: 250px 1fr 150px; column-gap: 0; row-gap: 6px; }
+  .bz8t .hd { font-size: 22px; letter-spacing: 3px; color: var(--ink-soft); padding: 0 18px 8px; border-bottom: 3px solid var(--ink); }
+  .bz8t .nm { display: flex; align-items: baseline; gap: 12px; padding: 5px 18px; background: rgba(255,250,238,.5); border-left: 8px solid var(--ink); }
+  .bz8t .nm b { font-size: 31px; font-weight: 900; letter-spacing: 3px; }
+  .bz8t .nm small { font-size: 20px; color: var(--ink-faint); }
+  .bz8t .df { display: flex; align-items: center; padding: 5px 18px; font-size: 25px; line-height: 1.45; background: rgba(255,250,238,.5); }
+  .bz8t .jy { display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 900; letter-spacing: 6px; }
+  .bz8t .nm.hui { border-left-color: #2b7f86; } .bz8t .jy.hui { background: rgba(79,201,207,.22); color: #1f646a; }
+  .bz8t .nm.jie { border-left-color: var(--cinnabar); } .bz8t .jy.jie { background: rgba(168,53,42,.12); color: var(--cinnabar); }
+  .bz8t .nm.ding { border-left-color: #24772a; } .bz8t .jy.ding { background: rgba(60,196,58,.18); color: #1d5f22; }
+  .q { margin-top: 18px; font-size: 27px; line-height: 1.6; letter-spacing: .5px; border-left: 6px solid var(--cinnabar); padding: 4px 0 4px 24px; }
+  .q small { display: block; font-size: 22px; color: var(--ink-soft); }
+
+  /* ===== 第 04 期新增 ===== */
+  .cover .big { font-size: 128px; letter-spacing: 12px; }
+  .cover .pre { font-size: 44px; font-weight: 700; letter-spacing: 10px; color: var(--ink-soft); margin-bottom: 6px; }
+  .d4 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .d4 .n { padding: 20px 26px 18px; background: rgba(255,250,238,.45); border-top: 6px solid var(--ink); }
+  .d4 .n.r { border-top-color: var(--cinnabar); background: rgba(168,53,42,.06); }
+  .d4 .n b { display: block; font-size: 44px; font-weight: 900; letter-spacing: 4px; }
+  .d4 .n.r b { color: var(--cinnabar); }
+  .d4 .n span { display: block; font-size: 26px; line-height: 1.5; color: var(--ink-soft); margin-top: 8px; }
+  .d4note { margin-top: 26px; font-size: 26px; line-height: 1.6; color: var(--ink-soft); border-left: 4px solid var(--cinnabar); padding-left: 20px; }
+
+  .bars { display: flex; flex-direction: column; gap: 16px; }
+  .bar { display: grid; grid-template-columns: 170px 1fr; align-items: center; column-gap: 18px; }
+  .bar .k { font-size: 30px; font-weight: 700; letter-spacing: 2px; }
+  .bar .v { height: 58px; background: var(--ink); color: #f6e9d6; font-size: 30px; font-weight: 900; display: flex; align-items: center; padding-left: 16px; white-space: nowrap; }
+  .bar .v.r { background: var(--cinnabar); }
+  .bar .v.lt { background: transparent; color: var(--ink); border-left: 6px solid var(--ink); padding-left: 12px; }
+  .bnote { margin-top: 18px; font-size: 22px; color: var(--ink-faint); line-height: 1.5; }
+  .stat { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .big3 { font-size: 92px; font-weight: 900; color: var(--cinnabar); line-height: 1; letter-spacing: 2px; }
+  .big3 small { font-size: 32px; color: var(--ink); margin-left: 8px; letter-spacing: 3px; }
+
+  .nt { display: grid; grid-template-columns: 150px repeat(4, 1fr); gap: 6px; margin-top: 8px; }
+  .nt div { font-size: 24px; text-align: center; padding: 7px 4px; background: rgba(255,250,238,.5); border: 1px solid var(--line); }
+  .nt .h { font-weight: 900; background: transparent; border: 0; border-bottom: 3px solid var(--ink); font-size: 24px; color: var(--ink-soft); letter-spacing: 2px; }
+  .nt .rl { font-weight: 700; text-align: left; padding-left: 10px; border-left: 6px solid var(--ink); }
+  .nt .rl.r { border-left-color: var(--cinnabar); color: var(--cinnabar); }
+
+  .sz { display: grid; grid-template-columns: 200px repeat(4, 1fr); gap: 8px; }
+  .sz .h { text-align: center; padding: 8px 0; font-size: 42px; font-weight: 900; letter-spacing: 6px; border-top: 6px solid var(--ink); background: rgba(255,250,238,.45); }
+  .sz .h.r { border-top-color: var(--cinnabar); color: var(--cinnabar); background: rgba(168,53,42,.07); }
+  .sz .rl { display: flex; flex-direction: column; justify-content: center; padding-left: 14px; border-left: 8px solid var(--ink); background: rgba(255,250,238,.45); }
+  .sz .rl b { font-size: 32px; font-weight: 900; letter-spacing: 4px; }
+  .sz .rl small { font-size: 21px; color: var(--ink-soft); }
+  .sz .c { display: flex; align-items: center; justify-content: center; text-align: center; font-size: 27px; font-weight: 700; padding: 14px 8px; background: rgba(255,250,238,.55); border: 1px solid var(--line); }
+  .sz .c small { display: block; font-size: 19px; font-weight: 400; color: var(--cinnabar); margin-top: 2px; }
+  .sz .cc { flex-direction: column; }
+
+  .k7 { display: flex; flex-wrap: wrap; gap: 8px; margin: 2px 0 12px; }
+  .k7 i { font-style: normal; font-size: 25px; padding: 2px 12px; border: 2px solid var(--ink); background: rgba(255,250,238,.6); }
+  .k7 i.r { border-color: var(--cinnabar); color: var(--cinnabar); font-weight: 700; }
+
+  .yi { display: grid; grid-template-columns: 1fr 120px 1fr; align-items: stretch; }
+  .yi .col { display: flex; flex-direction: column; gap: 12px; }
+  .yi .col .t { font-size: 30px; font-weight: 900; letter-spacing: 4px; padding-bottom: 6px; border-bottom: 4px solid var(--ink); }
+  .yi .col.r .t { color: var(--cinnabar); border-bottom-color: var(--cinnabar); }
+  .yi .col div.i { font-size: 29px; line-height: 1.45; padding: 12px 20px; background: rgba(255,250,238,.5); border-left: 6px solid var(--ink); }
+  .yi .col.r div.i { border-left-color: var(--cinnabar); background: rgba(168,53,42,.06); }
+  .yi .col div.i small { font-size: 21px; color: var(--ink-faint); margin-right: 10px; }
+  .yi .mid { display: flex; align-items: center; justify-content: center; font-size: 26px; color: var(--cinnabar); letter-spacing: 4px; writing-mode: vertical-rl; }
+
+  /* ===== 第 05 期新增 ===== */
+  .ch12 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .ch12 div { text-align: center; padding: 14px 0; font-size: 36px; font-weight: 900; letter-spacing: 3px; border: 3px solid var(--ink); background: rgba(255,250,238,.55); position: relative; }
+  .ch12 div small { display: block; font-size: 20px; font-weight: 400; color: var(--ink-faint); letter-spacing: 1px; }
+  .ch12 div.r { border-color: var(--cinnabar); color: var(--cinnabar); }
+
+  .flow { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 0; }
+  .flow b { font-size: 28px; font-weight: 900; padding: 8px 14px; border: 2px solid var(--ink); background: rgba(255,250,238,.6); letter-spacing: 1px; }
+  .flow i { font-style: normal; font-size: 22px; color: var(--ink-soft); padding: 0 6px; }
+  .flow.mie b { border-style: dashed; border-color: var(--cinnabar); color: var(--cinnabar); background: rgba(168,53,42,.05); }
+  .flow.mie i { color: var(--cinnabar); }
+  .flow .end { font-size: 26px; font-weight: 700; margin-left: 10px; }
+  .flow.mie .end { color: var(--cinnabar); }
+  .fl { margin-bottom: 14px; }
+  .fl .lab2 { font-size: 30px; font-weight: 900; letter-spacing: 3px; margin-bottom: 10px; }
+  .fl .lab2 small { font-size: 22px; font-weight: 400; color: var(--ink-soft); margin-left: 12px; letter-spacing: 1px; }
+  .fl.r .lab2 { color: var(--cinnabar); }
+
+  .yt { display: grid; grid-template-columns: 120px 1fr 440px; gap: 4px 0; }
+  .yt div { font-size: 23px; line-height: 1.35; padding: 6px 14px; background: rgba(255,250,238,.5); border-bottom: 1px solid var(--line); }
+  .yt .h { background: transparent; font-weight: 900; font-size: 22px; color: var(--ink-soft); letter-spacing: 2px; border-bottom: 3px solid var(--ink); }
+  .yt .n { font-weight: 900; font-size: 26px; letter-spacing: 2px; border-left: 6px solid var(--ink); }
+  .yt .e { color: var(--ink-faint); }
+  .yt .d { color: var(--cinnabar); font-weight: 700; background: rgba(168,53,42,.07); }
+
+  .reed { display: grid; grid-template-columns: 520px 1fr; gap: 50px; align-items: center; }
+  .reed svg { width: 520px; height: 520px; }
+
+  /* ===== 第 06 期新增 ===== */
+  .b8 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .b8 div { text-align: center; padding: 16px 0; font-size: 38px; font-weight: 900; letter-spacing: 4px; border: 3px solid var(--cinnabar); color: var(--cinnabar); background: rgba(255,250,238,.55); }
+  .b8 div small { display: block; font-size: 20px; font-weight: 400; color: var(--ink-faint); letter-spacing: 1px; }
+
+  .df8 { display: grid; grid-template-columns: 190px 1fr; gap: 6px 0; }
+  .df8 .n { display: flex; align-items: center; padding: 6px 18px; font-size: 30px; font-weight: 900; letter-spacing: 3px; border-left: 8px solid var(--cinnabar); background: rgba(168,53,42,.07); color: var(--cinnabar); }
+  .df8 .d { display: flex; align-items: center; padding: 6px 20px; font-size: 26px; line-height: 1.45; background: rgba(255,250,238,.5); }
+  .df8 .d small { color: var(--ink-faint); margin-left: 14px; font-size: 21px; }
+
+  .chain2 { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 0; }
+  .chain2 b { font-size: 27px; font-weight: 900; padding: 8px 14px; border: 2px solid var(--ink); background: rgba(255,250,238,.6); }
+  .chain2 i { font-style: normal; font-size: 22px; color: var(--ink-soft); padding: 0 6px; }
+  .chain2.r b { border-color: var(--cinnabar); color: var(--cinnabar); }
+  .chain2.r i { color: var(--cinnabar); }
+  .chain2.g b { border-style: dashed; color: var(--ink-soft); }
+  .chain2 .end { font-size: 25px; font-weight: 700; margin-left: 10px; }
+
+  .ju3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; }
+  .ju3 .j { padding: 22px 26px; border-top: 8px solid var(--ink); background: rgba(255,250,238,.45); }
+  .ju3 .j h3 { font-size: 46px; font-weight: 900; letter-spacing: 6px; }
+  .ju3 .j .items { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+  .ju3 .j .items i { font-style: normal; font-size: 34px; font-weight: 700; padding: 10px 18px; border: 2px solid var(--ink); background: rgba(255,250,238,.6); letter-spacing: 3px; }
+  .ju3 .j.jie { border-top-color: var(--cinnabar); } .ju3 .j.jie h3 { color: var(--cinnabar); } .ju3 .j.jie i { border-color: var(--cinnabar); }
+  .ju3 .j.ding { border-top-color: #24772a; } .ju3 .j.ding h3 { color: #1d5f22; } .ju3 .j.ding i { border-color: #24772a; }
+  .ju3 .j.hui { border-top-color: #2b7f86; } .ju3 .j.hui h3 { color: #1f646a; } .ju3 .j.hui i { border-color: #2b7f86; }
+
+  .ten { display: grid; grid-template-columns: repeat(10, 1fr); gap: 8px; }
+  .ten div { text-align: center; padding: 12px 0; font-size: 26px; font-weight: 900; border: 2px solid var(--ink); background: rgba(255,250,238,.6); writing-mode: vertical-rl; letter-spacing: 6px; height: 170px; display: flex; align-items: center; justify-content: center; margin: 0 auto; width: 100%; }
+  .ten div.x { border: 3px solid var(--cinnabar); color: var(--cinnabar); background: rgba(168,53,42,.08); }
+  .ten div.e { border: 2px dashed var(--line); color: transparent; background: transparent; }
+  .tenrow { display: grid; grid-template-columns: 220px 1fr; gap: 18px; align-items: center; margin-bottom: 16px; }
+  .tenrow .lb { font-size: 30px; font-weight: 900; letter-spacing: 3px; }
+  .tenrow .lb small { display: block; font-size: 22px; font-weight: 400; color: var(--ink-soft); letter-spacing: 1px; }
+
+  /* ===== 第 07 期新增 ===== */
+  .g7 { display: grid; grid-template-columns: 1fr 90px; gap: 10px 0; }
+  .g7 .nm { display: flex; align-items: center; justify-content: space-between; padding: 11px 24px; font-size: 34px; font-weight: 900; letter-spacing: 4px; border-left: 8px solid var(--ink); background: rgba(255,250,238,.5); }
+  .g7 .nm small { font-size: 23px; font-weight: 400; color: var(--ink-soft); letter-spacing: 1px; }
+  .g7 .ct { display: flex; align-items: center; justify-content: center; font-size: 36px; font-weight: 900; color: var(--cinnabar); background: rgba(168,53,42,.07); }
+  .g7 .tt { grid-column: 1 / span 2; text-align: right; font-size: 28px; color: var(--ink-soft); padding-top: 4px; }
+  .g7 .tt b { font-size: 40px; color: var(--cinnabar); margin-left: 8px; }
+
+  .tbl { display: grid; gap: 6px; }
+  .tbl div { font-size: 26px; padding: 8px 12px; text-align: center; background: rgba(255,250,238,.5); border: 1px solid var(--line); }
+  .tbl .h { background: transparent; border: 0; border-bottom: 3px solid var(--ink); font-weight: 900; font-size: 25px; color: var(--ink-soft); letter-spacing: 2px; }
+  .tbl .l { text-align: left; font-weight: 900; border-left: 6px solid var(--ink); }
+  .tbl .r { color: var(--cinnabar); font-weight: 900; background: rgba(168,53,42,.07); }
+  .tbl .tx { text-align: left; font-size: 25px; line-height: 1.4; }
+
+  .ji { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 8px; }
+  .ji div { padding: 12px 10px; text-align: center; font-size: 27px; font-weight: 700; line-height: 1.4; background: rgba(255,250,238,.55); border-top: 5px solid var(--ink); }
+  .ji div small { display: block; font-size: 23px; font-weight: 400; color: var(--cinnabar); }
+
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .steps .s4 { padding: 16px 18px; background: rgba(255,250,238,.5); border-top: 6px solid var(--ink); font-size: 26px; line-height: 1.5; }
+  .steps .s4 b { display: block; font-size: 25px; color: var(--cinnabar); letter-spacing: 3px; margin-bottom: 6px; }
+  .steps .s4.r { border-top-color: var(--cinnabar); background: rgba(168,53,42,.07); }
+
+  .gen { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+  .gen .c5 { border: 2px solid var(--ink); background: rgba(255,250,238,.55); text-align: center; }
+  .gen .c5 .a { font-size: 32px; font-weight: 900; padding: 10px 0; letter-spacing: 3px; border-bottom: 2px solid var(--ink); }
+  .gen .c5 .b { font-size: 28px; padding: 12px 0; color: var(--cinnabar); font-weight: 700; }
+  .gen .c5.r { border-color: var(--cinnabar); }
+  .gen .c5.r .a { background: var(--cinnabar); color: #f6e9d6; border-bottom-color: var(--cinnabar); }
+
+  .jb7 { display: flex; align-items: stretch; gap: 0; }
+  .jb7 b { flex: 1; text-align: center; padding: 13px 0; font-size: 27px; font-weight: 900; border: 2px solid var(--ink); background: rgba(255,250,238,.6); }
+  .jb7 i { flex: none; width: 34px; display: flex; align-items: center; justify-content: center; font-style: normal; color: var(--ink-soft); }
+  .jb7 b.up { border-color: var(--cinnabar); color: var(--cinnabar); }
+  .jb7 b.dn { border-color: #2b7f86; color: #1f646a; }
+
+  .lk { display: grid; grid-template-columns: 1fr 66px 1fr 190px; gap: 9px 0; align-items: stretch; }
+  .lk .x { display: flex; align-items: center; padding: 8px 18px; font-size: 27px; font-weight: 700; background: rgba(255,250,238,.55); border-left: 6px solid var(--ink); }
+  .lk .y { display: flex; align-items: center; padding: 8px 18px; font-size: 27px; font-weight: 700; color: var(--cinnabar); background: rgba(168,53,42,.07); }
+  .lk .ar { display: flex; align-items: center; justify-content: center; font-size: 28px; color: var(--ink-soft); }
+  .lk .so { display: flex; align-items: center; justify-content: flex-end; font-size: 22px; color: var(--ink-faint); }
+</style>
+</head>
+<body class="review">
+
+<!-- ===== 1 封面 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 07 · 阿含系列 4</span><span class="pg"></span></div>
+  <div class="bg-char">品</div>
+  <div class="cover">
+    <div>
+      <div class="kicker">阿含系列 · 四</div>
+      <div class="pre">阿含经中的</div>
+      <div class="big" style="font-size:112px;letter-spacing:6px">三十七道品</div>
+      <div class="sub">七组修法<br>四部阿含怎样说，怎样连在一起</div>
+    </div>
+    <div>
+      <div class="g7">
+        <div class="nm">四念处<small>身、受、心、法</small></div><div class="ct">4</div>
+        <div class="nm">四正断<small>断断、律仪断、随护断、修断</small></div><div class="ct">4</div>
+        <div class="nm">四如意足<small>欲、精进、心、思惟</small></div><div class="ct">4</div>
+        <div class="nm">五根<small>信、精进、念、定、慧</small></div><div class="ct">5</div>
+        <div class="nm">五力<small>信、精进、念、定、慧</small></div><div class="ct">5</div>
+        <div class="nm">七觉支<small>念、择法、精进、喜、猗、定、舍</small></div><div class="ct">7</div>
+        <div class="nm">八圣道<small>正见乃至正定</small></div><div class="ct">8</div>
+        <div class="tt">合计<b>37</b></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>经文出处均可在 CBETA 检索</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 2 名称 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 07 · 阿含经中的三十七道品</span><span class="pg"></span></div>
+  <div class="kicker">这个名字从哪里来</div>
+  <h1 class="title">四部阿含，只有增一阿含说「三十七品」</h1>
+  <div class="rule"></div>
+  <div class="cols3">
+    <div class="ev r">
+      <h3>杂阿含：道品</h3>
+      <div class="tag">列七组，不给总数</div>
+      <div class="qt">「谓四念处、四正断、四如意足、五根、五力、七觉支、八道支涅槃耶？」</div>
+      <p>阿难答：「虽不持所受戒身乃至道品法而涅槃」。卷 24 有标题「第五诵道品第一」。</p>
+      <div class="s">《杂阿含经》卷 24 第 638 经</div>
+    </div>
+    <div class="ev">
+      <h3>长阿含：八组</h3>
+      <div class="tag">佛临涅槃前说</div>
+      <div class="qt">「谓：『四念处、四意断、四神足、四禅、五根、五力、七觉意、贤圣八道。』」</div>
+      <p>在四神足和五根之间，多了<b>四禅</b>。第 17 经《清净经》也列四禅。</p>
+      <div class="s">《长阿含经》卷 3 第 2 经《游行经》</div>
+    </div>
+    <div class="ev">
+      <h3>增一阿含：三十七品</h3>
+      <div class="tag">阿须伦品，共 11 经用这个总称</div>
+      <div class="qt">「云何三十七品道？所谓四意止、四意断、四神足、五根、五力、七觉意、八真行」</div>
+      <p>序品还说：「增一阿含，出三十七道品之教」。</p>
+      <div class="s">《增壹阿含经》卷 3 第 8 品第 6 经</div>
+    </div>
+  </div>
+  <div class="concl">杂阿含、中阿含、长阿含的经文里，都没有「三十七」这个数字。</div>
+  <div class="foot"><span>佛学图文 · 阿含经中的三十七道品</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 3 数字 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 07 · 阿含经中的三十七道品</span><span class="pg"></span></div>
+  <div class="kicker">再看数字</div>
+  <h1 class="title">七组在四部阿含的分布；杂阿含为它们编了一诵</h1>
+  <div class="rule"></div>
+  <div class="cols2" style="grid-template-columns:1.15fr 1fr">
+    <div class="tbl" style="grid-template-columns:190px repeat(4,1fr)">
+      <div class="h">出现的经数</div><div class="h">杂阿含</div><div class="h">中阿含</div><div class="h">长阿含</div><div class="h">增一</div>
+      <div class="l">四念处</div><div class="r">67</div><div>13</div><div>8</div><div>6</div>
+      <div class="l">四正断</div><div class="r">23</div><div>7</div><div>4</div><div>11</div>
+      <div class="l">四如意足</div><div>12</div><div>7</div><div>6</div><div class="r">14</div>
+      <div class="l">五根</div><div class="r">29</div><div>7</div><div>7</div><div>9</div>
+      <div class="l">五力</div><div class="r">11</div><div>5</div><div>6</div><div>3</div>
+      <div class="l">七觉支</div><div class="r">60</div><div>15</div><div>11</div><div>14</div>
+      <div class="l">八圣道</div><div class="r">57</div><div>21</div><div>9</div><div>21</div>
+    </div>
+    <div class="tbl" style="grid-template-columns:220px 1fr 90px">
+      <div class="h">杂阿含专题</div><div class="h">经号</div><div class="h">经数</div>
+      <div class="l">念处</div><div>第 605–639 经</div><div>35</div>
+      <div class="l">根</div><div>第 643–660 经</div><div>18</div>
+      <div class="l">力</div><div>第 664–703 经</div><div>40</div>
+      <div class="l">觉支</div><div>第 704–747 经</div><div>44</div>
+      <div class="l">圣道分</div><div>第 748–800 经</div><div>47</div>
+      <div class="l">安那般那念</div><div>第 801–815 经</div><div>13</div>
+      <div class="l">正断</div><div>第 875–879 经</div><div>5</div>
+    </div>
+  </div>
+  <div class="concl">四如意足在杂阿含里没有成组的专经，讲得最完整的是卷 21 第 561 经。力相应收的力也不止五种。</div>
+  <div class="foot"><span>依 CBETA 大正藏本检索；只列名目的也计入，卷名、品名不计</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 4 四念处 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 07 · 阿含经中的三十七道品</span><span class="pg"></span></div>
+  <div class="kicker">四念处</div>
+  <h1 class="title">观身、受、心、法，调伏世间贪忧</h1>
+  <div class="rule"></div>
+  <div class="cols2">
+    <div class="ev r">
+      <h3>一乘道</h3>
+      <div class="tag">第 607 经 · 第 610 经</div>
+      <div class="qt">「有一乘道，净诸众生，令越忧悲，灭恼苦，得如实法，所谓四念处。」</div>
+      <div class="qt">「云何修四念处？谓内身身观念住，精勤方便，正智正念，调伏世间忧悲，外身、内外身观住」</div>
+      <p>受、心、法也一样，内、外、内外，逐一观察。</p>
+      <div class="s">《杂阿含经》卷 24</div>
+    </div>
+    <div class="ev">
+      <h3>所观的集与灭</h3>
+      <div class="tag">第 609 经</div>
+      <div class="ji">
+        <div>身<small>食集</small></div><div>受<small>触集</small></div><div>心<small>名色集</small></div><div>法<small>忆念集</small></div>
+      </div>
+      <div class="qt" style="margin-top:14px">「食集则身集、食灭则身没。」<br>「忆念集则法集，忆念灭则法没。」</div>
+      <p>观集、观灭，「则无所依住，于诸世间永无所取」。</p>
+      <div class="s">《杂阿含经》卷 24 第 609 经</div>
+    </div>
+  </div>
+  <div class="q">「比丘者，行则知行，住则知住，坐则知坐，卧则知卧，眠则知眠，寤则知寤」<small>《中阿含经》卷 24 第 98 经《念处经》，四部阿含里讲四念处最细的一篇。</small></div>
+  <div class="foot"><span>佛学图文 · 阿含经中的三十七道品</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 5 四正断 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 07 · 阿含经中的三十七道品</span><span class="pg"></span></div>
+  <div class="kicker">四正断</div>
+  <h1 class="title">同样四个名字，杂阿含有两种配法</h1>
+  <div class="rule"></div>
+  <div class="tbl" style="grid-template-columns:170px 1fr 1fr">
+    <div class="h">名</div><div class="h">第 877 经的配法</div><div class="h">第 879 经的配法</div>
+    <div class="l">断断</div><div class="tx">已起恶不善法断</div><div class="tx">已起恶令断、未起恶不起、未生善令起、已生善增益，四件事都在这里</div>
+    <div class="l">律仪断</div><div class="tx">未起恶不善法不起</div><div class="tx">「善护眼根，隐密、调伏、进向」，六根都如此</div>
+    <div class="l">随护断</div><div class="tx">未起善法令起</div><div class="tx">守护「青瘀相、胀相、脓相、坏相、食不尽相」等三昧相</div>
+    <div class="l">修断</div><div class="tx">已起善法增益修习</div><div class="tx">「若比丘修四念处等，是名修断」</div>
+  </div>
+  <div class="q">「未生弊恶法，求方便令不生，心不远离，恒欲令灭；已生弊恶法，求方便令不生，心不远离，恒欲令灭；未生善法，求方便令生；已生善法，求方便令增多」<small>《增壹阿含经》卷 18 四意断品第 1 经：增一阿含叫「四意断」，讲的是这四件事。杂阿含第 647 经的精进根，也是这四件事。两种配法见《杂阿含经》卷 31。</small></div>
+  <div class="concl">四件事是：已生的恶令断，未生的恶不起，未生的善令起，已生的善增长。</div>
+  <div class="foot"><span>佛学图文 · 阿含经中的三十七道品</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 6 四如意足 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 07 · 阿含经中的三十七道品</span><span class="pg"></span></div>
+  <div class="kicker">四如意足</div>
+  <h1 class="title">依欲断爱：爱断了，这个欲也就息了</h1>
+  <div class="rule"></div>
+  <div class="steps">
+    <div class="s4"><b>问</b>婆罗门问阿难：在佛那里修梵行，为了什么？阿难答：「为断故」，断爱。</div>
+    <div class="s4"><b>再问</b>依什么断爱？阿难答：「依于欲而断爱」。婆罗门问：这样岂不是没有边际？</div>
+    <div class="s4"><b>反问</b>阿难反问：你先有欲来精舍吗？有。到了精舍，那个欲息了吗？息了。</div>
+    <div class="s4 r"><b>答</b>四如意足也是这样：修到爱断，「爱断已，彼欲亦息」。</div>
+  </div>
+  <div class="q">「何等为四？欲定断行成就如意足，精进定、心定、思惟定断行成就如意足。如是，圣弟子修欲定断行成就如意足，依离、依无欲、依出要、依灭、向于舍，乃至断爱，爱断已，彼欲亦息。」<small>《杂阿含经》卷 21 第 561 经，阿难答婆罗门。</small></div>
+  <div class="q">「自在三昧行尽神足；心三昧行尽神足；精进三昧行尽神足；诫三昧行尽神足。」<small>《增壹阿含经》卷 21 苦乐品第 7 经：名目不同，经中解释为身体轻便隐形、心过石壁、勇猛无畏、知众生心念。</small></div>
+  <div class="concl">杂阿含的四如意足是四种定：欲定、精进定、心定、思惟定；修到爱断，原先那个欲也止息。</div>
+  <div class="foot"><span>佛学图文 · 阿含经中的三十七道品</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 7 五根五力 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 07 · 阿含经中的三十七道品</span><span class="pg"></span></div>
+  <div class="kicker">五根 · 五力</div>
+  <h1 class="title">五根用别的道品来界定；五力的界定相同</h1>
+  <div class="rule"></div>
+  <div class="gen">
+    <div class="c5"><div class="a">信</div><div class="b">四不坏净</div></div>
+    <div class="c5"><div class="a">精进</div><div class="b">四正断</div></div>
+    <div class="c5"><div class="a">念</div><div class="b">四念处</div></div>
+    <div class="c5"><div class="a">定</div><div class="b">四禅</div></div>
+    <div class="c5 r"><div class="a">慧</div><div class="b">四圣谛</div></div>
+  </div>
+  <div class="cols3" style="margin-top:22px">
+    <div class="ev r">
+      <h3>慧为栋梁</h3>
+      <div class="qt">「此五根，一切皆为慧根所摄受。譬如堂阁众材，栋为其首，皆依于栋，以摄持故。」</div>
+      <div class="s">《杂阿含经》卷 26 第 654 经</div>
+    </div>
+    <div class="ev">
+      <h3>利钝定果位</h3>
+      <p>五根「若利、若满足，得阿罗汉」，软、劣一些，得阿那含、斯陀含、须陀洹。</p>
+      <div class="qt">「若于此五根一切无者，我说彼为外道凡夫之数。」</div>
+      <div class="s">《杂阿含经》卷 26 第 652 经</div>
+    </div>
+    <div class="ev">
+      <h3>力不止五种</h3>
+      <p>力相应还有三力、四力（觉、精进、无罪、摄）、五学力（信、精进、惭、愧、慧）、七力、九力、如来十力。</p>
+      <div class="s">《杂阿含经》卷 26 第 664–703 经；五力见第 675 经</div>
+    </div>
+  </div>
+  <div class="foot"><span>佛学图文 · 阿含经中的三十七道品</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 8 七觉支 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 07 · 阿含经中的三十七道品</span><span class="pg"></span></div>
+  <div class="kicker">七觉支</div>
+  <h1 class="title">从观身开始，七支依次生起；要看心的状态来修</h1>
+  <div class="rule"></div>
+  <div class="jb7"><b>念</b><i>→</i><b class="up">择法</b><i>→</i><b class="up">精进</b><i>→</i><b class="up">喜</b><i>→</i><b class="dn">猗</b><i>→</i><b class="dn">定</b><i>→</i><b class="dn">舍</b></div>
+  <div class="q">「若比丘内身身观住，彼内身身观住时，摄心系念不忘。彼当尔时，念觉分方便修习，方便修习念觉分已，修习满足；满足念觉分已，于法选择，分别思量。」<small>《杂阿含经》卷 27 第 733 经：「七觉分渐次而起，修习满足」。</small></div>
+  <div class="yi" style="margin-top:20px">
+    <div class="col r">
+      <div class="t">心微劣犹豫 → 修择法、精进、喜</div>
+      <div class="i">「譬如小火，欲令其燃，足其干薪」</div>
+    </div>
+    <div class="mid">念 兼 助</div>
+    <div class="col">
+      <div class="t" style="color:#1f646a;border-bottom-color:#2b7f86">心掉举犹豫 → 修猗、定、舍</div>
+      <div class="i" style="border-left-color:#2b7f86">「譬如燃火，欲令其灭，足其燋炭，彼火则灭」</div>
+    </div>
+  </div>
+  <div class="concl">「念觉分者，一切兼助。」——《杂阿含经》卷 27 第 714 经</div>
+  <div class="foot"><span>佛学图文 · 阿含经中的三十七道品</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 9 连接 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 07 · 阿含经中的三十七道品</span><span class="pg"></span></div>
+  <div class="kicker">七组怎样连在一起</div>
+  <h1 class="title">经文把七组互相连接：这一组用那一组来解释</h1>
+  <div class="rule"></div>
+  <div class="lk">
+    <div class="x">精进根</div><div class="ar">＝</div><div class="y">四正断</div><div class="so">第 646、658 经</div>
+    <div class="x">念根</div><div class="ar">＝</div><div class="y">四念处</div><div class="so">第 646、658 经</div>
+    <div class="x">慧根</div><div class="ar">＝</div><div class="y">如实知四圣谛</div><div class="so">第 647 经</div>
+    <div class="x">修断</div><div class="ar">＝</div><div class="y">修四念处等</div><div class="so">第 879 经</div>
+    <div class="x">正念</div><div class="ar">＝</div><div class="y">四念处</div><div class="so">第 1028 经</div>
+    <div class="x">观身（四念处）</div><div class="ar">→</div><div class="y">七觉分渐次而起</div><div class="so">第 733 经</div>
+    <div class="x">安那般那念满</div><div class="ar">→</div><div class="y">四念处满 → 七觉分满 → 明、解脱满</div><div class="so">第 810 经</div>
+    <div class="x">八圣道修满</div><div class="ar">→</div><div class="y">四念处至七觉分都修满</div><div class="so">第 305 经</div>
+  </div>
+  <div class="concl">念根、修断、正念是四念处；七觉支从四念处生起；安那般那念修满，先满四念处。</div>
+  <div class="foot"><span>佛学图文 · 阿含经中的三十七道品</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 10 结尾 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 07 · 阿含经中的三十七道品</span><span class="pg"></span></div>
+  <div class="kicker">舍利弗涅槃之后</div>
+  <h1 class="title">舍利弗涅槃了，道品法没有涅槃</h1>
+  <div class="rule"></div>
+  <div class="cols2">
+    <div class="ev r">
+      <h3>佛问阿难</h3>
+      <div class="tag">纯陀沙弥带回舍利弗的舍利和衣钵，阿难悲伤</div>
+      <div class="qt">「若法我自知，成等正觉所说，谓四念处、四正断、四如意足、五根、五力、七觉支、八道支涅槃耶？」</div>
+      <p>阿难答：「不也，世尊！」舍利弗涅槃了，佛所说的这些法并没有涅槃。</p>
+      <div class="s">《杂阿含经》卷 24 第 638 经</div>
+    </div>
+    <div class="ev">
+      <h3>自洲、法洲</h3>
+      <div class="tag">佛接着对阿难说</div>
+      <div class="qt">「当作自洲而自依，当作法洲而法依，当作不异洲不异依。」</div>
+      <p>阿难问怎样依止。佛答：</p>
+      <div class="qt">「若比丘身身观念处，精勤方便，正智正念，调伏世间贪忧。」</div>
+      <div class="s">《杂阿含经》卷 24 第 638 经</div>
+    </div>
+  </div>
+  <div class="concl">依止自己、依止法，做法就是四念处。下一期：佛教核心思想在阿含经和《俱舍论》中的对比。</div>
+  <div class="foot"><span>佛学图文 · 阿含经中的三十七道品</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<script>
+  var cards = document.querySelectorAll('.card');
+  cards.forEach(function (el, i) {
+    el.id = 'c' + (i + 1);
+    var pg = el.querySelector('.pg');
+    if (pg) pg.textContent = (i + 1) + ' / ' + cards.length;
+  });
+  var m = location.search.match(/[?&]c=(\d+)/);
+  if (m) {
+    document.body.className = 'single';
+    var el = document.getElementById('c' + m[1]);
+    if (el) el.classList.add('on');
+  }
+</script>
+</body>
+</html>
