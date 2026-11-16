@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>阿含经与俱舍论 · 图卡</title>
+<style>
+  /* 本机没有宋体时（Linux 预览）用 Noto Serif SC；Mac 上用 Songti SC */
+  @font-face { font-family: "PreviewSerif"; font-weight: 400; src: local("Songti SC"), url("file:///root/.fonts/nss-400.woff2"); }
+  @font-face { font-family: "PreviewSerif"; font-weight: 700; src: local("Songti SC Bold"), url("file:///root/.fonts/nss-700.woff2"); }
+  @font-face { font-family: "PreviewSerif"; font-weight: 900; src: local("Songti SC Black"), url("file:///root/.fonts/nss-900.woff2"); }
+  :root {
+    --paper: #f2e8d2;
+    --paper-deep: #e6d7b8;
+    --ink: #2a241e;
+    --ink-soft: #5e5448;
+    --ink-faint: #9a8d7a;
+    --cinnabar: #a8352a;
+    --cinnabar-soft: #c9685a;
+    --line: rgba(42, 36, 30, 0.22);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #8a8072;
+    font-family: "Songti SC", "STSong", "PreviewSerif", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  body.review { padding: 40px 0; }
+  body.review .card { margin: 0 auto 40px; box-shadow: 0 8px 30px rgba(0,0,0,.35); }
+  body.single { background: var(--paper); }
+  body.single .card:not(.on) { display: none !important; }
+  body.single .card.on { display: block; }
+
+  .card {
+    position: relative;
+    width: 1080px;
+    height: 1440px;
+    overflow: hidden;
+    padding: 110px 96px 120px;
+    background-color: var(--paper);
+    background-image:
+      radial-gradient(ellipse at 50% 40%, rgba(255,250,238,.55) 0%, rgba(255,250,238,0) 60%),
+      radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 60%, rgba(120,90,50,.16) 100%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .27  0 0 0 0 .17  0 0 0 .10 0'/></filter><rect width='400' height='400' filter='url(%23n)'/></svg>"),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='900'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='.012 .04' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 .45  0 0 0 0 .36  0 0 0 0 .22  0 0 0 .07 0'/></filter><rect width='900' height='900' filter='url(%23f)'/></svg>");
+  }
+  /* 页眉页脚 */
+  .head {
+    position: absolute; top: 52px; left: 96px; right: 96px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 24px; letter-spacing: 4px; color: var(--ink-faint);
+  }
+  .head .series::before {
+    content: ""; display: inline-block; width: 12px; height: 12px;
+    background: var(--cinnabar); margin-right: 14px; vertical-align: 2px;
+  }
+  .foot {
+    position: absolute; bottom: 50px; left: 96px; right: 96px;
+    display: flex; justify-content: space-between; align-items: flex-end;
+    font-size: 22px; letter-spacing: 3px; color: var(--ink-faint);
+  }
+  .seal {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 66px; height: 66px; border-radius: 6px;
+    background: var(--cinnabar); color: #f6e9d6;
+    font-size: 20px; line-height: 1.05; font-weight: 700;
+    writing-mode: vertical-rl; letter-spacing: 1px;
+    box-shadow: inset 0 0 0 3px var(--cinnabar), inset 0 0 0 5px rgba(246,233,214,.8);
+    transform: rotate(-2deg);
+  }
+  .foot .sign { display: flex; align-items: center; gap: 18px; }
+  .foot .url { text-align: right; line-height: 1.45; }
+
+  h1.title {
+    font-size: 72px; font-weight: 900; letter-spacing: 6px; line-height: 1.25;
+  }
+  .kicker {
+    font-size: 28px; letter-spacing: 6px; color: var(--cinnabar); margin-bottom: 20px;
+  }
+  .rule {
+    width: 120px; height: 4px; background: var(--cinnabar); margin: 34px 0 44px;
+  }
+  p, li { font-size: 32px; line-height: 1.75; letter-spacing: 1px; }
+  .muted { color: var(--ink-soft); }
+  .red { color: var(--cinnabar); }
+  b { font-weight: 700; }
+
+  /* ===== 16:9 版面 ===== */
+  .card { width: 1920px; height: 1080px; padding: 112px 120px 110px; }
+  .head { top: 48px; left: 120px; right: 120px; }
+  .foot { bottom: 44px; left: 120px; right: 120px; }
+  h1.title { font-size: 60px; letter-spacing: 5px; line-height: 1.2; }
+  .kicker { font-size: 28px; margin-bottom: 12px; }
+  .rule { margin: 12px 0 20px; }
+
+  /* 标题行右侧：四谛四字 */
+  .top { display: flex; justify-content: space-between; align-items: flex-end; }
+  .di4 { display: flex; gap: 40px; }
+  .di4 .half { text-align: center; }
+  .di4 .half .cap { font-size: 23px; letter-spacing: 3px; color: var(--ink-soft); margin-bottom: 8px; }
+  .di4 .half .cap.r { color: var(--cinnabar); }
+  .di4 .ch { display: flex; gap: 10px; }
+  .di4 .ch b { width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-size: 40px; font-weight: 900; border: 3px solid var(--ink); background: rgba(255,250,238,.5); }
+  .di4 .ch b.r { border-color: var(--cinnabar); color: var(--cinnabar); }
+  .di4 .ch i { font-style: normal; font-size: 26px; align-self: center; color: var(--ink-faint); }
+
+  /* 三行：集苦 / 灭 / 道 */
+  .row { display: grid; grid-template-columns: 250px 1fr; column-gap: 30px; align-items: stretch; }
+  .lab { display: flex; flex-direction: column; justify-content: center; padding: 6px 22px; border-left: 10px solid var(--ink); background: rgba(255,250,238,.45); }
+  .lab.r { border-left-color: var(--cinnabar); background: rgba(168,53,42,.07); }
+  .lab b { font-size: 50px; font-weight: 900; letter-spacing: 4px; line-height: 1.15; }
+  .lab b em { font-style: normal; font-size: 30px; color: var(--ink-faint); margin: 0 6px; vertical-align: 8px; }
+  .lab.r b { color: var(--cinnabar); }
+  .lab span { font-size: 23px; letter-spacing: 2px; line-height: 1.45; color: var(--ink-soft); margin-top: 6px; }
+
+  .nid { display: flex; align-items: center; }
+  .nid .c { flex: 1; text-align: center; font-size: 29px; font-weight: 700; padding: 13px 0; border: 2px solid var(--ink); background: rgba(255,250,238,.55); letter-spacing: 1px; white-space: nowrap; }
+  .nid .c.huo { background: var(--cinnabar); border-color: var(--cinnabar); color: #f6e9d6; }
+  .nid .c.ye  { background: var(--ink); color: #f6e9d6; }
+  .nid .a { flex: none; width: 24px; text-align: center; color: var(--ink-soft); font-size: 22px; }
+  .nid .end { flex: none; margin-left: 14px; font-size: 27px; font-weight: 700; letter-spacing: 1px; white-space: nowrap; }
+  .nid.back .c { border: 2px dashed var(--cinnabar); color: var(--cinnabar); background: rgba(168,53,42,.05); font-size: 23px; letter-spacing: 0; padding: 16px 0; }
+  .nid.back .a { color: var(--cinnabar); }
+  .nid.back .c + .a { margin: 0 2px; }
+  .nid.back .end { color: var(--cinnabar); }
+
+  .legend { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 26px; margin-top: 8px; font-size: 24px; color: var(--ink-soft); }
+  .legend .sw { display: inline-block; width: 22px; height: 22px; vertical-align: -3px; margin-right: 8px; border: 2px solid var(--ink); }
+  .legend .sw.huo { background: var(--cinnabar); border-color: var(--cinnabar); }
+  .legend .sw.ye { background: var(--ink); }
+  .legend .sw.shi { background: rgba(255,250,238,.7); }
+  .legend b { color: var(--ink); }
+  .legend .src { margin-left: auto; font-size: 22px; color: var(--ink-faint); }
+
+  .up { display: grid; grid-template-columns: 250px 1fr; column-gap: 30px; margin: 6px 0 8px; }
+  .up div:last-child { font-size: 26px; color: var(--cinnabar); letter-spacing: 1px; padding-left: 6px; }
+  .up div:last-child b { font-size: 30px; margin-right: 10px; }
+
+  /* 道：八正道为主干，更全面的是三十七道品 */
+  .dao { display: grid; grid-template-columns: 640px 120px 1fr; align-items: stretch; }
+  .bz { padding: 10px 26px 14px; border: 4px solid var(--cinnabar); background: rgba(168,53,42,.09); }
+  .bz .hd { display: flex; align-items: baseline; gap: 16px; }
+  .bz .hd b { font-size: 46px; font-weight: 900; letter-spacing: 5px; color: var(--cinnabar); }
+  .bz .hd span { font-size: 23px; color: var(--ink-soft); letter-spacing: 1px; }
+  .bz .items { margin-top: 8px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .bz .items i { font-style: normal; text-align: center; font-size: 28px; font-weight: 700; padding: 3px 0; border: 2px solid var(--cinnabar); background: rgba(255,250,238,.6); letter-spacing: 1px; }
+  .ex { display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--cinnabar); }
+  .ex b { font-size: 26px; letter-spacing: 4px; }
+  .ex i { font-style: normal; font-size: 52px; line-height: 1; }
+  .sq { padding: 14px 22px 14px; border-top: 6px solid var(--ink); background: rgba(255,250,238,.45); display: flex; flex-direction: column; justify-content: center; }
+  .sq .hd { font-size: 30px; font-weight: 900; letter-spacing: 3px; margin-bottom: 12px; }
+  .sq .hd span { font-size: 22px; font-weight: 400; color: var(--ink-soft); letter-spacing: 1px; margin-left: 12px; }
+  .sq .gs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .sq .gs div { text-align: center; font-size: 24px; padding: 4px 0; border: 1.5px solid var(--line); background: rgba(255,250,238,.5); }
+  .sq .gs div small { font-size: 19px; color: var(--ink-faint); margin-left: 4px; }
+  .sq .gs div.r { border: 2px solid var(--cinnabar); color: var(--cinnabar); font-weight: 700; background: rgba(168,53,42,.08); }
+
+  /* ===== 苦集卡 ===== */
+  .ks { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .ks .blk { padding: 14px 26px 14px; background: rgba(255,250,238,.45); border-top: 6px solid var(--ink); }
+  .ks .blk .h { display: flex; align-items: baseline; gap: 16px; }
+  .ks .blk .h b { font-size: 40px; font-weight: 900; letter-spacing: 4px; }
+  .ks .blk .h span { font-size: 23px; color: var(--ink-soft); }
+  .ks .pl { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .ks .pl i { font-style: normal; font-size: 25px; padding: 2px 12px; border: 2px solid var(--ink); background: rgba(255,250,238,.6); }
+  .ks .pl i.last { border-color: var(--cinnabar); color: var(--cinnabar); font-weight: 700; }
+  .ks .blk p { font-size: 25px; line-height: 1.55; margin-top: 8px; }
+  .ks .blk .s { font-size: 21px; color: var(--ink-faint); margin-top: 6px; }
+
+  .sj { display: grid; grid-template-columns: 2fr 5fr 3fr 2fr; gap: 10px; margin-top: 24px; }
+  .sj div { text-align: center; font-size: 24px; letter-spacing: 2px; padding: 6px 0 8px; border-bottom: 4px solid var(--ink); }
+  .sj div b { font-weight: 900; margin-left: 10px; }
+  .sj div.ji b { color: var(--cinnabar); }
+  .sj div.ji { border-bottom-color: var(--cinnabar); }
+  .sj div small { display: block; font-size: 19px; color: var(--ink-faint); letter-spacing: 1px; }
+
+  .zh { display: grid; grid-template-columns: repeat(12, 1fr); gap: 10px; margin-top: 12px; }
+  .zh .z { background: rgba(255,250,238,.5); border: 2px solid var(--ink); display: flex; flex-direction: column; }
+  .zh .z .n { text-align: center; font-size: 32px; font-weight: 900; padding: 8px 0; letter-spacing: 1px; border-bottom: 2px solid var(--ink); }
+  .zh .z.huo { border-color: var(--cinnabar); }
+  .zh .z.huo .n { background: var(--cinnabar); color: #f6e9d6; border-bottom-color: var(--cinnabar); }
+  .zh .z.ye .n { background: var(--ink); color: #f6e9d6; }
+  .zh .z .d { font-size: 22px; line-height: 1.5; padding: 10px 6px 10px; color: var(--ink); text-align: center; }
+  .zh .z .t { font-size: 22px; font-weight: 700; color: var(--ink-soft); text-align: center; padding: 4px 0; margin-top: auto; letter-spacing: 2px; border-top: 1px solid var(--line); }
+  .zh .z.huo .t { color: var(--cinnabar); }
+
+  /* ===== 灭道卡 ===== */
+  .ks .blk .qt { font-size: 25px; line-height: 1.55; margin-top: 8px; border-left: 4px solid var(--cinnabar); padding-left: 16px; }
+  .ks .bz8 { display: grid; grid-template-columns: repeat(8, 1fr); gap: 6px; margin-top: 10px; }
+  .ks .bz8 i { font-style: normal; text-align: center; font-size: 22px; font-weight: 700; padding: 3px 0; border: 2px solid var(--cinnabar); background: rgba(255,250,238,.6); }
+  .mk { display: grid; grid-template-columns: repeat(12, 1fr); gap: 10px; margin-top: 40px; }
+  .mk div { text-align: center; font-size: 22px; letter-spacing: 1px; padding-bottom: 6px; color: var(--ink-soft); }
+  .mk div.cut { color: #f6e9d6; background: var(--cinnabar); font-weight: 700; padding: 6px 0; }
+  .zh.back .z { border: 2px dashed var(--cinnabar); background: rgba(168,53,42,.04); }
+  .zh.back .z .n { color: var(--cinnabar); background: transparent; border-bottom: 2px dashed var(--cinnabar); font-size: 28px; padding: 10px 0; }
+  .zh.back .z.huo { border-style: solid; background: rgba(168,53,42,.10); }
+  .zh.back .z.huo .n { background: var(--cinnabar); color: #f6e9d6; border-bottom-style: solid; }
+  .zh.back .z.ye .n { background: transparent; color: var(--ink); }
+  .zh.back .z .d { padding: 16px 6px; }
+  .zh.back .z .t { border-top-color: rgba(168,53,42,.3); }
+
+  /* ===== 三十七道品矩阵 ===== */
+  .mx { display: grid; grid-template-columns: 210px 1fr 0.72fr 0.85fr 1fr 1fr 1.05fr 0.72fr 1.15fr; gap: 6px; }
+  .mx .hd { white-space: nowrap; text-align: center; padding: 0 0 4px; font-size: 21px; color: var(--ink-soft); letter-spacing: 1px; line-height: 1.3; }
+  .mx .hd b { font-size: 28px; margin-right: 6px; color: var(--ink); font-weight: 900; letter-spacing: 3px; }
+  .mx .hd.hx b { color: var(--ink-faint); }
+  .mx .rl { display: flex; align-items: baseline; justify-content: space-between; padding: 0 14px; align-self: stretch; align-items: center; font-size: 28px; font-weight: 900; letter-spacing: 2px; border-left: 6px solid var(--ink); background: rgba(255,250,238,.45); }
+  .mx .rl small { font-size: 20px; font-weight: 400; color: var(--ink-faint); letter-spacing: 0; }
+  .mx .c { display: flex; align-items: center; justify-content: center; text-align: center; min-height: 58px; padding: 4px 4px; font-size: 26px; line-height: 1.3; border: 2px solid var(--ink); background: rgba(255,250,238,.6); font-weight: 700; }
+  .mx .c small { display: block; font-size: 18px; font-weight: 400; color: var(--ink-soft); }
+  .mx .c.e { border: 1px dashed var(--line); background: transparent; }
+  .mx .c .it { display: inline-block; margin: 2px 7px; }
+  .mx .c.multi { flex-wrap: wrap; }
+  .mx .c.out { border: 2px dashed var(--ink-faint); color: var(--ink-soft); background: transparent; font-weight: 700; }
+  .mx .c.oh { border: 1px dashed var(--ink-faint); background: transparent; color: var(--ink-faint); font-size: 20px; font-weight: 400; line-height: 1.35; }
+  .mx .c.ext { border-color: var(--ink-faint); color: var(--ink-soft); }
+  .mx .rl.bz { border-left-color: var(--cinnabar); background: var(--cinnabar); color: #f6e9d6; font-size: 34px; }
+  .mx .rl.bz small { color: #f3d9cf; }
+  .mx .c.bz { background: var(--cinnabar); border-color: var(--cinnabar); color: #f6e9d6; font-size: 28px; min-height: 70px; }
+  .mx .c.bz.e { background: transparent; border: 1px dashed var(--line); }
+  .mx .exr { grid-column: 2 / span 8; text-align: left; font-size: 22px; color: var(--cinnabar); letter-spacing: 2px; padding: 4px 0 2px 6px; }
+
+  /* ===== 三十七道品思维导图（还原原图） ===== */
+  .card.xm { background: #eef0f5; }
+  .card.xm .mmwrap { position: absolute; left: 307px; top: 24px; width: 1306px; height: 1040px; }
+  .card.xm svg.mm { width: 100%; height: 100%; font-family: "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", "WenQuanYi Zen Hei", sans-serif; }
+  .card.xm svg.mm text { fill: #1a1a1a; }
+  .card.xm svg.mm text.lb { fill: #555; paint-order: stroke; stroke: #eef0f5; stroke-width: 3px; }
+  .card.xm .side { position: absolute; left: 120px; top: 120px; width: 170px; font-size: 22px; line-height: 1.7; color: var(--ink-soft); }
+  .card.xm .side b { display: block; font-size: 34px; color: var(--ink); letter-spacing: 3px; margin-bottom: 14px; }
+  .card.xm.ov .mmwrap { left: 120px; top: 96px; width: 1680px; height: 920px; }
+  .card.xm svg.mm text.lg { fill: #444; }
+  .card.xm svg.mm text.ni { fill: #3f7d3a; }
+  .card.xm svg.mm text.ar { fill: #333; }
+  .card.xm.ov svg.mm { font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "WenQuanYi Zen Hei", sans-serif; }
+  /* 导图卡底部被图占满：署名移到右上角，页码随之隐藏 */
+  .card.xm .foot { top: 30px; bottom: auto; justify-content: flex-end; }
+  .card.xm .foot > span:first-child { display: none; }
+  .card.xm .head .pg { display: none; }
+
+  /* ===== 封面、经证卡 ===== */
+  .bg-char { right: 40px; top: 60px; font-size: 760px; color: rgba(42,36,30,.045); position: absolute; font-weight: 900; line-height: 1; }
+  .cover { height: 100%; display: grid; grid-template-columns: 1fr 1010px; column-gap: 60px; align-content: center; align-items: center; }
+  .cover .big { font-size: 150px; font-weight: 900; letter-spacing: 16px; line-height: 1.15; }
+  .cover .sub { margin-top: 30px; font-size: 36px; letter-spacing: 5px; color: var(--ink-soft); line-height: 1.7; }
+  .chain { display: flex; flex-direction: column; }
+  .chain .n { display: grid; grid-template-columns: 250px 120px 1fr; align-items: baseline; padding: 20px 28px; background: rgba(255,250,238,.4); border-top: 6px solid var(--ink); }
+  .chain .n.r { border-top-color: var(--cinnabar); background: rgba(168,53,42,.06); }
+  .chain .n b { font-size: 46px; font-weight: 900; letter-spacing: 4px; }
+  .chain .n em { font-style: normal; font-size: 34px; font-weight: 700; color: var(--cinnabar); letter-spacing: 4px; }
+  .chain .n span { font-size: 28px; color: var(--ink-soft); line-height: 1.5; }
+  .chain .gap { height: 14px; }
+  .cols3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; }
+  .cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .ev { padding: 22px 28px 20px; background: rgba(255,250,238,.45); border-top: 6px solid var(--ink); display: flex; flex-direction: column; }
+  .ev.r { border-top-color: var(--cinnabar); }
+  .ev h3 { font-size: 40px; font-weight: 900; letter-spacing: 4px; }
+  .ev .tag { font-size: 24px; color: var(--cinnabar); letter-spacing: 2px; margin: 2px 0 12px; }
+  .ev .qt { font-size: 29px; line-height: 1.6; border-left: 5px solid var(--cinnabar); padding-left: 18px; margin-bottom: 12px; }
+  .ev p { font-size: 26px; line-height: 1.6; }
+  .ev .s { margin-top: auto; padding-top: 10px; font-size: 21px; color: var(--ink-faint); line-height: 1.45; }
+  .concl { margin-top: 26px; font-size: 32px; line-height: 1.55; font-weight: 700; border-left: 8px solid var(--cinnabar); background: rgba(168,53,42,.08); padding: 16px 28px; }
+  /* 四谛表 + 三转十二行 */
+  .dt { display: grid; grid-template-columns: 170px repeat(4, 1fr); gap: 8px; }
+  .dt .h { text-align: center; padding: 10px 0; font-size: 44px; font-weight: 900; letter-spacing: 6px; border-top: 6px solid var(--ink); background: rgba(255,250,238,.45); }
+  .dt .h.r { border-top-color: var(--cinnabar); color: var(--cinnabar); background: rgba(168,53,42,.07); }
+  .dt .h small { display: block; font-size: 21px; font-weight: 400; letter-spacing: 1px; color: var(--ink-soft); }
+  .dt .rl { display: flex; align-items: center; font-size: 26px; font-weight: 700; letter-spacing: 2px; padding-left: 4px; }
+  .dt .rl small { display: block; font-size: 19px; font-weight: 400; color: var(--ink-faint); letter-spacing: 0; }
+  .dt .c { font-size: 23px; line-height: 1.5; padding: 10px 14px; background: rgba(255,250,238,.5); border: 1px solid var(--line); }
+  .dt .c.k { text-align: center; font-size: 27px; font-weight: 700; }
+  .dt .c.k.r { color: var(--cinnabar); }
+
+  /* ===== 八正道 ===== */
+  .bz8t { display: grid; grid-template-columns: 250px 1fr 150px; column-gap: 0; row-gap: 6px; }
+  .bz8t .hd { font-size: 22px; letter-spacing: 3px; color: var(--ink-soft); padding: 0 18px 8px; border-bottom: 3px solid var(--ink); }
+  .bz8t .nm { display: flex; align-items: baseline; gap: 12px; padding: 5px 18px; background: rgba(255,250,238,.5); border-left: 8px solid var(--ink); }
+  .bz8t .nm b { font-size: 31px; font-weight: 900; letter-spacing: 3px; }
+  .bz8t .nm small { font-size: 20px; color: var(--ink-faint); }
+  .bz8t .df { display: flex; align-items: center; padding: 5px 18px; font-size: 25px; line-height: 1.45; background: rgba(255,250,238,.5); }
+  .bz8t .jy { display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 900; letter-spacing: 6px; }
+  .bz8t .nm.hui { border-left-color: #2b7f86; } .bz8t .jy.hui { background: rgba(79,201,207,.22); color: #1f646a; }
+  .bz8t .nm.jie { border-left-color: var(--cinnabar); } .bz8t .jy.jie { background: rgba(168,53,42,.12); color: var(--cinnabar); }
+  .bz8t .nm.ding { border-left-color: #24772a; } .bz8t .jy.ding { background: rgba(60,196,58,.18); color: #1d5f22; }
+  .q { margin-top: 18px; font-size: 27px; line-height: 1.6; letter-spacing: .5px; border-left: 6px solid var(--cinnabar); padding: 4px 0 4px 24px; }
+  .q small { display: block; font-size: 22px; color: var(--ink-soft); }
+
+  /* ===== 第 04 期新增 ===== */
+  .cover .big { font-size: 128px; letter-spacing: 12px; }
+  .cover .pre { font-size: 44px; font-weight: 700; letter-spacing: 10px; color: var(--ink-soft); margin-bottom: 6px; }
+  .d4 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .d4 .n { padding: 20px 26px 18px; background: rgba(255,250,238,.45); border-top: 6px solid var(--ink); }
+  .d4 .n.r { border-top-color: var(--cinnabar); background: rgba(168,53,42,.06); }
+  .d4 .n b { display: block; font-size: 44px; font-weight: 900; letter-spacing: 4px; }
+  .d4 .n.r b { color: var(--cinnabar); }
+  .d4 .n span { display: block; font-size: 26px; line-height: 1.5; color: var(--ink-soft); margin-top: 8px; }
+  .d4note { margin-top: 26px; font-size: 26px; line-height: 1.6; color: var(--ink-soft); border-left: 4px solid var(--cinnabar); padding-left: 20px; }
+
+  .bars { display: flex; flex-direction: column; gap: 16px; }
+  .bar { display: grid; grid-template-columns: 170px 1fr; align-items: center; column-gap: 18px; }
+  .bar .k { font-size: 30px; font-weight: 700; letter-spacing: 2px; }
+  .bar .v { height: 58px; background: var(--ink); color: #f6e9d6; font-size: 30px; font-weight: 900; display: flex; align-items: center; padding-left: 16px; white-space: nowrap; }
+  .bar .v.r { background: var(--cinnabar); }
+  .bar .v.lt { background: transparent; color: var(--ink); border-left: 6px solid var(--ink); padding-left: 12px; }
+  .bnote { margin-top: 18px; font-size: 22px; color: var(--ink-faint); line-height: 1.5; }
+  .stat { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .big3 { font-size: 92px; font-weight: 900; color: var(--cinnabar); line-height: 1; letter-spacing: 2px; }
+  .big3 small { font-size: 32px; color: var(--ink); margin-left: 8px; letter-spacing: 3px; }
+
+  .nt { display: grid; grid-template-columns: 150px repeat(4, 1fr); gap: 6px; margin-top: 8px; }
+  .nt div { font-size: 24px; text-align: center; padding: 7px 4px; background: rgba(255,250,238,.5); border: 1px solid var(--line); }
+  .nt .h { font-weight: 900; background: transparent; border: 0; border-bottom: 3px solid var(--ink); font-size: 24px; color: var(--ink-soft); letter-spacing: 2px; }
+  .nt .rl { font-weight: 700; text-align: left; padding-left: 10px; border-left: 6px solid var(--ink); }
+  .nt .rl.r { border-left-color: var(--cinnabar); color: var(--cinnabar); }
+
+  .sz { display: grid; grid-template-columns: 200px repeat(4, 1fr); gap: 8px; }
+  .sz .h { text-align: center; padding: 8px 0; font-size: 42px; font-weight: 900; letter-spacing: 6px; border-top: 6px solid var(--ink); background: rgba(255,250,238,.45); }
+  .sz .h.r { border-top-color: var(--cinnabar); color: var(--cinnabar); background: rgba(168,53,42,.07); }
+  .sz .rl { display: flex; flex-direction: column; justify-content: center; padding-left: 14px; border-left: 8px solid var(--ink); background: rgba(255,250,238,.45); }
+  .sz .rl b { font-size: 32px; font-weight: 900; letter-spacing: 4px; }
+  .sz .rl small { font-size: 21px; color: var(--ink-soft); }
+  .sz .c { display: flex; align-items: center; justify-content: center; text-align: center; font-size: 27px; font-weight: 700; padding: 14px 8px; background: rgba(255,250,238,.55); border: 1px solid var(--line); }
+  .sz .c small { display: block; font-size: 19px; font-weight: 400; color: var(--cinnabar); margin-top: 2px; }
+  .sz .cc { flex-direction: column; }
+
+  .k7 { display: flex; flex-wrap: wrap; gap: 8px; margin: 2px 0 12px; }
+  .k7 i { font-style: normal; font-size: 25px; padding: 2px 12px; border: 2px solid var(--ink); background: rgba(255,250,238,.6); }
+  .k7 i.r { border-color: var(--cinnabar); color: var(--cinnabar); font-weight: 700; }
+
+  .yi { display: grid; grid-template-columns: 1fr 120px 1fr; align-items: stretch; }
+  .yi .col { display: flex; flex-direction: column; gap: 12px; }
+  .yi .col .t { font-size: 30px; font-weight: 900; letter-spacing: 4px; padding-bottom: 6px; border-bottom: 4px solid var(--ink); }
+  .yi .col.r .t { color: var(--cinnabar); border-bottom-color: var(--cinnabar); }
+  .yi .col div.i { font-size: 29px; line-height: 1.45; padding: 12px 20px; background: rgba(255,250,238,.5); border-left: 6px solid var(--ink); }
+  .yi .col.r div.i { border-left-color: var(--cinnabar); background: rgba(168,53,42,.06); }
+  .yi .col div.i small { font-size: 21px; color: var(--ink-faint); margin-right: 10px; }
+  .yi .mid { display: flex; align-items: center; justify-content: center; font-size: 26px; color: var(--cinnabar); letter-spacing: 4px; writing-mode: vertical-rl; }
+
+  /* ===== 第 05 期新增 ===== */
+  .ch12 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .ch12 div { text-align: center; padding: 14px 0; font-size: 36px; font-weight: 900; letter-spacing: 3px; border: 3px solid var(--ink); background: rgba(255,250,238,.55); position: relative; }
+  .ch12 div small { display: block; font-size: 20px; font-weight: 400; color: var(--ink-faint); letter-spacing: 1px; }
+  .ch12 div.r { border-color: var(--cinnabar); color: var(--cinnabar); }
+
+  .flow { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 0; }
+  .flow b { font-size: 28px; font-weight: 900; padding: 8px 14px; border: 2px solid var(--ink); background: rgba(255,250,238,.6); letter-spacing: 1px; }
+  .flow i { font-style: normal; font-size: 22px; color: var(--ink-soft); padding: 0 6px; }
+  .flow.mie b { border-style: dashed; border-color: var(--cinnabar); color: var(--cinnabar); background: rgba(168,53,42,.05); }
+  .flow.mie i { color: var(--cinnabar); }
+  .flow .end { font-size: 26px; font-weight: 700; margin-left: 10px; }
+  .flow.mie .end { color: var(--cinnabar); }
+  .fl { margin-bottom: 14px; }
+  .fl .lab2 { font-size: 30px; font-weight: 900; letter-spacing: 3px; margin-bottom: 10px; }
+  .fl .lab2 small { font-size: 22px; font-weight: 400; color: var(--ink-soft); margin-left: 12px; letter-spacing: 1px; }
+  .fl.r .lab2 { color: var(--cinnabar); }
+
+  .yt { display: grid; grid-template-columns: 120px 1fr 440px; gap: 4px 0; }
+  .yt div { font-size: 23px; line-height: 1.35; padding: 6px 14px; background: rgba(255,250,238,.5); border-bottom: 1px solid var(--line); }
+  .yt .h { background: transparent; font-weight: 900; font-size: 22px; color: var(--ink-soft); letter-spacing: 2px; border-bottom: 3px solid var(--ink); }
+  .yt .n { font-weight: 900; font-size: 26px; letter-spacing: 2px; border-left: 6px solid var(--ink); }
+  .yt .e { color: var(--ink-faint); }
+  .yt .d { color: var(--cinnabar); font-weight: 700; background: rgba(168,53,42,.07); }
+
+  .reed { display: grid; grid-template-columns: 520px 1fr; gap: 50px; align-items: center; }
+  .reed svg { width: 520px; height: 520px; }
+
+  /* ===== 第 06 期新增 ===== */
+  .b8 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .b8 div { text-align: center; padding: 16px 0; font-size: 38px; font-weight: 900; letter-spacing: 4px; border: 3px solid var(--cinnabar); color: var(--cinnabar); background: rgba(255,250,238,.55); }
+  .b8 div small { display: block; font-size: 20px; font-weight: 400; color: var(--ink-faint); letter-spacing: 1px; }
+
+  .df8 { display: grid; grid-template-columns: 190px 1fr; gap: 6px 0; }
+  .df8 .n { display: flex; align-items: center; padding: 6px 18px; font-size: 30px; font-weight: 900; letter-spacing: 3px; border-left: 8px solid var(--cinnabar); background: rgba(168,53,42,.07); color: var(--cinnabar); }
+  .df8 .d { display: flex; align-items: center; padding: 6px 20px; font-size: 26px; line-height: 1.45; background: rgba(255,250,238,.5); }
+  .df8 .d small { color: var(--ink-faint); margin-left: 14px; font-size: 21px; }
+
+  .chain2 { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 0; }
+  .chain2 b { font-size: 27px; font-weight: 900; padding: 8px 14px; border: 2px solid var(--ink); background: rgba(255,250,238,.6); }
+  .chain2 i { font-style: normal; font-size: 22px; color: var(--ink-soft); padding: 0 6px; }
+  .chain2.r b { border-color: var(--cinnabar); color: var(--cinnabar); }
+  .chain2.r i { color: var(--cinnabar); }
+  .chain2.g b { border-style: dashed; color: var(--ink-soft); }
+  .chain2 .end { font-size: 25px; font-weight: 700; margin-left: 10px; }
+
+  .ju3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; }
+  .ju3 .j { padding: 22px 26px; border-top: 8px solid var(--ink); background: rgba(255,250,238,.45); }
+  .ju3 .j h3 { font-size: 46px; font-weight: 900; letter-spacing: 6px; }
+  .ju3 .j .items { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+  .ju3 .j .items i { font-style: normal; font-size: 34px; font-weight: 700; padding: 10px 18px; border: 2px solid var(--ink); background: rgba(255,250,238,.6); letter-spacing: 3px; }
+  .ju3 .j.jie { border-top-color: var(--cinnabar); } .ju3 .j.jie h3 { color: var(--cinnabar); } .ju3 .j.jie i { border-color: var(--cinnabar); }
+  .ju3 .j.ding { border-top-color: #24772a; } .ju3 .j.ding h3 { color: #1d5f22; } .ju3 .j.ding i { border-color: #24772a; }
+  .ju3 .j.hui { border-top-color: #2b7f86; } .ju3 .j.hui h3 { color: #1f646a; } .ju3 .j.hui i { border-color: #2b7f86; }
+
+  .ten { display: grid; grid-template-columns: repeat(10, 1fr); gap: 8px; }
+  .ten div { text-align: center; padding: 12px 0; font-size: 26px; font-weight: 900; border: 2px solid var(--ink); background: rgba(255,250,238,.6); writing-mode: vertical-rl; letter-spacing: 6px; height: 170px; display: flex; align-items: center; justify-content: center; margin: 0 auto; width: 100%; }
+  .ten div.x { border: 3px solid var(--cinnabar); color: var(--cinnabar); background: rgba(168,53,42,.08); }
+  .ten div.e { border: 2px dashed var(--line); color: transparent; background: transparent; }
+  .tenrow { display: grid; grid-template-columns: 220px 1fr; gap: 18px; align-items: center; margin-bottom: 16px; }
+  .tenrow .lb { font-size: 30px; font-weight: 900; letter-spacing: 3px; }
+  .tenrow .lb small { display: block; font-size: 22px; font-weight: 400; color: var(--ink-soft); letter-spacing: 1px; }
+
+  /* ===== 第 07 期新增 ===== */
+  .g7 { display: grid; grid-template-columns: 1fr 90px; gap: 10px 0; }
+  .g7 .nm { display: flex; align-items: center; justify-content: space-between; padding: 11px 24px; font-size: 34px; font-weight: 900; letter-spacing: 4px; border-left: 8px solid var(--ink); background: rgba(255,250,238,.5); }
+  .g7 .nm small { font-size: 23px; font-weight: 400; color: var(--ink-soft); letter-spacing: 1px; }
+  .g7 .ct { display: flex; align-items: center; justify-content: center; font-size: 36px; font-weight: 900; color: var(--cinnabar); background: rgba(168,53,42,.07); }
+  .g7 .tt { grid-column: 1 / span 2; text-align: right; font-size: 28px; color: var(--ink-soft); padding-top: 4px; }
+  .g7 .tt b { font-size: 40px; color: var(--cinnabar); margin-left: 8px; }
+
+  .tbl { display: grid; gap: 6px; }
+  .tbl div { font-size: 26px; padding: 8px 12px; text-align: center; background: rgba(255,250,238,.5); border: 1px solid var(--line); }
+  .tbl .h { background: transparent; border: 0; border-bottom: 3px solid var(--ink); font-weight: 900; font-size: 25px; color: var(--ink-soft); letter-spacing: 2px; }
+  .tbl .l { text-align: left; font-weight: 900; border-left: 6px solid var(--ink); }
+  .tbl .r { color: var(--cinnabar); font-weight: 900; background: rgba(168,53,42,.07); }
+  .tbl .tx { text-align: left; font-size: 25px; line-height: 1.4; }
+
+  .ji { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 8px; }
+  .ji div { padding: 12px 10px; text-align: center; font-size: 27px; font-weight: 700; line-height: 1.4; background: rgba(255,250,238,.55); border-top: 5px solid var(--ink); }
+  .ji div small { display: block; font-size: 23px; font-weight: 400; color: var(--cinnabar); }
+
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .steps .s4 { padding: 16px 18px; background: rgba(255,250,238,.5); border-top: 6px solid var(--ink); font-size: 26px; line-height: 1.5; }
+  .steps .s4 b { display: block; font-size: 25px; color: var(--cinnabar); letter-spacing: 3px; margin-bottom: 6px; }
+  .steps .s4.r { border-top-color: var(--cinnabar); background: rgba(168,53,42,.07); }
+
+  .gen { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+  .gen .c5 { border: 2px solid var(--ink); background: rgba(255,250,238,.55); text-align: center; }
+  .gen .c5 .a { font-size: 32px; font-weight: 900; padding: 10px 0; letter-spacing: 3px; border-bottom: 2px solid var(--ink); }
+  .gen .c5 .b { font-size: 28px; padding: 12px 0; color: var(--cinnabar); font-weight: 700; }
+  .gen .c5.r { border-color: var(--cinnabar); }
+  .gen .c5.r .a { background: var(--cinnabar); color: #f6e9d6; border-bottom-color: var(--cinnabar); }
+
+  .jb7 { display: flex; align-items: stretch; gap: 0; }
+  .jb7 b { flex: 1; text-align: center; padding: 13px 0; font-size: 27px; font-weight: 900; border: 2px solid var(--ink); background: rgba(255,250,238,.6); }
+  .jb7 i { flex: none; width: 34px; display: flex; align-items: center; justify-content: center; font-style: normal; color: var(--ink-soft); }
+  .jb7 b.up { border-color: var(--cinnabar); color: var(--cinnabar); }
+  .jb7 b.dn { border-color: #2b7f86; color: #1f646a; }
+
+  .lk { display: grid; grid-template-columns: 1fr 66px 1fr 190px; gap: 9px 0; align-items: stretch; }
+  .lk .x { display: flex; align-items: center; padding: 8px 18px; font-size: 27px; font-weight: 700; background: rgba(255,250,238,.55); border-left: 6px solid var(--ink); }
+  .lk .y { display: flex; align-items: center; padding: 8px 18px; font-size: 27px; font-weight: 700; color: var(--cinnabar); background: rgba(168,53,42,.07); }
+  .lk .ar { display: flex; align-items: center; justify-content: center; font-size: 28px; color: var(--ink-soft); }
+  .lk .so { display: flex; align-items: center; justify-content: flex-end; font-size: 22px; color: var(--ink-faint); }
+
+  /* ===== 第 08 期新增 ===== */
+  .vs { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .vs .side { padding: 22px 28px; border-top: 8px solid var(--ink); background: rgba(255,250,238,.5); }
+  .vs .side.r { border-top-color: var(--cinnabar); background: rgba(168,53,42,.06); }
+  .vs .side h3 { font-size: 44px; font-weight: 900; letter-spacing: 5px; }
+  .vs .side.r h3 { color: var(--cinnabar); }
+  .vs .side p { font-size: 26px; line-height: 1.6; color: var(--ink-soft); margin-top: 8px; }
+
+  .cmp { display: grid; grid-template-columns: 200px 1fr 1fr; gap: 6px; }
+  .cmp div { font-size: 25px; line-height: 1.45; padding: 9px 16px; background: rgba(255,250,238,.5); }
+  .cmp .h { background: transparent; font-weight: 900; font-size: 26px; letter-spacing: 3px; border-bottom: 4px solid var(--ink); }
+  .cmp .h.r { color: var(--cinnabar); border-bottom-color: var(--cinnabar); }
+  .cmp .l { font-weight: 900; font-size: 27px; letter-spacing: 2px; border-left: 6px solid var(--ink); display: flex; align-items: center; }
+  .cmp .k { background: rgba(168,53,42,.06); }
+
+  .x16 { display: grid; grid-template-columns: 150px repeat(4, 1fr); gap: 6px; }
+  .x16 div { font-size: 23px; text-align: center; padding: 8px 4px; background: rgba(255,250,238,.55); border: 1px solid var(--line); }
+  .x16 .h { background: transparent; border: 0; border-bottom: 3px solid var(--ink); font-weight: 900; font-size: 26px; }
+  .x16 .l { font-weight: 900; text-align: left; border-left: 6px solid var(--ink); }
+  .x16 .last { background: rgba(43,127,134,.15); color: #1f646a; font-weight: 700; }
+
+  .sanji { display: grid; grid-template-columns: 1fr 2.6fr 1fr; gap: 14px; }
+  .sanji .jj { border-top: 8px solid var(--ink); background: rgba(255,250,238,.45); padding: 14px 16px; }
+  .sanji .jj.r { border-top-color: var(--cinnabar); background: rgba(168,53,42,.05); }
+  .sanji .jj h4 { font-size: 30px; font-weight: 900; letter-spacing: 3px; margin-bottom: 12px; }
+  .sanji .jj.r h4 { color: var(--cinnabar); }
+  .sanji .zs { display: flex; flex-wrap: wrap; gap: 8px; }
+  .sanji .zs b { font-size: 28px; font-weight: 900; padding: 8px 14px; border: 2px solid var(--ink); background: rgba(255,250,238,.7); }
+  .sanji .jj.r .zs b { border-color: var(--cinnabar); }
+  .sanji .jj small { display: block; font-size: 21px; color: var(--ink-soft); margin-top: 10px; line-height: 1.45; }
+
+  .tri { display: grid; grid-template-columns: 110px 1fr 1fr 1fr; gap: 5px; }
+  .tri div { font-size: 22px; line-height: 1.35; padding: 6px 12px; background: rgba(255,250,238,.5); }
+  .tri .h { background: transparent; font-weight: 900; border-bottom: 3px solid var(--ink); font-size: 23px; color: var(--ink-soft); }
+  .tri .h.r { color: var(--cinnabar); border-bottom-color: var(--cinnabar); }
+  .tri .n { font-weight: 900; font-size: 25px; border-left: 6px solid var(--ink); }
+  .tri .k { color: var(--cinnabar); background: rgba(168,53,42,.06); }
+  .tri .hl { font-weight: 700; }
+
+  .ten10 { display: grid; grid-template-columns: 140px 1fr; gap: 6px 0; }
+  .ten10 .t { display: flex; align-items: center; justify-content: center; font-size: 32px; font-weight: 900; color: #f6e9d6; background: var(--cinnabar); }
+  .ten10 .t.s { background: var(--ink); }
+  .ten10 .m { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; padding: 6px 14px; background: rgba(255,250,238,.5); }
+  .ten10 .m i { font-style: normal; font-size: 23px; padding: 3px 10px; border: 1.5px solid var(--ink); background: rgba(255,250,238,.7); }
+
+  .stage { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
+  .stage .st { border: 2px solid var(--ink); background: rgba(255,250,238,.55); text-align: center; }
+  .stage .st .a { font-size: 24px; color: var(--ink-soft); padding: 10px 0 6px; border-bottom: 1px solid var(--line); }
+  .stage .st .b { font-size: 30px; font-weight: 900; padding: 14px 0; color: var(--cinnabar); }
+  .stage .st.y { border-color: #2b7f86; } .stage .st.y .b { color: #1f646a; }
+  .stage .grp { grid-column: span 5; text-align: center; font-size: 22px; color: var(--ink-soft); border-top: 3px solid var(--ink); padding-top: 6px; }
+  .stage .grp2 { grid-column: span 2; text-align: center; font-size: 22px; color: #1f646a; border-top: 3px solid #2b7f86; padding-top: 6px; }
+
+  .cite { display: grid; grid-template-columns: 1.4fr 140px 1fr; gap: 7px; }
+  .cite div { font-size: 25px; padding: 9px 16px; background: rgba(255,250,238,.5); line-height: 1.4; }
+  .cite .h { background: transparent; border-bottom: 3px solid var(--ink); font-weight: 900; color: var(--ink-soft); font-size: 24px; }
+  .cite .c { text-align: center; }
+  .cite .a { color: var(--cinnabar); font-weight: 700; background: rgba(168,53,42,.06); }
+</style>
+</head>
+<body class="review">
+
+<!-- ===== 1 封面 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 08 · 阿含系列 5</span><span class="pg"></span></div>
+  <div class="bg-char">论</div>
+  <div class="cover" style="grid-template-columns:1fr 960px">
+    <div>
+      <div class="kicker">阿含系列 · 五</div>
+      <div class="pre" style="font-size:30px;letter-spacing:4px">四圣谛 · 十二因缘 · 道品</div>
+      <div class="big" style="font-size:96px;letter-spacing:6px">阿含经<br>与俱舍论</div>
+      <div class="sub">同一组法义，<br>经怎么说，论怎么说</div>
+    </div>
+    <div>
+      <div class="vs">
+        <div class="side"><h3>阿含经</h3><p>佛与弟子的对话、比喻、说法场景；一个名目，常用另一组法来解释。</p></div>
+        <div class="side r"><h3>俱舍论</h3><p>世亲造，玄奘译，三十卷。依说一切有部，给每一法定出体性、位次、有漏无漏。</p></div>
+      </div>
+      <div class="d4note" style="margin-top:26px">论自己的话：「故经所说是密意言，阿毘达磨依法相说。」<br>——《俱舍论》卷 22</div>
+    </div>
+  </div>
+  <div class="foot"><span>经论出处均可在 CBETA 检索</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 2 俱舍论自己怎么说经与论 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 08 · 阿含经与俱舍论</span><span class="pg"></span></div>
+  <div class="kicker">《俱舍论》</div>
+  <h1 class="title">论自己说：经依因缘、意趣而说，论依法相而说</h1>
+  <div class="rule"></div>
+  <div class="cols2">
+    <div class="ev r">
+      <h3>卷 9 · 缘起</h3>
+      <div class="tag">经说十二支，《品类足论》说一切有为都是缘起，为什么不同？</div>
+      <div class="qt">「素怛缆言因别意趣，阿毘达磨依法相说」</div>
+      <p>素怛缆就是契经。经是就有情、为某种意趣而说；阿毘达磨依诸法的性相而说。</p>
+      <div class="s">《阿毘达磨俱舍论》卷 9 分别世品</div>
+    </div>
+    <div class="ev">
+      <h3>卷 22 · 集谛</h3>
+      <div class="tag">经只说爱是集，论说业、爱、无明都是集，怎么解释？</div>
+      <div class="qt">「契经唯说爱为集故。经就胜故说爱为集，理实所余亦是集谛。」</div>
+      <div class="qt">「故经所说是密意言，阿毘达磨依法相说。」</div>
+      <div class="s">《阿毘达磨俱舍论》卷 22 分别贤圣品</div>
+    </div>
+  </div>
+  <div class="concl">《俱舍论》唐玄奘译，三十卷九品。本期用到：卷 1 分别界品，卷 9–10 分别世品，卷 22–25 分别贤圣品，卷 26 分别智品。</div>
+  <div class="foot"><span>佛学图文 · 阿含经与俱舍论</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 3 四谛次第 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 08 · 阿含经与俱舍论</span><span class="pg"></span></div>
+  <div class="kicker">四谛 · 次第</div>
+  <h1 class="title">苦果在前、集因在后：论说这是按现观的先后排的</h1>
+  <div class="rule"></div>
+  <div class="q" style="margin-top:0;font-size:29px">「四谛何缘如是次第？随现观位先后而说，谓现观中先所观者便在先说，若异此者应先说因后方说果。」<small>《俱舍论》卷 22。修行者先观苦，再找苦的因，再思苦能否灭，最后找灭苦的道：「如见病已，次寻病因，续思病愈，后求良药。」</small></div>
+  <div class="cmp" style="margin-top:26px">
+    <div class="h">良医四德</div><div class="h">阿含经 · 第 389 经</div><div class="h r">俱舍论引《良医经》</div>
+    <div class="l">一</div><div>善知病</div><div class="k">善知病状</div>
+    <div class="l">二</div><div>善知病源</div><div class="k">善知病因</div>
+    <div class="l">三</div><div>善知病对治</div><div class="k">善知病愈</div>
+    <div class="l">四</div><div>善知治病已，当来更不动发</div><div class="k">善知良药</div>
+  </div>
+  <div class="concl">阿含经只列苦、集、灭、道；俱舍论给这个次序加了理由，引《良医经》时把「病愈」放在「良药」前面，对应灭谛在道谛前面。</div>
+  <div class="foot"><span>佛学图文 · 阿含经与俱舍论</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 4 苦谛与集谛 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 08 · 阿含经与俱舍论</span><span class="pg"></span></div>
+  <div class="kicker">四谛 · 苦与集</div>
+  <h1 class="title">苦谛扩到一切有漏法；集谛不只是爱</h1>
+  <div class="rule"></div>
+  <div class="cmp">
+    <div class="h"></div><div class="h">阿含经</div><div class="h r">俱舍论</div>
+    <div class="l">苦谛</div><div>生老病死等七苦，「如是略说五受阴苦」（杂阿含第 344 经）</div><div class="k">「苦由三苦合，如所应一切」：可意的法是坏苦，不可意的是苦苦，其余是行苦——一切有漏行都是苦谛（卷 22）</div>
+    <div class="l">集谛</div><div>「当来有爱，喜、贪俱，彼彼集著」（杂阿含第 344 经）；中阿含叫「爱习苦习」</div><div class="k">「业为生因、爱为起因」；业、爱、无明都是集。经说爱是集，是「就胜」而说（卷 22）</div>
+    <div class="l">苦与集</div><div>苦、集分开说</div><div class="k">「果性取蕴名为苦谛，因性取蕴名为集谛……名虽有殊非物有异」（卷 22）</div>
+    <div class="l">灭谛</div><div>爱「无余断，乃至息、没」（第 344 经）</div><div class="k">「择灭谓离系，此说灭谛」：三种无为之一（卷 1、卷 22）</div>
+  </div>
+  <div class="q">「如以一睫毛，置掌人不觉，若置眼睛上，为损及不安。愚夫如手掌，不觉行苦睫，智者如眼睛，缘极生厌怖。」<small>《俱舍论》卷 22 引偈：行苦，只有圣者能觉察。</small></div>
+  <div class="foot"><span>佛学图文 · 阿含经与俱舍论</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 5 现观 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 08 · 阿含经与俱舍论</span><span class="pg"></span></div>
+  <div class="kicker">四谛 · 现观</div>
+  <h1 class="title">阿含说「渐次」，俱舍论展开成十六心</h1>
+  <div class="rule"></div>
+  <div class="cols2" style="grid-template-columns:1fr 1.25fr">
+    <div class="ev">
+      <h3>阿含经</h3>
+      <div class="tag">须达长者问 · 第 435 经</div>
+      <div class="qt">「此四圣谛渐次无间等，非顿无间等。」</div>
+      <p>三部经三个比喻：叶子做的碗（第 435 经）、四级台阶（第 436 经）、四级梯子（第 437 经）。</p>
+      <div class="s">《杂阿含经》卷 16</div>
+    </div>
+    <div class="ev r">
+      <h3>俱舍论 · 十六心</h3>
+      <div class="x16">
+        <div class="h"></div><div class="h">苦</div><div class="h">集</div><div class="h">灭</div><div class="h">道</div>
+        <div class="l">法智忍</div><div>1</div><div>5</div><div>9</div><div>13</div>
+        <div class="l">法智</div><div>2</div><div>6</div><div>10</div><div>14</div>
+        <div class="l">类智忍</div><div>3</div><div>7</div><div>11</div><div>15</div>
+        <div class="l">类智</div><div>4</div><div>8</div><div>12</div><div class="last">16</div>
+      </div>
+      <p style="margin-top:10px">法智缘欲界，类智缘上界。前十五心属见道，第十六心道类智属修道。</p>
+      <div class="s">《俱舍论》卷 23</div>
+    </div>
+  </div>
+  <div class="q">「依见现观，于契经中见有诚文，说渐现观。如契经说：佛告长者：于四圣谛非顿现观，必渐现观，乃至广说。如是等有三经，一一经有别喻。」<small>《俱舍论》卷 23：论驳「顿现观」，引的就是杂阿含第 435–437 这三经。</small></div>
+  <div class="foot"><span>佛学图文 · 阿含经与俱舍论</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 6 三转十二行 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 08 · 阿含经与俱舍论</span><span class="pg"></span></div>
+  <div class="kicker">四谛 · 三转十二行</div>
+  <h1 class="title">同一句「三转十二行」，论里记了两种读法</h1>
+  <div class="rule"></div>
+  <div class="cols3">
+    <div class="ev">
+      <h3>阿含经</h3>
+      <div class="tag">第 379 经《转法轮经》</div>
+      <div class="qt">「我已于四圣谛三转十二行生眼、智、明、觉」</div>
+      <p>示、劝、证三转，每一转、每一谛都「生眼、智、明、觉」。</p>
+      <div class="s">《杂阿含经》卷 15</div>
+    </div>
+    <div class="ev r">
+      <h3>毘婆沙师</h3>
+      <div class="tag">每一谛 3 转 × 眼智明觉 4 ＝ 12</div>
+      <div class="qt">「如是三转十二行相谛谛皆有」</div>
+      <div class="qt">「由此三转如次显示见道、修道、无学道三。」</div>
+      <p>法轮只指见道。</p>
+      <div class="s">《俱舍论》卷 24</div>
+    </div>
+    <div class="ev r">
+      <h3>论主（世亲）</h3>
+      <div class="tag">3 周 × 4 谛 ＝ 12</div>
+      <div class="qt">「如何三转？三周转故。如何具足十二行相？三周循历四圣谛故。」</div>
+      <p>不只见道；这一整套法门叫法轮。</p>
+      <div class="s">《俱舍论》卷 24</div>
+    </div>
+  </div>
+  <div class="concl">论中还记了妙音尊者的比喻：八支圣道像车轮，正见、正思惟、正勤、正念是辐，正语、正业、正命是毂，正定是辋。</div>
+  <div class="foot"><span>佛学图文 · 阿含经与俱舍论</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 7 十二支三际 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 08 · 阿含经与俱舍论</span><span class="pg"></span></div>
+  <div class="kicker">十二因缘 · 三际</div>
+  <h1 class="title">阿含只讲次第；俱舍论把十二支分到三世</h1>
+  <div class="rule"></div>
+  <div class="sanji">
+    <div class="jj"><h4>前际 · 过去</h4><div class="zs"><b>无明</b><b>行</b></div><small>宿世的烦恼位、业位</small></div>
+    <div class="jj r"><h4>中际 · 现在</h4><div class="zs"><b>识</b><b>名色</b><b>六处</b><b>触</b><b>受</b><b>爱</b><b>取</b><b>有</b></div><small>识到受是事；爱、取是惑；有是业</small></div>
+    <div class="jj"><h4>后际 · 未来</h4><div class="zs"><b>生</b><b>老死</b></div><small>未来的结生与老死</small></div>
+  </div>
+  <div class="cols2" style="margin-top:22px">
+    <div class="q" style="margin-top:0">「如是诸缘起，十二支三际，前后际各二，中八据圆满。」<small>《俱舍论》卷 9。中际八支，是按欲界一生经历全部阶段的人来说的，并引《大缘起经》「识若不入胎」作依据。</small></div>
+    <div class="q" style="margin-top:0">「从惑生惑业，从业生于事，从事事惑生，有支理唯此。」<small>《俱舍论》卷 9：无明、爱、取是惑，行、有是业，其余七支是事。阿含经只说「此有故彼有」，不分三世，也没有惑、业、事三分。</small></div>
+  </div>
+  <div class="foot"><span>佛学图文 · 阿含经与俱舍论</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 8 十二支定义对照 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 08 · 阿含经与俱舍论</span><span class="pg"></span></div>
+  <div class="kicker">十二因缘 · 各支定义</div>
+  <h1 class="title">经讲每一支是什么法，论讲每一支在哪个阶段</h1>
+  <div class="rule" style="margin:10px 0 12px"></div>
+  <div class="tri">
+    <div class="h">支</div><div class="h">杂阿含第 298 经</div><div class="h">增一阿含放牛品第 5 经</div><div class="h r">俱舍论卷 9</div>
+    <div class="n">无明</div><div class="hl">不知前后际、业报、三宝、四谛……</div><div>不知苦、习、尽、道</div><div class="k">宿世烦恼位的五蕴</div>
+    <div class="n">行</div><div>身、口、意行</div><div>身、口、意行</div><div class="k">宿世福等业位</div>
+    <div class="n">识</div><div class="hl">六识身</div><div>六识身</div><div class="k">入胎结生一刹那的五蕴</div>
+    <div class="n">名色</div><div class="hl">受想行识＋四大所造色</div><div>痛想念更乐思惟＋色</div><div class="k">结生后、六处生前</div>
+    <div class="n">六处</div><div>六内入处</div><div>内六入</div><div class="k">眼等根已生，未与境、识和合</div>
+    <div class="n">触</div><div>六触身</div><div>六更乐</div><div class="k">三和合，未能分别苦乐之因</div>
+    <div class="n">受</div><div>苦、乐、不苦不乐</div><div>三痛</div><div class="k">能分别苦乐之因，未起淫爱</div>
+    <div class="n">爱</div><div>欲爱、色爱、无色爱</div><div>欲爱、有爱、无有爱</div><div class="k">贪资具、淫爱现行</div>
+    <div class="n">取</div><div>欲、见、戒、我取</div><div>欲、见、戒、我受</div><div class="k">为得境界，周遍驰求</div>
+    <div class="n">有</div><div class="hl">欲有、色有、无色有</div><div>欲有、色有、无色有</div><div class="k">能牵来世果报的业</div>
+    <div class="n">生</div><div>得阴、界、入处、命根</div><div>得五阴，受诸入</div><div class="k">命终后结生来世</div>
+    <div class="n">老死</div><div>老相、死相</div><div>老相、死相</div><div class="k">结生之后到受位</div>
+  </div>
+  <div class="foot"><span>论：「传许约位说，从胜立支名」——每一支都是五蕴，就最突出的一项立名</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 9 实事唯十 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 08 · 阿含经与俱舍论</span><span class="pg"></span></div>
+  <div class="kicker">三十七道品 · 体</div>
+  <h1 class="title">阿含用道品解释道品；俱舍论说三十七法实体只有十种</h1>
+  <div class="rule" style="margin:10px 0 14px"></div>
+  <div class="cols2" style="grid-template-columns:0.8fr 1.2fr">
+    <div class="ev">
+      <h3>阿含经</h3>
+      <div class="tag">第 646、658 经</div>
+      <div class="qt">「信根者，当知是四不坏净；精进根者，当知是四正断；念根者，当知是四念处；定根者，当知是四禅；慧根者，当知是四圣谛。」</div>
+      <p>总称是「道品」；只有增一阿含说「三十七品」。</p>
+      <div class="s">《杂阿含经》卷 26</div>
+    </div>
+    <div>
+      <div class="ten10">
+        <div class="t">慧</div><div class="m"><i>四念住</i><i>慧根</i><i>慧力</i><i>择法觉支</i><i>正见</i></div>
+        <div class="t">勤</div><div class="m"><i>四正断</i><i>精进根</i><i>精进力</i><i>精进觉支</i><i>正精进</i></div>
+        <div class="t">定</div><div class="m"><i>四神足</i><i>定根</i><i>定力</i><i>定觉支</i><i>正定</i></div>
+        <div class="t">念</div><div class="m"><i>念根</i><i>念力</i><i>念觉支</i><i>正念</i></div>
+        <div class="t s">信</div><div class="m"><i>信根</i><i>信力</i></div>
+        <div class="t s">喜</div><div class="m"><i>喜觉支</i></div>
+        <div class="t s">舍</div><div class="m"><i>舍觉支</i></div>
+        <div class="t s">轻安</div><div class="m"><i>轻安觉支</i></div>
+        <div class="t s">戒</div><div class="m"><i>正语</i><i>正业</i><i>正命</i><span style="font-size:21px;color:var(--ink-faint)">毘婆沙师分身、语二业，共十一</span></div>
+        <div class="t s">寻</div><div class="m"><i>正思惟</i></div>
+      </div>
+      <div class="s" style="font-size:21px;color:var(--ink-faint);margin-top:8px">《俱舍论》卷 25：「此觉分名虽三十七，实事唯十」</div>
+    </div>
+  </div>
+  <div class="foot"><span>佛学图文 · 阿含经与俱舍论</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 10 位次 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 08 · 阿含经与俱舍论</span><span class="pg"></span></div>
+  <div class="kicker">三十七道品 · 次第</div>
+  <h1 class="title">俱舍论把七组排进修行阶位</h1>
+  <div class="rule"></div>
+  <div class="stage">
+    <div class="st"><div class="a">初业位</div><div class="b">四念住</div></div>
+    <div class="st"><div class="a">煖</div><div class="b">四正断</div></div>
+    <div class="st"><div class="a">顶</div><div class="b">四神足</div></div>
+    <div class="st"><div class="a">忍</div><div class="b">五根</div></div>
+    <div class="st"><div class="a">世第一法</div><div class="b">五力</div></div>
+    <div class="st y"><div class="a">见道</div><div class="b">八道支</div></div>
+    <div class="st y"><div class="a">修道</div><div class="b">七觉支</div></div>
+    <div class="grp">初业位与加行位（煖、顶、忍、世第一法）</div><div class="grp2">见道、修道</div>
+  </div>
+  <div class="cols2" style="margin-top:24px">
+    <div class="q" style="margin-top:0">「初业顺决择，及修见道位，念住等七品，应知次第增。」<small>《俱舍论》卷 25，毘婆沙师之说。论又记「有余」师：觉支立于见道，道支通见、修二道，并引契经「于八道支修圆满者，于四念住至七觉支亦修圆满」。</small></div>
+    <div class="q" style="margin-top:0">「八圣道修习满足已，四念处修习满足，四正勤、四如意足、五根、五力、七觉分修习满足。」<small>《杂阿含经》卷 13 第 305 经，就是论里「有余」师所引的经。阿含经里没有煖、顶、忍、世第一法这些阶位名。</small></div>
+  </div>
+  <div class="foot"><span>佛学图文 · 阿含经与俱舍论</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 11 有漏无漏 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 08 · 阿含经与俱舍论</span><span class="pg"></span></div>
+  <div class="kicker">八正道 · 有漏与无漏</div>
+  <h1 class="title">世间的正见，算不算八正道？经和论说法不同</h1>
+  <div class="rule"></div>
+  <div class="cols2">
+    <div class="ev">
+      <h3>阿含经：两种都算</h3>
+      <div class="tag">第 785 经</div>
+      <div class="qt">「正见有二种，有正见，是世、俗，有漏、有取，转向善趣；有正见，是圣、出世间，无漏、无取，正尽苦，转向苦边。」</div>
+      <p>正志、正语……正定，每一支都这样分两种。</p>
+      <div class="s">《杂阿含经》卷 28</div>
+    </div>
+    <div class="ev r">
+      <h3>俱舍论：只算无漏</h3>
+      <div class="tag">卷 25</div>
+      <div class="qt">「七觉八道支，一向是无漏；三四五根力，皆通于二种。」</div>
+      <div class="qt">「世间亦有正见等法，而彼不得圣道支名。」</div>
+      <p>四念住、四正断、四神足、五根、五力，有漏无漏都有。</p>
+      <div class="s">《俱舍论》卷 25</div>
+    </div>
+  </div>
+  <div class="cmp" style="margin-top:22px;grid-template-columns:200px 1fr 1fr">
+    <div class="l">根与力</div><div>五根、五力界定相同（第 646、675 经）</div><div class="k">「由此五法依下上品分先后故，又依可屈伏不可屈伏故」</div>
+  </div>
+  <div class="foot"><span>佛学图文 · 阿含经与俱舍论</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<!-- ===== 12 论引阿含 ===== -->
+<section class="card">
+  <div class="head"><span class="series">佛学图文 · 08 · 阿含经与俱舍论</span><span class="pg"></span></div>
+  <div class="kicker">论的依据</div>
+  <h1 class="title">俱舍论直接引用的契经，在阿含里都找得到</h1>
+  <div class="rule"></div>
+  <div class="cite">
+    <div class="h">论中所引</div><div class="h">卷</div><div class="h">对应阿含</div>
+    <div>《良医经》医王四德</div><div class="c">22</div><div class="a">杂阿含第 389 经</div>
+    <div>佛告长者：于四圣谛非顿现观……如是等有三经</div><div class="c">23</div><div class="a">杂阿含第 435–437 经</div>
+    <div>《大缘起经》识若不入胎</div><div class="c">9</div><div class="a">长阿含第 13 经、中阿含第 97 经</div>
+    <div>吾当为汝说缘起法、缘已生法</div><div class="c">9</div><div class="a">杂阿含第 296 经</div>
+    <div>四念住由食、触、名色、作意集</div><div class="c">23</div><div class="a">杂阿含第 609 经（经作「忆念」）</div>
+    <div>于八道支修圆满者，于四念住至七觉支亦修圆满</div><div class="c">25</div><div class="a">杂阿含第 305 经</div>
+  </div>
+  <div class="concl">经说法，论定法相；论的依据，来自经。阿含系列五期到此结束。</div>
+  <div class="foot"><span>佛学图文 · 阿含经与俱舍论</span><span class="sign"><span class="url">sutratoday.com<br>愚千一 · yuqianyi.com</span><span class="seal">愚千一</span></span></div>
+</section>
+
+<script>
+  var cards = document.querySelectorAll('.card');
+  cards.forEach(function (el, i) {
+    el.id = 'c' + (i + 1);
+    var pg = el.querySelector('.pg');
+    if (pg) pg.textContent = (i + 1) + ' / ' + cards.length;
+  });
+  var m = location.search.match(/[?&]c=(\d+)/);
+  if (m) {
+    document.body.className = 'single';
+    var el = document.getElementById('c' + m[1]);
+    if (el) el.classList.add('on');
+  }
+</script>
+</body>
+</html>
