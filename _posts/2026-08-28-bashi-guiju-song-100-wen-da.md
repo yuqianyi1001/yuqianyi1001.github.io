@@ -4,6 +4,7 @@ title: 《八识规矩颂》100 问
 wechat_link: 
 description: 用 100 个「为什么」把《八识规矩颂》四章十二颂串起来：前五识、第六识、第七末那识、第八阿赖耶识各缘什么境、与哪些心所相应、修到哪一位转识成智，依《成唯识论》作答。
 excerpt: 
+thumb_media_id: LJGNckXOaezci8bZiAJY7HiQJTJRmEwPueNjcseMKQT84rRs0i7Mc8aCI2n1D4gB
 tags:
  - 唯识
  - 八识规矩颂
