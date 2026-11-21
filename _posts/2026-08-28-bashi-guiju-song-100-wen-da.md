@@ -2,12 +2,14 @@
 layout: post
 title: 《八识规矩颂》100 问
 wechat_link: 
-description: 
+description: 用 100 个「为什么」把《八识规矩颂》四章十二颂串起来：前五识、第六识、第七末那识、第八阿赖耶识各缘什么境、与哪些心所相应、修到哪一位转识成智，依《成唯识论》作答。
 excerpt: 
 tags:
  - 唯识
  - 八识规矩颂
 ---
+
+![](https://raw.githubusercontent.com/yuqianyi1001/yuqianyi1001.github.io/master/images/2026-08-28-bashi-guiju-song-100-wen-da-cover.png)
 
 # 《八识规矩颂》100 问
 
@@ -128,7 +130,7 @@ tags:
 
 ---
 
-## 二、第六识颂（26–50）
+## 二、第六识颂（26–46）
 
 ### 第一颂：三性三量通三境 / 三界轮时易可知 / 相应心所五十一 / 善恶临时别配之
 
